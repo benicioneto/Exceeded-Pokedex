@@ -819,6 +819,7 @@ static const struct LevelUpMove sNidokingLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sClefairyLevelUpLearnset[] = {
+    LEVEL_UP_MOVE( 0, MOVE_REVIVAL_BLESSING),
     LEVEL_UP_MOVE( 1, MOVE_SING),
     LEVEL_UP_MOVE( 1, MOVE_SWEET_KISS),
     LEVEL_UP_MOVE( 1, MOVE_DISARMING_VOICE),
@@ -10004,6 +10005,7 @@ static const struct LevelUpMove sRegisteelLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sLatiasLevelUpLearnset[] = {
+    LEVEL_UP_MOVE( 1, MOVE_REVIVAL_BLESSING),
     LEVEL_UP_MOVE( 1, MOVE_STORED_POWER),
     LEVEL_UP_MOVE( 1, MOVE_CHARM),
     LEVEL_UP_MOVE( 1, MOVE_HEALING_WISH),
@@ -10035,6 +10037,7 @@ static const struct LevelUpMove sLatiasLevelUpLearnset[] = {
     LEVEL_UP_MOVE(60, MOVE_GUARD_SPLIT),
     LEVEL_UP_MOVE(61, MOVE_DRAGON_PULSE),
     LEVEL_UP_MOVE(69, MOVE_HEALING_WISH),
+    LEVEL_UP_MOVE(74, MOVE_REVIVAL_BLESSING),
     LEVEL_UP_END
 };
 
@@ -10162,6 +10165,7 @@ static const struct LevelUpMove sJirachiLevelUpLearnset[] = {
     LEVEL_UP_MOVE(64, MOVE_COSMIC_POWER),
     LEVEL_UP_MOVE(71, MOVE_LAST_RESORT),
     LEVEL_UP_MOVE(74, MOVE_DOOM_DESIRE),
+    LEVEL_UP_MOVE(88, MOVE_REVIVAL_BLESSING),
     LEVEL_UP_END
 };
 
@@ -23025,6 +23029,7 @@ static const struct LevelUpMove sPonytaGalarianLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sRapidashGalarianLevelUpLearnset[] = {
+    LEVEL_UP_MOVE( 0, MOVE_REVIVAL_BLESSING),
     LEVEL_UP_MOVE( 0, MOVE_PSYCHO_CUT),
     LEVEL_UP_MOVE( 1, MOVE_PSYCHO_CUT),
     LEVEL_UP_MOVE( 1, MOVE_MEGAHORN),
