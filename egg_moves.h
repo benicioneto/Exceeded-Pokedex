@@ -68,6 +68,7 @@ const u16 gEggMoves[] = {
               MOVE_AIR_CUTTER,
               MOVE_AIR_SLASH,
               MOVE_BRAVE_BIRD,
+              MOVE_FOG,
               MOVE_DEFOG,
               MOVE_FEINT_ATTACK,
               MOVE_FORESIGHT,
@@ -228,6 +229,7 @@ const u16 gEggMoves[] = {
 
     egg_moves(ZUBAT,
               MOVE_CURSE,
+              MOVE_FOG,
               MOVE_DEFOG,
               MOVE_GUST,
               MOVE_HYPNOSIS,
@@ -435,6 +437,7 @@ const u16 gEggMoves[] = {
     egg_moves(BELLSPROUT,
               MOVE_ACID_SPRAY,
               MOVE_BELCH,
+              MOVE_SPICY_BREATH,
               MOVE_BULLET_SEED,
               MOVE_CLEAR_SMOG,
               MOVE_ENCORE,
@@ -719,6 +722,7 @@ const u16 gEggMoves[] = {
 
     egg_moves(LICKITUNG,
               MOVE_BELCH,
+              MOVE_SPICY_BREATH,
               MOVE_CURSE,
               MOVE_HAMMER_ARM,
               MOVE_THRASH,
@@ -871,6 +875,7 @@ const u16 gEggMoves[] = {
 
     egg_moves(SCYTHER,
               MOVE_COUNTER,
+              MOVE_FOG,
               MOVE_DEFOG,
               MOVE_FEINT,
               MOVE_NIGHT_SLASH,
@@ -990,6 +995,7 @@ const u16 gEggMoves[] = {
               MOVE_GASTRO_ACID,
               MOVE_AFTER_YOU,
               MOVE_BELCH,
+              MOVE_SPICY_BREATH,
               MOVE_CHARM,
               MOVE_LICK,
               MOVE_NATURAL_GIFT,
@@ -1085,6 +1091,7 @@ const u16 gEggMoves[] = {
               MOVE_SUBSTITUTE),
 
     egg_moves(HOOTHOOT,
+              MOVE_FOG,
               MOVE_DEFOG,
               MOVE_FEATHER_DANCE,
               MOVE_NIGHT_SHADE,
@@ -1790,6 +1797,7 @@ const u16 gEggMoves[] = {
 
     egg_moves(MAGBY,
               MOVE_BELCH,
+              MOVE_SPICY_BREATH,
               MOVE_CROSS_CHOP,
               MOVE_DYNAMIC_PUNCH,
               MOVE_FOCUS_PUNCH,
@@ -1938,6 +1946,7 @@ const u16 gEggMoves[] = {
               MOVE_WATER_GUN),
 
     egg_moves(SEEDOT,
+              MOVE_FOG,
               MOVE_DEFOG,
               MOVE_LEECH_SEED,
               MOVE_NIGHT_SLASH,
@@ -1957,6 +1966,7 @@ const u16 gEggMoves[] = {
     egg_moves(TAILLOW,
               MOVE_BOOMBURST,
               MOVE_BRAVE_BIRD,
+              MOVE_FOG,
               MOVE_DEFOG,
               MOVE_HURRICANE,
               MOVE_MIRROR_MOVE,
@@ -2415,6 +2425,7 @@ const u16 gEggMoves[] = {
 
     egg_moves(SWABLU,
               MOVE_ASTONISH,
+              MOVE_FOG,
               MOVE_DEFOG,
               MOVE_DRAGON_RUSH,
               MOVE_FEATHER_DANCE,
@@ -2945,6 +2956,7 @@ const u16 gEggMoves[] = {
 
     egg_moves(DRIFLOON,
               MOVE_CLEAR_SMOG,
+              MOVE_FOG,
               MOVE_DEFOG,
               MOVE_DISABLE,
               MOVE_HAZE,
@@ -3067,6 +3079,7 @@ const u16 gEggMoves[] = {
               MOVE_AGILITY,
               MOVE_AIR_CUTTER,
               MOVE_BOOMBURST,
+              MOVE_FOG,
               MOVE_DEFOG,
               MOVE_ENCORE,
               MOVE_NASTY_PLOT,
@@ -3104,6 +3117,7 @@ const u16 gEggMoves[] = {
 
     egg_moves(MUNCHLAX,
               MOVE_BELCH,
+              MOVE_SPICY_BREATH,
               MOVE_COUNTER,
               MOVE_CURSE,
               MOVE_DOUBLE_EDGE,
@@ -3334,6 +3348,7 @@ const u16 gEggMoves[] = {
     egg_moves(PANSEAR,
               MOVE_ASTONISH,
               MOVE_BELCH,
+              MOVE_SPICY_BREATH,
               MOVE_COVET,
               MOVE_DISARMING_VOICE,
               MOVE_FIRE_PUNCH,
@@ -3372,6 +3387,7 @@ const u16 gEggMoves[] = {
               MOVE_SWIFT),
 
     egg_moves(PIDOVE,
+              MOVE_FOG,
               MOVE_DEFOG,
               MOVE_HYPNOSIS,
               MOVE_MORNING_SUN,
@@ -3446,6 +3462,7 @@ const u16 gEggMoves[] = {
 
     egg_moves(TIMBURR,
               MOVE_COUNTER,
+              MOVE_FOG,
               MOVE_DEFOG,
               MOVE_DETECT,
               MOVE_MACH_PUNCH,
@@ -3633,6 +3650,7 @@ const u16 gEggMoves[] = {
 
     egg_moves(ARCHEN,
               MOVE_BITE,
+              MOVE_FOG,
               MOVE_DEFOG,
               MOVE_DOUBLE_TEAM,
               MOVE_HEAD_SMASH,
@@ -3736,6 +3754,7 @@ const u16 gEggMoves[] = {
     egg_moves(EMOLGA,
               MOVE_ASTONISH,
               MOVE_COVET,
+              MOVE_FOG,
               MOVE_DEFOG,
               MOVE_ROOST,
               MOVE_SHOCK_WAVE,
@@ -3952,6 +3971,7 @@ const u16 gEggMoves[] = {
 
     egg_moves(HEATMOR,
               MOVE_BELCH,
+              MOVE_SPICY_BREATH,
               MOVE_CURSE,
               MOVE_NIGHT_SLASH,
               MOVE_SUCKER_PUNCH,
@@ -4032,6 +4052,7 @@ const u16 gEggMoves[] = {
               MOVE_SPIKES),
 
     egg_moves(FLETCHLING,
+              MOVE_FOG,
               MOVE_DEFOG,
               MOVE_FLAME_CHARGE,
               MOVE_QUICK_GUARD,
@@ -4173,6 +4194,7 @@ const u16 gEggMoves[] = {
 
     egg_moves(HAWLUCHA,
               MOVE_CROSS_CHOP,
+              MOVE_FOG,
               MOVE_DEFOG,
               MOVE_ENTRAINMENT,
               MOVE_FEINT,
@@ -4231,6 +4253,7 @@ const u16 gEggMoves[] = {
               MOVE_RECOVER),
 
     egg_moves(NOIBAT,
+              MOVE_FOG,
               MOVE_DEFOG,
               MOVE_DRAGON_RUSH,
               MOVE_OUTRAGE,
@@ -4240,6 +4263,7 @@ const u16 gEggMoves[] = {
 
     egg_moves(ROWLET,
               MOVE_CONFUSE_RAY,
+              MOVE_FOG,
               MOVE_DEFOG,
               MOVE_DOUBLE_TEAM,
               MOVE_KNOCK_OFF,
@@ -4353,6 +4377,7 @@ const u16 gEggMoves[] = {
 
     egg_moves(FOMANTIS,
               MOVE_AROMATHERAPY,
+              MOVE_FOG,
               MOVE_DEFOG,
               MOVE_WORRY_SEED,
               MOVE_GIGA_DRAIN,
@@ -4368,6 +4393,7 @@ const u16 gEggMoves[] = {
 
     egg_moves(SALANDIT,
               MOVE_BELCH,
+              MOVE_SPICY_BREATH,
               MOVE_FAKE_OUT,
               MOVE_MUD_SLAP,
               MOVE_SAND_ATTACK,
@@ -4529,6 +4555,7 @@ const u16 gEggMoves[] = {
               MOVE_ROLLOUT),
 
     egg_moves(ROOKIDEE,
+              MOVE_FOG,
               MOVE_DEFOG,
               MOVE_ROCK_SMASH,
               MOVE_ROOST,
@@ -4595,6 +4622,7 @@ const u16 gEggMoves[] = {
     egg_moves(CRAMORANT,
               MOVE_AERIAL_ACE,
               MOVE_AQUA_RING,
+              MOVE_FOG,
               MOVE_DEFOG,
               MOVE_FEATHER_DANCE,
               MOVE_ROOST),
@@ -4916,6 +4944,7 @@ const u16 gEggMoves[] = {
               MOVE_GASTRO_ACID,
               MOVE_AFTER_YOU,
               MOVE_BELCH,
+              MOVE_SPICY_BREATH,
               MOVE_CHARM,
               MOVE_LICK,
               MOVE_NATURAL_GIFT,

@@ -902,6 +902,13 @@ const struct LevelUpMove *const gLevelUpLearnsets[NUM_SPECIES] =
     [SPECIES_GLASTRIER] = sGlastrierLevelUpLearnset,
     [SPECIES_SPECTRIER] = sSpectrierLevelUpLearnset,
     [SPECIES_CALYREX] = sCalyrexLevelUpLearnset,
+    [SPECIES_WYRDEER] = sWyrdeerLevelUpLearnset,
+    [SPECIES_KLEAVOR] = sKleavorLevelUpLearnset,
+    [SPECIES_URSALUNA] = sUrsalunaLevelUpLearnset,
+    [SPECIES_BASCULEGION] = sBasculegionLevelUpLearnset,
+    [SPECIES_SNEASLER] = sSneaslerLevelUpLearnset,
+    [SPECIES_OVERQWIL] = sOverqwilLevelUpLearnset,
+    [SPECIES_ENAMORUS] = sEnamorusLevelUpLearnset,
     // Megas
     [SPECIES_VENUSAUR_MEGA] = sVenusaurLevelUpLearnset,
     [SPECIES_CHARIZARD_MEGA_X] = sCharizardLevelUpLearnset,
@@ -993,6 +1000,22 @@ const struct LevelUpMove *const gLevelUpLearnsets[NUM_SPECIES] =
     [SPECIES_DARMANITAN_GALARIAN] = sDarmanitanGalarianLevelUpLearnset,
     [SPECIES_YAMASK_GALARIAN] = sYamaskGalarianLevelUpLearnset,
     [SPECIES_STUNFISK_GALARIAN] = sStunfiskGalarianLevelUpLearnset,
+    [SPECIES_GROWLITHE_HISUIAN] = sGrowlitheHisuianLevelUpLearnset,
+    [SPECIES_ARCANINE_HISUIAN] = sArcanineHisuianLevelUpLearnset,
+    [SPECIES_VOLTORB_HISUIAN] = sVoltorbHisuianLevelUpLearnset,
+    [SPECIES_ELECTRODE_HISUIAN] = sElectrodeHisuianLevelUpLearnset,
+    [SPECIES_TYPHLOSION_HISUIAN] = sTyphlosionHisuianLevelUpLearnset,
+    [SPECIES_QWILFISH_HISUIAN] = sQwilfishHisuianLevelUpLearnset,
+    [SPECIES_SNEASEL_HISUIAN] = sSneaselHisuianLevelUpLearnset,
+    [SPECIES_SAMUROTT_HISUIAN] = sSamurottHisuianLevelUpLearnset,
+    [SPECIES_LILLIGANT_HISUIAN] = sLilligantHisuianLevelUpLearnset,
+    [SPECIES_ZORUA_HISUIAN] = sZoruaHisuianLevelUpLearnset,
+    [SPECIES_ZOROARK_HISUIAN] = sZoroarkHisuianLevelUpLearnset,
+    [SPECIES_BRAVIARY_HISUIAN] = sBraviaryHisuianLevelUpLearnset,
+    [SPECIES_SLIGGOO_HISUIAN] = sSliggooHisuianLevelUpLearnset,
+    [SPECIES_GOODRA_HISUIAN] = sGoodraHisuianLevelUpLearnset,
+    [SPECIES_AVALUGG_HISUIAN] = sAvaluggHisuianLevelUpLearnset,
+    [SPECIES_DECIDUEYE_HISUIAN] = sDecidueyeHisuianLevelUpLearnset,
     // Misc Forms
     // Cosplay Pikachu
     [SPECIES_PIKACHU_COSPLAY] = sPikachuLevelUpLearnset,
@@ -1068,7 +1091,9 @@ const struct LevelUpMove *const gLevelUpLearnsets[NUM_SPECIES] =
     [SPECIES_ROTOM_FROST] = sRotomLevelUpLearnset,
     [SPECIES_ROTOM_FAN] = sRotomLevelUpLearnset,
     [SPECIES_ROTOM_MOW] = sRotomLevelUpLearnset,
-    // Giratina
+    // Origin Forme
+    [SPECIES_DIALGA_ORIGIN] = sDialgaLevelUpLearnset,
+    [SPECIES_PALKIA_ORIGIN] = sPalkiaLevelUpLearnset,
     [SPECIES_GIRATINA_ORIGIN] = sGiratinaLevelUpLearnset,
     // Shaymin
     [SPECIES_SHAYMIN_SKY] = sShayminSkyLevelUpLearnset,
@@ -1092,6 +1117,7 @@ const struct LevelUpMove *const gLevelUpLearnsets[NUM_SPECIES] =
     [SPECIES_ARCEUS_FAIRY] = sArceusLevelUpLearnset,
     // Basculin
     [SPECIES_BASCULIN_BLUE_STRIPED] = sBasculinLevelUpLearnset,
+    [SPECIES_BASCULIN_WHITE_STRIPED] = sBasculinLevelUpLearnset,
     // Darmanitan
     [SPECIES_DARMANITAN_ZEN_MODE] = sDarmanitanLevelUpLearnset,
     [SPECIES_DARMANITAN_ZEN_MODE_GALARIAN] = sDarmanitanGalarianLevelUpLearnset,
@@ -1277,6 +1303,7 @@ const struct LevelUpMove *const gLevelUpLearnsets[NUM_SPECIES] =
     // Calyrex
     [SPECIES_CALYREX_ICE_RIDER] = sCalyrexIceRiderLevelUpLearnset,
     [SPECIES_CALYREX_SHADOW_RIDER] = sCalyrexShadowRiderLevelUpLearnset,
+    [SPECIES_ENAMORUS_THERIAN] = sEnamorusLevelUpLearnset,
     [SPECIES_REMORAID_COMMENSAL] = sNoneLevelUpLearnset,
     [SPECIES_ONIX_CRYSTAL] = sOnixCrystalLevelUpLearnset,
     [SPECIES_SNORLAX_SNOW] = sSnorlaxSnowLevelUpLearnset,

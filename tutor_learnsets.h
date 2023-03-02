@@ -40,6 +40,7 @@ const u16 gTutorMoves[] =
     [TUTOR_MOVE_THOUSAND_ARROWS] = MOVE_THOUSAND_ARROWS,        //ok
     [TUTOR_MOVE_THOUSAND_WAVES] = MOVE_THOUSAND_WAVES,        //ok
     [TUTOR_MOVE_CORE_ENFORCER] = MOVE_CORE_ENFORCER,        //ok
+    [TUTOR_MOVE_DRAGON_ASCENT] = MOVE_DRAGON_ASCENT,        //ok
 };
 
 #define TUTOR(tutor) ((u8) (TUTOR_MOVE_##tutor))
@@ -13476,10 +13477,15 @@ static const u8 sZapdosGalarianTutorLearnset[] =
 };
 static const u8 sMoltresGalarianTutorLearnset[] =
 {
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ANCIENT_POWER),
     TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
     TUTOR(SLEEP_TALK),
     TUTOR(SNORE),
     TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
     TUTOR(SWIFT),
     0xFF,
 };
