@@ -1,16018 +1,14857 @@
-const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
+const u16 gTutorMoves[] =
 {
-    [MOVE_NONE] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 0,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = 0,
-        .split = SPLIT_PHYSICAL,
-    },
-
-    [MOVE_POUND] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 40,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 35,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_KARATE_CHOP] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 70,
-        .type = TYPE_FIGHTING,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_HIGH_CRIT,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 140,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_DOUBLE_SLAP] =
-    {
-        .effect = EFFECT_MULTI_HIT,
-        .power = 25,
-        .type = TYPE_FAIRY,
-        .accuracy = 90,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_COMET_PUNCH] =
-    {
-        .effect = EFFECT_MULTI_HIT,
-        .power = 15,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 1,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_IRON_FIST_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_MEGA_PUNCH] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 80,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_IRON_FIST_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_PAY_DAY] =
-    {
-        .effect = EFFECT_PAY_DAY,
-        .power = 60,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_FIRE_PUNCH] =
-    {
-        .effect = EFFECT_BURN_HIT,
-        .power = 75,
-        .type = TYPE_FIRE,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_IRON_FIST_BOOST | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 140,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_ICE_PUNCH] =
-    {
-        .effect = EFFECT_FROSTBITE_HIT,
-        .power = 75,
-        .type = TYPE_ICE,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_IRON_FIST_BOOST | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 140,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_THUNDER_PUNCH] =
-    {
-        .effect = EFFECT_PARALYZE_HIT,
-        .power = 75,
-        .type = TYPE_ELECTRIC,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_IRON_FIST_BOOST | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 140,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SCRATCH] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 40,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 35,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_VISE_GRIP] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 70,
-        .type = TYPE_BUG,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_HIGH_CRIT,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 140,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_GUILLOTINE] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 120,
-        .type = TYPE_BUG,
-        .accuracy = 80,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_HIGH_CRIT,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 190,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_RAZOR_WIND] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_4
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_HIGH_CRIT,
-            .flags2 = FLAG_GIANT_WINGS_BOOST,
-        #else
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        #endif
-        .effect = EFFECT_RAZOR_WIND,
-        .power = 90,
-        .type = TYPE_FLYING,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 175,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SWORDS_DANCE] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .pp = 20,
-        #else
-            .pp = 30,
-        #endif
-        .effect = EFFECT_ATTACK_UP_2,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED | FLAG_DANCE,
-        .flags2 = FLAG_SLICING_MOVE,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RESET_STATS,
-    },
-
-    [MOVE_CUT] =
-    {
-        .effect = EFFECT_ALWAYS_CRIT,
-        .power = 50,
-        .type = TYPE_NORMAL,
-        .accuracy = 95,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .flags2 = FLAG_SLICING_MOVE,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_GUST] =
-    {
-        .effect = EFFECT_GUST,
-        .power = 60,
-        .type = TYPE_FLYING,
-        .accuracy = 100,
-        .pp = 25,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_DMG_2X_IN_AIR,
-        .flags2 = FLAG_GIANT_WINGS_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_WING_ATTACK] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 60,
-        .type = TYPE_FLYING,
-        .accuracy = 100,
-        .pp = 35,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .flags2 = FLAG_GIANT_WINGS_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_WHIRLWIND] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .accuracy = 0,
-            .flags = FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        #elif B_UPDATED_MOVE_DATA == GEN_5
-            .accuracy = 100,
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        #else
-            .accuracy = 100,
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        #endif
-        .effect = EFFECT_ROAR,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = -6,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPDEF_UP_1,
-    },
-
-    [MOVE_FLY] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_4
-            .power = 90,
-            .zMovePower = 175,
-        #else
-            .power = 70,
-            .zMovePower = 140,
-        #endif
-        .effect = EFFECT_SEMI_INVULNERABLE,
-        .type = TYPE_FLYING,
-        .accuracy = 95,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_BIND] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .accuracy = 100,
-        #else
-            .accuracy = 75,
-        #endif
-        .effect = EFFECT_TRAP,
-        .power = 30,
-        .type = TYPE_NORMAL,
-        .pp = 20,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SLAM] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 80,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_VINE_WHIP] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 45,
-            .pp = 25,
-        #elif B_UPDATED_MOVE_DATA == GEN_4 || B_UPDATED_MOVE_DATA == GEN_5
-            .power = 35,
-            .pp = 15,
-        #else
-            .power = 35,
-            .pp = 10,
-        #endif
-        .effect = EFFECT_HIT,
-        .type = TYPE_GRASS,
-        .accuracy = 100,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_STOMP] =
-    {
-        .effect = EFFECT_FLINCH_HIT,
-        .power = 65,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_DMG_MINIMIZE,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_DOUBLE_KICK] =
-    {
-        .effect = EFFECT_DOUBLE_HIT,
-        .power = 30,
-        .type = TYPE_FIGHTING,
-        .accuracy = 100,
-        .pp = 30,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_TWO_STRIKES,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_MEGA_KICK] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 120,
-        .type = TYPE_NORMAL,
-        .accuracy = 75,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .flags2 = FLAG_AIRBOURNE_STYLE_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 190,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_JUMP_KICK] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .power = 100,
-            .pp = 10,
-            .zMovePower = 180,
-        #elif B_UPDATED_MOVE_DATA == GEN_4
-            .power = 85,
-            .pp = 25,
-            .zMovePower = 160,
-        #else
-            .power = 70,
-            .pp = 25,
-            .zMovePower = 140,
-        #endif
-        .effect = EFFECT_RECOIL_IF_MISS,
-        .type = TYPE_FIGHTING,
-        .accuracy = 95,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_RECKLESS_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_ROLLING_KICK] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-            .flags2 = FLAG_AIRBOURNE_STYLE_BOOST,
-        #else
-            .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        #endif
-        .effect = EFFECT_RAPID_SPIN,
-        .power = 60,
-        .type = TYPE_FIGHTING,
-        .accuracy = 85,
-        .pp = 15,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SAND_ATTACK] =
-    {
-        .effect = EFFECT_ACCURACY_DOWN,
-        .power = 0,
-        .type = TYPE_GROUND,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_EVSN_UP_1,
-    },
-
-    [MOVE_HEADBUTT] =
-    {
-        .effect = EFFECT_FLINCH_HIT,
-        .power = 70,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 140,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_HORN_ATTACK] =
-    {
-        .effect = EFFECT_REVELATION_DANCE,
-        .power = 65,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 25,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .flags2 = FLAG_DEFENSE_STAGES_IGNORED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_FURY_ATTACK] =
-    {
-        .effect = EFFECT_MULTI_HIT,
-        .power = 25,
-        .type = TYPE_FLYING,
-        .accuracy = 90,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_HORN_DRILL] =
-    {
-        .effect = EFFECT_REVELATION_DANCE,
-        .power = 120,
-        .type = TYPE_NORMAL,
-        .accuracy = 80,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_TARGET_ABILITY_IGNORED,
-        .flags2 = FLAG_DEFENSE_STAGES_IGNORED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 190,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_TACKLE] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_7
-            .power = 40,
-            .accuracy = 100,
-        #elif B_UPDATED_MOVE_DATA == GEN_5 || B_UPDATED_MOVE_DATA == GEN_6
-            .power = 50,
-            .accuracy = 100,
-        #else
-            .power = 35,
-            .accuracy = 95,
-        #endif
-        .effect = EFFECT_HIT,
-        .type = TYPE_NORMAL,
-        .pp = 35,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_BODY_SLAM] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_DMG_MINIMIZE,
-        #else
-            .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        #endif
-        .effect = EFFECT_PARALYZE_HIT,
-        .power = 85,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_WRAP] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .accuracy = 100,
-        #else
-            .accuracy = 85,
-        #endif
-        .effect = EFFECT_TRAP,
-        .power = 30,
-        .type = TYPE_NORMAL,
-        .pp = 20,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_TAKE_DOWN] =
-    {
-        .effect = EFFECT_RECOIL_25,
-        .power = 90,
-        .type = TYPE_NORMAL,
-        .accuracy = 85,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_RECKLESS_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 175,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_THRASH] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .power = 120,
-            .pp = 10,
-            .zMovePower = 190,
-        #else
-            .power = 90,
-            .pp = 20,
-            .zMovePower = 175,
-        #endif
-        .effect = EFFECT_RAMPAGE,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_RANDOM,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_DOUBLE_EDGE] =
-    {
-        .effect = EFFECT_RECOIL_33,
-        .power = 120,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_RECKLESS_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 190,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_TAIL_WHIP] =
-    {
-        .effect = EFFECT_DEFENSE_DOWN,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 30,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_ATK_UP_1,
-    },
-
-    [MOVE_POISON_STING] =
-    {
-        .effect = EFFECT_POISON_HIT,
-        .power = 15,
-        .type = TYPE_POISON,
-        .accuracy = 100,
-        .pp = 35,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_TWINEEDLE] =
-    {
-        .effect = EFFECT_TWINEEDLE,
-        .power = 50,
-        .type = TYPE_BUG,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 20,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_TWO_STRIKES,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_PIN_MISSILE] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 25,
-            .accuracy = 95,
-        #else
-            .power = 14,
-            .accuracy = 85,
-        #endif
-        .effect = EFFECT_MULTI_HIT,
-        .type = TYPE_BUG,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_LEER] =
-    {
-        .effect = EFFECT_DEFENSE_DOWN,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 30,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_ATK_UP_1,
-    },
-
-    [MOVE_BITE] =
-    {
-        .effect = EFFECT_FLINCH_HIT,
-        .power = 60,
-        .type = TYPE_DARK,
-        .accuracy = 100,
-        .pp = 25,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_STRONG_JAW_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_GROWL] =
-    {
-        .effect = EFFECT_ATTACK_DOWN,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 40,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SOUND,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_DEF_UP_1,
-    },
-
-    [MOVE_ROAR] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .accuracy = 0,
-            .flags = FLAG_MIRROR_MOVE_AFFECTED | FLAG_SOUND | FLAG_MAGIC_COAT_AFFECTED,
-        #elif B_UPDATED_MOVE_DATA == GEN_5
-            .accuracy = 100,
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SOUND | FLAG_MAGIC_COAT_AFFECTED,
-        #else
-            .accuracy = 100,
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SOUND,
-        #endif
-        .effect = EFFECT_ROAR,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = -6,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_DEF_UP_1,
-    },
-
-    [MOVE_SING] =
-    {
-        .effect = EFFECT_SLEEP,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 55,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SOUND,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPD_UP_1,
-    },
-
-    [MOVE_SUPERSONIC] =
-    {
-        .effect = EFFECT_CONFUSE,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 55,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SOUND,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPD_UP_1,
-    },
-
-    [MOVE_SONIC_BOOM] =
-    {
-        .effect = EFFECT_SONICBOOM,
-        .power = 1,
-        .type = TYPE_FLYING,
-        .accuracy = 90,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_DISABLE] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .accuracy = 100,
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_MAGIC_COAT_AFFECTED,
-        #elif B_UPDATED_MOVE_DATA == GEN_4
-            .accuracy = 80,
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        #else
-            .accuracy = 55,
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        #endif
-        .effect = EFFECT_DISABLE,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RESET_STATS,
-    },
-
-    [MOVE_ACID] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_4
-            .effect = EFFECT_SPECIAL_DEFENSE_DOWN_HIT,
-        #else
-            .effect = EFFECT_DEFENSE_DOWN_HIT,
-        #endif
-        .power = 40,
-        .type = TYPE_POISON,
-        .accuracy = 100,
-        .pp = 30,
-        .secondaryEffectChance = 10,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .flags2 = FLAG_ACID_MOVE,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_EMBER] =
-    {
-        .effect = EFFECT_BURN_HIT,
-        .power = 40,
-        .type = TYPE_FIRE,
-        .accuracy = 100,
-        .pp = 25,
-        .secondaryEffectChance = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_FLAMETHROWER] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 90,
-        #else
-            .power = 95,
-        #endif
-        .effect = EFFECT_BURN_HIT,
-        .type = TYPE_FIRE,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 175,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_MIST] =
-    {
-        .effect = EFFECT_MIST,
-        .power = 0,
-        .type = TYPE_ICE,
-        .accuracy = 0,
-        .pp = 30,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RECOVER_HP,
-    },
-
-    [MOVE_WATER_GUN] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 40,
-        .type = TYPE_WATER,
-        .accuracy = 100,
-        .pp = 25,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_MEGA_LAUNCHER_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_HYDRO_PUMP] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 110,
-            .zMovePower = 185,
-        #else
-            .power = 120,
-            .zMovePower = 190,
-        #endif
-        .effect = EFFECT_HIT,
-        .type = TYPE_WATER,
-        .accuracy = 80,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_MEGA_LAUNCHER_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SURF] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 90,
-            .target = MOVE_TARGET_FOES_AND_ALLY,
-        #elif B_UPDATED_MOVE_DATA == GEN_4 || B_UPDATED_MOVE_DATA == GEN_5
-            .power = 95,
-            .target = MOVE_TARGET_FOES_AND_ALLY,
-        #else
-            .power = 95,
-            .target = MOVE_TARGET_BOTH,
-        #endif
-        .effect = EFFECT_HIT,
-        .type = TYPE_WATER,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_DMG_UNDERWATER,
-        .flags2 = FLAG_WAVE_SURF_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 175,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_ICE_BEAM] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 90,
-        #else
-            .power = 95,
-        #endif
-        .effect = EFFECT_FROSTBITE_HIT,
-        .type = TYPE_ICE,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 20,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_MEGA_LAUNCHER_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 175,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_BLIZZARD] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 110,
-            .zMovePower = 185,
-        #else
-            .power = 120,
-            .zMovePower = 190,
-        #endif
-        .effect = EFFECT_FROSTBITE_HIT,
-        .type = TYPE_ICE,
-        .accuracy = 70,
-        .pp = 5,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .flags2 = FLAG_WEATHER_RELATED | FLAG_GIANT_WINGS_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_PSYBEAM] =
-    {
-        .effect = EFFECT_CONFUSE_HIT,
-        .power = 65,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_MEGA_LAUNCHER_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_BUBBLE_BEAM] =
-    {
-        .effect = EFFECT_SPEED_DOWN_HIT,
-        .power = 65,
-        .type = TYPE_WATER,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_MEGA_LAUNCHER_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_AURORA_BEAM] =
-    {
-        .effect = EFFECT_ATTACK_DOWN_HIT,
-        .power = 65,
-        .type = TYPE_ICE,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_MEGA_LAUNCHER_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_HYPER_BEAM] =
-    {
-        .effect = EFFECT_RECHARGE,
-        .power = 150,
-        .type = TYPE_NORMAL,
-        .accuracy = 90,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_MEGA_LAUNCHER_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 200,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_PECK] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 35,
-        .type = TYPE_FLYING,
-        .accuracy = 100,
-        .pp = 35,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_DRILL_PECK] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 80,
-        .type = TYPE_FLYING,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_HIGH_CRIT,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SUBMISSION] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .pp = 5,
-        #else
-            .pp = 25,
-        #endif
-        .effect = EFFECT_RECOIL_50,
-        .power = 150,
-        .type = TYPE_FIGHTING,
-        .accuracy = 80,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_RECKLESS_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 200,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_LOW_KICK] =
-    {
-        .effect = EFFECT_LOW_KICK,
-        .power = 1,
-        .type = TYPE_FIGHTING,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .flags2 = FLAG_AIRBOURNE_STYLE_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_COUNTER] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED,
-        #elif B_UPDATED_MOVE_DATA == GEN_4
-            .flags = FLAG_MAKES_CONTACT,
-        #else
-            .flags = FLAG_MAKES_CONTACT | FLAG_MIRROR_MOVE_AFFECTED,
-        #endif
-        .effect = EFFECT_COUNTER,
-        .power = 1,
-        .type = TYPE_FIGHTING,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_DEPENDS,
-        .priority = -5,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SEISMIC_TOSS] =
-    {
-        .effect = EFFECT_LEVEL_DAMAGE,
-        .power = 1,
-        .type = TYPE_FIGHTING,
-        .accuracy = 90,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_STRENGTH] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 80,
-        .type = TYPE_FIGHTING,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_ABSORB] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_4
-            .pp = 25,
-        #else
-            .pp = 20,
-        #endif
-        .effect = EFFECT_ABSORB,
-        .power = 20,
-        .type = TYPE_GRASS,
-        .accuracy = 100,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_MEGA_DRAIN] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_4
-            .pp = 15,
-        #else
-            .pp = 10,
-        #endif
-        .effect = EFFECT_ABSORB,
-        .power = 40,
-        .type = TYPE_GRASS,
-        .accuracy = 100,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_LEECH_SEED] =
-    {
-        .effect = EFFECT_LEECH_SEED,
-        .power = 0,
-        .type = TYPE_GRASS,
-        .accuracy = 90,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RESET_STATS,
-    },
-
-    [MOVE_GROWTH] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .pp = 20,
-        #else
-            .pp = 40,
-        #endif
-        .effect = EFFECT_GROWTH,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPATK_UP_1,
-    },
-
-    [MOVE_RAZOR_LEAF] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 55,
-        .type = TYPE_GRASS,
-        .accuracy = 95,
-        .pp = 25,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_HIGH_CRIT,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SOLAR_BEAM] =
-    {
-        .effect = EFFECT_SOLAR_BEAM,
-        .power = 120,
-        .type = TYPE_GRASS,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_MEGA_LAUNCHER_BOOST,
-        .flags2 = FLAG_WEATHER_RELATED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 190,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_POISON_POWDER] =
-    {
-        .effect = EFFECT_POISON,
-        .power = 0,
-        .type = TYPE_POISON,
-        .accuracy = 75,
-        .pp = 35,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_POWDER,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_DEF_UP_1,
-    },
-
-    [MOVE_STUN_SPORE] =
-    {
-        .effect = EFFECT_PARALYZE,
-        .power = 0,
-        .type = TYPE_GRASS,
-        .accuracy = 75,
-        .pp = 30,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_POWDER,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPDEF_UP_1,
-    },
-
-    [MOVE_SLEEP_POWDER] =
-    {
-        .effect = EFFECT_SLEEP,
-        .power = 0,
-        .type = TYPE_GRASS,
-        .accuracy = 75,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_POWDER,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPD_UP_1,
-    },
-
-    [MOVE_PETAL_DANCE] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .power = 120,
-            .pp = 10,
-            .zMovePower = 190,
-        #elif B_UPDATED_MOVE_DATA == GEN_4
-            .power = 90,
-            .pp = 20,
-            .zMovePower = 175,
-        #else
-            .power = 70,
-            .pp = 20,
-            .zMovePower = 140,
-        #endif
-        .effect = EFFECT_RAMPAGE,
-        .type = TYPE_GRASS,
-        .accuracy = 100,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_RANDOM,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_DANCE,
-        .split = SPLIT_SPECIAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_STRING_SHOT] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .effect = EFFECT_SPEED_DOWN_2,
-        #else
-            .effect = EFFECT_SPEED_DOWN,
-        #endif
-        .power = 0,
-        .type = TYPE_BUG,
-        .accuracy = 95,
-        .pp = 40,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_MEGA_LAUNCHER_BOOST,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPD_UP_1,
-    },
-
-    [MOVE_DRAGON_RAGE] =
-    {
-        .effect = EFFECT_DRAGON_RAGE,
-        .power = 1,
-        .type = TYPE_DRAGON,
-        .accuracy = 90,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_FIRE_SPIN] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .power = 35,
-            .accuracy = 85,
-        #else
-            .power = 15,
-            .accuracy = 70,
-        #endif
-        .effect = EFFECT_TRAP,
-        .type = TYPE_FIRE,
-        .pp = 15,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_THUNDER_SHOCK] =
-    {
-        .effect = EFFECT_PARALYZE_HIT,
-        .power = 40,
-        .type = TYPE_ELECTRIC,
-        .accuracy = 100,
-        .pp = 30,
-        .secondaryEffectChance = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_THUNDERBOLT] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 90,
-        #else
-            .power = 95,
-        #endif
-        .effect = EFFECT_PARALYZE_HIT,
-        .type = TYPE_ELECTRIC,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 175,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_THUNDER_WAVE] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_7
-            .accuracy = 90,
-        #else
-            .accuracy = 100,
-        #endif
-        .effect = EFFECT_PARALYZE,
-        .power = 0,
-        .type = TYPE_ELECTRIC,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPDEF_UP_1,
-    },
-
-    [MOVE_THUNDER] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 110,
-            .zMovePower = 185,
-        #else
-            .power = 120,
-            .zMovePower = 190,
-        #endif
-        .effect = EFFECT_THUNDER,
-        .type = TYPE_ELECTRIC,
-        .accuracy = 70,
-        .pp = 10,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_DMG_IN_AIR,
-        .flags2 = FLAG_WEATHER_RELATED,
-        .split = SPLIT_SPECIAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_ROCK_THROW] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 50,
-        .type = TYPE_ROCK,
-        .accuracy = 90,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_EARTHQUAKE] =
-    {
-        .effect = EFFECT_EARTHQUAKE,
-        .power = 100,
-        .type = TYPE_GROUND,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_FOES_AND_ALLY,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_DMG_UNDERGROUND,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 180,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_FISSURE] =
-    {
-        .effect = EFFECT_KNOCK_OFF,
-        .power = 120,
-        .type = TYPE_GROUND,
-        .accuracy = 80,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_DMG_UNDERGROUND,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 180,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_DIG] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_4
-            .power = 80,
-            .zMovePower = 160,
-        #else
-            .power = 60,
-            .zMovePower = 120,
-        #endif
-        .effect = EFFECT_SEMI_INVULNERABLE,
-        .type = TYPE_GROUND,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_TOXIC] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .accuracy = 90,
-        #else
-            .accuracy = 85,
-        #endif
-        .effect = EFFECT_TOXIC,
-        .power = 0,
-        .type = TYPE_POISON,
-        .pp = 10,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_DEF_UP_1,
-    },
-
-    [MOVE_CONFUSION] =
-    {
-        .effect = EFFECT_CONFUSION,
-        .power = 50,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 100,
-        .pp = 25,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_PSYCHIC] =
-    {
-        .effect = EFFECT_SPECIAL_DEFENSE_DOWN_HIT,
-        .power = 90,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 175,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_HYPNOSIS] =
-    {
-        .effect = EFFECT_SLEEP,
-        .power = 0,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 60,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPD_UP_1,
-    },
-
-    [MOVE_MEDITATE] =
-    {
-        .effect = EFFECT_MEDITATE,
-        .power = 0,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_ATK_UP_1,
-    },
-
-    [MOVE_AGILITY] =
-    {
-        .effect = EFFECT_SPEED_UP_2,
-        .power = 0,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 0,
-        .pp = 30,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RESET_STATS,
-    },
-
-    [MOVE_QUICK_ATTACK] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 40,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 30,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 1,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_RAGE] =
-    {
-        .effect = EFFECT_RAGE,
-        .power = 20,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_TELEPORT] =
-    {
-        .effect = EFFECT_TELEPORT,
-        .power = 0,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 0,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = -6,
-        .flags = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RECOVER_HP,
-    },
-
-    [MOVE_NIGHT_SHADE] =
-    {
-        .effect = EFFECT_LEVEL_DAMAGE,
-        .power = 1,
-        .type = TYPE_GHOST,
-        .accuracy = 90,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_MIMIC] =
-    {
-        .effect = EFFECT_MIMIC,
-        .power = 1,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_ACC_UP_1,
-    },
-
-    [MOVE_SCREECH] =
-    {
-        .effect = EFFECT_DEFENSE_DOWN_2,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 85,
-        .pp = 40,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SOUND,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_ATK_UP_1,
-    },
-
-    [MOVE_DOUBLE_TEAM] =
-    {
-        .effect = EFFECT_EVASION_UP,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RESET_STATS,
-    },
-
-    [MOVE_RECOVER] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_4
-            .pp = 10,
-        #else
-            .pp = 20,
-        #endif
-        .effect = EFFECT_RESTORE_HP,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RESET_STATS,
-    },
-
-    [MOVE_HARDEN] =
-    {
-        .effect = EFFECT_DEFENSE_UP,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 30,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_DEF_UP_1,
-    },
-
-    [MOVE_MINIMIZE] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .pp = 10,
-        #else
-            .pp = 20,
-        #endif
-        .effect = EFFECT_MINIMIZE,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RESET_STATS,
-    },
-
-    [MOVE_SMOKESCREEN] =
-    {
-        .effect = EFFECT_ACCURACY_DOWN,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_EVSN_UP_1,
-    },
-
-    [MOVE_CONFUSE_RAY] =
-    {
-        .effect = EFFECT_CONFUSE,
-        .power = 0,
-        .type = TYPE_GHOST,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPATK_UP_1,
-    },
-
-    [MOVE_WITHDRAW] =
-    {
-        .effect = EFFECT_WITHDRAW,
-        .power = 0,
-        .type = TYPE_WATER,
-        .accuracy = 0,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_DEF_UP_1,
-    },
-
-    [MOVE_DEFENSE_CURL] =
-    {
-        .effect = EFFECT_DEFENSE_CURL,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 40,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_ACC_UP_1,
-    },
-
-    [MOVE_BARRIER] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .pp = 20,
-        #else
-            .pp = 30,
-        #endif
-        .effect = EFFECT_DEFENSE_UP_2,
-        .power = 0,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 0,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RESET_STATS,
-    },
-
-    [MOVE_LIGHT_SCREEN] =
-    {
-        .effect = EFFECT_LIGHT_SCREEN,
-        .power = 0,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 0,
-        .pp = 30,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPDEF_UP_1,
-    },
-
-    [MOVE_HAZE] =
-    {
-        .effect = EFFECT_HAZE,
-        .power = 0,
-        .type = TYPE_ICE,
-        .accuracy = 0,
-        .pp = 30,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_ALL_BATTLERS,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RECOVER_HP,
-    },
-
-    [MOVE_REFLECT] =
-    {
-        .effect = EFFECT_REFLECT,
-        .power = 0,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 0,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_DEF_UP_1,
-    },
-
-    [MOVE_FOCUS_ENERGY] =
-    {
-        .effect = EFFECT_FOCUS_ENERGY,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 30,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_ACC_UP_1,
-    },
-
-    [MOVE_BIDE] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_4
-            .accuracy = 0,
-            .priority = 1,
-        #else
-            .accuracy = 100,
-            .priority = 0,
-        #endif
-        .effect = EFFECT_BIDE,
-        .power = 1,
-        .type = TYPE_NORMAL,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_METRONOME] =
-    {
-        .effect = EFFECT_METRONOME,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_DEPENDS,
-        .priority = 0,
-        .flags = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_MIRROR_MOVE] =
-    {
-        .effect = EFFECT_MIRROR_MOVE,
-        .power = 1,
-        .type = TYPE_FLYING,
-        .accuracy = 0,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_DEPENDS,
-        .priority = 0,
-        .flags = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_ATK_UP_2,
-    },
-
-    [MOVE_SELF_DESTRUCT] =
-    {
-        .effect = EFFECT_EXPLOSION,
-        .power = 200,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_FOES_AND_ALLY,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 200,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_EGG_BOMB] =
-    {
-        .effect = EFFECT_BURN_HIT,
-        .power = 100,
-        .type = TYPE_FIRE,
-        .accuracy = 85,
-        .pp = 10,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_BALLISTIC,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 180,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_LICK] =
-    {
-        .power = 70,
-        .effect = EFFECT_PARALYZE_HIT,
-        .type = TYPE_GHOST,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 140,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SMOG] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 50,
-        #else
-            .power = 20,
-        #endif
-        .effect = EFFECT_POISON_FANG,
-        .type = TYPE_POISON,
-        .accuracy = 0,
-        .pp = 15,
-        .secondaryEffectChance = 40,
-        .target = MOVE_TARGET_FOES_AND_ALLY,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SLUDGE] =
-    {
-        .effect = EFFECT_POISON_HIT,
-        .power = 65,
-        .type = TYPE_POISON,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_BONE_CLUB] =
-    {
-        .effect = EFFECT_FLINCH_HIT,
-        .power = 65,
-        .type = TYPE_GROUND,
-        .accuracy = 85,
-        .pp = 20,
-        .secondaryEffectChance = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_DMG_UNGROUNDED_IGNORE_TYPE_IF_FLYING,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_FIRE_BLAST] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 110,
-            .zMovePower = 185,
-        #else
-            .power = 120,
-            .zMovePower = 190,
-        #endif
-        .effect = EFFECT_BURN_HIT,
-        .type = TYPE_FIRE,
-        .accuracy = 85,
-        .pp = 5,
-        .secondaryEffectChance = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_WATERFALL] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .effect = EFFECT_FLINCH_HIT,
-            .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        #elif B_UPDATED_MOVE_DATA == GEN_4
-            .effect = EFFECT_FLINCH_HIT,
-            .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        #else
-            .effect = EFFECT_HIT,
-            .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        #endif
-        .power = 80,
-        .type = TYPE_WATER,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 20,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_CLAMP] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .accuracy = 85,
-            .pp = 10,
-        #else
-            .accuracy = 75,
-            .pp = 10,
-        #endif
-        .effect = EFFECT_TRAP,
-        .power = 80,
-        .type = TYPE_WATER,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SWIFT] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 60,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SKULL_BASH] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 130,
-            .pp = 10,
-            .zMovePower = 195,
-        #else
-            .power = 100,
-            .pp = 15,
-            .zMovePower = 180,
-        #endif
-        .effect = EFFECT_SKULL_BASH,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SPIKE_CANNON] =
-    {
-        .effect = EFFECT_MULTI_HIT,
-        .power = 25,
-        .type = TYPE_WATER,
-        .accuracy = 90,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_MEGA_LAUNCHER_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_CONSTRICT] =
-    {
-        .effect = EFFECT_SPEED_DOWN_HIT,
-        .power = 55,
-        .type = TYPE_WATER,
-        .accuracy = 95,
-        .pp = 15,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_AMNESIA] =
-    {
-        .effect = EFFECT_SPECIAL_DEFENSE_UP_2,
-        .power = 0,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 0,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RESET_STATS,
-    },
-
-    [MOVE_KINESIS] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_4
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_MAGIC_COAT_AFFECTED,
-        #else
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        #endif
-        .effect = EFFECT_KINESIS,
-        .power = 0,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_EVSN_UP_1,
-    },
-
-    [MOVE_SOFT_BOILED] =
-    {
-        .effect = EFFECT_SOFTBOILED,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RESET_STATS,
-    },
-
-    [MOVE_HIGH_JUMP_KICK] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .power = 130,
-            .pp = 10,
-            .zMovePower = 195,
-        #elif B_UPDATED_MOVE_DATA == GEN_4
-            .power = 100,
-            .pp = 20,
-            .zMovePower = 180,
-        #else
-            .power = 85,
-            .pp = 20,
-            .zMovePower = 60,
-        #endif
-        .effect = EFFECT_RECOIL_IF_MISS,
-        .type = TYPE_FIGHTING,
-        .accuracy = 90,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_RECKLESS_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_GLARE] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .accuracy = 100,
-        #elif B_UPDATED_MOVE_DATA == GEN_5
-            .accuracy = 90,
-        #else
-            .accuracy = 75,
-        #endif
-        .effect = EFFECT_PARALYZE,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .pp = 30,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPDEF_UP_1,
-    },
-
-    [MOVE_DREAM_EATER] =
-    {
-        .effect = EFFECT_DREAM_EATER,
-        .power = 60,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_POISON_GAS] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .accuracy = 90,
-            .target = MOVE_TARGET_BOTH,
-        #elif B_UPDATED_MOVE_DATA == GEN_5
-            .accuracy = 80,
-            .target = MOVE_TARGET_BOTH,
-        #else
-            .accuracy = 55,
-            .target = MOVE_TARGET_SELECTED,
-        #endif
-        .effect = EFFECT_POISON,
-        .power = 0,
-        .type = TYPE_POISON,
-        .pp = 40,
-        .secondaryEffectChance = 0,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_DEF_UP_1,
-    },
-
-    [MOVE_BARRAGE] =
-    {
-        .effect = EFFECT_MULTI_HIT,
-        .power = 25,
-        .type = TYPE_GROUND,
-        .accuracy = 90,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_BALLISTIC | FLAG_DMG_UNGROUNDED_IGNORE_TYPE_IF_FLYING,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_LEECH_LIFE] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_7
-            .power = 80,
-            .pp = 10,
-            .zMovePower = 160,
-        #else
-            .power = 20,
-            .pp = 15,
-            .zMovePower = 100,
-        #endif
-        .effect = EFFECT_ABSORB,
-        .type = TYPE_BUG,
-        .accuracy = 100,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_LOVELY_KISS] =
-    {
-        .effect = EFFECT_SLEEP,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 85,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPD_UP_1,
-    },
-
-    [MOVE_SKY_ATTACK] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_HIGH_CRIT,
-        #else
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        #endif
-        .effect = EFFECT_TWO_TURNS_ATTACK,
-        .power = 140,
-        .type = TYPE_FLYING,
-        .accuracy = 90,
-        .pp = 5,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_PHYSICAL,
-        .argument = MOVE_EFFECT_FLINCH,
-        .zMovePower = 200,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_TRANSFORM] =
-    {
-        .effect = EFFECT_TRANSFORM,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RECOVER_HP,
-    },
-
-    [MOVE_BUBBLE] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 40,
-        #else
-            .power = 20,
-        #endif
-        .effect = EFFECT_SPEED_DOWN_HIT,
-        .type = TYPE_WATER,
-        .accuracy = 100,
-        .pp = 30,
-        .secondaryEffectChance = 10,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_DIZZY_PUNCH] =
-    {
-        .effect = EFFECT_CONFUSE_HIT,
-        .power = 80,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 20,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_IRON_FIST_BOOST | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SPORE] =
-    {
-        .effect = EFFECT_SLEEP,
-        .power = 0,
-        .type = TYPE_GRASS,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_POWDER,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RESET_STATS,
-    },
-
-    [MOVE_FLASH] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_4
-            .accuracy = 100,
-        #else
-            .accuracy = 70,
-        #endif
-        .effect = EFFECT_ACCURACY_DOWN_HIT,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .pp = 10,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_FOES_AND_ALLY,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_EVSN_UP_1,
-    },
-
-    [MOVE_PSYWAVE] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .accuracy = 90,
-        #else
-            .accuracy = 80,
-        #endif
-        .effect = EFFECT_PSYWAVE,
-        .power = 1,
-        .type = TYPE_PSYCHIC,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SPLASH] =
-    {
-        .effect = EFFECT_DO_NOTHING,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 40,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_ATK_UP_3,
-    },
-
-    [MOVE_ACID_ARMOR] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .pp = 20,
-        #else
-            .pp = 40,
-        #endif
-        .effect = EFFECT_DEFENSE_UP_2,
-        .power = 0,
-        .type = TYPE_POISON,
-        .accuracy = 0,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .flags2 = FLAG_ACID_MOVE,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RESET_STATS,
-    },
-
-    [MOVE_CRABHAMMER] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 100,
-            .accuracy = 90,
-            .zMovePower = 180,
-        #elif B_UPDATED_MOVE_DATA == GEN_5
-            .power = 90,
-            .accuracy = 90,
-            .zMovePower = 175,
-        #else
-            .power = 90,
-            .accuracy = 85,
-            .zMovePower = 175,
-        #endif
-        .effect = EFFECT_HIT,
-        .type = TYPE_WATER,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_HIGH_CRIT,
-        .split = SPLIT_PHYSICAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_EXPLOSION] =
-    {
-        .effect = EFFECT_EXPLOSION,
-        .power = 250,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_FOES_AND_ALLY,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 200,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_FURY_SWIPES] =
-    {
-        .effect = EFFECT_MULTI_HIT,
-        .power = 15,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_HIGH_CRIT,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_BONEMERANG] =
-    {
-        .effect = EFFECT_DOUBLE_HIT,
-        .power = 50,
-        .type = TYPE_GROUND,
-        .accuracy = 90,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_DMG_UNGROUNDED_IGNORE_TYPE_IF_FLYING | FLAG_TWO_STRIKES,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_REST] =
-    {
-        .effect = EFFECT_REST,
-        .power = 0,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RESET_STATS,
-    },
-
-    [MOVE_ROCK_SLIDE] =
-    {
-        .effect = EFFECT_FLINCH_HIT,
-        .power = 75,
-        .type = TYPE_ROCK,
-        .accuracy = 90,
-        .pp = 10,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 140,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_HYPER_FANG] =
-    {
-        .effect = EFFECT_FLINCH_HIT,
-        .power = 80,
-        .type = TYPE_NORMAL,
-        .accuracy = 95,
-        .pp = 15,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_STRONG_JAW_BOOST | FLAG_SHEER_FORCE_BOOST,
-        .flags2 = FLAG_FANG_MOVE,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SHARPEN] =
-    {
-        .effect = EFFECT_ATTACK_UP,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 30,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_ATK_UP_1,
-    },
-
-    [MOVE_CONVERSION] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .flags = FLAG_SNATCH_AFFECTED,
-        #else
-            .flags = 0,
-        #endif
-        .effect = EFFECT_CONVERSION,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 30,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_ALL_STATS_UP_1,
-    },
-
-    [MOVE_TRI_ATTACK] =
-    {
-        .effect = EFFECT_TRI_ATTACK,
-        .power = 30,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SUPER_FANG] =
-    {
-        .effect = EFFECT_SUPER_FANG,
-        .power = 1,
-        .type = TYPE_NORMAL,
-        .accuracy = 90,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_STRONG_JAW_BOOST,
-        .flags2 = FLAG_FANG_MOVE,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SLASH] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 70,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_HIGH_CRIT,
-        .flags2 = FLAG_SLICING_MOVE,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 140,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SUBSTITUTE] =
-    {
-        .effect = EFFECT_SUBSTITUTE,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RESET_STATS,
-    },
-
-    [MOVE_STRUGGLE] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_4
-            .accuracy = 0,
-            .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-            .effect = EFFECT_RECOIL_HP_25,
-        #else
-            .accuracy = 100,
-            .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-            .effect = EFFECT_RECOIL_25,
-        #endif
-        .power = 50,
-        .type = TYPE_NORMAL,
-        .pp = 1,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SKETCH] =
-    {
-        .effect = EFFECT_SKETCH,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 1,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_ALL_STATS_UP_1,
-    },
-
-    [MOVE_TRIPLE_KICK] =
-    {
-        .effect = EFFECT_TRIPLE_KICK,
-        .power = 10,
-        .type = TYPE_FIGHTING,
-        .accuracy = 90,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_THIEF] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 60,
-            .pp = 25,
-            .zMovePower = 120,
-        #else
-            .power = 40,
-            .pp = 10,
-            .zMovePower = 100,
-        #endif
-        .effect = EFFECT_THIEF,
-        .type = TYPE_DARK,
-        .accuracy = 100,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SPIDER_WEB] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .flags = FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        #else
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        #endif
-        .effect = EFFECT_MEAN_LOOK,
-        .power = 0,
-        .type = TYPE_BUG,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_DEF_UP_1,
-    },
-
-    [MOVE_MIND_READER] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_4
-            .accuracy = 0,
-        #else
-            .accuracy = 100,
-        #endif
-        .effect = EFFECT_LOCK_ON,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPATK_UP_1,
-    },
-
-    [MOVE_NIGHTMARE] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_4
-            .accuracy = 100,
-        #else
-            .accuracy = 0,
-        #endif
-        .effect = EFFECT_NIGHTMARE,
-        .power = 0,
-        .type = TYPE_GHOST,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPATK_UP_1,
-    },
-
-    [MOVE_FLAME_WHEEL] =
-    {
-        .effect = EFFECT_BURN_HIT,
-        .power = 60,
-        .type = TYPE_FIRE,
-        .accuracy = 100,
-        .pp = 25,
-        .secondaryEffectChance = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_THAW_USER,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SNORE] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 50,
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_SOUND,
-        #elif B_UPDATED_MOVE_DATA == GEN_5
-            .power = 40,
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_SOUND,
-        #else
-            .power = 40,
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_SOUND,
-        #endif
-        .effect = EFFECT_SNORE,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_CURSE] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .type = TYPE_GHOST,
-        #else
-            .type = TYPE_MYSTERY,
-        #endif
-        .effect = EFFECT_CURSE,
-        .power = 0,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_CURSE,
-    },
-
-    [MOVE_FLAIL] =
-    {
-        .effect = EFFECT_FLAIL,
-        .power = 1,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_CONVERSION_2] =
-    {
-        .effect = EFFECT_CONVERSION_2,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 30,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RECOVER_HP,
-    },
-
-    [MOVE_AEROBLAST] =
-    {
-        .effect = EFFECT_ALWAYS_CRIT,
-        .power = 100,
-        .type = TYPE_FLYING,
-        .accuracy = 95,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .flags2 = FLAG_GIANT_WINGS_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 180,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_COTTON_SPORE] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .accuracy = 100,
-            .target = MOVE_TARGET_BOTH,
-        #elif B_UPDATED_MOVE_DATA == GEN_5
-            .accuracy = 100,
-            .target = MOVE_TARGET_SELECTED,
-        #else
-            .accuracy = 85,
-            .target = MOVE_TARGET_SELECTED,
-        #endif
-        .effect = EFFECT_SPEED_DOWN_2,
-        .power = 0,
-        .type = TYPE_GRASS,
-        .pp = 40,
-        .secondaryEffectChance = 0,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_POWDER,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RESET_STATS,
-    },
-
-    [MOVE_REVERSAL] =
-    {
-        .effect = EFFECT_FLAIL,
-        .power = 1,
-        .type = TYPE_FIGHTING,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SPITE] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_MAGIC_COAT_AFFECTED,
-        #else
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        #endif
-        .effect = EFFECT_SPITE,
-        .power = 0,
-        .type = TYPE_GHOST,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RECOVER_HP,
-    },
-
-    [MOVE_POWDER_SNOW] =
-    {
-        .effect = EFFECT_FROSTBITE_HIT,
-        .power = 40,
-        .type = TYPE_ICE,
-        .accuracy = 100,
-        .pp = 25,
-        .secondaryEffectChance = 20,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_PROTECT] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .priority = 4,
-        #else
-            .priority = 3,
-        #endif
-        .effect = EFFECT_PROTECT,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .flags = FLAG_PROTECTION_MOVE,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RESET_STATS,
-    },
-
-    [MOVE_MACH_PUNCH] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 40,
-        .type = TYPE_FIGHTING,
-        .accuracy = 100,
-        .pp = 30,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 1,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_IRON_FIST_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SCARY_FACE] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .accuracy = 100,
-        #else
-            .accuracy = 90,
-        #endif
-        .effect = EFFECT_SPEED_DOWN_2,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPD_UP_1,
-    },
-
-    [MOVE_FEINT_ATTACK] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_4
-            .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        #else
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        #endif
-        .effect = EFFECT_HIT,
-        .power = 60,
-        .type = TYPE_DARK,
-        .accuracy = 0,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SWEET_KISS] =
-    {
-        .type = TYPE_FAIRY,
-        .effect = EFFECT_SWEET_KISS,
-        .power = 50,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_BELLY_DRUM] =
-    {
-        .effect = EFFECT_BELLY_DRUM,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RECOVER_HP,
-    },
-
-    [MOVE_SLUDGE_BOMB] =
-    {
-        .effect = EFFECT_POISON_HIT,
-        .power = 90,
-        .type = TYPE_POISON,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_BALLISTIC,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 175,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_MUD_SLAP] =
-    {
-        .effect = EFFECT_ACCURACY_DOWN_HIT,
-        .power = 20,
-        .type = TYPE_GROUND,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_DMG_UNGROUNDED_IGNORE_TYPE_IF_FLYING,
-        .flags2 = FLAG_MUD_MOVE,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_OCTAZOOKA] =
-    {
-        .effect = EFFECT_ACCURACY_DOWN_HIT,
-        .power = 100,
-        .type = TYPE_GROUND,
-        .accuracy = 50,
-        .pp = 5,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_BALLISTIC | FLAG_SHEER_FORCE_BOOST | FLAG_DMG_UNGROUNDED_IGNORE_TYPE_IF_FLYING | FLAG_MEGA_LAUNCHER_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SPIKES] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .flags = FLAG_MAGIC_COAT_AFFECTED,
-        #else
-            .flags = 0,
-        #endif
-        .effect = EFFECT_SPIKES,
-        .power = 0,
-        .type = TYPE_GROUND,
-        .accuracy = 0,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_OPPONENTS_FIELD,
-        .priority = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_DEF_UP_1,
-    },
-
-    [MOVE_ZAP_CANNON] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_4
-            .power = 120,
-            .zMovePower = 190,
-        #else
-            .power = 100,
-            .zMovePower = 180,
-        #endif
-        .effect = EFFECT_PARALYZE_HIT,
-        .type = TYPE_ELECTRIC,
-        .accuracy = 50,
-        .pp = 5,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_BALLISTIC | FLAG_MEGA_LAUNCHER_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_FORESIGHT] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .accuracy = 0,
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_MAGIC_COAT_AFFECTED,
-        #elif B_UPDATED_MOVE_DATA == GEN_4
-            .accuracy = 0,
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        #else
-            .accuracy = 100,
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        #endif
-        .effect = EFFECT_FORESIGHT,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .pp = 40,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_BOOST_CRITS,
-    },
-
-    [MOVE_DESTINY_BOND] =
-    {
-        .effect = EFFECT_DESTINY_BOND,
-        .power = 0,
-        .type = TYPE_GHOST,
-        .accuracy = 0,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_FOLLOW_ME,
-    },
-
-    [MOVE_PERISH_SONG] =
-    {
-        .effect = EFFECT_PERISH_SONG,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_ALL_BATTLERS,
-        .priority = 0,
-        .flags = FLAG_SOUND,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RESET_STATS,
-    },
-
-    [MOVE_ICY_WIND] =
-    {
-        .effect = EFFECT_SPEED_DOWN_HIT,
-        .power = 75,
-        .type = TYPE_ICE,
-        .accuracy = 95,
-        .pp = 10,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .flags2 = FLAG_GIANT_WINGS_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_DETECT] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .priority = 4,
-        #else
-            .priority = 3,
-        #endif
-        .effect = EFFECT_PROTECT,
-        .power = 0,
-        .type = TYPE_FIGHTING,
-        .accuracy = 0,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .flags = FLAG_PROTECTION_MOVE,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_EVSN_UP_1,
-    },
-
-    [MOVE_BONE_RUSH] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .accuracy = 95,
-        #else
-            .accuracy = 80,
-        #endif
-        .effect = EFFECT_MULTI_HIT,
-        .power = 15,
-        .type = TYPE_GROUND,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 1,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_DMG_UNGROUNDED_IGNORE_TYPE_IF_FLYING,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_LOCK_ON] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_4
-            .accuracy = 0,
-        #else
-            .accuracy = 100,
-        #endif
-        .effect = EFFECT_LOCK_ON,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPD_UP_1,
-    },
-
-    [MOVE_OUTRAGE] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .power = 120,
-            .pp = 10,
-            .zMovePower = 190,
-        #elif B_UPDATED_MOVE_DATA == GEN_4
-            .power = 120,
-            .pp = 15,
-            .zMovePower = 190,
-        #else
-            .power = 90,
-            .pp = 15,
-            .zMovePower = 175,
-        #endif
-        .effect = EFFECT_RAMPAGE,
-        .type = TYPE_DRAGON,
-        .accuracy = 100,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_RANDOM,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SANDSTORM] =
-    {
-        .effect = EFFECT_SANDSTORM,
-        .power = 0,
-        .type = TYPE_ROCK,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_ALL_BATTLERS,
-        .priority = 0,
-        .flags2 = FLAG_GIANT_WINGS_BOOST,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPD_UP_1,
-    },
-
-    [MOVE_GIGA_DRAIN] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .power = 75,
-            .pp = 10,
-            .zMovePower = 140,
-        #elif B_UPDATED_MOVE_DATA == GEN_4
-            .power = 60,
-            .pp = 10,
-            .zMovePower = 120,
-        #else
-            .power = 60,
-            .pp = 5,
-            .zMovePower = 120,
-        #endif
-        .effect = EFFECT_ABSORB,
-        .type = TYPE_GRASS,
-        .accuracy = 100,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_ENDURE] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .priority = 4,
-        #else
-            .priority = 3,
-        #endif
-        .effect = EFFECT_ENDURE,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .flags = FLAG_PROTECTION_MOVE,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RESET_STATS,
-    },
-
-    [MOVE_CHARM] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .type = TYPE_FAIRY,
-        #else
-            .type = TYPE_NORMAL,
-        #endif
-        .effect = EFFECT_ATTACK_DOWN_2,
-        .power = 0,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_DEF_UP_1,
-    },
-
-    [MOVE_ROLLOUT] =
-    {
-        .effect = EFFECT_ROLLOUT,
-        .power = 30,
-        .type = TYPE_ROCK,
-        .accuracy = 90,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_FALSE_SWIPE] =
-    {
-        .effect = EFFECT_FALSE_SWIPE,
-        .power = 40,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 40,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .flags2 = FLAG_SLICING_MOVE,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SWAGGER] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_7
-            .accuracy = 85,
-        #else
-            .accuracy = 90,
-        #endif
-        .effect = EFFECT_SWAGGER,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .pp = 15,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RESET_STATS,
-    },
-
-    [MOVE_MILK_DRINK] =
-    {
-        .effect = EFFECT_SOFTBOILED,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_SNATCH_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RESET_STATS,
-    },
-
-    [MOVE_SPARK] =
-    {
-        .effect = EFFECT_PARALYZE_HIT,
-        .power = 65,
-        .type = TYPE_ELECTRIC,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_FURY_CUTTER] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 40,
-        #elif B_UPDATED_MOVE_DATA == GEN_5
-            .power = 20,
-        #else
-            .power = 10,
-        #endif
-        .effect = EFFECT_FURY_CUTTER,
-        .type = TYPE_BUG,
-        .accuracy = 95,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .flags2 = FLAG_SLICING_MOVE,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_STEEL_WING] =
-    {
-        .effect = EFFECT_DEFENSE_UP_HIT,
-        .power = 80,
-        .type = TYPE_STEEL,
-        .accuracy = 95,
-        .pp = 15,
-        .secondaryEffectChance = 20,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .flags2 = FLAG_GIANT_WINGS_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_MEAN_LOOK] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .flags = FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        #else
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        #endif
-        .effect = EFFECT_MEAN_LOOK,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPDEF_UP_1,
-    },
-
-    [MOVE_ATTRACT] =
-    {
-        .effect = EFFECT_ATTRACT,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RESET_STATS,
-    },
-
-    [MOVE_SLEEP_TALK] =
-    {
-        .effect = EFFECT_SLEEP_TALK,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_DEPENDS,
-        .priority = 0,
-        .flags = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_BOOST_CRITS,
-    },
-
-    [MOVE_HEAL_BELL] =
-    {
-        #if B_UPDATED_MOVE_DATA != GEN_5
-            .flags = FLAG_SNATCH_AFFECTED | FLAG_SOUND,
-        #else
-            .flags = FLAG_SNATCH_AFFECTED,
-        #endif
-        .effect = EFFECT_HEAL_BELL,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RECOVER_HP,
-    },
-
-    [MOVE_RETURN] =
-    {
-        .effect = EFFECT_RETURN,
-        .power = 1,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_PRESENT] =
-    {
-        .effect = EFFECT_PRESENT,
-        .power = 1,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER_OR_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 180,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_FRUSTRATION] =
-    {
-        .effect = EFFECT_FRUSTRATION,
-        .power = 1,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SAFEGUARD] =
-    {
-        .effect = EFFECT_SAFEGUARD,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 25,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPD_UP_1,
-    },
-
-    [MOVE_PAIN_SPLIT] =
-    {
-        .effect = EFFECT_PAIN_SPLIT,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_DEF_UP_1,
-    },
-
-    [MOVE_SACRED_FIRE] =
-    {
-        .effect = EFFECT_SACRED_FIRE,
-        .power = 100,
-        .type = TYPE_FIRE,
-        .accuracy = 95,
-        .pp = 5,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_THAW_USER,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 180,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_MAGNITUDE] =
-    {
-        .effect = EFFECT_MAGNITUDE,
-        .power = 1,
-        .type = TYPE_GROUND,
-        .accuracy = 100,
-        .pp = 30,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_FOES_AND_ALLY,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_DMG_UNDERGROUND,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 140,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_DYNAMIC_PUNCH] =
-    {
-        .effect = EFFECT_CONFUSE_HIT,
-        .power = 100,
-        .type = TYPE_FIGHTING,
-        .accuracy = 50,
-        .pp = 5,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_IRON_FIST_BOOST | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 180,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_MEGAHORN] =
-    {
-        .effect = EFFECT_REVELATION_DANCE,
-        .power = 100,
-        .type = TYPE_NORMAL,
-        .accuracy = 90,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .flags2 = FLAG_DEFENSE_STAGES_IGNORED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 180,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_DRAGON_BREATH] =
-    {
-        .effect = EFFECT_BURN_HIT,
-        .power = 70,
-        .type = TYPE_FIRE,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 20,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 140,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_BATON_PASS] =
-    {
-        .effect = EFFECT_BATON_PASS,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 40,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RESET_STATS,
-    },
-
-    [MOVE_ENCORE] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_MAGIC_COAT_AFFECTED,
-        #else
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        #endif
-        .effect = EFFECT_ENCORE,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPD_UP_1,
-    },
-
-    [MOVE_PURSUIT] =
-    {
-        .effect = EFFECT_PURSUIT,
-        .power = 40,
-        .type = TYPE_DARK,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_RAPID_SPIN] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_8
-            .power = 50,
-        #else
-            .power = 20,
-        #endif
-        .effect = EFFECT_RAPID_SPIN,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 40,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SWEET_SCENT] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .effect = EFFECT_EVASION_DOWN_2,
-        #else
-            .effect = EFFECT_EVASION_DOWN,
-        #endif
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_ACC_UP_1,
-    },
-
-    [MOVE_IRON_TAIL] =
-    {
-        .effect = EFFECT_DEFENSE_DOWN_HIT,
-        .power = 100,
-        .type = TYPE_STEEL,
-        .accuracy = 85,
-        .pp = 10,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 180,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_METAL_CLAW] =
-    {
-        .effect = EFFECT_ATTACK_UP_HIT,
-        .power = 75,
-        .type = TYPE_STEEL,
-        .accuracy = 95,
-        .pp = 15,
-        .secondaryEffectChance = 20,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 140,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_VITAL_THROW] =
-    {
-        .effect = EFFECT_VITAL_THROW,
-        .power = 70,
-        .type = TYPE_FIGHTING,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = -1,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 140,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_MORNING_SUN] =
-    {
-        .effect = EFFECT_MORNING_SUN,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .flags2 = FLAG_WEATHER_RELATED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RESET_STATS,
-    },
-
-    [MOVE_SYNTHESIS] =
-    {
-        .effect = EFFECT_SYNTHESIS,
-        .power = 0,
-        .type = TYPE_GRASS,
-        .accuracy = 0,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .flags2 = FLAG_WEATHER_RELATED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RESET_STATS,
-    },
-
-    [MOVE_MOONLIGHT] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .type = TYPE_FAIRY,
-        #else
-            .type = TYPE_NORMAL,
-        #endif
-        .effect = EFFECT_MOONLIGHT,
-        .power = 0,
-        .accuracy = 0,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .flags2 = FLAG_WEATHER_RELATED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RESET_STATS,
-    },
-
-    [MOVE_HIDDEN_POWER] =
-    {
-        #if B_HIDDEN_POWER_DMG >= GEN_6
-            .power = 60,
-        #else
-            .power = 1,
-        #endif
-        .effect = EFFECT_HIDDEN_POWER,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_CROSS_CHOP] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 100,
-        .type = TYPE_FIGHTING,
-        .accuracy = 80,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_HIGH_CRIT,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 180,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_TWISTER] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_DMG_2X_IN_AIR,
-            .flags2 = FLAG_GIANT_WINGS_BOOST,
-        #else
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_DMG_2X_IN_AIR,
-        #endif
-        .effect = EFFECT_TWISTER,
-        .power = 60,
-        .type = TYPE_DRAGON,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 20,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_RAIN_DANCE] =
-    {
-        .effect = EFFECT_RAIN_DANCE,
-        .power = 0,
-        .type = TYPE_WATER,
-        .accuracy = 0,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_ALL_BATTLERS,
-        .priority = 0,
-        .flags = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPD_UP_1,
-    },
-
-    [MOVE_SUNNY_DAY] =
-    {
-        .effect = EFFECT_SUNNY_DAY,
-        .power = 0,
-        .type = TYPE_FIRE,
-        .accuracy = 0,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_ALL_BATTLERS,
-        .priority = 0,
-        .flags = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPD_UP_1,
-    },
-
-    [MOVE_CRUNCH] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_4
-            .effect = EFFECT_DEFENSE_DOWN_HIT,
-        #else
-            .effect = EFFECT_SPECIAL_DEFENSE_DOWN_HIT,
-        #endif
-        .power = 80,
-        .type = TYPE_DARK,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 20,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_STRONG_JAW_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_MIRROR_COAT] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .flags = FLAG_PROTECT_AFFECTED,
-        #elif B_UPDATED_MOVE_DATA == GEN_4
-            .flags = 0,
-        #else
-            .flags = FLAG_MIRROR_MOVE_AFFECTED,
-        #endif
-        .effect = EFFECT_MIRROR_COAT,
-        .power = 1,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_DEPENDS,
-        .priority = -5,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_PSYCH_UP] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .flags = 0,
-        #else
-            .flags = FLAG_SNATCH_AFFECTED,
-        #endif
-        .effect = EFFECT_PSYCH_UP,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RECOVER_HP,
-    },
-
-    [MOVE_EXTREME_SPEED] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .priority = 2,
-        #else
-            .priority = 1,
-        #endif
-        .effect = EFFECT_HIT,
-        .power = 80,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_ANCIENT_POWER] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_4
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        #else
-            .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        #endif
-        .effect = EFFECT_ALL_STATS_UP_HIT,
-        .power = 60,
-        .type = TYPE_ROCK,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SHADOW_BALL] =
-    {
-        .effect = EFFECT_SPECIAL_DEFENSE_DOWN_HIT,
-        .power = 80,
-        .type = TYPE_GHOST,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 20,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_BALLISTIC,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_FUTURE_SIGHT] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 120,
-            .accuracy = 100,
-            .pp = 10,
-            .zMovePower = 190,
-        #elif B_UPDATED_MOVE_DATA == GEN_5
-            .power = 100,
-            .accuracy = 100,
-            .pp = 10,
-            .zMovePower = 180,
-        #else
-            .power = 80,
-            .accuracy = 90,
-            .pp = 15,
-            .zMovePower = 160,
-        #endif
-        .effect = EFFECT_FUTURE_SIGHT,
-        .type = TYPE_PSYCHIC,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = 0,
-        .split = SPLIT_SPECIAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_ROCK_SMASH] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_4
-            .power = 40,
-        #else
-            .power = 20,
-        #endif
-        .effect = EFFECT_DEFENSE_DOWN_HIT,
-        .type = TYPE_FIGHTING,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 50,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_WHIRLPOOL] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .power = 35,
-            .accuracy = 85,
-        #else
-            .power = 15,
-            .accuracy = 70,
-        #endif
-        .effect = EFFECT_TRAP,
-        .type = TYPE_WATER,
-        .pp = 15,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_DMG_UNDERWATER,
-        .flags2 = FLAG_WAVE_SURF_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_BEAT_UP] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .power = 1,
-        #else
-            .power = 10,
-        #endif
-        .effect = EFFECT_BEAT_UP,
-        .type = TYPE_DARK,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_FAKE_OUT] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .priority = 3,
-            .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        #elif B_UPDATED_MOVE_DATA == GEN_4
-            .priority = 1,
-            .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        #else
-            .priority = 1,
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        #endif
-        .effect = EFFECT_FAKE_OUT,
-        .power = 40,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_UPROAR] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .power = 90,
-            .zMovePower = 175,
-        #else
-            .power = 50,
-            .zMovePower = 100,
-        #endif
-        .effect = EFFECT_UPROAR,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_RANDOM,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SOUND,
-        .split = SPLIT_SPECIAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_STOCKPILE] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_4
-            .pp = 20,
-        #else
-            .pp = 10,
-        #endif
-        .effect = EFFECT_STOCKPILE,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RECOVER_HP,
-    },
-
-    [MOVE_SPIT_UP] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_4
-            .power = 1,
-        #else
-            .power = 100,
-        #endif
-        .effect = EFFECT_SPIT_UP,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 180,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SWALLOW] =
-    {
-        .effect = EFFECT_SWALLOW,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RESET_STATS,
-    },
-
-    [MOVE_HEAT_WAVE] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 95,
-            .zMovePower = 175,
-        #else
-            .power = 100,
-            .zMovePower = 180,
-        #endif
-        .effect = EFFECT_BURN_HIT,
-        .type = TYPE_FIRE,
-        .accuracy = 90,
-        .pp = 10,
-        .secondaryEffectChance = 10,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .flags2 = FLAG_GIANT_WINGS_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_HAIL] =
-    {
-        .effect = EFFECT_HAIL,
-        .power = 0,
-        .type = TYPE_ICE,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_ALL_BATTLERS,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPD_UP_1,
-    },
-
-    [MOVE_TORMENT] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_MAGIC_COAT_AFFECTED,
-        #else
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        #endif
-        .effect = EFFECT_TORMENT,
-        .power = 0,
-        .type = TYPE_DARK,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_DEF_UP_1,
-    },
-
-    [MOVE_FLATTER] =
-    {
-        .effect = EFFECT_FLATTER,
-        .power = 0,
-        .type = TYPE_DARK,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPDEF_UP_1,
-    },
-
-    [MOVE_WILL_O_WISP] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .accuracy = 85,
-        #else
-            .accuracy = 75,
-        #endif
-        .effect = EFFECT_WILL_O_WISP,
-        .power = 0,
-        .type = TYPE_FIRE,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_ATK_UP_1,
-    },
-
-    [MOVE_MEMENTO] =
-    {
-        .effect = EFFECT_MEMENTO,
-        .power = 0,
-        .type = TYPE_DARK,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RESTORE_REPLACEMENT_HP,
-    },
-
-    [MOVE_FACADE] =
-    {
-        .effect = EFFECT_FACADE,
-        .power = 70,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 140,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_FOCUS_PUNCH] =
-    {
-        .effect = EFFECT_FOCUS_PUNCH,
-        .power = 150,
-        .type = TYPE_FIGHTING,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = -3,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_IRON_FIST_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 200,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SMELLING_SALTS] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 70,
-            .zMovePower = 140,
-        #else
-            .power = 60,
-            .zMovePower = 120,
-        #endif
-        .effect = EFFECT_SMELLINGSALT,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .argument = STATUS1_PARALYSIS,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_FOLLOW_ME] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .priority = 2,
-        #else
-            .priority = 3,
-        #endif
-        .effect = EFFECT_FOLLOW_ME,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .flags = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RESET_STATS,
-    },
-
-    [MOVE_NATURE_POWER] =
-    {
-        .effect = EFFECT_NATURE_POWER,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_DEPENDS,
-        .priority = 0,
-        .flags = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_CHARGE] =
-    {
-        .effect = EFFECT_CHARGE,
-        .power = 0,
-        .type = TYPE_ELECTRIC,
-        .accuracy = 0,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .flags2 = FLAG_MAGNET_MOVE,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPDEF_UP_1,
-    },
-
-    [MOVE_TAUNT] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        #elif B_UPDATED_MOVE_DATA == GEN_4
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        #else
-            .flags = FLAG_PROTECT_AFFECTED,
-        #endif
-        .effect = EFFECT_TAUNT,
-        .power = 0,
-        .type = TYPE_DARK,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_ATK_UP_1,
-    },
-
-    [MOVE_HELPING_HAND] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_4
-            .target = MOVE_TARGET_ALLY,
-        #else
-            .target = MOVE_TARGET_USER,
-        #endif
-        .effect = EFFECT_HELPING_HAND,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .priority = 5,
-        .flags = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RESET_STATS,
-    },
-
-    [MOVE_TRICK] =
-    {
-        .effect = EFFECT_TRICK,
-        .power = 0,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPD_UP_2,
-    },
-
-    [MOVE_ROLE_PLAY] =
-    {
-        .effect = EFFECT_ROLE_PLAY,
-        .power = 0,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPD_UP_1,
-    },
-
-    [MOVE_WISH] =
-    {
-        #if B_UPDATED
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RESET_STATS,_MOVE_DATA >= GEN_5
-            .flags = FLAG_SNATCH_AFFECTED,
-        #else
-            .flags = 0,
-        #endif
-        .effect = EFFECT_WISH,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPDEF_UP_1,
-    },
-
-    [MOVE_ASSIST] =
-    {
-        .effect = EFFECT_ASSIST,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_DEPENDS,
-        .priority = 0,
-        .flags = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_INGRAIN] =
-    {
-        .effect = EFFECT_INGRAIN,
-        .power = 0,
-        .type = TYPE_GRASS,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPDEF_UP_1,
-    },
-
-    [MOVE_SUPERPOWER] =
-    {
-        .effect = EFFECT_SUPERPOWER,
-        .power = 120,
-        .type = TYPE_FIGHTING,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 190,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_MAGIC_COAT] =
-    {
-        .effect = EFFECT_MAGIC_COAT,
-        .power = 0,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_DEPENDS,
-        .priority = 4,
-        .flags = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPDEF_UP_2,
-    },
-
-    [MOVE_RECYCLE] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .flags = FLAG_SNATCH_AFFECTED,
-        #else
-            .flags = 0,
-        #endif
-        .effect = EFFECT_RECYCLE,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPD_UP_2,
-    },
-
-    [MOVE_REVENGE] =
-    {
-        .effect = EFFECT_REVENGE,
-        .power = 60,
-        .type = TYPE_FIGHTING,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = -4,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_BRICK_BREAK] =
-    {
-        .effect = EFFECT_BRICK_BREAK,
-        .power = 75,
-        .type = TYPE_FIGHTING,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 140,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_YAWN] =
-    {
-        .effect = EFFECT_YAWN,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPD_UP_1,
-    },
-
-    [MOVE_KNOCK_OFF] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 65,
-            .zMovePower = 120,
-        #else
-            .power = 20,
-            .zMovePower = 100,
-        #endif
-        .effect = EFFECT_KNOCK_OFF,
-        .type = TYPE_DARK,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_ENDEAVOR] =
-    {
-        .effect = EFFECT_ENDEAVOR,
-        .power = 1,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_ERUPTION] =
-    {
-        .effect = EFFECT_ERUPTION,
-        .power = 150,
-        .type = TYPE_FIRE,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 200,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SKILL_SWAP] =
-    {
-        .effect = EFFECT_SKILL_SWAP,
-        .power = 0,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPD_UP_1,
-    },
-
-    [MOVE_IMPRISON] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_SNATCH_AFFECTED,
-        #else
-            .flags = FLAG_PROTECT_AFFECTED,
-        #endif
-        .effect = EFFECT_IMPRISON,
-        .power = 0,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPDEF_UP_2,
-    },
-
-    [MOVE_REFRESH] =
-    {
-        .effect = EFFECT_REFRESH,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RECOVER_HP,
-    },
-
-    [MOVE_GRUDGE] =
-    {
-        .effect = EFFECT_EERIE_SPELL,
-        .power = 80,
-        .type = TYPE_GHOST,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_SOUND,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SNATCH] =
-    {
-        .effect = EFFECT_SNATCH,
-        .power = 0,
-        .type = TYPE_DARK,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_DEPENDS,
-        .priority = 4,
-        .flags = FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPD_UP_2,
-    },
-
-    [MOVE_SECRET_POWER] =
-    {
-        .effect = EFFECT_SECRET_POWER,
-        .power = 70,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 140,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_DIVE] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_4
-            .power = 80,
-            .zMovePower = 160,
-        #else
-            .power = 60,
-            .zMovePower = 120,
-        #endif
-        .effect = EFFECT_SEMI_INVULNERABLE,
-        .type = TYPE_WATER,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_ARM_THRUST] =
-    {
-        .effect = EFFECT_MULTI_HIT,
-        .power = 15,
-        .type = TYPE_FIGHTING,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_HIGH_CRIT,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_CAMOUFLAGE] =
-    {
-        .effect = EFFECT_CAMOUFLAGE,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_EVSN_UP_1,
-    },
-
-    [MOVE_TAIL_GLOW] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .effect = EFFECT_SPECIAL_ATTACK_UP_3,
-        #else
-            .effect = EFFECT_SPECIAL_ATTACK_UP_2,
-        #endif
-        .power = 0,
-        .type = TYPE_BUG,
-        .accuracy = 0,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RESET_STATS,
-    },
-
-    [MOVE_LUSTER_PURGE] =
-    {
-        .effect = EFFECT_SPECIAL_DEFENSE_DOWN_HIT,
-        .power = 70,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 50,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 140,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_MIST_BALL] =
-    {
-        .effect = EFFECT_SPECIAL_ATTACK_DOWN_HIT,
-        .power = 70,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 50,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_BALLISTIC | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 140,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_FEATHER_DANCE] =
-    {
-        .effect = EFFECT_FEATHER_DANCE,
-        .power = 0,
-        .type = TYPE_FLYING,
-        .accuracy = 0,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED | FLAG_DANCE,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RESET_STATS,
-    },
-
-    [MOVE_TEETER_DANCE] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_4
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_DANCE,
-        #else
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_DANCE,
-        #endif
-        .effect = EFFECT_TEETER_DANCE,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_FOES_AND_ALLY,
-        .priority = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPATK_UP_1,
-    },
-
-    [MOVE_BLAZE_KICK] =
-    {
-        .effect = EFFECT_BURN_HIT,
-        .power = 85,
-        .type = TYPE_FIRE,
-        .accuracy = 90,
-        .pp = 10,
-        .secondaryEffectChance = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_HIGH_CRIT | FLAG_SHEER_FORCE_BOOST,
-        .flags2 = FLAG_AIRBOURNE_STYLE_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_MUD_SPORT] =
-    {
-        .effect = EFFECT_MUD_SPORT,
-        .power = 0,
-        .type = TYPE_GROUND,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_ALL_BATTLERS,
-        .priority = 0,
-        .flags = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPDEF_UP_1,
-    },
-
-    [MOVE_ICE_BALL] =
-    {
-        .effect = EFFECT_ROLLOUT,
-        .power = 30,
-        .type = TYPE_ICE,
-        .accuracy = 90,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_BALLISTIC,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_NEEDLE_ARM] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_4
-            .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        #else
-            .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_DMG_MINIMIZE,
-        #endif
-        .effect = EFFECT_FLINCH_HIT,
-        .power = 90,
-        .type = TYPE_GRASS,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 175,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SLACK_OFF] =
-    {
-        .effect = EFFECT_RESTORE_HP,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RESET_STATS,
-    },
-
-    [MOVE_HYPER_VOICE] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 90,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SOUND,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 175,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_POISON_FANG] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .secondaryEffectChance = 50,
-        #else
-            .secondaryEffectChance = 30,
-        #endif
-        .effect = EFFECT_POISON_FANG,
-        .power = 75,
-        .type = TYPE_POISON,
-        .accuracy = 100,
-        .pp = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_STRONG_JAW_BOOST,
-        .flags2 = FLAG_FANG_MOVE,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 140,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_CRUSH_CLAW] =
-    {
-        .effect = EFFECT_DEFENSE_DOWN_HIT,
-        .power = 75,
-        .type = TYPE_NORMAL,
-        .accuracy = 95,
-        .pp = 10,
-        .secondaryEffectChance = 50,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 140,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_BLAST_BURN] =
-    {
-        .effect = EFFECT_RECHARGE,
-        .power = 150,
-        .type = TYPE_FIRE,
-        .accuracy = 90,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 200,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_HYDRO_CANNON] =
-    {
-        .effect = EFFECT_RECHARGE,
-        .power = 150,
-        .type = TYPE_WATER,
-        .accuracy = 90,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_MEGA_LAUNCHER_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 200,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_METEOR_MASH] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 90,
-            .accuracy = 90,
-            .zMovePower = 175,
-        #else
-            .power = 100,
-            .accuracy = 85,
-            .zMovePower = 180,
-        #endif
-        .effect = EFFECT_ATTACK_UP_HIT,
-        .type = TYPE_STEEL,
-        .pp = 10,
-        .secondaryEffectChance = 20,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_IRON_FIST_BOOST | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_ASTONISH] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_4
-            .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        #else
-            .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_DMG_MINIMIZE,
-        #endif
-        .effect = EFFECT_FLINCH_HIT,
-        .power = 30,
-        .type = TYPE_GHOST,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_WEATHER_BALL] =
-    {
-        .effect = EFFECT_WEATHER_BALL,
-        .power = 50,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_BALLISTIC,
-        .flags2 = FLAG_WEATHER_RELATED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_AROMATHERAPY] =
-    {
-        .effect = EFFECT_HEAL_BELL,
-        .power = 0,
-        .type = TYPE_GRASS,
-        .accuracy = 0,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RECOVER_HP,
-    },
-
-    [MOVE_FAKE_TEARS] =
-    {
-        .effect = EFFECT_SPECIAL_DEFENSE_DOWN_2,
-        .power = 0,
-        .type = TYPE_DARK,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPATK_UP_1,
-    },
-
-    [MOVE_AIR_CUTTER] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 70,
-            .zMovePower = 140,
-        #else
-            .power = 55,
-            .zMovePower = 100,
-        #endif
-        .effect = EFFECT_HIT,
-        .type = TYPE_FLYING,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_HIGH_CRIT,
-        .flags2 = FLAG_GIANT_WINGS_BOOST | FLAG_SLICING_MOVE,
-        .split = SPLIT_PHYSICAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_OVERHEAT] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 130,
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-            .zMovePower = 195,
-        #elif B_UPDATED_MOVE_DATA == GEN_4 || B_UPDATED_MOVE_DATA == GEN_5
-            .power = 140,
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-            .zMovePower = 200,
-        #else
-            .power = 140,
-            .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-            .zMovePower = 200,
-        #endif
-        .effect = EFFECT_OVERHEAT,
-        .type = TYPE_FIRE,
-        .accuracy = 90,
-        .pp = 5,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_SPECIAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_ODOR_SLEUTH] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .accuracy = 0,
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_MAGIC_COAT_AFFECTED,
-        #elif B_UPDATED_MOVE_DATA == GEN_4
-            .accuracy = 0,
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        #else
-            .accuracy = 100,
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        #endif
-        .effect = EFFECT_FORESIGHT,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .pp = 40,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_ATK_UP_1,
-    },
-
-    [MOVE_ROCK_TOMB] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 60,
-            .accuracy = 95,
-            .pp = 15,
-            .zMovePower = 120,
-        #else
-            .power = 50,
-            .accuracy = 80,
-            .pp = 10,
-            .zMovePower = 100,
-        #endif
-        .effect = EFFECT_SPEED_DOWN_HIT,
-        .type = TYPE_ROCK,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SILVER_WIND] =
-    {
-        .effect = EFFECT_ALL_STATS_UP_HIT,
-        .power = 60,
-        .type = TYPE_BUG,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .flags2 = FLAG_GIANT_WINGS_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_METAL_SOUND] =
-    {
-        .effect = EFFECT_SPECIAL_DEFENSE_DOWN_2,
-        .power = 0,
-        .type = TYPE_STEEL,
-        .accuracy = 85,
-        .pp = 40,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SOUND,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPATK_UP_1,
-    },
-
-    [MOVE_GRASS_WHISTLE] =
-    {
-        .effect = EFFECT_SLEEP,
-        .power = 0,
-        .type = TYPE_GRASS,
-        .accuracy = 55,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SOUND,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPD_UP_1,
-    },
-
-    [MOVE_TICKLE] =
-    {
-        .effect = EFFECT_TICKLE,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_DEF_UP_1,
-    },
-
-    [MOVE_COSMIC_POWER] =
-    {
-        .effect = EFFECT_COSMIC_POWER,
-        .power = 0,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 0,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPDEF_UP_1,
-    },
-
-    [MOVE_WATER_SPOUT] =
-    {
-        .effect = EFFECT_ERUPTION,
-        .power = 150,
-        .type = TYPE_WATER,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 200,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SIGNAL_BEAM] =
-    {
-        .effect = EFFECT_CONFUSE_HIT,
-        .power = 75,
-        .type = TYPE_BUG,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_MEGA_LAUNCHER_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 140,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SHADOW_PUNCH] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 80,
-        .type = TYPE_GHOST,
-        .accuracy = 0,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_IRON_FIST_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_EXTRASENSORY] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .pp = 20,
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        #elif B_UPDATED_MOVE_DATA == GEN_4 || B_UPDATED_MOVE_DATA == GEN_5
-            .pp = 30,
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        #else
-            .pp = 30,
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_DMG_MINIMIZE,
-        #endif
-        .effect = EFFECT_EXTRASENSORY,
-        .power = 80,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 100,
-        .secondaryEffectChance = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SKY_UPPERCUT] =
-    {
-        .effect = EFFECT_SKY_UPPERCUT,
-        .power = 85,
-        .type = TYPE_FIGHTING,
-        .accuracy = 90,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_IRON_FIST_BOOST | FLAG_DMG_IN_AIR,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SAND_TOMB] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .power = 35,
-            .accuracy = 85,
-        #else
-            .power = 15,
-            .accuracy = 70,
-        #endif
-        .effect = EFFECT_TRAP,
-        .type = TYPE_GROUND,
-        .pp = 15,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SHEER_COLD] =
-    {
-        .effect = EFFECT_FROSTBITE_HIT,
-        .power = 120,
-        .type = TYPE_ICE,
-        .accuracy = 70,
-        .pp = 5,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 190,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_MUDDY_WATER] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 90,
-        #else
-            .power = 95,
-        #endif
-        .effect = EFFECT_ACCURACY_DOWN_HIT,
-        .type = TYPE_GROUND,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_DMG_UNGROUNDED_IGNORE_TYPE_IF_FLYING,
-        .flags2 = FLAG_MUD_MOVE | FLAG_WAVE_SURF_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 175,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_BULLET_SEED] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .power = 25,
-        #else
-            .power = 10,
-        #endif
-        .effect = EFFECT_MULTI_HIT,
-        .type = TYPE_GRASS,
-        .accuracy = 100,
-        .pp = 30,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_BALLISTIC,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_AERIAL_ACE] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 60,
-        .type = TYPE_FLYING,
-        .accuracy = 0,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .flags2 = FLAG_SLICING_MOVE,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_ICICLE_SPEAR] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .power = 25,
-        #else
-            .power = 10,
-        #endif
-        .effect = EFFECT_MULTI_HIT,
-        .type = TYPE_ICE,
-        .accuracy = 100,
-        .pp = 30,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_IRON_DEFENSE] =
-    {
-        .effect = EFFECT_DEFENSE_UP_2,
-        .power = 0,
-        .type = TYPE_STEEL,
-        .accuracy = 0,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RESET_STATS,
-    },
-
-    [MOVE_BLOCK] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .flags = FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        #else
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        #endif
-        .effect = EFFECT_MEAN_LOOK,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_DEF_UP_1,
-    },
-
-    [MOVE_HOWL] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_8
-            .flags = FLAG_SNATCH_AFFECTED | FLAG_SOUND,
-        #else
-            .flags = FLAG_SNATCH_AFFECTED,
-        #endif
-        .effect = EFFECT_ATTACK_UP,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 40,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_ATK_UP_1,
-    },
-
-    [MOVE_DRAGON_CLAW] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 80,
-        .type = TYPE_DRAGON,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_FRENZY_PLANT] =
-    {
-        .effect = EFFECT_RECHARGE,
-        .power = 150,
-        .type = TYPE_GRASS,
-        .accuracy = 90,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 200,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_BULK_UP] =
-    {
-        .effect = EFFECT_BULK_UP,
-        .power = 0,
-        .type = TYPE_FIGHTING,
-        .accuracy = 0,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_ATK_UP_1,
-    },
-
-    [MOVE_BOUNCE] =
-    {
-        .effect = EFFECT_SEMI_INVULNERABLE,
-        .power = 85,
-        .type = TYPE_FLYING,
-        .accuracy = 85,
-        .pp = 5,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .argument = MOVE_EFFECT_PARALYSIS,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_MUD_SHOT] =
-    {
-        .effect = EFFECT_SPEED_DOWN_HIT,
-        .power = 55,
-        .type = TYPE_GROUND,
-        .accuracy = 95,
-        .pp = 15,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_DMG_UNGROUNDED_IGNORE_TYPE_IF_FLYING | FLAG_MEGA_LAUNCHER_BOOST,
-        .flags2 = FLAG_MUD_MOVE,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_POISON_TAIL] =
-    {
-        .effect = EFFECT_POISON_HIT,
-        .power = 100,
-        .type = TYPE_POISON,
-        .accuracy = 85,
-        .pp = 10,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_HIGH_CRIT | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 180,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_COVET] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 60,
-            .pp = 25,
-            .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        #elif B_UPDATED_MOVE_DATA == GEN_5
-            .power = 60,
-            .pp = 40,
-            .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        #elif B_UPDATED_MOVE_DATA == GEN_4
-            .power = 40,
-            .pp = 40,
-            .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        #else
-            .power = 40,
-            .pp = 40,
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        #endif
-        .effect = EFFECT_THIEF,
-        .type = TYPE_FAIRY,
-        .accuracy = 100,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_VOLT_TACKLE] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_4
-            .effect = EFFECT_RECOIL_33_STATUS,
-            .argument = STATUS1_PARALYSIS,
-        #else
-            .effect = EFFECT_RECOIL_33,
-        #endif
-        .power = 120,
-        .type = TYPE_ELECTRIC,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_RECKLESS_BOOST | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 190,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_MAGICAL_LEAF] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 60,
-        .type = TYPE_GRASS,
-        .accuracy = 0,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_WATER_SPORT] =
-    {
-        .effect = EFFECT_WATER_SPORT,
-        .power = 0,
-        .type = TYPE_WATER,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_ALL_BATTLERS,
-        .priority = 0,
-        .flags = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPDEF_UP_1,
-    },
-
-    [MOVE_CALM_MIND] =
-    {
-        .effect = EFFECT_CALM_MIND,
-        .power = 0,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 0,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RESET_STATS,
-    },
-
-    [MOVE_LEAF_BLADE] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_4
-            .power = 90,
-            .zMovePower = 175,
-        #else
-            .power = 70,
-            .zMovePower = 140,
-        #endif
-        .effect = EFFECT_HIT,
-        .type = TYPE_GRASS,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_HIGH_CRIT,
-        .flags2 = FLAG_SLICING_MOVE,
-        .split = SPLIT_PHYSICAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_DRAGON_DANCE] =
-    {
-        .effect = EFFECT_DRAGON_DANCE,
-        .power = 0,
-        .type = TYPE_DRAGON,
-        .accuracy = 0,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED | FLAG_DANCE,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RESET_STATS,
-    },
-
-    [MOVE_ROCK_BLAST] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_7
-            .accuracy = 90,
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_BALLISTIC,
-        #elif B_UPDATED_MOVE_DATA == GEN_5 || B_UPDATED_MOVE_DATA == GEN_6
-            .accuracy = 90,
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        #else
-            .accuracy = 80,
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        #endif
-        .effect = EFFECT_MULTI_HIT,
-        .power = 25,
-        .type = TYPE_ROCK,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SHOCK_WAVE] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 60,
-        .type = TYPE_ELECTRIC,
-        .accuracy = 0,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_WATER_PULSE] =
-    {
-        .effect = EFFECT_CONFUSE_HIT,
-        .power = 60,
-        .type = TYPE_WATER,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 20,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_MEGA_LAUNCHER_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_DOOM_DESIRE] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .power = 140,
-            .accuracy = 100,
-            .zMovePower = 200,
-        #else
-            .power = 120,
-            .accuracy = 85,
-            .zMovePower = 190,
-        #endif
-        .effect = EFFECT_FUTURE_SIGHT,
-        .type = TYPE_STEEL,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = 0,
-        .split = SPLIT_SPECIAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_PSYCHO_BOOST] =
-    {
-        .effect = EFFECT_OVERHEAT,
-        .power = 140,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 90,
-        .pp = 5,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 200,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_ROOST] =
-    {
-        .effect = EFFECT_ROOST,
-        .power = 0,
-        .type = TYPE_FLYING,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RESET_STATS,
-    },
-
-    [MOVE_GRAVITY] =
-    {
-        .effect = EFFECT_GRAVITY,
-        .power = 0,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 0,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_ALL_BATTLERS,
-        .priority = 0,
-        .flags = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPATK_UP_1,
-    },
-
-    [MOVE_MIRACLE_EYE] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        #else
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        #endif
-        .effect = EFFECT_MIRACLE_EYE,
-        .power = 0,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 0,
-        .pp = 40,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPATK_UP_1,
-    },
-
-    [MOVE_WAKE_UP_SLAP] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 70,
-            .zMovePower = 140,
-        #else
-            .power = 60,
-            .zMovePower = 120,
-        #endif
-        .effect = EFFECT_WAKE_UP_SLAP,
-        .type = TYPE_FIGHTING,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .argument = STATUS1_SLEEP,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_HAMMER_ARM] =
-    {
-        .effect = EFFECT_HAMMER_ARM,
-        .power = 100,
-        .type = TYPE_FIGHTING,
-        .accuracy = 90,
-        .pp = 10,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_IRON_FIST_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 180,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_GYRO_BALL] =
-    {
-        .effect = EFFECT_GYRO_BALL,
-        .power = 1,
-        .type = TYPE_STEEL,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_BALLISTIC,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_HEALING_WISH] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .flags = FLAG_SNATCH_AFFECTED,
-        #else
-            .flags = 0,
-        #endif
-        .effect = EFFECT_HEALING_WISH,
-        .power = 0,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_BRINE] =
-    {
-        .effect = EFFECT_BRINE,
-        .power = 65,
-        .type = TYPE_WATER,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_NATURAL_GIFT] =
-    {
-        .effect = EFFECT_NATURAL_GIFT,
-        .power = 1,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_FEINT] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 30,
-            .flags = FLAG_MIRROR_MOVE_AFFECTED,
-        #elif B_UPDATED_MOVE_DATA >= GEN_5
-            .power = 30,
-            .flags = 0,
-        #else
-            .power = 50,
-            .flags = 0,
-        #endif
-        .effect = EFFECT_FEINT,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 2,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_PLUCK] =
-    {
-        .effect = EFFECT_BUG_BITE,
-        .power = 60,
-        .type = TYPE_FLYING,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_TAILWIND] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .pp = 15,
-        #else
-            .pp = 30,
-        #endif
-        .effect = EFFECT_TAILWIND,
-        .power = 0,
-        .type = TYPE_FLYING,
-        .accuracy = 0,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_BOOST_CRITS,
-    },
-
-    [MOVE_ACUPRESSURE] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .flags = 0,
-        #else
-            .flags = FLAG_SNATCH_AFFECTED,
-        #endif
-        .effect = EFFECT_ACUPRESSURE,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 30,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER | MOVE_TARGET_ALLY,
-        .priority = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_BOOST_CRITS,
-    },
-
-    [MOVE_METAL_BURST] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_4
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        #else
-            .flags = FLAG_MIRROR_MOVE_AFFECTED,
-        #endif
-        .effect = EFFECT_METAL_BURST,
-        .power = 0,
-        .type = TYPE_STEEL,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_DEPENDS,
-        .priority = 0,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_U_TURN] =
-    {
-        .effect = EFFECT_HIT_ESCAPE,
-        .power = 70,
-        .type = TYPE_BUG,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 140,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_CLOSE_COMBAT] =
-    {
-        .effect = EFFECT_CLOSE_COMBAT,
-        .power = 120,
-        .type = TYPE_FIGHTING,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 190,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_PAYBACK] =
-    {
-        .effect = EFFECT_PAYBACK,
-        .power = 50,
-        .type = TYPE_DARK,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_ASSURANCE] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 60,
-            .zMovePower = 120,
-        #else
-            .power = 50,
-            .zMovePower = 100,
-        #endif
-        .effect = EFFECT_ASSURANCE,
-        .type = TYPE_DARK,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_EMBARGO] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        #else
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        #endif
-        .effect = EFFECT_EMBARGO,
-        .power = 0,
-        .type = TYPE_DARK,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPATK_UP_1,
-    },
-
-    [MOVE_FLING] =
-    {
-        .effect = EFFECT_FLING,
-        .power = 1,
-        .type = TYPE_DARK,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_PSYCHO_SHIFT] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .accuracy = 100,
-        #else
-            .accuracy = 90,
-        #endif
-        .effect = EFFECT_PSYCHO_SHIFT,
-        .power = 0,
-        .type = TYPE_PSYCHIC,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPATK_UP_2,
-    },
-
-    [MOVE_TRUMP_CARD] =
-    {
-        .effect = EFFECT_TRUMP_CARD,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_HEAL_BLOCK] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        #else
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        #endif
-        .effect = EFFECT_HEAL_BLOCK,
-        .power = 0,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPATK_UP_2,
-    },
-
-    [MOVE_WRING_OUT] =
-    {
-        .effect = EFFECT_WRING_OUT,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-    },
-
-    [MOVE_POWER_TRICK] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .flags = FLAG_SNATCH_AFFECTED,
-        #else
-            .flags = 0,
-        #endif
-        .effect = EFFECT_POWER_TRICK,
-        .power = 0,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_ATK_UP_1,
-    },
-
-    [MOVE_GASTRO_ACID] =
-    {
-        .effect = EFFECT_GASTRO_ACID,
-        .power = 0,
-        .type = TYPE_POISON,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .flags2 = FLAG_ACID_MOVE,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPD_UP_1,
-    },
-
-    [MOVE_LUCKY_CHANT] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .flags = FLAG_SNATCH_AFFECTED,
-        #else
-            .flags = 0,
-        #endif
-        .effect = EFFECT_LUCKY_CHANT,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 30,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_EVSN_UP_1,
-    },
-
-    [MOVE_ME_FIRST] =
-    {
-        .effect = EFFECT_ME_FIRST,
-        .power = 1,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPD_UP_2,
-    },
-
-    [MOVE_COPYCAT] =
-    {
-        .effect = EFFECT_COPYCAT,
-        .power = 1,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_DEPENDS,
-        .priority = 0,
-        .flags = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_ACC_UP_1,
-    },
-
-    [MOVE_POWER_SWAP] =
-    {
-        .effect = EFFECT_POWER_SWAP,
-        .power = 0,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPD_UP_1,
-    },
-
-    [MOVE_GUARD_SWAP] =
-    {
-        .effect = EFFECT_GUARD_SWAP,
-        .power = 0,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPD_UP_1,
-    },
-
-    [MOVE_PUNISHMENT] =
-    {
-        .effect = EFFECT_PUNISHMENT,
-        .power = 60,
-        .type = TYPE_DARK,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_LAST_RESORT] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .power = 140,
-            .zMovePower = 200,
-        #else
-            .power = 130,
-            .zMovePower = 195,
-        #endif
-        .effect = EFFECT_LAST_RESORT,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_WORRY_SEED] =
-    {
-        .effect = EFFECT_WORRY_SEED,
-        .power = 0,
-        .type = TYPE_GRASS,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPD_UP_1,
-    },
-
-    [MOVE_SUCKER_PUNCH] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_7
-            .power = 70,
-            .zMovePower = 140,
-        #else
-            .power = 80,
-            .zMovePower = 160,
-        #endif
-        .effect = EFFECT_SUCKER_PUNCH,
-        .type = TYPE_DARK,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 1,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_IRON_FIST_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_TOXIC_SPIKES] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .flags = FLAG_MAGIC_COAT_AFFECTED,
-        #else
-            .flags = 0,
-        #endif
-        .effect = EFFECT_TOXIC_SPIKES,
-        .power = 0,
-        .type = TYPE_POISON,
-        .accuracy = 0,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_OPPONENTS_FIELD,
-        .priority = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_DEF_UP_1,
-    },
-
-    [MOVE_HEART_SWAP] =
-    {
-        .effect = EFFECT_HEART_SWAP,
-        .power = 0,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_BOOST_CRITS,
-    },
-
-    [MOVE_AQUA_RING] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .flags = FLAG_SNATCH_AFFECTED,
-        #else
-            .flags = 0,
-        #endif
-        .effect = EFFECT_AQUA_RING,
-        .power = 0,
-        .type = TYPE_WATER,
-        .accuracy = 0,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_DEF_UP_1,
-    },
-
-    [MOVE_MAGNET_RISE] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .flags = FLAG_SNATCH_AFFECTED,
-        #else
-            .flags = 0,
-        #endif
-        .effect = EFFECT_MAGNET_RISE,
-        .power = 0,
-        .type = TYPE_ELECTRIC,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 1,
-        .flags2 = FLAG_MAGNET_MOVE,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_EVSN_UP_1,
-    },
-
-    [MOVE_FLARE_BLITZ] =
-    {
-        .effect = EFFECT_RECOIL_33_STATUS,
-        .power = 120,
-        .type = TYPE_FIRE,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_RECKLESS_BOOST | FLAG_THAW_USER,
-        .split = SPLIT_PHYSICAL,
-        .argument = STATUS1_BURN,
-        .zMovePower = 190,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_FORCE_PALM] =
-    {
-        .effect = EFFECT_PARALYZE_HIT,
-        .power = 60,
-        .type = TYPE_FIGHTING,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_AURA_SPHERE] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 80,
-            .zMovePower = 160,
-        #else
-            .power = 90,
-            .zMovePower = 175,
-        #endif
-        .effect = EFFECT_HIT,
-        .type = TYPE_FIGHTING,
-        .accuracy = 0,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_MEGA_LAUNCHER_BOOST | FLAG_BALLISTIC,
-        .split = SPLIT_SPECIAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_ROCK_POLISH] =
-    {
-        .effect = EFFECT_ROCK_POLISH,
-        .power = 0,
-        .type = TYPE_ROCK,
-        .accuracy = 0,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RESET_STATS,
-    },
-
-    [MOVE_POISON_JAB] =
-    {
-        .effect = EFFECT_POISON_HIT,
-        .power = 80,
-        .type = TYPE_POISON,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_DARK_PULSE] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_MEGA_LAUNCHER_BOOST,
-        #else
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_MEGA_LAUNCHER_BOOST,
-        #endif
-        .effect = EFFECT_FLINCH_HIT,
-        .power = 80,
-        .type = TYPE_DARK,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 20,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_NIGHT_SLASH] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 70,
-        .type = TYPE_DARK,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_HIGH_CRIT,
-        .flags2 = FLAG_SLICING_MOVE,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 140,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_AQUA_TAIL] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 90,
-        .type = TYPE_WATER,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 175,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SEED_BOMB] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 80,
-        .type = TYPE_GRASS,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_BALLISTIC,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_AIR_SLASH] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .pp = 15,
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-            .flags2 = FLAG_GIANT_WINGS_BOOST | FLAG_SLICING_MOVE,
-        #elif B_UPDATED_MOVE_DATA == GEN_5
-            .pp = 20,
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        #else
-            .pp = 20,
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        #endif
-        .effect = EFFECT_FLINCH_HIT,
-        .power = 75,
-        .type = TYPE_FLYING,
-        .accuracy = 95,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 140,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_X_SCISSOR] =
-    {
-        .effect = EFFECT_DOUBLE_HIT,
-        .power = 40,
-        .type = TYPE_BUG,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_HIGH_CRIT,
-        .flags2 = FLAG_SLICING_MOVE,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_BUG_BUZZ] =
-    {
-        .effect = EFFECT_SPECIAL_DEFENSE_DOWN_HIT,
-        .power = 90,
-        .type = TYPE_BUG,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SOUND | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 175,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_DRAGON_PULSE] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 85,
-            .zMovePower = 160,
-        #else
-            .power = 90,
-            .zMovePower = 175,
-        #endif
-        .effect = EFFECT_HIT,
-        .type = TYPE_DRAGON,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_MEGA_LAUNCHER_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_DRAGON_RUSH] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_DMG_MINIMIZE,
-        #elif B_UPDATED_MOVE_DATA == GEN_5
-            .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        #else
-            .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        #endif
-        .effect = EFFECT_FLINCH_HIT,
-        .power = 100,
-        .type = TYPE_DRAGON,
-        .accuracy = 85,
-        .pp = 10,
-        .secondaryEffectChance = 20,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 180,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_POWER_GEM] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 80,
-            .zMovePower = 160,
-        #else
-            .power = 70,
-            .zMovePower = 140,
-        #endif
-        .effect = EFFECT_HIT,
-        .type = TYPE_ROCK,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_DRAIN_PUNCH] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .power = 75,
-            .pp = 10,
-            .zMovePower = 140,
-        #else
-            .power = 60,
-            .pp = 5,
-            .zMovePower = 120,
-        #endif
-        .effect = EFFECT_ABSORB,
-        .type = TYPE_FIGHTING,
-        .accuracy = 100,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_IRON_FIST_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_VACUUM_WAVE] =
-    {
-        .effect = EFFECT_VACUUM_WAVE,
-        .power = 70,
-        .type = TYPE_FIGHTING,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 1,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_IRON_FIST_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 140,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_FOCUS_BLAST] =
-    {
-        .effect = EFFECT_SPECIAL_DEFENSE_DOWN_HIT,
-        .power = 120,
-        .type = TYPE_FIGHTING,
-        .accuracy = 70,
-        .pp = 5,
-        .secondaryEffectChance = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_BALLISTIC,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 190,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_ENERGY_BALL] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 90,
-            .zMovePower = 175,
-        #else
-            .power = 80,
-            .zMovePower = 160,
-        #endif
-        .effect = EFFECT_SPECIAL_DEFENSE_DOWN_HIT,
-        .type = TYPE_GRASS,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_BALLISTIC | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_BRAVE_BIRD] =
-    {
-        .effect = EFFECT_RECOIL_33,
-        .power = 120,
-        .type = TYPE_FLYING,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_RECKLESS_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 190,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_EARTH_POWER] =
-    {
-        .effect = EFFECT_SPECIAL_DEFENSE_DOWN_HIT,
-        .power = 90,
-        .type = TYPE_GROUND,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 175,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SWITCHEROO] =
-    {
-        .effect = EFFECT_TRICK,
-        .power = 0,
-        .type = TYPE_DARK,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPD_UP_2,
-    },
-
-    [MOVE_GIGA_IMPACT] =
-    {
-        .effect = EFFECT_RECHARGE,
-        .power = 150,
-        .type = TYPE_NORMAL,
-        .accuracy = 90,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 200,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_NASTY_PLOT] =
-    {
-        .effect = EFFECT_SPECIAL_ATTACK_UP_2,
-        .power = 0,
-        .type = TYPE_DARK,
-        .accuracy = 0,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RESET_STATS,
-    },
-
-    [MOVE_BULLET_PUNCH] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 40,
-        .type = TYPE_STEEL,
-        .accuracy = 100,
-        .pp = 30,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 1,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_IRON_FIST_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_AVALANCHE] =
-    {
-        .effect = EFFECT_REVENGE,
-        .power = 60,
-        .type = TYPE_ICE,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_BOTH,
-        .priority = -4,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_ICE_SHARD] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 40,
-        .type = TYPE_ICE,
-        .accuracy = 100,
-        .pp = 30,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 1,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SHADOW_CLAW] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 70,
-        .type = TYPE_GHOST,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_HIGH_CRIT,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 140,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_THUNDER_FANG] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_STRONG_JAW_BOOST,
-            .flags2 = FLAG_FANG_MOVE,
-        #else
-            .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_STRONG_JAW_BOOST,
-        #endif
-        .effect = EFFECT_FLINCH_STATUS,
-        .power = 65,
-        .type = TYPE_ELECTRIC,
-        .accuracy = 95,
-        .pp = 15,
-        .secondaryEffectChance = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_PHYSICAL,
-        .argument = STATUS1_PARALYSIS,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_ICE_FANG] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_STRONG_JAW_BOOST,
-            .flags2 = FLAG_FANG_MOVE,
-        #else
-            .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_STRONG_JAW_BOOST,
-        #endif
-        .effect = EFFECT_FLINCH_STATUS,
-        .power = 65,
-        .type = TYPE_ICE,
-        .accuracy = 95,
-        .pp = 15,
-        .secondaryEffectChance = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_PHYSICAL,
-        .argument = STATUS1_FROSTBITE,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_FIRE_FANG] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_STRONG_JAW_BOOST,
-            .flags2 = FLAG_FANG_MOVE,
-        #else
-            .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_STRONG_JAW_BOOST,
-        #endif
-        .effect = EFFECT_FLINCH_STATUS,
-        .power = 65,
-        .type = TYPE_FIRE,
-        .accuracy = 95,
-        .pp = 15,
-        .secondaryEffectChance = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_PHYSICAL,
-        .argument = STATUS1_BURN,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SHADOW_SNEAK] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 40,
-        .type = TYPE_GHOST,
-        .accuracy = 100,
-        .pp = 30,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 1,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_MUD_BOMB] =
-    {
-        .effect = EFFECT_ACCURACY_DOWN_HIT,
-        .power = 65,
-        .type = TYPE_GROUND,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_BALLISTIC | FLAG_DMG_UNGROUNDED_IGNORE_TYPE_IF_FLYING,
-        .flags2 = FLAG_MUD_MOVE,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_PSYCHO_CUT] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 70,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_HIGH_CRIT,
-        .flags2 = FLAG_SLICING_MOVE,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 140,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_ZEN_HEADBUTT] =
-    {
-        .effect = EFFECT_FLINCH_HIT,
-        .power = 80,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 90,
-        .pp = 15,
-        .secondaryEffectChance = 20,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_MIRROR_SHOT] =
-    {
-        .effect = EFFECT_ACCURACY_DOWN_HIT,
-        .power = 65,
-        .type = TYPE_STEEL,
-        .accuracy = 85,
-        .pp = 10,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_MEGA_LAUNCHER_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_FLASH_CANNON] =
-    {
-        .effect = EFFECT_SPECIAL_DEFENSE_DOWN_HIT,
-        .power = 80,
-        .type = TYPE_STEEL,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_MEGA_LAUNCHER_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_ROCK_CLIMB] =
-    {
-        .effect = EFFECT_CONFUSE_HIT,
-        .power = 90,
-        .type = TYPE_ROCK,
-        .accuracy = 85,
-        .pp = 20,
-        .secondaryEffectChance = 20,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 175,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_DEFOG] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        #else
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        #endif
-        .effect = EFFECT_DEFOG,
-        .power = 0,
-        .type = TYPE_FLYING,
-        .accuracy = 0,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_ACC_UP_1,
-    },
-
-    [MOVE_TRICK_ROOM] =
-    {
-        .effect = EFFECT_TRICK_ROOM,
-        .power = 0,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 0,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_ALL_BATTLERS,
-        .priority = -7,
-        .flags = FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_ACC_UP_1,
-    },
-
-    [MOVE_DRACO_METEOR] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 130,
-            .zMovePower = 195,
-        #else
-            .power = 140,
-            .zMovePower = 200,
-        #endif
-        .effect = EFFECT_OVERHEAT,
-        .type = TYPE_DRAGON,
-        .accuracy = 90,
-        .pp = 5,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_DISCHARGE] =
-    {
-        .effect = EFFECT_PARALYZE_HIT,
-        .power = 80,
-        .type = TYPE_ELECTRIC,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_FOES_AND_ALLY,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_LAVA_PLUME] =
-    {
-        .effect = EFFECT_BURN_HIT,
-        .power = 80,
-        .type = TYPE_FIRE,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_FOES_AND_ALLY,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_LEAF_STORM] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 130,
-            .zMovePower = 195,
-        #else
-            .power = 140,
-            .zMovePower = 200,
-        #endif
-        .effect = EFFECT_OVERHEAT,
-        .type = TYPE_GRASS,
-        .accuracy = 90,
-        .pp = 5,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_POWER_WHIP] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 120,
-        .type = TYPE_GRASS,
-        .accuracy = 85,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 190,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_ROCK_WRECKER] =
-    {
-        .effect = EFFECT_RECHARGE,
-        .power = 150,
-        .type = TYPE_ROCK,
-        .accuracy = 90,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_BALLISTIC,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 200,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_CROSS_POISON] =
-    {
-        .effect = EFFECT_TWINEEDLE,
-        .power = 35,
-        .type = TYPE_POISON,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_HIGH_CRIT | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 140,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_GUNK_SHOT] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .accuracy = 80,
-        #else
-            .accuracy = 70,
-        #endif
-        .effect = EFFECT_POISON_HIT,
-        .power = 120,
-        .type = TYPE_POISON,
-        .pp = 5,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_MEGA_LAUNCHER_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 190,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_IRON_HEAD] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        #else
-            .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        #endif
-        .effect = EFFECT_FLINCH_HIT,
-        .power = 80,
-        .type = TYPE_STEEL,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_MAGNET_BOMB] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 60,
-        .type = TYPE_STEEL,
-        .accuracy = 0,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_BALLISTIC,
-        .flags2 = FLAG_MAGNET_MOVE,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_STONE_EDGE] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 100,
-        .type = TYPE_ROCK,
-        .accuracy = 80,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_HIGH_CRIT,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 180,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_CAPTIVATE] =
-    {
-        .effect = EFFECT_CAPTIVATE,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPDEF_UP_2,
-    },
-
-    [MOVE_STEALTH_ROCK] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .flags = FLAG_MAGIC_COAT_AFFECTED,
-        #else
-            .flags = 0,
-        #endif
-        .effect = EFFECT_STEALTH_ROCK,
-        .power = 0,
-        .type = TYPE_ROCK,
-        .accuracy = 0,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_OPPONENTS_FIELD,
-        .priority = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_DEF_UP_1,
-    },
-
-    [MOVE_GRASS_KNOT] =
-    {
-        .effect = EFFECT_LOW_KICK,
-        .power = 1,
-        .type = TYPE_GRASS,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_CHATTER] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 65,
-            .secondaryEffectChance = 100,
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SOUND | FLAG_SHEER_FORCE_BOOST,
-        #elif B_UPDATED_MOVE_DATA == GEN_5
-            .power = 60,
-            .secondaryEffectChance = 10,
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_SOUND | FLAG_SHEER_FORCE_BOOST,
-        #else
-            .power = 60,
-            .secondaryEffectChance = 31,
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_SOUND | FLAG_SHEER_FORCE_BOOST,
-        #endif
-        .effect = EFFECT_CONFUSE_HIT,
-        .type = TYPE_FLYING,
-        .accuracy = 100,
-        .pp = 20,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_JUDGMENT] =
-    {
-        .effect = EFFECT_CHANGE_TYPE_ON_ITEM,
-        .power = 100,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .argument = HOLD_EFFECT_PLATE,
-        .zMovePower = 180,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_BUG_BITE] =
-    {
-        .effect = EFFECT_BUG_BITE,
-        .power = 75,
-        .type = TYPE_BUG,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_STRONG_JAW_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 140,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_CHARGE_BEAM] =
-    {
-        .effect = EFFECT_SP_ATTACK_UP_HIT,
-        .power = 50,
-        .type = TYPE_ELECTRIC,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_MEGA_LAUNCHER_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_WOOD_HAMMER] =
-    {
-        .effect = EFFECT_RECOIL_33,
-        .power = 120,
-        .type = TYPE_GRASS,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_RECKLESS_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 190,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_AQUA_JET] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 40,
-        .type = TYPE_WATER,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 1,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_ATTACK_ORDER] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 90,
-        .type = TYPE_BUG,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_HIGH_CRIT,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 175,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_DEFEND_ORDER] =
-    {
-        .effect = EFFECT_COSMIC_POWER,
-        .power = 0,
-        .type = TYPE_BUG,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_DEF_UP_1,
-    },
-
-    [MOVE_HEAL_ORDER] =
-    {
-        .effect = EFFECT_RESTORE_HP,
-        .power = 0,
-        .type = TYPE_BUG,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RESET_STATS,
-    },
-
-    [MOVE_HEAD_SMASH] =
-    {
-        .effect = EFFECT_RECOIL_50,
-        .power = 150,
-        .type = TYPE_ROCK,
-        .accuracy = 80,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_RECKLESS_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 200,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_DOUBLE_HIT] =
-    {
-        .effect = EFFECT_DOUBLE_HIT,
-        .power = 35,
-        .type = TYPE_NORMAL,
-        .accuracy = 90,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_TWO_STRIKES,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_ROAR_OF_TIME] =
-    {
-        .effect = EFFECT_RECHARGE,
-        .power = 150,
-        .type = TYPE_DRAGON,
-        .accuracy = 90,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 200,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SPACIAL_REND] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 100,
-        .type = TYPE_DRAGON,
-        .accuracy = 95,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_HIGH_CRIT,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 180,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_LUNAR_DANCE] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .flags = FLAG_DANCE | FLAG_SNATCH_AFFECTED,
-        #else
-            .flags = FLAG_DANCE,
-        #endif
-        .effect = EFFECT_HEALING_WISH,
-        .power = 0,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_CRUSH_GRIP] =
-    {
-        .effect = EFFECT_WRING_OUT,
-        .power = 1,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 190,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_MAGMA_STORM] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 100,
-            .accuracy = 90,
-            .zMovePower = 180,
-        #elif B_UPDATED_MOVE_DATA == GEN_5
-            .power = 120,
-            .accuracy = 75,
-            .zMovePower = 190,
-        #else
-            .power = 120,
-            .accuracy = 70,
-            .zMovePower = 190,
-        #endif
-        .effect = EFFECT_TRAP,
-        .type = TYPE_FIRE,
-        .pp = 5,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_DARK_VOID] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_7
-            .accuracy = 50,
-        #else
-            .accuracy = 80,
-        #endif
-        .effect = EFFECT_DARK_VOID,
-        .power = 0,
-        .type = TYPE_DARK,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RESET_STATS,
-    },
-
-    [MOVE_SEED_FLARE] =
-    {
-        .effect = EFFECT_SPECIAL_DEFENSE_DOWN_HIT_2,
-        .power = 120,
-        .type = TYPE_GRASS,
-        .accuracy = 85,
-        .pp = 5,
-        .secondaryEffectChance = 40,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 190,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_OMINOUS_WIND] =
-    {
-        .effect = EFFECT_ALL_STATS_UP_HIT,
-        .power = 60,
-        .type = TYPE_GHOST,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 10,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .flags2 = FLAG_GIANT_WINGS_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SHADOW_FORCE] =
-    {
-        #if B_UPDATED_MOVE_DATA == GEN_6
-            .flags = FLAG_MAKES_CONTACT | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_DMG_MINIMIZE,
-        #else
-            .flags = FLAG_MAKES_CONTACT | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        #endif
-        .effect = EFFECT_SEMI_INVULNERABLE,
-        .power = 120,
-        .type = TYPE_GHOST,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 190,
-        .zMoveEffect = Z_EFFECT_NONE,
-        .argument = MOVE_EFFECT_FEINT,
-    },
-
-    [MOVE_HONE_CLAWS] =
-    {
-        .effect = EFFECT_ATTACK_ACCURACY_UP,
-        .power = 0,
-        .type = TYPE_DARK,
-        .accuracy = 0,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_ATK_UP_1,
-    },
-
-    [MOVE_WIDE_GUARD] =
-    {
-        .effect = EFFECT_PROTECT,
-        .power = 0,
-        .type = TYPE_ROCK,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 3,
-        .flags = FLAG_PROTECTION_MOVE | FLAG_SNATCH_AFFECTED,
-        .split = SPLIT_STATUS,
-        .argument = TRUE, // Protects the whole side.
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_DEF_UP_1,
-    },
-
-    [MOVE_GUARD_SPLIT] =
-    {
-        .effect = EFFECT_GUARD_SPLIT,
-        .power = 0,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPD_UP_1,
-    },
-
-    [MOVE_POWER_SPLIT] =
-    {
-        .effect = EFFECT_POWER_SPLIT,
-        .power = 0,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPD_UP_1,
-    },
-
-    [MOVE_WONDER_ROOM] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .priority = 0,
-        #else
-            .priority = -7,
-        #endif
-        .effect = EFFECT_WONDER_ROOM,
-        .power = 0,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_ALL_BATTLERS,
-        .flags = FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPDEF_UP_1,
-    },
-
-    [MOVE_PSYSHOCK] =
-    {
-        .effect = EFFECT_PSYSHOCK,
-        .power = 80,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_VENOSHOCK] =
-    {
-        .effect = EFFECT_VENOSHOCK,
-        .power = 65,
-        .type = TYPE_POISON,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_AUTOTOMIZE] =
-    {
-        .effect = EFFECT_AUTOTOMIZE,
-        .power = 0,
-        .type = TYPE_STEEL,
-        .accuracy = 0,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RESET_STATS,
-    },
-
-    [MOVE_RAGE_POWDER] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .priority = 2,
-        #else
-            .priority = 3,
-        #endif
-        .effect = EFFECT_FOLLOW_ME,
-        .power = 0,
-        .type = TYPE_BUG,
-        .accuracy = 0,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .flags = FLAG_POWDER,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RESET_STATS,
-    },
-
-    [MOVE_TELEKINESIS] =
-    {
-        .effect = EFFECT_TELEKINESIS,
-        .power = 0,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 0,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPATK_UP_1,
-    },
-
-    [MOVE_MAGIC_ROOM] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .priority = 0,
-        #else
-            .priority = -7,
-        #endif
-        .effect = EFFECT_MAGIC_ROOM,
-        .power = 0,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_ALL_BATTLERS,
-        .flags = FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPDEF_UP_1,
-    },
-
-    [MOVE_SMACK_DOWN] =
-    {
-        .effect = EFFECT_SMACK_DOWN,
-        .power = 70,
-        .type = TYPE_ROCK,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_DMG_IN_AIR,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 140,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_STORM_THROW] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 60,
-            .zMovePower = 120,
-        #else
-            .power = 40,
-            .zMovePower = 100,
-        #endif
-        .effect = EFFECT_ALWAYS_CRIT,
-        .type = TYPE_FIGHTING,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_FLAME_BURST] =
-    {
-        .effect = EFFECT_FLAME_BURST,
-        .power = 70,
-        .type = TYPE_FIRE,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SLUDGE_WAVE] =
-    {
-        .effect = EFFECT_POISON_HIT,
-        .power = 95,
-        .type = TYPE_POISON,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 10,
-        .target = MOVE_TARGET_FOES_AND_ALLY,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .flags2 = FLAG_WAVE_SURF_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 175,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_QUIVER_DANCE] =
-    {
-        .effect = EFFECT_QUIVER_DANCE,
-        .power = 0,
-        .type = TYPE_BUG,
-        .accuracy = 0,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED | FLAG_DANCE,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RESET_STATS,
-    },
-
-    [MOVE_HEAVY_SLAM] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_7
-            .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_DMG_MINIMIZE,
-        #else
-            .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        #endif
-        .effect = EFFECT_HEAT_CRASH,
-        .power = 1,
-        .type = TYPE_STEEL,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SYNCHRONOISE] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 120,
-            .pp = 10,
-            .zMovePower = 190,
-        #else
-            .power = 70,
-            .pp = 15,
-            .zMovePower = 140,
-        #endif
-        .effect = EFFECT_SYNCHRONOISE,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 100,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_FOES_AND_ALLY,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_ELECTRO_BALL] =
-    {
-        .effect = EFFECT_ELECTRO_BALL,
-        .power = 1,
-        .type = TYPE_ELECTRIC,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_BALLISTIC,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SOAK] =
-    {
-        .effect = EFFECT_SOAK,
-        .power = 0,
-        .type = TYPE_WATER,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_STATUS,
-        .argument = TYPE_WATER,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPATK_UP_1,
-    },
-
-    [MOVE_FLAME_CHARGE] =
-    {
-        .effect = EFFECT_SPEED_UP_HIT,
-        .power = 50,
-        .type = TYPE_FIRE,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_COIL] =
-    {
-        .effect = EFFECT_COIL,
-        .power = 0,
-        .type = TYPE_POISON,
-        .accuracy = 0,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RESET_STATS,
-    },
-
-    [MOVE_LOW_SWEEP] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 65,
-        #else
-            .power = 60,
-        #endif
-        .effect = EFFECT_SPEED_DOWN_HIT,
-        .type = TYPE_FIGHTING,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_ACID_SPRAY] =
-    {
-        .effect = EFFECT_SPECIAL_DEFENSE_DOWN_HIT_2,
-        .power = 40,
-        .type = TYPE_POISON,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_BALLISTIC | FLAG_SHEER_FORCE_BOOST,
-        .flags2 = FLAG_ACID_MOVE,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_FOUL_PLAY] =
-    {
-        .effect = EFFECT_FOUL_PLAY,
-        .power = 95,
-        .type = TYPE_DARK,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 175,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SIMPLE_BEAM] =
-    {
-        .effect = EFFECT_SIMPLE_BEAM,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_MEGA_LAUNCHER_BOOST,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPATK_UP_1,
-    },
-
-    [MOVE_ENTRAINMENT] =
-    {
-        .effect = EFFECT_ENTRAINMENT,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPDEF_UP_1,
-    },
-
-    [MOVE_AFTER_YOU] =
-    {
-        .effect = EFFECT_AFTER_YOU,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPD_UP_1,
-    },
-
-    [MOVE_ROUND] =
-    {
-        .effect = EFFECT_ROUND,
-        .power = 60,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_ECHOED_VOICE] =
-    {
-        .effect = EFFECT_ECHOED_VOICE,
-        .power = 40,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SOUND,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_CHIP_AWAY] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 70,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_STAT_STAGES_IGNORED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 140,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_CLEAR_SMOG] =
-    {
-        .effect = EFFECT_CLEAR_SMOG,
-        .power = 50,
-        .type = TYPE_POISON,
-        .accuracy = 0,
-        .pp = 15,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_STORED_POWER] =
-    {
-        .effect = EFFECT_STORED_POWER,
-        .power = 20,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_QUICK_GUARD] =
-    {
-        .effect = EFFECT_PROTECT,
-        .power = 0,
-        .type = TYPE_FIGHTING,
-        .accuracy = 0,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 3,
-        .flags = FLAG_PROTECTION_MOVE | FLAG_SNATCH_AFFECTED,
-        .split = SPLIT_STATUS,
-        .argument = TRUE, // Protects the whole side.
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_DEF_UP_1,
-    },
-
-    [MOVE_ALLY_SWITCH] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_7
-            .priority = 2,
-        #else
-            .priority = 1,
-        #endif
-        .effect = EFFECT_ALLY_SWITCH,
-        .power = 0,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 0,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .flags = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPD_UP_2,
-    },
-
-    [MOVE_SCALD] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .effect = EFFECT_SCALD,
-        #else
-            .effect = EFFECT_BURN_HIT,
-        #endif
-        .power = 80,
-        .type = TYPE_WATER,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_THAW_USER,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SHELL_SMASH] =
-    {
-        .effect = EFFECT_SHELL_SMASH,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RESET_STATS,
-    },
-
-    [MOVE_HEAL_PULSE] =
-    {
-        .effect = EFFECT_HEAL_PULSE,
-        .power = 0,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MEGA_LAUNCHER_BOOST,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RESET_STATS,
-    },
-
-    [MOVE_HEX] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 65,
-        #else
-            .power = 50,
-        #endif
-        .effect = EFFECT_HEX,
-        .type = TYPE_GHOST,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SKY_DROP] =
-    {
-        .effect = EFFECT_SKY_DROP,
-        .power = 60,
-        .type = TYPE_FLYING,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SHIFT_GEAR] =
-    {
-        .effect = EFFECT_SHIFT_GEAR,
-        .power = 0,
-        .type = TYPE_STEEL,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RESET_STATS,
-    },
-
-    [MOVE_CIRCLE_THROW] =
-    {
-        .effect = EFFECT_HIT_SWITCH_TARGET,
-        .power = 60,
-        .type = TYPE_FIGHTING,
-        .accuracy = 90,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = -6,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_INCINERATE] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 60,
-            .zMovePower = 120,
-        #else
-            .power = 30,
-            .zMovePower = 100,
-        #endif
-        .effect = EFFECT_INCINERATE,
-        .type = TYPE_FIRE,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_QUASH] =
-    {
-        .effect = EFFECT_QUASH,
-        .power = 0,
-        .type = TYPE_DARK,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPD_UP_1,
-    },
-
-    [MOVE_ACROBATICS] =
-    {
-        .effect = EFFECT_ACROBATICS,
-        .power = 50,
-        .type = TYPE_FLYING,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_REFLECT_TYPE] =
-    {
-        .effect = EFFECT_REFLECT_TYPE,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPATK_UP_1,
-    },
-
-    [MOVE_RETALIATE] =
-    {
-        .effect = EFFECT_RETALIATE,
-        .power = 70,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 140,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_FINAL_GAMBIT] =
-    {
-        .effect = EFFECT_FINAL_GAMBIT,
-        .power = 1,
-        .type = TYPE_FIGHTING,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 180,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_BESTOW] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .flags = FLAG_MIRROR_MOVE_AFFECTED,
-        #else
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        #endif
-        .effect = EFFECT_BESTOW,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPD_UP_2,
-    },
-
-    [MOVE_INFERNO] =
-    {
-        .effect = EFFECT_BURN_HIT,
-        .power = 100,
-        .type = TYPE_FIRE,
-        .accuracy = 50,
-        .pp = 5,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 180,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_WATER_PLEDGE] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 80,
-            .zMovePower = 160,
-        #else
-            .power = 50,
-            .zMovePower = 100,
-        #endif
-        .effect = EFFECT_PLEDGE,
-        .type = TYPE_WATER,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_FIRE_PLEDGE] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 80,
-            .zMovePower = 160,
-        #else
-            .power = 50,
-            .zMovePower = 100,
-        #endif
-        .effect = EFFECT_PLEDGE,
-        .type = TYPE_FIRE,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_GRASS_PLEDGE] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 80,
-            .zMovePower = 160,
-        #else
-            .power = 50,
-            .zMovePower = 100,
-        #endif
-        .effect = EFFECT_PLEDGE,
-        .type = TYPE_GRASS,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_VOLT_SWITCH] =
-    {
-        .effect = EFFECT_HIT_ESCAPE,
-        .power = 70,
-        .type = TYPE_ELECTRIC,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 140,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_STRUGGLE_BUG] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 50,
-        #else
-            .power = 30,
-        #endif
-        .effect = EFFECT_SPECIAL_ATTACK_DOWN_HIT,
-        .type = TYPE_BUG,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_BULLDOZE] =
-    {
-        .effect = EFFECT_BULLDOZE,
-        .power = 60,
-        .type = TYPE_GROUND,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_FOES_AND_ALLY,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_FROST_BREATH] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 60,
-            .zMovePower = 120,
-        #else
-            .power = 40,
-            .zMovePower = 100,
-        #endif
-        .effect = EFFECT_ALWAYS_CRIT,
-        .type = TYPE_ICE,
-        .accuracy = 90,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_DRAGON_TAIL] =
-    {
-        .effect = EFFECT_HIT_SWITCH_TARGET,
-        .power = 60,
-        .type = TYPE_DRAGON,
-        .accuracy = 90,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = -6,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_WORK_UP] =
-    {
-        .effect = EFFECT_ATTACK_SPATK_UP,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 30,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_ATK_UP_1,
-    },
-
-    [MOVE_ELECTROWEB] =
-    {
-        .effect = EFFECT_SPEED_DOWN_HIT,
-        .power = 55,
-        .type = TYPE_ELECTRIC,
-        .accuracy = 95,
-        .pp = 15,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_WILD_CHARGE] =
-    {
-        .effect = EFFECT_RECOIL_25,
-        .power = 90,
-        .type = TYPE_ELECTRIC,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_RECKLESS_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 175,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_DRILL_RUN] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 80,
-        .type = TYPE_GROUND,
-        .accuracy = 95,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_HIGH_CRIT | FLAG_DMG_UNGROUNDED_IGNORE_TYPE_IF_FLYING,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_DUAL_CHOP] =
-    {
-        .effect = EFFECT_DOUBLE_HIT,
-        .power = 40,
-        .type = TYPE_DRAGON,
-        .accuracy = 90,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_HIGH_CRIT | FLAG_TWO_STRIKES,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_HEART_STAMP] =
-    {
-        .effect = EFFECT_FLINCH_HIT,
-        .power = 60,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 100,
-        .pp = 25,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_HORN_LEECH] =
-    {
-        .effect = EFFECT_ABSORB,
-        .power = 75,
-        .type = TYPE_GRASS,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .flags2 = FLAG_DEFENSE_STAGES_IGNORED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 140,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SACRED_SWORD] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .pp = 15,
-        #else
-            .pp = 20,
-        #endif
-        .effect = EFFECT_HIT,
-        .power = 90,
-        .type = TYPE_FIGHTING,
-        .accuracy = 100,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_STAT_STAGES_IGNORED,
-        .flags2 = FLAG_SLICING_MOVE,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 175,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_RAZOR_SHELL] =
-    {
-        .effect = EFFECT_DEFENSE_DOWN_HIT,
-        .power = 75,
-        .type = TYPE_WATER,
-        .accuracy = 95,
-        .pp = 10,
-        .secondaryEffectChance = 50,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .flags2 = FLAG_SLICING_MOVE,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 140,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_HEAT_CRASH] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_DMG_MINIMIZE,
-        #else
-            .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        #endif
-        .effect = EFFECT_HEAT_CRASH,
-        .power = 1,
-        .type = TYPE_FIRE,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_LEAF_TORNADO] =
-    {
-        .effect = EFFECT_ACCURACY_DOWN_HIT,
-        .power = 65,
-        .type = TYPE_GRASS,
-        .accuracy = 90,
-        .pp = 10,
-        .secondaryEffectChance = 50,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_STEAMROLLER] =
-    {
-        .effect = EFFECT_FLINCH_HIT,
-        .power = 65,
-        .type = TYPE_BUG,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_PHYSICAL,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_DMG_MINIMIZE,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-        },
-
-    [MOVE_COTTON_GUARD] =
-    {
-        .effect = EFFECT_DEFENSE_UP_3,
-        .power = 0,
-        .type = TYPE_GRASS,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RESET_STATS,
-    },
-
-    [MOVE_NIGHT_DAZE] =
-    {
-        .effect = EFFECT_ACCURACY_DOWN_HIT,
-        .power = 85,
-        .type = TYPE_DARK,
-        .accuracy = 95,
-        .pp = 10,
-        .secondaryEffectChance = 40,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_PSYSTRIKE] =
-    {
-        .effect = EFFECT_PSYSHOCK,
-        .power = 100,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 180,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_TAIL_SLAP] =
-    {
-        .effect = EFFECT_MULTI_HIT,
-        .power = 25,
-        .type = TYPE_NORMAL,
-        .accuracy = 90,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_HURRICANE] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 110,
-            .zMovePower = 185,
-        #else
-            .power = 120,
-            .zMovePower = 190,
-        #endif
-        .effect = EFFECT_HURRICANE,
-        .type = TYPE_FLYING,
-        .accuracy = 70,
-        .pp = 10,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_DMG_IN_AIR,
-        .flags2 = FLAG_GIANT_WINGS_BOOST | FLAG_WEATHER_RELATED,
-        .split = SPLIT_SPECIAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_HEAD_CHARGE] =
-    {
-        .effect = EFFECT_RECOIL_25,
-        .power = 120,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_RECKLESS_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 190,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_GEAR_GRIND] =
-    {
-        .effect = EFFECT_DOUBLE_HIT,
-        .power = 50,
-        .type = TYPE_STEEL,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_TWO_STRIKES,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 180,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SEARING_SHOT] =
-    {
-        .effect = EFFECT_BURN_HIT,
-        .power = 100,
-        .type = TYPE_FIRE,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_FOES_AND_ALLY,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_BALLISTIC | FLAG_SHEER_FORCE_BOOST | FLAG_MEGA_LAUNCHER_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 180,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_TECHNO_BLAST] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 120,
-            .zMovePower = 190,
-        #else
-            .power = 85,
-            .zMovePower = 160,
-        #endif
-        .effect = EFFECT_CHANGE_TYPE_ON_ITEM,
-        .type = TYPE_STEEL,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .argument = HOLD_EFFECT_DRIVE,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_RELIC_SONG] =
-    {
-        .effect = EFFECT_RELIC_SONG,
-        .power = 100,
-        .type = TYPE_FAIRY,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 10,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SOUND | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 180,
-        .zMoveEffect = Z_EFFECT_NONE,
-        .argument = STATUS1_SLEEP,
-    },
-
-    [MOVE_SECRET_SWORD] =
-    {
-        .effect = EFFECT_PSYSHOCK,
-        .power = 85,
-        .type = TYPE_FIGHTING,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .flags2 = FLAG_SLICING_MOVE,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_GLACIATE] =
-    {
-        .effect = EFFECT_SPEED_DOWN_HIT,
-        .power = 100,
-        .type = TYPE_ICE,
-        .accuracy = 95,
-        .pp = 5,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 180,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_BOLT_STRIKE] =
-    {
-        .effect = EFFECT_PARALYZE_HIT,
-        .power = 130,
-        .type = TYPE_ELECTRIC,
-        .accuracy = 95,
-        .pp = 5,
-        .secondaryEffectChance = 20,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 195,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_BLUE_FLARE] =
-    {
-        .effect = EFFECT_BURN_HIT,
-        .power = 130,
-        .type = TYPE_FIRE,
-        .accuracy = 95,
-        .pp = 5,
-        .secondaryEffectChance = 20,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 195,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_FIERY_DANCE] =
-    {
-        .effect = EFFECT_SP_ATTACK_UP_HIT,
-        .power = 80,
-        .type = TYPE_FIRE,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 50,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_DANCE | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_FREEZE_SHOCK] =
-    {
-        .effect = EFFECT_PARALYZE_HIT,
-        .power = 130,
-        .type = TYPE_ICE,
-        .accuracy = 85,
-        .pp = 5,
-        .secondaryEffectChance = 20,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .argument = MOVE_EFFECT_PARALYSIS,
-        .zMovePower = 195,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_ICE_BURN] =
-    {
-        .effect = EFFECT_BURN_HIT,
-        .power = 130,
-        .type = TYPE_ICE,
-        .accuracy = 85,
-        .pp = 5,
-        .secondaryEffectChance = 20,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 195,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SNARL] =
-    {
-        .effect = EFFECT_SPECIAL_ATTACK_DOWN_HIT,
-        .power = 55,
-        .type = TYPE_DARK,
-        .accuracy = 95,
-        .pp = 15,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_SOUND,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_ICICLE_CRASH] =
-    {
-        .effect = EFFECT_FLINCH_HIT,
-        .power = 85,
-        .type = TYPE_ICE,
-        .accuracy = 90,
-        .pp = 10,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_V_CREATE] =
-    {
-        .effect = EFFECT_V_CREATE,
-        .power = 180,
-        .type = TYPE_FIRE,
-        .accuracy = 95,
-        .pp = 5,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 220,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_FUSION_FLARE] =
-    {
-        .effect = EFFECT_FUSION_COMBO,
-        .power = 100,
-        .type = TYPE_FIRE,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_THAW_USER,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 180,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_FUSION_BOLT] =
-    {
-        .effect = EFFECT_FUSION_COMBO,
-        .power = 100,
-        .type = TYPE_ELECTRIC,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 180,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_FLYING_PRESS] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_7
-            .power = 100,
-        #else
-            .power = 80,
-        #endif
-        .effect = EFFECT_TWO_TYPED_MOVE,
-        .type = TYPE_FIGHTING,
-        .accuracy = 95,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_DMG_MINIMIZE,
-        .split = SPLIT_PHYSICAL,
-        .argument = TYPE_FLYING,
-        .zMovePower = 170,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_MAT_BLOCK] =
-    {
-        .effect = EFFECT_MAT_BLOCK,
-        .power = 0,
-        .type = TYPE_FIGHTING,
-        .accuracy = 0,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .split = SPLIT_STATUS,
-        .argument = TRUE, // Protects the whole side.
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_DEF_UP_1,
-    },
-
-    [MOVE_BELCH] =
-    {
-        .effect = EFFECT_BELCH,
-        .power = 120,
-        .type = TYPE_POISON,
-        .accuracy = 90,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 190,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_ROTOTILLER] =
-    {
-        .effect = EFFECT_ROTOTILLER,
-        .power = 0,
-        .type = TYPE_GROUND,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_ALL_BATTLERS,
-        .priority = 0,
-        .flags = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_ATK_UP_1,
-    },
-
-    [MOVE_STICKY_WEB] =
-    {
-        .effect = EFFECT_STICKY_WEB,
-        .power = 0,
-        .type = TYPE_BUG,
-        .accuracy = 0,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_OPPONENTS_FIELD,
-        .priority = 0,
-        .flags = FLAG_MAGIC_COAT_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPD_UP_1,
-    },
-
-    [MOVE_FELL_STINGER] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_7
-            .power = 50,
-        #else
-            .power = 30,
-        #endif
-        .effect = EFFECT_FELL_STINGER,
-        .type = TYPE_BUG,
-        .accuracy = 100,
-        .pp = 25,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_PHANTOM_FORCE] =
-    {
-        #if B_UPDATED_MOVE_DATA == GEN_6
-            .flags = FLAG_MAKES_CONTACT | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_DMG_MINIMIZE,
-        #else
-            .flags = FLAG_MAKES_CONTACT | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        #endif
-        .effect = EFFECT_SEMI_INVULNERABLE,
-        .power = 90,
-        .type = TYPE_GHOST,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_PHYSICAL,
-        .argument = MOVE_EFFECT_FEINT,
-        .zMovePower = 175,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_TRICK_OR_TREAT] =
-    {
-        .effect = EFFECT_THIRD_TYPE,
-        .power = 0,
-        .type = TYPE_GHOST,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_STATUS,
-        .argument = TYPE_GHOST,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_ALL_STATS_UP_1,
-    },
-
-    [MOVE_NOBLE_ROAR] =
-    {
-        .effect = EFFECT_NOBLE_ROAR,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 30,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SOUND,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_DEF_UP_1,
-    },
-
-    [MOVE_ION_DELUGE] =
-    {
-        .effect = EFFECT_ION_DELUGE,
-        .power = 0,
-        .type = TYPE_ELECTRIC,
-        .accuracy = 0,
-        .pp = 25,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_ALL_BATTLERS,
-        .priority = 1,
-        .flags = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPATK_UP_1,
-    },
-
-    [MOVE_PARABOLIC_CHARGE] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_7
-            .power = 65,
-            .zMovePower = 120,
-        #else
-            .power = 50,
-            .zMovePower = 100,
-        #endif
-        .effect = EFFECT_ABSORB,
-        .type = TYPE_ELECTRIC,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_FOES_AND_ALLY,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_FORESTS_CURSE] =
-    {
-        .effect = EFFECT_THIRD_TYPE,
-        .power = 0,
-        .type = TYPE_GRASS,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_STATUS,
-        .argument = TYPE_GRASS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_ALL_STATS_UP_1,
-    },
-
-    [MOVE_PETAL_BLIZZARD] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 90,
-        .type = TYPE_GRASS,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_FOES_AND_ALLY,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .flags2 = FLAG_GIANT_WINGS_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 175,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_FREEZE_DRY] =
-    {
-        .effect = EFFECT_FREEZE_DRY,
-        .power = 70,
-        .type = TYPE_ICE,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 20,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 140,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_DISARMING_VOICE] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 40,
-        .type = TYPE_FAIRY,
-        .accuracy = 0,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SOUND,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_PARTING_SHOT] =
-    {
-        .effect = EFFECT_PARTING_SHOT,
-        .power = 0,
-        .type = TYPE_DARK,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SOUND | FLAG_MEGA_LAUNCHER_BOOST,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RESTORE_REPLACEMENT_HP,
-    },
-
-    [MOVE_TOPSY_TURVY] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_7
-            .accuracy = 0,
-        #else
-            .accuracy = 100,
-        #endif
-        .effect = EFFECT_TOPSY_TURVY,
-        .power = 0,
-        .type = TYPE_DARK,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_ATK_UP_1,
-    },
-
-    [MOVE_DRAINING_KISS] =
-    {
-        .effect = EFFECT_ABSORB,
-        .power = 50,
-        .type = TYPE_FAIRY,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .argument = 75, // restores 75% HP instead of 50% HP
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_CRAFTY_SHIELD] =
-    {
-        .effect = EFFECT_PROTECT,
-        .power = 0,
-        .type = TYPE_FAIRY,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 3,
-        .flags = 0,
-        .split = SPLIT_STATUS,
-        .argument = TRUE, // Protects the whole side.
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPDEF_UP_1,
-    },
-
-    [MOVE_FLOWER_SHIELD] =
-    {
-        .effect = EFFECT_FLOWER_SHIELD,
-        .power = 0,
-        .type = TYPE_FAIRY,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_ALL_BATTLERS,
-        .priority = 0,
-        .flags = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_DEF_UP_1,
-    },
-
-    [MOVE_GRASSY_TERRAIN] =
-    {
-        .effect = EFFECT_GRASSY_TERRAIN,
-        .power = 0,
-        .type = TYPE_GRASS,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_ALL_BATTLERS,
-        .priority = 0,
-        .flags = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_DEF_UP_1,
-    },
-
-    [MOVE_MISTY_TERRAIN] =
-    {
-        .effect = EFFECT_MISTY_TERRAIN,
-        .power = 0,
-        .type = TYPE_FAIRY,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_ALL_BATTLERS,
-        .priority = 0,
-        .flags = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPDEF_UP_1,
-    },
-
-    [MOVE_ELECTRIFY] =
-    {
-        .effect = EFFECT_ELECTRIFY,
-        .power = 0,
-        .type = TYPE_ELECTRIC,
-        .accuracy = 0,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPATK_UP_1,
-    },
-
-    [MOVE_PLAY_ROUGH] =
-    {
-        .effect = EFFECT_ATTACK_DOWN_HIT,
-        .power = 90,
-        .type = TYPE_FAIRY,
-        .accuracy = 90,
-        .pp = 10,
-        .secondaryEffectChance = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 175,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_FAIRY_WIND] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 40,
-        .type = TYPE_FAIRY,
-        .accuracy = 100,
-        .pp = 30,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .flags2 = FLAG_GIANT_WINGS_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_MOONBLAST] =
-    {
-        .effect = EFFECT_SPECIAL_ATTACK_DOWN_HIT,
-        .power = 95,
-        .type = TYPE_FAIRY,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 175,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_BOOMBURST] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 140,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_FOES_AND_ALLY,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SOUND,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 200,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_FAIRY_LOCK] =
-    {
-        .effect = EFFECT_FAIRY_LOCK,
-        .power = 0,
-        .type = TYPE_FAIRY,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_ALL_BATTLERS,
-        .priority = 0,
-        .flags = FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_DEF_UP_1,
-    },
-
-    [MOVE_KINGS_SHIELD] =
-    {
-        .effect = EFFECT_PROTECT,
-        .power = 0,
-        .type = TYPE_STEEL,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 4,
-        .flags = FLAG_PROTECTION_MOVE,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RESET_STATS,
-    },
-
-    [MOVE_PLAY_NICE] =
-    {
-        .effect = EFFECT_ATTACK_DOWN,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_DEF_UP_1,
-    },
-
-    [MOVE_CONFIDE] =
-    {
-        .effect = EFFECT_SPECIAL_ATTACK_DOWN,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SOUND,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPDEF_UP_1,
-    },
-
-    [MOVE_DIAMOND_STORM] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_4
-            .effect = EFFECT_DEFENSE_UP2_HIT,
-        #else
-            .effect = EFFECT_DEFENSE_UP_HIT,
-        #endif
-        .power = 100,
-        .type = TYPE_ROCK,
-        .accuracy = 95,
-        .pp = 5,
-        .secondaryEffectChance = 50,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 180,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_STEAM_ERUPTION] =
-    {
-        .effect = EFFECT_SCALD,
-        .power = 110,
-        .type = TYPE_WATER,
-        .accuracy = 95,
-        .pp = 5,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_THAW_USER,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 185,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_HYPERSPACE_HOLE] =
-    {
-        .effect = EFFECT_FEINT,
-        .power = 80,
-        .type = TYPE_GHOST,
-        .accuracy = 0,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_WATER_SHURIKEN] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_7
-            .split = SPLIT_SPECIAL,
-        #else
-            .split = SPLIT_PHYSICAL,
-        #endif
-        .effect = EFFECT_MULTI_HIT,
-        .power = 15,
-        .type = TYPE_WATER,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 1,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_MYSTICAL_FIRE] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_7
-            .power = 75,
-            .zMovePower = 140,
-        #else
-            .power = 65,
-            .zMovePower = 120,
-        #endif
-        .effect = EFFECT_SPECIAL_ATTACK_DOWN_HIT,
-        .type = TYPE_FIRE,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SPIKY_SHIELD] =
-    {
-        .effect = EFFECT_PROTECT,
-        .power = 0,
-        .type = TYPE_GRASS,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 4,
-        .flags = FLAG_PROTECTION_MOVE,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_DEF_UP_1,
-    },
-
-    [MOVE_AROMATIC_MIST] =
-    {
-        .effect = EFFECT_AROMATIC_MIST,
-        .power = 0,
-        .type = TYPE_FAIRY,
-        .accuracy = 0,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_ALLY,
-        .priority = 0,
-        .flags = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPDEF_UP_2,
-    },
-
-    [MOVE_EERIE_IMPULSE] =
-    {
-        .effect = EFFECT_SPECIAL_ATTACK_DOWN_2,
-        .power = 0,
-        .type = TYPE_ELECTRIC,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPDEF_UP_1,
-    },
-
-    [MOVE_VENOM_DRENCH] =
-    {
-        .effect = EFFECT_VENOM_DRENCH,
-        .power = 0,
-        .type = TYPE_POISON,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_DEF_UP_1,
-    },
-
-    [MOVE_POWDER] =
-    {
-        .effect = EFFECT_POWDER,
-        .power = 0,
-        .type = TYPE_BUG,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 1,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_POWDER,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPDEF_UP_2,
-    },
-
-    [MOVE_GEOMANCY] =
-    {
-        .effect = EFFECT_GEOMANCY,
-        .power = 0,
-        .type = TYPE_FAIRY,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_ALL_STATS_UP_1,
-    },
-
-    [MOVE_MAGNETIC_FLUX] =
-    {
-        .effect = EFFECT_MAGNETIC_FLUX,
-        .power = 0,
-        .type = TYPE_ELECTRIC,
-        .accuracy = 0,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .flags2 = FLAG_MAGNET_MOVE,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPDEF_UP_1,
-    },
-
-    [MOVE_HAPPY_HOUR] =
-    {
-        .effect = EFFECT_DO_NOTHING,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 30,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_ALL_STATS_UP_1,
-    },
-
-    [MOVE_ELECTRIC_TERRAIN] =
-    {
-        .effect = EFFECT_ELECTRIC_TERRAIN,
-        .power = 0,
-        .type = TYPE_ELECTRIC,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_ALL_BATTLERS,
-        .priority = 0,
-        .flags = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPD_UP_1,
-    },
-
-    [MOVE_DAZZLING_GLEAM] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 80,
-        .type = TYPE_FAIRY,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_CELEBRATE] =
-    {
-        .effect = EFFECT_DO_NOTHING,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 40,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_ALL_STATS_UP_1,
-    },
-
-    [MOVE_HOLD_HANDS] =
-    {
-        .effect = EFFECT_DO_NOTHING,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 40,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_ALLY,
-        .priority = 0,
-        .flags = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_ALL_STATS_UP_1,
-    },
-
-    [MOVE_BABY_DOLL_EYES] =
-    {
-        .effect = EFFECT_ATTACK_DOWN,
-        .power = 0,
-        .type = TYPE_FAIRY,
-        .accuracy = 100,
-        .pp = 30,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 1,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_DEF_UP_1,
-    },
-
-    [MOVE_NUZZLE] =
-    {
-        .effect = EFFECT_PARALYZE_HIT,
-        .power = 20,
-        .type = TYPE_ELECTRIC,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_HOLD_BACK] =
-    {
-        .effect = EFFECT_FALSE_SWIPE,
-        .power = 40,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 40,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_INFESTATION] =
-    {
-        .effect = EFFECT_TRAP,
-        .power = 20,
-        .type = TYPE_BUG,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_POWER_UP_PUNCH] =
-    {
-        .effect = EFFECT_ATTACK_UP_HIT,
-        .power = 40,
-        .type = TYPE_FIGHTING,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_IRON_FIST_BOOST | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_OBLIVION_WING] =
-    {
-        .effect = EFFECT_ABSORB,
-        .power = 80,
-        .type = TYPE_FLYING,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .flags2 = FLAG_GIANT_WINGS_BOOST,
-        .split = SPLIT_SPECIAL,
-        .argument = 75, // restores 75% HP instead of 50% HP
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_THOUSAND_ARROWS] =
-    {
-        .effect = EFFECT_SMACK_DOWN,
-        .power = 90,
-        .type = TYPE_GROUND,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_DMG_IN_AIR | FLAG_DMG_UNGROUNDED_IGNORE_TYPE_IF_FLYING,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 175,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_THOUSAND_WAVES] =
-    {
-        .effect = EFFECT_HIT_PREVENT_ESCAPE,
-        .power = 90,
-        .type = TYPE_GROUND,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 175,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_LANDS_WRATH] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 90,
-        .type = TYPE_GROUND,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 175,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_LIGHT_OF_RUIN] =
-    {
-        .effect = EFFECT_RECOIL_50,
-        .power = 140,
-        .type = TYPE_FAIRY,
-        .accuracy = 90,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_RECKLESS_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 200,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_ORIGIN_PULSE] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 110,
-        .type = TYPE_WATER,
-        .accuracy = 85,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_MEGA_LAUNCHER_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 185,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_PRECIPICE_BLADES] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 120,
-        .type = TYPE_GROUND,
-        .accuracy = 85,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 190,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_DRAGON_ASCENT] =
-    {
-        .effect = EFFECT_CLOSE_COMBAT,
-        .power = 120,
-        .type = TYPE_FLYING,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 190,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_HYPERSPACE_FURY] =
-    {
-        .effect = EFFECT_HYPERSPACE_FURY,
-        .power = 100,
-        .type = TYPE_DARK,
-        .accuracy = 0,
-        .pp = 5,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_HIT_IN_SUBSTITUTE,
-        .split = SPLIT_PHYSICAL,
-    },
-
-    [MOVE_SHORE_UP] =
-    {
-        .effect = EFFECT_SHORE_UP,
-        .power = 0,
-        .type = TYPE_GROUND,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RESET_STATS,
-    },
-
-    [MOVE_FIRST_IMPRESSION] =
-    {
-        .effect = EFFECT_FAKE_OUT,
-        .power = 90,
-        .type = TYPE_BUG,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 2,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 175,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_BANEFUL_BUNKER] =
-    {
-        .effect = EFFECT_PROTECT,
-        .power = 0,
-        .type = TYPE_POISON,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 4,
-        .flags = FLAG_PROTECTION_MOVE,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_DEF_UP_1,
-    },
-
-    [MOVE_SPIRIT_SHACKLE] =
-    {
-        .effect = EFFECT_HIT_PREVENT_ESCAPE,
-        .power = 80,
-        .type = TYPE_GHOST,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_DARKEST_LARIAT] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 85,
-        .type = TYPE_DARK,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_STAT_STAGES_IGNORED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SPARKLING_ARIA] =
-    {
-        .effect = EFFECT_SPARKLING_ARIA,
-        .power = 90,
-        .type = TYPE_WATER,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_FOES_AND_ALLY,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SOUND | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_SPECIAL,
-        .argument = STATUS1_BURN,
-        .zMovePower = 175,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_ICE_HAMMER] =
-    {
-        .effect = EFFECT_HAMMER_ARM,
-        .power = 100,
-        .type = TYPE_ICE,
-        .accuracy = 90,
-        .pp = 10,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_IRON_FIST_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 180,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_FLORAL_HEALING] =
-    {
-        .effect = EFFECT_HEAL_PULSE,
-        .power = 0,
-        .type = TYPE_FAIRY,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RESET_STATS,
-    },
-
-    [MOVE_HIGH_HORSEPOWER] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 95,
-        .type = TYPE_GROUND,
-        .accuracy = 95,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_DMG_UNGROUNDED_IGNORE_TYPE_IF_FLYING,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 175,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_STRENGTH_SAP] =
-    {
-        .effect = EFFECT_STRENGTH_SAP,
-        .power = 0,
-        .type = TYPE_GRASS,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_DEF_UP_1,
-    },
-
-    [MOVE_SOLAR_BLADE] =
-    {
-        .effect = EFFECT_SOLAR_BEAM,
-        .power = 125,
-        .type = TYPE_GRASS,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .flags2 = FLAG_WEATHER_RELATED | FLAG_SLICING_MOVE,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 190,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_LEAFAGE] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 40,
-        .type = TYPE_GRASS,
-        .accuracy = 100,
-        .pp = 40,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SPOTLIGHT] =
-    {
-        .effect = EFFECT_FOLLOW_ME,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 3,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPDEF_UP_1,
-    },
-
-    [MOVE_TOXIC_THREAD] =
-    {
-        .effect = EFFECT_TOXIC_THREAD,
-        .power = 0,
-        .type = TYPE_POISON,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPD_UP_1,
-    },
-
-    [MOVE_LASER_FOCUS] =
-    {
-        .effect = EFFECT_LASER_FOCUS,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 30,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_ATK_UP_1,
-    },
-
-    [MOVE_GEAR_UP] =
-    {
-        .effect = EFFECT_GEAR_UP,
-        .power = 0,
-        .type = TYPE_STEEL,
-        .accuracy = 0,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .flags2 = FLAG_MAGNET_MOVE,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPATK_UP_1,
-    },
-
-    [MOVE_THROAT_CHOP] =
-    {
-        .effect = EFFECT_THROAT_CHOP,
-        .power = 80,
-        .type = TYPE_DARK,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_POLLEN_PUFF] =
-    {
-        .effect = EFFECT_HIT_ENEMY_HEAL_ALLY,
-        .power = 90,
-        .type = TYPE_BUG,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_BALLISTIC,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 175,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_ANCHOR_SHOT] =
-    {
-        .effect = EFFECT_HIT_PREVENT_ESCAPE,
-        .power = 80,
-        .type = TYPE_STEEL,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED |  FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_MEGA_LAUNCHER_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_PSYCHIC_TERRAIN] =
-    {
-        .effect = EFFECT_PSYCHIC_TERRAIN,
-        .power = 0,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_ALL_BATTLERS,
-        .priority = 0,
-        .flags = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPATK_UP_1,
-    },
-
-    [MOVE_LUNGE] =
-    {
-        .effect = EFFECT_ATTACK_DOWN_HIT,
-        .power = 80,
-        .type = TYPE_BUG,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_FIRE_LASH] =
-    {
-        .effect = EFFECT_DEFENSE_DOWN_HIT,
-        .power = 80,
-        .type = TYPE_FIRE,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_POWER_TRIP] =
-    {
-        .effect = EFFECT_STORED_POWER,
-        .power = 20,
-        .type = TYPE_DARK,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_BURN_UP] =
-    {
-        .effect = EFFECT_BURN_UP,
-        .power = 130,
-        .type = TYPE_FIRE,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_THAW_USER,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 195,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SPEED_SWAP] =
-    {
-        .effect = EFFECT_SPEED_SWAP,
-        .power = 0,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPD_UP_1,
-    },
-
-    [MOVE_SMART_STRIKE] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 70,
-        .type = TYPE_STEEL,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 140,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_PURIFY] =
-    {
-        .effect = EFFECT_PURIFY,
-        .power = 0,
-        .type = TYPE_POISON,
-        .accuracy = 0,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_ALL_STATS_UP_1,
-    },
-
-    [MOVE_REVELATION_DANCE] =
-    {
-        .effect = EFFECT_REVELATION_DANCE,
-        .power = 90,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_DANCE,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 175,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_CORE_ENFORCER] =
-    {
-        .effect = EFFECT_CORE_ENFORCER,
-        .power = 100,
-        .type = TYPE_DRAGON,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 140,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_TROP_KICK] =
-    {
-        .effect = EFFECT_ATTACK_DOWN_HIT,
-        .power = 70,
-        .type = TYPE_GRASS,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .flags2 = FLAG_AIRBOURNE_STYLE_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 140,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_INSTRUCT] =
-    {
-        .effect = EFFECT_INSTRUCT,
-        .power = 0,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 0,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPATK_UP_1,
-    },
-
-    [MOVE_BEAK_BLAST] =
-    {
-        .effect = EFFECT_BEAK_BLAST,
-        .power = 100,
-        .type = TYPE_FLYING,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = -3,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_BALLISTIC,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 180,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_CLANGING_SCALES] =
-    {
-        .effect = EFFECT_CLANGING_SCALES,
-        .power = 110,
-        .type = TYPE_DRAGON,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SOUND,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 185,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_DRAGON_HAMMER] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 90,
-        .type = TYPE_DRAGON,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 175,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_BRUTAL_SWING] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 60,
-        .type = TYPE_DARK,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_FOES_AND_ALLY,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_AURORA_VEIL] =
-    {
-        .effect = EFFECT_AURORA_VEIL,
-        .power = 0,
-        .type = TYPE_ICE,
-        .accuracy = 0,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .flags2 = FLAG_WEATHER_RELATED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPD_UP_1,
-    },
-
-    [MOVE_SHELL_TRAP] =
-    {
-        .effect = EFFECT_SHELL_TRAP,
-        .power = 150,
-        .type = TYPE_FIRE,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_OPPONENTS_FIELD,
-        .priority = -3,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 200,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_FLEUR_CANNON] =
-    {
-        .effect = EFFECT_OVERHEAT,
-        .power = 130,
-        .type = TYPE_FAIRY,
-        .accuracy = 90,
-        .pp = 5,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_MEGA_LAUNCHER_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 195,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_PSYCHIC_FANGS] =
-    {
-        .effect = EFFECT_BRICK_BREAK,
-        .power = 85,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_STRONG_JAW_BOOST,
-        .flags2 = FLAG_FANG_MOVE,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 140,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_STOMPING_TANTRUM] =
-    {
-        .effect = EFFECT_STOMPING_TANTRUM,
-        .power = 75,
-        .type = TYPE_GROUND,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 140,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SHADOW_BONE] =
-    {
-        .effect = EFFECT_DEFENSE_DOWN_HIT,
-        .power = 85,
-        .type = TYPE_GHOST,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 20,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_ACCELEROCK] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 40,
-        .type = TYPE_ROCK,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 1,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_LIQUIDATION] =
-    {
-        .effect = EFFECT_DEFENSE_DOWN_HIT,
-        .power = 85,
-        .type = TYPE_WATER,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 20,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_PRISMATIC_LASER] =
-    {
-        .effect = EFFECT_RECHARGE,
-        .power = 160,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 200,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SPECTRAL_THIEF] =
-    {
-        .effect = EFFECT_SPECTRAL_THIEF,
-        .power = 90,
-        .type = TYPE_GHOST,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 175,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SUNSTEEL_STRIKE] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 100,
-        .type = TYPE_STEEL,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_TARGET_ABILITY_IGNORED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 180,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_MOONGEIST_BEAM] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 100,
-        .type = TYPE_GHOST,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_TARGET_ABILITY_IGNORED | FLAG_MEGA_LAUNCHER_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 180,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_TEARFUL_LOOK] =
-    {
-        .effect = EFFECT_NOBLE_ROAR,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_DEF_UP_1,
-    },
-
-    [MOVE_ZING_ZAP] =
-    {
-        .effect = EFFECT_FLINCH_HIT,
-        .power = 80,
-        .type = TYPE_ELECTRIC,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_NATURES_MADNESS] =
-    {
-        .effect = EFFECT_SUPER_FANG,
-        .power = 1,
-        .type = TYPE_FAIRY,
-        .accuracy = 90,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_MULTI_ATTACK] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_8
-            .power = 120,
-            .zMovePower = 190,
-        #else
-            .power = 90,
-            .zMovePower = 175,
-        #endif
-        .effect = EFFECT_CHANGE_TYPE_ON_ITEM,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .argument = HOLD_EFFECT_MEMORY,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_MIND_BLOWN] =
-    {
-        .effect = EFFECT_MIND_BLOWN,
-        .power = 150,
-        .type = TYPE_FIRE,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_FOES_AND_ALLY,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 200,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_PLASMA_FISTS] =
-    {
-        .effect = EFFECT_PLASMA_FISTS,
-        .power = 100,
-        .type = TYPE_ELECTRIC,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_IRON_FIST_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 180,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_PHOTON_GEYSER] =
-    {
-        .effect = EFFECT_PHOTON_GEYSER,
-        .power = 100,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_TARGET_ABILITY_IGNORED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 180,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_ZIPPY_ZAP] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_8
-            .power = 80,
-            .effect = EFFECT_EVASION_UP_HIT,
-            .pp = 10,
-            .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-            .zMovePower = 160,
-        #else
-            .effect = EFFECT_ALWAYS_CRIT,
-            .power = 50,
-            .pp = 15,
-            .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-            .zMovePower = 100,
-        #endif
-        .type = TYPE_ELECTRIC,
-        .accuracy = 100,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 2,
-        .split = SPLIT_PHYSICAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SPLISHY_SPLASH] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_8
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        #else
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        #endif
-        .effect = EFFECT_PARALYZE_HIT,
-        .power = 90,
-        .type = TYPE_WATER,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 175,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_FLOATY_FALL] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_8
-            .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        #else
-            .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        #endif
-        .effect = EFFECT_FLINCH_HIT,
-        .power = 90,
-        .type = TYPE_FLYING,
-        .accuracy = 95,
-        .pp = 15,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 175,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_PIKA_PAPOW] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_8
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        #else
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        #endif
-        .effect = EFFECT_RETURN,
-        .power = 1,
-        .type = TYPE_ELECTRIC,
-        .accuracy = 0,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_BOUNCY_BUBBLE] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_8
-            .power = 60,
-            .pp = 20,
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-            .argument = 100, // restores 100% HP instead of 50% HP
-            .zMovePower = 120,
-        #else
-            .power = 90,
-            .pp = 15,
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-            .zMovePower = 175,
-        #endif
-        .effect = EFFECT_ABSORB,
-        .type = TYPE_WATER,
-        .accuracy = 100,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_SPECIAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_BUZZY_BUZZ] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_8
-            .power = 60,
-            .pp = 20,
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-            .zMovePower = 120,
-        #else
-            .power = 90,
-            .pp = 15,
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-            .zMovePower = 175,
-        #endif
-        .effect = EFFECT_PARALYZE_HIT,
-        .type = TYPE_ELECTRIC,
-        .accuracy = 100,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_SPECIAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SIZZLY_SLIDE] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_8
-            .power = 60,
-            .pp = 20,
-            .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_THAW_USER,
-            .zMovePower = 120,
-        #else
-            .power = 90,
-            .pp = 15,
-            .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_THAW_USER,
-            .zMovePower = 175,
-        #endif
-        .effect = EFFECT_BURN_HIT,
-        .type = TYPE_FIRE,
-        .accuracy = 100,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_PHYSICAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_GLITZY_GLOW] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_8
-            .power = 80,
-            .accuracy = 95,
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-            .zMovePower = 160,
-        #else
-            .power = 90,
-            .accuracy = 100,
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-            .zMovePower = 175,
-        #endif
-        .effect = EFFECT_GLITZY_GLOW,
-        .type = TYPE_PSYCHIC,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_SPECIAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_BADDY_BAD] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_8
-            .power = 80,
-            .accuracy = 95,
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-            .zMovePower = 160,
-        #else
-            .power = 90,
-            .accuracy = 100,
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-            .zMovePower = 175,
-        #endif
-        .effect = EFFECT_BADDY_BAD,
-        .type = TYPE_DARK,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_SPECIAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SAPPY_SEED] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_8
-            .power = 100,
-            .accuracy = 90,
-            .pp = 10,
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-            .zMovePower = 180,
-        #else
-            .power = 90,
-            .accuracy = 100,
-            .pp = 15,
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-            .zMovePower = 175,
-        #endif
-        .effect = EFFECT_SAPPY_SEED,
-        .type = TYPE_GRASS,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_PHYSICAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_FREEZY_FROST] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_8
-            .power = 100,
-            .accuracy = 90,
-            .pp = 10,
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-            .zMovePower = 180,
-        #else
-            .power = 90,
-            .accuracy = 100,
-            .pp = 15,
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-            .zMovePower = 175,
-        #endif
-        .effect = EFFECT_FREEZY_FROST,
-        .type = TYPE_ICE,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_SPECIAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SPARKLY_SWIRL] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_8
-            .power = 120,
-            .accuracy = 85,
-            .pp = 5,
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-            .zMovePower = 190,
-        #else
-            .power = 90,
-            .accuracy = 100,
-            .pp = 15,
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-            .zMovePower = 175,
-        #endif
-        .effect = EFFECT_SPARKLY_SWIRL,
-        .type = TYPE_FAIRY,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_SPECIAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_VEEVEE_VOLLEY] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_8
-            .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        #else
-            .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        #endif
-        .effect = EFFECT_RETURN,
-        .power = 1,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_DOUBLE_IRON_BASH] =
-    {
-        #if B_UPDATED_MOVE_DATA >= GEN_8
-            .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_IRON_FIST_BOOST | FLAG_SHEER_FORCE_BOOST | FLAG_TWO_STRIKES,
-        #else
-            .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_DMG_MINIMIZE | FLAG_IRON_FIST_BOOST | FLAG_SHEER_FORCE_BOOST | FLAG_TWO_STRIKES,
-        #endif
-        .effect = EFFECT_DOUBLE_IRON_BASH,
-        .power = 60,
-        .type = TYPE_STEEL,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-    
-    [MOVE_DYNAMAX_CANNON] =
-    {
-        .effect = EFFECT_DYNAMAX_DOUBLE_DMG,
-        .power = 100,
-        .type = TYPE_DRAGON,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_MEGA_LAUNCHER_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 180,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SNIPE_SHOT] =
-    {
-        .effect = EFFECT_SNIPE_SHOT,
-        .power = 80,
-        .type = TYPE_WATER,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_HIGH_CRIT | FLAG_MEGA_LAUNCHER_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_JAW_LOCK] =
-    {
-        .effect = EFFECT_JAW_LOCK,
-        .power = 80,
-        .type = TYPE_ROCK,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_STRONG_JAW_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_STUFF_CHEEKS] =
-    {
-        .effect = EFFECT_STUFF_CHEEKS,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_NO_RETREAT] =
-    {
-        .effect = EFFECT_NO_RETREAT,   //TODO
-        .power = 0,
-        .type = TYPE_FIGHTING,
-        .accuracy = 0,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_TAR_SHOT] =
-    {
-        .effect = EFFECT_TAR_SHOT,
-        .power = 50,
-        .type = TYPE_ROCK,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_MEGA_LAUNCHER_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_MAGIC_POWDER] =
-    {
-        .effect = EFFECT_SOAK,
-        .power = 0,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_POWDER,
-        .split = SPLIT_STATUS,
-        .argument = TYPE_PSYCHIC,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_DRAGON_DARTS] =
-    {
-        .effect = EFFECT_MULTI_HIT, //TODO
-        .power = 50,
-        .type = TYPE_DRAGON,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_TWO_STRIKES,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_TEATIME] =
-    {
-        .effect = EFFECT_TEATIME,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_OCTOLOCK] =
-    {
-        .effect = EFFECT_OCTOLOCK,
-        .power = 0,
-        .type = TYPE_FIGHTING,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_BOLT_BEAK] =
-    {
-        .effect = EFFECT_BOLT_BEAK,
-        .power = 85,
-        .type = TYPE_ELECTRIC,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_FISHIOUS_REND] =
-    {
-        .effect = EFFECT_BOLT_BEAK,
-        .power = 85,
-        .type = TYPE_WATER,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_STRONG_JAW_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_COURT_CHANGE] =
-    {
-        .effect = EFFECT_COURT_CHANGE,   
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_ALL_BATTLERS,
-        .priority = 0,
-        .flags = FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_CLANGOROUS_SOUL] =
-    {
-        .effect = EFFECT_CLANGOROUS_SOUL,
-        .power = 0,
-        .type = TYPE_DRAGON,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED | FLAG_SOUND,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_BODY_PRESS] =
-    {
-        .effect = EFFECT_BODY_PRESS,
-        .power = 80,
-        .type = TYPE_FIGHTING,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_DECORATE] =
-    {
-        .effect = EFFECT_DECORATE,
-        .power = 0,
-        .type = TYPE_FAIRY,
-        .accuracy = 0,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_DRUM_BEATING] =
-    {
-        .effect = EFFECT_SPEED_DOWN_HIT,
-        .power = 80,
-        .type = TYPE_GRASS,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SNAP_TRAP] =
-    {
-        .effect = EFFECT_TRAP,
-        .power = 35,
-        .type = TYPE_STEEL,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_STRONG_JAW_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_PYRO_BALL] =
-    {
-        .effect = EFFECT_BURN_HIT,
-        .power = 120,
-        .type = TYPE_FIRE,
-        .accuracy = 90,
-        .pp = 5,
-        .secondaryEffectChance = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_BALLISTIC | FLAG_SHEER_FORCE_BOOST | FLAG_THAW_USER,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 190,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_BEHEMOTH_BLADE] =
-    {
-        .effect = EFFECT_DYNAMAX_DOUBLE_DMG,
-        .power = 100,
-        .type = TYPE_STEEL,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .flags2 = FLAG_SLICING_MOVE,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 180,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_BEHEMOTH_BASH] =
-    {
-        .effect = EFFECT_DYNAMAX_DOUBLE_DMG,
-        .power = 100,
-        .type = TYPE_STEEL,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 180,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_AURA_WHEEL] =
-    {
-        .effect = EFFECT_AURA_WHEEL,
-        .power = 110,
-        .type = TYPE_ELECTRIC,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 185,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_BREAKING_SWIPE] =
-    {
-        .effect = EFFECT_ATTACK_DOWN_HIT,
-        .power = 60,
-        .type = TYPE_DRAGON,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_BRANCH_POKE] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 40,
-        .type = TYPE_GRASS,
-        .accuracy = 100,
-        .pp = 40,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_OVERDRIVE] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 80,
-        .type = TYPE_ELECTRIC,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SOUND,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_APPLE_ACID] =
-    {
-        .effect = EFFECT_SPECIAL_DEFENSE_DOWN_HIT,
-        .power = 80,
-        .type = TYPE_GRASS,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .flags2 = FLAG_ACID_MOVE,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_GRAV_APPLE] =
-    {
-        .effect = EFFECT_GRAV_APPLE,
-        .power = 80,
-        .type = TYPE_GRASS,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SPIRIT_BREAK] =
-    {
-        .effect = EFFECT_SPECIAL_ATTACK_DOWN_HIT,
-        .power = 75,
-        .type = TYPE_FAIRY,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 140,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_STRANGE_STEAM] =
-    {
-        .effect = EFFECT_CONFUSE_HIT,
-        .power = 90,
-        .type = TYPE_FAIRY,
-        .accuracy = 95,
-        .pp = 10,
-        .secondaryEffectChance = 20,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 175,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_LIFE_DEW] =
-    {
-        .effect = EFFECT_JUNGLE_HEALING,
-        .power = 0,
-        .type = TYPE_WATER,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_OBSTRUCT] =
-    {
-        .effect = EFFECT_PROTECT,
-        .power = 0,
-        .type = TYPE_DARK,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 4,
-        .flags = FLAG_PROTECTION_MOVE,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_FALSE_SURRENDER] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 80,
-        .type = TYPE_DARK,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_METEOR_ASSAULT] =
-    {
-        .effect = EFFECT_RECHARGE,
-        .power = 150,
-        .type = TYPE_FIGHTING,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 200,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_ETERNABEAM] =
-    {
-        .effect = EFFECT_RECHARGE,
-        .power = 160,
-        .type = TYPE_DRAGON,
-        .accuracy = 90,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_MEGA_LAUNCHER_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 200,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_STEEL_BEAM] =
-    {
-        .effect = EFFECT_STEEL_BEAM,
-        .power = 140,
-        .type = TYPE_STEEL,
-        .accuracy = 95,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_MEGA_LAUNCHER_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 200,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_EXPANDING_FORCE] =
-    {
-        .effect = EFFECT_EXPANDING_FORCE,   
-        .power = 80,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_STEEL_ROLLER] =
-    {
-        .effect = EFFECT_REMOVE_TERRAIN,
-        .power = 65,
-        .type = TYPE_STEEL,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SCALE_SHOT] =
-    {
-        .effect = EFFECT_SCALE_SHOT,
-        .power = 25,
-        .type = TYPE_DRAGON,
-        .accuracy = 90,
-        .pp = 20,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_MEGA_LAUNCHER_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 140,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_METEOR_BEAM] =
-    {
-        .effect = EFFECT_METEOR_BEAM,
-        .power = 120,
-        .type = TYPE_ROCK,
-        .accuracy = 90,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_MEGA_LAUNCHER_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 190,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SHELL_SIDE_ARM] =
-    {
-        .effect = EFFECT_SHELL_SIDE_ARM,
-        .power = 90,
-        .type = TYPE_POISON,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 175,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_MISTY_EXPLOSION] =
-    {
-        .effect = EFFECT_EXPLOSION,
-        .power = 100,
-        .type = TYPE_FAIRY,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_FOES_AND_ALLY,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 180,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_GRASSY_GLIDE] =
-    {
-        .effect = EFFECT_GRASSY_GLIDE,
-        .power = 70,
-        .type = TYPE_GRASS,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 140,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_RISING_VOLTAGE] =
-    {
-        .effect = EFFECT_RISING_VOLTAGE,   
-        .power = 70,
-        .type = TYPE_ELECTRIC,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 140,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_TERRAIN_PULSE] =
-    {
-        .effect = EFFECT_TERRAIN_PULSE,
-        .power = 50,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_MEGA_LAUNCHER_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SKITTER_SMACK] =
-    {
-        .effect = EFFECT_SPECIAL_ATTACK_DOWN_HIT,
-        .power = 70,
-        .type = TYPE_BUG,
-        .accuracy = 90,
-        .pp = 10,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 140,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_BURNING_JEALOUSY] =
-    {
-        .effect = EFFECT_BURN_HIT,
-        .power = 70,
-        .type = TYPE_FIRE,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 140,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_LASH_OUT] =
-    {
-        .effect = EFFECT_LASH_OUT,
-        .power = 75,
-        .type = TYPE_DARK,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 140,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_POLTERGEIST] =
-    {
-        .effect = EFFECT_POLTERGEIST,
-        .power = 110,
-        .type = TYPE_GHOST,
-        .accuracy = 90,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 185,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_CORROSIVE_GAS] =
-    {
-        .effect = EFFECT_CORROSIVE_GAS,
-        .power = 0,
-        .type = TYPE_POISON,
-        .accuracy = 100,
-        .pp = 40,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_FOES_AND_ALLY,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_COACHING] =
-    {
-        .effect = EFFECT_COACHING,
-        .power = 0,
-        .type = TYPE_FIGHTING,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_ALLY,
-        .priority = 0,
-        .flags = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_FLIP_TURN] =
-    {
-        .effect = EFFECT_HIT_ESCAPE,
-        .power = 60,
-        .type = TYPE_WATER,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_TRIPLE_AXEL] =
-    {
-        .effect = EFFECT_TRIPLE_KICK,
-        .power = 20,
-        .type = TYPE_ICE,
-        .accuracy = 90,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_DUAL_WINGBEAT] =
-    {
-        .effect = EFFECT_DOUBLE_HIT,
-        .power = 40,
-        .type = TYPE_FLYING,
-        .accuracy = 90,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_TWO_STRIKES,
-        .flags2 = FLAG_GIANT_WINGS_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SCORCHING_SANDS] =
-    {
-        .effect = EFFECT_SCALD,
-        .power = 70,
-        .type = TYPE_GROUND,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_THAW_USER,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 140,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_JUNGLE_HEALING] =
-    {
-        .effect = EFFECT_JUNGLE_HEALING,
-        .power = 0,
-        .type = TYPE_GRASS,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_WICKED_BLOW] =
-    {
-        .effect = EFFECT_ALWAYS_CRIT,
-        .power = 80,
-        .type = TYPE_DARK,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_IRON_FIST_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SURGING_STRIKES] =
-    {
-        .effect = EFFECT_TRIPLE_HIT,
-        .power = 25,
-        .type = TYPE_WATER,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_IRON_FIST_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_THUNDER_CAGE] =
-    {
-        .effect = EFFECT_TRAP,
-        .power = 80,
-        .type = TYPE_ELECTRIC,
-        .accuracy = 90,
-        .pp = 15,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_DRAGON_ENERGY] =
-    {
-        .effect = EFFECT_ERUPTION,
-        .power = 150,
-        .type = TYPE_DRAGON,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 200,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_FREEZING_GLARE] =
-    {
-        .power = 90,
-        .effect = EFFECT_FROSTBITE_HIT,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 20,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 175,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_FIERY_WRATH] =
-    {
-        .effect = EFFECT_FLINCH_HIT,
-        .power = 90,
-        .type = TYPE_DARK,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 20,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 175,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_THUNDEROUS_KICK] =
-    {
-        .effect = EFFECT_DEFENSE_DOWN_HIT,
-        .power = 90,
-        .type = TYPE_FIGHTING,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .flags2 = FLAG_AIRBOURNE_STYLE_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 175,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_GLACIAL_LANCE] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 120,
-        .type = TYPE_ICE,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 195,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_ASTRAL_BARRAGE] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 120,
-        .type = TYPE_GHOST,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 190,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_EERIE_SPELL] =
-    {
-        .effect = EFFECT_EERIE_SPELL,
-        .power = 80,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_SOUND,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_DIRE_CLAW] =
-    {
-        .effect = EFFECT_DIRE_CLAW,
-        .power = 80,
-        .type = TYPE_POISON,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 50,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_PSYSHIELD_BASH] =
-    {
-        .effect = EFFECT_DEFENSE_UP_HIT,
-        .power = 70,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 90,
-        .pp = 10,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 140,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_POWER_SHIFT] =
-    {
-        .effect = EFFECT_PLACEHOLDER, // EFFECT_POWER_SHIFT,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_STONE_AXE] =
-    {
-        .effect = EFFECT_STONE_AXE,
-        .power = 65,
-        .type = TYPE_ROCK,
-        .accuracy = 90,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .flags2 = FLAG_SLICING_MOVE,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SPRINGTIDE_STORM] =
-    {
-        .effect = EFFECT_ATTACK_DOWN_HIT,
-        .power = 100,
-        .type = TYPE_FAIRY,
-        .accuracy = 80,
-        .pp = 5,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .flags2 = FLAG_GIANT_WINGS_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 175,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_MYSTICAL_POWER] =
-    {
-        .effect = EFFECT_SP_ATTACK_UP_HIT,
-        .power = 70,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 90,
-        .pp = 10,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 140,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_RAGING_FURY] =
-    {
-        .effect = EFFECT_RAMPAGE,
-        .power = 120,
-        .type = TYPE_FIRE,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_RANDOM,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 175,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_WAVE_CRASH] =
-    {
-        .effect = EFFECT_RECOIL_33_SPEED_UP,
-        .power = 120,
-        .type = TYPE_WATER,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 140,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_CHLOROBLAST] =
-    {
-        .effect = EFFECT_MIND_BLOWN, // EFFECT_CHLOROBLAST,
-        .power = 150,
-        .type = TYPE_GRASS,
-        .accuracy = 95,
-        .pp = 5,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_FOES_AND_ALLY,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 190,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_MOUNTAIN_GALE] =
-    {
-        .effect = EFFECT_FLINCH_HIT, // EFFECT_ACTION_SPEED_DOWN_HIT,
-        .power = 100,
-        .type = TYPE_ICE,
-        .accuracy = 85,
-        .pp = 10,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 180,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_VICTORY_DANCE] =
-    {
-        .effect = EFFECT_FEATHER_DANCE, // EFFECT_VICTORY_DANCE,
-        .power = 0,
-        .type = TYPE_FIGHTING,
-        .accuracy = 0,
-        .pp = 20,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED | FLAG_DANCE,
-        .split = SPLIT_STATUS,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_HEADLONG_RUSH] =
-    {
-        .effect = EFFECT_CLOSE_COMBAT, // EFFECT_HEADLONG_RUSH,
-        .power = 120,
-        .type = TYPE_GROUND,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 180,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_BARB_BARRAGE] =
-    {
-        .effect = EFFECT_BARB_BARRAGE, // EFFECT_BARB_BARRAGE,
-        .power = 60,
-        .type = TYPE_POISON,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 50,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_ESPER_WING] =
-    {
-        .effect = EFFECT_SPEED_UP_HIT, // EFFECT_ESPER_WING,
-        .power = 80,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_HIGH_CRIT,
-        .flags2 = FLAG_GIANT_WINGS_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 140,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_BITTER_MALICE] =
-    {
-        .effect = EFFECT_ATTACK_DOWN_HIT, // EFFECT_ESPER_WING,
-        .power = 75,
-        .type = TYPE_GHOST,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SHELTER] =
-    {
-        .effect = EFFECT_DEFENSE_UP_2, // EFFECT_SHELTER,
-        .power = 0,
-        .type = TYPE_STEEL,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_TRIPLE_ARROWS] =
-    {
-        .effect = EFFECT_TRIPLE_ARROWS, // EFFECT_TRIPLE_ARROWS,
-        .power = 90,
-        .type = TYPE_FIGHTING,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 50,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_HIGH_CRIT,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_INFERNAL_PARADE] =
-    {
-        .effect = EFFECT_INFERNAL_PARADE, // EFFECT_INFERNAL_PARADE,
-        .power = 60,
-        .type = TYPE_GHOST,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_CEASELESS_EDGE] =
-    {
-        .effect = EFFECT_CEASELESS_EDGE, // EFFECT_CEASELESS_EDGE,
-        .power = 65,
-        .type = TYPE_DARK,
-        .accuracy = 90,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .flags2 = FLAG_SLICING_MOVE,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_BLEAKWIND_STORM] =
-    {
-        .effect = EFFECT_SPEED_DOWN_HIT, // EFFECT_BLEAKWIND_STORM,
-        .power = 100,
-        .type = TYPE_FLYING,
-        .accuracy = 80,
-        .pp = 10,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .flags2 = FLAG_GIANT_WINGS_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 175,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_WILDBOLT_STORM] =
-    {
-        .effect = EFFECT_PARALYZE_HIT, // EFFECT_WILDBOLT_STORM,
-        .power = 100,
-        .type = TYPE_ELECTRIC,
-        .accuracy = 80,
-        .pp = 10,
-        .secondaryEffectChance = 20,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .flags2 = FLAG_GIANT_WINGS_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 175,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SANDSEAR_STORM] =
-    {
-        .effect = EFFECT_BURN_HIT, // EFFECT_SANDSEAR_STORM,
-        .power = 100,
-        .type = TYPE_GROUND,
-        .accuracy = 80,
-        .pp = 10,
-        .secondaryEffectChance = 20,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .flags2 = FLAG_GIANT_WINGS_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 175,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_LUNAR_BLESSING] =
-    {
-        .effect = EFFECT_JUNGLE_HEALING, // EFFECT_LUNAR_BLESSING,
-        .power = 0,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 0,
-        .pp = 5,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_TAKE_HEART] =
-    {
-        .effect = EFFECT_CALM_MIND, // EFFECT_TAKE_HEART,
-        .power = 0,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_TERA_BLAST] =
-    {
-        .effect = EFFECT_PLACEHOLDER, // EFFECT_TERA_BLAST,
-        .power = 80,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SILK_TRAP] =
-    {
-        .effect = EFFECT_PROTECT,
-        .power = 0,
-        .type = TYPE_BUG,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 4,
-        .flags = FLAG_PROTECTION_MOVE,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RESET_STATS,
-    },
-
-    [MOVE_AXE_KICK] =
-    {
-        .effect = EFFECT_AXE_KICK,
-        .power = 120,
-        .type = TYPE_FIGHTING,
-        .accuracy = 90,
-        .pp = 10,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_RECKLESS_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 190,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_LAST_RESPECTS] =
-    {
-        .effect = EFFECT_PLACEHOLDER, // EFFECT_LAST_RESPECTS
-        .power = 50,
-        .type = TYPE_GHOST,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE
-    },
-
-    [MOVE_LUMINA_CRASH] =
-    {
-        .effect = EFFECT_SPECIAL_DEFENSE_DOWN_HIT_2,
-        .power = 80,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE
-    },
-
-    [MOVE_ORDER_UP] =
-    {
-        .effect = EFFECT_PLACEHOLDER, // EFFECT_ORDER_UP
-        .power = 80,
-        .type = TYPE_DRAGON,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE
-    },
-
-    [MOVE_JET_PUNCH] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 60,
-        .type = TYPE_WATER,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 1,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_IRON_FIST_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SPICY_EXTRACT] =
-    {
-        .effect = EFFECT_PLACEHOLDER, // EFFECT_SPICY_EXTRACT
-        .power = 0,
-        .type = TYPE_GRASS,
-        .accuracy = 0,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_NONE,
-        // The datamine master sheet mentions uncopiable by Metronome but that sounds odd? not yet implemented
-    },
-
-    [MOVE_SPIN_OUT] =
-    {
-        .effect = EFFECT_PLACEHOLDER, // EFFECT_SPIN_OUT
-        .power = 100,
-        .type = TYPE_STEEL,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 180,
-        .zMoveEffect = Z_EFFECT_NONE
-    },
-
-    [MOVE_POPULATION_BOMB] =
-    {
-        .effect = EFFECT_PLACEHOLDER, // EFFECT_MULTI_HIT maybe?
-        .power = 20,
-        .type = TYPE_NORMAL,
-        .accuracy = 90,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED, // | FLAG_SLICING_MOVE,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 40,
-        .zMoveEffect = Z_EFFECT_NONE,
-        //Supposedly uncallable by Metronome? (if so, needs implementation)
-    },
-
-    [MOVE_ICE_SPINNER] =
-    {
-        .effect = EFFECT_HIT_SET_REMOVE_TERRAIN,
-        .power = 80,
-        .type = TYPE_ICE,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-        .argument = 1, // Remove the active field terrain if there is one.
-    },
-
-    [MOVE_GLAIVE_RUSH] =
-    {
-        .effect = EFFECT_PLACEHOLDER, // EFFECT_GLAIVE_RUSH
-        .power = 120,
-        .type = TYPE_DRAGON,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 190,
-        .zMoveEffect = Z_EFFECT_NONE
-    },
-
-    [MOVE_REVIVAL_BLESSING] =
-    {
-        .effect = EFFECT_REVIVE,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 1,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_NONE,
-        // Uncallable by Metronome (to be implemented)
-    },
-
-    [MOVE_SALT_CURE] =
-    {
-        .effect = EFFECT_PLACEHOLDER, // EFFECT_SALT_CURE
-        .power = 40,
-        .type = TYPE_ROCK,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 80,
-        .zMoveEffect = Z_EFFECT_NONE,
-        // Supposedly uncallable by Metronome, but dubious
-    },
-
-    [MOVE_TRIPLE_DIVE] =
-    {
-        .effect = EFFECT_TRIPLE_KICK,
-        .power = 30,
-        .type = TYPE_WATER,
-        .accuracy = 95,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_MORTAL_SPIN] =
-    {
-        .effect = EFFECT_PLACEHOLDER, // EFFECT_MORTAL_SPIN
-        .power = 30,
-        .type = TYPE_POISON,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 60,
-        .zMoveEffect = Z_EFFECT_NONE
-    },
-
-    [MOVE_DOODLE] =
-    {
-        .effect = EFFECT_PLACEHOLDER, // EFFECT_DOODLE
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_FOES_AND_ALLY, // Supposedly unconfirmed?
-        .priority = 0,
-        .flags = 0, // TO VERIFY
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_NONE,
-        // Supposedly uncallable by Metronome (unimplemented)
-    },
-
-    [MOVE_FILLET_AWAY] =
-    {
-        .effect = EFFECT_PLACEHOLDER, // EFFECT_FILLET_AWAY
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RECOVER_HP,
-        // Supposedly uncallable by Metronome (unimplemented)
-    },
-
-    [MOVE_KOWTOW_CLEAVE] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 85,
-        .type = TYPE_DARK,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,  // | FLAG_SLICING_MOVE,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_FLOWER_TRICK] =
-    {
-        .effect = EFFECT_ALWAYS_CRIT,
-        .power = 70,
-        .type = TYPE_GRASS,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 140,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_TORCH_SONG] =
-    {
-        .effect = EFFECT_SP_ATTACK_UP_HIT,
-        .power = 80,
-        .type = TYPE_FIRE,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SOUND | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_AQUA_STEP] =
-    {
-        .effect = EFFECT_SPEED_UP_HIT,
-        .power = 80,
-        .type = TYPE_WATER,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_DANCE | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_RAGING_BULL] =
-    {
-        .effect = EFFECT_RAGING_BULL,
-        .power = 90,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 175,
-        .zMoveEffect = Z_EFFECT_NONE,
-        // Uncallable by Metronome (to be implemented)
-    },
-
-    [MOVE_MAKE_IT_RAIN] =
-    {
-        .effect = EFFECT_PLACEHOLDER, // EFFECT_MAKE_IT_RAIN
-        .power = 120,
-        .type = TYPE_STEEL,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 190,
-        .zMoveEffect = Z_EFFECT_NONE,
-        // Uncallable by Metronome (to be implemented)
-    },
-
-    [MOVE_RUINATION] =
-    {
-        .effect = EFFECT_SUPER_FANG,
-        .power = 1,
-        .type = TYPE_DARK,
-        .accuracy = 90,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-        // Uncallable by Metronome (to be implemented)
-    },
-
-    [MOVE_COLLISION_COURSE] =
-    {
-        .effect = EFFECT_PLACEHOLDER, // EFFECT_COLLISION_COURSE
-        .power = 100,
-        .type = TYPE_FIGHTING,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 180,
-        .zMoveEffect = Z_EFFECT_NONE,
-        // Uncallable by Metronome (to be implemented)
-    },
-
-    [MOVE_ELECTRO_DRIFT] =
-    {
-        .effect = EFFECT_PLACEHOLDER, // EFFECT_COLLISION_COURSE
-        .power = 100,
-        .type = TYPE_ELECTRIC,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 180,
-        .zMoveEffect = Z_EFFECT_NONE,
-        // Uncallable by Metronome (to be implemented)
-    },
-
-    [MOVE_SHED_TAIL] =
-    {
-        .effect = EFFECT_SHED_TAIL,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RESET_STATS,
-        // Uncallable by Metronome (to be implemented)
-    },
-
-    [MOVE_CHILLY_RECEPTION] =
-    {
-        .effect = EFFECT_PLACEHOLDER, // EFFECT_CHILLY_RECEPTION
-        .power = 0,
-        .type = TYPE_ICE,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_ALL_BATTLERS,
-        .priority = 0,
-        .flags = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPD_UP_1,
-        // Supposedly uncallable by Metronome? (to be implemented)
-    },
-
-    [MOVE_TIDY_UP] =
-    {
-        .effect = EFFECT_PLACEHOLDER, // EFFECT_TIDY_UP
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_NONE,
-        // Supposedly uncallable by Metronome? (to be implemented)
-    },
-
-    [MOVE_SNOWSCAPE] =
-    {
-        .effect = EFFECT_HAIL,
-        .power = 0,
-        .type = TYPE_ICE,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_ALL_BATTLERS,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPD_UP_1,
-        // Currently an exact copy of Hail until we figure out what to do with it
-    },
-
-    [MOVE_POUNCE] =
-    {
-        .effect = EFFECT_SPEED_DOWN_HIT,
-        .power = 50,
-        .type = TYPE_BUG,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_TRAILBLAZE] =
-    {
-        .effect = EFFECT_SPEED_UP_HIT,
-        .power = 50,
-        .type = TYPE_GRASS,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_CHILLING_WATER] =
-    {
-        .effect = EFFECT_ATTACK_DOWN_HIT,
-        .power = 50,
-        .type = TYPE_WATER,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_HYPER_DRILL] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 100,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 180,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_TWIN_BEAM] =
-    {
-        .effect = EFFECT_DOUBLE_HIT,
-        .power = 40,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_TWO_STRIKES,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_RAGE_FIST] =
-    {
-        .effect = EFFECT_RAGE_FIST,
-        .power = 50,
-        .type = TYPE_GHOST,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_IRON_FIST_BOOST | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_ARMOR_CANNON] =
-    {
-        .effect = EFFECT_CLOSE_COMBAT,
-        .power = 120,
-        .type = TYPE_FIRE,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 190,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_BITTER_BLADE] =
-    {
-        .effect = EFFECT_ABSORB,
-        .power = 90,
-        .type = TYPE_FIRE,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED, // | FLAG_SLICING_MOVE,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_DOUBLE_SHOCK] =
-    {
-        .effect = EFFECT_DOUBLE_SHOCK,
-        .power = 120,
-        .type = TYPE_ELECTRIC,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 190,
-        .zMoveEffect = Z_EFFECT_NONE
-    },
-
-    [MOVE_GIGATON_HAMMER] =
-    {
-        .effect = EFFECT_PLACEHOLDER, // EFFECT_GIGATON_HAMMER
-        .power = 160,
-        .type = TYPE_STEEL,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 200,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_COMEUPPANCE] =
-    {
-        .effect = EFFECT_METAL_BURST,
-        .power = 0,
-        .type = TYPE_DARK,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_DEPENDS,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_AQUA_CUTTER] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 70,
-        .type = TYPE_WATER,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_HIGH_CRIT,
-        .flags2 = FLAG_SLICING_MOVE,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 140,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_BLAZING_TORQUE] =
-    {
-        .effect = EFFECT_BURN_HIT,
-        .power = 80,
-        .type = TYPE_FIRE,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE
-    },
-
-    [MOVE_WICKED_TORQUE] =
-    {
-        .effect = EFFECT_SLEEP_HIT,
-        .power = 80,
-        .type = TYPE_DARK,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE
-    },
-
-    [MOVE_NOXIOUS_TORQUE] =
-    {
-        .effect = EFFECT_POISON_HIT,
-        .power = 100,
-        .type = TYPE_POISON,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE
-    },
-
-    [MOVE_COMBAT_TORQUE] =
-    {
-        .effect = EFFECT_PARALYZE_HIT,
-        .power = 100,
-        .type = TYPE_FIGHTING,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE
-    },
-
-    [MOVE_MAGICAL_TORQUE] =
-    {
-        .effect = EFFECT_CONFUSE_HIT,
-        .power = 100,
-        .type = TYPE_FAIRY,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE
-    },
-
-    [MOVE_KINGS_GRACE] =
-    {
-        .effect = EFFECT_ELECTRIC_TERRAIN,
-        .power = 0,
-        .type = TYPE_ELECTRIC,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_ALL_BATTLERS,
-        .priority = 0,
-        .flags = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPD_UP_1,
-    },
-
-    [MOVE_FROZEN_TERRAIN] =
-    {
-        .effect = EFFECT_FROZEN_TERRAIN,
-        .power = 0,
-        .type = TYPE_ICE,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_ALL_BATTLERS,
-        .priority = 0,
-        .flags = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPD_UP_1,
-    },
-
-    [MOVE_CURSED_TERRAIN] =
-    {
-        .effect = EFFECT_CURSED_TERRAIN,
-        .power = 0,
-        .type = TYPE_GHOST,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_ALL_BATTLERS,
-        .priority = 0,
-        .flags = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_ATK_UP_1,
-    },
-
-    [MOVE_RAVINE_TERRAIN] =
-    {
-        .effect = EFFECT_RAVINE_TERRAIN,
-        .power = 0,
-        .type = TYPE_FLYING,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_ALL_BATTLERS,
-        .priority = 0,
-        .flags = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPDEF_UP_1,
-    },
-
-    [MOVE_BURNING_TERRAIN] =
-    {
-        .effect = EFFECT_BURNING_TERRAIN,
-        .power = 0,
-        .type = TYPE_FIRE,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_ALL_BATTLERS,
-        .priority = 0,
-        .flags = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPATK_UP_1,
-    },
-
-    [MOVE_SANDY_TERRAIN] =
-    {
-        .effect = EFFECT_SANDY_TERRAIN,
-        .power = 0,
-        .type = TYPE_GROUND,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_ALL_BATTLERS,
-        .priority = 0,
-        .flags = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_DEF_UP_1,
-    },
-
-    [MOVE_SWAMP_TERRAIN] =
-    {
-        .effect = EFFECT_SWAMP_TERRAIN,
-        .power = 0,
-        .type = TYPE_WATER,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_ALL_BATTLERS,
-        .priority = 0,
-        .flags = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPDEF_UP_1,
-    },
-
-    [MOVE_VENOMOUS_TERRAIN] =
-    {
-        .effect = EFFECT_VENOMOUS_TERRAIN,
-        .power = 0,
-        .type = TYPE_POISON,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_ALL_BATTLERS,
-        .priority = 0,
-        .flags = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPDEF_UP_1,
-    },
-
-    [MOVE_ROSE_WHIP] =
-    {
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .effect = EFFECT_ROSE_WHIP,
-        .power = 70,
-        .type = TYPE_GRASS,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 140,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_GEOGEYSER] =
-    {
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_DMG_UNDERGROUND,
-        .effect = EFFECT_BURN_HIT,
-        .power = 90,
-        .type = TYPE_WATER,
-        .accuracy = 85,
-        .pp = 10,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 175,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_FEATHER_SHOT] =
-    {
-        .effect = EFFECT_MULTI_HIT,
-        .power = 15,
-        .type = TYPE_FLYING,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 1,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_HIGH_CRIT | FLAG_MEGA_LAUNCHER_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_WITCHCRAFT] =
-    {
-        .effect = EFFECT_SOAK,
-        .power = 0,
-        .type = TYPE_FAIRY,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_STATUS,
-        .argument = TYPE_DRAGON,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPATK_UP_1,
-    },
-
-    [MOVE_EXCALIBUR] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 70,
-        .type = TYPE_STEEL,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_HIGH_CRIT,
-        .flags2 = FLAG_SLICING_MOVE,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 140,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SHIELD_BASH] =
-    {
-        .effect = EFFECT_BODY_PRESS,
-        .power = 80,
-        .type = TYPE_STEEL,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_DRAGON_BONE] =
-    {
-        .effect = EFFECT_BOLT_BEAK,
-        .power = 85,
-        .type = TYPE_DRAGON,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 160,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_DRACO_IMPACT] =
-    {
-        .effect = EFFECT_DRACO_IMPACT,
-        .power = 120,
-        .type = TYPE_DRAGON,
-        .accuracy = 90,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 190,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_BLAZING_SPIRIT] =
-    {
-        .effect = EFFECT_BLAZING_SPIRIT,
-        .power = 0,
-        .type = TYPE_FIRE,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED | FLAG_THAW_USER,
-        .split = SPLIT_STATUS,
-        .argument = TYPE_FIRE,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RESET_STATS,
-    },
-
-    [MOVE_CHRISTMAS_GIFT] =
-    {
-        .effect = EFFECT_CHRISTMAS_GIFT,
-        .power = 0,
-        .type = TYPE_ICE,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_ALL_BATTLERS,
-        .priority = 0,
-        .flags = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_FOLLOW_ME,
-    },
-
-    [MOVE_ARTIC_GLIDE] =
-    {
-        .effect = EFFECT_ARTIC_GLIDE,
-        .power = 70,
-        .type = TYPE_ICE,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 140,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_COIN_SHOWER] =
-    {
-        .effect = EFFECT_COIN_SHOWER,
-        .power = 90,
-        .type = TYPE_STEEL,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 175,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_MAMMOTH_MASH] =
-    {
-        .effect = EFFECT_HAMMER_ARM,
-        .power = 120,
-        .type = TYPE_GROUND,
-        .accuracy = 90,
-        .pp = 5,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 190,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_BERRY_BELLY_FLOP] =
-    {
-        .effect = EFFECT_BERRY_BELLY_FLOP,
-        .power = 90,
-        .type = TYPE_NORMAL,
-        .accuracy = 95,
-        .pp = 10,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 175,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_NAP_SLAM] =
-    {
-        .power = 50,
-        .effect = EFFECT_SNORE,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_POWER_NAP] =
-    {
-        .effect = EFFECT_REST,
-        .power = 0,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RESET_STATS,
-    },
-
-    [MOVE_SEISMIC_SLAM] =
-    {
-        .effect = EFFECT_SKY_DROP,
-        .power = 90,
-        .type = TYPE_FLYING,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 175,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_BARRAGE_BLOW] =
-    {
-        .effect = EFFECT_BARRAGE_BLOW,
-        .power = 130,
-        .type = TYPE_FIGHTING,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 195,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_QUEEN_ASCENDANT] =
-    {
-        .effect = EFFECT_ABSORB,
-        .power = 100,
-        .type = TYPE_GRASS,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .argument = 25, // restores 25% HP instead of 50% HP
-        .zMovePower = 180,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_LIVID_OUTRAGE] =
-    {
-        .power = 130,
-        .pp = 10,
-        .effect = EFFECT_RAMPAGE,
-        .type = TYPE_DRAGON,
-        .accuracy = 100,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_RANDOM,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 195,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_AURA_CANNON] =
-    {
-        .power = 100,
-        .effect = EFFECT_HIT,
-        .type = TYPE_FIGHTING,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_BALLISTIC,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 180,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_RINGS_UNBOUND] =
-    {
-        .effect = EFFECT_RINGS_UNBOUND,
-        .power = 0,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 0,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_ACC_UP_1,
-    },
-
-    [MOVE_NOCK_LOCK] =
-    {
-        .power = 25,
-        .effect = EFFECT_MULTI_HIT,
-        .type = TYPE_GRASS,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_BLISS_ASSISTANCE] =
-    {
-        .priority = 2,
-        .effect = EFFECT_BLISS_ASSISTANCE,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .flags = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RECOVER_HP,
-    },
-
-    [MOVE_FAIRY_SINGULARITY] =
-    {
-        .effect = EFFECT_FUTURE_SIGHT,
-        .power = 140,
-        .type = TYPE_FAIRY,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 200,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_MIDNIGHT_SLASH] =
-    {
-        .power = 70,
-        .effect = EFFECT_ALWAYS_CRIT,
-        .type = TYPE_DARK,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .flags2 = FLAG_SLICING_MOVE,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 140,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_PHANTOM_AMBUSH] =
-    {
-        .effect = EFFECT_SEMI_INVULNERABLE,
-        .power = 120,
-        .type = TYPE_GHOST,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .argument = MOVE_EFFECT_FEINT,
-        .zMovePower = 190,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_FLAME_SWEEP] =
-    {
-        .effect = EFFECT_RECOIL_33_SPEED_UP_WITH_STATUS,
-        .power = 120,
-        .type = TYPE_FIRE,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_RECKLESS_BOOST | FLAG_THAW_USER,
-        .split = SPLIT_PHYSICAL,
-        .argument = STATUS1_BURN,
-        .zMovePower = 190,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_WATERBURST_SHURIKEN] =
-    {
-        .power = 110,
-        .effect = EFFECT_SPEED_DOWN_HIT,
-        .type = TYPE_WATER,
-        .accuracy = 85,
-        .pp = 5,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 185,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_GATLING_GULP_MISSILE] =
-    {
-        .effect = EFFECT_GATLING_GULP_MISSILE,
-        .power = 25,
-        .type = TYPE_WATER,
-        .accuracy = 80,
-        .pp = 10,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_DEATHROLL] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 100,
-        .type = TYPE_WATER,
-        .accuracy = 80,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_STRONG_JAW_BOOST | FLAG_STAT_STAGES_IGNORED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 180,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_UNDERGROUND_BITE] =
-    {
-        .power = 100,
-        .effect = EFFECT_SEMI_INVULNERABLE,
-        .type = TYPE_GROUND,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_STRONG_JAW_BOOST,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 180,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_INK_JET] =
-    {
-        .effect = EFFECT_INK_JET,
-        .power = 0,
-        .type = TYPE_GROUND,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 1,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_MEGA_LAUNCHER_BOOST,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RESTORE_REPLACEMENT_HP,
-    },
-
-    [MOVE_AQUA_TORNADO] =
-    {
-        .power = 100,
-        .effect = EFFECT_AQUA_TORNADO,
-        .type = TYPE_WATER,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 180,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_TYRANNICAL_RAMPAGE] =
-    {
-        .power = 130,
-        .effect = EFFECT_TYRANNICAL_RAMPAGE,
-        .type = TYPE_ROCK,
-        .accuracy = 100,
-        .pp = 10,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_RANDOM,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 195,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_THUNDERSTORM] =
-    {
-        .power = 30,
-        .effect = EFFECT_THUNDERSTORM,
-        .type = TYPE_ELECTRIC,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_OPPONENTS_FIELD,
-        .priority = 0,
-        .flags = 0,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 210,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_PHANTOM_FOREST] =
-    {
-        .power = 0,
-        .effect = EFFECT_PHANTOM_FOREST,
-        .type = TYPE_GHOST,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_OPPONENTS_FIELD,
-        .priority = 0,
-        .flags = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPDEF_UP_1,
-    },
-
-    [MOVE_REVOLVING_RUIN] =
-    {
-        .power = 90,
-        .effect = EFFECT_REVOLVING_RUIN,
-        .type = TYPE_STEEL,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_FOES_AND_ALLY,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 175,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_RUBBLE_ROUSER] =
-    {
-        .power = 90,
-        .effect = EFFECT_RUBBLE_ROUSER,
-        .type = TYPE_ROCK,
-        .accuracy = 90,
-        .pp = 10,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 175,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_SNOW_GLOBE] =
-    {
-        .power = 60,
-        .effect = EFFECT_SNOW_GLOBE,
-        .type = TYPE_ICE,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_HYDRO_TYPHOON] =
-    {
-        .power = 120,
-        .effect = EFFECT_FLINCH_HIT,
-        .type = TYPE_WATER,
-        .accuracy = 90,
-        .pp = 5,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_FOES_AND_ALLY,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_MEGA_LAUNCHER_BOOST,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 190,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_BLAZING_BICYCLE_KICK] =
-    {
-        .power = 120,
-        .effect = EFFECT_ADDITIONAL_DAMAGE,
-        .type = TYPE_FIRE,
-        .accuracy = 80,
-        .pp = 5,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .argument = 15,
-        .zMovePower = 190,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_COUP_DA_GRACE] =
-    {
-        .power = 120,
-        .effect = EFFECT_ADDITIONAL_DAMAGE,
-        .type = TYPE_STEEL,
-        .accuracy = 80,
-        .pp = 5,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .argument = 15,
-        .zMovePower = 190,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_FANCIFUL_FIREWORKS] =
-    {
-        .power = 90,
-        .effect = EFFECT_FANCIFUL_FIREWORKS,
-        .type = TYPE_FIRE,
-        .accuracy = 95,
-        .pp = 10,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_SPECIAL,
-        .zMovePower = 175,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_MOCKING_SHOUT] =
-    {
-        .power = 0,
-        .effect = EFFECT_TICKLE,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SOUND,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_ATK_UP_2,
-    },
-
-    [MOVE_STREAM_IMPULSE] =
-    {
-        .flags = FLAG_SNATCH_AFFECTED,
-        .effect = EFFECT_MAGNET_RISE,
-        .power = 0,
-        .type = TYPE_WATER,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 1,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_EVSN_UP_1,
-    },
-
-    [MOVE_SPICY_BREATH] =
-    {
-        .effect = EFFECT_SPICY_BREATH,
-        .power = 40,
-        .type = TYPE_FIRE,
-        .accuracy = 100,
-        .pp = 20,
-        .secondaryEffectChance = 20,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_DARK_BARGAIN] =
-    {
-        .effect = EFFECT_DARK_BARGAIN,
-        .power = 0,
-        .type = TYPE_DARK,
-        .accuracy = 0,
-        .pp = 15,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RECOVER_HP,
-    },
-
-    [MOVE_BLOOD_PACT] =
-    {
-        .effect = EFFECT_BLOOD_PACT,
-        .power = 0,
-        .type = TYPE_DARK,
-        .accuracy = 0,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_EVSN_UP_1,
-    },
-
-    [MOVE_FOG] =
-    {
-        .effect = EFFECT_FOG,
-        .power = 0,
-        .type = TYPE_FLYING,
-        .accuracy = 0,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_ALL_BATTLERS,
-        .priority = 0,
-        .flags = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPD_UP_1,
-    },
-
-    [MOVE_NEUROTOXIN] =
-    {
-        .effect = EFFECT_NEUROTOXIN,
-        .power = 50,
-        .type = TYPE_POISON,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 100,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_TOUGH_IT_OUT] =
-    {
-        .effect = EFFECT_TOUGH_IT_OUT,
-        .power = 0,
-        .type = TYPE_FIGHTING,
-        .accuracy = 0,
-        .pp = 10,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = FLAG_SNATCH_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_RESET_STATS,
-    },
-
-    [MOVE_RECKLESS_SWING] =
-    {
-        .effect = EFFECT_RECKLESS_SWING,
-        .power = 30,
-        .type = TYPE_DARK,
-        .accuracy = 100,
-        .pp = 5,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .argument = 25, // cause X% damage to user and X% as additional damage to target
-        .zMovePower = 190,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_UNDERTOW] =
-    {
-        .effect = EFFECT_UNDERTOW,
-        .power = 60,
-        .type = TYPE_STEEL,
-        .accuracy = 100,
-        .pp = 15,
-        .secondaryEffectChance = 30,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 120,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    [MOVE_PHOENIX_DOWN] =
-    {
-        .effect = EFFECT_REVIVE,
-        .power = 0,
-        .type = TYPE_FAIRY,
-        .accuracy = 0,
-        .pp = 1,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = 0,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_NONE,
-    },
-
-    // Z-Moves
-    [MOVE_BREAKNECK_BLITZ] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 1,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 1,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = 0,
-        .zMovePower = 0,
-        .split = SPLIT_PHYSICAL,    //determined from move type
-        .zMoveEffect = 0
-    },
-    [MOVE_ALL_OUT_PUMMELING] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 1,
-        .type = TYPE_FIGHTING,
-        .accuracy = 0,
-        .pp = 1,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = 0,
-        .zMovePower = 0,
-        .split = SPLIT_PHYSICAL,
-        .zMoveEffect = 0
-    },
-    [MOVE_SUPERSONIC_SKYSTRIKE] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 1,
-        .type = TYPE_FLYING,
-        .accuracy = 0,
-        .pp = 1,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = 0,
-        .zMovePower = 0,
-        .split = SPLIT_PHYSICAL,
-        .zMoveEffect = 0
-    },
-    [MOVE_ACID_DOWNPOUR] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 1,
-        .type = TYPE_POISON,
-        .accuracy = 0,
-        .pp = 1,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = 0,
-        .flags2 = FLAG_ACID_MOVE,
-        .zMovePower = 0,
-        .split = SPLIT_PHYSICAL,
-        .zMoveEffect = 0
-    },
-    [MOVE_TECTONIC_RAGE] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 1,
-        .type = TYPE_GROUND,
-        .accuracy = 0,
-        .pp = 1,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = 0,
-        .zMovePower = 0,
-        .split = SPLIT_PHYSICAL,
-        .zMoveEffect = 0
-    },
-    [MOVE_CONTINENTAL_CRUSH] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 1,
-        .type = TYPE_ROCK,
-        .accuracy = 0,
-        .pp = 1,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = 0,
-        .zMovePower = 0,
-        .split = SPLIT_PHYSICAL,
-        .zMoveEffect = 0
-    },
-    [MOVE_SAVAGE_SPIN_OUT] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 1,
-        .type = TYPE_BUG,
-        .accuracy = 0,
-        .pp = 1,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = 0,
-        .zMovePower = 0,
-        .split = SPLIT_PHYSICAL,
-        .zMoveEffect = 0
-    },
-    [MOVE_NEVER_ENDING_NIGHTMARE] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 1,
-        .type = TYPE_GHOST,
-        .accuracy = 0,
-        .pp = 1,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = 0,
-        .zMovePower = 0,
-        .split = SPLIT_PHYSICAL,
-        .zMoveEffect = 0
-    },
-    [MOVE_CORKSCREW_CRASH] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 1,
-        .type = TYPE_STEEL,
-        .accuracy = 0,
-        .pp = 1,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = 0,
-        .zMovePower = 0,
-        .split = SPLIT_PHYSICAL,
-        .zMoveEffect = 0
-    },
-    [MOVE_INFERNO_OVERDRIVE] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 1,
-        .type = TYPE_FIRE,
-        .accuracy = 0,
-        .pp = 1,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = 0,
-        .zMovePower = 0,
-        .split = SPLIT_PHYSICAL,
-        .zMoveEffect = 0
-    },
-    [MOVE_HYDRO_VORTEX] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 1,
-        .type = TYPE_WATER,
-        .accuracy = 0,
-        .pp = 1,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = 0,
-        .zMovePower = 0,
-        .split = SPLIT_PHYSICAL,
-        .zMoveEffect = 0
-    },
-    [MOVE_BLOOM_DOOM] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 1,
-        .type = TYPE_GRASS,
-        .accuracy = 0,
-        .pp = 1,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = 0,
-        .zMovePower = 0,
-        .split = SPLIT_PHYSICAL,
-        .zMoveEffect = 0
-    },
-    [MOVE_GIGAVOLT_HAVOC] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 1,
-        .type = TYPE_ELECTRIC,
-        .accuracy = 0,
-        .pp = 1,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = 0,
-        .zMovePower = 0,
-        .split = SPLIT_PHYSICAL,
-        .zMoveEffect = 0
-    },
-    [MOVE_SHATTERED_PSYCHE] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 1,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 0,
-        .pp = 1,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = 0,
-        .zMovePower = 0,
-        .split = SPLIT_PHYSICAL,
-        .zMoveEffect = 0
-    },
-    [MOVE_SUBZERO_SLAMMER] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 1,
-        .type = TYPE_ICE,
-        .accuracy = 0,
-        .pp = 1,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = 0,
-        .zMovePower = 0,
-        .split = SPLIT_PHYSICAL,
-        .zMoveEffect = 0
-    },
-    [MOVE_DEVASTATING_DRAKE] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 1,
-        .type = TYPE_DRAGON,
-        .accuracy = 0,
-        .pp = 1,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = 0,
-        .zMovePower = 0,
-        .split = SPLIT_PHYSICAL,
-        .zMoveEffect = 0
-    },
-    [MOVE_BLACK_HOLE_ECLIPSE] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 1,
-        .type = TYPE_DARK,
-        .accuracy = 0,
-        .pp = 1,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = 0,
-        .zMovePower = 0,
-        .split = SPLIT_PHYSICAL,
-        .zMoveEffect = 0
-    },
-    [MOVE_TWINKLE_TACKLE] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 1,
-        .type = TYPE_FAIRY,
-        .accuracy = 0,
-        .pp = 1,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = 0,
-        .zMovePower = 0,
-        .split = SPLIT_PHYSICAL,
-        .zMoveEffect = 0
-    },
-    [MOVE_CATASTROPIKA] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 210,
-        .type = TYPE_ELECTRIC,
-        .accuracy = 0,
-        .pp = 1,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = 0,
-        .zMovePower = 0,
-        .split = SPLIT_PHYSICAL,
-        .zMoveEffect = 0
-    },
-    [MOVE_10000000_VOLT_THUNDERBOLT] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 195,
-        .type = TYPE_ELECTRIC,
-        .accuracy = 0,
-        .pp = 1,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = FLAG_HIGH_CRIT,
-        .zMovePower = 0,
-        .split = SPLIT_SPECIAL,
-        .zMoveEffect = 0
-    },
-    [MOVE_STOKED_SPARKSURFER] =
-    {
-        .effect = EFFECT_PARALYZE_HIT,
-        .power = 175,
-        .type = TYPE_ELECTRIC,
-        .accuracy = 0,
-        .pp = 1,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = 0,
-        .zMovePower = 0,
-        .split = SPLIT_SPECIAL,
-        .zMoveEffect = 0
-    },
-    [MOVE_EXTREME_EVOBOOST] =
-    {
-        .effect = EFFECT_EXTREME_EVOBOOST,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 1,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .flags = 0,
-        .zMovePower = 0,
-        .split = SPLIT_STATUS,
-        .zMoveEffect = 0
-    },
-    [MOVE_PULVERIZING_PANCAKE] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 210,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 1,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = 0,
-        .zMovePower = 0,
-        .split = SPLIT_PHYSICAL,
-        .zMoveEffect = 0
-    },
-    [MOVE_GENESIS_SUPERNOVA] =
-    {
-        .effect = EFFECT_HIT_SET_REMOVE_TERRAIN,
-        .power = 185,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 0,
-        .pp = 1,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = 0,
-        .zMovePower = 0,
-        .split = SPLIT_SPECIAL,
-        .argument = 0,  //psychic terrain
-        .zMoveEffect = 0
-    },
-    [MOVE_SINISTER_ARROW_RAID] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 180,
-        .type = TYPE_GHOST,
-        .accuracy = 0,
-        .pp = 1,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = 0,
-        .zMovePower = 0,
-        .split = SPLIT_PHYSICAL,
-        .zMoveEffect = 0
-    },
-    [MOVE_MALICIOUS_MOONSAULT] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 180,
-        .type = TYPE_DARK,
-        .accuracy = 0,
-        .pp = 1,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = 0,
-        .zMovePower = 0,
-        .split = SPLIT_PHYSICAL,
-        .zMoveEffect = 0
-    },
-    [MOVE_OCEANIC_OPERETTA] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 195,
-        .type = TYPE_WATER,
-        .accuracy = 0,
-        .pp = 1,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = 0,
-        .zMovePower = 0,
-        .split = SPLIT_SPECIAL,
-        .zMoveEffect = 0
-    },
-    [MOVE_SPLINTERED_STORMSHARDS] =
-    {
-        .effect = EFFECT_HIT_SET_REMOVE_TERRAIN,
-        .power = 190,
-        .type = TYPE_ROCK,
-        .accuracy = 0,
-        .pp = 1,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = 0,
-        .zMovePower = 0,
-        .split = SPLIT_PHYSICAL,
-        .argument = 1,  //remove terrain
-        .zMoveEffect = 0
-    },
-    [MOVE_LETS_SNUGGLE_FOREVER] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 190,
-        .type = TYPE_FAIRY,
-        .accuracy = 0,
-        .pp = 1,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = 0,
-        .zMovePower = 0,
-        .split = SPLIT_PHYSICAL,
-        .zMoveEffect = 0
-    },
-    [MOVE_CLANGOROUS_SOULBLAZE] =
-    {
-        .effect = EFFECT_ALL_STATS_UP_HIT,
-        .power = 185,
-        .type = TYPE_DRAGON,
-        .accuracy = 0,
-        .pp = 1,
-        .secondaryEffectChance = 100,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .flags = FLAG_SOUND,
-        .zMovePower = 0,
-        .split = SPLIT_SPECIAL,
-        .zMoveEffect = 0
-    },
-    [MOVE_GUARDIAN_OF_ALOLA] =
-    {
-        .effect = EFFECT_SUPER_FANG,
-        .power = 1,
-        .type = TYPE_FAIRY,
-        .accuracy = 0,
-        .pp = 1,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = 0,
-        .zMovePower = 0,
-        .split = SPLIT_SPECIAL,
-        .zMoveEffect = 0
-    },
-    [MOVE_SEARING_SUNRAZE_SMASH] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 200,
-        .type = TYPE_STEEL,
-        .accuracy = 0,
-        .pp = 1,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = 0,
-        .zMovePower = 0,
-        .split = SPLIT_PHYSICAL,
-        .zMoveEffect = 0
-    },
-    [MOVE_MENACING_MOONRAZE_MAELSTROM] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 200,
-        .type = TYPE_GHOST,
-        .accuracy = 0,
-        .pp = 1,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = 0,
-        .zMovePower = 0,
-        .split = SPLIT_SPECIAL,
-        .zMoveEffect = 0
-    },
-    [MOVE_LIGHT_THAT_BURNS_THE_SKY] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 200,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 0,
-        .pp = 1,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = 0,
-        .zMovePower = 0,
-        .split = SPLIT_SPECIAL,
-        .zMoveEffect = 0
-    },
-    [MOVE_SOUL_STEALING_7_STAR_STRIKE] =
-    {
-        .effect = EFFECT_HIT,
-        .power = 195,
-        .type = TYPE_GHOST,
-        .accuracy = 0,
-        .pp = 1,
-        .secondaryEffectChance = 0,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .flags = 0,
-        .zMovePower = 0,
-        .split = SPLIT_PHYSICAL,
-        .zMoveEffect = 0
-    },
+    [TUTOR_MOVE_MEGA_PUNCH] = MOVE_MEGA_PUNCH,
+    [TUTOR_MOVE_SWORDS_DANCE] = MOVE_SWORDS_DANCE,
+    [TUTOR_MOVE_MEGA_KICK] = MOVE_MEGA_KICK,
+    [TUTOR_MOVE_BODY_SLAM] = MOVE_BODY_SLAM,
+    [TUTOR_MOVE_DOUBLE_EDGE] = MOVE_DOUBLE_EDGE,        //ok
+    [TUTOR_MOVE_COUNTER] = MOVE_COUNTER,
+    [TUTOR_MOVE_SEISMIC_TOSS] = MOVE_SEISMIC_TOSS,
+    [TUTOR_MOVE_MIMIC] = MOVE_MIMIC,        //ok
+    [TUTOR_MOVE_METRONOME] = MOVE_METRONOME,        //ok
+    [TUTOR_MOVE_SOFT_BOILED] = MOVE_SOFT_BOILED,
+    [TUTOR_MOVE_DREAM_EATER] = MOVE_DREAM_EATER,
+    [TUTOR_MOVE_THUNDER_WAVE] = MOVE_THUNDER_WAVE,
+    [TUTOR_MOVE_EXPLOSION] = MOVE_EXPLOSION,        //ok
+    [TUTOR_MOVE_ROCK_SLIDE] = MOVE_ROCK_SLIDE,
+    [TUTOR_MOVE_SUBSTITUTE] = MOVE_SUBSTITUTE,        //ok
+    [TUTOR_MOVE_DYNAMIC_PUNCH] = MOVE_DYNAMIC_PUNCH,        //ok
+    [TUTOR_MOVE_ROLLOUT] = MOVE_ROLLOUT,        //ok
+    [TUTOR_MOVE_PSYCH_UP] = MOVE_PSYCH_UP,
+    [TUTOR_MOVE_SNORE] = MOVE_SNORE,
+    [TUTOR_MOVE_ICY_WIND] = MOVE_ICY_WIND,
+    [TUTOR_MOVE_ENDURE] = MOVE_ENDURE,
+    [TUTOR_MOVE_MUD_SLAP] = MOVE_MUD_SLAP,
+    [TUTOR_MOVE_ICE_PUNCH] = MOVE_ICE_PUNCH,
+    [TUTOR_MOVE_SWAGGER] = MOVE_SWAGGER,        //ok
+    [TUTOR_MOVE_SLEEP_TALK] = MOVE_SLEEP_TALK,        //ok
+    [TUTOR_MOVE_SWIFT] = MOVE_SWIFT,
+    [TUTOR_MOVE_DEFENSE_CURL] = MOVE_DEFENSE_CURL,
+    [TUTOR_MOVE_THUNDER_PUNCH] = MOVE_THUNDER_PUNCH,
+    [TUTOR_MOVE_FIRE_PUNCH] = MOVE_FIRE_PUNCH,
+    [TUTOR_MOVE_FURY_CUTTER] = MOVE_FURY_CUTTER,        //ok
+    [TUTOR_MOVE_ANCIENT_POWER] = MOVE_ANCIENT_POWER,        //ok
+    [TUTOR_MOVE_SIGNAL_BEAM] = MOVE_SIGNAL_BEAM,        //ok
+    [TUTOR_MOVE_BLAZE_KICK] = MOVE_BLAZE_KICK,        //ok
+    //Special Tutor Moves
+    [TUTOR_MOVE_BURN_UP] = MOVE_BURN_UP,        //ok
+    [TUTOR_MOVE_DRACO_METEOR] = MOVE_DRACO_METEOR,        //ok
+    [TUTOR_MOVE_LANDS_WRATH] = MOVE_LANDS_WRATH,        //ok
+    [TUTOR_MOVE_THOUSAND_ARROWS] = MOVE_THOUSAND_ARROWS,        //ok
+    [TUTOR_MOVE_THOUSAND_WAVES] = MOVE_THOUSAND_WAVES,        //ok
+    [TUTOR_MOVE_CORE_ENFORCER] = MOVE_CORE_ENFORCER,        //ok
+    [TUTOR_MOVE_DRAGON_ASCENT] = MOVE_DRAGON_ASCENT,        //ok
+};
+
+#define TUTOR(tutor) ((u8) (TUTOR_MOVE_##tutor))
+
+static const u8 sNoneTutorLearnset[] =
+{
+    0xFF,
+};
+static const u8 sBulbasaurTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sIvysaurTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sVenusaurTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sCharmanderTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sCharmeleonTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sCharizardTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(BLAZE_KICK),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sSquirtleTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROLLOUT),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sWartortleTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROLLOUT),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sBlastoiseTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sCaterpieTutorLearnset[] =
+{
+    TUTOR(SNORE),
+    0xFF,
+};
+static const u8 sMetapodTutorLearnset[] =
+{
+    0xFF,
+};
+static const u8 sButterfreeTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sWeedleTutorLearnset[] =
+{
+    0xFF,
+};
+static const u8 sKakunaTutorLearnset[] =
+{
+    0xFF,
+};
+static const u8 sBeedrillTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MIMIC),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sPidgeyTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sPidgeottoTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sPidgeotTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sRattataTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sRaticateTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sSpearowTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sFearowTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sEkansTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sArbokTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sPikachuTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROLLOUT),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sRaichuTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROLLOUT),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sSandshrewTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sSandslashTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sNidoranFTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sNidorinaTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sNidoqueenTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sNidoranMTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sNidorinoTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sNidokingTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sClefairyTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(METRONOME),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROLLOUT),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SOFT_BOILED),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sClefableTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(METRONOME),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROLLOUT),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SOFT_BOILED),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sVulpixTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sNinetalesTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sJigglypuffTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROLLOUT),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sWigglytuffTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROLLOUT),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sZubatTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sGolbatTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sOddishTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sGloomTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sVileplumeTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sParasTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MIMIC),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sParasectTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MIMIC),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sVenonatTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sVenomothTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sDiglettTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sDugtrioTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sMeowthTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sPersianTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sPsyduckTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sGolduckTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sMankeyTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(METRONOME),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sPrimeapeTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(BLAZE_KICK),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(METRONOME),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sGrowlitheTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sArcanineTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sPoliwagTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sPoliwhirlTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(METRONOME),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sPoliwrathTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(METRONOME),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sAbraTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(METRONOME),
+    TUTOR(MIMIC),
+    TUTOR(PSYCH_UP),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sKadabraTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(METRONOME),
+    TUTOR(MIMIC),
+    TUTOR(PSYCH_UP),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sAlakazamTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(METRONOME),
+    TUTOR(MIMIC),
+    TUTOR(PSYCH_UP),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sMachopTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(METRONOME),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sMachokeTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(METRONOME),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sMachampTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(METRONOME),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sBellsproutTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sWeepinbellTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sVictreebelTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sTentacoolTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sTentacruelTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sGeodudeTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(EXPLOSION),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(METRONOME),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sGravelerTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(EXPLOSION),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(METRONOME),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sGolemTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(EXPLOSION),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(METRONOME),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sPonytaTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sRapidashTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sSlowpokeTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sSlowbroTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sMagnemiteTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(EXPLOSION),
+    TUTOR(MIMIC),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sMagnetonTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(EXPLOSION),
+    TUTOR(MIMIC),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sFarfetchdTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sDoduoTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sDodrioTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sSeelTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sDewgongTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sGrimerTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(EXPLOSION),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sMukTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(EXPLOSION),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sShellderTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(EXPLOSION),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sCloysterTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ENDURE),
+    TUTOR(EXPLOSION),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sGastlyTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(EXPLOSION),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sHaunterTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(EXPLOSION),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sGengarTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(EXPLOSION),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(METRONOME),
+    TUTOR(MIMIC),
+    TUTOR(PSYCH_UP),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sOnixTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(EXPLOSION),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sOnixCrystalTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(EXPLOSION),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sDrowzeeTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(METRONOME),
+    TUTOR(MIMIC),
+    TUTOR(PSYCH_UP),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sHypnoTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(METRONOME),
+    TUTOR(MIMIC),
+    TUTOR(PSYCH_UP),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sKrabbyTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sKinglerTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sVoltorbTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(EXPLOSION),
+    TUTOR(MIMIC),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sElectrodeTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(EXPLOSION),
+    TUTOR(MIMIC),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sExeggcuteTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(EXPLOSION),
+    TUTOR(MIMIC),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sExeggutorTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(EXPLOSION),
+    TUTOR(MIMIC),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sCuboneTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sMarowakTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sHitmonleeTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(BLAZE_KICK),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(METRONOME),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sHitmonchanTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(METRONOME),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sLickitungTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sKoffingTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(EXPLOSION),
+    TUTOR(MIMIC),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sWeezingTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(EXPLOSION),
+    TUTOR(MIMIC),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sRhyhornTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sRhydonTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sChanseyTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(METRONOME),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SOFT_BOILED),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sTangelaTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sKangaskhanTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sHorseaTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sSeadraTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sGoldeenTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sSeakingTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sStaryuTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sStarmieTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sMrMimeTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(METRONOME),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sScytherTutorLearnset[] =
+{
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MIMIC),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sJynxTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(METRONOME),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sElectabuzzTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(METRONOME),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sMagmarTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(METRONOME),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sPinsirTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MIMIC),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sTaurosTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sMagikarpTutorLearnset[] =
+{
+    0xFF,
+};
+static const u8 sGyaradosTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sLaprasTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sDittoTutorLearnset[] =
+{
+    0xFF,
+};
+static const u8 sEeveeTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sVaporeonTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sJolteonTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sFlareonTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sPorygonTutorLearnset[] =
+{
+    TUTOR(DEFENSE_CURL),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sOmanyteTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sOmastarTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sKabutoTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sKabutopsTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sAerodactylTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sSnorlaxTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(METRONOME),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sSnorlaxSnowTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(METRONOME),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sArticunoTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sZapdosTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sMoltresTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sDratiniTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sDragonairTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sDragoniteTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sMewtwoTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(BLAZE_KICK),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(METRONOME),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sMewTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(BLAZE_KICK),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(EXPLOSION),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(METRONOME),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SOFT_BOILED),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sChikoritaTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sBayleefTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sMeganiumTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sCyndaquilTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sQuilavaTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sTyphlosionTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sTotodileTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sCroconawTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sFeraligatrTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sSentretTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICE_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sFurretTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICE_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sHoothootTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sNoctowlTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sLedybaTutorLearnset[] =
+{
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(ICE_PUNCH),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sLedianTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(ICE_PUNCH),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sSpinarakTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sAriadosTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sCrobatTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sChinchouTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sLanturnTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sPichuTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROLLOUT),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sCleffaTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(METRONOME),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROLLOUT),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SOFT_BOILED),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sIgglybuffTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROLLOUT),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sTogepiTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(METRONOME),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROLLOUT),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SOFT_BOILED),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sTogeticTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(METRONOME),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROLLOUT),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SOFT_BOILED),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sNatuTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sXatuTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sMareepTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sFlaaffyTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sAmpharosTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sBellossomTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sMarillTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROLLOUT),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sAzumarillTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROLLOUT),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sSudowoodoTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(EXPLOSION),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sPolitoedTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(METRONOME),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sHoppipTutorLearnset[] =
+{
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sSkiploomTutorLearnset[] =
+{
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sJumpluffTutorLearnset[] =
+{
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sAipomTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICE_PUNCH),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(METRONOME),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sSunkernTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sSunfloraTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sYanmaTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sWooperTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sQuagsireTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sEspeonTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sUmbreonTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sMurkrowTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sSlowkingTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sMisdreavusTutorLearnset[] =
+{
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sUnownTutorLearnset[] =
+{
+    0xFF,
+};
+static const u8 sWobbuffetTutorLearnset[] =
+{
+    TUTOR(COUNTER),
+    0xFF,
+};
+static const u8 sGirafarigTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sPinecoTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(EXPLOSION),
+    TUTOR(MIMIC),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sForretressTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(EXPLOSION),
+    TUTOR(MIMIC),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sDunsparceTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sGligarTutorLearnset[] =
+{
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MIMIC),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sSteelixTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(EXPLOSION),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sSnubbullTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(METRONOME),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sGranbullTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(METRONOME),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sQwilfishTutorLearnset[] =
+{
+    TUTOR(DEFENSE_CURL),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(EXPLOSION),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sScizorTutorLearnset[] =
+{
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MIMIC),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sShuckleTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sHeracrossTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MIMIC),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sSneaselTutorLearnset[] =
+{
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sTeddiursaTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICE_PUNCH),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(METRONOME),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sUrsaringTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICE_PUNCH),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(METRONOME),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sSlugmaTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sMagcargoTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(EXPLOSION),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sSwinubTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sPiloswineTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sCorsolaTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(EXPLOSION),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sRemoraidTutorLearnset[] =
+{
+    TUTOR(DEFENSE_CURL),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sOctilleryTutorLearnset[] =
+{
+    TUTOR(DEFENSE_CURL),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sDelibirdTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROLLOUT),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sMantineTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sSkarmoryTutorLearnset[] =
+{
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sHoundourTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sHoundoomTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sKingdraTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sPhanpyTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sDonphanTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sPorygon2TutorLearnset[] =
+{
+    TUTOR(DEFENSE_CURL),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sStantlerTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sSmeargleTutorLearnset[] =
+{
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    0xFF,
+};
+static const u8 sTyrogueTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MEGA_KICK),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sHitmontopTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(BLAZE_KICK),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MEGA_KICK),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sSmoochumTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(METRONOME),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sElekidTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sMagbyTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sMiltankTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(METRONOME),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sBlisseyTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(METRONOME),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SOFT_BOILED),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sRaikouTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sEnteiTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sSuicuneTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sLarvitarTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sPupitarTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sTyranitarTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICE_PUNCH),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sLugiaTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sHoOhTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+
+static const u8 sCelebiTutorLearnset[] =
+{
+    TUTOR(DEFENSE_CURL),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(METRONOME),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sTreeckoTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sGrovyleTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sSceptileTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sTorchicTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sCombuskenTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(BLAZE_KICK),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sBlazikenTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(BLAZE_KICK),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sMudkipTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sMarshtompTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sSwampertTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sPoochyenaTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sMightyenaTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sZigzagoonTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sLinooneTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sWurmpleTutorLearnset[] =
+{
+    TUTOR(SNORE),
+    0xFF,
+};
+static const u8 sSilcoonTutorLearnset[] =
+{
+    0xFF,
+};
+static const u8 sBeautiflyTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sCascoonTutorLearnset[] =
+{
+    0xFF,
+};
+static const u8 sDustoxTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sLotadTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sLombreTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sLudicoloTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(METRONOME),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sSeedotTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(EXPLOSION),
+    TUTOR(MIMIC),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sNuzleafTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(EXPLOSION),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MEGA_KICK),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sShiftryTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(EXPLOSION),
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sTaillowTutorLearnset[] =
+{
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sSwellowTutorLearnset[] =
+{
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sWingullTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sPelipperTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sRaltsTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sKirliaTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sGardevoirTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sSurskitTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sMasquerainTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sShroomishTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sBreloomTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sSlakothTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sVigorothTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sSlakingTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sNincadaTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sNinjaskTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sShedinjaTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sWhismurTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROLLOUT),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sLoudredTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sExploudTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sMakuhitaTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(METRONOME),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sHariyamaTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(METRONOME),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sAzurillTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sNosepassTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(EXPLOSION),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sSkittyTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sDelcattyTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sSableyeTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(METRONOME),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sMawileTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sAronTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sLaironTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sAggronTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sMedititeTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(METRONOME),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sMedichamTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(BLAZE_KICK),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(METRONOME),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sElectrikeTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sManectricTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sPlusleTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(METRONOME),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROLLOUT),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sMinunTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(METRONOME),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROLLOUT),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sVolbeatTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(ICE_PUNCH),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(METRONOME),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sIllumiseTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(ICE_PUNCH),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(METRONOME),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sRoseliaTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sGulpinTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(EXPLOSION),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sSwalotTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(EXPLOSION),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sCarvanhaTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sSharpedoTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sWailmerTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sWailordTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sNumelTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sCameruptTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(EXPLOSION),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sTorkoalTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(EXPLOSION),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sSpoinkTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sGrumpigTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sSpindaTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(METRONOME),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sTrapinchTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sVibravaTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sFlygonTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sCacneaTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sCacturneTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sSwabluTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sAltariaTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sZangooseTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sSeviperTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sLunatoneTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(EXPLOSION),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sSolrockTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(EXPLOSION),
+    TUTOR(MIMIC),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sBarboachTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sWhiscashTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sCorphishTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sCrawdauntTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sBaltoyTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(EXPLOSION),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sClaydolTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(EXPLOSION),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sLileepTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sCradilyTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sAnorithTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sArmaldoTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sFeebasTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sMiloticTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sCastformTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sKecleonTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(METRONOME),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sShuppetTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sBanetteTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(METRONOME),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sDuskullTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sDusclopsTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(METRONOME),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sTropiusTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sChimechoTutorLearnset[] =
+{
+    TUTOR(DEFENSE_CURL),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sAbsolTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sWynautTutorLearnset[] =
+{
+    TUTOR(COUNTER),
+    0xFF,
+};
+static const u8 sSnoruntTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sGlalieTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(EXPLOSION),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sSphealTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sSealeoTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sWalreinTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sClamperlTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sHuntailTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sGorebyssTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sRelicanthTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sLuvdiscTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sBagonTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sShelgonTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sSalamenceTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sBeldumTutorLearnset[] =
+{
+    0xFF,
+};
+static const u8 sMetangTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(EXPLOSION),
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sMetagrossTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(EXPLOSION),
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sRegirockTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(EXPLOSION),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sRegiceTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(EXPLOSION),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sRegisteelTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(EXPLOSION),
+    TUTOR(ICE_PUNCH),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sLatiasTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sLatiosTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sKyogreTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sGroudonTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sRayquazaTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sJirachiTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(METRONOME),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sDeoxysTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sTurtwigTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sGrotleTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sTorterraTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sChimcharTutorLearnset[] =
+{
+    TUTOR(COUNTER),
+    TUTOR(BLAZE_KICK),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sMonfernoTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(BLAZE_KICK),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sInfernapeTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(BLAZE_KICK),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sPiplupTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ICY_WIND),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sPrinplupTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ICY_WIND),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sEmpoleonTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICY_WIND),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sStarlyTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sStaraviaTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sStaraptorTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sBidoofTutorLearnset[] =
+{
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICY_WIND),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sBibarelTutorLearnset[] =
+{
+    TUTOR(DEFENSE_CURL),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICY_WIND),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sKricketotTutorLearnset[] =
+{
+    TUTOR(MUD_SLAP),
+    TUTOR(SNORE),
+    0xFF,
+};
+static const u8 sKricketuneTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sShinxTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sLuxioTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sLuxrayTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sBudewTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sRoseradeTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sCranidosTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sRampardosTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sShieldonTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sBastiodonTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sBurmyTutorLearnset[] =
+{
+    TUTOR(SNORE),
+    0xFF,
+};
+static const u8 sWormadamTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ENDURE),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sMothimTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ENDURE),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sCombeeTutorLearnset[] =
+{
+    TUTOR(MUD_SLAP),
+    TUTOR(SNORE),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sVespiquenTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sPachirisuTutorLearnset[] =
+{
+    TUTOR(DEFENSE_CURL),
+    TUTOR(ENDURE),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sBuizelTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sFloatzelTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sCherubiTutorLearnset[] =
+{
+    TUTOR(DEFENSE_CURL),
+    TUTOR(ENDURE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sCherrimTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sShellosTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(COUNTER),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sGastrodonTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sShellosEastSeaTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(COUNTER),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sGastrodonEastSeaTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sAmbipomTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICE_PUNCH),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sDrifloonTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(EXPLOSION),
+    TUTOR(ICY_WIND),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sDrifblimTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(EXPLOSION),
+    TUTOR(ICY_WIND),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sBunearyTutorLearnset[] =
+{
+    TUTOR(DEFENSE_CURL),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sLopunnyTutorLearnset[] =
+{
+    TUTOR(DEFENSE_CURL),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICE_PUNCH),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sMismagiusTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sHonchkrowTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sGlameowTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sPuruglyTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sChinglingTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sStunkyTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(EXPLOSION),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sSkuntankTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(EXPLOSION),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sBronzorTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(ENDURE),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sBronzongTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(ENDURE),
+    TUTOR(EXPLOSION),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sBonslyTutorLearnset[] =
+{
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(EXPLOSION),
+    TUTOR(MIMIC),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sMimeJrTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sHappinyTutorLearnset[] =
+{
+    TUTOR(COUNTER),
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(METRONOME),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sChatotTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sSpiritombTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sSpiritomb1TutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sSpiritomb2TutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sSpiritomb3TutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sGibleTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sGabiteTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sGarchompTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sMunchlaxTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(METRONOME),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sRioluTutorLearnset[] =
+{
+    TUTOR(COUNTER),
+    TUTOR(BLAZE_KICK),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICE_PUNCH),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sLucarioTutorLearnset[] =
+{
+    TUTOR(COUNTER),
+    TUTOR(BLAZE_KICK),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICE_PUNCH),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sHippopotasTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sHippowdonTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sSkorupiTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sDrapionTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sCroagunkTutorLearnset[] =
+{
+    TUTOR(COUNTER),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sToxicroakTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sCarnivineTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sFinneonTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ICY_WIND),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sLumineonTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ICY_WIND),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sMantykeTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sSnoverTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sAbomasnowTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sWeavileTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sMagnezoneTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(EXPLOSION),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sLickilickyTutorLearnset[] =
+{
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(EXPLOSION),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sRhyperiorTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sTangrowthTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sElectivireTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sMagmortarTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sTogekissTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(ENDURE),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sYanmegaTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(ENDURE),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sLeafeonTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sGlaceonTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ICY_WIND),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sGliscorTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sMamoswineTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(ICY_WIND),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sPorygonZTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sGalladeTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICE_PUNCH),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sProbopassTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(EXPLOSION),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sDusknoirTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sFroslassTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ENDURE),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sRotomTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ENDURE),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sUxieTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sMespritTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sAzelfTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ENDURE),
+    TUTOR(EXPLOSION),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sDialgaTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sPalkiaTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(FURY_CUTTER),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sHeatranTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(EXPLOSION),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sRegigigasTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sGiratinaTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICY_WIND),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sCresseliaTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICY_WIND),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sPhioneTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(ICY_WIND),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sManaphyTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(ICY_WIND),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sDarkraiTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sShayminTutorLearnset[] =
+{
+    TUTOR(DEFENSE_CURL),
+    TUTOR(ENDURE),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sArceusTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICY_WIND),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sVictiniTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(BLAZE_KICK),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sSnivyTutorLearnset[] =
+{
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sServineTutorLearnset[] =
+{
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sSerperiorTutorLearnset[] =
+{
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sTepigTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sPigniteTutorLearnset[] =
+{
+    TUTOR(DEFENSE_CURL),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sEmboarTutorLearnset[] =
+{
+    TUTOR(DEFENSE_CURL),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sOshawottTutorLearnset[] =
+{
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICY_WIND),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sDewottTutorLearnset[] =
+{
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICY_WIND),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sSamurottTutorLearnset[] =
+{
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICY_WIND),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sPatratTutorLearnset[] =
+{
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sWatchogTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sLillipupTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sHerdierTutorLearnset[] =
+{
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sStoutlandTutorLearnset[] =
+{
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sPurrloinTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sLiepardTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sPansageTutorLearnset[] =
+{
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sSimisageTutorLearnset[] =
+{
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sPansearTutorLearnset[] =
+{
+    TUTOR(FIRE_PUNCH),
+    TUTOR(BLAZE_KICK),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sSimisearTutorLearnset[] =
+{
+    TUTOR(FIRE_PUNCH),
+    TUTOR(BLAZE_KICK),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sPanpourTutorLearnset[] =
+{
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sSimipourTutorLearnset[] =
+{
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sMunnaTutorLearnset[] =
+{
+    TUTOR(DEFENSE_CURL),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(DREAM_EATER),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sMusharnaTutorLearnset[] =
+{
+    TUTOR(DEFENSE_CURL),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(DREAM_EATER),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sPidoveTutorLearnset[] =
+{
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sTranquillTutorLearnset[] =
+{
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sUnfezantTutorLearnset[] =
+{
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sBlitzleTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ENDURE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sZebstrikaTutorLearnset[] =
+{
+    TUTOR(SLEEP_TALK),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sRoggenrolaTutorLearnset[] =
+{
+    TUTOR(EXPLOSION),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sBoldoreTutorLearnset[] =
+{
+    TUTOR(EXPLOSION),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sGigalithTutorLearnset[] =
+{
+    TUTOR(EXPLOSION),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sWoobatTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sSwoobatTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sDrilburTutorLearnset[] =
+{
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sExcadrillTutorLearnset[] =
+{
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sAudinoTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(DREAM_EATER),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sTimburrTutorLearnset[] =
+{
+    TUTOR(COUNTER),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sGurdurrTutorLearnset[] =
+{
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sConkeldurrTutorLearnset[] =
+{
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sTympoleTutorLearnset[] =
+{
+    TUTOR(ICY_WIND),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sPalpitoadTutorLearnset[] =
+{
+    TUTOR(ICY_WIND),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sSeismitoadTutorLearnset[] =
+{
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sThrohTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sSawkTutorLearnset[] =
+{
+    TUTOR(COUNTER),
+    TUTOR(BLAZE_KICK),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sSewaddleTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ENDURE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sSwadloonTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sLeavannyTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sVenipedeTutorLearnset[] =
+{
+    TUTOR(DEFENSE_CURL),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sWhirlipedeTutorLearnset[] =
+{
+    TUTOR(DEFENSE_CURL),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sScolipedeTutorLearnset[] =
+{
+    TUTOR(DEFENSE_CURL),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sCottoneeTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sWhimsicottTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sPetililTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sLilligantTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sBasculinTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ICY_WIND),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sSandileTutorLearnset[] =
+{
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sKrokorokTutorLearnset[] =
+{
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sKrookodileTutorLearnset[] =
+{
+    TUTOR(COUNTER),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sDarumakaTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sDarmanitanTutorLearnset[] =
+{
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sMaractusTutorLearnset[] =
+{
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sDwebbleTutorLearnset[] =
+{
+    TUTOR(COUNTER),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sCrustleTutorLearnset[] =
+{
+    TUTOR(COUNTER),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sScraggyTutorLearnset[] =
+{
+    TUTOR(COUNTER),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sScraftyTutorLearnset[] =
+{
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sSigilyphTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ICY_WIND),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sYamaskTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sCofagrigusTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sTirtougaTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ICY_WIND),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sCarracostaTutorLearnset[] =
+{
+    TUTOR(ICY_WIND),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sArchenTutorLearnset[] =
+{
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sArcheopsTutorLearnset[] =
+{
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sTrubbishTutorLearnset[] =
+{
+    TUTOR(EXPLOSION),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sGarbodorTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(EXPLOSION),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sZoruaTutorLearnset[] =
+{
+    TUTOR(COUNTER),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sZoroarkTutorLearnset[] =
+{
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sMinccinoTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sCinccinoTutorLearnset[] =
+{
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sGothitaTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sGothoritaTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sGothitelleTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sSolosisTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(EXPLOSION),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sDuosionTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(EXPLOSION),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sReuniclusTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(EXPLOSION),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sDucklettTutorLearnset[] =
+{
+    TUTOR(ICY_WIND),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sSwannaTutorLearnset[] =
+{
+    TUTOR(ICY_WIND),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sVanilliteTutorLearnset[] =
+{
+    TUTOR(EXPLOSION),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ICY_WIND),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sVanillishTutorLearnset[] =
+{
+    TUTOR(EXPLOSION),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ICY_WIND),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sVanilluxeTutorLearnset[] =
+{
+    TUTOR(EXPLOSION),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ICY_WIND),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sDeerlingTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sSawsbuckTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sEmolgaTutorLearnset[] =
+{
+    TUTOR(SLEEP_TALK),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sKarrablastTutorLearnset[] =
+{
+    TUTOR(COUNTER),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sEscavalierTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sFoongusTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(ENDURE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sAmoongussTutorLearnset[] =
+{
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sFrillishTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(ICY_WIND),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sJellicentTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(ICY_WIND),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sAlomomolaTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sJoltikTutorLearnset[] =
+{
+    TUTOR(FURY_CUTTER),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sGalvantulaTutorLearnset[] =
+{
+    TUTOR(FURY_CUTTER),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sFerroseedTutorLearnset[] =
+{
+    TUTOR(EXPLOSION),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sFerrothornTutorLearnset[] =
+{
+    TUTOR(EXPLOSION),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sKlinkTutorLearnset[] =
+{
+    TUTOR(SLEEP_TALK),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sKlangTutorLearnset[] =
+{
+    TUTOR(SLEEP_TALK),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sKlinklangTutorLearnset[] =
+{
+    TUTOR(SLEEP_TALK),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sTynamoTutorLearnset[] =
+{
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sEelektrikTutorLearnset[] =
+{
+    TUTOR(SLEEP_TALK),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sEelektrossTutorLearnset[] =
+{
+    TUTOR(FIRE_PUNCH),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sElgyemTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sBeheeyemTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sLitwickTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sLampentTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sChandelureTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sAxewTutorLearnset[] =
+{
+    TUTOR(COUNTER),
+    TUTOR(ENDURE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sFraxureTutorLearnset[] =
+{
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sHaxorusTutorLearnset[] =
+{
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sCubchooTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sBearticTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sCryogonalTutorLearnset[] =
+{
+    TUTOR(EXPLOSION),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ICY_WIND),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sShelmetTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sAccelgorTutorLearnset[] =
+{
+    TUTOR(SLEEP_TALK),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sStunfiskTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sMienfooTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sMienshaoTutorLearnset[] =
+{
+    TUTOR(PSYCH_UP),
+    TUTOR(BLAZE_KICK),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sDruddigonTutorLearnset[] =
+{
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sGolettTutorLearnset[] =
+{
+    TUTOR(DEFENSE_CURL),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sGolurkTutorLearnset[] =
+{
+    TUTOR(DEFENSE_CURL),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sPawniardTutorLearnset[] =
+{
+    TUTOR(FURY_CUTTER),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sBisharpTutorLearnset[] =
+{
+    TUTOR(FURY_CUTTER),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sBouffalantTutorLearnset[] =
+{
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sRuffletTutorLearnset[] =
+{
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sBraviaryTutorLearnset[] =
+{
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sVullabyTutorLearnset[] =
+{
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sMandibuzzTutorLearnset[] =
+{
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sHeatmorTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sDurantTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sDeinoTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sZweilousTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sHydreigonTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sLarvestaTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ENDURE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sVolcaronaTutorLearnset[] =
+{
+    TUTOR(SLEEP_TALK),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sCobalionTutorLearnset[] =
+{
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sTerrakionTutorLearnset[] =
+{
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sVirizionTutorLearnset[] =
+{
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sTornadusTutorLearnset[] =
+{
+    TUTOR(ICY_WIND),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sThundurusTutorLearnset[] =
+{
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sReshiramTutorLearnset[] =
+{
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sZekromTutorLearnset[] =
+{
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sLandorusTutorLearnset[] =
+{
+    TUTOR(EXPLOSION),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sKyuremTutorLearnset[] =
+{
+    TUTOR(ICY_WIND),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sKeldeoTutorLearnset[] =
+{
+    TUTOR(ICY_WIND),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sMeloettaTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sGenesectTutorLearnset[] =
+{
+    TUTOR(EXPLOSION),
+    TUTOR(BLAZE_KICK),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(FURY_CUTTER),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sChespinTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sQuilladinTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sChesnaughtTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sFennekinTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sBraixenTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sDelphoxTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sFroakieTutorLearnset[] =
+{
+    TUTOR(ICY_WIND),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sFrogadierTutorLearnset[] =
+{
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sGreninjaTutorLearnset[] =
+{
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sBunnelbyTutorLearnset[] =
+{
+    TUTOR(DEFENSE_CURL),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sDiggersbyTutorLearnset[] =
+{
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sFletchlingTutorLearnset[] =
+{
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sFletchinderTutorLearnset[] =
+{
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sTalonflameTutorLearnset[] =
+{
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sScatterbugTutorLearnset[] =
+{
+    0xFF,
+};
+static const u8 sSpewpaTutorLearnset[] =
+{
+    0xFF,
+};
+static const u8 sVivillonTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sLitleoTutorLearnset[] =
+{
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sPyroarTutorLearnset[] =
+{
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sFlabebeTutorLearnset[] =
+{
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sFloetteTutorLearnset[] =
+{
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sFlorgesTutorLearnset[] =
+{
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sSkiddoTutorLearnset[] =
+{
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sGogoatTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sPanchamTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sPangoroTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sFurfrouTutorLearnset[] =
+{
+    TUTOR(MIMIC),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sEspurrTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sMeowsticTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sHonedgeTutorLearnset[] =
+{
+    TUTOR(FURY_CUTTER),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sDoubladeTutorLearnset[] =
+{
+    TUTOR(FURY_CUTTER),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sAegislashTutorLearnset[] =
+{
+    TUTOR(FURY_CUTTER),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sSpritzeeTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sAromatisseTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sSwirlixTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sSlurpuffTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sInkayTutorLearnset[] =
+{
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sMalamarTutorLearnset[] =
+{
+    TUTOR(PSYCH_UP),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sBinacleTutorLearnset[] =
+{
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICY_WIND),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sBarbaracleTutorLearnset[] =
+{
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICY_WIND),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sSkrelpTutorLearnset[] =
+{
+    TUTOR(ICY_WIND),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sDragalgeTutorLearnset[] =
+{
+    TUTOR(ICY_WIND),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sClauncherTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sClawitzerTutorLearnset[] =
+{
+    TUTOR(ICY_WIND),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sHelioptileTutorLearnset[] =
+{
+    TUTOR(MUD_SLAP),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sHelioliskTutorLearnset[] =
+{
+    TUTOR(FIRE_PUNCH),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sTyruntTutorLearnset[] =
+{
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sTyrantrumTutorLearnset[] =
+{
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sAmauraTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(ICY_WIND),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sAurorusTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(ICY_WIND),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sSylveonTutorLearnset[] =
+{
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sHawluchaTutorLearnset[] =
+{
+    TUTOR(FIRE_PUNCH),
+    TUTOR(BLAZE_KICK),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sDedenneTutorLearnset[] =
+{
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sCarbinkTutorLearnset[] =
+{
+    TUTOR(EXPLOSION),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sGoomyTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(ENDURE),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sSliggooTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sGoodraTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sKlefkiTutorLearnset[] =
+{
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sPhantumpTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sTrevenantTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sPumpkabooTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(EXPLOSION),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sGourgeistTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(EXPLOSION),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sBergmiteTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ICY_WIND),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sAvaluggTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ICY_WIND),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sNoibatTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sNoivernTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sXerneasTutorLearnset[] =
+{
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sYveltalTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sZygardeTutorLearnset[] =
+{
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sDiancieTutorLearnset[] =
+{
+    TUTOR(EXPLOSION),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sHoopaTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sVolcanionTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(EXPLOSION),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sRowletTutorLearnset[] =
+{
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sDartrixTutorLearnset[] =
+{
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sDecidueyeTutorLearnset[] =
+{
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sLittenTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sTorracatTutorLearnset[] =
+{
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sIncineroarTutorLearnset[] =
+{
+    TUTOR(FIRE_PUNCH),
+    TUTOR(BLAZE_KICK),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sPopplioTutorLearnset[] =
+{
+    TUTOR(ICY_WIND),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sBrionneTutorLearnset[] =
+{
+    TUTOR(ICY_WIND),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sPrimarinaTutorLearnset[] =
+{
+    TUTOR(ICY_WIND),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sPikipekTutorLearnset[] =
+{
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sTrumbeakTutorLearnset[] =
+{
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sToucannonTutorLearnset[] =
+{
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sYungoosTutorLearnset[] =
+{
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sGumshoosTutorLearnset[] =
+{
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sGrubbinTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sCharjabugTutorLearnset[] =
+{
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sVikavoltTutorLearnset[] =
+{
+    TUTOR(MUD_SLAP),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sCrabrawlerTutorLearnset[] =
+{
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sCrabominableTutorLearnset[] =
+{
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sOricorioTutorLearnset[] =
+{
+    TUTOR(ICY_WIND),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sCutieflyTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sRibombeeTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sRockruffTutorLearnset[] =
+{
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sLycanrocTutorLearnset[] =
+{
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sWishiwashiTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sMareanieTutorLearnset[] =
+{
+    TUTOR(ICY_WIND),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sToxapexTutorLearnset[] =
+{
+    TUTOR(ICY_WIND),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sMudbrayTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(MEGA_KICK),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sMudsdaleTutorLearnset[] =
+{
+    TUTOR(COUNTER),
+    TUTOR(MEGA_KICK),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sDewpiderTutorLearnset[] =
+{
+    TUTOR(ICY_WIND),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sAraquanidTutorLearnset[] =
+{
+    TUTOR(ICY_WIND),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sFomantisTutorLearnset[] =
+{
+    TUTOR(FURY_CUTTER),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sLurantisTutorLearnset[] =
+{
+    TUTOR(FURY_CUTTER),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sMorelullTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sShiinoticTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sSalanditTutorLearnset[] =
+{
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sSalazzleTutorLearnset[] =
+{
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sStuffulTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(ICE_PUNCH),
+    TUTOR(MEGA_KICK),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sBewearTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sBounsweetTutorLearnset[] =
+{
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sSteeneeTutorLearnset[] =
+{
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sTsareenaTutorLearnset[] =
+{
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sComfeyTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sOranguruTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sPassimianTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sWimpodTutorLearnset[] =
+{
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sGolisopodTutorLearnset[] =
+{
+    TUTOR(FURY_CUTTER),
+    TUTOR(ICY_WIND),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sSandygastTutorLearnset[] =
+{
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sPalossandTutorLearnset[] =
+{
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sPyukumukuTutorLearnset[] =
+{
+    TUTOR(COUNTER),
+    TUTOR(ENDURE),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sTypeNullTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ICY_WIND),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sSilvallyTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(EXPLOSION),
+    TUTOR(ICY_WIND),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sMiniorTutorLearnset[] =
+{
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(EXPLOSION),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sKomalaTutorLearnset[] =
+{
+    TUTOR(DEFENSE_CURL),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sTurtonatorTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ENDURE),
+    TUTOR(EXPLOSION),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sTogedemaruTutorLearnset[] =
+{
+    TUTOR(DEFENSE_CURL),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sMimikyuTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(MIMIC),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sBruxishTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sDrampaTutorLearnset[] =
+{
+    TUTOR(ICY_WIND),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sDhelmiseTutorLearnset[] =
+{
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sJangmoOTutorLearnset[] =
+{
+    TUTOR(COUNTER),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sHakamoOTutorLearnset[] =
+{
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sKommoOTutorLearnset[] =
+{
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sTapuKokoTutorLearnset[] =
+{
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sTapuLeleTutorLearnset[] =
+{
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sTapuBuluTutorLearnset[] =
+{
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sTapuFiniTutorLearnset[] =
+{
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sCosmogTutorLearnset[] =
+{
+    0xFF,
+};
+static const u8 sCosmoemTutorLearnset[] =
+{
+    0xFF,
+};
+static const u8 sSolgaleoTutorLearnset[] =
+{
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sLunalaTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ICY_WIND),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sNihilegoTutorLearnset[] =
+{
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sBuzzwoleTutorLearnset[] =
+{
+    TUTOR(COUNTER),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(ICE_PUNCH),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sPheromosaTutorLearnset[] =
+{
+    TUTOR(ICY_WIND),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sXurkitreeTutorLearnset[] =
+{
+    TUTOR(SLEEP_TALK),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sCelesteelaTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(EXPLOSION),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sKartanaTutorLearnset[] =
+{
+    TUTOR(FURY_CUTTER),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sGuzzlordTutorLearnset[] =
+{
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    0xFF,
+};
+static const u8 sNecrozmaTutorLearnset[] =
+{
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sMagearnaTutorLearnset[] =
+{
+    TUTOR(DEFENSE_CURL),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(EXPLOSION),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sMarshadowTutorLearnset[] =
+{
+    TUTOR(COUNTER),
+    TUTOR(BLAZE_KICK),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sPoipoleTutorLearnset[] =
+{
+    TUTOR(SLEEP_TALK),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    0xFF,
+};
+static const u8 sNaganadelTutorLearnset[] =
+{
+    TUTOR(SLEEP_TALK),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    0xFF,
+};
+static const u8 sStakatakaTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    0xFF,
+};
+static const u8 sBlacephalonTutorLearnset[] =
+{
+    TUTOR(EXPLOSION),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sZeraoraTutorLearnset[] =
+{
+    TUTOR(FIRE_PUNCH),
+    TUTOR(BLAZE_KICK),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sGrookeyTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWIFT),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sThwackeyTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWIFT),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sRillaboomTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ENDURE),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWIFT),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sScorbunnyTutorLearnset[] =
+{
+    TUTOR(COUNTER),
+    TUTOR(BLAZE_KICK),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MEGA_KICK),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sRabootTutorLearnset[] =
+{
+    TUTOR(COUNTER),
+    TUTOR(BLAZE_KICK),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MEGA_KICK),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sCinderaceTutorLearnset[] =
+{
+    TUTOR(COUNTER),
+    TUTOR(BLAZE_KICK),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(MEGA_KICK),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sSobbleTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sDrizzileTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sInteleonTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(METRONOME),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWIFT),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sSkwovetTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(ENDURE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    0xFF,
+};
+static const u8 sGreedentTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(ENDURE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sRookideeTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sCorvisquireTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sCorviknightTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ENDURE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sBlipbugTutorLearnset[] =
+{
+    0xFF,
+};
+static const u8 sDottlerTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    0xFF,
+};
+static const u8 sOrbeetleTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    0xFF,
+};
+static const u8 sNickitTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sThievulTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sGossifleurTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    0xFF,
+};
+static const u8 sEldegossTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    0xFF,
+};
+static const u8 sWoolooTutorLearnset[] =
+{
+    TUTOR(COUNTER),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sDubwoolTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MEGA_KICK),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sChewtleTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(ENDURE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    0xFF,
+};
+static const u8 sDrednawTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(ENDURE),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sYamperTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sBoltundTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sRolycolyTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(EXPLOSION),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    0xFF,
+};
+static const u8 sCarkolTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    0xFF,
+};
+static const u8 sCoalossalTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    0xFF,
+};
+static const u8 sApplinTutorLearnset[] =
+{
+    TUTOR(DEFENSE_CURL),
+    TUTOR(ROLLOUT),
+    0xFF,
+};
+static const u8 sFlappleTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    0xFF,
+};
+static const u8 sAppletunTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ENDURE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    0xFF,
+};
+static const u8 sSilicobraTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    0xFF,
+};
+static const u8 sSandacondaTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    0xFF,
+};
+static const u8 sCramorantTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    0xFF,
+};
+static const u8 sArrokudaTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sBarraskewdaTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sToxelTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    0xFF,
+};
+static const u8 sToxtricityTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sSizzlipedeTutorLearnset[] =
+{
+    TUTOR(DEFENSE_CURL),
+    TUTOR(ENDURE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    0xFF,
+};
+static const u8 sCentiskorchTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    0xFF,
+};
+static const u8 sClobbopusTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ENDURE),
+    TUTOR(ICE_PUNCH),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(SEISMIC_TOSS),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    0xFF,
+};
+static const u8 sGrapploctTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ENDURE),
+    TUTOR(ICE_PUNCH),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    0xFF,
+};
+static const u8 sSinisteaTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(METRONOME),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    0xFF,
+};
+static const u8 sPolteageistTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(METRONOME),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    0xFF,
+};
+static const u8 sHatennaTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sHattremTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sHattereneTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sImpidimpTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(METRONOME),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sMorgremTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(METRONOME),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sGrimmsnarlTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(METRONOME),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sObstagoonTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sPerrserkerTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ENDURE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sCursolaTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    0xFF,
+};
+static const u8 sSirfetchdTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sMrRimeTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ENDURE),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(METRONOME),
+    TUTOR(MIMIC),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sRunerigusTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    0xFF,
+};
+static const u8 sMilceryTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    0xFF,
+};
+static const u8 sAlcremieTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(METRONOME),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    0xFF,
+};
+static const u8 sFalinksTutorLearnset[] =
+{
+    TUTOR(COUNTER),
+    TUTOR(ENDURE),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sPincurchinTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sSnomTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    0xFF,
+};
+static const u8 sFrosmothTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    0xFF,
+};
+static const u8 sStonjournerTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ENDURE),
+    TUTOR(MEGA_KICK),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    0xFF,
+};
+static const u8 sEiscueTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    0xFF,
+};
+static const u8 sIndeedeeTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(METRONOME),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sMorpekoTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sCufantTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DEFENSE_CURL),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MEGA_KICK),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sCopperajahTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ENDURE),
+    TUTOR(MEGA_KICK),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    0xFF,
+};
+static const u8 sDracozoltTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ENDURE),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sArctozoltTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sDracovishTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ENDURE),
+    TUTOR(MEGA_KICK),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    0xFF,
+};
+static const u8 sArctovishTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    0xFF,
+};
+static const u8 sDuraludonTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ENDURE),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWORDS_DANCE),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sDreepyTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sDrakloakTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sDragapultTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sZacianTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWIFT),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sZamazentaTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sEternatusTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    0xFF,
+};
+static const u8 sKubfuTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(BLAZE_KICK),
+    TUTOR(COUNTER),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sUrshifuTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(BLAZE_KICK),
+    TUTOR(COUNTER),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sZarudeTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ENDURE),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sRegielekiTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(ENDURE),
+    TUTOR(EXPLOSION),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sRegidragoTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(ENDURE),
+    TUTOR(EXPLOSION),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    0xFF,
+};
+static const u8 sGlastrierTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sSpectrierTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sCalyrexTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(METRONOME),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sMeowthGalarianTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sPonytaGalarianTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sRapidashGalarianTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ENDURE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWIFT),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sSlowpokeGalarianTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sSlowbroGalarianTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ENDURE),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sFarfetchdGalarianTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(FURY_CUTTER),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sWeezingGalarianTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(EXPLOSION),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    0xFF,
+};
+static const u8 sMrMimeGalarianTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ENDURE),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(METRONOME),
+    TUTOR(MIMIC),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sArticunoGalarianTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sZapdosGalarianTutorLearnset[] =
+{
+    TUTOR(COUNTER),
+    TUTOR(BLAZE_KICK),
+    TUTOR(ENDURE),
+    TUTOR(MEGA_KICK),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sMoltresGalarianTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sSlowkingGalarianTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ENDURE),
+    TUTOR(ICE_PUNCH),
+    TUTOR(ICY_WIND),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sCorsolaGalarianTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    0xFF,
+};
+static const u8 sZigzagoonGalarianTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sLinooneGalarianTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(COUNTER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sDarumakaGalarianTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    0xFF,
+};
+static const u8 sDarmanitanGalarianTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    0xFF,
+};
+static const u8 sYamaskGalarianTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    0xFF,
+};
+static const u8 sStunfiskGalarianTutorLearnset[] =
+{
+    TUTOR(COUNTER),
+    TUTOR(ENDURE),
+    TUTOR(MUD_SLAP),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sBurmySandyCloakTutorLearnset[] =
+{
+    TUTOR(SNORE),
+    0xFF,
+};
+static const u8 sBurmyTrashCloakTutorLearnset[] =
+{
+    TUTOR(SNORE),
+    0xFF,
+};
+static const u8 sWormadamSandyCloakTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ENDURE),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(ROLLOUT),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sWormadamTrashCloakTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ENDURE),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sRotomHeatTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ENDURE),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sRotomWashTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ENDURE),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sRotomFrostTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ENDURE),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sRotomFanTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ENDURE),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sRotomMowTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ENDURE),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sKyuremWhiteTutorLearnset[] =
+{
+    TUTOR(ICY_WIND),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sKyuremBlackTutorLearnset[] =
+{
+    TUTOR(ICY_WIND),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    0xFF,
+};
+static const u8 sMeowsticFemaleTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sToxtricityLowKeyTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_PUNCH),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sSinisteaAntiqueTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(METRONOME),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    0xFF,
+};
+static const u8 sPolteageistAntiqueTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(METRONOME),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    0xFF,
+};
+static const u8 sAlcremieRubyCreamTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(METRONOME),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    0xFF,
+};
+static const u8 sAlcremieMatchaCreamTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(METRONOME),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    0xFF,
+};
+static const u8 sAlcremieMintCreamTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(METRONOME),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    0xFF,
+};
+static const u8 sAlcremieLemonCreamTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(METRONOME),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    0xFF,
+};
+static const u8 sAlcremieSaltedCreamTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(METRONOME),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    0xFF,
+};
+static const u8 sAlcremieRubySwirlTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(METRONOME),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    0xFF,
+};
+static const u8 sAlcremieCaramelSwirlTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(METRONOME),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    0xFF,
+};
+static const u8 sAlcremieRainbowSwirlTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(METRONOME),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    0xFF,
+};
+static const u8 sIndeedeeFemaleTutorLearnset[] =
+{
+    TUTOR(ENDURE),
+    TUTOR(METRONOME),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sUrshifuRapidStrikeStyleTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(BLAZE_KICK),
+    TUTOR(COUNTER),
+    TUTOR(DYNAMIC_PUNCH),
+    TUTOR(ENDURE),
+    TUTOR(FIRE_PUNCH),
+    TUTOR(ICE_PUNCH),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_PUNCH),
+    0xFF,
+};
+static const u8 sZarudeDadaTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(ENDURE),
+    TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
+    TUTOR(ROCK_SLIDE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sCalyrexIceRiderTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(METRONOME),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWIFT),
+    TUTOR(SWORDS_DANCE),
+    0xFF,
+};
+static const u8 sCalyrexShadowRiderTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(METRONOME),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWIFT),
+    0xFF,
+};
+const u8 *const gTutorLearnsets[] =
+{
+    [SPECIES_NONE] = sNoneTutorLearnset,
+    [SPECIES_BULBASAUR] = sBulbasaurTutorLearnset,
+    [SPECIES_IVYSAUR] = sIvysaurTutorLearnset,
+    [SPECIES_VENUSAUR] = sVenusaurTutorLearnset,
+    [SPECIES_CHARMANDER] = sCharmanderTutorLearnset,
+    [SPECIES_CHARMELEON] = sCharmeleonTutorLearnset,
+    [SPECIES_CHARIZARD] = sCharizardTutorLearnset,
+    [SPECIES_SQUIRTLE] = sSquirtleTutorLearnset,
+    [SPECIES_WARTORTLE] = sWartortleTutorLearnset,
+    [SPECIES_BLASTOISE] = sBlastoiseTutorLearnset,
+    [SPECIES_CATERPIE] = sCaterpieTutorLearnset,
+    [SPECIES_METAPOD] = sMetapodTutorLearnset,
+    [SPECIES_BUTTERFREE] = sButterfreeTutorLearnset,
+    [SPECIES_WEEDLE] = sWeedleTutorLearnset,
+    [SPECIES_KAKUNA] = sKakunaTutorLearnset,
+    [SPECIES_BEEDRILL] = sBeedrillTutorLearnset,
+    [SPECIES_PIDGEY] = sPidgeyTutorLearnset,
+    [SPECIES_PIDGEOTTO] = sPidgeottoTutorLearnset,
+    [SPECIES_PIDGEOT] = sPidgeotTutorLearnset,
+    [SPECIES_RATTATA] = sRattataTutorLearnset,
+    [SPECIES_RATICATE] = sRaticateTutorLearnset,
+    [SPECIES_SPEAROW] = sSpearowTutorLearnset,
+    [SPECIES_FEAROW] = sFearowTutorLearnset,
+    [SPECIES_EKANS] = sEkansTutorLearnset,
+    [SPECIES_ARBOK] = sArbokTutorLearnset,
+    [SPECIES_PIKACHU] = sPikachuTutorLearnset,
+    [SPECIES_RAICHU] = sRaichuTutorLearnset,
+    [SPECIES_SANDSHREW] = sSandshrewTutorLearnset,
+    [SPECIES_SANDSLASH] = sSandslashTutorLearnset,
+    [SPECIES_NIDORAN_F] = sNidoranFTutorLearnset,
+    [SPECIES_NIDORINA] = sNidorinaTutorLearnset,
+    [SPECIES_NIDOQUEEN] = sNidoqueenTutorLearnset,
+    [SPECIES_NIDORAN_M] = sNidoranMTutorLearnset,
+    [SPECIES_NIDORINO] = sNidorinoTutorLearnset,
+    [SPECIES_NIDOKING] = sNidokingTutorLearnset,
+    [SPECIES_CLEFAIRY] = sClefairyTutorLearnset,
+    [SPECIES_CLEFABLE] = sClefableTutorLearnset,
+    [SPECIES_VULPIX] = sVulpixTutorLearnset,
+    [SPECIES_NINETALES] = sNinetalesTutorLearnset,
+    [SPECIES_JIGGLYPUFF] = sJigglypuffTutorLearnset,
+    [SPECIES_WIGGLYTUFF] = sWigglytuffTutorLearnset,
+    [SPECIES_ZUBAT] = sZubatTutorLearnset,
+    [SPECIES_GOLBAT] = sGolbatTutorLearnset,
+    [SPECIES_ODDISH] = sOddishTutorLearnset,
+    [SPECIES_GLOOM] = sGloomTutorLearnset,
+    [SPECIES_VILEPLUME] = sVileplumeTutorLearnset,
+    [SPECIES_PARAS] = sParasTutorLearnset,
+    [SPECIES_PARASECT] = sParasectTutorLearnset,
+    [SPECIES_VENONAT] = sVenonatTutorLearnset,
+    [SPECIES_VENOMOTH] = sVenomothTutorLearnset,
+    [SPECIES_DIGLETT] = sDiglettTutorLearnset,
+    [SPECIES_DUGTRIO] = sDugtrioTutorLearnset,
+    [SPECIES_MEOWTH] = sMeowthTutorLearnset,
+    [SPECIES_PERSIAN] = sPersianTutorLearnset,
+    [SPECIES_PSYDUCK] = sPsyduckTutorLearnset,
+    [SPECIES_GOLDUCK] = sGolduckTutorLearnset,
+    [SPECIES_MANKEY] = sMankeyTutorLearnset,
+    [SPECIES_PRIMEAPE] = sPrimeapeTutorLearnset,
+    [SPECIES_GROWLITHE] = sGrowlitheTutorLearnset,
+    [SPECIES_ARCANINE] = sArcanineTutorLearnset,
+    [SPECIES_POLIWAG] = sPoliwagTutorLearnset,
+    [SPECIES_POLIWHIRL] = sPoliwhirlTutorLearnset,
+    [SPECIES_POLIWRATH] = sPoliwrathTutorLearnset,
+    [SPECIES_ABRA] = sAbraTutorLearnset,
+    [SPECIES_KADABRA] = sKadabraTutorLearnset,
+    [SPECIES_ALAKAZAM] = sAlakazamTutorLearnset,
+    [SPECIES_MACHOP] = sMachopTutorLearnset,
+    [SPECIES_MACHOKE] = sMachokeTutorLearnset,
+    [SPECIES_MACHAMP] = sMachampTutorLearnset,
+    [SPECIES_BELLSPROUT] = sBellsproutTutorLearnset,
+    [SPECIES_WEEPINBELL] = sWeepinbellTutorLearnset,
+    [SPECIES_VICTREEBEL] = sVictreebelTutorLearnset,
+    [SPECIES_TENTACOOL] = sTentacoolTutorLearnset,
+    [SPECIES_TENTACRUEL] = sTentacruelTutorLearnset,
+    [SPECIES_GEODUDE] = sGeodudeTutorLearnset,
+    [SPECIES_GRAVELER] = sGravelerTutorLearnset,
+    [SPECIES_GOLEM] = sGolemTutorLearnset,
+    [SPECIES_PONYTA] = sPonytaTutorLearnset,
+    [SPECIES_RAPIDASH] = sRapidashTutorLearnset,
+    [SPECIES_SLOWPOKE] = sSlowpokeTutorLearnset,
+    [SPECIES_SLOWBRO] = sSlowbroTutorLearnset,
+    [SPECIES_MAGNEMITE] = sMagnemiteTutorLearnset,
+    [SPECIES_MAGNETON] = sMagnetonTutorLearnset,
+    [SPECIES_FARFETCHD] = sFarfetchdTutorLearnset,
+    [SPECIES_DODUO] = sDoduoTutorLearnset,
+    [SPECIES_DODRIO] = sDodrioTutorLearnset,
+    [SPECIES_SEEL] = sSeelTutorLearnset,
+    [SPECIES_DEWGONG] = sDewgongTutorLearnset,
+    [SPECIES_GRIMER] = sGrimerTutorLearnset,
+    [SPECIES_MUK] = sMukTutorLearnset,
+    [SPECIES_SHELLDER] = sShellderTutorLearnset,
+    [SPECIES_CLOYSTER] = sCloysterTutorLearnset,
+    [SPECIES_GASTLY] = sGastlyTutorLearnset,
+    [SPECIES_HAUNTER] = sHaunterTutorLearnset,
+    [SPECIES_GENGAR] = sGengarTutorLearnset,
+    [SPECIES_ONIX] = sOnixTutorLearnset,
+    [SPECIES_ONIX_CRYSTAL] = sOnixCrystalTutorLearnset,
+    [SPECIES_DROWZEE] = sDrowzeeTutorLearnset,
+    [SPECIES_HYPNO] = sHypnoTutorLearnset,
+    [SPECIES_KRABBY] = sKrabbyTutorLearnset,
+    [SPECIES_KINGLER] = sKinglerTutorLearnset,
+    [SPECIES_VOLTORB] = sVoltorbTutorLearnset,
+    [SPECIES_ELECTRODE] = sElectrodeTutorLearnset,
+    [SPECIES_EXEGGCUTE] = sExeggcuteTutorLearnset,
+    [SPECIES_EXEGGUTOR] = sExeggutorTutorLearnset,
+    [SPECIES_CUBONE] = sCuboneTutorLearnset,
+    [SPECIES_MAROWAK] = sMarowakTutorLearnset,
+    [SPECIES_HITMONLEE] = sHitmonleeTutorLearnset,
+    [SPECIES_HITMONCHAN] = sHitmonchanTutorLearnset,
+    [SPECIES_LICKITUNG] = sLickitungTutorLearnset,
+    [SPECIES_KOFFING] = sKoffingTutorLearnset,
+    [SPECIES_WEEZING] = sWeezingTutorLearnset,
+    [SPECIES_RHYHORN] = sRhyhornTutorLearnset,
+    [SPECIES_RHYDON] = sRhydonTutorLearnset,
+    [SPECIES_CHANSEY] = sChanseyTutorLearnset,
+    [SPECIES_TANGELA] = sTangelaTutorLearnset,
+    [SPECIES_KANGASKHAN] = sKangaskhanTutorLearnset,
+    [SPECIES_HORSEA] = sHorseaTutorLearnset,
+    [SPECIES_SEADRA] = sSeadraTutorLearnset,
+    [SPECIES_GOLDEEN] = sGoldeenTutorLearnset,
+    [SPECIES_SEAKING] = sSeakingTutorLearnset,
+    [SPECIES_STARYU] = sStaryuTutorLearnset,
+    [SPECIES_STARMIE] = sStarmieTutorLearnset,
+    [SPECIES_MR_MIME] = sMrMimeTutorLearnset,
+    [SPECIES_SCYTHER] = sScytherTutorLearnset,
+    [SPECIES_JYNX] = sJynxTutorLearnset,
+    [SPECIES_ELECTABUZZ] = sElectabuzzTutorLearnset,
+    [SPECIES_MAGMAR] = sMagmarTutorLearnset,
+    [SPECIES_PINSIR] = sPinsirTutorLearnset,
+    [SPECIES_TAUROS] = sTaurosTutorLearnset,
+    [SPECIES_MAGIKARP] = sMagikarpTutorLearnset,
+    [SPECIES_GYARADOS] = sGyaradosTutorLearnset,
+    [SPECIES_LAPRAS] = sLaprasTutorLearnset,
+    [SPECIES_DITTO] = sDittoTutorLearnset,
+    [SPECIES_EEVEE] = sEeveeTutorLearnset,
+    [SPECIES_VAPOREON] = sVaporeonTutorLearnset,
+    [SPECIES_JOLTEON] = sJolteonTutorLearnset,
+    [SPECIES_FLAREON] = sFlareonTutorLearnset,
+    [SPECIES_PORYGON] = sPorygonTutorLearnset,
+    [SPECIES_OMANYTE] = sOmanyteTutorLearnset,
+    [SPECIES_OMASTAR] = sOmastarTutorLearnset,
+    [SPECIES_KABUTO] = sKabutoTutorLearnset,
+    [SPECIES_KABUTOPS] = sKabutopsTutorLearnset,
+    [SPECIES_AERODACTYL] = sAerodactylTutorLearnset,
+    [SPECIES_SNORLAX] = sSnorlaxTutorLearnset,
+    [SPECIES_SNORLAX_SNOW] = sSnorlaxSnowTutorLearnset,
+    [SPECIES_ARTICUNO] = sArticunoTutorLearnset,
+    [SPECIES_ZAPDOS] = sZapdosTutorLearnset,
+    [SPECIES_MOLTRES] = sMoltresTutorLearnset,
+    [SPECIES_DRATINI] = sDratiniTutorLearnset,
+    [SPECIES_DRAGONAIR] = sDragonairTutorLearnset,
+    [SPECIES_DRAGONITE] = sDragoniteTutorLearnset,
+    [SPECIES_MEWTWO] = sMewtwoTutorLearnset,
+    [SPECIES_MEW] = sMewTutorLearnset,
+    [SPECIES_CHIKORITA] = sChikoritaTutorLearnset,
+    [SPECIES_BAYLEEF] = sBayleefTutorLearnset,
+    [SPECIES_MEGANIUM] = sMeganiumTutorLearnset,
+    [SPECIES_CYNDAQUIL] = sCyndaquilTutorLearnset,
+    [SPECIES_QUILAVA] = sQuilavaTutorLearnset,
+    [SPECIES_TYPHLOSION] = sTyphlosionTutorLearnset,
+    [SPECIES_TOTODILE] = sTotodileTutorLearnset,
+    [SPECIES_CROCONAW] = sCroconawTutorLearnset,
+    [SPECIES_FERALIGATR] = sFeraligatrTutorLearnset,
+    [SPECIES_SENTRET] = sSentretTutorLearnset,
+    [SPECIES_FURRET] = sFurretTutorLearnset,
+    [SPECIES_HOOTHOOT] = sHoothootTutorLearnset,
+    [SPECIES_NOCTOWL] = sNoctowlTutorLearnset,
+    [SPECIES_LEDYBA] = sLedybaTutorLearnset,
+    [SPECIES_LEDIAN] = sLedianTutorLearnset,
+    [SPECIES_SPINARAK] = sSpinarakTutorLearnset,
+    [SPECIES_ARIADOS] = sAriadosTutorLearnset,
+    [SPECIES_CROBAT] = sCrobatTutorLearnset,
+    [SPECIES_CHINCHOU] = sChinchouTutorLearnset,
+    [SPECIES_LANTURN] = sLanturnTutorLearnset,
+    [SPECIES_PICHU] = sPichuTutorLearnset,
+    [SPECIES_CLEFFA] = sCleffaTutorLearnset,
+    [SPECIES_IGGLYBUFF] = sIgglybuffTutorLearnset,
+    [SPECIES_TOGEPI] = sTogepiTutorLearnset,
+    [SPECIES_TOGETIC] = sTogeticTutorLearnset,
+    [SPECIES_NATU] = sNatuTutorLearnset,
+    [SPECIES_XATU] = sXatuTutorLearnset,
+    [SPECIES_MAREEP] = sMareepTutorLearnset,
+    [SPECIES_FLAAFFY] = sFlaaffyTutorLearnset,
+    [SPECIES_AMPHAROS] = sAmpharosTutorLearnset,
+    [SPECIES_BELLOSSOM] = sBellossomTutorLearnset,
+    [SPECIES_MARILL] = sMarillTutorLearnset,
+    [SPECIES_AZUMARILL] = sAzumarillTutorLearnset,
+    [SPECIES_SUDOWOODO] = sSudowoodoTutorLearnset,
+    [SPECIES_POLITOED] = sPolitoedTutorLearnset,
+    [SPECIES_HOPPIP] = sHoppipTutorLearnset,
+    [SPECIES_SKIPLOOM] = sSkiploomTutorLearnset,
+    [SPECIES_JUMPLUFF] = sJumpluffTutorLearnset,
+    [SPECIES_AIPOM] = sAipomTutorLearnset,
+    [SPECIES_SUNKERN] = sSunkernTutorLearnset,
+    [SPECIES_SUNFLORA] = sSunfloraTutorLearnset,
+    [SPECIES_YANMA] = sYanmaTutorLearnset,
+    [SPECIES_WOOPER] = sWooperTutorLearnset,
+    [SPECIES_QUAGSIRE] = sQuagsireTutorLearnset,
+    [SPECIES_ESPEON] = sEspeonTutorLearnset,
+    [SPECIES_UMBREON] = sUmbreonTutorLearnset,
+    [SPECIES_MURKROW] = sMurkrowTutorLearnset,
+    [SPECIES_SLOWKING] = sSlowkingTutorLearnset,
+    [SPECIES_MISDREAVUS] = sMisdreavusTutorLearnset,
+    [SPECIES_UNOWN] = sUnownTutorLearnset,
+    [SPECIES_WOBBUFFET] = sWobbuffetTutorLearnset,
+    [SPECIES_GIRAFARIG] = sGirafarigTutorLearnset,
+    [SPECIES_PINECO] = sPinecoTutorLearnset,
+    [SPECIES_FORRETRESS] = sForretressTutorLearnset,
+    [SPECIES_DUNSPARCE] = sDunsparceTutorLearnset,
+    [SPECIES_GLIGAR] = sGligarTutorLearnset,
+    [SPECIES_STEELIX] = sSteelixTutorLearnset,
+    [SPECIES_SNUBBULL] = sSnubbullTutorLearnset,
+    [SPECIES_GRANBULL] = sGranbullTutorLearnset,
+    [SPECIES_QWILFISH] = sQwilfishTutorLearnset,
+    [SPECIES_SCIZOR] = sScizorTutorLearnset,
+    [SPECIES_SHUCKLE] = sShuckleTutorLearnset,
+    [SPECIES_HERACROSS] = sHeracrossTutorLearnset,
+    [SPECIES_SNEASEL] = sSneaselTutorLearnset,
+    [SPECIES_TEDDIURSA] = sTeddiursaTutorLearnset,
+    [SPECIES_URSARING] = sUrsaringTutorLearnset,
+    [SPECIES_SLUGMA] = sSlugmaTutorLearnset,
+    [SPECIES_MAGCARGO] = sMagcargoTutorLearnset,
+    [SPECIES_SWINUB] = sSwinubTutorLearnset,
+    [SPECIES_PILOSWINE] = sPiloswineTutorLearnset,
+    [SPECIES_CORSOLA] = sCorsolaTutorLearnset,
+    [SPECIES_REMORAID] = sRemoraidTutorLearnset,
+    [SPECIES_OCTILLERY] = sOctilleryTutorLearnset,
+    [SPECIES_DELIBIRD] = sDelibirdTutorLearnset,
+    [SPECIES_MANTINE] = sMantineTutorLearnset,
+    [SPECIES_SKARMORY] = sSkarmoryTutorLearnset,
+    [SPECIES_HOUNDOUR] = sHoundourTutorLearnset,
+    [SPECIES_HOUNDOOM] = sHoundoomTutorLearnset,
+    [SPECIES_KINGDRA] = sKingdraTutorLearnset,
+    [SPECIES_PHANPY] = sPhanpyTutorLearnset,
+    [SPECIES_DONPHAN] = sDonphanTutorLearnset,
+    [SPECIES_PORYGON2] = sPorygon2TutorLearnset,
+    [SPECIES_STANTLER] = sStantlerTutorLearnset,
+    [SPECIES_SMEARGLE] = sSmeargleTutorLearnset,
+    [SPECIES_TYROGUE] = sTyrogueTutorLearnset,
+    [SPECIES_HITMONTOP] = sHitmontopTutorLearnset,
+    [SPECIES_SMOOCHUM] = sSmoochumTutorLearnset,
+    [SPECIES_ELEKID] = sElekidTutorLearnset,
+    [SPECIES_MAGBY] = sMagbyTutorLearnset,
+    [SPECIES_MILTANK] = sMiltankTutorLearnset,
+    [SPECIES_BLISSEY] = sBlisseyTutorLearnset,
+    [SPECIES_RAIKOU] = sRaikouTutorLearnset,
+    [SPECIES_ENTEI] = sEnteiTutorLearnset,
+    [SPECIES_SUICUNE] = sSuicuneTutorLearnset,
+    [SPECIES_LARVITAR] = sLarvitarTutorLearnset,
+    [SPECIES_PUPITAR] = sPupitarTutorLearnset,
+    [SPECIES_TYRANITAR] = sTyranitarTutorLearnset,
+    [SPECIES_LUGIA] = sLugiaTutorLearnset,
+    [SPECIES_HO_OH] = sHoOhTutorLearnset,
+    [SPECIES_MYSTIC_EGG] = sHoOhTutorLearnset,
+    [SPECIES_COCOON_EGG] = sYveltalTutorLearnset,
+    [SPECIES_CELEBI] = sCelebiTutorLearnset,
+    [SPECIES_TREECKO] = sTreeckoTutorLearnset,
+    [SPECIES_GROVYLE] = sGrovyleTutorLearnset,
+    [SPECIES_SCEPTILE] = sSceptileTutorLearnset,
+    [SPECIES_TORCHIC] = sTorchicTutorLearnset,
+    [SPECIES_COMBUSKEN] = sCombuskenTutorLearnset,
+    [SPECIES_BLAZIKEN] = sBlazikenTutorLearnset,
+    [SPECIES_MUDKIP] = sMudkipTutorLearnset,
+    [SPECIES_MARSHTOMP] = sMarshtompTutorLearnset,
+    [SPECIES_SWAMPERT] = sSwampertTutorLearnset,
+    [SPECIES_POOCHYENA] = sPoochyenaTutorLearnset,
+    [SPECIES_MIGHTYENA] = sMightyenaTutorLearnset,
+    [SPECIES_ZIGZAGOON] = sZigzagoonTutorLearnset,
+    [SPECIES_LINOONE] = sLinooneTutorLearnset,
+    [SPECIES_WURMPLE] = sWurmpleTutorLearnset,
+    [SPECIES_SILCOON] = sSilcoonTutorLearnset,
+    [SPECIES_BEAUTIFLY] = sBeautiflyTutorLearnset,
+    [SPECIES_CASCOON] = sCascoonTutorLearnset,
+    [SPECIES_DUSTOX] = sDustoxTutorLearnset,
+    [SPECIES_LOTAD] = sLotadTutorLearnset,
+    [SPECIES_LOMBRE] = sLombreTutorLearnset,
+    [SPECIES_LUDICOLO] = sLudicoloTutorLearnset,
+    [SPECIES_SEEDOT] = sSeedotTutorLearnset,
+    [SPECIES_NUZLEAF] = sNuzleafTutorLearnset,
+    [SPECIES_SHIFTRY] = sShiftryTutorLearnset,
+    [SPECIES_TAILLOW] = sTaillowTutorLearnset,
+    [SPECIES_SWELLOW] = sSwellowTutorLearnset,
+    [SPECIES_WINGULL] = sWingullTutorLearnset,
+    [SPECIES_PELIPPER] = sPelipperTutorLearnset,
+    [SPECIES_RALTS] = sRaltsTutorLearnset,
+    [SPECIES_KIRLIA] = sKirliaTutorLearnset,
+    [SPECIES_GARDEVOIR] = sGardevoirTutorLearnset,
+    [SPECIES_SURSKIT] = sSurskitTutorLearnset,
+    [SPECIES_MASQUERAIN] = sMasquerainTutorLearnset,
+    [SPECIES_SHROOMISH] = sShroomishTutorLearnset,
+    [SPECIES_BRELOOM] = sBreloomTutorLearnset,
+    [SPECIES_SLAKOTH] = sSlakothTutorLearnset,
+    [SPECIES_VIGOROTH] = sVigorothTutorLearnset,
+    [SPECIES_SLAKING] = sSlakingTutorLearnset,
+    [SPECIES_NINCADA] = sNincadaTutorLearnset,
+    [SPECIES_NINJASK] = sNinjaskTutorLearnset,
+    [SPECIES_SHEDINJA] = sShedinjaTutorLearnset,
+    [SPECIES_WHISMUR] = sWhismurTutorLearnset,
+    [SPECIES_LOUDRED] = sLoudredTutorLearnset,
+    [SPECIES_EXPLOUD] = sExploudTutorLearnset,
+    [SPECIES_MAKUHITA] = sMakuhitaTutorLearnset,
+    [SPECIES_HARIYAMA] = sHariyamaTutorLearnset,
+    [SPECIES_AZURILL] = sAzurillTutorLearnset,
+    [SPECIES_NOSEPASS] = sNosepassTutorLearnset,
+    [SPECIES_SKITTY] = sSkittyTutorLearnset,
+    [SPECIES_DELCATTY] = sDelcattyTutorLearnset,
+    [SPECIES_SABLEYE] = sSableyeTutorLearnset,
+    [SPECIES_MAWILE] = sMawileTutorLearnset,
+    [SPECIES_ARON] = sAronTutorLearnset,
+    [SPECIES_LAIRON] = sLaironTutorLearnset,
+    [SPECIES_AGGRON] = sAggronTutorLearnset,
+    [SPECIES_MEDITITE] = sMedititeTutorLearnset,
+    [SPECIES_MEDICHAM] = sMedichamTutorLearnset,
+    [SPECIES_ELECTRIKE] = sElectrikeTutorLearnset,
+    [SPECIES_MANECTRIC] = sManectricTutorLearnset,
+    [SPECIES_PLUSLE] = sPlusleTutorLearnset,
+    [SPECIES_MINUN] = sMinunTutorLearnset,
+    [SPECIES_VOLBEAT] = sVolbeatTutorLearnset,
+    [SPECIES_ILLUMISE] = sIllumiseTutorLearnset,
+    [SPECIES_ROSELIA] = sRoseliaTutorLearnset,
+    [SPECIES_GULPIN] = sGulpinTutorLearnset,
+    [SPECIES_SWALOT] = sSwalotTutorLearnset,
+    [SPECIES_CARVANHA] = sCarvanhaTutorLearnset,
+    [SPECIES_SHARPEDO] = sSharpedoTutorLearnset,
+    [SPECIES_WAILMER] = sWailmerTutorLearnset,
+    [SPECIES_WAILORD] = sWailordTutorLearnset,
+    [SPECIES_NUMEL] = sNumelTutorLearnset,
+    [SPECIES_CAMERUPT] = sCameruptTutorLearnset,
+    [SPECIES_TORKOAL] = sTorkoalTutorLearnset,
+    [SPECIES_SPOINK] = sSpoinkTutorLearnset,
+    [SPECIES_GRUMPIG] = sGrumpigTutorLearnset,
+    [SPECIES_SPINDA] = sSpindaTutorLearnset,
+    [SPECIES_TRAPINCH] = sTrapinchTutorLearnset,
+    [SPECIES_VIBRAVA] = sVibravaTutorLearnset,
+    [SPECIES_FLYGON] = sFlygonTutorLearnset,
+    [SPECIES_CACNEA] = sCacneaTutorLearnset,
+    [SPECIES_CACTURNE] = sCacturneTutorLearnset,
+    [SPECIES_SWABLU] = sSwabluTutorLearnset,
+    [SPECIES_ALTARIA] = sAltariaTutorLearnset,
+    [SPECIES_ZANGOOSE] = sZangooseTutorLearnset,
+    [SPECIES_SEVIPER] = sSeviperTutorLearnset,
+    [SPECIES_LUNATONE] = sLunatoneTutorLearnset,
+    [SPECIES_SOLROCK] = sSolrockTutorLearnset,
+    [SPECIES_BARBOACH] = sBarboachTutorLearnset,
+    [SPECIES_WHISCASH] = sWhiscashTutorLearnset,
+    [SPECIES_CORPHISH] = sCorphishTutorLearnset,
+    [SPECIES_CRAWDAUNT] = sCrawdauntTutorLearnset,
+    [SPECIES_BALTOY] = sBaltoyTutorLearnset,
+    [SPECIES_CLAYDOL] = sClaydolTutorLearnset,
+    [SPECIES_LILEEP] = sLileepTutorLearnset,
+    [SPECIES_CRADILY] = sCradilyTutorLearnset,
+    [SPECIES_ANORITH] = sAnorithTutorLearnset,
+    [SPECIES_ARMALDO] = sArmaldoTutorLearnset,
+    [SPECIES_FEEBAS] = sFeebasTutorLearnset,
+    [SPECIES_MILOTIC] = sMiloticTutorLearnset,
+    [SPECIES_CASTFORM] = sCastformTutorLearnset,
+    [SPECIES_KECLEON] = sKecleonTutorLearnset,
+    [SPECIES_SHUPPET] = sShuppetTutorLearnset,
+    [SPECIES_BANETTE] = sBanetteTutorLearnset,
+    [SPECIES_DUSKULL] = sDuskullTutorLearnset,
+    [SPECIES_DUSCLOPS] = sDusclopsTutorLearnset,
+    [SPECIES_TROPIUS] = sTropiusTutorLearnset,
+    [SPECIES_CHIMECHO] = sChimechoTutorLearnset,
+    [SPECIES_ABSOL] = sAbsolTutorLearnset,
+    [SPECIES_WYNAUT] = sWynautTutorLearnset,
+    [SPECIES_SNORUNT] = sSnoruntTutorLearnset,
+    [SPECIES_GLALIE] = sGlalieTutorLearnset,
+    [SPECIES_SPHEAL] = sSphealTutorLearnset,
+    [SPECIES_SEALEO] = sSealeoTutorLearnset,
+    [SPECIES_WALREIN] = sWalreinTutorLearnset,
+    [SPECIES_CLAMPERL] = sClamperlTutorLearnset,
+    [SPECIES_HUNTAIL] = sHuntailTutorLearnset,
+    [SPECIES_GOREBYSS] = sGorebyssTutorLearnset,
+    [SPECIES_RELICANTH] = sRelicanthTutorLearnset,
+    [SPECIES_LUVDISC] = sLuvdiscTutorLearnset,
+    [SPECIES_BAGON] = sBagonTutorLearnset,
+    [SPECIES_SHELGON] = sShelgonTutorLearnset,
+    [SPECIES_SALAMENCE] = sSalamenceTutorLearnset,
+    [SPECIES_BELDUM] = sBeldumTutorLearnset,
+    [SPECIES_METANG] = sMetangTutorLearnset,
+    [SPECIES_METAGROSS] = sMetagrossTutorLearnset,
+    [SPECIES_REGIROCK] = sRegirockTutorLearnset,
+    [SPECIES_REGICE] = sRegiceTutorLearnset,
+    [SPECIES_REGISTEEL] = sRegisteelTutorLearnset,
+    [SPECIES_LATIAS] = sLatiasTutorLearnset,
+    [SPECIES_LATIOS] = sLatiosTutorLearnset,
+    [SPECIES_KYOGRE] = sKyogreTutorLearnset,
+    [SPECIES_GROUDON] = sGroudonTutorLearnset,
+    [SPECIES_RAYQUAZA] = sRayquazaTutorLearnset,
+    [SPECIES_JIRACHI] = sJirachiTutorLearnset,
+    [SPECIES_DEOXYS] = sDeoxysTutorLearnset,
+    [SPECIES_TURTWIG] = sTurtwigTutorLearnset,
+    [SPECIES_GROTLE] = sGrotleTutorLearnset,
+    [SPECIES_TORTERRA] = sTorterraTutorLearnset,
+    [SPECIES_CHIMCHAR] = sChimcharTutorLearnset,
+    [SPECIES_MONFERNO] = sMonfernoTutorLearnset,
+    [SPECIES_INFERNAPE] = sInfernapeTutorLearnset,
+    [SPECIES_PIPLUP] = sPiplupTutorLearnset,
+    [SPECIES_PRINPLUP] = sPrinplupTutorLearnset,
+    [SPECIES_EMPOLEON] = sEmpoleonTutorLearnset,
+    [SPECIES_STARLY] = sStarlyTutorLearnset,
+    [SPECIES_STARAVIA] = sStaraviaTutorLearnset,
+    [SPECIES_STARAPTOR] = sStaraptorTutorLearnset,
+    [SPECIES_BIDOOF] = sBidoofTutorLearnset,
+    [SPECIES_BIBAREL] = sBibarelTutorLearnset,
+    [SPECIES_KRICKETOT] = sKricketotTutorLearnset,
+    [SPECIES_KRICKETUNE] = sKricketuneTutorLearnset,
+    [SPECIES_SHINX] = sShinxTutorLearnset,
+    [SPECIES_LUXIO] = sLuxioTutorLearnset,
+    [SPECIES_LUXRAY] = sLuxrayTutorLearnset,
+    [SPECIES_BUDEW] = sBudewTutorLearnset,
+    [SPECIES_ROSERADE] = sRoseradeTutorLearnset,
+    [SPECIES_CRANIDOS] = sCranidosTutorLearnset,
+    [SPECIES_RAMPARDOS] = sRampardosTutorLearnset,
+    [SPECIES_SHIELDON] = sShieldonTutorLearnset,
+    [SPECIES_BASTIODON] = sBastiodonTutorLearnset,
+    [SPECIES_BURMY] = sBurmyTutorLearnset,
+    [SPECIES_WORMADAM] = sWormadamTutorLearnset,
+    [SPECIES_MOTHIM] = sMothimTutorLearnset,
+    [SPECIES_COMBEE] = sCombeeTutorLearnset,
+    [SPECIES_VESPIQUEN] = sVespiquenTutorLearnset,
+    [SPECIES_PACHIRISU] = sPachirisuTutorLearnset,
+    [SPECIES_BUIZEL] = sBuizelTutorLearnset,
+    [SPECIES_FLOATZEL] = sFloatzelTutorLearnset,
+    [SPECIES_CHERUBI] = sCherubiTutorLearnset,
+    [SPECIES_CHERRIM] = sCherrimTutorLearnset,
+    [SPECIES_SHELLOS] = sShellosTutorLearnset,
+    [SPECIES_GASTRODON] = sGastrodonTutorLearnset,
+    [SPECIES_SHELLOS_EAST_SEA] = sShellosEastSeaTutorLearnset,
+    [SPECIES_GASTRODON_EAST_SEA] = sGastrodonEastSeaTutorLearnset,
+    [SPECIES_AMBIPOM] = sAmbipomTutorLearnset,
+    [SPECIES_DRIFLOON] = sDrifloonTutorLearnset,
+    [SPECIES_DRIFBLIM] = sDrifblimTutorLearnset,
+    [SPECIES_BUNEARY] = sBunearyTutorLearnset,
+    [SPECIES_LOPUNNY] = sLopunnyTutorLearnset,
+    [SPECIES_MISMAGIUS] = sMismagiusTutorLearnset,
+    [SPECIES_HONCHKROW] = sHonchkrowTutorLearnset,
+    [SPECIES_GLAMEOW] = sGlameowTutorLearnset,
+    [SPECIES_PURUGLY] = sPuruglyTutorLearnset,
+    [SPECIES_CHINGLING] = sChinglingTutorLearnset,
+    [SPECIES_STUNKY] = sStunkyTutorLearnset,
+    [SPECIES_SKUNTANK] = sSkuntankTutorLearnset,
+    [SPECIES_BRONZOR] = sBronzorTutorLearnset,
+    [SPECIES_BRONZONG] = sBronzongTutorLearnset,
+    [SPECIES_BONSLY] = sBonslyTutorLearnset,
+    [SPECIES_MIME_JR] = sMimeJrTutorLearnset,
+    [SPECIES_HAPPINY] = sHappinyTutorLearnset,
+    [SPECIES_CHATOT] = sChatotTutorLearnset,
+    [SPECIES_SPIRITOMB] = sSpiritombTutorLearnset,
+    [SPECIES_SPIRITOMB_1] = sSpiritomb1TutorLearnset,
+    [SPECIES_SPIRITOMB_2] = sSpiritomb2TutorLearnset,
+    [SPECIES_SPIRITOMB_3] = sSpiritomb3TutorLearnset,
+    [SPECIES_GIBLE] = sGibleTutorLearnset,
+    [SPECIES_GABITE] = sGabiteTutorLearnset,
+    [SPECIES_GARCHOMP] = sGarchompTutorLearnset,
+    [SPECIES_MUNCHLAX] = sMunchlaxTutorLearnset,
+    [SPECIES_RIOLU] = sRioluTutorLearnset,
+    [SPECIES_LUCARIO] = sLucarioTutorLearnset,
+    [SPECIES_HIPPOPOTAS] = sHippopotasTutorLearnset,
+    [SPECIES_HIPPOWDON] = sHippowdonTutorLearnset,
+    [SPECIES_SKORUPI] = sSkorupiTutorLearnset,
+    [SPECIES_DRAPION] = sDrapionTutorLearnset,
+    [SPECIES_CROAGUNK] = sCroagunkTutorLearnset,
+    [SPECIES_TOXICROAK] = sToxicroakTutorLearnset,
+    [SPECIES_CARNIVINE] = sCarnivineTutorLearnset,
+    [SPECIES_FINNEON] = sFinneonTutorLearnset,
+    [SPECIES_LUMINEON] = sLumineonTutorLearnset,
+    [SPECIES_MANTYKE] = sMantykeTutorLearnset,
+    [SPECIES_SNOVER] = sSnoverTutorLearnset,
+    [SPECIES_ABOMASNOW] = sAbomasnowTutorLearnset,
+    [SPECIES_WEAVILE] = sWeavileTutorLearnset,
+    [SPECIES_MAGNEZONE] = sMagnezoneTutorLearnset,
+    [SPECIES_LICKILICKY] = sLickilickyTutorLearnset,
+    [SPECIES_RHYPERIOR] = sRhyperiorTutorLearnset,
+    [SPECIES_TANGROWTH] = sTangrowthTutorLearnset,
+    [SPECIES_ELECTIVIRE] = sElectivireTutorLearnset,
+    [SPECIES_MAGMORTAR] = sMagmortarTutorLearnset,
+    [SPECIES_TOGEKISS] = sTogekissTutorLearnset,
+    [SPECIES_YANMEGA] = sYanmegaTutorLearnset,
+    [SPECIES_LEAFEON] = sLeafeonTutorLearnset,
+    [SPECIES_GLACEON] = sGlaceonTutorLearnset,
+    [SPECIES_GLISCOR] = sGliscorTutorLearnset,
+    [SPECIES_MAMOSWINE] = sMamoswineTutorLearnset,
+    [SPECIES_PORYGON_Z] = sPorygonZTutorLearnset,
+    [SPECIES_GALLADE] = sGalladeTutorLearnset,
+    [SPECIES_PROBOPASS] = sProbopassTutorLearnset,
+    [SPECIES_DUSKNOIR] = sDusknoirTutorLearnset,
+    [SPECIES_FROSLASS] = sFroslassTutorLearnset,
+    [SPECIES_ROTOM] = sRotomTutorLearnset,
+    [SPECIES_UXIE] = sUxieTutorLearnset,
+    [SPECIES_MESPRIT] = sMespritTutorLearnset,
+    [SPECIES_AZELF] = sAzelfTutorLearnset,
+    [SPECIES_DIALGA] = sDialgaTutorLearnset,
+    [SPECIES_PALKIA] = sPalkiaTutorLearnset,
+    [SPECIES_HEATRAN] = sHeatranTutorLearnset,
+    [SPECIES_REGIGIGAS] = sRegigigasTutorLearnset,
+    [SPECIES_GIRATINA] = sGiratinaTutorLearnset,
+    [SPECIES_CRESSELIA] = sCresseliaTutorLearnset,
+    [SPECIES_PHIONE] = sPhioneTutorLearnset,
+    [SPECIES_MANAPHY] = sManaphyTutorLearnset,
+    [SPECIES_DARKRAI] = sDarkraiTutorLearnset,
+    [SPECIES_SHAYMIN] = sShayminTutorLearnset,
+    [SPECIES_ARCEUS] = sArceusTutorLearnset,
+    [SPECIES_VICTINI] = sVictiniTutorLearnset,
+    [SPECIES_SNIVY] = sSnivyTutorLearnset,
+    [SPECIES_SERVINE] = sServineTutorLearnset,
+    [SPECIES_SERPERIOR] = sSerperiorTutorLearnset,
+    [SPECIES_TEPIG] = sTepigTutorLearnset,
+    [SPECIES_PIGNITE] = sPigniteTutorLearnset,
+    [SPECIES_EMBOAR] = sEmboarTutorLearnset,
+    [SPECIES_OSHAWOTT] = sOshawottTutorLearnset,
+    [SPECIES_DEWOTT] = sDewottTutorLearnset,
+    [SPECIES_SAMUROTT] = sSamurottTutorLearnset,
+    [SPECIES_PATRAT] = sPatratTutorLearnset,
+    [SPECIES_WATCHOG] = sWatchogTutorLearnset,
+    [SPECIES_LILLIPUP] = sLillipupTutorLearnset,
+    [SPECIES_HERDIER] = sHerdierTutorLearnset,
+    [SPECIES_STOUTLAND] = sStoutlandTutorLearnset,
+    [SPECIES_PURRLOIN] = sPurrloinTutorLearnset,
+    [SPECIES_LIEPARD] = sLiepardTutorLearnset,
+    [SPECIES_PANSAGE] = sPansageTutorLearnset,
+    [SPECIES_SIMISAGE] = sSimisageTutorLearnset,
+    [SPECIES_PANSEAR] = sPansearTutorLearnset,
+    [SPECIES_SIMISEAR] = sSimisearTutorLearnset,
+    [SPECIES_PANPOUR] = sPanpourTutorLearnset,
+    [SPECIES_SIMIPOUR] = sSimipourTutorLearnset,
+    [SPECIES_MUNNA] = sMunnaTutorLearnset,
+    [SPECIES_MUSHARNA] = sMusharnaTutorLearnset,
+    [SPECIES_PIDOVE] = sPidoveTutorLearnset,
+    [SPECIES_TRANQUILL] = sTranquillTutorLearnset,
+    [SPECIES_UNFEZANT] = sUnfezantTutorLearnset,
+    [SPECIES_BLITZLE] = sBlitzleTutorLearnset,
+    [SPECIES_ZEBSTRIKA] = sZebstrikaTutorLearnset,
+    [SPECIES_ROGGENROLA] = sRoggenrolaTutorLearnset,
+    [SPECIES_BOLDORE] = sBoldoreTutorLearnset,
+    [SPECIES_GIGALITH] = sGigalithTutorLearnset,
+    [SPECIES_WOOBAT] = sWoobatTutorLearnset,
+    [SPECIES_SWOOBAT] = sSwoobatTutorLearnset,
+    [SPECIES_DRILBUR] = sDrilburTutorLearnset,
+    [SPECIES_EXCADRILL] = sExcadrillTutorLearnset,
+    [SPECIES_AUDINO] = sAudinoTutorLearnset,
+    [SPECIES_TIMBURR] = sTimburrTutorLearnset,
+    [SPECIES_GURDURR] = sGurdurrTutorLearnset,
+    [SPECIES_CONKELDURR] = sConkeldurrTutorLearnset,
+    [SPECIES_TYMPOLE] = sTympoleTutorLearnset,
+    [SPECIES_PALPITOAD] = sPalpitoadTutorLearnset,
+    [SPECIES_SEISMITOAD] = sSeismitoadTutorLearnset,
+    [SPECIES_THROH] = sThrohTutorLearnset,
+    [SPECIES_SAWK] = sSawkTutorLearnset,
+    [SPECIES_SEWADDLE] = sSewaddleTutorLearnset,
+    [SPECIES_SWADLOON] = sSwadloonTutorLearnset,
+    [SPECIES_LEAVANNY] = sLeavannyTutorLearnset,
+    [SPECIES_VENIPEDE] = sVenipedeTutorLearnset,
+    [SPECIES_WHIRLIPEDE] = sWhirlipedeTutorLearnset,
+    [SPECIES_SCOLIPEDE] = sScolipedeTutorLearnset,
+    [SPECIES_COTTONEE] = sCottoneeTutorLearnset,
+    [SPECIES_WHIMSICOTT] = sWhimsicottTutorLearnset,
+    [SPECIES_PETILIL] = sPetililTutorLearnset,
+    [SPECIES_LILLIGANT] = sLilligantTutorLearnset,
+    [SPECIES_BASCULIN] = sBasculinTutorLearnset,
+    [SPECIES_SANDILE] = sSandileTutorLearnset,
+    [SPECIES_KROKOROK] = sKrokorokTutorLearnset,
+    [SPECIES_KROOKODILE] = sKrookodileTutorLearnset,
+    [SPECIES_DARUMAKA] = sDarumakaTutorLearnset,
+    [SPECIES_DARMANITAN] = sDarmanitanTutorLearnset,
+    [SPECIES_MARACTUS] = sMaractusTutorLearnset,
+    [SPECIES_DWEBBLE] = sDwebbleTutorLearnset,
+    [SPECIES_CRUSTLE] = sCrustleTutorLearnset,
+    [SPECIES_SCRAGGY] = sScraggyTutorLearnset,
+    [SPECIES_SCRAFTY] = sScraftyTutorLearnset,
+    [SPECIES_SIGILYPH] = sSigilyphTutorLearnset,
+    [SPECIES_YAMASK] = sYamaskTutorLearnset,
+    [SPECIES_COFAGRIGUS] = sCofagrigusTutorLearnset,
+    [SPECIES_TIRTOUGA] = sTirtougaTutorLearnset,
+    [SPECIES_CARRACOSTA] = sCarracostaTutorLearnset,
+    [SPECIES_ARCHEN] = sArchenTutorLearnset,
+    [SPECIES_ARCHEOPS] = sArcheopsTutorLearnset,
+    [SPECIES_TRUBBISH] = sTrubbishTutorLearnset,
+    [SPECIES_GARBODOR] = sGarbodorTutorLearnset,
+    [SPECIES_ZORUA] = sZoruaTutorLearnset,
+    [SPECIES_ZOROARK] = sZoroarkTutorLearnset,
+    [SPECIES_MINCCINO] = sMinccinoTutorLearnset,
+    [SPECIES_CINCCINO] = sCinccinoTutorLearnset,
+    [SPECIES_GOTHITA] = sGothitaTutorLearnset,
+    [SPECIES_GOTHORITA] = sGothoritaTutorLearnset,
+    [SPECIES_GOTHITELLE] = sGothitelleTutorLearnset,
+    [SPECIES_SOLOSIS] = sSolosisTutorLearnset,
+    [SPECIES_DUOSION] = sDuosionTutorLearnset,
+    [SPECIES_REUNICLUS] = sReuniclusTutorLearnset,
+    [SPECIES_DUCKLETT] = sDucklettTutorLearnset,
+    [SPECIES_SWANNA] = sSwannaTutorLearnset,
+    [SPECIES_VANILLITE] = sVanilliteTutorLearnset,
+    [SPECIES_VANILLISH] = sVanillishTutorLearnset,
+    [SPECIES_VANILLUXE] = sVanilluxeTutorLearnset,
+    [SPECIES_DEERLING] = sDeerlingTutorLearnset,
+    [SPECIES_SAWSBUCK] = sSawsbuckTutorLearnset,
+    [SPECIES_EMOLGA] = sEmolgaTutorLearnset,
+    [SPECIES_KARRABLAST] = sKarrablastTutorLearnset,
+    [SPECIES_ESCAVALIER] = sEscavalierTutorLearnset,
+    [SPECIES_FOONGUS] = sFoongusTutorLearnset,
+    [SPECIES_AMOONGUSS] = sAmoongussTutorLearnset,
+    [SPECIES_FRILLISH] = sFrillishTutorLearnset,
+    [SPECIES_JELLICENT] = sJellicentTutorLearnset,
+    [SPECIES_ALOMOMOLA] = sAlomomolaTutorLearnset,
+    [SPECIES_JOLTIK] = sJoltikTutorLearnset,
+    [SPECIES_GALVANTULA] = sGalvantulaTutorLearnset,
+    [SPECIES_FERROSEED] = sFerroseedTutorLearnset,
+    [SPECIES_FERROTHORN] = sFerrothornTutorLearnset,
+    [SPECIES_KLINK] = sKlinkTutorLearnset,
+    [SPECIES_KLANG] = sKlangTutorLearnset,
+    [SPECIES_KLINKLANG] = sKlinklangTutorLearnset,
+    [SPECIES_TYNAMO] = sTynamoTutorLearnset,
+    [SPECIES_EELEKTRIK] = sEelektrikTutorLearnset,
+    [SPECIES_EELEKTROSS] = sEelektrossTutorLearnset,
+    [SPECIES_ELGYEM] = sElgyemTutorLearnset,
+    [SPECIES_BEHEEYEM] = sBeheeyemTutorLearnset,
+    [SPECIES_LITWICK] = sLitwickTutorLearnset,
+    [SPECIES_LAMPENT] = sLampentTutorLearnset,
+    [SPECIES_CHANDELURE] = sChandelureTutorLearnset,
+    [SPECIES_AXEW] = sAxewTutorLearnset,
+    [SPECIES_FRAXURE] = sFraxureTutorLearnset,
+    [SPECIES_HAXORUS] = sHaxorusTutorLearnset,
+    [SPECIES_CUBCHOO] = sCubchooTutorLearnset,
+    [SPECIES_BEARTIC] = sBearticTutorLearnset,
+    [SPECIES_CRYOGONAL] = sCryogonalTutorLearnset,
+    [SPECIES_SHELMET] = sShelmetTutorLearnset,
+    [SPECIES_ACCELGOR] = sAccelgorTutorLearnset,
+    [SPECIES_STUNFISK] = sStunfiskTutorLearnset,
+    [SPECIES_MIENFOO] = sMienfooTutorLearnset,
+    [SPECIES_MIENSHAO] = sMienshaoTutorLearnset,
+    [SPECIES_DRUDDIGON] = sDruddigonTutorLearnset,
+    [SPECIES_GOLETT] = sGolettTutorLearnset,
+    [SPECIES_GOLURK] = sGolurkTutorLearnset,
+    [SPECIES_PAWNIARD] = sPawniardTutorLearnset,
+    [SPECIES_BISHARP] = sBisharpTutorLearnset,
+    [SPECIES_BOUFFALANT] = sBouffalantTutorLearnset,
+    [SPECIES_RUFFLET] = sRuffletTutorLearnset,
+    [SPECIES_BRAVIARY] = sBraviaryTutorLearnset,
+    [SPECIES_VULLABY] = sVullabyTutorLearnset,
+    [SPECIES_MANDIBUZZ] = sMandibuzzTutorLearnset,
+    [SPECIES_HEATMOR] = sHeatmorTutorLearnset,
+    [SPECIES_DURANT] = sDurantTutorLearnset,
+    [SPECIES_DEINO] = sDeinoTutorLearnset,
+    [SPECIES_ZWEILOUS] = sZweilousTutorLearnset,
+    [SPECIES_HYDREIGON] = sHydreigonTutorLearnset,
+    [SPECIES_LARVESTA] = sLarvestaTutorLearnset,
+    [SPECIES_VOLCARONA] = sVolcaronaTutorLearnset,
+    [SPECIES_COBALION] = sCobalionTutorLearnset,
+    [SPECIES_TERRAKION] = sTerrakionTutorLearnset,
+    [SPECIES_VIRIZION] = sVirizionTutorLearnset,
+    [SPECIES_TORNADUS] = sTornadusTutorLearnset,
+    [SPECIES_THUNDURUS] = sThundurusTutorLearnset,
+    [SPECIES_RESHIRAM] = sReshiramTutorLearnset,
+    [SPECIES_ZEKROM] = sZekromTutorLearnset,
+    [SPECIES_LANDORUS] = sLandorusTutorLearnset,
+    [SPECIES_KYUREM] = sKyuremTutorLearnset,
+    [SPECIES_KELDEO] = sKeldeoTutorLearnset,
+    [SPECIES_MELOETTA] = sMeloettaTutorLearnset,
+    [SPECIES_GENESECT] = sGenesectTutorLearnset,
+    [SPECIES_CHESPIN] = sChespinTutorLearnset,
+    [SPECIES_QUILLADIN] = sQuilladinTutorLearnset,
+    [SPECIES_CHESNAUGHT] = sChesnaughtTutorLearnset,
+    [SPECIES_FENNEKIN] = sFennekinTutorLearnset,
+    [SPECIES_BRAIXEN] = sBraixenTutorLearnset,
+    [SPECIES_DELPHOX] = sDelphoxTutorLearnset,
+    [SPECIES_FROAKIE] = sFroakieTutorLearnset,
+    [SPECIES_FROGADIER] = sFrogadierTutorLearnset,
+    [SPECIES_GRENINJA] = sGreninjaTutorLearnset,
+    [SPECIES_BUNNELBY] = sBunnelbyTutorLearnset,
+    [SPECIES_DIGGERSBY] = sDiggersbyTutorLearnset,
+    [SPECIES_FLETCHLING] = sFletchlingTutorLearnset,
+    [SPECIES_FLETCHINDER] = sFletchinderTutorLearnset,
+    [SPECIES_TALONFLAME] = sTalonflameTutorLearnset,
+    [SPECIES_SCATTERBUG] = sScatterbugTutorLearnset,
+    [SPECIES_SPEWPA] = sSpewpaTutorLearnset,
+    [SPECIES_VIVILLON] = sVivillonTutorLearnset,
+    [SPECIES_LITLEO] = sLitleoTutorLearnset,
+    [SPECIES_PYROAR] = sPyroarTutorLearnset,
+    [SPECIES_FLABEBE] = sFlabebeTutorLearnset,
+    [SPECIES_FLOETTE] = sFloetteTutorLearnset,
+    [SPECIES_FLORGES] = sFlorgesTutorLearnset,
+    [SPECIES_SKIDDO] = sSkiddoTutorLearnset,
+    [SPECIES_GOGOAT] = sGogoatTutorLearnset,
+    [SPECIES_PANCHAM] = sPanchamTutorLearnset,
+    [SPECIES_PANGORO] = sPangoroTutorLearnset,
+    [SPECIES_FURFROU] = sFurfrouTutorLearnset,
+    [SPECIES_ESPURR] = sEspurrTutorLearnset,
+    [SPECIES_MEOWSTIC] = sMeowsticTutorLearnset,
+    [SPECIES_HONEDGE] = sHonedgeTutorLearnset,
+    [SPECIES_DOUBLADE] = sDoubladeTutorLearnset,
+    [SPECIES_AEGISLASH] = sAegislashTutorLearnset,
+    [SPECIES_SPRITZEE] = sSpritzeeTutorLearnset,
+    [SPECIES_AROMATISSE] = sAromatisseTutorLearnset,
+    [SPECIES_SWIRLIX] = sSwirlixTutorLearnset,
+    [SPECIES_SLURPUFF] = sSlurpuffTutorLearnset,
+    [SPECIES_INKAY] = sInkayTutorLearnset,
+    [SPECIES_MALAMAR] = sMalamarTutorLearnset,
+    [SPECIES_BINACLE] = sBinacleTutorLearnset,
+    [SPECIES_BARBARACLE] = sBarbaracleTutorLearnset,
+    [SPECIES_SKRELP] = sSkrelpTutorLearnset,
+    [SPECIES_DRAGALGE] = sDragalgeTutorLearnset,
+    [SPECIES_CLAUNCHER] = sClauncherTutorLearnset,
+    [SPECIES_CLAWITZER] = sClawitzerTutorLearnset,
+    [SPECIES_HELIOPTILE] = sHelioptileTutorLearnset,
+    [SPECIES_HELIOLISK] = sHelioliskTutorLearnset,
+    [SPECIES_TYRUNT] = sTyruntTutorLearnset,
+    [SPECIES_TYRANTRUM] = sTyrantrumTutorLearnset,
+    [SPECIES_AMAURA] = sAmauraTutorLearnset,
+    [SPECIES_AURORUS] = sAurorusTutorLearnset,
+    [SPECIES_SYLVEON] = sSylveonTutorLearnset,
+    [SPECIES_HAWLUCHA] = sHawluchaTutorLearnset,
+    [SPECIES_DEDENNE] = sDedenneTutorLearnset,
+    [SPECIES_CARBINK] = sCarbinkTutorLearnset,
+    [SPECIES_GOOMY] = sGoomyTutorLearnset,
+    [SPECIES_SLIGGOO] = sSliggooTutorLearnset,
+    [SPECIES_GOODRA] = sGoodraTutorLearnset,
+    [SPECIES_KLEFKI] = sKlefkiTutorLearnset,
+    [SPECIES_PHANTUMP] = sPhantumpTutorLearnset,
+    [SPECIES_TREVENANT] = sTrevenantTutorLearnset,
+    [SPECIES_PUMPKABOO] = sPumpkabooTutorLearnset,
+    [SPECIES_GOURGEIST] = sGourgeistTutorLearnset,
+    [SPECIES_BERGMITE] = sBergmiteTutorLearnset,
+    [SPECIES_AVALUGG] = sAvaluggTutorLearnset,
+    [SPECIES_NOIBAT] = sNoibatTutorLearnset,
+    [SPECIES_NOIVERN] = sNoivernTutorLearnset,
+    [SPECIES_XERNEAS] = sXerneasTutorLearnset,
+    [SPECIES_YVELTAL] = sYveltalTutorLearnset,
+    [SPECIES_ZYGARDE] = sZygardeTutorLearnset,
+    [SPECIES_DIANCIE] = sDiancieTutorLearnset,
+    [SPECIES_HOOPA] = sHoopaTutorLearnset,
+    [SPECIES_VOLCANION] = sVolcanionTutorLearnset,
+    [SPECIES_ROWLET] = sRowletTutorLearnset,
+    [SPECIES_DARTRIX] = sDartrixTutorLearnset,
+    [SPECIES_DECIDUEYE] = sDecidueyeTutorLearnset,
+    [SPECIES_LITTEN] = sLittenTutorLearnset,
+    [SPECIES_TORRACAT] = sTorracatTutorLearnset,
+    [SPECIES_INCINEROAR] = sIncineroarTutorLearnset,
+    [SPECIES_POPPLIO] = sPopplioTutorLearnset,
+    [SPECIES_BRIONNE] = sBrionneTutorLearnset,
+    [SPECIES_PRIMARINA] = sPrimarinaTutorLearnset,
+    [SPECIES_PIKIPEK] = sPikipekTutorLearnset,
+    [SPECIES_TRUMBEAK] = sTrumbeakTutorLearnset,
+    [SPECIES_TOUCANNON] = sToucannonTutorLearnset,
+    [SPECIES_YUNGOOS] = sYungoosTutorLearnset,
+    [SPECIES_GUMSHOOS] = sGumshoosTutorLearnset,
+    [SPECIES_GRUBBIN] = sGrubbinTutorLearnset,
+    [SPECIES_CHARJABUG] = sCharjabugTutorLearnset,
+    [SPECIES_VIKAVOLT] = sVikavoltTutorLearnset,
+    [SPECIES_CRABRAWLER] = sCrabrawlerTutorLearnset,
+    [SPECIES_CRABOMINABLE] = sCrabominableTutorLearnset,
+    [SPECIES_ORICORIO] = sOricorioTutorLearnset,
+    [SPECIES_CUTIEFLY] = sCutieflyTutorLearnset,
+    [SPECIES_RIBOMBEE] = sRibombeeTutorLearnset,
+    [SPECIES_ROCKRUFF] = sRockruffTutorLearnset,
+    [SPECIES_LYCANROC] = sLycanrocTutorLearnset,
+    [SPECIES_WISHIWASHI] = sWishiwashiTutorLearnset,
+    [SPECIES_MAREANIE] = sMareanieTutorLearnset,
+    [SPECIES_TOXAPEX] = sToxapexTutorLearnset,
+    [SPECIES_MUDBRAY] = sMudbrayTutorLearnset,
+    [SPECIES_MUDSDALE] = sMudsdaleTutorLearnset,
+    [SPECIES_DEWPIDER] = sDewpiderTutorLearnset,
+    [SPECIES_ARAQUANID] = sAraquanidTutorLearnset,
+    [SPECIES_FOMANTIS] = sFomantisTutorLearnset,
+    [SPECIES_LURANTIS] = sLurantisTutorLearnset,
+    [SPECIES_MORELULL] = sMorelullTutorLearnset,
+    [SPECIES_SHIINOTIC] = sShiinoticTutorLearnset,
+    [SPECIES_SALANDIT] = sSalanditTutorLearnset,
+    [SPECIES_SALAZZLE] = sSalazzleTutorLearnset,
+    [SPECIES_STUFFUL] = sStuffulTutorLearnset,
+    [SPECIES_BEWEAR] = sBewearTutorLearnset,
+    [SPECIES_BOUNSWEET] = sBounsweetTutorLearnset,
+    [SPECIES_STEENEE] = sSteeneeTutorLearnset,
+    [SPECIES_TSAREENA] = sTsareenaTutorLearnset,
+    [SPECIES_COMFEY] = sComfeyTutorLearnset,
+    [SPECIES_ORANGURU] = sOranguruTutorLearnset,
+    [SPECIES_PASSIMIAN] = sPassimianTutorLearnset,
+    [SPECIES_WIMPOD] = sWimpodTutorLearnset,
+    [SPECIES_GOLISOPOD] = sGolisopodTutorLearnset,
+    [SPECIES_SANDYGAST] = sSandygastTutorLearnset,
+    [SPECIES_PALOSSAND] = sPalossandTutorLearnset,
+    [SPECIES_PYUKUMUKU] = sPyukumukuTutorLearnset,
+    [SPECIES_TYPE_NULL] = sTypeNullTutorLearnset,
+    [SPECIES_SILVALLY] = sSilvallyTutorLearnset,
+    [SPECIES_MINIOR] = sMiniorTutorLearnset,
+    [SPECIES_KOMALA] = sKomalaTutorLearnset,
+    [SPECIES_TURTONATOR] = sTurtonatorTutorLearnset,
+    [SPECIES_TOGEDEMARU] = sTogedemaruTutorLearnset,
+    [SPECIES_MIMIKYU] = sMimikyuTutorLearnset,
+    [SPECIES_BRUXISH] = sBruxishTutorLearnset,
+    [SPECIES_DRAMPA] = sDrampaTutorLearnset,
+    [SPECIES_DHELMISE] = sDhelmiseTutorLearnset,
+    [SPECIES_JANGMO_O] = sJangmoOTutorLearnset,
+    [SPECIES_HAKAMO_O] = sHakamoOTutorLearnset,
+    [SPECIES_KOMMO_O] = sKommoOTutorLearnset,
+    [SPECIES_TAPU_KOKO] = sTapuKokoTutorLearnset,
+    [SPECIES_TAPU_LELE] = sTapuLeleTutorLearnset,
+    [SPECIES_TAPU_BULU] = sTapuBuluTutorLearnset,
+    [SPECIES_TAPU_FINI] = sTapuFiniTutorLearnset,
+    [SPECIES_COSMOG] = sCosmogTutorLearnset,
+    [SPECIES_COSMOEM] = sCosmoemTutorLearnset,
+    [SPECIES_SOLGALEO] = sSolgaleoTutorLearnset,
+    [SPECIES_LUNALA] = sLunalaTutorLearnset,
+    [SPECIES_NIHILEGO] = sNihilegoTutorLearnset,
+    [SPECIES_BUZZWOLE] = sBuzzwoleTutorLearnset,
+    [SPECIES_PHEROMOSA] = sPheromosaTutorLearnset,
+    [SPECIES_XURKITREE] = sXurkitreeTutorLearnset,
+    [SPECIES_CELESTEELA] = sCelesteelaTutorLearnset,
+    [SPECIES_KARTANA] = sKartanaTutorLearnset,
+    [SPECIES_GUZZLORD] = sGuzzlordTutorLearnset,
+    [SPECIES_NECROZMA] = sNecrozmaTutorLearnset,
+    [SPECIES_MAGEARNA] = sMagearnaTutorLearnset,
+    [SPECIES_MARSHADOW] = sMarshadowTutorLearnset,
+    [SPECIES_POIPOLE] = sPoipoleTutorLearnset,
+    [SPECIES_NAGANADEL] = sNaganadelTutorLearnset,
+    [SPECIES_STAKATAKA] = sStakatakaTutorLearnset,
+    [SPECIES_BLACEPHALON] = sBlacephalonTutorLearnset,
+    [SPECIES_ZERAORA] = sZeraoraTutorLearnset,
+    [SPECIES_GROOKEY] = sGrookeyTutorLearnset,
+    [SPECIES_THWACKEY] = sThwackeyTutorLearnset,
+    [SPECIES_RILLABOOM] = sRillaboomTutorLearnset,
+    [SPECIES_SCORBUNNY] = sScorbunnyTutorLearnset,
+    [SPECIES_RABOOT] = sRabootTutorLearnset,
+    [SPECIES_CINDERACE] = sCinderaceTutorLearnset,
+    [SPECIES_SOBBLE] = sSobbleTutorLearnset,
+    [SPECIES_DRIZZILE] = sDrizzileTutorLearnset,
+    [SPECIES_INTELEON] = sInteleonTutorLearnset,
+    [SPECIES_SKWOVET] = sSkwovetTutorLearnset,
+    [SPECIES_GREEDENT] = sGreedentTutorLearnset,
+    [SPECIES_ROOKIDEE] = sRookideeTutorLearnset,
+    [SPECIES_CORVISQUIRE] = sCorvisquireTutorLearnset,
+    [SPECIES_CORVIKNIGHT] = sCorviknightTutorLearnset,
+    [SPECIES_BLIPBUG] = sBlipbugTutorLearnset,
+    [SPECIES_DOTTLER] = sDottlerTutorLearnset,
+    [SPECIES_ORBEETLE] = sOrbeetleTutorLearnset,
+    [SPECIES_NICKIT] = sNickitTutorLearnset,
+    [SPECIES_THIEVUL] = sThievulTutorLearnset,
+    [SPECIES_GOSSIFLEUR] = sGossifleurTutorLearnset,
+    [SPECIES_ELDEGOSS] = sEldegossTutorLearnset,
+    [SPECIES_WOOLOO] = sWoolooTutorLearnset,
+    [SPECIES_DUBWOOL] = sDubwoolTutorLearnset,
+    [SPECIES_CHEWTLE] = sChewtleTutorLearnset,
+    [SPECIES_DREDNAW] = sDrednawTutorLearnset,
+    [SPECIES_YAMPER] = sYamperTutorLearnset,
+    [SPECIES_BOLTUND] = sBoltundTutorLearnset,
+    [SPECIES_ROLYCOLY] = sRolycolyTutorLearnset,
+    [SPECIES_CARKOL] = sCarkolTutorLearnset,
+    [SPECIES_COALOSSAL] = sCoalossalTutorLearnset,
+    [SPECIES_APPLIN] = sApplinTutorLearnset,
+    [SPECIES_FLAPPLE] = sFlappleTutorLearnset,
+    [SPECIES_APPLETUN] = sAppletunTutorLearnset,
+    [SPECIES_SILICOBRA] = sSilicobraTutorLearnset,
+    [SPECIES_SANDACONDA] = sSandacondaTutorLearnset,
+    [SPECIES_CRAMORANT] = sCramorantTutorLearnset,
+    [SPECIES_ARROKUDA] = sArrokudaTutorLearnset,
+    [SPECIES_BARRASKEWDA] = sBarraskewdaTutorLearnset,
+    [SPECIES_TOXEL] = sToxelTutorLearnset,
+    [SPECIES_TOXTRICITY] = sToxtricityTutorLearnset,
+    [SPECIES_SIZZLIPEDE] = sSizzlipedeTutorLearnset,
+    [SPECIES_CENTISKORCH] = sCentiskorchTutorLearnset,
+    [SPECIES_CLOBBOPUS] = sClobbopusTutorLearnset,
+    [SPECIES_GRAPPLOCT] = sGrapploctTutorLearnset,
+    [SPECIES_SINISTEA] = sSinisteaTutorLearnset,
+    [SPECIES_POLTEAGEIST] = sPolteageistTutorLearnset,
+    [SPECIES_HATENNA] = sHatennaTutorLearnset,
+    [SPECIES_HATTREM] = sHattremTutorLearnset,
+    [SPECIES_HATTERENE] = sHattereneTutorLearnset,
+    [SPECIES_IMPIDIMP] = sImpidimpTutorLearnset,
+    [SPECIES_MORGREM] = sMorgremTutorLearnset,
+    [SPECIES_GRIMMSNARL] = sGrimmsnarlTutorLearnset,
+    [SPECIES_OBSTAGOON] = sObstagoonTutorLearnset,
+    [SPECIES_PERRSERKER] = sPerrserkerTutorLearnset,
+    [SPECIES_CURSOLA] = sCursolaTutorLearnset,
+    [SPECIES_SIRFETCHD] = sSirfetchdTutorLearnset,
+    [SPECIES_MR_RIME] = sMrRimeTutorLearnset,
+    [SPECIES_RUNERIGUS] = sRunerigusTutorLearnset,
+    [SPECIES_MILCERY] = sMilceryTutorLearnset,
+    [SPECIES_ALCREMIE] = sAlcremieTutorLearnset,
+    [SPECIES_FALINKS] = sFalinksTutorLearnset,
+    [SPECIES_PINCURCHIN] = sPincurchinTutorLearnset,
+    [SPECIES_SNOM] = sSnomTutorLearnset,
+    [SPECIES_FROSMOTH] = sFrosmothTutorLearnset,
+    [SPECIES_STONJOURNER] = sStonjournerTutorLearnset,
+    [SPECIES_EISCUE] = sEiscueTutorLearnset,
+    [SPECIES_INDEEDEE] = sIndeedeeTutorLearnset,
+    [SPECIES_MORPEKO] = sMorpekoTutorLearnset,
+    [SPECIES_CUFANT] = sCufantTutorLearnset,
+    [SPECIES_COPPERAJAH] = sCopperajahTutorLearnset,
+    [SPECIES_DRACOZOLT] = sDracozoltTutorLearnset,
+    [SPECIES_ARCTOZOLT] = sArctozoltTutorLearnset,
+    [SPECIES_DRACOVISH] = sDracovishTutorLearnset,
+    [SPECIES_ARCTOVISH] = sArctovishTutorLearnset,
+    [SPECIES_DURALUDON] = sDuraludonTutorLearnset,
+    [SPECIES_DREEPY] = sDreepyTutorLearnset,
+    [SPECIES_DRAKLOAK] = sDrakloakTutorLearnset,
+    [SPECIES_DRAGAPULT] = sDragapultTutorLearnset,
+    [SPECIES_ZACIAN] = sZacianTutorLearnset,
+    [SPECIES_ZAMAZENTA] = sZamazentaTutorLearnset,
+    [SPECIES_ETERNATUS] = sEternatusTutorLearnset,
+    [SPECIES_KUBFU] = sKubfuTutorLearnset,
+    [SPECIES_URSHIFU] = sUrshifuTutorLearnset,
+    [SPECIES_ZARUDE] = sZarudeTutorLearnset,
+    [SPECIES_REGIELEKI] = sRegielekiTutorLearnset,
+    [SPECIES_REGIDRAGO] = sRegidragoTutorLearnset,
+    [SPECIES_GLASTRIER] = sGlastrierTutorLearnset,
+    [SPECIES_SPECTRIER] = sSpectrierTutorLearnset,
+    [SPECIES_CALYREX] = sCalyrexTutorLearnset,
+    [SPECIES_MEOWTH_GALARIAN] = sMeowthGalarianTutorLearnset,
+    [SPECIES_PONYTA_GALARIAN] = sPonytaGalarianTutorLearnset,
+    [SPECIES_RAPIDASH_GALARIAN] = sRapidashGalarianTutorLearnset,
+    [SPECIES_SLOWPOKE_GALARIAN] = sSlowpokeGalarianTutorLearnset,
+    [SPECIES_SLOWBRO_GALARIAN] = sSlowbroGalarianTutorLearnset,
+    [SPECIES_FARFETCHD_GALARIAN] = sFarfetchdGalarianTutorLearnset,
+    [SPECIES_WEEZING_GALARIAN] = sWeezingGalarianTutorLearnset,
+    [SPECIES_MR_MIME_GALARIAN] = sMrMimeGalarianTutorLearnset,
+    [SPECIES_ARTICUNO_GALARIAN] = sArticunoGalarianTutorLearnset,
+    [SPECIES_ZAPDOS_GALARIAN] = sZapdosGalarianTutorLearnset,
+    [SPECIES_MOLTRES_GALARIAN] = sMoltresGalarianTutorLearnset,
+    [SPECIES_SLOWKING_GALARIAN] = sSlowkingGalarianTutorLearnset,
+    [SPECIES_CORSOLA_GALARIAN] = sCorsolaGalarianTutorLearnset,
+    [SPECIES_ZIGZAGOON_GALARIAN] = sZigzagoonGalarianTutorLearnset,
+    [SPECIES_LINOONE_GALARIAN] = sLinooneGalarianTutorLearnset,
+    [SPECIES_DARUMAKA_GALARIAN] = sDarumakaGalarianTutorLearnset,
+    [SPECIES_DARMANITAN_GALARIAN] = sDarmanitanGalarianTutorLearnset,
+    [SPECIES_YAMASK_GALARIAN] = sYamaskGalarianTutorLearnset,
+    [SPECIES_STUNFISK_GALARIAN] = sStunfiskGalarianTutorLearnset,
+    [SPECIES_BURMY_SANDY_CLOAK] = sBurmySandyCloakTutorLearnset,
+    [SPECIES_BURMY_TRASH_CLOAK] = sBurmyTrashCloakTutorLearnset,
+    [SPECIES_WORMADAM_SANDY_CLOAK] = sWormadamSandyCloakTutorLearnset,
+    [SPECIES_WORMADAM_TRASH_CLOAK] = sWormadamTrashCloakTutorLearnset,
+    [SPECIES_ROTOM_HEAT] = sRotomHeatTutorLearnset,
+    [SPECIES_ROTOM_WASH] = sRotomWashTutorLearnset,
+    [SPECIES_ROTOM_FROST] = sRotomFrostTutorLearnset,
+    [SPECIES_ROTOM_FAN] = sRotomFanTutorLearnset,
+    [SPECIES_ROTOM_MOW] = sRotomMowTutorLearnset,
+    [SPECIES_KYUREM_WHITE] = sKyuremWhiteTutorLearnset,
+    [SPECIES_KYUREM_BLACK] = sKyuremBlackTutorLearnset,
+    [SPECIES_MEOWSTIC_FEMALE] = sMeowsticFemaleTutorLearnset,
+    [SPECIES_TOXTRICITY_LOW_KEY] = sToxtricityLowKeyTutorLearnset,
+    [SPECIES_SINISTEA_ANTIQUE] = sSinisteaAntiqueTutorLearnset,
+    [SPECIES_POLTEAGEIST_ANTIQUE] = sPolteageistAntiqueTutorLearnset,
+    [SPECIES_ALCREMIE_RUBY_CREAM] = sAlcremieRubyCreamTutorLearnset,
+    [SPECIES_ALCREMIE_MATCHA_CREAM] = sAlcremieMatchaCreamTutorLearnset,
+    [SPECIES_ALCREMIE_MINT_CREAM] = sAlcremieMintCreamTutorLearnset,
+    [SPECIES_ALCREMIE_LEMON_CREAM] = sAlcremieLemonCreamTutorLearnset,
+    [SPECIES_ALCREMIE_SALTED_CREAM] = sAlcremieSaltedCreamTutorLearnset,
+    [SPECIES_ALCREMIE_RUBY_SWIRL] = sAlcremieRubySwirlTutorLearnset,
+    [SPECIES_ALCREMIE_CARAMEL_SWIRL] = sAlcremieCaramelSwirlTutorLearnset,
+    [SPECIES_ALCREMIE_RAINBOW_SWIRL] = sAlcremieRainbowSwirlTutorLearnset,
+    [SPECIES_INDEEDEE_FEMALE] = sIndeedeeFemaleTutorLearnset,
+    [SPECIES_URSHIFU_RAPID_STRIKE_STYLE] = sUrshifuRapidStrikeStyleTutorLearnset,
+    [SPECIES_ZARUDE_DADA] = sZarudeDadaTutorLearnset,
+    [SPECIES_CALYREX_ICE_RIDER] = sCalyrexIceRiderTutorLearnset,
+    [SPECIES_CALYREX_SHADOW_RIDER] = sCalyrexShadowRiderTutorLearnset,
+    [SPECIES_PIKACHU_FLYING] = sPikachuTutorLearnset,
+    [SPECIES_PIKACHU_SURFING] = sPikachuTutorLearnset,
 };

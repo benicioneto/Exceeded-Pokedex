@@ -1307,7 +1307,8 @@ const struct LevelUpMove *const gLevelUpLearnsets[NUM_SPECIES] =
     [SPECIES_REMORAID_COMMENSAL] = sNoneLevelUpLearnset,
     [SPECIES_ONIX_CRYSTAL] = sOnixCrystalLevelUpLearnset,
     [SPECIES_SNORLAX_SNOW] = sSnorlaxSnowLevelUpLearnset,
-    [SPECIES_ZYGARDE_CELL] = sNoneLevelUpLearnset,
-    [SPECIES_ZYGARDE_CORE] = sNoneLevelUpLearnset,
+    [SPECIES_ZYGARDE_CELL] = sZygardeCellLevelUpLearnset,
+    [SPECIES_ZYGARDE_CORE] = sZygardeCellLevelUpLearnset,
     [SPECIES_MYSTIC_EGG] = sHoOhLevelUpLearnset,
+    [SPECIES_COCOON_EGG] = sYveltalLevelUpLearnset,
 };

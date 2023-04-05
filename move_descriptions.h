@@ -958,12 +958,11 @@ static const u8 sTwisterDescription[] = _(
     "Lifts entry hazards in air.");
 
 static const u8 sRainDanceDescription[] = _(
-    "Boosts the power of Water-\n"
-    "type moves for 5 turns.");
+    "Summons rain for 5 turns.");
 
 static const u8 sSunnyDayDescription[] = _(
-    "Boosts the power of Fire-\n"
-    "type moves for 5 turns.");
+    "Summons harshy sunlight\n"
+    "for 5 turns.");
 
 static const u8 sCrunchDescription[] = _(
     "Crunches with sharp fangs.\n"
@@ -1119,7 +1118,7 @@ static const u8 sRevengeDescription[] = _(
 
 static const u8 sBrickBreakDescription[] = _(
     "Destroys barriers such as\n"
-    "REFLECT and causes damage.");
+    "Reflect and causes damage.");
 
 static const u8 sYawnDescription[] = _(
     "Lulls the foe into yawning,\n"
@@ -1566,8 +1565,8 @@ static const u8 sHEART_SWAPDescription[] = _(
     "with the foe.");
 
 static const u8 sAQUA_RINGDescription[] = _(
-    "Restores HP, cure burn and\n"
-    "reduce Electric-type damage.");
+    "Restores HP, cures burn and\n"
+    "halves Electric-type damage.");
 
 static const u8 sMAGNET_RISEDescription[] = _(
     "The user levitates and\n"
@@ -1811,7 +1810,7 @@ static const u8 sROAR_OF_TIMEDescription[] = _(
 
 static const u8 sSPACIAL_RENDDescription[] = _(
     "Tears the foe, and space.\n"
-    "High critical-hit ratio.");
+    "Always a critical-hit.");
 
 static const u8 sMAGMA_STORMDescription[] = _(
     "Traps the foe in a vortex\n"
@@ -3300,7 +3299,7 @@ static const u8 sDRACO_IMPACTDescription[] = _(
     "A 2-turn move that raises\n"
     "Attack before attacking.");
 
-static const u8 sBLAZING_SPIRITDescription[] = _(
+static const u8 sBLAZING_SOULDescription[] = _(
     "Recovers half HP and turns\n"
     "into Fire type.");
 
@@ -3473,7 +3472,7 @@ static const u8 sTOUGH_IT_OUTDescription[] = _(
     "the user's Speed.");
 
 static const u8 sRECKLESS_SWINGDescription[] = _(
-    "The user consume its HP\n"
+    "The user consume its own HP\n"
     "to damage the foe.");
 
 static const u8 sUNDERTOWDescription[] = _(
@@ -3483,6 +3482,57 @@ static const u8 sUNDERTOWDescription[] = _(
 static const u8 sPHOENIX_DOWNDescription[] = _(
     "Revives a fainted party {PKMN}\n"
     "and restores its HP & PPs.");
+
+static const u8 sFOREST_BLESSINGDescription[] = _(
+    "Revives a fainted party {PKMN}\n"
+    "and fully restores its HP.");
+
+static const u8 sFOREST_FURYDescription[] = _(
+    "This move's power doubles\n"
+    "when on Grassy Terrain.");
+
+static const u8 sCRAFTY_CLOTHESDescription[] = _(
+    "Crafty clothes of leaves to\n"
+    "allies, sharply raising Def.");
+
+static const u8 sNONE_SPECIALDescription[] = _(
+    "None.");
+
+static const u8 sDRAGON_COMBODescription[] = _(
+    "The user consume its HP to\n"
+    "damage the foe. May flinch.");
+
+static const u8 sKI_EXPLOSIONDescription[] = _(
+    "It does special damage that\n"
+    "is boosted by target's Def.");
+
+static const u8 sHELL_GATEDescription[] = _(
+    "Summons an evil spirit that\n"
+    "inflicts user's missing HP.");
+
+static const u8 sCORDYCEPSDescription[] = _(
+    "A Fungus that steal HP\n"
+    "and offensive stats.");
+
+static const u8 sAQUA_FANGDescription[] = _(
+    "May cause flinching or\n"
+    "lower Defense.");
+
+static const u8 sBLOOMSDAYDescription[] = _(
+    "Summons harshy sunlight\n"
+    "and ups offensive stats.");
+
+static const u8 sHAMMER_SMASHDescription[] = _(
+    "A powerful smash on the\n"
+    "ground making earthquakes.");
+
+static const u8 sHOME_RUNDescription[] = _(
+    "Hurl a large boulder with\n"
+    "a powerful straight blow.");
+
+static const u8 sHELLBLAZEDescription[] = _(
+    "Prevents the foe from\n"
+    "being revived.");
 
 // MOVE_NONE is ignored in this table. Make sure to always subtract 1 before getting the right pointer.
 const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
@@ -4332,7 +4382,7 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_SHIELD_BASH - 1] = sSHIELD_BASHDescription,
     [MOVE_DRAGON_BONE - 1] = sDRAGON_BONEDescription,
     [MOVE_DRACO_IMPACT - 1] = sDRACO_IMPACTDescription,
-    [MOVE_BLAZING_SPIRIT - 1] = sBLAZING_SPIRITDescription,
+    [MOVE_BLAZING_SOUL - 1] = sBLAZING_SOULDescription,
     [MOVE_CHRISTMAS_GIFT - 1] = sCHRISTMAS_GIFTDescription,
     [MOVE_ARTIC_GLIDE - 1] = sARTIC_GLIDEDescription,
     [MOVE_COIN_SHOWER - 1] = sCOIN_SHOWERDescription,
@@ -4379,4 +4429,17 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_RECKLESS_SWING - 1] = sRECKLESS_SWINGDescription,
     [MOVE_UNDERTOW - 1] = sUNDERTOWDescription,
     [MOVE_PHOENIX_DOWN - 1] = sPHOENIX_DOWNDescription,
+    [MOVE_NONE_SPECIAL - 1] = sNONE_SPECIALDescription,
+    [MOVE_FOREST_BLESSING - 1] = sFOREST_BLESSINGDescription,
+    [MOVE_FOREST_FURY - 1] = sFOREST_FURYDescription,
+    [MOVE_CRAFTY_CLOTHES - 1] = sCRAFTY_CLOTHESDescription,
+    [MOVE_DRAGON_COMBO - 1] = sDRAGON_COMBODescription,
+    [MOVE_KI_EXPLOSION - 1] = sKI_EXPLOSIONDescription,
+    [MOVE_HELL_GATE - 1] = sHELL_GATEDescription,
+    [MOVE_CORDYCEPS - 1] = sCORDYCEPSDescription,
+    [MOVE_AQUA_FANG - 1] = sAQUA_FANGDescription,
+    [MOVE_BLOOMSDAY - 1] = sBLOOMSDAYDescription,
+    [MOVE_HAMMER_SMASH - 1] = sHAMMER_SMASHDescription,
+    [MOVE_HOME_RUN - 1] = sHOME_RUNDescription,
+    [MOVE_HELLBLAZE - 1] = sHELLBLAZEDescription,
 };

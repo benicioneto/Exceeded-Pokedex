@@ -889,10 +889,10 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_FAST,
         .eggGroup1 = EGG_GROUP_FAIRY,
         .eggGroup2 = EGG_GROUP_FAIRY,
-        .abilities = {ABILITY_CUTE_CHARM, ABILITY_MAGIC_GUARD, ABILITY_UNAWARE},
+        .abilities = {ABILITY_CUTE_CHARM, ABILITY_SPELL_FIST, ABILITY_UNAWARE},
         .bodyColor = BODY_COLOR_PINK,
         .noFlip = TRUE,
-        .innates = {ABILITY_FRIEND_GUARD, ABILITY_NONE},
+        .innates = {ABILITY_FRIEND_GUARD, ABILITY_MAGIC_GUARD},
     },
 
     [SPECIES_CLEFABLE] =
@@ -915,10 +915,10 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_FAST,
         .eggGroup1 = EGG_GROUP_FAIRY,
         .eggGroup2 = EGG_GROUP_FAIRY,
-        .abilities = {ABILITY_CUTE_CHARM, ABILITY_MAGIC_GUARD, ABILITY_UNAWARE},
+        .abilities = {ABILITY_CUTE_CHARM, ABILITY_SPELL_FIST, ABILITY_UNAWARE},
         .bodyColor = BODY_COLOR_PINK,
         .noFlip = TRUE,
-        .innates = {ABILITY_ABUSIVE, ABILITY_NONE},
+        .innates = {ABILITY_HEARTBREAKER, ABILITY_MAGIC_GUARD},
     },
 
     [SPECIES_VULPIX] =
@@ -994,10 +994,10 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_FAST,
         .eggGroup1 = EGG_GROUP_FAIRY,
         .eggGroup2 = EGG_GROUP_FAIRY,
-        .abilities = {ABILITY_CUTE_CHARM, ABILITY_COMPETITIVE, ABILITY_FRISK},
+        .abilities = {ABILITY_CUTE_CHARM, ABILITY_COMPETITIVE, ABILITY_FRIEND_GUARD},
         .bodyColor = BODY_COLOR_PINK,
         .noFlip = TRUE,
-        .innates = {ABILITY_SCRAPPY, ABILITY_FLUFFY, ABILITY_FRIEND_GUARD},
+        .innates = {ABILITY_SCRAPPY, ABILITY_FLUFFY, ABILITY_SINGER},
     },
 
     [SPECIES_WIGGLYTUFF] =
@@ -1023,7 +1023,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_CUTE_CHARM, ABILITY_COMPETITIVE, ABILITY_FRISK},
         .bodyColor = BODY_COLOR_PINK,
         .noFlip = TRUE,
-        .innates = {ABILITY_SCRAPPY, ABILITY_FLUFFY, ABILITY_ABUSIVE},
+        .innates = {ABILITY_SCRAPPY, ABILITY_FLUFFY, ABILITY_SINGER},
     },
 
     [SPECIES_ZUBAT] =
@@ -1333,10 +1333,10 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_FIELD,
-        .abilities = {ABILITY_PICKUP, ABILITY_CATS_LUCK, ABILITY_UNNERVE},
+        .abilities = {ABILITY_PICKUP, ABILITY_EXPERTISE, ABILITY_UNNERVE},
         .bodyColor = BODY_COLOR_YELLOW,
         .noFlip = FALSE,
-        .innates = {ABILITY_PERFECTIONIST, ABILITY_EXPERTISE},
+        .innates = {ABILITY_PERFECTIONIST, ABILITY_CATS_LUCK},
     },
 
     [SPECIES_PERSIAN] =
@@ -1359,10 +1359,10 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_FIELD,
-        .abilities = {ABILITY_LIMBER, ABILITY_CATS_LUCK, ABILITY_UNNERVE},
+        .abilities = {ABILITY_LIMBER, ABILITY_EXPERTISE, ABILITY_UNNERVE},
         .bodyColor = BODY_COLOR_YELLOW,
         .noFlip = FALSE,
-        .innates = {ABILITY_PERFECTIONIST, ABILITY_EXPERTISE, ABILITY_TECHNICIAN},
+        .innates = {ABILITY_PERFECTIONIST, ABILITY_CATS_LUCK, ABILITY_TECHNICIAN},
     },
 
     [SPECIES_PSYDUCK] =
@@ -1612,7 +1612,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_HUMAN_LIKE,
         .eggGroup2 = EGG_GROUP_HUMAN_LIKE,
-        .abilities = {ABILITY_MIND_GAME, ABILITY_NONE, ABILITY_SYNCHRONIZE},
+        .abilities = {ABILITY_MIND_GAME, ABILITY_SPELL_FIST, ABILITY_SYNCHRONIZE},
         .bodyColor = BODY_COLOR_BROWN,
         .noFlip = FALSE,
         .innates = {ABILITY_INNER_FOCUS, ABILITY_NONE},
@@ -1638,7 +1638,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_HUMAN_LIKE,
         .eggGroup2 = EGG_GROUP_HUMAN_LIKE,
-        .abilities = {ABILITY_MIND_GAME, ABILITY_NONE, ABILITY_SYNCHRONIZE},
+        .abilities = {ABILITY_MIND_GAME, ABILITY_SPELL_FIST, ABILITY_SYNCHRONIZE},
         .bodyColor = BODY_COLOR_BROWN,
         .noFlip = TRUE,
         .innates = {ABILITY_INNER_FOCUS, ABILITY_NONE},
@@ -1664,7 +1664,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_HUMAN_LIKE,
         .eggGroup2 = EGG_GROUP_HUMAN_LIKE,
-        .abilities = {ABILITY_MIND_GAME, ABILITY_NONE, ABILITY_SYNCHRONIZE},
+        .abilities = {ABILITY_MIND_GAME, ABILITY_SPELL_FIST, ABILITY_SYNCHRONIZE},
         .bodyColor = BODY_COLOR_BROWN,
         .noFlip = FALSE,
         .innates = {ABILITY_INNER_FOCUS, ABILITY_MAGIC_GUARD},
@@ -1817,7 +1817,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_GRASS,
         .eggGroup2 = EGG_GROUP_GRASS,
-        .abilities = {ABILITY_CHLOROPHYLL, ABILITY_NONE, ABILITY_GLUTTONY},
+        .abilities = {ABILITY_CHLOROPHYLL, ABILITY_NONE, ABILITY_DEVOURER},
         .bodyColor = BODY_COLOR_GREEN,
         .noFlip = FALSE,
         .innates = {ABILITY_CARNIVOROUS, ABILITY_NONE},
@@ -2023,10 +2023,10 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_MONSTER,
         .eggGroup2 = EGG_GROUP_WATER_1,
-        .abilities = {ABILITY_OBLIVIOUS, ABILITY_NONE, ABILITY_REGENERATOR},
+        .abilities = {ABILITY_OBLIVIOUS, ABILITY_NONE, ABILITY_RAIN_DISH},
         .bodyColor = BODY_COLOR_PINK,
         .noFlip = FALSE,
-        .innates = {ABILITY_OWN_TEMPO, ABILITY_NONE},
+        .innates = {ABILITY_OWN_TEMPO, ABILITY_REGENERATOR},
     },
 
     [SPECIES_SLOWBRO] =
@@ -2049,10 +2049,10 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_MONSTER,
         .eggGroup2 = EGG_GROUP_WATER_1,
-        .abilities = {ABILITY_OBLIVIOUS, ABILITY_NONE, ABILITY_REGENERATOR},
+        .abilities = {ABILITY_OBLIVIOUS, ABILITY_NONE, ABILITY_RAIN_DISH},
         .bodyColor = BODY_COLOR_PINK,
         .noFlip = FALSE,
-        .innates = {ABILITY_OWN_TEMPO, ABILITY_NONE},
+        .innates = {ABILITY_OWN_TEMPO, ABILITY_REGENERATOR},
     },
 
     [SPECIES_MAGNEMITE] =
@@ -2361,10 +2361,10 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_AMORPHOUS,
         .eggGroup2 = EGG_GROUP_AMORPHOUS,
-        .abilities = {ABILITY_FRIGHTEN, ABILITY_NONE},
+        .abilities = {ABILITY_FRIGHTEN, ABILITY_NONE, ABILITY_LIVID_SHADOW},
         .bodyColor = BODY_COLOR_PURPLE,
         .noFlip = FALSE,
-        .innates = {ABILITY_PHASE, ABILITY_CURSED_BODY, ABILITY_LEVITATE},
+        .innates = {ABILITY_ETHEREAL, ABILITY_CURSED_BODY, ABILITY_LEVITATE},
     },
 
     [SPECIES_HAUNTER] =
@@ -2386,10 +2386,10 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_AMORPHOUS,
         .eggGroup2 = EGG_GROUP_AMORPHOUS,
-        .abilities = {ABILITY_FRIGHTEN, ABILITY_NONE},
+        .abilities = {ABILITY_FRIGHTEN, ABILITY_NONE, ABILITY_LIVID_SHADOW},
         .bodyColor = BODY_COLOR_PURPLE,
         .noFlip = FALSE,
-        .innates = {ABILITY_PHASE, ABILITY_CURSED_BODY, ABILITY_LEVITATE},
+        .innates = {ABILITY_ETHEREAL, ABILITY_CURSED_BODY, ABILITY_LEVITATE},
     },
 
     [SPECIES_GENGAR] =
@@ -2411,10 +2411,10 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_AMORPHOUS,
         .eggGroup2 = EGG_GROUP_AMORPHOUS,
-        .abilities = {ABILITY_FRIGHTEN, ABILITY_NONE},
+        .abilities = {ABILITY_FRIGHTEN, ABILITY_NONE, ABILITY_LIVID_SHADOW},
         .bodyColor = BODY_COLOR_PURPLE,
         .noFlip = FALSE,
-        .innates = {ABILITY_PHASE, ABILITY_CURSED_BODY},
+        .innates = {ABILITY_ETHEREAL, ABILITY_CURSED_BODY},
     },
 
     [SPECIES_ONIX] =
@@ -3127,10 +3127,10 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_HUMAN_LIKE,
         .eggGroup2 = EGG_GROUP_HUMAN_LIKE,
-        .abilities = {ABILITY_SOUNDPROOF, ABILITY_NONE, ABILITY_PSYCHIC_BARRIER},
+        .abilities = {ABILITY_SOUNDPROOF, ABILITY_PSYCHIC_BARRIER, ABILITY_TECHNICIAN},
         .bodyColor = BODY_COLOR_PINK,
         .noFlip = FALSE,
-        .innates = {ABILITY_FILTER, ABILITY_TECHNICIAN},
+        .innates = {ABILITY_FILTER, ABILITY_MASTER_OF_MIMICS},
     },
 
     [SPECIES_SCYTHER] =
@@ -3177,10 +3177,10 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_HUMAN_LIKE,
         .eggGroup2 = EGG_GROUP_HUMAN_LIKE,
-        .abilities = {ABILITY_OBLIVIOUS, ABILITY_NONE, ABILITY_FOREWARN},
+        .abilities = {ABILITY_OBLIVIOUS, ABILITY_SPELL_FIST, ABILITY_FOREWARN},
         .bodyColor = BODY_COLOR_RED,
         .noFlip = FALSE,
-        .innates = {ABILITY_DRY_SKIN, ABILITY_NONE},
+        .innates = {ABILITY_YUKI_ONNA, ABILITY_DRY_SKIN},
     },
 
     [SPECIES_ELECTABUZZ] =
@@ -3974,7 +3974,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_QUICK_FEET, ABILITY_NONE, ABILITY_BURNING_SURGE},
         .bodyColor = BODY_COLOR_YELLOW,
         .noFlip = FALSE,
-        .innates = {ABILITY_BLAZE, ABILITY_NONE},
+        .innates = {ABILITY_BLAZE, ABILITY_FLASH_FIRE},
     },
 
     [SPECIES_QUILAVA] =
@@ -4000,7 +4000,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_QUICK_FEET, ABILITY_NONE, ABILITY_BURNING_SURGE},
         .bodyColor = BODY_COLOR_YELLOW,
         .noFlip = FALSE,
-        .innates = {ABILITY_BLAZE, ABILITY_CINDER},
+        .innates = {ABILITY_BLAZE, ABILITY_FLASH_FIRE, ABILITY_CINDER},
     },
 
     [SPECIES_TYPHLOSION] =
@@ -4025,7 +4025,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_QUICK_FEET, ABILITY_NONE, ABILITY_BURNING_SURGE},
         .bodyColor = BODY_COLOR_YELLOW,
         .noFlip = FALSE,
-        .innates = {ABILITY_BLAZE, ABILITY_CINDER},
+        .innates = {ABILITY_BLAZE, ABILITY_FLASH_FIRE, ABILITY_CINDER},
     },
 
     [SPECIES_TOTODILE] =
@@ -4050,7 +4050,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_RAIN_DISH, ABILITY_NONE, ABILITY_ROUGH_SKIN},
         .bodyColor = BODY_COLOR_BLUE,
         .noFlip = FALSE,
-        .innates = {ABILITY_TORRENT, ABILITY_NONE},
+        .innates = {ABILITY_TORRENT, ABILITY_COLD_BLOODED},
     },
 
     [SPECIES_CROCONAW] =
@@ -4076,7 +4076,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_RAIN_DISH, ABILITY_NONE, ABILITY_ROUGH_SKIN},
         .bodyColor = BODY_COLOR_BLUE,
         .noFlip = TRUE,
-        .innates = {ABILITY_TORRENT, ABILITY_STRONG_JAW},
+        .innates = {ABILITY_TORRENT, ABILITY_COLD_BLOODED, ABILITY_STRONG_JAW},
     },
 
     [SPECIES_FERALIGATR] =
@@ -4102,7 +4102,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_RAIN_DISH, ABILITY_NONE, ABILITY_ROUGH_SKIN},
         .bodyColor = BODY_COLOR_BLUE,
         .noFlip = FALSE,
-        .innates = {ABILITY_TORRENT, ABILITY_STRONG_JAW},
+        .innates = {ABILITY_TORRENT, ABILITY_COLD_BLOODED, ABILITY_STRONG_JAW},
     },
 
     [SPECIES_SENTRET] =
@@ -4174,7 +4174,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_FLYING,
         .eggGroup2 = EGG_GROUP_FLYING,
-        .abilities = {ABILITY_TINTED_LENS, ABILITY_NONE, ABILITY_FOREWARN},
+        .abilities = {ABILITY_TINTED_LENS, ABILITY_SHALLOW_DIVER, ABILITY_FOREWARN},
         .bodyColor = BODY_COLOR_BROWN,
         .noFlip = FALSE,
         .innates = {ABILITY_NOCTURNAL, ABILITY_KEEN_EYE},
@@ -4199,7 +4199,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_FLYING,
         .eggGroup2 = EGG_GROUP_FLYING,
-        .abilities = {ABILITY_TINTED_LENS, ABILITY_NONE, ABILITY_FOREWARN},
+        .abilities = {ABILITY_TINTED_LENS, ABILITY_SHALLOW_DIVER, ABILITY_FOREWARN},
         .bodyColor = BODY_COLOR_BROWN,
         .noFlip = FALSE,
         .innates = {ABILITY_NOCTURNAL, ABILITY_KEEN_EYE, ABILITY_MAJESTIC_BIRD},
@@ -4224,7 +4224,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_FAST,
         .eggGroup1 = EGG_GROUP_BUG,
         .eggGroup2 = EGG_GROUP_BUG,
-        .abilities = {ABILITY_RUN_AWAY, ABILITY_NONE, ABILITY_RATTLED},
+        .abilities = {ABILITY_RUN_AWAY, ABILITY_SHIELD_DUST, ABILITY_RATTLED},
         .bodyColor = BODY_COLOR_RED,
         .noFlip = FALSE,
         .innates = {ABILITY_SWARM, ABILITY_EARLY_BIRD, ABILITY_MULTI_LIMBS},
@@ -4249,7 +4249,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_FAST,
         .eggGroup1 = EGG_GROUP_BUG,
         .eggGroup2 = EGG_GROUP_BUG,
-        .abilities = {ABILITY_RUN_AWAY, ABILITY_NONE, ABILITY_IRON_FIST},
+        .abilities = {ABILITY_RUN_AWAY, ABILITY_SHIELD_DUST, ABILITY_IRON_FIST},
         .bodyColor = BODY_COLOR_RED,
         .noFlip = FALSE,
         .innates = {ABILITY_SWARM, ABILITY_EARLY_BIRD, ABILITY_MULTI_LIMBS},
@@ -4274,7 +4274,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_FAST,
         .eggGroup1 = EGG_GROUP_BUG,
         .eggGroup2 = EGG_GROUP_BUG,
-        .abilities = {ABILITY_RUN_AWAY, ABILITY_NONE, ABILITY_INFILTRATOR},
+        .abilities = {ABILITY_RUN_AWAY, ABILITY_TECHNICIAN, ABILITY_INFILTRATOR},
         .bodyColor = BODY_COLOR_GREEN,
         .noFlip = FALSE,
         .innates = {ABILITY_SPIDER_LAR, ABILITY_NONE},
@@ -4299,7 +4299,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_FAST,
         .eggGroup1 = EGG_GROUP_BUG,
         .eggGroup2 = EGG_GROUP_BUG,
-        .abilities = {ABILITY_RUN_AWAY, ABILITY_NONE, ABILITY_INFILTRATOR},
+        .abilities = {ABILITY_RUN_AWAY, ABILITY_TECHNICIAN, ABILITY_INFILTRATOR},
         .bodyColor = BODY_COLOR_RED,
         .noFlip = FALSE,
         .innates = {ABILITY_SPIDER_LAR, ABILITY_MERCILESS, ABILITY_WEAKNESS_EXPLOIT},
@@ -5082,10 +5082,10 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_MONSTER,
         .eggGroup2 = EGG_GROUP_WATER_1,
-        .abilities = {ABILITY_OBLIVIOUS, ABILITY_NONE, ABILITY_REGENERATOR},
+        .abilities = {ABILITY_OBLIVIOUS, ABILITY_NONE, ABILITY_RAIN_DISH},
         .bodyColor = BODY_COLOR_PINK,
         .noFlip = FALSE,
-        .innates = {ABILITY_OWN_TEMPO, ABILITY_NONE},
+        .innates = {ABILITY_OWN_TEMPO, ABILITY_REGENERATOR},
     },
 
     [SPECIES_MISDREAVUS] =
@@ -5337,7 +5337,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_INTIMIDATE, ABILITY_NONE, ABILITY_RATTLED},
         .bodyColor = BODY_COLOR_PINK,
         .noFlip = FALSE,
-        .innates = {ABILITY_QUICK_FEET, ABILITY_NONE},
+        .innates = {ABILITY_QUICK_FEET, ABILITY_WATCHDOG},
     },
 
     [SPECIES_GRANBULL] =
@@ -5362,7 +5362,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_INTIMIDATE, ABILITY_NONE, ABILITY_RATTLED},
         .bodyColor = BODY_COLOR_PURPLE,
         .noFlip = FALSE,
-        .innates = {ABILITY_QUICK_FEET, ABILITY_STRONG_JAW, ABILITY_WATCHDOG},
+        .innates = {ABILITY_QUICK_FEET, ABILITY_WATCHDOG, ABILITY_STRONG_JAW},
     },
 
     [SPECIES_QWILFISH] =
@@ -5819,7 +5819,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_SLOW,
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_FIELD,
-        .abilities = {ABILITY_EARLY_BIRD, ABILITY_NONE, ABILITY_UNNERVE},
+        .abilities = {ABILITY_EARLY_BIRD, ABILITY_SOLAR_POWER, ABILITY_UNNERVE},
         .bodyColor = BODY_COLOR_BLACK,
         .noFlip = FALSE,
         .innates = {ABILITY_FLASH_FIRE, ABILITY_WATCHDOG},
@@ -5844,7 +5844,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_SLOW,
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_FIELD,
-        .abilities = {ABILITY_EARLY_BIRD, ABILITY_NONE, ABILITY_UNNERVE},
+        .abilities = {ABILITY_EARLY_BIRD, ABILITY_SOLAR_POWER, ABILITY_UNNERVE},
         .bodyColor = BODY_COLOR_BLACK,
         .noFlip = FALSE,
         .innates = {ABILITY_FLASH_FIRE, ABILITY_WATCHDOG, ABILITY_MALEFICENT},
@@ -6073,10 +6073,10 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_UNDISCOVERED,
         .eggGroup2 = EGG_GROUP_UNDISCOVERED,
-        .abilities = {ABILITY_OBLIVIOUS, ABILITY_NONE, ABILITY_FOREWARN},
+        .abilities = {ABILITY_OBLIVIOUS, ABILITY_SPELL_FIST, ABILITY_FOREWARN},
         .bodyColor = BODY_COLOR_PINK,
         .noFlip = FALSE,
-        .innates = {ABILITY_DRY_SKIN, ABILITY_NONE},
+        .innates = {ABILITY_YUKI_ONNA, ABILITY_DRY_SKIN},
     },
 
     [SPECIES_ELEKID] =
@@ -6359,7 +6359,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_SLOW,
         .eggGroup1 = EGG_GROUP_UNDISCOVERED,
         .eggGroup2 = EGG_GROUP_UNDISCOVERED,
-        .abilities = {ABILITY_SEA_GUARDIAN, ABILITY_NONE, ABILITY_MULTISCALE},
+        .abilities = {ABILITY_SEA_GUARDIAN, ABILITY_NONE},
         .bodyColor = BODY_COLOR_WHITE,
         .noFlip = FALSE,
         .flags = FLAG_LEGENDARY,
@@ -6494,7 +6494,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_LEAF_GUARD, ABILITY_NONE, ABILITY_UNBURDEN},
         .bodyColor = BODY_COLOR_GREEN,
         .noFlip = FALSE,
-        .innates = {ABILITY_OVERGROW, ABILITY_NONE},
+        .innates = {ABILITY_OVERGROW, ABILITY_BIG_LEAVES},
     },
 
     [SPECIES_TORCHIC] =
@@ -7034,7 +7034,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_PICKPOCKET, ABILITY_NONE, ABILITY_MALEFICENT},
         .bodyColor = BODY_COLOR_BROWN,
         .noFlip = FALSE,
-        .innates = {ABILITY_CHLOROPHYLL, ABILITY_EARLY_BIRD},
+        .innates = {ABILITY_CHLOROPHYLL, ABILITY_EARLY_BIRD, ABILITY_GIANT_WINGS},
     },
 
     [SPECIES_TAILLOW] =
@@ -7849,7 +7849,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_HUMAN_LIKE,
         .eggGroup2 = EGG_GROUP_HUMAN_LIKE,
-        .abilities = {ABILITY_PURE_POWER, ABILITY_NONE},
+        .abilities = {ABILITY_PURE_POWER, ABILITY_NONE, ABILITY_SPELL_FIST},
         .bodyColor = BODY_COLOR_BLUE,
         .noFlip = FALSE,
         .innates = {ABILITY_TELEPATHY, ABILITY_NONE},
@@ -7874,7 +7874,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_HUMAN_LIKE,
         .eggGroup2 = EGG_GROUP_HUMAN_LIKE,
-        .abilities = {ABILITY_PURE_POWER, ABILITY_NONE},
+        .abilities = {ABILITY_PURE_POWER, ABILITY_NONE, ABILITY_SPELL_FIST},
         .bodyColor = BODY_COLOR_RED,
         .noFlip = FALSE,
         .innates = {ABILITY_TELEPATHY, ABILITY_NONE},
@@ -7899,10 +7899,10 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_SLOW,
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_FIELD,
-        .abilities = {ABILITY_STATIC, ABILITY_LIGHTNING_ROD},
+        .abilities = {ABILITY_STATIC, ABILITY_LIGHTNING_ROD, ABILITY_THUNDERCLOUDS},
         .bodyColor = BODY_COLOR_GREEN,
         .noFlip = FALSE,
-        .innates = {ABILITY_MINUS, ABILITY_NONE},
+        .innates = {ABILITY_MINUS, ABILITY_QUICK_CHARGE, ABILITY_FRICTION_MANE},
     },
 
     [SPECIES_MANECTRIC] =
@@ -7924,10 +7924,10 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_SLOW,
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_FIELD,
-        .abilities = {ABILITY_STATIC, ABILITY_LIGHTNING_ROD},
+        .abilities = {ABILITY_STATIC, ABILITY_LIGHTNING_ROD, ABILITY_THUNDERCLOUDS},
         .bodyColor = BODY_COLOR_YELLOW,
         .noFlip = FALSE,
-        .innates = {ABILITY_MINUS, ABILITY_NONE},
+        .innates = {ABILITY_MINUS, ABILITY_QUICK_CHARGE, ABILITY_FRICTION_MANE},
     },
 
     [SPECIES_PLUSLE] =
@@ -8081,7 +8081,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_FLUCTUATING,
         .eggGroup1 = EGG_GROUP_AMORPHOUS,
         .eggGroup2 = EGG_GROUP_AMORPHOUS,
-        .abilities = {ABILITY_PICKUP, ABILITY_STICKY_HOLD, ABILITY_POISON_ABSORB},
+        .abilities = {ABILITY_DEVOURER, ABILITY_STICKY_HOLD, ABILITY_POISON_ABSORB},
         .bodyColor = BODY_COLOR_GREEN,
         .noFlip = FALSE,
         .innates = {ABILITY_LIQUID_OOZE, ABILITY_LIQUIFIED, ABILITY_GLUTTONY},
@@ -8108,7 +8108,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_FLUCTUATING,
         .eggGroup1 = EGG_GROUP_AMORPHOUS,
         .eggGroup2 = EGG_GROUP_AMORPHOUS,
-        .abilities = {ABILITY_PICKUP, ABILITY_STICKY_HOLD, ABILITY_POISON_ABSORB},
+        .abilities = {ABILITY_DEVOURER, ABILITY_STICKY_HOLD, ABILITY_POISON_ABSORB},
         .bodyColor = BODY_COLOR_PURPLE,
         .noFlip = FALSE,
         .innates = {ABILITY_LIQUID_OOZE, ABILITY_LIQUIFIED, ABILITY_GLUTTONY},
@@ -8312,7 +8312,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_FAST,
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_FIELD,
-        .abilities = {ABILITY_MAGIC_BOUNCE, ABILITY_NONE, ABILITY_OWN_TEMPO},
+        .abilities = {ABILITY_MAGIC_BOUNCE, ABILITY_OWN_TEMPO, ABILITY_RATTLED},
         .bodyColor = BODY_COLOR_BLACK,
         .noFlip = FALSE,
         .innates = {ABILITY_GLUTTONY, ABILITY_HEADACHE},
@@ -8337,7 +8337,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_FAST,
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_FIELD,
-        .abilities = {ABILITY_MAGIC_BOUNCE, ABILITY_NONE, ABILITY_OWN_TEMPO},
+        .abilities = {ABILITY_MAGIC_BOUNCE, ABILITY_OWN_TEMPO, ABILITY_MAGIC_GUARD},
         .bodyColor = BODY_COLOR_PURPLE,
         .noFlip = FALSE,
         .innates = {ABILITY_GLUTTONY, ABILITY_HEADACHE, ABILITY_THICK_FAT},
@@ -8391,7 +8391,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_SAND_PLOW, ABILITY_ARENA_TRAP, ABILITY_SHEER_FORCE},
         .bodyColor = BODY_COLOR_BROWN,
         .noFlip = FALSE,
-        .innates = {ABILITY_HYPER_CUTTER, ABILITY_NONE},
+        .innates = {ABILITY_HYPER_CUTTER, ABILITY_SUBTERRANEAN},
     },
 
     [SPECIES_VIBRAVA] =
@@ -8957,7 +8957,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_SWIFT_SWIM, ABILITY_COMPETITIVE, ABILITY_CUTE_CHARM},
         .bodyColor = BODY_COLOR_PINK,
         .noFlip = FALSE,
-        .innates = {ABILITY_MULTISCALE, ABILITY_ADAPTABILITY, ABILITY_ABUSIVE},
+        .innates = {ABILITY_MULTISCALE, ABILITY_ADAPTABILITY, ABILITY_HEARTBREAKER},
     },
 
     [SPECIES_CASTFORM] =
@@ -9035,7 +9035,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_INSOMNIA, ABILITY_FRIGHTEN, ABILITY_CURSE_SURGE},
         .bodyColor = BODY_COLOR_BLACK,
         .noFlip = FALSE,
-        .innates = {ABILITY_PHASE, ABILITY_CURSED_BODY, ABILITY_LEVITATE},
+        .innates = {ABILITY_LEVITATE, ABILITY_CURSED_BODY},
     },
 
     [SPECIES_BANETTE] =
@@ -9061,7 +9061,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_INSOMNIA, ABILITY_FRIGHTEN, ABILITY_CURSE_SURGE},
         .bodyColor = BODY_COLOR_BLACK,
         .noFlip = FALSE,
-        .innates = {ABILITY_PHASE, ABILITY_CURSED_BODY, ABILITY_HAUNTED_SPIRIT},
+        .innates = {ABILITY_VOODOO_DOLL, ABILITY_CURSED_BODY, ABILITY_HAUNTED_SPIRIT},
     },
 
     [SPECIES_DUSKULL] =
@@ -9657,7 +9657,7 @@ const struct BaseStats gBaseStats[] =
         .bodyColor = BODY_COLOR_BROWN,
         .noFlip = TRUE,
         .flags = FLAG_LEGENDARY,
-        .innates = {ABILITY_POWER_CORE, ABILITY_IMPENETRABLE, ABILITY_CLEAR_BODY},
+        .innates = {ABILITY_POWER_CORE, ABILITY_CLEAR_BODY, ABILITY_IMPENETRABLE},
     },
 
     [SPECIES_REGICE] =
@@ -9683,7 +9683,7 @@ const struct BaseStats gBaseStats[] =
         .bodyColor = BODY_COLOR_BLUE,
         .noFlip = FALSE,
         .flags = FLAG_LEGENDARY,
-        .innates = {ABILITY_POWER_CORE, ABILITY_IMPENETRABLE, ABILITY_CLEAR_BODY},
+        .innates = {ABILITY_POWER_CORE, ABILITY_CLEAR_BODY, ABILITY_IMPENETRABLE},
     },
 
     [SPECIES_REGISTEEL] =
@@ -9706,11 +9706,11 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_SLOW,
         .eggGroup1 = EGG_GROUP_UNDISCOVERED,
         .eggGroup2 = EGG_GROUP_UNDISCOVERED,
-        .abilities = {ABILITY_HEAVY_METAL, ABILITY_NONE, ABILITY_SIGHTING_SYSTEM},
+        .abilities = {ABILITY_FILTER, ABILITY_NONE, ABILITY_SIGHTING_SYSTEM},
         .bodyColor = BODY_COLOR_GRAY,
         .noFlip = FALSE,
         .flags = FLAG_LEGENDARY,
-        .innates = {ABILITY_POWER_CORE, ABILITY_IMPENETRABLE, ABILITY_CLEAR_BODY},
+        .innates = {ABILITY_POWER_CORE, ABILITY_CLEAR_BODY, ABILITY_IMPENETRABLE},
     },
 
     [SPECIES_LATIAS] =
@@ -9732,11 +9732,11 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_SLOW,
         .eggGroup1 = EGG_GROUP_UNDISCOVERED,
         .eggGroup2 = EGG_GROUP_UNDISCOVERED,
-        .abilities = {ABILITY_PRESSURE, ABILITY_NONE},
+        .abilities = {ABILITY_SIGHT_SHARING, ABILITY_NONE},
         .bodyColor = BODY_COLOR_RED,
         .noFlip = FALSE,
         .flags = FLAG_LEGENDARY,
-        .innates = {ABILITY_LEVITATE, ABILITY_TELEPATHY},
+        .innates = {ABILITY_PRESSURE, ABILITY_LEVITATE, ABILITY_TELEPATHY},
     },
 
     [SPECIES_LATIOS] =
@@ -9758,11 +9758,11 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_SLOW,
         .eggGroup1 = EGG_GROUP_UNDISCOVERED,
         .eggGroup2 = EGG_GROUP_UNDISCOVERED,
-        .abilities = {ABILITY_PRESSURE, ABILITY_NONE},
+        .abilities = {ABILITY_SIGHT_SHARING, ABILITY_NONE},
         .bodyColor = BODY_COLOR_BLUE,
         .noFlip = FALSE,
         .flags = FLAG_LEGENDARY,
-        .innates = {ABILITY_LEVITATE, ABILITY_TELEPATHY},
+        .innates = {ABILITY_PRESSURE, ABILITY_LEVITATE, ABILITY_TELEPATHY},
     },
 
     [SPECIES_KYOGRE] =
@@ -10887,7 +10887,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_AFTERMATH, ABILITY_NONE, ABILITY_UNBURDEN},
         .bodyColor = BODY_COLOR_PURPLE,
         .noFlip = FALSE,
-        .innates = {ABILITY_FLARE_BOOST, ABILITY_PHASE, ABILITY_INFLATABLE},
+        .innates = {ABILITY_FLARE_BOOST, ABILITY_ETHEREAL, ABILITY_INFLATABLE},
     },
 
     [SPECIES_DRIFBLIM] =
@@ -10912,7 +10912,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_AFTERMATH, ABILITY_NONE, ABILITY_UNBURDEN},
         .bodyColor = BODY_COLOR_PURPLE,
         .noFlip = FALSE,
-        .innates = {ABILITY_FLARE_BOOST, ABILITY_PHASE, ABILITY_INFLATABLE},
+        .innates = {ABILITY_FLARE_BOOST, ABILITY_ETHEREAL, ABILITY_INFLATABLE},
     },
 
     [SPECIES_BUNEARY] =
@@ -10988,7 +10988,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_PERISH_BODY, ABILITY_NONE, ABILITY_SHADOW_TAG},
         .bodyColor = BODY_COLOR_PURPLE,
         .noFlip = FALSE,
-        .innates = {ABILITY_LEVITATE, ABILITY_PHASE, ABILITY_PIXILATE},
+        .innates = {ABILITY_LEVITATE, ABILITY_ETHEREAL, ABILITY_PIXILATE},
     },
 
     [SPECIES_HONCHKROW] =
@@ -11239,10 +11239,10 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_UNDISCOVERED,
         .eggGroup2 = EGG_GROUP_UNDISCOVERED,
-        .abilities = {ABILITY_SOUNDPROOF, ABILITY_NONE, ABILITY_PSYCHIC_BARRIER},
+        .abilities = {ABILITY_SOUNDPROOF, ABILITY_PSYCHIC_BARRIER, ABILITY_TECHNICIAN},
         .bodyColor = BODY_COLOR_PINK,
         .noFlip = FALSE,
-        .innates = {ABILITY_FILTER, ABILITY_TECHNICIAN},
+        .innates = {ABILITY_FILTER, ABILITY_NONE},
     },
 
     [SPECIES_HAPPINY] =
@@ -11317,10 +11317,10 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_AMORPHOUS,
         .eggGroup2 = EGG_GROUP_AMORPHOUS,
-        .abilities = {ABILITY_PRESSURE, ABILITY_NONE, ABILITY_INFILTRATOR},
+        .abilities = {ABILITY_SOUL_EATER, ABILITY_NONE},
         .bodyColor = BODY_COLOR_PURPLE,
         .noFlip = FALSE,
-        .innates = {ABILITY_SOUL_EATER, ABILITY_CURSED_BODY},
+        .innates = {ABILITY_CURSED_BODY, ABILITY_NONE},
     },
 
     [SPECIES_GIBLE] =
@@ -12135,10 +12135,10 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_MINERAL,
         .eggGroup2 = EGG_GROUP_MINERAL,
-        .abilities = {ABILITY_TRACE, ABILITY_TWISTED_DIMENSION, ABILITY_ANALYTIC},
+        .abilities = {ABILITY_TRACE, ABILITY_TWISTED_DIMENSION, ABILITY_DOWNLOAD},
         .bodyColor = BODY_COLOR_RED,
         .noFlip = FALSE,
-        .innates = {ABILITY_ANALYTIC, ABILITY_ADAPTABILITY},
+        .innates = {ABILITY_ANALYTIC, ABILITY_ADAPTABILITY, ABILITY_ADAPTABILITY},
     },
 
     [SPECIES_GALLADE] =
@@ -12242,7 +12242,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_SNOW_CLOAK, ABILITY_NONE, ABILITY_CURSED_BODY},
         .bodyColor = BODY_COLOR_WHITE,
         .noFlip = FALSE,
-        .innates = {ABILITY_ICE_BODY, ABILITY_YUKI_ONNA, ABILITY_PHASE},
+        .innates = {ABILITY_ICE_BODY, ABILITY_YUKI_ONNA, ABILITY_ETHEREAL},
     },
 
     [SPECIES_ROTOM] =
@@ -12268,7 +12268,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_CURSED_BODY, ABILITY_NONE, ABILITY_VOLT_ABSORB},
         .bodyColor = BODY_COLOR_RED,
         .noFlip = FALSE,
-        .innates = {ABILITY_MINUS, ABILITY_LEVITATE, ABILITY_PHASE},
+        .innates = {ABILITY_MINUS, ABILITY_LEVITATE, ABILITY_ETHEREAL},
     },
 
     [SPECIES_UXIE] =
@@ -12453,7 +12453,7 @@ const struct BaseStats gBaseStats[] =
         .bodyColor = BODY_COLOR_WHITE,
         .noFlip = FALSE,
         .flags = FLAG_LEGENDARY,
-        .innates = {ABILITY_POWER_CORE, ABILITY_IMPENETRABLE, ABILITY_CLEAR_BODY},
+        .innates = {ABILITY_POWER_CORE, ABILITY_CLEAR_BODY, ABILITY_IMPENETRABLE},
     },
 
     [SPECIES_GIRATINA] =
@@ -12486,10 +12486,10 @@ const struct BaseStats gBaseStats[] =
     {
         .baseHP        = 120,
         .baseAttack    = 70,
-        .baseDefense   = 120,
+        .baseDefense   = 110,
         .baseSpeed     = 85,
         .baseSpAttack  = 75,
-        .baseSpDefense = 130,
+        .baseSpDefense = 120,
         .type1 = TYPE_PSYCHIC,
         .type2 = TYPE_PSYCHIC,
         .catchRate = 3,
@@ -12501,11 +12501,11 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_SLOW,
         .eggGroup1 = EGG_GROUP_UNDISCOVERED,
         .eggGroup2 = EGG_GROUP_UNDISCOVERED,
-        .abilities = {ABILITY_SWEET_DREAMS, ABILITY_NONE},
+        .abilities = {ABILITY_LUNAR_VEIL, ABILITY_NONE},
         .bodyColor = BODY_COLOR_YELLOW,
         .noFlip = FALSE,
         .flags = FLAG_LEGENDARY,
-        .innates = {ABILITY_LEVITATE, ABILITY_NONE},
+        .innates = {ABILITY_LEVITATE, ABILITY_SWEET_DREAMS},
     },
 
     [SPECIES_PHIONE] =
@@ -12580,11 +12580,11 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_SLOW,
         .eggGroup1 = EGG_GROUP_UNDISCOVERED,
         .eggGroup2 = EGG_GROUP_UNDISCOVERED,
-        .abilities = {ABILITY_BAD_DREAMS, ABILITY_NONE},
+        .abilities = {ABILITY_NIGHTFALL_LULLABY, ABILITY_NONE},
         .bodyColor = BODY_COLOR_BLACK,
         .noFlip = FALSE,
         .flags = FLAG_MYTHICAL,
-        .innates = {ABILITY_DREAMCATCHER, ABILITY_LEVITATE},
+        .innates = {ABILITY_LEVITATE, ABILITY_BAD_DREAMS, ABILITY_DREAMCATCHER},
     },
 
     [SPECIES_SHAYMIN] =
@@ -13038,7 +13038,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_UNBURDEN, ABILITY_NONE},
         .bodyColor = BODY_COLOR_PURPLE,
         .noFlip = FALSE,
-        .innates = {ABILITY_LIMBER, ABILITY_PRANKSTER},
+        .innates = {ABILITY_LIMBER, ABILITY_PRANKSTER, ABILITY_CATS_LUCK},
     },
 
     [SPECIES_LIEPARD] =
@@ -13063,7 +13063,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_UNBURDEN, ABILITY_NONE},
         .bodyColor = BODY_COLOR_PURPLE,
         .noFlip = FALSE,
-        .innates = {ABILITY_LIMBER, ABILITY_PRANKSTER},
+        .innates = {ABILITY_LIMBER, ABILITY_PRANKSTER, ABILITY_CATS_LUCK},
     },
 
     [SPECIES_PANSAGE] =
@@ -13443,7 +13443,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_STURDY, ABILITY_WEAK_ARMOR, ABILITY_SAND_FORCE},
         .bodyColor = BODY_COLOR_BLUE,
         .noFlip = FALSE,
-        .innates = {ABILITY_SOLID_ROCK, ABILITY_NONE},
+        .innates = {ABILITY_SOLID_ROCK, ABILITY_IMPENETRABLE},
     },
 
     [SPECIES_GIGALITH] =
@@ -13470,7 +13470,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_STURDY, ABILITY_SAND_STREAM, ABILITY_SAND_FORCE},
         .bodyColor = BODY_COLOR_BLUE,
         .noFlip = FALSE,
-        .innates = {ABILITY_SOLID_ROCK, ABILITY_JUGGERNAUT, ABILITY_IMPENETRABLE},
+        .innates = {ABILITY_SOLID_ROCK, ABILITY_IMPENETRABLE, ABILITY_JUGGERNAUT},
     },
 
     [SPECIES_WOOBAT] =
@@ -13619,10 +13619,10 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_HUMAN_LIKE,
         .eggGroup2 = EGG_GROUP_HUMAN_LIKE,
-        .abilities = {ABILITY_SHEER_FORCE, ABILITY_NONE, ABILITY_IRON_FIST},
+        .abilities = {ABILITY_GUTS, ABILITY_SHEER_FORCE, ABILITY_IRON_FIST},
         .bodyColor = BODY_COLOR_GRAY,
         .noFlip = FALSE,
-        .innates = {ABILITY_GUTS, ABILITY_NONE},
+        .innates = {ABILITY_BULLDOZER, ABILITY_NONE},
     },
 
     [SPECIES_GURDURR] =
@@ -13644,10 +13644,10 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_HUMAN_LIKE,
         .eggGroup2 = EGG_GROUP_HUMAN_LIKE,
-        .abilities = {ABILITY_SHEER_FORCE, ABILITY_NONE, ABILITY_IRON_FIST},
+        .abilities = {ABILITY_GUTS, ABILITY_SHEER_FORCE, ABILITY_IRON_FIST},
         .bodyColor = BODY_COLOR_GRAY,
         .noFlip = FALSE,
-        .innates = {ABILITY_GUTS, ABILITY_MUSCLE_GAUGE},
+        .innates = {ABILITY_BULLDOZER, ABILITY_JUGGERNAUT, ABILITY_MUSCLE_GAUGE},
     },
 
     [SPECIES_CONKELDURR] =
@@ -13669,10 +13669,10 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_HUMAN_LIKE,
         .eggGroup2 = EGG_GROUP_HUMAN_LIKE,
-        .abilities = {ABILITY_SHEER_FORCE, ABILITY_NONE, ABILITY_IRON_FIST},
+        .abilities = {ABILITY_GUTS, ABILITY_SHEER_FORCE, ABILITY_IRON_FIST},
         .bodyColor = BODY_COLOR_BROWN,
         .noFlip = FALSE,
-        .innates = {ABILITY_GUTS, ABILITY_MUSCLE_GAUGE},
+        .innates = {ABILITY_BULLDOZER, ABILITY_JUGGERNAUT, ABILITY_MUSCLE_GAUGE},
     },
 
     [SPECIES_TYMPOLE] =
@@ -13822,10 +13822,10 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_BUG,
         .eggGroup2 = EGG_GROUP_BUG,
-        .abilities = {ABILITY_LEAF_GUARD, ABILITY_NONE},
+        .abilities = {ABILITY_LEAF_GUARD, ABILITY_SOLAR_POWER, ABILITY_OVERCOAT},
         .bodyColor = BODY_COLOR_YELLOW,
         .noFlip = FALSE,
-        .innates = {ABILITY_SWARM, ABILITY_CHLOROPHYLL, ABILITY_OVERCOAT},
+        .innates = {ABILITY_SWARM, ABILITY_CHLOROPHYLL},
     },
 
     [SPECIES_SWADLOON] =
@@ -13848,10 +13848,10 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_BUG,
         .eggGroup2 = EGG_GROUP_BUG,
-        .abilities = {ABILITY_LEAF_GUARD, ABILITY_NONE},
+        .abilities = {ABILITY_LEAF_GUARD, ABILITY_SOLAR_POWER, ABILITY_OVERCOAT},
         .bodyColor = BODY_COLOR_GREEN,
         .noFlip = FALSE,
-        .innates = {ABILITY_SWARM, ABILITY_CHLOROPHYLL, ABILITY_OVERCOAT},
+        .innates = {ABILITY_SWARM, ABILITY_CHLOROPHYLL},
     },
 
     [SPECIES_LEAVANNY] =
@@ -13874,10 +13874,10 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_BUG,
         .eggGroup2 = EGG_GROUP_BUG,
-        .abilities = {ABILITY_LEAF_GUARD, ABILITY_NONE},
+        .abilities = {ABILITY_LEAF_GUARD, ABILITY_SOLAR_POWER, ABILITY_SILK_ARMOR},
         .bodyColor = BODY_COLOR_YELLOW,
         .noFlip = FALSE,
-        .innates = {ABILITY_SWARM, ABILITY_CHLOROPHYLL, ABILITY_OVERCOAT},
+        .innates = {ABILITY_SWARM, ABILITY_CHLOROPHYLL, ABILITY_APEX_PREDATOR},
     },
 
     [SPECIES_VENIPEDE] =
@@ -14111,7 +14111,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_INTIMIDATE, ABILITY_MOXIE, ABILITY_ANGER_POINT},
         .bodyColor = BODY_COLOR_BROWN,
         .noFlip = FALSE,
-        .innates = {ABILITY_SAND_RUSH, ABILITY_NONE},
+        .innates = {ABILITY_SAND_RUSH, ABILITY_COLD_BLOODED},
     },
 
     [SPECIES_KROKOROK] =
@@ -14137,7 +14137,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_INTIMIDATE, ABILITY_MOXIE, ABILITY_ANGER_POINT},
         .bodyColor = BODY_COLOR_BROWN,
         .noFlip = FALSE,
-        .innates = {ABILITY_SAND_RUSH, ABILITY_STRONG_JAW},
+        .innates = {ABILITY_SAND_RUSH, ABILITY_COLD_BLOODED, ABILITY_STRONG_JAW},
     },
 
     [SPECIES_KROOKODILE] =
@@ -14163,7 +14163,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_INTIMIDATE, ABILITY_MOXIE, ABILITY_ANGER_POINT},
         .bodyColor = BODY_COLOR_RED,
         .noFlip = FALSE,
-        .innates = {ABILITY_SAND_RUSH, ABILITY_STRONG_JAW},
+        .innates = {ABILITY_SAND_RUSH, ABILITY_COLD_BLOODED, ABILITY_STRONG_JAW},
     },
 
     [SPECIES_DARUMAKA] =
@@ -14393,7 +14393,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_MUMMY, ABILITY_NONE},
         .bodyColor = BODY_COLOR_BLACK,
         .noFlip = FALSE,
-        .innates = {ABILITY_PHASE, ABILITY_CURSED_BODY},
+        .innates = {ABILITY_ETHEREAL, ABILITY_CURSED_BODY},
     },
 
     [SPECIES_COFAGRIGUS] =
@@ -14419,7 +14419,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_MUMMY, ABILITY_NONE},
         .bodyColor = BODY_COLOR_YELLOW,
         .noFlip = FALSE,
-        .innates = {ABILITY_PHASE, ABILITY_CURSED_BODY, ABILITY_HAUNTED_SPIRIT},
+        .innates = {ABILITY_ETHEREAL, ABILITY_CURSED_BODY, ABILITY_HAUNTED_SPIRIT},
     },
 
     [SPECIES_TIRTOUGA] =
@@ -15280,6 +15280,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_IRON_BARBS, ABILITY_NONE},
         .bodyColor = BODY_COLOR_GRAY,
         .noFlip = FALSE,
+        .innates = {ABILITY_SHELL_ARMOR, ABILITY_NONE},
     },
 
     [SPECIES_FERROTHORN] =
@@ -15305,6 +15306,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_IRON_BARBS, ABILITY_NONE, ABILITY_ANTICIPATION},
         .bodyColor = BODY_COLOR_GRAY,
         .noFlip = FALSE,
+        .innates = {ABILITY_SHELL_ARMOR, ABILITY_NONE},
     },
 
     [SPECIES_KLINK] =
@@ -15529,7 +15531,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_CURSE_SURGE, ABILITY_FLAME_BODY, ABILITY_INFILTRATOR},
         .bodyColor = BODY_COLOR_WHITE,
         .noFlip = TRUE,
-        .innates = {ABILITY_FLASH_FIRE, ABILITY_PHASE},
+        .innates = {ABILITY_FLASH_FIRE, ABILITY_ETHEREAL},
     },
 
     [SPECIES_LAMPENT] =
@@ -15554,7 +15556,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_CURSE_SURGE, ABILITY_FLAME_BODY, ABILITY_INFILTRATOR},
         .bodyColor = BODY_COLOR_BLACK,
         .noFlip = FALSE,
-        .innates = {ABILITY_FLASH_FIRE, ABILITY_PHASE, ABILITY_HAUNTED_SPIRIT},
+        .innates = {ABILITY_FLASH_FIRE, ABILITY_ETHEREAL, ABILITY_HAUNTED_SPIRIT},
     },
 
     [SPECIES_CHANDELURE] =
@@ -15579,7 +15581,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_CURSE_SURGE, ABILITY_FLAME_BODY, ABILITY_INFILTRATOR},
         .bodyColor = BODY_COLOR_BLACK,
         .noFlip = FALSE,
-        .innates = {ABILITY_FLASH_FIRE, ABILITY_PHASE, ABILITY_HAUNTED_SPIRIT},
+        .innates = {ABILITY_FLASH_FIRE, ABILITY_ETHEREAL, ABILITY_HAUNTED_SPIRIT},
     },
 
     [SPECIES_AXEW] =
@@ -15956,10 +15958,10 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_HUMAN_LIKE,
         .eggGroup2 = EGG_GROUP_HUMAN_LIKE,
-        .abilities = {ABILITY_DEFIANT, ABILITY_NONE, ABILITY_PRESSURE},
+        .abilities = {ABILITY_DEFIANT, ABILITY_INNER_FOCUS, ABILITY_PRESSURE},
         .bodyColor = BODY_COLOR_RED,
         .noFlip = FALSE,
-        .innates = {ABILITY_INNER_FOCUS, ABILITY_NONE},
+        .innates = {ABILITY_HITEN_MITSURUGI, ABILITY_NONE},
     },
 
     [SPECIES_BISHARP] =
@@ -15981,10 +15983,10 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_HUMAN_LIKE,
         .eggGroup2 = EGG_GROUP_HUMAN_LIKE,
-        .abilities = {ABILITY_DEFIANT, ABILITY_NONE, ABILITY_PRESSURE},
+        .abilities = {ABILITY_DEFIANT, ABILITY_INNER_FOCUS, ABILITY_PRESSURE},
         .bodyColor = BODY_COLOR_RED,
         .noFlip = FALSE,
-        .innates = {ABILITY_INNER_FOCUS, ABILITY_SHARP_BLADES},
+        .innates = {ABILITY_HITEN_MITSURUGI, ABILITY_RYUTSUISEN},
     },
 
     [SPECIES_BOUFFALANT] =
@@ -16573,10 +16575,11 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_SLOW,
         .eggGroup1 = EGG_GROUP_UNDISCOVERED,
         .eggGroup2 = EGG_GROUP_UNDISCOVERED,
-        .abilities = {ABILITY_SERENE_GRACE, ABILITY_NONE},
+        .abilities = {ABILITY_SERENE_GRACE, ABILITY_NONE, ABILITY_SHEER_FORCE},
         .bodyColor = BODY_COLOR_WHITE,
         .noFlip = TRUE,
         .flags = FLAG_MYTHICAL,
+        .innates = {ABILITY_SINGER, ABILITY_PIXILATE, ABILITY_POWER_MODULATION},
     },
 
     [SPECIES_GENESECT] =
@@ -16604,6 +16607,7 @@ const struct BaseStats gBaseStats[] =
         .bodyColor = BODY_COLOR_PURPLE,
         .noFlip = FALSE,
         .flags = FLAG_MYTHICAL,
+        .innates = {ABILITY_PLUS, ABILITY_SWARM, ABILITY_MACHINE_LEARNING},
     },
 
     [SPECIES_CHESPIN] =
@@ -18278,11 +18282,11 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_SLOW,
         .eggGroup1 = EGG_GROUP_UNDISCOVERED,
         .eggGroup2 = EGG_GROUP_UNDISCOVERED,
-        .abilities = {ABILITY_FAIRY_AURA, ABILITY_NONE},
+        .abilities = {ABILITY_ETERNAL_LIFE, ABILITY_NONE},
         .bodyColor = BODY_COLOR_BLUE,
         .noFlip = FALSE,
         .flags = FLAG_LEGENDARY,
-        .innates = {ABILITY_PRESSURE, ABILITY_NONE},
+        .innates = {ABILITY_PRESSURE, ABILITY_FAIRY_AURA},
     },
 
     [SPECIES_YVELTAL] =
@@ -18304,11 +18308,11 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_SLOW,
         .eggGroup1 = EGG_GROUP_UNDISCOVERED,
         .eggGroup2 = EGG_GROUP_UNDISCOVERED,
-        .abilities = {ABILITY_DARK_AURA, ABILITY_NONE},
+        .abilities = {ABILITY_DESTRUCTION_COCOON, ABILITY_NONE},
         .bodyColor = BODY_COLOR_RED,
         .noFlip = FALSE,
         .flags = FLAG_LEGENDARY,
-        .innates = {ABILITY_PRESSURE, ABILITY_GIANT_WINGS},
+        .innates = {ABILITY_PRESSURE, ABILITY_DARK_AURA},
     },
 
     [SPECIES_ZYGARDE] =
@@ -18334,7 +18338,7 @@ const struct BaseStats gBaseStats[] =
         .bodyColor = BODY_COLOR_GREEN,
         .noFlip = TRUE,
         .flags = FLAG_LEGENDARY,
-        .innates = {ABILITY_EARTHBOUND, ABILITY_NONE},
+        .innates = {ABILITY_CELL_DIVISION, ABILITY_NONE},
     },
 
     [SPECIES_DIANCIE] =
@@ -19021,7 +19025,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_FIELD,
-        .abilities = {ABILITY_SAND_RUSH, ABILITY_NONE, ABILITY_STEADFAST},
+        .abilities = {ABILITY_SAND_RUSH, ABILITY_SAND_RUSH, ABILITY_STEADFAST},
         .bodyColor = BODY_COLOR_BROWN,
         .noFlip = FALSE,
         .innates = {ABILITY_KEEN_EYE, ABILITY_VITAL_SPIRIT},
@@ -19228,10 +19232,10 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_GRASS,
         .eggGroup2 = EGG_GROUP_GRASS,
-        .abilities = {ABILITY_LEAF_GUARD, ABILITY_NONE, ABILITY_CONTRARY},
+        .abilities = {ABILITY_LEAF_GUARD, ABILITY_SWEET_VEIL, ABILITY_CONTRARY},
         .bodyColor = BODY_COLOR_PINK,
         .noFlip = FALSE,
-        .innates = {ABILITY_BATESIAN_MIMICRY, ABILITY_NONE},
+        .innates = {ABILITY_BATESIAN_MIMICRY, ABILITY_HYPER_CUTTER},
     },
 
     [SPECIES_LURANTIS] =
@@ -19254,10 +19258,10 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_GRASS,
         .eggGroup2 = EGG_GROUP_GRASS,
-        .abilities = {ABILITY_LEAF_GUARD, ABILITY_NONE, ABILITY_CONTRARY},
+        .abilities = {ABILITY_LEAF_GUARD, ABILITY_SWEET_VEIL, ABILITY_CONTRARY},
         .bodyColor = BODY_COLOR_PINK,
         .noFlip = FALSE,
-        .innates = {ABILITY_BATESIAN_MIMICRY, ABILITY_NONE},
+        .innates = {ABILITY_BATESIAN_MIMICRY, ABILITY_HYPER_CUTTER, ABILITY_APEX_PREDATOR},
     },
 
     [SPECIES_MORELULL] =
@@ -19362,7 +19366,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_CORROSION, ABILITY_NONE, ABILITY_OBLIVIOUS},
         .bodyColor = BODY_COLOR_BLACK,
         .noFlip = FALSE,
-        .innates = {ABILITY_BEWITCHING, ABILITY_ABUSIVE},
+        .innates = {ABILITY_BEWITCHING, ABILITY_HEARTBREAKER},
     },
 
     [SPECIES_STUFFUL] =
@@ -19464,7 +19468,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_OBLIVIOUS, ABILITY_NONE, ABILITY_SWEET_VEIL},
         .bodyColor = BODY_COLOR_PURPLE,
         .noFlip = TRUE,
-        .innates = {ABILITY_LEAF_GUARD, ABILITY_ABUSIVE},
+        .innates = {ABILITY_LEAF_GUARD, ABILITY_HEARTBREAKER},
     },
 
     [SPECIES_TSAREENA] =
@@ -19490,7 +19494,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_OBLIVIOUS, ABILITY_NONE, ABILITY_SWEET_VEIL},
         .bodyColor = BODY_COLOR_PURPLE,
         .noFlip = TRUE,
-        .innates = {ABILITY_LEAF_GUARD, ABILITY_ABUSIVE, ABILITY_QUEENLY_MAJESTY},
+        .innates = {ABILITY_LEAF_GUARD, ABILITY_HEARTBREAKER, ABILITY_QUEENLY_MAJESTY},
     },
 
     [SPECIES_COMFEY] =
@@ -19714,11 +19718,11 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_SLOW,
         .eggGroup1 = EGG_GROUP_UNDISCOVERED,
         .eggGroup2 = EGG_GROUP_UNDISCOVERED,
-        .abilities = {ABILITY_ADAPTABILITY, ABILITY_NONE},
+        .abilities = {ABILITY_BATTLE_ARMOR, ABILITY_NONE},
         .bodyColor = BODY_COLOR_GRAY,
         .noFlip = FALSE,
         .flags = FLAG_LEGENDARY,
-        .innates = {ABILITY_BATTLE_ARMOR, ABILITY_NONE},
+        .innates = {ABILITY_CHIMERIC, ABILITY_ANTI_UB, ABILITY_SWIFT_SWIM},
     },
 
     [SPECIES_SILVALLY] =
@@ -19744,7 +19748,7 @@ const struct BaseStats gBaseStats[] =
         .bodyColor = BODY_COLOR_GRAY,
         .noFlip = FALSE,
         .flags = FLAG_LEGENDARY,
-        .innates = {ABILITY_ADAPTABILITY, ABILITY_NONE},
+        .innates = {ABILITY_CHIMERIC, ABILITY_ANTI_UB, ABILITY_SWIFT_SWIM},
     },
 
     [SPECIES_MINIOR] =
@@ -19847,7 +19851,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_IRON_BARBS, ABILITY_LIGHTNING_ROD, ABILITY_STURDY},
         .bodyColor = BODY_COLOR_GRAY,
         .noFlip = FALSE,
-        .innates = {ABILITY_PLUS, ABILITY_NONE},
+        .innates = {ABILITY_PLUS, ABILITY_STATIC},
     },
 
     [SPECIES_MIMIKYU] =
@@ -19873,7 +19877,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_DISGUISE, ABILITY_NONE},
         .bodyColor = BODY_COLOR_YELLOW,
         .noFlip = FALSE,
-        .innates = {ABILITY_LIVID_SHADOW, ABILITY_CURSED_BODY, ABILITY_PHASE},
+        .innates = {ABILITY_LIVID_SHADOW, ABILITY_CURSED_BODY, ABILITY_ETHEREAL},
     },
 
     [SPECIES_BRUXISH] =
@@ -20418,7 +20422,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_SLOW,
         .eggGroup1 = EGG_GROUP_UNDISCOVERED,
         .eggGroup2 = EGG_GROUP_UNDISCOVERED,
-        .abilities = {ABILITY_INTIMIDATE, ABILITY_NONE},
+        .abilities = {ABILITY_DEVOURER, ABILITY_NONE},
         .bodyColor = BODY_COLOR_BLACK,
         .noFlip = FALSE,
         .flags = FLAG_ULTRA_BEAST,
@@ -20475,7 +20479,7 @@ const struct BaseStats gBaseStats[] =
         .bodyColor = BODY_COLOR_GRAY,
         .noFlip = FALSE,
         .flags = FLAG_MYTHICAL,
-        .innates = {ABILITY_CLEAR_BODY, ABILITY_NONE},
+        .innates = {ABILITY_MINUS, ABILITY_CLEAR_BODY},
     },
 
     [SPECIES_MARSHADOW] =
@@ -20502,7 +20506,7 @@ const struct BaseStats gBaseStats[] =
         .bodyColor = BODY_COLOR_GRAY,
         .noFlip = TRUE,
         .flags = FLAG_MYTHICAL,
-        .innates = {ABILITY_LIVID_SHADOW, ABILITY_CURSED_BODY, ABILITY_PHASE},
+        .innates = {ABILITY_LIVID_SHADOW, ABILITY_CURSED_BODY, ABILITY_ETHEREAL},
     },
 
     [SPECIES_POIPOLE] =
@@ -21137,6 +21141,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_RUN_AWAY, ABILITY_UNBURDEN, ABILITY_STAKEOUT},
         .bodyColor = BODY_COLOR_BROWN,
         .noFlip = FALSE,
+        .innates = {ABILITY_CATS_LUCK, ABILITY_NONE},
     },
 
     [SPECIES_THIEVUL] =
@@ -21161,6 +21166,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_RUN_AWAY, ABILITY_UNBURDEN, ABILITY_STAKEOUT},
         .bodyColor = BODY_COLOR_BROWN,
         .noFlip = FALSE,
+        .innates = {ABILITY_CATS_LUCK, ABILITY_STATS_SNATCHER},
     },
 
     [SPECIES_GOSSIFLEUR] =
@@ -21685,7 +21691,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_PUNK_ROCK, ABILITY_STATIC, ABILITY_KLUTZ},
         .bodyColor = BODY_COLOR_PURPLE,
         .noFlip = FALSE,
-        .innates = {ABILITY_MINUS, ABILITY_TECHNICIAN},
+        .innates = {ABILITY_PLUS, ABILITY_TECHNICIAN},
     },
 
     [SPECIES_SIZZLIPEDE] =
@@ -21860,7 +21866,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_HEALER, ABILITY_NONE, ABILITY_ANTICIPATION},
         .bodyColor = BODY_COLOR_PINK,
         .noFlip = FALSE,
-        .innates = {ABILITY_MAGIC_BOUNCE, ABILITY_NONE},
+        .innates = {ABILITY_MAGIC_BOUNCE, ABILITY_FOREST_WITCH},
     },
 
     [SPECIES_HATTREM] =
@@ -21885,7 +21891,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_HEALER, ABILITY_NONE, ABILITY_ANTICIPATION},
         .bodyColor = BODY_COLOR_PINK,
         .noFlip = FALSE,
-        .innates = {ABILITY_MAGIC_BOUNCE, ABILITY_NONE},
+        .innates = {ABILITY_MAGIC_BOUNCE, ABILITY_FOREST_WITCH},
     },
 
     [SPECIES_HATTERENE] =
@@ -21910,7 +21916,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_HEALER, ABILITY_NONE, ABILITY_ANTICIPATION},
         .bodyColor = BODY_COLOR_PINK,
         .noFlip = FALSE,
-        .innates = {ABILITY_MAGIC_BOUNCE, ABILITY_NONE},
+        .innates = {ABILITY_MAGIC_BOUNCE, ABILITY_FOREST_WITCH},
     },
 
     [SPECIES_IMPIDIMP] =
@@ -22031,10 +22037,10 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_FIELD,
-        .abilities = {ABILITY_BATTLE_ARMOR, ABILITY_TOUGH_CLAWS, ABILITY_STEELY_SPIRIT},
+        .abilities = {ABILITY_BATTLE_ARMOR, ABILITY_EXPERTISE, ABILITY_STEELY_SPIRIT},
         .bodyColor = BODY_COLOR_BROWN,
         .noFlip = FALSE,
-        .innates = {ABILITY_PERFECTIONIST, ABILITY_BERSERKER_RAGE, ABILITY_RAGNAROK},
+        .innates = {ABILITY_TOUGH_CLAWS, ABILITY_BERSERKER_RAGE, ABILITY_RAGNAROK},
     },
 
     [SPECIES_CURSOLA] =
@@ -22107,9 +22113,10 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_HUMAN_LIKE,
         .eggGroup2 = EGG_GROUP_HUMAN_LIKE,
-        .abilities = {ABILITY_TANGLED_FEET, ABILITY_SCREEN_CLEANER, ABILITY_ICE_BODY},
+        .abilities = {ABILITY_SCREEN_CLEANER, ABILITY_NONE, ABILITY_TANGLED_FEET},
         .bodyColor = BODY_COLOR_PURPLE,
         .noFlip = FALSE,
+        .innates = {ABILITY_FILTER, ABILITY_DANCER, ABILITY_TRAMPLE},
     },
 
     [SPECIES_RUNERIGUS] =
@@ -22640,7 +22647,7 @@ const struct BaseStats gBaseStats[] =
     [SPECIES_ZACIAN] =
     {
         .baseHP        = 92,
-        .baseAttack    = 130,
+        .baseAttack    = 120,
         .baseDefense   = 115,
         .baseSpeed     = 138,
         .baseSpAttack  = 80,
@@ -22666,7 +22673,7 @@ const struct BaseStats gBaseStats[] =
     [SPECIES_ZAMAZENTA] =
     {
         .baseHP        = 92,
-        .baseAttack    = 130,
+        .baseAttack    = 120,
         .baseDefense   = 115,
         .baseSpeed     = 138,
         .baseSpAttack  = 80,
@@ -22734,7 +22741,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_SLOW,
         .eggGroup1 = EGG_GROUP_UNDISCOVERED,
         .eggGroup2 = EGG_GROUP_UNDISCOVERED,
-        .abilities = {ABILITY_NIMBLE_FIST, ABILITY_NONE},
+        .abilities = {ABILITY_ADAPTABILITY, ABILITY_NONE},
         .bodyColor = BODY_COLOR_GRAY,
         .noFlip = FALSE,
         .flags = FLAG_LEGENDARY,
@@ -22760,7 +22767,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_SLOW,
         .eggGroup1 = EGG_GROUP_UNDISCOVERED,
         .eggGroup2 = EGG_GROUP_UNDISCOVERED,
-        .abilities = {ABILITY_NIMBLE_FIST, ABILITY_NONE},
+        .abilities = {ABILITY_IRON_FIST, ABILITY_NONE},
         .bodyColor = BODY_COLOR_GRAY,
         .noFlip = FALSE,
         .flags = FLAG_LEGENDARY,
@@ -22867,6 +22874,7 @@ const struct BaseStats gBaseStats[] =
         .bodyColor = BODY_COLOR_WHITE,
         .noFlip = FALSE,
         .flags = FLAG_LEGENDARY,
+        .innates = {ABILITY_CHARGE_ATTACK, ABILITY_COLD_SNAP, ABILITY_FROZEN_SURGE},
     },
 
     [SPECIES_SPECTRIER] =
@@ -22892,6 +22900,7 @@ const struct BaseStats gBaseStats[] =
         .bodyColor = BODY_COLOR_BLACK,
         .noFlip = FALSE,
         .flags = FLAG_LEGENDARY,
+        .innates = {ABILITY_CHARGE_ATTACK, ABILITY_NOCTURNAL, ABILITY_LIFE_FORCE_STEALER},
     },
 
     [SPECIES_CALYREX] =
@@ -22917,6 +22926,7 @@ const struct BaseStats gBaseStats[] =
         .bodyColor = BODY_COLOR_GREEN,
         .noFlip = FALSE,
         .flags = FLAG_LEGENDARY,
+        .innates = {ABILITY_HARVEST, ABILITY_NONE},
     },
 
     [SPECIES_VENUSAUR_MEGA] =
@@ -23146,7 +23156,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_SHADOW_TAG, ABILITY_SHADOW_TAG},
         .bodyColor = BODY_COLOR_PURPLE,
         .noFlip = FALSE,
-        .innates = {ABILITY_PHASE, ABILITY_CURSED_BODY},
+        .innates = {ABILITY_ETHEREAL, ABILITY_CURSED_BODY},
     },
 
     [SPECIES_KANGASKHAN_MEGA] =
@@ -23349,7 +23359,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_SAND_FORCE, ABILITY_SAND_FORCE},
         .bodyColor = BODY_COLOR_GRAY,
         .noFlip = FALSE,
-        .innates = {ABILITY_LEAD_COAT, ABILITY_IMPENETRABLE, ABILITY_STRONG_JAW},
+        .innates = {ABILITY_ADAMANTIUM_SKIN, ABILITY_IMPENETRABLE, ABILITY_STRONG_JAW},
     },
 
     [SPECIES_SCIZOR_MEGA] =
@@ -23421,7 +23431,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_SLOW,
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_FIELD,
-        .abilities = {ABILITY_SOLAR_POWER, ABILITY_SOLAR_POWER},
+        .abilities = {ABILITY_CURSE_SURGE, ABILITY_CURSE_SURGE},
         .bodyColor = BODY_COLOR_BLACK,
         .noFlip = FALSE,
         .innates = {ABILITY_FLASH_FIRE, ABILITY_WATCHDOG, ABILITY_MALEFICENT},
@@ -23474,7 +23484,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_LIGHTNING_ROD, ABILITY_LIGHTNING_ROD},
         .bodyColor = BODY_COLOR_GREEN,
         .noFlip = FALSE,
-        .innates = {ABILITY_OVERGROW, ABILITY_NONE},
+        .innates = {ABILITY_OVERGROW, ABILITY_BIG_LEAVES},
     },
 
     [SPECIES_BLAZIKEN_MEGA] =
@@ -23499,7 +23509,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_SPEED_BOOST, ABILITY_SPEED_BOOST},
         .bodyColor = BODY_COLOR_RED,
         .noFlip = FALSE,
-        .innates = {ABILITY_BLAZE, ABILITY_NONE},
+        .innates = {ABILITY_BLAZE, ABILITY_AERILATE},
     },
 
     [SPECIES_SWAMPERT_MEGA] =
@@ -23524,7 +23534,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_SWIFT_SWIM, ABILITY_SWIFT_SWIM},
         .bodyColor = BODY_COLOR_BLUE,
         .noFlip = FALSE,
-        .innates = {ABILITY_TORRENT, ABILITY_NONE},
+        .innates = {ABILITY_TORRENT, ABILITY_DRY_SKIN},
     },
 
     [SPECIES_GARDEVOIR_MEGA] =
@@ -23676,7 +23686,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_INTIMIDATE, ABILITY_INTIMIDATE},
         .bodyColor = BODY_COLOR_YELLOW,
         .noFlip = FALSE,
-        .innates = {ABILITY_MINUS, ABILITY_NONE},
+        .innates = {ABILITY_MINUS, ABILITY_QUICK_CHARGE, ABILITY_FRICTION_MANE},
     },
 
     [SPECIES_SHARPEDO_MEGA] =
@@ -23702,7 +23712,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_ROUGH_SKIN, ABILITY_ROUGH_SKIN},
         .bodyColor = BODY_COLOR_BLUE,
         .noFlip = FALSE,
-        .innates = {ABILITY_STRONG_JAW, ABILITY_SWIFT_SWIM},
+        .innates = {ABILITY_STRONG_JAW, ABILITY_SWIFT_SWIM, ABILITY_SPEED_BOOST},
     },
 
     [SPECIES_CAMERUPT_MEGA] =
@@ -23779,7 +23789,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_PRANKSTER, ABILITY_PRANKSTER},
         .bodyColor = BODY_COLOR_BLACK,
         .noFlip = FALSE,
-        .innates = {ABILITY_PHASE, ABILITY_CURSED_BODY, ABILITY_HAUNTED_SPIRIT},
+        .innates = {ABILITY_VOODOO_DOLL, ABILITY_CURSED_BODY, ABILITY_HAUNTED_SPIRIT},
     },
 
     [SPECIES_ABSOL_MEGA] =
@@ -23903,11 +23913,11 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_SLOW,
         .eggGroup1 = EGG_GROUP_UNDISCOVERED,
         .eggGroup2 = EGG_GROUP_UNDISCOVERED,
-        .abilities = {ABILITY_PRESSURE, ABILITY_NONE},
+        .abilities = {ABILITY_SIGHT_SHARING, ABILITY_NONE},
         .bodyColor = BODY_COLOR_BLUE,
         .noFlip = FALSE,
         .flags = FLAG_LEGENDARY,
-        .innates = {ABILITY_LEVITATE, ABILITY_TELEPATHY},
+        .innates = {ABILITY_PRESSURE, ABILITY_LEVITATE, ABILITY_TELEPATHY},
     },
 
     [SPECIES_LATIOS_MEGA] =
@@ -23929,11 +23939,11 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_SLOW,
         .eggGroup1 = EGG_GROUP_UNDISCOVERED,
         .eggGroup2 = EGG_GROUP_UNDISCOVERED,
-        .abilities = {ABILITY_PRESSURE, ABILITY_NONE},
+        .abilities = {ABILITY_SIGHT_SHARING, ABILITY_NONE},
         .bodyColor = BODY_COLOR_BLUE,
         .noFlip = FALSE,
         .flags = FLAG_LEGENDARY,
-        .innates = {ABILITY_LEVITATE, ABILITY_TELEPATHY},
+        .innates = {ABILITY_PRESSURE, ABILITY_LEVITATE, ABILITY_TELEPATHY},
     },
 
     [SPECIES_LOPUNNY_MEGA] =
@@ -24455,11 +24465,11 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_FIELD,
-        .abilities = {ABILITY_PICKUP, ABILITY_CATS_LUCK, ABILITY_RATTLED},
+        .abilities = {ABILITY_PICKUP, ABILITY_EXPERTISE, ABILITY_RATTLED},
         .bodyColor = BODY_COLOR_GRAY,
         .noFlip = FALSE,
         .flags = FLAG_ALOLAN_FORM,
-        .innates = {ABILITY_PERFECTIONIST, ABILITY_TECHNICIAN},
+        .innates = {ABILITY_PERFECTIONIST, ABILITY_CATS_LUCK},
     },
 
     [SPECIES_PERSIAN_ALOLAN] =
@@ -24482,11 +24492,11 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_FIELD,
-        .abilities = {ABILITY_PICKUP, ABILITY_CATS_LUCK, ABILITY_RATTLED},
+        .abilities = {ABILITY_FUR_COAT, ABILITY_EXPERTISE, ABILITY_RATTLED},
         .bodyColor = BODY_COLOR_GRAY,
         .noFlip = FALSE,
         .flags = FLAG_ALOLAN_FORM,
-        .innates = {ABILITY_PERFECTIONIST, ABILITY_TECHNICIAN, ABILITY_FUR_COAT},
+        .innates = {ABILITY_PERFECTIONIST, ABILITY_CATS_LUCK, ABILITY_TECHNICIAN},
     },
 
     [SPECIES_GEODUDE_ALOLAN] =
@@ -24694,11 +24704,11 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_FIELD,
-        .abilities = {ABILITY_PICKUP, ABILITY_TOUGH_CLAWS, ABILITY_UNNERVE},
+        .abilities = {ABILITY_PICKUP, ABILITY_EXPERTISE, ABILITY_UNNERVE},
         .bodyColor = BODY_COLOR_BROWN,
         .noFlip = FALSE,
         .flags = FLAG_GALARIAN_FORM,
-        .innates = {ABILITY_PERFECTIONIST, ABILITY_NONE},
+        .innates = {ABILITY_TOUGH_CLAWS, ABILITY_BERSERKER_RAGE},
     },
 
     [SPECIES_PONYTA_GALARIAN] =
@@ -24724,6 +24734,7 @@ const struct BaseStats gBaseStats[] =
         .bodyColor = BODY_COLOR_WHITE,
         .noFlip = FALSE,
         .flags = FLAG_GALARIAN_FORM,
+        .innates = {ABILITY_UNICORNS_HORN, ABILITY_PIXILATE},
     },
 
     [SPECIES_RAPIDASH_GALARIAN] =
@@ -24749,6 +24760,7 @@ const struct BaseStats gBaseStats[] =
         .bodyColor = BODY_COLOR_WHITE,
         .noFlip = FALSE,
         .flags = FLAG_GALARIAN_FORM,
+        .innates = {ABILITY_UNICORNS_HORN, ABILITY_PIXILATE},
     },
 
     [SPECIES_SLOWPOKE_GALARIAN] =
@@ -24770,10 +24782,11 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_MONSTER,
         .eggGroup2 = EGG_GROUP_WATER_1,
-        .abilities = {ABILITY_GLUTTONY, ABILITY_OWN_TEMPO, ABILITY_REGENERATOR},
+        .abilities = {ABILITY_GLUTTONY, ABILITY_NONE, ABILITY_RAIN_DISH},
         .bodyColor = BODY_COLOR_PINK,
         .noFlip = FALSE,
         .flags = FLAG_GALARIAN_FORM,
+        .innates = {ABILITY_OWN_TEMPO, ABILITY_REGENERATOR},
     },
 
     [SPECIES_SLOWBRO_GALARIAN] =
@@ -24795,10 +24808,11 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_MONSTER,
         .eggGroup2 = EGG_GROUP_WATER_1,
-        .abilities = {ABILITY_QUICK_DRAW, ABILITY_OWN_TEMPO, ABILITY_REGENERATOR},
+        .abilities = {ABILITY_QUICK_DRAW, ABILITY_NONE, ABILITY_RAIN_DISH},
         .bodyColor = BODY_COLOR_PINK,
         .noFlip = FALSE,
         .flags = FLAG_GALARIAN_FORM,
+        .innates = {ABILITY_OWN_TEMPO, ABILITY_REGENERATOR},
     },
 
     [SPECIES_FARFETCHD_GALARIAN] =
@@ -24877,6 +24891,7 @@ const struct BaseStats gBaseStats[] =
         .bodyColor = BODY_COLOR_WHITE,
         .noFlip = FALSE,
         .flags = FLAG_GALARIAN_FORM,
+        .innates = {ABILITY_FILTER, ABILITY_DANCER},
     },
 
     [SPECIES_ARTICUNO_GALARIAN] =
@@ -24976,10 +24991,11 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_MONSTER,
         .eggGroup2 = EGG_GROUP_WATER_1,
-        .abilities = {ABILITY_CURIOUS_MEDICINE, ABILITY_OWN_TEMPO, ABILITY_REGENERATOR},
+        .abilities = {ABILITY_CURIOUS_MEDICINE, ABILITY_NONE, ABILITY_RAIN_DISH},
         .bodyColor = BODY_COLOR_PINK,
         .noFlip = FALSE,
         .flags = FLAG_GALARIAN_FORM,
+        .innates = {ABILITY_OWN_TEMPO, ABILITY_REGENERATOR},
     },
 
     [SPECIES_CORSOLA_GALARIAN] =
@@ -25173,7 +25189,7 @@ const struct BaseStats gBaseStats[] =
         .expYield = 112,
         .evYield_Speed  = 2,
         .item2 = ITEM_LIGHT_BALL,
-        .genderRatio = PERCENT_FEMALE(50),
+        .genderRatio = MON_FEMALE,
         .eggCycles = 10,
         .friendship = 70,
         .growthRate = GROWTH_MEDIUM_FAST,
@@ -25199,7 +25215,7 @@ const struct BaseStats gBaseStats[] =
         .expYield = 112,
         .evYield_Speed  = 2,
         .item2 = ITEM_LIGHT_BALL,
-        .genderRatio = PERCENT_FEMALE(50),
+        .genderRatio = MON_FEMALE,
         .eggCycles = 10,
         .friendship = 70,
         .growthRate = GROWTH_MEDIUM_FAST,
@@ -25225,7 +25241,7 @@ const struct BaseStats gBaseStats[] =
         .expYield = 112,
         .evYield_Speed  = 2,
         .item2 = ITEM_LIGHT_BALL,
-        .genderRatio = PERCENT_FEMALE(50),
+        .genderRatio = MON_FEMALE,
         .eggCycles = 10,
         .friendship = 70,
         .growthRate = GROWTH_MEDIUM_FAST,
@@ -25251,7 +25267,7 @@ const struct BaseStats gBaseStats[] =
         .expYield = 112,
         .evYield_Speed  = 2,
         .item2 = ITEM_LIGHT_BALL,
-        .genderRatio = PERCENT_FEMALE(50),
+        .genderRatio = MON_FEMALE,
         .eggCycles = 10,
         .friendship = 70,
         .growthRate = GROWTH_MEDIUM_FAST,
@@ -25277,7 +25293,7 @@ const struct BaseStats gBaseStats[] =
         .expYield = 112,
         .evYield_Speed  = 2,
         .item2 = ITEM_LIGHT_BALL,
-        .genderRatio = PERCENT_FEMALE(50),
+        .genderRatio = MON_FEMALE,
         .eggCycles = 10,
         .friendship = 70,
         .growthRate = GROWTH_MEDIUM_FAST,
@@ -25303,7 +25319,7 @@ const struct BaseStats gBaseStats[] =
         .expYield = 112,
         .evYield_Speed  = 2,
         .item2 = ITEM_LIGHT_BALL,
-        .genderRatio = PERCENT_FEMALE(50),
+        .genderRatio = MON_FEMALE,
         .eggCycles = 10,
         .friendship = 70,
         .growthRate = GROWTH_MEDIUM_FAST,
@@ -27460,6 +27476,7 @@ const struct BaseStats gBaseStats[] =
         .bodyColor = BODY_COLOR_GREEN,
         .noFlip = FALSE,
         .flags = FLAG_LEGENDARY,
+        .innates = {ABILITY_PRANKSTER, ABILITY_NONE},
     },
 
     [SPECIES_THUNDURUS_THERIAN] =
@@ -27485,7 +27502,7 @@ const struct BaseStats gBaseStats[] =
         .bodyColor = BODY_COLOR_BLUE,
         .noFlip = FALSE,
         .flags = FLAG_LEGENDARY,
-        .innates = {ABILITY_MINUS, ABILITY_NONE},
+        .innates = {ABILITY_MINUS, ABILITY_PRANKSTER},
     },
 
     [SPECIES_LANDORUS_THERIAN] =
@@ -27511,6 +27528,7 @@ const struct BaseStats gBaseStats[] =
         .bodyColor = BODY_COLOR_BROWN,
         .noFlip = FALSE,
         .flags = FLAG_LEGENDARY,
+        .innates = {ABILITY_SAND_FORCE, ABILITY_NONE},
     },
 
     [SPECIES_KYUREM_WHITE] =
@@ -27588,6 +27606,7 @@ const struct BaseStats gBaseStats[] =
         .bodyColor = BODY_COLOR_YELLOW,
         .noFlip = TRUE,
         .flags = FLAG_MYTHICAL,
+        .innates = {ABILITY_JUSTICE, ABILITY_NONE},
     },
 
     [SPECIES_MELOETTA_PIROUETTE] =
@@ -27613,10 +27632,11 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_SLOW,
         .eggGroup1 = EGG_GROUP_UNDISCOVERED,
         .eggGroup2 = EGG_GROUP_UNDISCOVERED,
-        .abilities = {ABILITY_SERENE_GRACE, ABILITY_NONE},
+        .abilities = {ABILITY_SERENE_GRACE, ABILITY_NONE, ABILITY_SHEER_FORCE},
         .bodyColor = BODY_COLOR_WHITE,
         .noFlip = TRUE,
         .flags = FLAG_MYTHICAL,
+        .innates = {ABILITY_DANCER, ABILITY_PIXILATE, ABILITY_POWER_MODULATION},
     },
 
     [SPECIES_GENESECT_DOUSE_DRIVE] =
@@ -27644,6 +27664,7 @@ const struct BaseStats gBaseStats[] =
         .bodyColor = BODY_COLOR_PURPLE,
         .noFlip = FALSE,
         .flags = FLAG_MYTHICAL,
+        .innates = {ABILITY_PLUS, ABILITY_SWARM, ABILITY_MACHINE_LEARNING},
     },
 
     [SPECIES_GENESECT_SHOCK_DRIVE] =
@@ -27671,6 +27692,7 @@ const struct BaseStats gBaseStats[] =
         .bodyColor = BODY_COLOR_PURPLE,
         .noFlip = FALSE,
         .flags = FLAG_MYTHICAL,
+        .innates = {ABILITY_PLUS, ABILITY_SWARM, ABILITY_MACHINE_LEARNING},
     },
 
     [SPECIES_GENESECT_BURN_DRIVE] =
@@ -27698,6 +27720,7 @@ const struct BaseStats gBaseStats[] =
         .bodyColor = BODY_COLOR_PURPLE,
         .noFlip = FALSE,
         .flags = FLAG_MYTHICAL,
+        .innates = {ABILITY_PLUS, ABILITY_SWARM, ABILITY_MACHINE_LEARNING},
     },
 
     [SPECIES_GENESECT_CHILL_DRIVE] =
@@ -27725,6 +27748,7 @@ const struct BaseStats gBaseStats[] =
         .bodyColor = BODY_COLOR_PURPLE,
         .noFlip = FALSE,
         .flags = FLAG_MYTHICAL,
+        .innates = {ABILITY_PLUS, ABILITY_SWARM, ABILITY_MACHINE_LEARNING},
     },
 
     [SPECIES_GRENINJA_BATTLE_BOND] =
@@ -29036,11 +29060,11 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_SLOW,
         .eggGroup1 = EGG_GROUP_UNDISCOVERED,
         .eggGroup2 = EGG_GROUP_UNDISCOVERED,
-        .abilities = {ABILITY_FAIRY_AURA, ABILITY_NONE},
+        .abilities = {ABILITY_ETERNAL_LIFE, ABILITY_NONE},
         .bodyColor = BODY_COLOR_BLUE,
         .noFlip = FALSE,
         .flags = FLAG_LEGENDARY,
-        .innates = {ABILITY_PRESSURE, ABILITY_NONE},
+        .innates = {ABILITY_PRESSURE, ABILITY_FAIRY_AURA},
     },
 
     [SPECIES_ZYGARDE_10] =
@@ -29065,7 +29089,8 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_AURA_BREAK, ABILITY_NONE},
         .bodyColor = BODY_COLOR_BLACK,
         .noFlip = TRUE,
-        .innates = {ABILITY_EARTHBOUND, ABILITY_NONE},
+        .flags = FLAG_LEGENDARY,
+        .innates = {ABILITY_CELL_DIVISION, ABILITY_NONE},
     },
 
     [SPECIES_ZYGARDE_10_POWER_CONSTRUCT] =
@@ -29090,7 +29115,8 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_AURA_BREAK, ABILITY_NONE},
         .bodyColor = BODY_COLOR_BLACK,
         .noFlip = TRUE,
-        .innates = {ABILITY_EARTHBOUND, ABILITY_POWER_CONSTRUCT},
+        .flags = FLAG_LEGENDARY,
+        .innates = {ABILITY_CELL_DIVISION, ABILITY_POWER_CONSTRUCT},
     },
 
     [SPECIES_ZYGARDE_50_POWER_CONSTRUCT] =
@@ -29115,7 +29141,8 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_AURA_BREAK, ABILITY_NONE},
         .bodyColor = BODY_COLOR_GREEN,
         .noFlip = TRUE,
-        .innates = {ABILITY_EARTHBOUND, ABILITY_POWER_CONSTRUCT},
+        .flags = FLAG_LEGENDARY,
+        .innates = {ABILITY_CELL_DIVISION, ABILITY_POWER_CONSTRUCT},
     },
 
     [SPECIES_ZYGARDE_COMPLETE] =
@@ -29140,7 +29167,8 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_AURA_BREAK, ABILITY_NONE},
         .bodyColor = BODY_COLOR_BLACK,
         .noFlip = TRUE,
-        .innates = {ABILITY_EARTHBOUND, ABILITY_POWER_CONSTRUCT, ABILITY_CELL_DIVISION},
+        .flags = FLAG_LEGENDARY,
+        .innates = {ABILITY_CELL_DIVISION, ABILITY_POWER_CONSTRUCT, ABILITY_EARTHBOUND},
     },
 
     [SPECIES_HOOPA_UNBOUND] =
@@ -29291,7 +29319,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_FIELD,
-        .abilities = {ABILITY_NO_GUARD, ABILITY_NONE, ABILITY_STEADFAST},
+        .abilities = {ABILITY_NO_GUARD, ABILITY_NO_GUARD, ABILITY_STEADFAST},
         .bodyColor = BODY_COLOR_RED,
         .noFlip = FALSE,
         .innates = {ABILITY_KEEN_EYE, ABILITY_INSOMNIA},
@@ -29316,7 +29344,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_FIELD,
-        .abilities = {ABILITY_TOUGH_CLAWS, ABILITY_NONE, ABILITY_STEADFAST},
+        .abilities = {ABILITY_TOUGH_CLAWS, ABILITY_TOUGH_CLAWS, ABILITY_STEADFAST},
         .bodyColor = BODY_COLOR_BROWN,
         .noFlip = FALSE,
         .innates = {ABILITY_KEEN_EYE, ABILITY_OWN_TEMPO},
@@ -29370,6 +29398,7 @@ const struct BaseStats gBaseStats[] =
         .bodyColor = BODY_COLOR_GRAY,
         .noFlip = FALSE,
         .flags = FLAG_LEGENDARY,
+        .innates = {ABILITY_CHIMERIC, ABILITY_ANTI_UB, ABILITY_SWIFT_SWIM},
     },
 
     [SPECIES_SILVALLY_FLYING] =
@@ -29395,6 +29424,7 @@ const struct BaseStats gBaseStats[] =
         .bodyColor = BODY_COLOR_GRAY,
         .noFlip = FALSE,
         .flags = FLAG_LEGENDARY,
+        .innates = {ABILITY_CHIMERIC, ABILITY_ANTI_UB, ABILITY_SWIFT_SWIM},
     },
 
     [SPECIES_SILVALLY_POISON] =
@@ -29420,6 +29450,7 @@ const struct BaseStats gBaseStats[] =
         .bodyColor = BODY_COLOR_GRAY,
         .noFlip = FALSE,
         .flags = FLAG_LEGENDARY,
+        .innates = {ABILITY_CHIMERIC, ABILITY_ANTI_UB, ABILITY_SWIFT_SWIM},
     },
 
     [SPECIES_SILVALLY_GROUND] =
@@ -29445,6 +29476,7 @@ const struct BaseStats gBaseStats[] =
         .bodyColor = BODY_COLOR_GRAY,
         .noFlip = FALSE,
         .flags = FLAG_LEGENDARY,
+        .innates = {ABILITY_CHIMERIC, ABILITY_ANTI_UB, ABILITY_SWIFT_SWIM},
     },
 
     [SPECIES_SILVALLY_ROCK] =
@@ -29470,6 +29502,7 @@ const struct BaseStats gBaseStats[] =
         .bodyColor = BODY_COLOR_GRAY,
         .noFlip = FALSE,
         .flags = FLAG_LEGENDARY,
+        .innates = {ABILITY_CHIMERIC, ABILITY_ANTI_UB, ABILITY_SWIFT_SWIM},
     },
 
     [SPECIES_SILVALLY_BUG] =
@@ -29495,6 +29528,7 @@ const struct BaseStats gBaseStats[] =
         .bodyColor = BODY_COLOR_GRAY,
         .noFlip = FALSE,
         .flags = FLAG_LEGENDARY,
+        .innates = {ABILITY_CHIMERIC, ABILITY_ANTI_UB, ABILITY_SWIFT_SWIM},
     },
 
     [SPECIES_SILVALLY_GHOST] =
@@ -29520,6 +29554,7 @@ const struct BaseStats gBaseStats[] =
         .bodyColor = BODY_COLOR_GRAY,
         .noFlip = FALSE,
         .flags = FLAG_LEGENDARY,
+        .innates = {ABILITY_CHIMERIC, ABILITY_ANTI_UB, ABILITY_SWIFT_SWIM},
     },
 
     [SPECIES_SILVALLY_STEEL] =
@@ -29545,6 +29580,7 @@ const struct BaseStats gBaseStats[] =
         .bodyColor = BODY_COLOR_GRAY,
         .noFlip = FALSE,
         .flags = FLAG_LEGENDARY,
+        .innates = {ABILITY_CHIMERIC, ABILITY_ANTI_UB, ABILITY_SWIFT_SWIM},
     },
 
     [SPECIES_SILVALLY_FIRE] =
@@ -29570,6 +29606,7 @@ const struct BaseStats gBaseStats[] =
         .bodyColor = BODY_COLOR_GRAY,
         .noFlip = FALSE,
         .flags = FLAG_LEGENDARY,
+        .innates = {ABILITY_CHIMERIC, ABILITY_ANTI_UB, ABILITY_SWIFT_SWIM},
     },
 
     [SPECIES_SILVALLY_WATER] =
@@ -29595,6 +29632,7 @@ const struct BaseStats gBaseStats[] =
         .bodyColor = BODY_COLOR_GRAY,
         .noFlip = FALSE,
         .flags = FLAG_LEGENDARY,
+        .innates = {ABILITY_CHIMERIC, ABILITY_ANTI_UB, ABILITY_SWIFT_SWIM},
     },
 
     [SPECIES_SILVALLY_GRASS] =
@@ -29620,6 +29658,7 @@ const struct BaseStats gBaseStats[] =
         .bodyColor = BODY_COLOR_GRAY,
         .noFlip = FALSE,
         .flags = FLAG_LEGENDARY,
+        .innates = {ABILITY_CHIMERIC, ABILITY_ANTI_UB, ABILITY_SWIFT_SWIM},
     },
 
     [SPECIES_SILVALLY_ELECTRIC] =
@@ -29645,7 +29684,7 @@ const struct BaseStats gBaseStats[] =
         .bodyColor = BODY_COLOR_GRAY,
         .noFlip = FALSE,
         .flags = FLAG_LEGENDARY,
-        .innates = {ABILITY_PLUS, ABILITY_NONE},
+        .innates = {ABILITY_CHIMERIC, ABILITY_ANTI_UB, ABILITY_SWIFT_SWIM},
     },
 
     [SPECIES_SILVALLY_PSYCHIC] =
@@ -29671,6 +29710,7 @@ const struct BaseStats gBaseStats[] =
         .bodyColor = BODY_COLOR_GRAY,
         .noFlip = FALSE,
         .flags = FLAG_LEGENDARY,
+        .innates = {ABILITY_CHIMERIC, ABILITY_ANTI_UB, ABILITY_SWIFT_SWIM},
     },
 
     [SPECIES_SILVALLY_ICE] =
@@ -29696,6 +29736,7 @@ const struct BaseStats gBaseStats[] =
         .bodyColor = BODY_COLOR_GRAY,
         .noFlip = FALSE,
         .flags = FLAG_LEGENDARY,
+        .innates = {ABILITY_CHIMERIC, ABILITY_ANTI_UB, ABILITY_SWIFT_SWIM},
     },
 
     [SPECIES_SILVALLY_DRAGON] =
@@ -29721,6 +29762,7 @@ const struct BaseStats gBaseStats[] =
         .bodyColor = BODY_COLOR_GRAY,
         .noFlip = FALSE,
         .flags = FLAG_LEGENDARY,
+        .innates = {ABILITY_CHIMERIC, ABILITY_ANTI_UB, ABILITY_SWIFT_SWIM},
     },
 
     [SPECIES_SILVALLY_DARK] =
@@ -29746,6 +29788,7 @@ const struct BaseStats gBaseStats[] =
         .bodyColor = BODY_COLOR_GRAY,
         .noFlip = FALSE,
         .flags = FLAG_LEGENDARY,
+        .innates = {ABILITY_CHIMERIC, ABILITY_ANTI_UB, ABILITY_SWIFT_SWIM},
     },
 
     [SPECIES_SILVALLY_FAIRY] =
@@ -29771,6 +29814,7 @@ const struct BaseStats gBaseStats[] =
         .bodyColor = BODY_COLOR_GRAY,
         .noFlip = FALSE,
         .flags = FLAG_LEGENDARY,
+        .innates = {ABILITY_CHIMERIC, ABILITY_ANTI_UB, ABILITY_SWIFT_SWIM},
     },
 
     [SPECIES_MINIOR_METEOR_ORANGE] =
@@ -30146,7 +30190,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_DISGUISE, ABILITY_NONE},
         .bodyColor = BODY_COLOR_YELLOW,
         .noFlip = FALSE,
-        .innates = {ABILITY_LIVID_SHADOW, ABILITY_CURSED_BODY, ABILITY_PHASE},
+        .innates = {ABILITY_LIVID_SHADOW, ABILITY_CURSED_BODY, ABILITY_ETHEREAL},
     },
 
     [SPECIES_NECROZMA_DUSK_MANE] =
@@ -30252,6 +30296,7 @@ const struct BaseStats gBaseStats[] =
         .bodyColor = BODY_COLOR_RED,
         .noFlip = FALSE,
         .flags = FLAG_MYTHICAL,
+        .innates = {ABILITY_MINUS, ABILITY_CLEAR_BODY},
     },
 
     [SPECIES_CRAMORANT_GULPING] =
@@ -30648,7 +30693,7 @@ const struct BaseStats gBaseStats[] =
     [SPECIES_ZACIAN_CROWNED_SWORD] =
     {
         .baseHP        = 92,
-        .baseAttack    = 170,
+        .baseAttack    = 150,
         .baseDefense   = 115,
         .baseSpeed     = 148,
         .baseSpAttack  = 80,
@@ -30674,11 +30719,11 @@ const struct BaseStats gBaseStats[] =
     [SPECIES_ZAMAZENTA_CROWNED_SHIELD] =
     {
         .baseHP        = 92,
-        .baseAttack    = 130,
-        .baseDefense   = 145,
+        .baseAttack    = 120,
+        .baseDefense   = 140,
         .baseSpeed     = 128,
         .baseSpAttack  = 80,
-        .baseSpDefense = 145,
+        .baseSpDefense = 140,
         .type1 = TYPE_FIGHTING,
         .type2 = TYPE_STEEL,
         .catchRate = 10,
@@ -30797,6 +30842,7 @@ const struct BaseStats gBaseStats[] =
         .bodyColor = BODY_COLOR_WHITE,
         .noFlip = FALSE,
         .flags = FLAG_LEGENDARY,
+        .innates = {ABILITY_CHARGE_ATTACK, ABILITY_COLD_SNAP, ABILITY_FROZEN_SURGE},
     },
 
     [SPECIES_CALYREX_SHADOW_RIDER] =
@@ -30822,6 +30868,7 @@ const struct BaseStats gBaseStats[] =
         .bodyColor = BODY_COLOR_BLACK,
         .noFlip = FALSE,
         .flags = FLAG_LEGENDARY,
+        .innates = {ABILITY_CHARGE_ATTACK, ABILITY_NOCTURNAL, ABILITY_LIFE_FORCE_STEALER},
     },
 
     [SPECIES_REMORAID_COMMENSAL] =
@@ -30903,12 +30950,12 @@ const struct BaseStats gBaseStats[] =
 
     [SPECIES_ZYGARDE_CELL] =
     {
-        .baseHP        = 20,
-        .baseAttack    = 10,
-        .baseDefense   = 10,
-        .baseSpeed     = 10,
-        .baseSpAttack  = 10,
-        .baseSpDefense = 10,
+        .baseHP        = 27,
+        .baseAttack    = 30,
+        .baseDefense   = 41,
+        .baseSpeed     = 35,
+        .baseSpAttack  = 21,
+        .baseSpDefense = 35,
         .type1 = TYPE_DRAGON,
         .type2 = TYPE_GROUND,
         .catchRate = 3,
@@ -30924,17 +30971,17 @@ const struct BaseStats gBaseStats[] =
         .bodyColor = BODY_COLOR_GREEN,
         .noFlip = TRUE,
         .flags = FLAG_LEGENDARY,
-        .innates = {ABILITY_EARTHBOUND, ABILITY_NONE},
+        .innates = {ABILITY_CELL_DIVISION, ABILITY_NONE},
     },
 
     [SPECIES_ZYGARDE_CORE] =
     {
-        .baseHP        = 30,
-        .baseAttack    = 15,
-        .baseDefense   = 15,
-        .baseSpeed     = 15,
-        .baseSpAttack  = 15,
-        .baseSpDefense = 15,
+        .baseHP        = 54,
+        .baseAttack    = 50,
+        .baseDefense   = 61,
+        .baseSpeed     = 45,
+        .baseSpAttack  = 41,
+        .baseSpDefense = 45,
         .type1 = TYPE_DRAGON,
         .type2 = TYPE_GROUND,
         .catchRate = 3,
@@ -30950,7 +30997,7 @@ const struct BaseStats gBaseStats[] =
         .bodyColor = BODY_COLOR_GREEN,
         .noFlip = TRUE,
         .flags = FLAG_LEGENDARY,
-        .innates = {ABILITY_EARTHBOUND, ABILITY_NONE},
+        .innates = {ABILITY_CELL_DIVISION, ABILITY_NONE},
     },
 
     [SPECIES_SPIRITOMB_1] =
@@ -30973,10 +31020,10 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_AMORPHOUS,
         .eggGroup2 = EGG_GROUP_AMORPHOUS,
-        .abilities = {ABILITY_PRESSURE, ABILITY_NONE, ABILITY_INFILTRATOR},
+        .abilities = {ABILITY_SOUL_EATER, ABILITY_NONE},
         .bodyColor = BODY_COLOR_PURPLE,
         .noFlip = FALSE,
-        .innates = {ABILITY_SOUL_EATER, ABILITY_CURSED_BODY},
+        .innates = {ABILITY_CURSED_BODY, ABILITY_NONE},
     },
 
     [SPECIES_SPIRITOMB_2] =
@@ -30999,10 +31046,10 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_AMORPHOUS,
         .eggGroup2 = EGG_GROUP_AMORPHOUS,
-        .abilities = {ABILITY_PRESSURE, ABILITY_NONE, ABILITY_INFILTRATOR},
+        .abilities = {ABILITY_SOUL_EATER, ABILITY_NONE},
         .bodyColor = BODY_COLOR_PURPLE,
         .noFlip = FALSE,
-        .innates = {ABILITY_SOUL_EATER, ABILITY_CURSED_BODY, ABILITY_MALEFICENT},
+        .innates = {ABILITY_CURSED_BODY, ABILITY_MALEFICENT},
     },
 
     [SPECIES_SPIRITOMB_3] =
@@ -31025,10 +31072,10 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_AMORPHOUS,
         .eggGroup2 = EGG_GROUP_AMORPHOUS,
-        .abilities = {ABILITY_PRESSURE, ABILITY_NONE, ABILITY_INFILTRATOR},
+        .abilities = {ABILITY_SOUL_EATER, ABILITY_NONE},
         .bodyColor = BODY_COLOR_PURPLE,
         .noFlip = FALSE,
-        .innates = {ABILITY_SOUL_EATER, ABILITY_CURSED_BODY, ABILITY_MALEFICENT},
+        .innates = {ABILITY_CURSED_BODY, ABILITY_MALEFICENT, ABILITY_PRESSURE},
     },
 
     [SPECIES_MYSTIC_EGG] =
@@ -31104,7 +31151,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_UNDISCOVERED,
         .eggGroup2 = EGG_GROUP_UNDISCOVERED,
-        .abilities = {ABILITY_SWIFT_SWIM, ABILITY_NONE},
+        .abilities = {ABILITY_WAVE_SURF, ABILITY_NONE},
         .bodyColor = BODY_COLOR_YELLOW,
         .noFlip = FALSE,
         .innates = {ABILITY_PLUS, ABILITY_SHORT_CIRCUIT, ABILITY_HIGH_VOLTAGE},
@@ -31138,11 +31185,11 @@ const struct BaseStats gBaseStats[] =
     [SPECIES_KLEAVOR] =
     {
         .baseHP        = 70,
-        .baseAttack    = 135,
+        .baseAttack    = 130,
         .baseDefense   = 95,
         .baseSpeed     = 85,
         .baseSpAttack  = 45,
-        .baseSpDefense = 70,
+        .baseSpDefense = 75,
         .type1 = TYPE_BUG,
         .type2 = TYPE_ROCK,
         .catchRate = 25,
@@ -31280,10 +31327,11 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_SLOW,
         .eggGroup1 = EGG_GROUP_UNDISCOVERED,
         .eggGroup2 = EGG_GROUP_UNDISCOVERED,
-        .abilities = {ABILITY_HEALER, ABILITY_NONE, ABILITY_CONTRARY},
+        .abilities = {ABILITY_CONTRARY, ABILITY_NONE},
         .bodyColor = BODY_COLOR_PINK,
         .noFlip = FALSE,
         .flags = FLAG_LEGENDARY,
+        .innates = {ABILITY_HEALER, ABILITY_NONE},
     },
 
     [SPECIES_BASCULIN_WHITE_STRIPED] =
@@ -31336,6 +31384,7 @@ const struct BaseStats gBaseStats[] =
         .bodyColor = BODY_COLOR_PINK,
         .noFlip = FALSE,
         .flags = FLAG_HISUIAN_FORM,
+        .innates = {ABILITY_HEALER, ABILITY_NONE},
     },
 
     [SPECIES_GROWLITHE_HISUIAN] =
@@ -31357,10 +31406,11 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_SLOW,
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_FIELD,
-        .abilities = {ABILITY_INTIMIDATE, ABILITY_FLASH_FIRE, ABILITY_JUSTIFIED},
+        .abilities = {ABILITY_INTIMIDATE, ABILITY_NONE, ABILITY_ROCK_HEAD},
         .bodyColor = BODY_COLOR_BROWN,
         .noFlip = FALSE,
         .flags = FLAG_HISUIAN_FORM,
+        .innates = {ABILITY_FLASH_FIRE, ABILITY_BURNATE},
     },
 
     [SPECIES_ARCANINE_HISUIAN] =
@@ -31382,10 +31432,11 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_SLOW,
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_FIELD,
-        .abilities = {ABILITY_INTIMIDATE, ABILITY_FLASH_FIRE, ABILITY_JUSTIFIED},
+        .abilities = {ABILITY_INTIMIDATE, ABILITY_NONE, ABILITY_ROCK_HEAD},
         .bodyColor = BODY_COLOR_BROWN,
         .noFlip = FALSE,
         .flags = FLAG_HISUIAN_FORM,
+        .innates = {ABILITY_FLASH_FIRE, ABILITY_BURNATE, ABILITY_JUSTICE},
     },
 
     [SPECIES_VOLTORB_HISUIAN] =
@@ -31459,11 +31510,11 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_FIELD,
-        .abilities = {ABILITY_QUICK_FEET, ABILITY_NONE, ABILITY_BURNING_SURGE},
+        .abilities = {ABILITY_FRISK, ABILITY_NONE, ABILITY_BURNING_SURGE},
         .bodyColor = BODY_COLOR_YELLOW,
         .noFlip = FALSE,
         .flags = FLAG_HISUIAN_FORM,
-        .innates = {ABILITY_BLAZE, ABILITY_CINDER},
+        .innates = {ABILITY_BLAZE, ABILITY_FLASH_FIRE, ABILITY_CINDER},
     },
 
     [SPECIES_QWILFISH_HISUIAN] =
@@ -31564,7 +31615,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_GRASS,
         .eggGroup2 = EGG_GROUP_GRASS,
-        .abilities = {ABILITY_SOLAR_POWER, ABILITY_NONE, ABILITY_LEAF_GUARD},
+        .abilities = {ABILITY_HUSTLE, ABILITY_NONE, ABILITY_LEAF_GUARD},
         .bodyColor = BODY_COLOR_GREEN,
         .noFlip = TRUE,
         .flags = FLAG_HISUIAN_FORM,
@@ -31642,7 +31693,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_SLOW,
         .eggGroup1 = EGG_GROUP_FLYING,
         .eggGroup2 = EGG_GROUP_FLYING,
-        .abilities = {ABILITY_BIRDS_OF_PREY, ABILITY_DEFIANT, ABILITY_RAVINE_SURGE},
+        .abilities = {ABILITY_BIRDS_OF_PREY, ABILITY_TINTED_LENS, ABILITY_RAVINE_SURGE},
         .bodyColor = BODY_COLOR_RED,
         .noFlip = FALSE,
         .flags = FLAG_HISUIAN_FORM,
@@ -31751,7 +31802,7 @@ const struct BaseStats gBaseStats[] =
         .bodyColor = BODY_COLOR_BROWN,
         .noFlip = FALSE,
         .flags = FLAG_HISUIAN_FORM,
-        .innates = {ABILITY_OVERGROW, ABILITY_LONG_REACH, ABILITY_LEVITATE},
+        .innates = {ABILITY_OVERGROW, ABILITY_SCRAPPY, ABILITY_LEVITATE},
     },
 
     [SPECIES_DIALGA_ORIGIN] =
@@ -31773,10 +31824,11 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_SLOW,
         .eggGroup1 = EGG_GROUP_UNDISCOVERED,
         .eggGroup2 = EGG_GROUP_UNDISCOVERED,
-        .abilities = {ABILITY_PRESSURE, ABILITY_NONE, ABILITY_TELEPATHY},
+        .abilities = {ABILITY_TEMPORAL_FLOW, ABILITY_NONE},
         .bodyColor = BODY_COLOR_WHITE,
         .noFlip = FALSE,
         .flags = FLAG_LEGENDARY,
+        .innates = {ABILITY_PRESSURE, ABILITY_TELEPATHY},
     },
 
     [SPECIES_PALKIA_ORIGIN] =
@@ -31798,8 +31850,34 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_SLOW,
         .eggGroup1 = EGG_GROUP_UNDISCOVERED,
         .eggGroup2 = EGG_GROUP_UNDISCOVERED,
-        .abilities = {ABILITY_PRESSURE, ABILITY_NONE, ABILITY_TELEPATHY},
+        .abilities = {ABILITY_SPATIAL_WARP, ABILITY_NONE},
         .bodyColor = BODY_COLOR_PURPLE,
+        .noFlip = FALSE,
+        .flags = FLAG_LEGENDARY,
+        .innates = {ABILITY_PRESSURE, ABILITY_TELEPATHY},
+    },
+
+    [SPECIES_COCOON_EGG] =
+    {
+        .baseHP        = 126,
+        .baseAttack    = 1,
+        .baseDefense   = 255,
+        .baseSpeed     = 1,
+        .baseSpAttack  = 1,
+        .baseSpDefense = 255,
+        .type1 = TYPE_DARK,
+        .type2 = TYPE_FLYING,
+        .catchRate = 45,
+        .expYield = 306,
+        .evYield_HP  = 3,
+        .genderRatio = MON_GENDERLESS,
+        .eggCycles = 120,
+        .friendship = 0,
+        .growthRate = GROWTH_SLOW,
+        .eggGroup1 = EGG_GROUP_UNDISCOVERED,
+        .eggGroup2 = EGG_GROUP_UNDISCOVERED,
+        .abilities = {ABILITY_DESTRUCTION_COCOON, ABILITY_NONE},
+        .bodyColor = BODY_COLOR_RED,
         .noFlip = FALSE,
         .flags = FLAG_LEGENDARY,
     },

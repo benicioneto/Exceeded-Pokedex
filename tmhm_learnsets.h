@@ -30999,6 +30999,7 @@ const u8 *const gTMHMLearnsets[] =
     [SPECIES_LUGIA] = sLugiaTMHMLearnset,
     [SPECIES_HO_OH] = sHoOhTMHMLearnset,
     [SPECIES_MYSTIC_EGG] = sHoOhTMHMLearnset,
+    [SPECIES_COCOON_EGG] = sYveltalTMHMLearnset,
     [SPECIES_CELEBI] = sCelebiTMHMLearnset,
     [SPECIES_TREECKO] = sTreeckoTMHMLearnset,
     [SPECIES_GROVYLE] = sGrovyleTMHMLearnset,

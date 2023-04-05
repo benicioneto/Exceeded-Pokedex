@@ -1382,8 +1382,9 @@
 #define SPECIES_GOODRA_HISUIAN               FORMS_START + 344
 #define SPECIES_AVALUGG_HISUIAN              FORMS_START + 345
 #define SPECIES_DECIDUEYE_HISUIAN            FORMS_START + 346
+#define SPECIES_COCOON_EGG                   FORMS_START + 347
 
-#define SPECIES_EGG                         (SPECIES_DECIDUEYE_HISUIAN + 1)
+#define SPECIES_EGG                         (SPECIES_COCOON_EGG + 1)
 #define NUM_SPECIES SPECIES_EGG
 
 // National Dex Index Defines

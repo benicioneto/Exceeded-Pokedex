@@ -932,6 +932,8 @@ static const u16 sZygardeFormSpeciesIdTable[] = {
     SPECIES_ZYGARDE_10_POWER_CONSTRUCT,
     SPECIES_ZYGARDE_50_POWER_CONSTRUCT,
     SPECIES_ZYGARDE_COMPLETE,
+    SPECIES_ZYGARDE_CELL,
+    SPECIES_ZYGARDE_CORE,
     FORM_SPECIES_END,
 };
 
@@ -1146,5 +1148,17 @@ static const u16 sCalyrexFormSpeciesIdTable[] = {
 static const u16 sEnamorusFormSpeciesIdTable[] = {
     SPECIES_ENAMORUS,
     SPECIES_ENAMORUS_THERIAN,
+    FORM_SPECIES_END,
+};
+
+static const u16 sHoOhFormSpeciesIdTable[] = {
+    SPECIES_HO_OH,
+    SPECIES_MYSTIC_EGG,
+    FORM_SPECIES_END,
+};
+
+static const u16 sYveltalFormSpeciesIdTable[] = {
+    SPECIES_YVELTAL,
+    SPECIES_COCOON_EGG,
     FORM_SPECIES_END,
 };
