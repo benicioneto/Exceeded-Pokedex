@@ -4671,24 +4671,7 @@ static const u8 sHoOhTutorLearnset[] =
     TUTOR(THUNDER_WAVE),
     0xFF,
 };
-static const u8 sMysticEggTutorLearnset[] =
-{
-    TUTOR(DOUBLE_EDGE),
-    TUTOR(SIGNAL_BEAM),
-    TUTOR(ANCIENT_POWER),
-    TUTOR(DREAM_EATER),
-    TUTOR(ENDURE),
-    TUTOR(MIMIC),
-    TUTOR(MUD_SLAP),
-    TUTOR(PSYCH_UP),
-    TUTOR(SLEEP_TALK),
-    TUTOR(SNORE),
-    TUTOR(SUBSTITUTE),
-    TUTOR(SWAGGER),
-    TUTOR(SWIFT),
-    TUTOR(THUNDER_WAVE),
-    0xFF,
-};
+
 static const u8 sCelebiTutorLearnset[] =
 {
     TUTOR(DEFENSE_CURL),
@@ -14169,7 +14152,8 @@ const u8 *const gTutorLearnsets[] =
     [SPECIES_TYRANITAR] = sTyranitarTutorLearnset,
     [SPECIES_LUGIA] = sLugiaTutorLearnset,
     [SPECIES_HO_OH] = sHoOhTutorLearnset,
-    [SPECIES_MYSTIC_EGG] = sMysticEggTutorLearnset,
+    [SPECIES_MYSTIC_EGG] = sHoOhTutorLearnset,
+    [SPECIES_COCOON_EGG] = sYveltalTutorLearnset,
     [SPECIES_CELEBI] = sCelebiTutorLearnset,
     [SPECIES_TREECKO] = sTreeckoTutorLearnset,
     [SPECIES_GROVYLE] = sGrovyleTutorLearnset,
