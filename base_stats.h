@@ -24734,7 +24734,7 @@ const struct BaseStats gBaseStats[] =
         .bodyColor = BODY_COLOR_WHITE,
         .noFlip = FALSE,
         .flags = FLAG_GALARIAN_FORM,
-        .innates = {ABILITY_UNICORNS_HORN, ABILITY_PIXILATE},
+        .innates = {ABILITY_MYSTICAL_HORN, ABILITY_PIXILATE},
     },
 
     [SPECIES_RAPIDASH_GALARIAN] =
@@ -24760,7 +24760,7 @@ const struct BaseStats gBaseStats[] =
         .bodyColor = BODY_COLOR_WHITE,
         .noFlip = FALSE,
         .flags = FLAG_GALARIAN_FORM,
-        .innates = {ABILITY_UNICORNS_HORN, ABILITY_PIXILATE},
+        .innates = {ABILITY_MYSTICAL_HORN, ABILITY_PIXILATE},
     },
 
     [SPECIES_SLOWPOKE_GALARIAN] =
