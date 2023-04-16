@@ -541,7 +541,7 @@ static const u8 sEternalLifeDescription[] = _("Revives after 15 turns.");
 static const u8 sAdamantiumSkinDescription[] = _("No physical “supereffective”.");
 static const u8 sDevourerDescription[] = _("Stockpiles each turn.");
 static const u8 sSightSharingDescription[] = _("Boosts allies Accuracy.");
-static const u8 sSpellFistDescription[] = _("Punch become special move.");
+static const u8 sSpellFistDescription[] = _("Punch uses Special Attack.");
 static const u8 sFrictionManeDescription[] = _("Gains charge after moves.");
 static const u8 sThundercloudsDescription[] = _("Summons thunderclouds.");
 static const u8 sMetalmorphDescription[] = _("Becomes Steel-type.");
@@ -549,6 +549,9 @@ static const u8 sTrampleDescription[] = _("Tramples when dancing.");
 static const u8 sVoodooDollDescription[] = _("Shares damage.");
 static const u8 sNightfallLullabyDescription[] = _("Puts asleep upon switching in.");
 static const u8 sLunarVeilDescription[] = _("Heals party upon switching in.");
+static const u8 sPsychokineticDescription[] = _("More Sp. Attack more Attack.");
+static const u8 sPackTacticsDescription[] = _("Boosts stats in a pack.");
+static const u8 sPackLeaderDescription[] = _("Boosts stat of leader.");
 
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
 {
@@ -1031,6 +1034,10 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_VOODOO_DOLL] = _("Voodoo Doll"),
     [ABILITY_NIGHTFALL_LULLABY] = _("Nightfall Lullaby"),
     [ABILITY_LUNAR_VEIL] = _("Lunar Veil"),
+    [ABILITY_PSYCHOKINETIC] = _("Psychokinetic"),
+    [ABILITY_PACK_TACTICS] = _("Pack Tactics"),
+    [ABILITY_PACK_LEADER] = _("Pack Leader"),
+    [ABILITY_X_RAY_VISION] = _("X-Ray Vision"),
 };
 
 const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
@@ -1514,6 +1521,10 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_VOODOO_DOLL] = sVoodooDollDescription,
     [ABILITY_NIGHTFALL_LULLABY] = sNightfallLullabyDescription,
     [ABILITY_LUNAR_VEIL] = sLunarVeilDescription,
+    [ABILITY_PSYCHOKINETIC] = sPsychokineticDescription,
+    [ABILITY_PACK_TACTICS] = sPackTacticsDescription,
+    [ABILITY_PACK_LEADER] = sPackLeaderDescription,
+    [ABILITY_X_RAY_VISION] = sFriskDescription,
 };
 
 static const u8 sNoneDescriptionExtended[] = _("");
@@ -1818,7 +1829,7 @@ static const u8 sIceSlidingDescriptionExtended[] = _("Increases the power of mov
 static const u8 sJusticeDescriptionExtended[] = _("When the Pokémon enters the b-\nattle, the power of moves is i-\nncreased by 10% for each time \nan ally Pokémon fainted during\na battle.");
 static const u8 sLeadCoatDescriptionExtended[] = _("Triples the Pokémon weight an-\nd increases Defense stat by 50\n%.");
 static const u8 sLavalBodyDescriptionExtended[] = _("When the Pokémon attacks or i-\ns attacked by a move that make-\ns contact, the opposing Pokémo-\nn will become burned. Moves th-\nat would be “supereffective” a-\ngainst pure Fire-type Pokémon \nto instead deal neutral damage\nto the Pokémon instead. The P-\nokémon's Fire-type becomes Roc-\nk and negates ability effects \nin rain. Reverts the typing in\nharsh sunlight.");
-static const u8 sMagnetFieldDescriptionExtended[] = _("All Steel-type Pokémon moves \nlast in its priority bracket. \nDoesn't affects Pokémon with M-\nagnet Field. Nullify Magnet Pu-\nll on the field.");
+static const u8 sMagnetFieldDescriptionExtended[] = _("All Steel-type Pokémon moves \nlast in its priority bracket, \nexcept Pokémon with Magnet Fie-\nld. Nullify Magnet Pull effect-\ns on the field.");
 static const u8 sMomentumDescriptionExtended[] = _("Moves that make contact use S-\npeed stat instead for the dama-\nge calculation, but it receive-\ns recoil damage equal to 33% o-\nf damage dealt. The Speed stat\nstage-modifiers, items and ot-\nher abilities are applied to t-\nhe stat calculation.");
 static const u8 sMultiLimbsDescriptionExtended[] = _("Punching moves hits two to fi-\nve times, with the strikes bey-\nond the first dealing only 10%\nof its damage. It doesn't wor-\nk with multi hit moves, and Fl-\ninch won't be applied.");
 static const u8 sMultiHeadedDescriptionExtended[] = _("Single-targeting moves hit tw-\no or three times depending on \nthe number of heads, dealing 2\n5% or 33% more damage. It does-\nn't work with multi hit moves,\nand Flinch won't be applied.");
@@ -1992,9 +2003,12 @@ static const u8 sFrictionManeDescriptionExtended[] = _("Whenever the Pokémon us
 static const u8 sThundercloudsDescriptionExtended[] = _("Summons thunderclouds in batt-\nle as soon as the Pokémon ente-\nrs the battlefield. The thunde-\nrclouds lasts for five turns. \nThunderclouds: Deals Electric-\ntype damage with 30 power at t-\nhe end of each turn to all opp-\nosing Pokémon.");
 static const u8 sMetalmorphDescriptionExtended[] = _("The Pokémon becomes pure Stee-\nl-type as soon as the Pokémon \nenters the battlefield. Also, \nthe Pokémon gains same-type at-\ntack bonus with moves of the o-\nriginal types regardless the P-\nokémon's current typing.");
 static const u8 sTrampleDescriptionExtended[] = _("Whenever the Pokémon uses a d-\nance move, all other Pokémon o-\nn the ground takes damage equa-\nl to 1/16 of their maximum HP.");
-static const u8 sVoodooDollDescriptionExtended[] = _("The Pokémon puts a voodoo cur-\nse on opposing Pokémon as soon\nas it enters the battlefield.\nWhenever the Pokémon would ta-\nke damage, it shares half of i-\nncoming damage to the cursed t-\narget.");
+static const u8 sVoodooDollDescriptionExtended[] = _("The Pokémon puts a voodoo cur-\nse on opposing Pokémon for up \nto two turns as soon as it ent-\ners the battlefield. Whenever \nthe Pokémon would take damage,\nit transfers the incoming dam-\nage to the cursed target inste-\nad.");
 static const u8 sNightfallLullabyDescriptionExtended[] = _("The Pokémon puts all other in-\nto sleep in the battlefield as\nsoon as it enters the battlef-\nield. This ability can only ac-\ntivate once per battle.");
 static const u8 sLunarVeilDescriptionExtended[] = _("The Pokémon restores HP of al-\nl ally Pokémon in the battlefi-\neld and in the Trainer's party\nequal to 1/8 of their maximum\nHP while curing any sleeping \nPokémon as soon as it enters t-\nhe battlefield. This ability c-\nan only activate once per batt-\nle.");
+static const u8 sPsychokineticDescriptionExtended[] = _("The Pokémon uses its Special \nAttack stat in addition to the\nAttack stat for physical move-\ns during the damage calculatio-\nn. The Special Attack stat sta-\nges, items and abilities still\naffects the value.");
+static const u8 sPackTacticsDescriptionExtended[] = _("The Pokémon's stats are incre-\nased by 2% for each canine- an-\nd feline-like Pokémon in the T-\nrainer's party.");
+static const u8 sPackLeaderDescriptionExtended[] = _("The Pokémon becomes the pack \nleader as soon as it enters th-\ne battlefield. As the leader, \nfor each canine- and feline-li-\nke Pokémon in the Trainer's pa-\nrty, increases the Pokémon's s-\ntats by 5%. These stats are fu-\nther increased by 5% if the Po-\nkémon is the only male or fema-\nle in the pack. There can be o-\nnly one leader in battle.");
 
 const u8 *const gAbilityDescriptionExtendedPointers[ABILITIES_COUNT] =
 {
@@ -2477,4 +2491,8 @@ const u8 *const gAbilityDescriptionExtendedPointers[ABILITIES_COUNT] =
     [ABILITY_VOODOO_DOLL] = sVoodooDollDescriptionExtended,
     [ABILITY_NIGHTFALL_LULLABY] = sNightfallLullabyDescriptionExtended,
     [ABILITY_LUNAR_VEIL] = sLunarVeilDescriptionExtended,
+    [ABILITY_PSYCHOKINETIC] = sPsychokineticDescriptionExtended,
+    [ABILITY_PACK_TACTICS] = sPackTacticsDescriptionExtended,
+    [ABILITY_PACK_LEADER] = sPackLeaderDescriptionExtended,
+    [ABILITY_X_RAY_VISION] = sFriskDescriptionExtended,
 };

@@ -3522,7 +3522,7 @@ static const u8 sBLOOMSDAYDescription[] = _(
     "Summons harshy sunlight\n"
     "and ups offensive stats.");
 
-static const u8 sHAMMER_SMASHDescription[] = _(
+static const u8 sQUAKE_HAMMERDescription[] = _(
     "A powerful smash on the\n"
     "ground making earthquakes.");
 
@@ -3533,6 +3533,38 @@ static const u8 sHOME_RUNDescription[] = _(
 static const u8 sHELLBLAZEDescription[] = _(
     "Prevents the foe from\n"
     "being revived.");
+
+static const u8 sDIAMOND_DUSTDescription[] = _(
+    "Breath of diamonds dust\n"
+    "that may raise Defense.");
+
+static const u8 sMOONFALLDescription[] = _(
+    "Moon starts to fall above\n"
+    "the user.");
+
+static const u8 sFALLING_STARSDescription[] = _(
+    "Falling stars from the skies\n"
+    "begins to fall.");
+
+static const u8 sALI_SHUFFLEDescription[] = _(
+    "Evades attack, and punches\n"
+    "the foe if struck.");
+
+static const u8 sATOMIC_BREATHDescription[] = _(
+    "Powerful, but leaves the\n"
+    "user immobile the next turn.");
+
+static const u8 sPROTON_SCREAMDescription[] = _(
+    "Powerful, but leaves the\n"
+    "user immobile the next turn.");
+
+static const u8 sFORCE_CHOKEDescription[] = _(
+    "Psychically chokes to disable\n"
+    "sound moves for a while.");
+
+static const u8 sFORCE_LIGHTNINGDescription[] = _(
+    "Emits a special lightning.\n"
+    "May lower Attack.");
 
 // MOVE_NONE is ignored in this table. Make sure to always subtract 1 before getting the right pointer.
 const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
@@ -4439,7 +4471,15 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_CORDYCEPS - 1] = sCORDYCEPSDescription,
     [MOVE_AQUA_FANG - 1] = sAQUA_FANGDescription,
     [MOVE_BLOOMSDAY - 1] = sBLOOMSDAYDescription,
-    [MOVE_HAMMER_SMASH - 1] = sHAMMER_SMASHDescription,
+    [MOVE_QUAKE_HAMMER - 1] = sQUAKE_HAMMERDescription,
     [MOVE_HOME_RUN - 1] = sHOME_RUNDescription,
     [MOVE_HELLBLAZE - 1] = sHELLBLAZEDescription,
+    [MOVE_DIAMOND_DUST - 1] = sDIAMOND_DUSTDescription,
+    [MOVE_MOONFALL - 1] = sMOONFALLDescription,
+    [MOVE_FALLING_STARS - 1] = sFALLING_STARSDescription,
+    [MOVE_ALI_SHUFFLE - 1] = sALI_SHUFFLEDescription,
+    [MOVE_ATOMIC_BREATH - 1] = sATOMIC_BREATHDescription,
+    [MOVE_PROTON_SCREAM - 1] = sPROTON_SCREAMDescription,
+    [MOVE_FORCE_CHOKE - 1] = sFORCE_CHOKEDescription,
+    [MOVE_FORCE_LIGHTNING - 1] = sFORCE_LIGHTNINGDescription,
 };

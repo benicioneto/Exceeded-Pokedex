@@ -902,9 +902,17 @@ const u8 gMoveNames[MOVES_COUNT][MOVE_NAME_LENGTH + 1] =
     [MOVE_CORDYCEPS] = _("Cordyceps"),
     [MOVE_AQUA_FANG] = _("Aqua Fang"),
     [MOVE_BLOOMSDAY] = _("Bloomsday"),
-    [MOVE_HAMMER_SMASH] = _("Hammer Smash"),
+    [MOVE_QUAKE_HAMMER] = _("Quake Hammer"),
     [MOVE_HOME_RUN] = _("Home Run"),
     [MOVE_HELLBLAZE] = _("Hellblaze"),
+    [MOVE_DIAMOND_DUST] = _("Diamond Dust"),
+    [MOVE_MOONFALL] = _("Moonfall"),
+    [MOVE_FALLING_STARS] = _("Falling Stars"),
+    [MOVE_ALI_SHUFFLE] = _("Ali Shuffle"),
+    [MOVE_ATOMIC_BREATH] = _("Atomic Breath"),
+    [MOVE_PROTON_SCREAM] = _("Proton Scream"),
+    [MOVE_FORCE_CHOKE] = _("Force Choke"),
+    [MOVE_FORCE_LIGHTNING] = _("Force Lightning"),
 };
 
 static const u8 sText_Breakneck_Blitz[] = _("Breakneck Blitz");
