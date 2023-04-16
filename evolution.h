@@ -589,7 +589,6 @@ const struct Evolution gEvolutionTable[NUM_SPECIES][EVOS_PER_MON] =
     [SPECIES_SLIGGOO_HISUIAN]       = {{EVO_LEVEL_RAIN, 50, SPECIES_GOODRA_HISUIAN}},
 
     //Scarlet & Violet
-    //[SPECIES_PRIMEAPE]              = {{EVO_MOVE_COUNT, 10, SPECIES_ANNIHILAPE}},
 
     //Custom ones    
     [SPECIES_MELTAN]                = {{EVO_ITEM, ITEM_METAL_COAT, SPECIES_MELMETAL}},
