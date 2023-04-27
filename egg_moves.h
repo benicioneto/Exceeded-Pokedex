@@ -365,6 +365,7 @@ const u16 gEggMoves[] = {
               MOVE_ROCK_SLIDE),
 
     egg_moves(GROWLITHE,
+              MOVE_RAGING_FURY,
               MOVE_COVET,
               MOVE_DOUBLE_EDGE,
               MOVE_DOUBLE_KICK,
@@ -1493,6 +1494,7 @@ const u16 gEggMoves[] = {
               MOVE_LICK),
 
     egg_moves(QWILFISH,
+              MOVE_BARB_BARRAGE,
               MOVE_ACID_SPRAY,
               MOVE_AQUA_JET,
               MOVE_ASTONISH,
@@ -3539,6 +3541,7 @@ const u16 gEggMoves[] = {
               MOVE_NATURAL_GIFT),
 
     egg_moves(BASCULIN,
+              MOVE_LAST_RESPECTS,
               MOVE_BUBBLE_BEAM,
               MOVE_ENDEAVOR,
               MOVE_AGILITY,
@@ -4953,6 +4956,20 @@ const u16 gEggMoves[] = {
               MOVE_WHIRLWIND,
               MOVE_ZEN_HEADBUTT,
               MOVE_SUBSTITUTE),
+
+    egg_moves(QWILFISH_HISUIAN,
+              MOVE_BARB_BARRAGE,
+              MOVE_ACID_SPRAY,
+              MOVE_AQUA_JET,
+              MOVE_ASTONISH,
+              MOVE_BUBBLE_BEAM,
+              MOVE_FLAIL,
+              MOVE_HAZE,
+              MOVE_SUPERSONIC,
+              MOVE_WATER_PULSE,
+              MOVE_BRINE,
+              MOVE_SIGNAL_BEAM,
+              MOVE_POISON_JAB),
 
     EGG_MOVES_TERMINATOR
 };

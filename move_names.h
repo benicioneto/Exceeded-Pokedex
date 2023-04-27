@@ -913,6 +913,7 @@ const u8 gMoveNames[MOVES_COUNT][MOVE_NAME_LENGTH + 1] =
     [MOVE_PROTON_SCREAM] = _("Proton Scream"),
     [MOVE_FORCE_CHOKE] = _("Force Choke"),
     [MOVE_FORCE_LIGHTNING] = _("Force Lightning"),
+    [MOVE_TRASH] = _("Trash"),
 };
 
 static const u8 sText_Breakneck_Blitz[] = _("Breakneck Blitz");

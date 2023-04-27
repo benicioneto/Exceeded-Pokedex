@@ -1383,8 +1383,12 @@
 #define SPECIES_AVALUGG_HISUIAN              FORMS_START + 345
 #define SPECIES_DECIDUEYE_HISUIAN            FORMS_START + 346
 #define SPECIES_COCOON_EGG                   FORMS_START + 347
+#define SPECIES_LEDIAN_3                     FORMS_START + 348
+#define SPECIES_LEDIAN_6                     FORMS_START + 349
+#define SPECIES_SLUGMA_GRANITIC              FORMS_START + 350
+#define SPECIES_MAGCARGO_GRANITIC            FORMS_START + 351
 
-#define SPECIES_EGG                         (SPECIES_COCOON_EGG + 1)
+#define SPECIES_EGG                         (SPECIES_MAGCARGO_GRANITIC + 1)
 #define NUM_SPECIES SPECIES_EGG
 
 // National Dex Index Defines

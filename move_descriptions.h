@@ -3566,6 +3566,10 @@ static const u8 sFORCE_LIGHTNINGDescription[] = _(
     "Emits a special lightning.\n"
     "May lower Attack.");
 
+static const u8 sTRASHDescription[] = _(
+    "Sets hazards that hurt a\n"
+    "foe switching in.");
+
 // MOVE_NONE is ignored in this table. Make sure to always subtract 1 before getting the right pointer.
 const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
 {
@@ -4482,4 +4486,5 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_PROTON_SCREAM - 1] = sPROTON_SCREAMDescription,
     [MOVE_FORCE_CHOKE - 1] = sFORCE_CHOKEDescription,
     [MOVE_FORCE_LIGHTNING - 1] = sFORCE_LIGHTNINGDescription,
+    [MOVE_TRASH - 1] = sTRASHDescription,
 };
