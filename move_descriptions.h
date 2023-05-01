@@ -3299,7 +3299,7 @@ static const u8 sDRACO_IMPACTDescription[] = _(
     "A 2-turn move that raises\n"
     "Attack before attacking.");
 
-static const u8 sBLAZING_SOULDescription[] = _(
+static const u8 sWARM_UPDescription[] = _(
     "Recovers half HP and turns\n"
     "into Fire type.");
 
@@ -3569,6 +3569,10 @@ static const u8 sFORCE_LIGHTNINGDescription[] = _(
 static const u8 sTRASHDescription[] = _(
     "Sets hazards that hurt a\n"
     "foe switching in.");
+
+static const u8 sHEAT_SIPHONDescription[] = _(
+    "Super effective on Water-\n"
+    "types. Steal heat.");
 
 // MOVE_NONE is ignored in this table. Make sure to always subtract 1 before getting the right pointer.
 const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
@@ -4418,7 +4422,7 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_SHIELD_BASH - 1] = sSHIELD_BASHDescription,
     [MOVE_DRAGON_BONE - 1] = sDRAGON_BONEDescription,
     [MOVE_DRACO_IMPACT - 1] = sDRACO_IMPACTDescription,
-    [MOVE_BLAZING_SOUL - 1] = sBLAZING_SOULDescription,
+    [MOVE_WARM_UP - 1] = sWARM_UPDescription,
     [MOVE_CHRISTMAS_GIFT - 1] = sCHRISTMAS_GIFTDescription,
     [MOVE_ARTIC_GLIDE - 1] = sARTIC_GLIDEDescription,
     [MOVE_COIN_SHOWER - 1] = sCOIN_SHOWERDescription,
@@ -4487,4 +4491,5 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_FORCE_CHOKE - 1] = sFORCE_CHOKEDescription,
     [MOVE_FORCE_LIGHTNING - 1] = sFORCE_LIGHTNINGDescription,
     [MOVE_TRASH - 1] = sTRASHDescription,
+    [MOVE_HEAT_SIPHON - 1] = sHEAT_SIPHONDescription,
 };

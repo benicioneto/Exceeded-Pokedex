@@ -845,7 +845,7 @@ const u8 gMoveNames[MOVES_COUNT][MOVE_NAME_LENGTH + 1] =
     [MOVE_SHIELD_BASH] = _("Shield Bash"),
     [MOVE_DRAGON_BONE] = _("Dragon Bone"),
     [MOVE_DRACO_IMPACT] = _("Draco Impact"),
-    [MOVE_BLAZING_SOUL] = _("Blazing Soul"),
+    [MOVE_WARM_UP] = _("Warm Up"),
     [MOVE_CHRISTMAS_GIFT] = _("Christmas Gift"),
     [MOVE_ARTIC_GLIDE] = _("Artic Glide"),
     [MOVE_COIN_SHOWER] = _("Coin Shower"),
@@ -914,6 +914,7 @@ const u8 gMoveNames[MOVES_COUNT][MOVE_NAME_LENGTH + 1] =
     [MOVE_FORCE_CHOKE] = _("Force Choke"),
     [MOVE_FORCE_LIGHTNING] = _("Force Lightning"),
     [MOVE_TRASH] = _("Trash"),
+    [MOVE_HEAT_SIPHON] = _("Heat Siphon"),
 };
 
 static const u8 sText_Breakneck_Blitz[] = _("Breakneck Blitz");

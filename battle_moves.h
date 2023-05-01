@@ -14761,9 +14761,9 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
         .zMoveEffect = Z_EFFECT_NONE,
     },
 
-    [MOVE_BLAZING_SOUL] =
+    [MOVE_WARM_UP] =
     {
-        .effect = EFFECT_BLAZING_SOUL,
+        .effect = EFFECT_WARM_UP,
         .power = 0,
         .type = TYPE_FIRE,
         .accuracy = 0,
@@ -15861,6 +15861,22 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
         .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_BALLISTIC,
         .split = SPLIT_SPECIAL,
         .zMovePower = 160,
+        .zMoveEffect = Z_EFFECT_NONE,
+    },
+
+    [MOVE_HEAT_SIPHON] =
+    {
+        .power = 75,
+        .pp = 10,
+        .zMovePower = 140,
+        .effect = EFFECT_HEAT_SIPHON,
+        .type = TYPE_ICE,
+        .accuracy = 100,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
+        .split = SPLIT_SPECIAL,
         .zMoveEffect = Z_EFFECT_NONE,
     },
 
