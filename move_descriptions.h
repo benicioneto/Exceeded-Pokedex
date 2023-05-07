@@ -491,7 +491,7 @@ static const u8 sLickDescription[] = _(
 
 static const u8 sSmogDescription[] = _(
     "An exhaust-gas attack\n"
-    "that may also poison.");
+    "that may badly poison.");
 
 static const u8 sSludgeDescription[] = _(
     "Sludge is hurled to inflict\n"
@@ -695,7 +695,7 @@ static const u8 sSnoreDescription[] = _(
 
 static const u8 sCurseDescription[] = _(
     "A move that functions\n"
-    "differently for GHOSTS.");
+    "differently for Ghosts.");
 
 static const u8 sFlailDescription[] = _(
     "Inflicts more damage when\n"
@@ -742,7 +742,7 @@ static const u8 sFeintAttackDescription[] = _(
     "strikes without fail.");
 
 static const u8 sSweetKissDescription[] = _(
-    "Attracts opposite gender,\n"
+    "Attracts opposite gender\n"
     "and doubles the damage.");
 
 static const u8 sBellyDrumDescription[] = _(
@@ -2185,8 +2185,8 @@ static const u8 sBELCHDescription[] = _(
     "eaten. Halves if none.");
 
 static const u8 sSPICY_BREATHDescription[] = _(
-    "Doubles damage and ups burn\n"
-    "chance for each berry.");
+    "Ups damage and burn chance\n"
+    "for each berry eaten.");
 
 static const u8 sROTOTILLERDescription[] = _(
     "Ups the Attack and Sp. Atk\n"
@@ -3268,8 +3268,8 @@ static const u8 sVENOMOUS_TERRAINDescription[] = _(
     "for 5 turns. Poisons.");
 
 static const u8 sGEOGEYSERDescription[] = _(
-    "Heats the underground water\n"
-    "to make a geyser. May burn.");
+    "Fire-type {PKMN} gain\n"
+    "STAB. May burn.");
 
 static const u8 sROSE_WHIPDescription[] = _(
     "May paralyze, poison, sleep.\n"
@@ -3341,7 +3341,7 @@ static const u8 sBARRAGE_BLOWDescription[] = _(
 
 static const u8 sQUEEN_ASCENDANTDescription[] = _(
     "Strong attack that absorbs\n"
-    "quarter the damage dealt.");
+    "over half damage dealt.");
 
 static const u8 sLIVID_OUTRAGEDescription[] = _(
     "2 to 3 turns of rage.\n"
@@ -3571,8 +3571,12 @@ static const u8 sTRASHDescription[] = _(
     "foe switching in.");
 
 static const u8 sHEAT_SIPHONDescription[] = _(
-    "Super effective on Water-\n"
+    "Super effective on Fire-\n"
     "types. Steal heat.");
+
+static const u8 sDESPAIR_KISSDescription[] = _(
+    "An attack that absorbs over\n"
+    "half the damage inflicted.");
 
 // MOVE_NONE is ignored in this table. Make sure to always subtract 1 before getting the right pointer.
 const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
@@ -4492,4 +4496,5 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_FORCE_LIGHTNING - 1] = sFORCE_LIGHTNINGDescription,
     [MOVE_TRASH - 1] = sTRASHDescription,
     [MOVE_HEAT_SIPHON - 1] = sHEAT_SIPHONDescription,
+    [MOVE_DESPAIR_KISS - 1] = sDESPAIR_KISSDescription,
 };

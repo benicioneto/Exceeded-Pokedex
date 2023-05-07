@@ -915,6 +915,7 @@ const u8 gMoveNames[MOVES_COUNT][MOVE_NAME_LENGTH + 1] =
     [MOVE_FORCE_LIGHTNING] = _("Force Lightning"),
     [MOVE_TRASH] = _("Trash"),
     [MOVE_HEAT_SIPHON] = _("Heat Siphon"),
+    [MOVE_DESPAIR_KISS] = _("Despair Kiss"),
 };
 
 static const u8 sText_Breakneck_Blitz[] = _("Breakneck Blitz");

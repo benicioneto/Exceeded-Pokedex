@@ -590,6 +590,9 @@ static const u8 sToxicDebrisDescription[] = _("Throws poison spikes if hit.");
 static const u8 sArmorTailDescription[] = _("Protects from priority.");
 static const u8 sMyceliumMightDescription[] = _("Status moves never fail.");
 static const u8 sHollowShellDescription[] = _("Faints the attacker when KOed.");
+static const u8 sPetrifyingGazeDescription[] = _("Paralyze foes on entry.");
+static const u8 sPatriarchDescription[] = _("Protects the family.");
+static const u8 sMatriarchDescription[] = _("Protects the offspring.");
 
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
 {
@@ -1114,6 +1117,9 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_ARMOR_TAIL] = _("Armor Tail"),
     [ABILITY_MYCELIUM_MIGHT] = _("Mycelium Might"),
     [ABILITY_HOLLOW_SHELL] = _("Hollow Shell"),
+    [ABILITY_PETRIFYING_GAZE] = _("Petrifying Gaze"),
+    [ABILITY_PATRIARCH] = _("Patriarch"),
+    [ABILITY_MATRIARCH] = _("Matriarch"),
 };
 
 const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
@@ -1639,6 +1645,9 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_ARMOR_TAIL] = sArmorTailDescription,
     [ABILITY_MYCELIUM_MIGHT] = sMyceliumMightDescription,
     [ABILITY_HOLLOW_SHELL] = sHollowShellDescription,
+    [ABILITY_PETRIFYING_GAZE] = sPetrifyingGazeDescription,
+    [ABILITY_PATRIARCH] = sPatriarchDescription,
+    [ABILITY_MATRIARCH] = sMatriarchDescription,
 };
 
 static const u8 sNoneDescriptionExtended[] = _("");
@@ -1665,7 +1674,7 @@ static const u8 sOwnTempoDescriptionExtended[] = _("Prevents the Pokémon from b
 static const u8 sSuctionCupsDescriptionExtended[] = _("If the Pokémon uses a move th-\nat makes contact, traps the fo-\ne for two to three turns. Prev-\nents other Pokémon from forcin-\ng the Pokémon to switch out or\nflee. If the Pokémon is in fi-\nrst place in the player's part-\ny (even if fainted), bites wil-\nl occur more often while fishi-\nng.");
 static const u8 sIntimidateDescriptionExtended[] = _("When the Pokémon enters the b-\nattle, it lowers the Attack st-\nat of all adjacent opponents b-\ny one stage. If the Pokémon is\nin the first place in the par-\nty (even if fainted), there is\na 50% chance it will prevent \na random wild encounter that w-\nould have occurred if the wild\nPokémon would be at least 5 l-\nevels lower.");
 static const u8 sShadowTagDescriptionExtended[] = _("Prevents all adjacent opponen-\nts from fleeing or switching o-\nut while the Pokémon is on the\nfield. Ghost-type Pokémon are\nimmune to Shadow Tag.");
-static const u8 sRoughSkinDescriptionExtended[] = _("When the Pokémon attacks or i-\ns attacked by a move that make-\ns contact, the opposing Pokémo-\nn takes damage equal to 1/16 o-\nf its maximum HP plus 33% of d-\namage dealt. Negates the heali-\nng of HP-draining moves.");
+static const u8 sRoughSkinDescriptionExtended[] = _("When the Pokémon is attacked \nby a move that makes contact, \nthe opposing Pokémon takes dam-\nage equal to 1/16 of its maxim-\num HP plus 33% of damage dealt-\n. Negates the healing of HP-dr-\naining moves.");
 static const u8 sWonderGuardDescriptionExtended[] = _("The Pokémon can only be damag-\ne by “supereffective” damaging\nmoves.");
 static const u8 sLevitateDescriptionExtended[] = _("The Pokémon is immune to dama-\nging Ground-type moves and the-\nir Flying-type moves gain same\n-type attack bonus regardless \nthe Pokémon's typing. These ef-\nfects are negated if the Pokém-\non was grounded.");
 static const u8 sEffectSporeDescriptionExtended[] = _("When the Pokémon attacks or i-\ns attacked by a move that make-\ns contact, there is a 30% chan-\nce that the opposing Pokémon w-\nill become either poisoned, pa-\nralyzed or sleep. ");
@@ -1705,7 +1714,7 @@ static const u8 sStickyHoldDescriptionExtended[] = _("Prevents the held item of 
 static const u8 sShedSkinDescriptionExtended[] = _("If the Pokémon  would take da-\nmage more than 50% of its maxi-\nmum HP at once, it stops futhe-\nr damage while curing any stat-\nus condition.");
 static const u8 sGutsDescriptionExtended[] = _("While the Pokémon has a statu-\ns condition, its Attack is inc-\nreased by 50%. Additionally, t-\nhe Pokémon  does not lose Atta-\nck due to burn.");
 static const u8 sMarvelScaleDescriptionExtended[] = _("While the Pokémon has a statu-\ns condition, its Defense is in-\ncreased by 50%.");
-static const u8 sLiquidOozeDescriptionExtended[] = _("Causes HP-draining moves used\non the Pokémon to damage thei-\nr user instead of healing them\n.");
+static const u8 sLiquidOozeDescriptionExtended[] = _("Damages attackers that use HP\n-draining moves against the Po-\nkémon by 1/4 of their maximum \nHP plus the value that would h-\neal from that move.");
 static const u8 sOvergrowDescriptionExtended[] = _("When the Pokémon uses a Grass\n-type move, the move's power w-\nill be increased by 3% for eve-\nry 10% of missing HP, up to a \n30% increase in power at 95% m-\nissing HP.");
 static const u8 sBlazeDescriptionExtended[] = _("When the Pokémon uses a Fire-\ntype move, the move's power wi-\nll be increased by 3% for ever-\ny 10% of missing HP, up to a 3\n0% increase in power at 95% mi-\nssing HP.");
 static const u8 sTorrentDescriptionExtended[] = _("When the Pokémon uses a Water\n-type move, the move's power w-\nill be increased by 3% for eve-\nry 10% of missing HP, up to a \n30% increase in power at 95% m-\nissing HP.");
@@ -2127,11 +2136,14 @@ static const u8 sLonelyWolfDescriptionExtended[] = _("If there are no other cani
 static const u8 sEarthEaterDescriptionExtended[] = _("When the Pokémon is hit by a \nGround-type move, its HP is re-\nstored by 25% of its maximum H-\nP, and the move will have no e-\nffect on that Pokémon.");
 static const u8 sLunarLuminanceDescriptionExtended[] = _("The power of Fairy-type moves\nused by the Pokémon and its a-\nllies is increased by 50%. Thi-\ns effect stacks if multiple Po-\nkémon with this ability are on\nthe field.");
 static const u8 sStellarLuminanceDescriptionExtended[] = _("The power of Fire-type moves \nused by the Pokémon and its al-\nlies is increased by 50%. This\neffect stacks if multiple Pok-\némon with this ability are on \nthe field.");
-static const u8 sCosmicEnergyDescriptionExtended[] = _("Whenever the Pokémon is expos-\ned by cosmic energy from moves\n, increases its cosmic energy \nby 1 while increasing its Atta-\nck and Special Attack stats by\none stage, stacking up to 3. \nIf the Pokémon uses damaging m-\nove, release all cosmic energy\nstored while removing any Att-\nack and Special Attack stats s-\ntage gained.");
+static const u8 sCosmicEnergyDescriptionExtended[] = _("Whenever the Pokémon is expos-\ned by cosmic energy from moves\n, increases its cosmic energy \nby 1 while increasing its Atta-\nck, Special Attack and Speed s-\ntats by one stage, stacking up\nto 3. If the Pokémon uses dam-\naging move, release all cosmic\nenergy stored while removing \nany stats stage gained by this\nability.");
 static const u8 sHeroInTrainingDescriptionExtended[] = _("The Pokémon gains effects dep-\nending on the number of badges\nthe Trainer has. 1+: Adds Fig-\nhting-type. 2+: Ups Fighting-t-\nype moves in a pinch. 3+: Doub-\nles the base HP. 4+: Raises At-\ntack stat by one stage if a al-\nly Pokémon has fainted in the \nprevious turn. 6+: Fighting-ty-\npe has no weakeness. 8+: Doubl-\nes the base Attack, Defense an-\nd Special Attack.");
 static const u8 sGraniticBodyDescriptionExtended[] = _("Doubles the Pokémon's Defense\nstat. The Pokémon changes fro-\nm Granitic form to Laval form \nduring harshy sunlight.");
 static const u8 sPyroclasticDescriptionExtended[] = _("Doubles the power of Fire- an-\nd Poison-type moves used by th-\ne Pokémon and prevents the Pok-\némon from being burned or pois-\noned.");
 static const u8 sHollowShellDescriptionExtended[] = _("When the Pokémon faints by a \ndamaging move from an opposing\nPokémon, the attacker will fa-\nint too.");
+static const u8 sPetrifyingGazeDescriptionExtended[] = _("The user intimidates the foe \nwith the pattern on its belly \nto cause paralysis when the Po-\nkémon enters the battlefield. \nIf the Pokémon is in the first\nplace in the party (even if f-\nainted), there is a 50% chance\nit will prevent a random wild\nencounter that would have occ-\nurred if the wild Pokémon woul-\nd be at least 5 levels lower.");
+static const u8 sPatriarchDescriptionExtended[] = _("The first time that the Pokém-\non enters the battlefield, it \nbecomes the patriach. As the p-\natriach, for each Pokémon with\nopposite gender in the party,\nincrease the Pokémon's Attack\n, Special Attack and Speed sta-\nts by 3%. Forces single-target\nmoves against matriarch to ta-\nrget the Pokémon with this abi-\nlity. There can be only one pa-\ntriach in the party.");
+static const u8 sMatriarchDescriptionExtended[] = _("The first time that the Pokém-\non enters the battlefield, it \nbecomes the matriach. As the m-\natriach, for each Pokémon that\nis able to evolve in the part-\ny, increase the Pokémon's stat-\ns by 5%. Forces single-target \nmoves against Pokémon that is \nable to evolve to target the P-\nokémon with this ability. Ther-\ne can be only one matriach in \nthe party.");
 
 const u8 *const gAbilityDescriptionExtendedPointers[ABILITIES_COUNT] =
 {
@@ -2627,4 +2639,7 @@ const u8 *const gAbilityDescriptionExtendedPointers[ABILITIES_COUNT] =
     [ABILITY_GRANITIC_BODY] = sGraniticBodyDescriptionExtended,
     [ABILITY_PYROCLASTIC] = sPyroclasticDescriptionExtended,
     [ABILITY_HOLLOW_SHELL] = sHollowShellDescriptionExtended,
+    [ABILITY_PETRIFYING_GAZE] = sPetrifyingGazeDescriptionExtended,
+    [ABILITY_PATRIARCH] = sPatriarchDescriptionExtended,
+    [ABILITY_MATRIARCH] = sMatriarchDescriptionExtended,
 };

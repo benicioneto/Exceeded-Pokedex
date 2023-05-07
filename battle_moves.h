@@ -748,7 +748,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
 
     [MOVE_TWINEEDLE] =
     {
-        .effect = EFFECT_TWINEEDLE,
+        .effect = EFFECT_DOUBLE_HIT_WITH_POISON_CHANCE,
         .power = 50,
         .type = TYPE_BUG,
         .accuracy = 100,
@@ -876,7 +876,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
         .effect = EFFECT_CONFUSE,
         .power = 0,
         .type = TYPE_NORMAL,
-        .accuracy = 55,
+        .accuracy = 100,
         .pp = 20,
         .secondaryEffectChance = 0,
         .target = MOVE_TARGET_SELECTED,
@@ -1262,7 +1262,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
 
     [MOVE_SEISMIC_TOSS] =
     {
-        .effect = EFFECT_LEVEL_DAMAGE,
+        .effect = EFFECT_SCALE_WITH_BASE_ATK,
         .power = 1,
         .type = TYPE_FIGHTING,
         .accuracy = 90,
@@ -1498,7 +1498,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
 
     [MOVE_DRAGON_RAGE] =
     {
-        .effect = EFFECT_DRAGON_RAGE,
+        .effect = EFFECT_SCALE_WITH_BASE_ATK_SPATK,
         .power = 1,
         .type = TYPE_DRAGON,
         .accuracy = 90,
@@ -1833,7 +1833,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
 
     [MOVE_NIGHT_SHADE] =
     {
-        .effect = EFFECT_LEVEL_DAMAGE,
+        .effect = EFFECT_SCALE_WITH_BASE_SPATK,
         .power = 1,
         .type = TYPE_GHOST,
         .accuracy = 90,
@@ -2203,12 +2203,12 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
         #else
             .power = 20,
         #endif
-        .effect = EFFECT_POISON_FANG,
+        .effect = EFFECT_BADLY_POISON_HIT,
         .type = TYPE_POISON,
         .accuracy = 0,
         .pp = 15,
         .secondaryEffectChance = 40,
-        .target = MOVE_TARGET_FOES_AND_ALLY,
+        .target = MOVE_TARGET_BOTH,
         .priority = 0,
         .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SHEER_FORCE_BOOST,
         .split = SPLIT_SPECIAL,
@@ -2695,7 +2695,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
         #else
             .accuracy = 80,
         #endif
-        .effect = EFFECT_PSYWAVE,
+        .effect = EFFECT_SCALE_WITH_BASE_SPATK,
         .power = 1,
         .type = TYPE_PSYCHIC,
         .pp = 10,
@@ -2922,7 +2922,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
 
     [MOVE_SUPER_FANG] =
     {
-        .effect = EFFECT_SUPER_FANG,
+        .effect = EFFECT_HALF_FOE_HP,
         .power = 1,
         .type = TYPE_NORMAL,
         .accuracy = 90,
@@ -3134,7 +3134,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
             .power = 40,
             .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SHEER_FORCE_BOOST | FLAG_SOUND,
         #endif
-        .effect = EFFECT_SNORE,
+        .effect = EFFECT_CAN_BE_USED_ASLEEP,
         .type = TYPE_NORMAL,
         .accuracy = 100,
         .pp = 15,
@@ -5532,7 +5532,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
         #else
             .secondaryEffectChance = 30,
         #endif
-        .effect = EFFECT_POISON_FANG,
+        .effect = EFFECT_BADLY_POISON_HIT,
         .power = 75,
         .type = TYPE_POISON,
         .accuracy = 100,
@@ -6527,7 +6527,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
 
     [MOVE_HAMMER_ARM] =
     {
-        .effect = EFFECT_HAMMER_ARM,
+        .effect = EFFECT_LOWER_USER_SPEED,
         .power = 100,
         .type = TYPE_FIGHTING,
         .accuracy = 90,
@@ -7977,7 +7977,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
 
     [MOVE_CROSS_POISON] =
     {
-        .effect = EFFECT_TWINEEDLE,
+        .effect = EFFECT_DOUBLE_HIT_WITH_POISON_CHANCE,
         .power = 35,
         .type = TYPE_POISON,
         .accuracy = 100,
@@ -11189,7 +11189,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
 
     [MOVE_ICE_HAMMER] =
     {
-        .effect = EFFECT_HAMMER_ARM,
+        .effect = EFFECT_LOWER_USER_SPEED,
         .power = 100,
         .type = TYPE_ICE,
         .accuracy = 90,
@@ -11883,7 +11883,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
 
     [MOVE_NATURES_MADNESS] =
     {
-        .effect = EFFECT_SUPER_FANG,
+        .effect = EFFECT_HALF_FOE_HP,
         .power = 1,
         .type = TYPE_FAIRY,
         .accuracy = 90,
@@ -14112,7 +14112,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
 
     [MOVE_RUINATION] =
     {
-        .effect = EFFECT_SUPER_FANG,
+        .effect = EFFECT_HALF_FOE_HP,
         .power = 1,
         .type = TYPE_DARK,
         .accuracy = 90,
@@ -14828,7 +14828,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
 
     [MOVE_MAMMOTH_MASH] =
     {
-        .effect = EFFECT_HAMMER_ARM,
+        .effect = EFFECT_LOWER_USER_SPEED,
         .power = 120,
         .type = TYPE_GROUND,
         .accuracy = 90,
@@ -14861,7 +14861,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
     [MOVE_NAP_SLAM] =
     {
         .power = 50,
-        .effect = EFFECT_SNORE,
+        .effect = EFFECT_CAN_BE_USED_ASLEEP,
         .type = TYPE_NORMAL,
         .accuracy = 100,
         .pp = 15,
@@ -14893,7 +14893,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
     [MOVE_SEISMIC_SLAM] =
     {
         .effect = EFFECT_SKY_DROP,
-        .power = 90,
+        .power = 120,
         .type = TYPE_FLYING,
         .accuracy = 100,
         .pp = 10,
@@ -14934,7 +14934,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
         .priority = 0,
         .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
         .split = SPLIT_PHYSICAL,
-        .argument = 25, // restores 25% HP instead of 50% HP
+        .argument = 75, // restores 75% HP instead of 50% HP
         .zMovePower = 180,
         .zMoveEffect = Z_EFFECT_NONE,
     },
@@ -15347,7 +15347,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
     [MOVE_MOCKING_SHOUT] =
     {
         .power = 0,
-        .effect = EFFECT_TICKLE,
+        .effect = EFFECT_MOCKING_SHOUT,
         .type = TYPE_NORMAL,
         .accuracy = 100,
         .pp = 15,
@@ -15379,7 +15379,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
     [MOVE_SPICY_BREATH] =
     {
         .effect = EFFECT_SPICY_BREATH,
-        .power = 40,
+        .power = 60,
         .type = TYPE_FIRE,
         .accuracy = 100,
         .pp = 20,
@@ -15880,6 +15880,23 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
         .zMoveEffect = Z_EFFECT_NONE,
     },
 
+    [MOVE_DESPAIR_KISS] =
+    {
+        .effect = EFFECT_ABSORB,
+        .power = 50,
+        .type = TYPE_DARK,
+        .accuracy = 100,
+        .pp = 10,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
+        .split = SPLIT_SPECIAL,
+        .argument = 75, // restores 75% HP instead of 50% HP
+        .zMovePower = 100,
+        .zMoveEffect = Z_EFFECT_NONE,
+    },
+
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =
     {
@@ -16336,7 +16353,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_Z] =
     },
     [MOVE_GUARDIAN_OF_ALOLA] =
     {
-        .effect = EFFECT_SUPER_FANG,
+        .effect = EFFECT_HALF_FOE_HP,
         .power = 1,
         .type = TYPE_FAIRY,
         .accuracy = 0,
