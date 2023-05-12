@@ -1866,7 +1866,7 @@ static const u8 sVENOSHOCKDescription[] = _(
 
 static const u8 sAUTOTOMIZEDescription[] = _(
     "Sheds additional weight to\n"
-    "sharply boost Speed.");
+    "boost base Speed to 120.");
 
 static const u8 sRAGE_POWDERDescription[] = _(
     "Scatters powder to make\n"
@@ -1897,7 +1897,7 @@ static const u8 sSLUDGE_WAVEDescription[] = _(
     "of sludge. May also poison.");
 
 static const u8 sQUIVER_DANCEDescription[] = _(
-    "Dances to raise Sp. Atk\n"
+    "Dances to raise Sp. Atk,\n"
     "Sp. Def and Speed.");
 
 static const u8 sHEAVY_SLAMDescription[] = _(
@@ -3564,7 +3564,7 @@ static const u8 sFORCE_CHOKEDescription[] = _(
 
 static const u8 sFORCE_LIGHTNINGDescription[] = _(
     "Emits a special lightning.\n"
-    "May lower Attack.");
+    "Lowers foe's Attack.");
 
 static const u8 sTRASHDescription[] = _(
     "Sets hazards that hurt a\n"
@@ -4497,4 +4497,5 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_TRASH - 1] = sTRASHDescription,
     [MOVE_HEAT_SIPHON - 1] = sHEAT_SIPHONDescription,
     [MOVE_DESPAIR_KISS - 1] = sDESPAIR_KISSDescription,
+    [MOVE_AURORA_DANCE - 1] = sQUIVER_DANCEDescription,
 };

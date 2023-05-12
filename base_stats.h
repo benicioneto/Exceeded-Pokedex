@@ -7720,10 +7720,10 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_HUMAN_LIKE,
         .eggGroup2 = EGG_GROUP_HUMAN_LIKE,
-        .abilities = {ABILITY_STALL, ABILITY_NONE, ABILITY_PRANKSTER},
+        .abilities = {ABILITY_FRIGHTEN, ABILITY_STALL, ABILITY_PRANKSTER},
         .bodyColor = BODY_COLOR_PURPLE,
         .noFlip = FALSE,
-        .innates = {ABILITY_KEEN_EYE, ABILITY_ANALYTIC},
+        .innates = {ABILITY_KEEN_EYE, ABILITY_GEM_HOARDER},
     },
 
     [SPECIES_MAWILE] =
@@ -7747,9 +7747,10 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_FAST,
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_FAIRY,
-        .abilities = {ABILITY_HUGE_POWER, ABILITY_NONE},
+        .abilities = {ABILITY_INTIMIDATE, ABILITY_NONE, ABILITY_SHEER_FORCE},
         .bodyColor = BODY_COLOR_BLACK,
         .noFlip = FALSE,
+        .innates = {ABILITY_HYPER_CUTTER, ABILITY_JAW_TRAP},
     },
 
     [SPECIES_ARON] =
@@ -7953,7 +7954,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_STATIC, ABILITY_NONE, ABILITY_LIGHTNING_ROD},
         .bodyColor = BODY_COLOR_YELLOW,
         .noFlip = FALSE,
-        .innates = {ABILITY_PLUS, ABILITY_NONE},
+        .innates = {ABILITY_PLUS, ABILITY_POLARIZATION},
     },
 
     [SPECIES_MINUN] =
@@ -7979,7 +7980,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_STATIC, ABILITY_NONE, ABILITY_VOLT_ABSORB},
         .bodyColor = BODY_COLOR_YELLOW,
         .noFlip = FALSE,
-        .innates = {ABILITY_MINUS, ABILITY_NONE},
+        .innates = {ABILITY_MINUS, ABILITY_POLARIZATION},
     },
 
     [SPECIES_VOLBEAT] =
@@ -9163,10 +9164,10 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_FAST,
         .eggGroup1 = EGG_GROUP_AMORPHOUS,
         .eggGroup2 = EGG_GROUP_AMORPHOUS,
-        .abilities = {ABILITY_MAGIC_GUARD, ABILITY_NONE},
+        .abilities = {ABILITY_CLEANSING_CHIME, ABILITY_NONE},
         .bodyColor = BODY_COLOR_BLUE,
         .noFlip = FALSE,
-        .innates = {ABILITY_LEVITATE, ABILITY_NONE},
+        .innates = {ABILITY_LEVITATE, ABILITY_NOCTURNAL},
     },
 
     [SPECIES_ABSOL] =
@@ -23582,10 +23583,10 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroup1 = EGG_GROUP_HUMAN_LIKE,
         .eggGroup2 = EGG_GROUP_HUMAN_LIKE,
-        .abilities = {ABILITY_PRANKSTER, ABILITY_PRANKSTER},
+        .abilities = {ABILITY_PURE_POWER, ABILITY_PURE_POWER},
         .bodyColor = BODY_COLOR_PURPLE,
         .noFlip = FALSE,
-        .innates = {ABILITY_KEEN_EYE, ABILITY_ANALYTIC, ABILITY_MAGIC_BOUNCE},
+        .innates = {ABILITY_KEEN_EYE, ABILITY_GEM_HOARDER, ABILITY_MAGIC_BOUNCE},
     },
 
     [SPECIES_MAWILE_MEGA] =
@@ -23611,6 +23612,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_HUGE_POWER, ABILITY_HUGE_POWER},
         .bodyColor = BODY_COLOR_BLACK,
         .noFlip = FALSE,
+        .innates = {ABILITY_HYPER_CUTTER, ABILITY_JAW_TRAP},
     },
 
     [SPECIES_AGGRON_MEGA] =
@@ -25172,7 +25174,7 @@ const struct BaseStats gBaseStats[] =
         .bodyColor = BODY_COLOR_GREEN,
         .noFlip = FALSE,
         .flags = FLAG_GALARIAN_FORM,
-        .innates = {ABILITY_AQUATIC, ABILITY_DRY_SKIN},
+        .innates = {ABILITY_AQUATIC, ABILITY_DRY_SKIN, ABILITY_JAW_TRAP},
     },
 
     [SPECIES_PIKACHU_COSPLAY] =
