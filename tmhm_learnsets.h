@@ -1319,6 +1319,7 @@ static const u8 sVileplumeTMHMLearnset[] =
 };
 static const u8 sParasTMHMLearnset[] =
 {
+    TMHM(TM30_SHADOW_BALL),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM40_AERIAL_ACE),
@@ -1349,6 +1350,7 @@ static const u8 sParasTMHMLearnset[] =
 };
 static const u8 sParasectTMHMLearnset[] =
 {
+    TMHM(TM30_SHADOW_BALL),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM40_AERIAL_ACE),
@@ -31624,6 +31626,8 @@ const u8 *const gTMHMLearnsets[] =
     [SPECIES_VILEPLUME] = sVileplumeTMHMLearnset,
     [SPECIES_PARAS] = sParasTMHMLearnset,
     [SPECIES_PARASECT] = sParasectTMHMLearnset,
+    [SPECIES_PARAS_ZOMBIFIED] = sParasTMHMLearnset,
+    [SPECIES_PARASECT_ZOMBIFIED] = sParasectTMHMLearnset,
     [SPECIES_VENONAT] = sVenonatTMHMLearnset,
     [SPECIES_VENOMOTH] = sVenomothTMHMLearnset,
     [SPECIES_DIGLETT] = sDiglettTMHMLearnset,

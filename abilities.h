@@ -597,6 +597,10 @@ static const u8 sGemHoarderDescription[] = _("Using Gems boosts Defense.");
 static const u8 sCleansingChimeDescription[] = _("Clear status on entry.");
 static const u8 sJawTrapDescription[] = _("Bites on contact.");
 static const u8 sPolarizationDescription[] = _("Boosts stats if synced.");
+static const u8 sWrestlingHeelDescription[] = _("Adds Fighting-type to Pokémon.");
+static const u8 sProvokingFeudsDescription[] = _("Always hit after status move.");
+static const u8 sOutbreakDescription[] = _("Mutates when KOed.");
+static const u8 sPandemicDescription[] = _("Spreads cordyceps on contact.");
 
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
 {
@@ -1128,6 +1132,10 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_CLEANSING_CHIME] = _("Cleansing Chime"),
     [ABILITY_JAW_TRAP] = _("Jaw Trap"),
     [ABILITY_POLARIZATION] = _("Polarization"),
+    [ABILITY_WRESTLING_HEEL] = _("Wrestling Heel"),
+    [ABILITY_PROVOKING_FEUDS] = _("Provoking Feuds"),
+    [ABILITY_OUTBREAK] = _("Outbreak"),
+    [ABILITY_PANDEMIC] = _("Pandemic"),
 };
 
 const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
@@ -1660,6 +1668,10 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_CLEANSING_CHIME] = sCleansingChimeDescription,
     [ABILITY_JAW_TRAP] = sJawTrapDescription,
     [ABILITY_POLARIZATION] = sPolarizationDescription,
+    [ABILITY_WRESTLING_HEEL] = sWrestlingHeelDescription,
+    [ABILITY_PROVOKING_FEUDS] = sProvokingFeudsDescription,
+    [ABILITY_OUTBREAK] = sOutbreakDescription,
+    [ABILITY_PANDEMIC] = sPandemicDescription,
 };
 
 static const u8 sNoneDescriptionExtended[] = _("");
@@ -2160,6 +2172,10 @@ static const u8 sGemHoarderDescriptionExtended[] = _("Increases Defense stat by 
 static const u8 sCleansingChimeDescriptionExtended[] = _("When the Pokémon enters the b-\nattlefield, it cures the Pokém-\non and all Pokémon in the Trai-\nner's party of all status cond-\nition.");
 static const u8 sJawTrapDescriptionExtended[] = _("Whenever the Pokémon is hit b-\ny a move that makes contact, t-\nhe Pokémon uses its jaw to cou-\nnter with a bite that deals Da-\nrk-type damage with 25 power.");
 static const u8 sPolarizationDescriptionExtended[] = _("If the Pokémon has Minus or P-\nlus ability while its ally has\nthe other ability, increases \nall stats of the Pokémon by 30\n%.");
+static const u8 sWrestlingHeelDescriptionExtended[] = _("Adds the Fighting-type to the\nPokémon, in addition to the P-\nokémon's original type(s) and \nmoves that would be “supereffe-\nctive” against pure Fighting-t-\nype Pokémon will be only norma-\nlly effective instead.");
+static const u8 sProvokingFeudsDescriptionExtended[] = _("After using single-target sta-\ntus move, your damaging move a-\ngainst that target will bypass\nAccuracy check in the next tu-\nrn.");
+static const u8 sOutbreakDescriptionExtended[] = _("When the Pokémon faints, the \nfungus mutates and becomes mor-\ne contagious.");
+static const u8 sPandemicDescriptionExtended[] = _("When the Pokémon attacks or i-\ns attacked by a move that make-\ns contact, the opposing Pokémo-\nn becomes infected by Cordycep-\ns.");
 
 const u8 *const gAbilityDescriptionExtendedPointers[ABILITIES_COUNT] =
 {
@@ -2662,4 +2678,8 @@ const u8 *const gAbilityDescriptionExtendedPointers[ABILITIES_COUNT] =
     [ABILITY_CLEANSING_CHIME] = sCleansingChimeDescriptionExtended,
     [ABILITY_JAW_TRAP] = sJawTrapDescriptionExtended,
     [ABILITY_POLARIZATION] = sPolarizationDescriptionExtended,
+    [ABILITY_WRESTLING_HEEL] = sWrestlingHeelDescriptionExtended,
+    [ABILITY_PROVOKING_FEUDS] = sProvokingFeudsDescriptionExtended,
+    [ABILITY_OUTBREAK] = sOutbreakDescriptionExtended,
+    [ABILITY_PANDEMIC] = sPandemicDescriptionExtended,
 };

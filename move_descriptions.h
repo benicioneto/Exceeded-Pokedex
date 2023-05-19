@@ -3578,6 +3578,14 @@ static const u8 sDESPAIR_KISSDescription[] = _(
     "An attack that absorbs over\n"
     "half the damage inflicted.");
 
+static const u8 sAURORA_DANCEDescription[] = _(
+    "Boosts all stats, but\n"
+    "only usable with hail once.");
+
+static const u8 sMUSTARD_GASDescription[] = _(
+    "Poison-type {PKMN} gain\n"
+    "STAB. May burn.");
+
 // MOVE_NONE is ignored in this table. Make sure to always subtract 1 before getting the right pointer.
 const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
 {
@@ -4409,7 +4417,6 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_NOXIOUS_TORQUE - 1] = sNoxiousTorqueDescription,
     [MOVE_COMBAT_TORQUE - 1] = sCombatTorqueDescription,
     [MOVE_MAGICAL_TORQUE - 1] = sMagicalTorqueDescription,
-
     [MOVE_KINGS_GRACE - 1] = sKINGS_GRACEDescription,
     [MOVE_FROZEN_TERRAIN - 1] = sFROZEN_TERRAINDescription,
     [MOVE_CURSED_TERRAIN - 1] = sCURSED_TERRAINDescription,
@@ -4497,5 +4504,6 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_TRASH - 1] = sTRASHDescription,
     [MOVE_HEAT_SIPHON - 1] = sHEAT_SIPHONDescription,
     [MOVE_DESPAIR_KISS - 1] = sDESPAIR_KISSDescription,
-    [MOVE_AURORA_DANCE - 1] = sQUIVER_DANCEDescription,
+    [MOVE_AURORA_DANCE - 1] = sAURORA_DANCEDescription,
+    [MOVE_MUSTARD_GAS - 1] = sMUSTARD_GASDescription,
 };
