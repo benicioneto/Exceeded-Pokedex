@@ -6,6 +6,7 @@ static const u8 sNoneTMHMLearnset[] =
 };
 static const u8 sBulbasaurTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -35,6 +36,7 @@ static const u8 sBulbasaurTMHMLearnset[] =
 };
 static const u8 sIvysaurTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -64,6 +66,7 @@ static const u8 sIvysaurTMHMLearnset[] =
 };
 static const u8 sVenusaurTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -96,6 +99,7 @@ static const u8 sVenusaurTMHMLearnset[] =
 };
 static const u8 sCharmanderTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM57_BURNING_TERRAIN),
     TMHM(TM40_AERIAL_ACE),
@@ -128,6 +132,7 @@ static const u8 sCharmanderTMHMLearnset[] =
 };
 static const u8 sCharmeleonTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM57_BURNING_TERRAIN),
     TMHM(TM40_AERIAL_ACE),
@@ -160,6 +165,7 @@ static const u8 sCharmeleonTMHMLearnset[] =
 };
 static const u8 sCharizardTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM57_BURNING_TERRAIN),
@@ -201,6 +207,8 @@ static const u8 sCharizardTMHMLearnset[] =
 };
 static const u8 sSquirtleTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM64_SWAMPY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -235,6 +243,8 @@ static const u8 sSquirtleTMHMLearnset[] =
 };
 static const u8 sWartortleTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM64_SWAMPY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -269,6 +279,9 @@ static const u8 sWartortleTMHMLearnset[] =
 };
 static const u8 sBlastoiseTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM64_SWAMPY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -315,6 +328,7 @@ static const u8 sMetapodTMHMLearnset[] =
 };
 static const u8 sButterfreeTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -353,6 +367,7 @@ static const u8 sKakunaTMHMLearnset[] =
 };
 static const u8 sBeedrillTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -381,6 +396,7 @@ static const u8 sBeedrillTMHMLearnset[] =
 };
 static const u8 sPidgeyTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -405,6 +421,7 @@ static const u8 sPidgeyTMHMLearnset[] =
 };
 static const u8 sPidgeottoTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -429,6 +446,7 @@ static const u8 sPidgeottoTMHMLearnset[] =
 };
 static const u8 sPidgeotTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -454,6 +472,7 @@ static const u8 sPidgeotTMHMLearnset[] =
 };
 static const u8 sRattataTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -485,6 +504,7 @@ static const u8 sRattataTMHMLearnset[] =
 };
 static const u8 sRaticateTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -522,6 +542,7 @@ static const u8 sRaticateTMHMLearnset[] =
 };
 static const u8 sSpearowTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
@@ -546,6 +567,7 @@ static const u8 sSpearowTMHMLearnset[] =
 };
 static const u8 sFearowTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
@@ -571,6 +593,7 @@ static const u8 sFearowTMHMLearnset[] =
 };
 static const u8 sEkansTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM28_DIG),
@@ -598,6 +621,7 @@ static const u8 sEkansTMHMLearnset[] =
 };
 static const u8 sArbokTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM28_DIG),
@@ -626,6 +650,8 @@ static const u8 sArbokTMHMLearnset[] =
 };
 static const u8 sPikachuTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -657,6 +683,8 @@ static const u8 sPikachuTMHMLearnset[] =
 };
 static const u8 sRaichuTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -688,6 +716,7 @@ static const u8 sRaichuTMHMLearnset[] =
 };
 static const u8 sSandshrewTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -719,6 +748,7 @@ static const u8 sSandshrewTMHMLearnset[] =
 };
 static const u8 sSandslashTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -751,6 +781,7 @@ static const u8 sSandslashTMHMLearnset[] =
 };
 static const u8 sNidoranFTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -783,6 +814,7 @@ static const u8 sNidoranFTMHMLearnset[] =
 };
 static const u8 sNidorinaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -815,6 +847,8 @@ static const u8 sNidorinaTMHMLearnset[] =
 };
 static const u8 sNidoqueenTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM55_BODY_PRESS),
@@ -861,6 +895,7 @@ static const u8 sNidoqueenTMHMLearnset[] =
 };
 static const u8 sNidoranMTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM14_BLIZZARD),
@@ -892,6 +927,7 @@ static const u8 sNidoranMTMHMLearnset[] =
 };
 static const u8 sNidorinoTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM14_BLIZZARD),
@@ -923,6 +959,8 @@ static const u8 sNidorinoTMHMLearnset[] =
 };
 static const u8 sNidokingTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM55_BODY_PRESS),
@@ -968,6 +1006,9 @@ static const u8 sNidokingTMHMLearnset[] =
 };
 static const u8 sClefairyTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -1010,6 +1051,9 @@ static const u8 sClefairyTMHMLearnset[] =
 };
 static const u8 sClefableTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -1053,6 +1097,7 @@ static const u8 sClefableTMHMLearnset[] =
 };
 static const u8 sVulpixTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM57_BURNING_TERRAIN),
     TMHM(TM45_ATTRACT),
@@ -1078,6 +1123,7 @@ static const u8 sVulpixTMHMLearnset[] =
 };
 static const u8 sNinetalesTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM30_SHADOW_BALL),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM57_BURNING_TERRAIN),
@@ -1107,6 +1153,9 @@ static const u8 sNinetalesTMHMLearnset[] =
 };
 static const u8 sJigglypuffTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
@@ -1147,6 +1196,9 @@ static const u8 sJigglypuffTMHMLearnset[] =
 };
 static const u8 sWigglytuffTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
@@ -1188,6 +1240,7 @@ static const u8 sWigglytuffTMHMLearnset[] =
 };
 static const u8 sZubatTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -1216,6 +1269,7 @@ static const u8 sZubatTMHMLearnset[] =
 };
 static const u8 sGolbatTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -1245,6 +1299,7 @@ static const u8 sGolbatTMHMLearnset[] =
 };
 static const u8 sOddishTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -1269,6 +1324,7 @@ static const u8 sOddishTMHMLearnset[] =
 };
 static const u8 sGloomTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -1293,6 +1349,7 @@ static const u8 sGloomTMHMLearnset[] =
 };
 static const u8 sVileplumeTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -1319,6 +1376,7 @@ static const u8 sVileplumeTMHMLearnset[] =
 };
 static const u8 sParasTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM30_SHADOW_BALL),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
@@ -1350,6 +1408,7 @@ static const u8 sParasTMHMLearnset[] =
 };
 static const u8 sParasectTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM30_SHADOW_BALL),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
@@ -1382,6 +1441,7 @@ static const u8 sParasectTMHMLearnset[] =
 };
 static const u8 sVenonatTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM53_BUG_BUZZ),
@@ -1407,6 +1467,7 @@ static const u8 sVenonatTMHMLearnset[] =
 };
 static const u8 sVenomothTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -1435,6 +1496,7 @@ static const u8 sVenomothTMHMLearnset[] =
 };
 static const u8 sDiglettTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -1462,6 +1524,7 @@ static const u8 sDiglettTMHMLearnset[] =
 };
 static const u8 sDugtrioTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
@@ -1491,6 +1554,9 @@ static const u8 sDugtrioTMHMLearnset[] =
 };
 static const u8 sMeowthTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM52_WORK_UP),
@@ -1523,6 +1589,9 @@ static const u8 sMeowthTMHMLearnset[] =
 };
 static const u8 sPersianTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM52_WORK_UP),
@@ -1557,6 +1626,8 @@ static const u8 sPersianTMHMLearnset[] =
 };
 static const u8 sPsyduckTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -1593,6 +1664,8 @@ static const u8 sPsyduckTMHMLearnset[] =
 };
 static const u8 sGolduckTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -1630,6 +1703,7 @@ static const u8 sGolduckTMHMLearnset[] =
 };
 static const u8 sMankeyTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM52_WORK_UP),
@@ -1663,6 +1737,7 @@ static const u8 sMankeyTMHMLearnset[] =
 };
 static const u8 sPrimeapeTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM52_WORK_UP),
@@ -1697,6 +1772,7 @@ static const u8 sPrimeapeTMHMLearnset[] =
 };
 static const u8 sGrowlitheTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM57_BURNING_TERRAIN),
@@ -1727,6 +1803,7 @@ static const u8 sGrowlitheTMHMLearnset[] =
 };
 static const u8 sArcanineTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM57_BURNING_TERRAIN),
@@ -1759,6 +1836,8 @@ static const u8 sArcanineTMHMLearnset[] =
 };
 static const u8 sPoliwagTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM64_SWAMPY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -1786,6 +1865,8 @@ static const u8 sPoliwagTMHMLearnset[] =
 };
 static const u8 sPoliwhirlTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM64_SWAMPY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -1818,6 +1899,8 @@ static const u8 sPoliwhirlTMHMLearnset[] =
 };
 static const u8 sPoliwrathTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM64_SWAMPY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -1854,6 +1937,8 @@ static const u8 sPoliwrathTMHMLearnset[] =
 };
 static const u8 sAbraTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -1887,6 +1972,8 @@ static const u8 sAbraTMHMLearnset[] =
 };
 static const u8 sKadabraTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -1921,6 +2008,8 @@ static const u8 sKadabraTMHMLearnset[] =
 };
 static const u8 sAlakazamTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -1956,6 +2045,7 @@ static const u8 sAlakazamTMHMLearnset[] =
 };
 static const u8 sMachopTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM52_WORK_UP),
@@ -1986,6 +2076,7 @@ static const u8 sMachopTMHMLearnset[] =
 };
 static const u8 sMachokeTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM52_WORK_UP),
@@ -2016,6 +2107,7 @@ static const u8 sMachokeTMHMLearnset[] =
 };
 static const u8 sMachampTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM52_WORK_UP),
@@ -2047,6 +2139,7 @@ static const u8 sMachampTMHMLearnset[] =
 };
 static const u8 sBellsproutTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -2072,6 +2165,7 @@ static const u8 sBellsproutTMHMLearnset[] =
 };
 static const u8 sWeepinbellTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -2097,6 +2191,7 @@ static const u8 sWeepinbellTMHMLearnset[] =
 };
 static const u8 sVictreebelTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -2123,6 +2218,8 @@ static const u8 sVictreebelTMHMLearnset[] =
 };
 static const u8 sTentacoolTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM51_BRINE),
@@ -2153,6 +2250,8 @@ static const u8 sTentacoolTMHMLearnset[] =
 };
 static const u8 sTentacruelTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM51_BRINE),
@@ -2184,6 +2283,7 @@ static const u8 sTentacruelTMHMLearnset[] =
 };
 static const u8 sGeodudeTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
@@ -2212,6 +2312,7 @@ static const u8 sGeodudeTMHMLearnset[] =
 };
 static const u8 sGravelerTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
@@ -2240,6 +2341,7 @@ static const u8 sGravelerTMHMLearnset[] =
 };
 static const u8 sGolemTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
@@ -2270,6 +2372,7 @@ static const u8 sGolemTMHMLearnset[] =
 };
 static const u8 sPonytaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM57_BURNING_TERRAIN),
@@ -2295,6 +2398,7 @@ static const u8 sPonytaTMHMLearnset[] =
 };
 static const u8 sRapidashTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM57_BURNING_TERRAIN),
@@ -2321,6 +2425,9 @@ static const u8 sRapidashTMHMLearnset[] =
 };
 static const u8 sSlowpokeTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM64_SWAMPY_TERRAIN),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
@@ -2361,6 +2468,9 @@ static const u8 sSlowpokeTMHMLearnset[] =
 };
 static const u8 sSlowbroTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM64_SWAMPY_TERRAIN),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
@@ -2407,6 +2517,8 @@ static const u8 sSlowbroTMHMLearnset[] =
 };
 static const u8 sMagnemiteTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM32_DOUBLE_TEAM),
@@ -2430,6 +2542,8 @@ static const u8 sMagnemiteTMHMLearnset[] =
 };
 static const u8 sMagnetonTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
@@ -2455,6 +2569,7 @@ static const u8 sMagnetonTMHMLearnset[] =
 };
 static const u8 sFarfetchdTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -2480,6 +2595,7 @@ static const u8 sFarfetchdTMHMLearnset[] =
 };
 static const u8 sDoduoTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -2503,6 +2619,7 @@ static const u8 sDoduoTMHMLearnset[] =
 };
 static const u8 sDodrioTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -2529,6 +2646,8 @@ static const u8 sDodrioTMHMLearnset[] =
 };
 static const u8 sSeelTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM62_FROZEN_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -2558,6 +2677,8 @@ static const u8 sSeelTMHMLearnset[] =
 };
 static const u8 sDewgongTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM62_FROZEN_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -2588,6 +2709,8 @@ static const u8 sDewgongTMHMLearnset[] =
 };
 static const u8 sGrimerTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM28_DIG),
@@ -2619,6 +2742,8 @@ static const u8 sGrimerTMHMLearnset[] =
 };
 static const u8 sMukTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM31_BRICK_BREAK),
@@ -2654,6 +2779,8 @@ static const u8 sMukTMHMLearnset[] =
 };
 static const u8 sShellderTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -2679,6 +2806,8 @@ static const u8 sShellderTMHMLearnset[] =
 };
 static const u8 sCloysterTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM62_FROZEN_TERRAIN),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
@@ -2707,6 +2836,8 @@ static const u8 sCloysterTMHMLearnset[] =
 };
 static const u8 sGastlyTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM32_DOUBLE_TEAM),
@@ -2735,6 +2866,8 @@ static const u8 sGastlyTMHMLearnset[] =
 };
 static const u8 sHaunterTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM32_DOUBLE_TEAM),
@@ -2763,6 +2896,8 @@ static const u8 sHaunterTMHMLearnset[] =
 };
 static const u8 sGengarTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM31_BRICK_BREAK),
@@ -2796,6 +2931,7 @@ static const u8 sGengarTMHMLearnset[] =
 };
 static const u8 sOnixTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
@@ -2825,6 +2961,8 @@ static const u8 sOnixTMHMLearnset[] =
 };
 static const u8 sOnixCrystalTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -2861,6 +2999,8 @@ static const u8 sOnixCrystalTMHMLearnset[] =
 };
 static const u8 sDrowzeeTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -2893,6 +3033,8 @@ static const u8 sDrowzeeTMHMLearnset[] =
 };
 static const u8 sHypnoTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -2926,6 +3068,7 @@ static const u8 sHypnoTMHMLearnset[] =
 };
 static const u8 sKrabbyTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM51_BRINE),
@@ -2956,6 +3099,7 @@ static const u8 sKrabbyTMHMLearnset[] =
 };
 static const u8 sKinglerTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM51_BRINE),
@@ -2987,6 +3131,8 @@ static const u8 sKinglerTMHMLearnset[] =
 };
 static const u8 sVoltorbTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM32_DOUBLE_TEAM),
@@ -3012,6 +3158,8 @@ static const u8 sVoltorbTMHMLearnset[] =
 };
 static const u8 sElectrodeTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM32_DOUBLE_TEAM),
@@ -3038,6 +3186,7 @@ static const u8 sElectrodeTMHMLearnset[] =
 };
 static const u8 sExeggcuteTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -3066,6 +3215,7 @@ static const u8 sExeggcuteTMHMLearnset[] =
 };
 static const u8 sExeggutorTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -3095,6 +3245,7 @@ static const u8 sExeggutorTMHMLearnset[] =
 };
 static const u8 sCuboneTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -3127,6 +3278,7 @@ static const u8 sCuboneTMHMLearnset[] =
 };
 static const u8 sMarowakTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -3160,6 +3312,7 @@ static const u8 sMarowakTMHMLearnset[] =
 };
 static const u8 sHitmonleeTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM52_WORK_UP),
@@ -3186,6 +3339,7 @@ static const u8 sHitmonleeTMHMLearnset[] =
 };
 static const u8 sHitmonchanTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM52_WORK_UP),
@@ -3212,6 +3366,7 @@ static const u8 sHitmonchanTMHMLearnset[] =
 };
 static const u8 sLickitungTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM55_BODY_PRESS),
@@ -3254,6 +3409,8 @@ static const u8 sLickitungTMHMLearnset[] =
 };
 static const u8 sKoffingTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM32_DOUBLE_TEAM),
@@ -3282,6 +3439,8 @@ static const u8 sKoffingTMHMLearnset[] =
 };
 static const u8 sWeezingTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM32_DOUBLE_TEAM),
@@ -3311,6 +3470,8 @@ static const u8 sWeezingTMHMLearnset[] =
 };
 static const u8 sRhyhornTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -3345,6 +3506,8 @@ static const u8 sRhyhornTMHMLearnset[] =
 };
 static const u8 sRhydonTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -3386,6 +3549,9 @@ static const u8 sRhydonTMHMLearnset[] =
 };
 static const u8 sChanseyTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
@@ -3434,6 +3600,7 @@ static const u8 sChanseyTMHMLearnset[] =
 };
 static const u8 sTangelaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -3462,6 +3629,7 @@ static const u8 sTangelaTMHMLearnset[] =
 };
 static const u8 sKangaskhanTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM52_WORK_UP),
@@ -3507,6 +3675,8 @@ static const u8 sKangaskhanTMHMLearnset[] =
 };
 static const u8 sHorseaTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM64_SWAMPY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -3532,6 +3702,8 @@ static const u8 sHorseaTMHMLearnset[] =
 };
 static const u8 sSeadraTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM64_SWAMPY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -3558,6 +3730,8 @@ static const u8 sSeadraTMHMLearnset[] =
 };
 static const u8 sGoldeenTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM14_BLIZZARD),
@@ -3581,6 +3755,8 @@ static const u8 sGoldeenTMHMLearnset[] =
 };
 static const u8 sSeakingTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM14_BLIZZARD),
@@ -3605,6 +3781,9 @@ static const u8 sSeakingTMHMLearnset[] =
 };
 static const u8 sStaryuTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -3636,6 +3815,9 @@ static const u8 sStaryuTMHMLearnset[] =
 };
 static const u8 sStarmieTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -3669,6 +3851,8 @@ static const u8 sStarmieTMHMLearnset[] =
 };
 static const u8 sMrMimeTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -3706,6 +3890,7 @@ static const u8 sMrMimeTMHMLearnset[] =
 };
 static const u8 sScytherTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -3734,6 +3919,7 @@ static const u8 sScytherTMHMLearnset[] =
 };
 static const u8 sKleavorTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -3762,6 +3948,8 @@ static const u8 sKleavorTMHMLearnset[] =
 };
 static const u8 sJynxTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM62_FROZEN_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -3796,6 +3984,8 @@ static const u8 sJynxTMHMLearnset[] =
 };
 static const u8 sElectabuzzTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -3827,6 +4017,7 @@ static const u8 sElectabuzzTMHMLearnset[] =
 };
 static const u8 sMagmarTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM57_BURNING_TERRAIN),
     TMHM(TM45_ATTRACT),
@@ -3856,6 +4047,7 @@ static const u8 sMagmarTMHMLearnset[] =
 };
 static const u8 sPinsirTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM31_BRICK_BREAK),
@@ -3884,6 +4076,8 @@ static const u8 sPinsirTMHMLearnset[] =
 };
 static const u8 sTaurosTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -3924,6 +4118,9 @@ static const u8 sMagikarpTMHMLearnset[] =
 };
 static const u8 sGyaradosTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM64_SWAMPY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -3963,6 +4160,8 @@ static const u8 sGyaradosTMHMLearnset[] =
 };
 static const u8 sLaprasTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM64_SWAMPY_TERRAIN),
     TMHM(TM62_FROZEN_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
@@ -4006,6 +4205,7 @@ static const u8 sDittoTMHMLearnset[] =
 };
 static const u8 sEeveeTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM52_WORK_UP),
@@ -4028,6 +4228,8 @@ static const u8 sEeveeTMHMLearnset[] =
 };
 static const u8 sVaporeonTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM52_WORK_UP),
@@ -4062,6 +4264,8 @@ static const u8 sVaporeonTMHMLearnset[] =
 };
 static const u8 sJolteonTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -4094,6 +4298,8 @@ static const u8 sJolteonTMHMLearnset[] =
 };
 static const u8 sFlareonTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM57_BURNING_TERRAIN),
     TMHM(TM45_ATTRACT),
@@ -4125,6 +4331,8 @@ static const u8 sFlareonTMHMLearnset[] =
 };
 static const u8 sPorygonTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -4156,6 +4364,8 @@ static const u8 sPorygonTMHMLearnset[] =
 };
 static const u8 sOmanyteTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM51_BRINE),
@@ -4185,6 +4395,8 @@ static const u8 sOmanyteTMHMLearnset[] =
 };
 static const u8 sOmastarTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM51_BRINE),
@@ -4215,6 +4427,7 @@ static const u8 sOmastarTMHMLearnset[] =
 };
 static const u8 sKabutoTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM51_BRINE),
@@ -4246,6 +4459,7 @@ static const u8 sKabutoTMHMLearnset[] =
 };
 static const u8 sKabutopsTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM40_AERIAL_ACE),
@@ -4282,6 +4496,7 @@ static const u8 sKabutopsTMHMLearnset[] =
 };
 static const u8 sAerodactylTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -4318,6 +4533,7 @@ static const u8 sAerodactylTMHMLearnset[] =
 };
 static const u8 sSnorlaxTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -4361,6 +4577,7 @@ static const u8 sSnorlaxTMHMLearnset[] =
 };
 static const u8 sSnorlaxSnowTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -4399,6 +4616,8 @@ static const u8 sSnorlaxSnowTMHMLearnset[] =
 };
 static const u8 sArticunoTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM62_FROZEN_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
@@ -4429,6 +4648,7 @@ static const u8 sArticunoTMHMLearnset[] =
 };
 static const u8 sZapdosTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
@@ -4460,6 +4680,7 @@ static const u8 sZapdosTMHMLearnset[] =
 };
 static const u8 sMoltresTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM57_BURNING_TERRAIN),
@@ -4491,6 +4712,9 @@ static const u8 sMoltresTMHMLearnset[] =
 };
 static const u8 sDratiniTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM64_SWAMPY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -4525,6 +4749,9 @@ static const u8 sDratiniTMHMLearnset[] =
 };
 static const u8 sDragonairTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM64_SWAMPY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -4559,6 +4786,9 @@ static const u8 sDragonairTMHMLearnset[] =
 };
 static const u8 sDragoniteTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM64_SWAMPY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -4608,6 +4838,9 @@ static const u8 sDragoniteTMHMLearnset[] =
 };
 static const u8 sMewtwoTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -4658,6 +4891,9 @@ static const u8 sMewtwoTMHMLearnset[] =
 };
 static const u8 sMewTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM64_SWAMPY_TERRAIN),
     TMHM(TM63_SANDY_TERRAIN),
@@ -4735,6 +4971,7 @@ static const u8 sMewTMHMLearnset[] =
 };
 static const u8 sChikoritaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -4762,6 +4999,7 @@ static const u8 sChikoritaTMHMLearnset[] =
 };
 static const u8 sBayleefTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -4791,6 +5029,7 @@ static const u8 sBayleefTMHMLearnset[] =
 };
 static const u8 sMeganiumTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -4822,6 +5061,7 @@ static const u8 sMeganiumTMHMLearnset[] =
 };
 static const u8 sCyndaquilTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
@@ -4850,6 +5090,7 @@ static const u8 sCyndaquilTMHMLearnset[] =
 };
 static const u8 sQuilavaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
@@ -4883,6 +5124,7 @@ static const u8 sQuilavaTMHMLearnset[] =
 };
 static const u8 sTyphlosionTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
@@ -4920,6 +5162,7 @@ static const u8 sTyphlosionTMHMLearnset[] =
 };
 static const u8 sTotodileTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -4952,6 +5195,7 @@ static const u8 sTotodileTMHMLearnset[] =
 };
 static const u8 sCroconawTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -4987,6 +5231,7 @@ static const u8 sCroconawTMHMLearnset[] =
 };
 static const u8 sFeraligatrTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -5024,6 +5269,7 @@ static const u8 sFeraligatrTMHMLearnset[] =
 };
 static const u8 sSentretTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM31_BRICK_BREAK),
@@ -5056,6 +5302,7 @@ static const u8 sSentretTMHMLearnset[] =
 };
 static const u8 sFurretTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM14_BLIZZARD),
@@ -5093,6 +5340,7 @@ static const u8 sFurretTMHMLearnset[] =
 };
 static const u8 sHoothootTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -5120,6 +5368,7 @@ static const u8 sHoothootTMHMLearnset[] =
 };
 static const u8 sNoctowlTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -5148,6 +5397,7 @@ static const u8 sNoctowlTMHMLearnset[] =
 };
 static const u8 sLedybaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM53_BUG_BUZZ),
@@ -5176,6 +5426,7 @@ static const u8 sLedybaTMHMLearnset[] =
 };
 static const u8 sLedianTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM53_BUG_BUZZ),
@@ -5207,6 +5458,7 @@ static const u8 sLedianTMHMLearnset[] =
 };
 static const u8 sSpinarakTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM53_BUG_BUZZ),
@@ -5231,6 +5483,7 @@ static const u8 sSpinarakTMHMLearnset[] =
 };
 static const u8 sAriadosTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM53_BUG_BUZZ),
@@ -5256,6 +5509,7 @@ static const u8 sAriadosTMHMLearnset[] =
 };
 static const u8 sCrobatTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -5285,6 +5539,8 @@ static const u8 sCrobatTMHMLearnset[] =
 };
 static const u8 sChinchouTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
+    TMHM(TM67_ZAP_CANNON),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -5314,6 +5570,8 @@ static const u8 sChinchouTMHMLearnset[] =
 };
 static const u8 sLanturnTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -5344,6 +5602,8 @@ static const u8 sLanturnTMHMLearnset[] =
 };
 static const u8 sPichuTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -5368,6 +5628,8 @@ static const u8 sPichuTMHMLearnset[] =
 };
 static const u8 sCleffaTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM28_DIG),
@@ -5399,6 +5661,8 @@ static const u8 sCleffaTMHMLearnset[] =
 };
 static const u8 sIgglybuffTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -5430,6 +5694,8 @@ static const u8 sIgglybuffTMHMLearnset[] =
 };
 static const u8 sTogepiTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -5461,6 +5727,8 @@ static const u8 sTogepiTMHMLearnset[] =
 };
 static const u8 sTogeticTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM60_TRI_ATTACK),  
     TMHM(TM59_NATURAL_GIFT),
@@ -5499,6 +5767,7 @@ static const u8 sTogeticTMHMLearnset[] =
 };
 static const u8 sNatuTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -5528,6 +5797,7 @@ static const u8 sNatuTMHMLearnset[] =
 };
 static const u8 sXatuTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -5560,6 +5830,8 @@ static const u8 sXatuTMHMLearnset[] =
 };
 static const u8 sMareepTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -5585,6 +5857,8 @@ static const u8 sMareepTMHMLearnset[] =
 };
 static const u8 sFlaaffyTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -5613,6 +5887,8 @@ static const u8 sFlaaffyTMHMLearnset[] =
 };
 static const u8 sAmpharosTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -5642,6 +5918,7 @@ static const u8 sAmpharosTMHMLearnset[] =
 };
 static const u8 sBellossomTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -5667,6 +5944,8 @@ static const u8 sBellossomTMHMLearnset[] =
 };
 static const u8 sMarillTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM64_SWAMPY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -5699,6 +5978,8 @@ static const u8 sMarillTMHMLearnset[] =
 };
 static const u8 sAzumarillTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM64_SWAMPY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -5732,6 +6013,7 @@ static const u8 sAzumarillTMHMLearnset[] =
 };
 static const u8 sSudowoodoTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -5762,6 +6044,7 @@ static const u8 sSudowoodoTMHMLearnset[] =
 };
 static const u8 sPolitoedTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM64_SWAMPY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -5795,6 +6078,7 @@ static const u8 sPolitoedTMHMLearnset[] =
 };
 static const u8 sHoppipTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -5817,6 +6101,7 @@ static const u8 sHoppipTMHMLearnset[] =
 };
 static const u8 sSkiploomTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -5839,6 +6124,7 @@ static const u8 sSkiploomTMHMLearnset[] =
 };
 static const u8 sJumpluffTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -5862,6 +6148,8 @@ static const u8 sJumpluffTMHMLearnset[] =
 };
 static const u8 sAipomTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -5897,6 +6185,7 @@ static const u8 sAipomTMHMLearnset[] =
 };
 static const u8 sSunkernTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -5922,6 +6211,7 @@ static const u8 sSunkernTMHMLearnset[] =
 };
 static const u8 sSunfloraTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM50_OVERHEAT),
     TMHM(TM38_FIRE_BLAST),
     TMHM(TM35_FLAMETHROWER),
@@ -5951,6 +6241,7 @@ static const u8 sSunfloraTMHMLearnset[] =
 };
 static const u8 sYanmaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM53_BUG_BUZZ),
@@ -5976,6 +6267,8 @@ static const u8 sYanmaTMHMLearnset[] =
 };
 static const u8 sWooperTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM64_SWAMPY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -6008,6 +6301,8 @@ static const u8 sWooperTMHMLearnset[] =
 };
 static const u8 sQuagsireTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM64_SWAMPY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -6046,6 +6341,8 @@ static const u8 sQuagsireTMHMLearnset[] =
 };
 static const u8 sEspeonTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM52_WORK_UP),
@@ -6075,6 +6372,8 @@ static const u8 sEspeonTMHMLearnset[] =
 };
 static const u8 sUmbreonTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(HM01_CUT),
@@ -6103,6 +6402,7 @@ static const u8 sUmbreonTMHMLearnset[] =
 };
 static const u8 sMurkrowTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -6131,6 +6431,8 @@ static const u8 sMurkrowTMHMLearnset[] =
 };
 static const u8 sSlowkingTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM64_SWAMPY_TERRAIN),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
@@ -6174,6 +6476,8 @@ static const u8 sSlowkingTMHMLearnset[] =
 };
 static const u8 sMisdreavusTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -6204,16 +6508,20 @@ static const u8 sMisdreavusTMHMLearnset[] =
 };
 static const u8 sUnownTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     0xFF,
 };
 static const u8 sWobbuffetTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM20_SAFEGUARD),
     0xFF,
 };
 static const u8 sGirafarigTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM52_WORK_UP),
@@ -6247,6 +6555,7 @@ static const u8 sGirafarigTMHMLearnset[] =
 };
 static const u8 sPinecoTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM53_BUG_BUZZ),
@@ -6274,6 +6583,8 @@ static const u8 sPinecoTMHMLearnset[] =
 };
 static const u8 sForretressTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM53_BUG_BUZZ),
@@ -6302,6 +6613,9 @@ static const u8 sForretressTMHMLearnset[] =
 };
 static const u8 sDunsparceTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -6338,6 +6652,7 @@ static const u8 sDunsparceTMHMLearnset[] =
 };
 static const u8 sGligarTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -6371,6 +6686,7 @@ static const u8 sGligarTMHMLearnset[] =
 };
 static const u8 sSteelixTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
@@ -6402,6 +6718,8 @@ static const u8 sSteelixTMHMLearnset[] =
 };
 static const u8 sSnubbullTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -6443,6 +6761,8 @@ static const u8 sSnubbullTMHMLearnset[] =
 };
 static const u8 sGranbullTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -6487,6 +6807,7 @@ static const u8 sGranbullTMHMLearnset[] =
 };
 static const u8 sQwilfishTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM51_BRINE),
@@ -6515,6 +6836,7 @@ static const u8 sQwilfishTMHMLearnset[] =
 };
 static const u8 sScizorTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -6545,6 +6867,7 @@ static const u8 sScizorTMHMLearnset[] =
 };
 static const u8 sShuckleTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -6571,6 +6894,7 @@ static const u8 sShuckleTMHMLearnset[] =
 };
 static const u8 sHeracrossTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -6602,6 +6926,7 @@ static const u8 sHeracrossTMHMLearnset[] =
 };
 static const u8 sSneaselTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM62_FROZEN_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -6639,6 +6964,7 @@ static const u8 sSneaselTMHMLearnset[] =
 };
 static const u8 sTeddiursaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -6671,6 +6997,7 @@ static const u8 sTeddiursaTMHMLearnset[] =
 };
 static const u8 sUrsaringTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -6704,6 +7031,7 @@ static const u8 sUrsaringTMHMLearnset[] =
 };
 static const u8 sUrsalunaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -6737,6 +7065,7 @@ static const u8 sUrsalunaTMHMLearnset[] =
 };
 static const u8 sSlugmaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM57_BURNING_TERRAIN),
@@ -6763,6 +7092,7 @@ static const u8 sSlugmaTMHMLearnset[] =
 };
 static const u8 sMagcargoTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM57_BURNING_TERRAIN),
@@ -6794,6 +7124,7 @@ static const u8 sMagcargoTMHMLearnset[] =
 };
 static const u8 sSwinubTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM62_FROZEN_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -6823,6 +7154,7 @@ static const u8 sSwinubTMHMLearnset[] =
 };
 static const u8 sPiloswineTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM62_FROZEN_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -6853,6 +7185,7 @@ static const u8 sPiloswineTMHMLearnset[] =
 };
 static const u8 sCorsolaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -6889,6 +7222,7 @@ static const u8 sCorsolaTMHMLearnset[] =
 };
 static const u8 sRemoraidTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM51_BRINE),
@@ -6919,6 +7253,8 @@ static const u8 sRemoraidTMHMLearnset[] =
 };
 static const u8 sOctilleryTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM51_BRINE),
@@ -6950,6 +7286,8 @@ static const u8 sOctilleryTMHMLearnset[] =
 };
 static const u8 sDelibirdTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -6976,6 +7314,7 @@ static const u8 sDelibirdTMHMLearnset[] =
 };
 static const u8 sMantineTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -7007,6 +7346,7 @@ static const u8 sMantineTMHMLearnset[] =
 };
 static const u8 sSkarmoryTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -7037,6 +7377,7 @@ static const u8 sSkarmoryTMHMLearnset[] =
 };
 static const u8 sHoundourTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM57_BURNING_TERRAIN),
     TMHM(TM45_ATTRACT),
@@ -7067,6 +7408,7 @@ static const u8 sHoundourTMHMLearnset[] =
 };
 static const u8 sHoundoomTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM57_BURNING_TERRAIN),
     TMHM(TM45_ATTRACT),
@@ -7099,6 +7441,8 @@ static const u8 sHoundoomTMHMLearnset[] =
 };
 static const u8 sKingdraTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM64_SWAMPY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -7125,6 +7469,7 @@ static const u8 sKingdraTMHMLearnset[] =
 };
 static const u8 sPhanpyTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -7149,6 +7494,7 @@ static const u8 sPhanpyTMHMLearnset[] =
 };
 static const u8 sDonphanTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -7174,6 +7520,8 @@ static const u8 sDonphanTMHMLearnset[] =
 };
 static const u8 sPorygon2TMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM40_AERIAL_ACE),
@@ -7204,6 +7552,7 @@ static const u8 sPorygon2TMHMLearnset[] =
 };
 static const u8 sStantlerTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -7242,6 +7591,7 @@ static const u8 sSmeargleTMHMLearnset[] =
 };
 static const u8 sTyrogueTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM52_WORK_UP),
@@ -7266,6 +7616,7 @@ static const u8 sTyrogueTMHMLearnset[] =
 };
 static const u8 sHitmontopTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM52_WORK_UP),
@@ -7293,6 +7644,7 @@ static const u8 sHitmontopTMHMLearnset[] =
 };
 static const u8 sSmoochumTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM62_FROZEN_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -7322,6 +7674,8 @@ static const u8 sSmoochumTMHMLearnset[] =
 };
 static const u8 sElekidTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -7349,6 +7703,7 @@ static const u8 sElekidTMHMLearnset[] =
 };
 static const u8 sMagbyTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM56_GEOGEYSER),
@@ -7375,6 +7730,8 @@ static const u8 sMagbyTMHMLearnset[] =
 };
 static const u8 sMiltankTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM55_BODY_PRESS),
@@ -7412,6 +7769,9 @@ static const u8 sMiltankTMHMLearnset[] =
 };
 static const u8 sBlisseyTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
@@ -7459,6 +7819,8 @@ static const u8 sBlisseyTMHMLearnset[] =
 };
 static const u8 sRaikouTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM04_CALM_MIND),
@@ -7492,6 +7854,7 @@ static const u8 sRaikouTMHMLearnset[] =
 };
 static const u8 sEnteiTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM57_BURNING_TERRAIN),
     TMHM(TM04_CALM_MIND),
@@ -7526,6 +7889,8 @@ static const u8 sEnteiTMHMLearnset[] =
 };
 static const u8 sSuicuneTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM64_SWAMPY_TERRAIN),
     TMHM(TM62_FROZEN_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
@@ -7562,6 +7927,7 @@ static const u8 sSuicuneTMHMLearnset[] =
 };
 static const u8 sLarvitarTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -7590,6 +7956,7 @@ static const u8 sLarvitarTMHMLearnset[] =
 };
 static const u8 sPupitarTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -7618,6 +7985,7 @@ static const u8 sPupitarTMHMLearnset[] =
 };
 static const u8 sTyranitarTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -7662,6 +8030,9 @@ static const u8 sTyranitarTMHMLearnset[] =
 };
 static const u8 sLugiaTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM64_SWAMPY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
@@ -7710,6 +8081,8 @@ static const u8 sLugiaTMHMLearnset[] =
 };
 static const u8 sHoOhTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM57_BURNING_TERRAIN),
@@ -7752,6 +8125,7 @@ static const u8 sHoOhTMHMLearnset[] =
 };
 static const u8 sCelebiTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM40_AERIAL_ACE),
@@ -7785,6 +8159,7 @@ static const u8 sCelebiTMHMLearnset[] =
 };
 static const u8 sTreeckoTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM40_AERIAL_ACE),
@@ -7817,6 +8192,7 @@ static const u8 sTreeckoTMHMLearnset[] =
 };
 static const u8 sGrovyleTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM40_AERIAL_ACE),
@@ -7849,6 +8225,7 @@ static const u8 sGrovyleTMHMLearnset[] =
 };
 static const u8 sSceptileTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM40_AERIAL_ACE),
@@ -7885,6 +8262,7 @@ static const u8 sSceptileTMHMLearnset[] =
 };
 static const u8 sTorchicTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM57_BURNING_TERRAIN),
     TMHM(TM40_AERIAL_ACE),
@@ -7912,6 +8290,7 @@ static const u8 sTorchicTMHMLearnset[] =
 };
 static const u8 sCombuskenTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM57_BURNING_TERRAIN),
     TMHM(TM40_AERIAL_ACE),
@@ -7942,6 +8321,7 @@ static const u8 sCombuskenTMHMLearnset[] =
 };
 static const u8 sBlazikenTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM57_BURNING_TERRAIN),
     TMHM(TM40_AERIAL_ACE),
@@ -7977,6 +8357,7 @@ static const u8 sBlazikenTMHMLearnset[] =
 };
 static const u8 sMudkipTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM14_BLIZZARD),
@@ -8006,6 +8387,7 @@ static const u8 sMudkipTMHMLearnset[] =
 };
 static const u8 sMarshtompTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM14_BLIZZARD),
@@ -8037,6 +8419,7 @@ static const u8 sMarshtompTMHMLearnset[] =
 };
 static const u8 sSwampertTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM55_BODY_PRESS),
@@ -8072,6 +8455,7 @@ static const u8 sSwampertTMHMLearnset[] =
 };
 static const u8 sPoochyenaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM28_DIG),
@@ -8098,6 +8482,7 @@ static const u8 sPoochyenaTMHMLearnset[] =
 };
 static const u8 sMightyenaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM28_DIG),
@@ -8126,6 +8511,7 @@ static const u8 sMightyenaTMHMLearnset[] =
 };
 static const u8 sZigzagoonTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM52_WORK_UP),
@@ -8157,6 +8543,7 @@ static const u8 sZigzagoonTMHMLearnset[] =
 };
 static const u8 sLinooneTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM14_BLIZZARD),
@@ -8199,6 +8586,7 @@ static const u8 sSilcoonTMHMLearnset[] =
 };
 static const u8 sBeautiflyTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -8230,6 +8618,7 @@ static const u8 sCascoonTMHMLearnset[] =
 };
 static const u8 sDustoxTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -8258,6 +8647,7 @@ static const u8 sDustoxTMHMLearnset[] =
 };
 static const u8 sLotadTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM64_SWAMPY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
@@ -8287,6 +8677,7 @@ static const u8 sLotadTMHMLearnset[] =
 };
 static const u8 sLombreTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM64_SWAMPY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
@@ -8321,6 +8712,7 @@ static const u8 sLombreTMHMLearnset[] =
 };
 static const u8 sLudicoloTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM64_SWAMPY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
@@ -8357,6 +8749,7 @@ static const u8 sLudicoloTMHMLearnset[] =
 };
 static const u8 sSeedotTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -8381,6 +8774,7 @@ static const u8 sSeedotTMHMLearnset[] =
 };
 static const u8 sNuzleafTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -8412,6 +8806,7 @@ static const u8 sNuzleafTMHMLearnset[] =
 };
 static const u8 sShiftryTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
@@ -8445,6 +8840,7 @@ static const u8 sShiftryTMHMLearnset[] =
 };
 static const u8 sTaillowTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -8468,6 +8864,7 @@ static const u8 sTaillowTMHMLearnset[] =
 };
 static const u8 sSwellowTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -8492,6 +8889,8 @@ static const u8 sSwellowTMHMLearnset[] =
 };
 static const u8 sWingullTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -8519,6 +8918,8 @@ static const u8 sWingullTMHMLearnset[] =
 };
 static const u8 sPelipperTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -8548,6 +8949,7 @@ static const u8 sPelipperTMHMLearnset[] =
 };
 static const u8 sRaltsTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM04_CALM_MIND),
@@ -8579,6 +8981,7 @@ static const u8 sRaltsTMHMLearnset[] =
 };
 static const u8 sKirliaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM04_CALM_MIND),
@@ -8610,6 +9013,7 @@ static const u8 sKirliaTMHMLearnset[] =
 };
 static const u8 sGardevoirTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM04_CALM_MIND),
@@ -8642,6 +9046,8 @@ static const u8 sGardevoirTMHMLearnset[] =
 };
 static const u8 sSurskitTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM14_BLIZZARD),
@@ -8667,6 +9073,8 @@ static const u8 sSurskitTMHMLearnset[] =
 };
 static const u8 sMasquerainTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -8696,6 +9104,7 @@ static const u8 sMasquerainTMHMLearnset[] =
 };
 static const u8 sShroomishTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM09_BULLET_SEED),
@@ -8720,6 +9129,7 @@ static const u8 sShroomishTMHMLearnset[] =
 };
 static const u8 sBreloomTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM31_BRICK_BREAK),
@@ -8753,6 +9163,7 @@ static const u8 sBreloomTMHMLearnset[] =
 };
 static const u8 sSlakothTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -8789,6 +9200,7 @@ static const u8 sSlakothTMHMLearnset[] =
 };
 static const u8 sVigorothTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -8828,6 +9240,7 @@ static const u8 sVigorothTMHMLearnset[] =
 };
 static const u8 sSlakingTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -8868,6 +9281,7 @@ static const u8 sSlakingTMHMLearnset[] =
 };
 static const u8 sNincadaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -8893,6 +9307,7 @@ static const u8 sNincadaTMHMLearnset[] =
 };
 static const u8 sNinjaskTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -8921,6 +9336,7 @@ static const u8 sNinjaskTMHMLearnset[] =
 };
 static const u8 sShedinjaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM53_BUG_BUZZ),
@@ -8947,6 +9363,7 @@ static const u8 sShedinjaTMHMLearnset[] =
 };
 static const u8 sWhismurTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM14_BLIZZARD),
@@ -8974,6 +9391,7 @@ static const u8 sWhismurTMHMLearnset[] =
 };
 static const u8 sLoudredTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM14_BLIZZARD),
@@ -9009,6 +9427,7 @@ static const u8 sLoudredTMHMLearnset[] =
 };
 static const u8 sExploudTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM14_BLIZZARD),
@@ -9046,6 +9465,7 @@ static const u8 sExploudTMHMLearnset[] =
 };
 static const u8 sMakuhitaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM31_BRICK_BREAK),
@@ -9073,6 +9493,7 @@ static const u8 sMakuhitaTMHMLearnset[] =
 };
 static const u8 sHariyamaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM51_BRINE),
@@ -9102,6 +9523,7 @@ static const u8 sHariyamaTMHMLearnset[] =
 };
 static const u8 sAzurillTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM52_WORK_UP),
@@ -9127,6 +9549,8 @@ static const u8 sAzurillTMHMLearnset[] =
 };
 static const u8 sNosepassTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -9154,6 +9578,7 @@ static const u8 sNosepassTMHMLearnset[] =
 };
 static const u8 sSkittyTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -9186,6 +9611,7 @@ static const u8 sSkittyTMHMLearnset[] =
 };
 static const u8 sDelcattyTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -9221,6 +9647,7 @@ static const u8 sDelcattyTMHMLearnset[] =
 };
 static const u8 sSableyeTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -9255,6 +9682,7 @@ static const u8 sSableyeTMHMLearnset[] =
 };
 static const u8 sMawileTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM31_BRICK_BREAK),
@@ -9288,6 +9716,7 @@ static const u8 sMawileTMHMLearnset[] =
 };
 static const u8 sAronTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -9319,6 +9748,7 @@ static const u8 sAronTMHMLearnset[] =
 };
 static const u8 sLaironTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -9350,6 +9780,7 @@ static const u8 sLaironTMHMLearnset[] =
 };
 static const u8 sAggronTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -9394,6 +9825,7 @@ static const u8 sAggronTMHMLearnset[] =
 };
 static const u8 sMedititeTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM31_BRICK_BREAK),
@@ -9424,6 +9856,7 @@ static const u8 sMedititeTMHMLearnset[] =
 };
 static const u8 sMedichamTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM31_BRICK_BREAK),
@@ -9455,6 +9888,7 @@ static const u8 sMedichamTMHMLearnset[] =
 };
 static const u8 sElectrikeTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -9482,6 +9916,7 @@ static const u8 sElectrikeTMHMLearnset[] =
 };
 static const u8 sManectricTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -9511,6 +9946,7 @@ static const u8 sManectricTMHMLearnset[] =
 };
 static const u8 sPlusleTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -9534,6 +9970,7 @@ static const u8 sPlusleTMHMLearnset[] =
 };
 static const u8 sMinunTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -9557,6 +9994,7 @@ static const u8 sMinunTMHMLearnset[] =
 };
 static const u8 sVolbeatTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM53_BUG_BUZZ),
@@ -9588,6 +10026,7 @@ static const u8 sVolbeatTMHMLearnset[] =
 };
 static const u8 sIllumiseTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM53_BUG_BUZZ),
@@ -9619,6 +10058,7 @@ static const u8 sIllumiseTMHMLearnset[] =
 };
 static const u8 sRoseliaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -9644,6 +10084,7 @@ static const u8 sRoseliaTMHMLearnset[] =
 };
 static const u8 sGulpinTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM09_BULLET_SEED),
@@ -9672,6 +10113,7 @@ static const u8 sGulpinTMHMLearnset[] =
 };
 static const u8 sSwalotTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM09_BULLET_SEED),
@@ -9702,6 +10144,7 @@ static const u8 sSwalotTMHMLearnset[] =
 };
 static const u8 sCarvanhaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM51_BRINE),
@@ -9729,6 +10172,7 @@ static const u8 sCarvanhaTMHMLearnset[] =
 };
 static const u8 sSharpedoTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM14_BLIZZARD),
@@ -9762,6 +10206,7 @@ static const u8 sSharpedoTMHMLearnset[] =
 };
 static const u8 sWailmerTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM55_BODY_PRESS),
@@ -9792,6 +10237,7 @@ static const u8 sWailmerTMHMLearnset[] =
 };
 static const u8 sWailordTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM55_BODY_PRESS),
@@ -9823,6 +10269,7 @@ static const u8 sWailordTMHMLearnset[] =
 };
 static const u8 sNumelTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM57_BURNING_TERRAIN),
@@ -9851,6 +10298,7 @@ static const u8 sNumelTMHMLearnset[] =
 };
 static const u8 sCameruptTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM57_BURNING_TERRAIN),
@@ -9882,6 +10330,7 @@ static const u8 sCameruptTMHMLearnset[] =
 };
 static const u8 sTorkoalTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM57_BURNING_TERRAIN),
@@ -9914,6 +10363,8 @@ static const u8 sTorkoalTMHMLearnset[] =
 };
 static const u8 sSpoinkTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM04_CALM_MIND),
@@ -9944,6 +10395,8 @@ static const u8 sSpoinkTMHMLearnset[] =
 };
 static const u8 sGrumpigTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM31_BRICK_BREAK),
@@ -9977,6 +10430,7 @@ static const u8 sGrumpigTMHMLearnset[] =
 };
 static const u8 sSpindaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -10012,6 +10466,7 @@ static const u8 sSpindaTMHMLearnset[] =
 };
 static const u8 sTrapinchTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -10038,6 +10493,7 @@ static const u8 sTrapinchTMHMLearnset[] =
 };
 static const u8 sVibravaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
@@ -10068,6 +10524,7 @@ static const u8 sVibravaTMHMLearnset[] =
 };
 static const u8 sFlygonTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
@@ -10103,6 +10560,7 @@ static const u8 sFlygonTMHMLearnset[] =
 };
 static const u8 sCacneaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
@@ -10129,6 +10587,7 @@ static const u8 sCacneaTMHMLearnset[] =
 };
 static const u8 sCacturneTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
@@ -10157,6 +10616,7 @@ static const u8 sCacturneTMHMLearnset[] =
 };
 static const u8 sSwabluTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -10181,6 +10641,7 @@ static const u8 sSwabluTMHMLearnset[] =
 };
 static const u8 sAltariaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -10213,6 +10674,7 @@ static const u8 sAltariaTMHMLearnset[] =
 };
 static const u8 sZangooseTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -10253,6 +10715,7 @@ static const u8 sZangooseTMHMLearnset[] =
 };
 static const u8 sSeviperTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM28_DIG),
@@ -10281,6 +10744,7 @@ static const u8 sSeviperTMHMLearnset[] =
 };
 static const u8 sLunatoneTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM14_BLIZZARD),
     TMHM(TM04_CALM_MIND),
@@ -10310,6 +10774,7 @@ static const u8 sLunatoneTMHMLearnset[] =
 };
 static const u8 sSolrockTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM04_CALM_MIND),
     TMHM(TM32_DOUBLE_TEAM),
@@ -10341,6 +10806,8 @@ static const u8 sSolrockTMHMLearnset[] =
 };
 static const u8 sBarboachTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM14_BLIZZARD),
@@ -10367,6 +10834,8 @@ static const u8 sBarboachTMHMLearnset[] =
 };
 static const u8 sWhiscashTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM14_BLIZZARD),
@@ -10396,6 +10865,7 @@ static const u8 sWhiscashTMHMLearnset[] =
 };
 static const u8 sCorphishTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -10427,6 +10897,7 @@ static const u8 sCorphishTMHMLearnset[] =
 };
 static const u8 sCrawdauntTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM40_AERIAL_ACE),
@@ -10461,6 +10932,7 @@ static const u8 sCrawdauntTMHMLearnset[] =
 };
 static const u8 sBaltoyTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM04_CALM_MIND),
@@ -10492,6 +10964,7 @@ static const u8 sBaltoyTMHMLearnset[] =
 };
 static const u8 sClaydolTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM04_CALM_MIND),
@@ -10527,6 +11000,7 @@ static const u8 sClaydolTMHMLearnset[] =
 };
 static const u8 sLileepTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM51_BRINE),
@@ -10551,6 +11025,7 @@ static const u8 sLileepTMHMLearnset[] =
 };
 static const u8 sCradilyTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM51_BRINE),
@@ -10579,6 +11054,7 @@ static const u8 sCradilyTMHMLearnset[] =
 };
 static const u8 sAnorithTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM51_BRINE),
@@ -10604,6 +11080,7 @@ static const u8 sAnorithTMHMLearnset[] =
 };
 static const u8 sArmaldoTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM51_BRINE),
@@ -10633,6 +11110,7 @@ static const u8 sArmaldoTMHMLearnset[] =
 };
 static const u8 sFeebasTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM51_BRINE),
@@ -10659,6 +11137,7 @@ static const u8 sFeebasTMHMLearnset[] =
 };
 static const u8 sMiloticTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM64_SWAMPY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -10688,6 +11167,8 @@ static const u8 sMiloticTMHMLearnset[] =
 };
 static const u8 sCastformTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM64_SWAMPY_TERRAIN),
     TMHM(TM62_FROZEN_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
@@ -10722,6 +11203,7 @@ static const u8 sCastformTMHMLearnset[] =
 };
 static const u8 sKecleonTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -10763,6 +11245,7 @@ static const u8 sKecleonTMHMLearnset[] =
 };
 static const u8 sShuppetTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM04_CALM_MIND),
@@ -10792,6 +11275,7 @@ static const u8 sShuppetTMHMLearnset[] =
 };
 static const u8 sBanetteTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM04_CALM_MIND),
@@ -10822,6 +11306,7 @@ static const u8 sBanetteTMHMLearnset[] =
 };
 static const u8 sDuskullTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM14_BLIZZARD),
@@ -10850,6 +11335,7 @@ static const u8 sDuskullTMHMLearnset[] =
 };
 static const u8 sDusclopsTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM14_BLIZZARD),
@@ -10885,6 +11371,7 @@ static const u8 sDusclopsTMHMLearnset[] =
 };
 static const u8 sTropiusTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
@@ -10917,6 +11404,7 @@ static const u8 sTropiusTMHMLearnset[] =
 };
 static const u8 sChimechoTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM04_CALM_MIND),
@@ -10946,6 +11434,7 @@ static const u8 sChimechoTMHMLearnset[] =
 };
 static const u8 sAbsolTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -10987,11 +11476,14 @@ static const u8 sAbsolTMHMLearnset[] =
 };
 static const u8 sWynautTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM20_SAFEGUARD),
     0xFF,
 };
 static const u8 sSnoruntTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM62_FROZEN_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -11017,6 +11509,8 @@ static const u8 sSnoruntTMHMLearnset[] =
 };
 static const u8 sGlalieTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM62_FROZEN_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -11046,6 +11540,8 @@ static const u8 sGlalieTMHMLearnset[] =
 };
 static const u8 sSphealTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM62_FROZEN_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -11076,6 +11572,8 @@ static const u8 sSphealTMHMLearnset[] =
 };
 static const u8 sSealeoTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM62_FROZEN_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -11107,6 +11605,8 @@ static const u8 sSealeoTMHMLearnset[] =
 };
 static const u8 sWalreinTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM62_FROZEN_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -11140,6 +11640,7 @@ static const u8 sWalreinTMHMLearnset[] =
 };
 static const u8 sClamperlTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM51_BRINE),
@@ -11164,6 +11665,7 @@ static const u8 sClamperlTMHMLearnset[] =
 };
 static const u8 sHuntailTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM64_SWAMPY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -11192,6 +11694,7 @@ static const u8 sHuntailTMHMLearnset[] =
 };
 static const u8 sGorebyssTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM64_SWAMPY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -11221,6 +11724,7 @@ static const u8 sGorebyssTMHMLearnset[] =
 };
 static const u8 sRelicanthTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM55_BODY_PRESS),
@@ -11253,6 +11757,7 @@ static const u8 sRelicanthTMHMLearnset[] =
 };
 static const u8 sLuvdiscTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM51_BRINE),
@@ -11278,6 +11783,7 @@ static const u8 sLuvdiscTMHMLearnset[] =
 };
 static const u8 sBagonTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -11305,6 +11811,7 @@ static const u8 sBagonTMHMLearnset[] =
 };
 static const u8 sShelgonTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -11332,6 +11839,7 @@ static const u8 sShelgonTMHMLearnset[] =
 };
 static const u8 sSalamenceTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -11365,10 +11873,12 @@ static const u8 sSalamenceTMHMLearnset[] =
 };
 static const u8 sBeldumTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     0xFF,
 };
 static const u8 sMetangTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM31_BRICK_BREAK),
@@ -11400,6 +11910,7 @@ static const u8 sMetangTMHMLearnset[] =
 };
 static const u8 sMetagrossTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM55_BODY_PRESS),
@@ -11432,6 +11943,8 @@ static const u8 sMetagrossTMHMLearnset[] =
 };
 static const u8 sRegirockTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM31_BRICK_BREAK),
@@ -11462,6 +11975,8 @@ static const u8 sRegirockTMHMLearnset[] =
 };
 static const u8 sRegiceTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM62_FROZEN_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM14_BLIZZARD),
@@ -11493,6 +12008,8 @@ static const u8 sRegiceTMHMLearnset[] =
 };
 static const u8 sRegisteelTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM55_BODY_PRESS),
@@ -11523,6 +12040,7 @@ static const u8 sRegisteelTMHMLearnset[] =
 };
 static const u8 sLatiasTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
@@ -11567,6 +12085,7 @@ static const u8 sLatiasTMHMLearnset[] =
 };
 static const u8 sLatiosTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
@@ -11611,6 +12130,7 @@ static const u8 sLatiosTMHMLearnset[] =
 };
 static const u8 sKyogreTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM14_BLIZZARD),
     TMHM(TM51_BRINE),
@@ -11646,6 +12166,7 @@ static const u8 sKyogreTMHMLearnset[] =
 };
 static const u8 sGroudonTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM57_BURNING_TERRAIN),
@@ -11687,6 +12208,7 @@ static const u8 sGroudonTMHMLearnset[] =
 };
 static const u8 sRayquazaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM14_BLIZZARD),
@@ -11729,6 +12251,7 @@ static const u8 sRayquazaTMHMLearnset[] =
 };
 static const u8 sJirachiTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM04_CALM_MIND),
@@ -11760,6 +12283,8 @@ static const u8 sJirachiTMHMLearnset[] =
 };
 static const u8 sDeoxysTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM31_BRICK_BREAK),
@@ -11801,6 +12326,7 @@ static const u8 sDeoxysTMHMLearnset[] =
 };
 static const u8 sTurtwigTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM58_NATURE_POWER),
@@ -11830,6 +12356,7 @@ static const u8 sTurtwigTMHMLearnset[] =
 };
 static const u8 sGrotleTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -11859,6 +12386,7 @@ static const u8 sGrotleTMHMLearnset[] =
 };
 static const u8 sTorterraTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
@@ -11894,6 +12422,7 @@ static const u8 sTorterraTMHMLearnset[] =
 };
 static const u8 sChimcharTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM57_BURNING_TERRAIN),
     TMHM(TM40_AERIAL_ACE),
@@ -11926,6 +12455,7 @@ static const u8 sChimcharTMHMLearnset[] =
 };
 static const u8 sMonfernoTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM57_BURNING_TERRAIN),
     TMHM(TM40_AERIAL_ACE),
@@ -11959,6 +12489,7 @@ static const u8 sMonfernoTMHMLearnset[] =
 };
 static const u8 sInfernapeTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM57_BURNING_TERRAIN),
     TMHM(TM40_AERIAL_ACE),
@@ -11997,6 +12528,7 @@ static const u8 sInfernapeTMHMLearnset[] =
 };
 static const u8 sPiplupTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM62_FROZEN_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
@@ -12029,6 +12561,7 @@ static const u8 sPiplupTMHMLearnset[] =
 };
 static const u8 sPrinplupTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM62_FROZEN_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
@@ -12063,6 +12596,7 @@ static const u8 sPrinplupTMHMLearnset[] =
 };
 static const u8 sEmpoleonTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM62_FROZEN_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
@@ -12101,6 +12635,7 @@ static const u8 sEmpoleonTMHMLearnset[] =
 };
 static const u8 sStarlyTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -12124,6 +12659,7 @@ static const u8 sStarlyTMHMLearnset[] =
 };
 static const u8 sStaraviaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -12147,6 +12683,7 @@ static const u8 sStaraviaTMHMLearnset[] =
 };
 static const u8 sStaraptorTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -12171,6 +12708,7 @@ static const u8 sStaraptorTMHMLearnset[] =
 };
 static const u8 sBidoofTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM14_BLIZZARD),
@@ -12201,6 +12739,7 @@ static const u8 sBidoofTMHMLearnset[] =
 };
 static const u8 sBibarelTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM14_BLIZZARD),
@@ -12242,6 +12781,7 @@ static const u8 sKricketotTMHMLearnset[] =
 };
 static const u8 sKricketuneTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM53_BUG_BUZZ),
@@ -12268,6 +12808,7 @@ static const u8 sKricketuneTMHMLearnset[] =
 };
 static const u8 sShinxTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -12294,6 +12835,7 @@ static const u8 sShinxTMHMLearnset[] =
 };
 static const u8 sLuxioTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -12320,6 +12862,7 @@ static const u8 sLuxioTMHMLearnset[] =
 };
 static const u8 sLuxrayTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -12347,6 +12890,7 @@ static const u8 sLuxrayTMHMLearnset[] =
 };
 static const u8 sBudewTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -12372,6 +12916,7 @@ static const u8 sBudewTMHMLearnset[] =
 };
 static const u8 sRoseradeTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -12398,6 +12943,7 @@ static const u8 sRoseradeTMHMLearnset[] =
 };
 static const u8 sCranidosTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM14_BLIZZARD),
@@ -12431,6 +12977,7 @@ static const u8 sCranidosTMHMLearnset[] =
 };
 static const u8 sRampardosTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM14_BLIZZARD),
@@ -12469,6 +13016,7 @@ static const u8 sRampardosTMHMLearnset[] =
 };
 static const u8 sShieldonTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM14_BLIZZARD),
@@ -12503,6 +13051,7 @@ static const u8 sShieldonTMHMLearnset[] =
 };
 static const u8 sBastiodonTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM14_BLIZZARD),
@@ -12538,12 +13087,14 @@ static const u8 sBastiodonTMHMLearnset[] =
 };
 static const u8 sBurmyTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM17_PROTECT),
     0xFF,
 };
 static const u8 sWormadamTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM53_BUG_BUZZ),
@@ -12572,6 +13123,7 @@ static const u8 sWormadamTMHMLearnset[] =
 };
 static const u8 sMothimTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -12605,6 +13157,7 @@ static const u8 sCombeeTMHMLearnset[] =
 };
 static const u8 sVespiquenTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -12630,6 +13183,7 @@ static const u8 sVespiquenTMHMLearnset[] =
 };
 static const u8 sPachirisuTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(HM01_CUT),
@@ -12654,6 +13208,8 @@ static const u8 sPachirisuTMHMLearnset[] =
 };
 static const u8 sBuizelTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM51_BRINE),
@@ -12686,6 +13242,8 @@ static const u8 sBuizelTMHMLearnset[] =
 };
 static const u8 sFloatzelTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM51_BRINE),
@@ -12722,6 +13280,7 @@ static const u8 sFloatzelTMHMLearnset[] =
 };
 static const u8 sCherubiTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -12744,6 +13303,7 @@ static const u8 sCherubiTMHMLearnset[] =
 };
 static const u8 sCherrimTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -12767,6 +13327,7 @@ static const u8 sCherrimTMHMLearnset[] =
 };
 static const u8 sShellosTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM64_SWAMPY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -12791,6 +13352,7 @@ static const u8 sShellosTMHMLearnset[] =
 };
 static const u8 sGastrodonTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM64_SWAMPY_TERRAIN),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
@@ -12826,6 +13388,8 @@ static const u8 sGastrodonTMHMLearnset[] =
 };
 static const u8 sAmbipomTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM52_WORK_UP),
@@ -12862,6 +13426,7 @@ static const u8 sAmbipomTMHMLearnset[] =
 };
 static const u8 sDrifloonTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -12890,6 +13455,7 @@ static const u8 sDrifloonTMHMLearnset[] =
 };
 static const u8 sDrifblimTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -12920,6 +13486,7 @@ static const u8 sDrifblimTMHMLearnset[] =
 };
 static const u8 sBunearyTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(HM01_CUT),
@@ -12949,6 +13516,7 @@ static const u8 sBunearyTMHMLearnset[] =
 };
 static const u8 sLopunnyTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM14_BLIZZARD),
@@ -12982,6 +13550,8 @@ static const u8 sLopunnyTMHMLearnset[] =
 };
 static const u8 sMismagiusTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -13013,6 +13583,7 @@ static const u8 sMismagiusTMHMLearnset[] =
 };
 static const u8 sHonchkrowTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -13042,6 +13613,7 @@ static const u8 sHonchkrowTMHMLearnset[] =
 };
 static const u8 sGlameowTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -13074,6 +13646,7 @@ static const u8 sGlameowTMHMLearnset[] =
 };
 static const u8 sPuruglyTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -13108,6 +13681,7 @@ static const u8 sPuruglyTMHMLearnset[] =
 };
 static const u8 sChinglingTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM04_CALM_MIND),
@@ -13137,6 +13711,7 @@ static const u8 sChinglingTMHMLearnset[] =
 };
 static const u8 sStunkyTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -13168,6 +13743,7 @@ static const u8 sStunkyTMHMLearnset[] =
 };
 static const u8 sSkuntankTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -13201,6 +13777,7 @@ static const u8 sSkuntankTMHMLearnset[] =
 };
 static const u8 sBronzorTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM04_CALM_MIND),
     TMHM(TM32_DOUBLE_TEAM),
@@ -13229,6 +13806,7 @@ static const u8 sBronzorTMHMLearnset[] =
 };
 static const u8 sBronzongTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM04_CALM_MIND),
     TMHM(TM55_BODY_PRESS),
@@ -13261,6 +13839,7 @@ static const u8 sBronzongTMHMLearnset[] =
 };
 static const u8 sBonslyTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -13284,6 +13863,7 @@ static const u8 sBonslyTMHMLearnset[] =
 };
 static const u8 sMimeJrTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM31_BRICK_BREAK),
@@ -13319,6 +13899,7 @@ static const u8 sMimeJrTMHMLearnset[] =
 };
 static const u8 sHappinyTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM32_DOUBLE_TEAM),
@@ -13348,6 +13929,7 @@ static const u8 sHappinyTMHMLearnset[] =
 };
 static const u8 sChatotTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -13373,6 +13955,7 @@ static const u8 sChatotTMHMLearnset[] =
 };
 static const u8 sSpiritombTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM04_CALM_MIND),
@@ -13402,6 +13985,7 @@ static const u8 sSpiritombTMHMLearnset[] =
 };
 static const u8 sGibleTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -13433,6 +14017,7 @@ static const u8 sGibleTMHMLearnset[] =
 };
 static const u8 sGabiteTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -13464,6 +14049,7 @@ static const u8 sGabiteTMHMLearnset[] =
 };
 static const u8 sGarchompTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -13498,6 +14084,7 @@ static const u8 sGarchompTMHMLearnset[] =
 };
 static const u8 sMunchlaxTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM52_WORK_UP),
@@ -13536,6 +14123,7 @@ static const u8 sMunchlaxTMHMLearnset[] =
 };
 static const u8 sRioluTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM52_WORK_UP),
@@ -13564,6 +14152,7 @@ static const u8 sRioluTMHMLearnset[] =
 };
 static const u8 sLucarioTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM52_WORK_UP),
@@ -13597,6 +14186,7 @@ static const u8 sLucarioTMHMLearnset[] =
 };
 static const u8 sHippopotasTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -13623,6 +14213,7 @@ static const u8 sHippopotasTMHMLearnset[] =
 };
 static const u8 sHippowdonTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -13651,6 +14242,7 @@ static const u8 sHippowdonTMHMLearnset[] =
 };
 static const u8 sSkorupiTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM53_BUG_BUZZ),
@@ -13683,6 +14275,7 @@ static const u8 sSkorupiTMHMLearnset[] =
 };
 static const u8 sDrapionTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM53_BUG_BUZZ),
@@ -13718,6 +14311,8 @@ static const u8 sDrapionTMHMLearnset[] =
 };
 static const u8 sCroagunkTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(HM03_SURF),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -13751,6 +14346,8 @@ static const u8 sCroagunkTMHMLearnset[] =
 };
 static const u8 sToxicroakTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(HM03_SURF),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -13786,6 +14383,7 @@ static const u8 sToxicroakTMHMLearnset[] =
 };
 static const u8 sCarnivineTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -13811,6 +14409,8 @@ static const u8 sCarnivineTMHMLearnset[] =
 };
 static const u8 sFinneonTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM64_SWAMPY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
@@ -13840,6 +14440,8 @@ static const u8 sFinneonTMHMLearnset[] =
 };
 static const u8 sLumineonTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM64_SWAMPY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
@@ -13869,6 +14471,7 @@ static const u8 sLumineonTMHMLearnset[] =
 };
 static const u8 sMantykeTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -13894,6 +14497,8 @@ static const u8 sMantykeTMHMLearnset[] =
 };
 static const u8 sSnoverTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM62_FROZEN_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -13923,6 +14528,8 @@ static const u8 sSnoverTMHMLearnset[] =
 };
 static const u8 sAbomasnowTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM62_FROZEN_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -13959,6 +14566,7 @@ static const u8 sAbomasnowTMHMLearnset[] =
 };
 static const u8 sWeavileTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM62_FROZEN_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -13997,6 +14605,8 @@ static const u8 sWeavileTMHMLearnset[] =
 };
 static const u8 sMagnezoneTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
@@ -14023,6 +14633,7 @@ static const u8 sMagnezoneTMHMLearnset[] =
 };
 static const u8 sLickilickyTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM55_BODY_PRESS),
@@ -14065,6 +14676,8 @@ static const u8 sLickilickyTMHMLearnset[] =
 };
 static const u8 sRhyperiorTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -14107,6 +14720,7 @@ static const u8 sRhyperiorTMHMLearnset[] =
 };
 static const u8 sTangrowthTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM40_AERIAL_ACE),
@@ -14140,6 +14754,8 @@ static const u8 sTangrowthTMHMLearnset[] =
 };
 static const u8 sElectivireTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -14176,6 +14792,7 @@ static const u8 sElectivireTMHMLearnset[] =
 };
 static const u8 sMagmortarTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM57_BURNING_TERRAIN),
     TMHM(TM45_ATTRACT),
@@ -14211,6 +14828,8 @@ static const u8 sMagmortarTMHMLearnset[] =
 };
 static const u8 sTogekissTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
@@ -14249,6 +14868,7 @@ static const u8 sTogekissTMHMLearnset[] =
 };
 static const u8 sYanmegaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -14276,6 +14896,7 @@ static const u8 sYanmegaTMHMLearnset[] =
 };
 static const u8 sLeafeonTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM40_AERIAL_ACE),
@@ -14307,6 +14928,8 @@ static const u8 sLeafeonTMHMLearnset[] =
 };
 static const u8 sGlaceonTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM62_FROZEN_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -14337,6 +14960,7 @@ static const u8 sGlaceonTMHMLearnset[] =
 };
 static const u8 sGliscorTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -14371,6 +14995,7 @@ static const u8 sGliscorTMHMLearnset[] =
 };
 static const u8 sMamoswineTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM62_FROZEN_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -14402,6 +15027,8 @@ static const u8 sMamoswineTMHMLearnset[] =
 };
 static const u8 sPorygonZTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -14432,6 +15059,7 @@ static const u8 sPorygonZTMHMLearnset[] =
 };
 static const u8 sGalladeTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -14474,6 +15102,8 @@ static const u8 sGalladeTMHMLearnset[] =
 };
 static const u8 sProbopassTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
@@ -14504,6 +15134,7 @@ static const u8 sProbopassTMHMLearnset[] =
 };
 static const u8 sDusknoirTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM14_BLIZZARD),
@@ -14539,6 +15170,8 @@ static const u8 sDusknoirTMHMLearnset[] =
 };
 static const u8 sFroslassTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM62_FROZEN_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -14572,6 +15205,7 @@ static const u8 sFroslassTMHMLearnset[] =
 };
 static const u8 sRotomTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM32_DOUBLE_TEAM),
     TMHM(TM42_FACADE),
@@ -14597,6 +15231,7 @@ static const u8 sRotomTMHMLearnset[] =
 };
 static const u8 sUxieTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM04_CALM_MIND),
@@ -14631,6 +15266,7 @@ static const u8 sUxieTMHMLearnset[] =
 };
 static const u8 sMespritTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM14_BLIZZARD),
@@ -14665,6 +15301,7 @@ static const u8 sMespritTMHMLearnset[] =
 };
 static const u8 sAzelfTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM04_CALM_MIND),
@@ -14701,6 +15338,7 @@ static const u8 sAzelfTMHMLearnset[] =
 };
 static const u8 sDialgaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM55_BODY_PRESS),
@@ -14741,6 +15379,8 @@ static const u8 sDialgaTMHMLearnset[] =
 };
 static const u8 sPalkiaTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM55_BODY_PRESS),
@@ -14784,6 +15424,7 @@ static const u8 sPalkiaTMHMLearnset[] =
 };
 static const u8 sHeatranTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -14818,6 +15459,8 @@ static const u8 sHeatranTMHMLearnset[] =
 };
 static const u8 sRegigigasTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM40_AERIAL_ACE),
@@ -14847,6 +15490,7 @@ static const u8 sRegigigasTMHMLearnset[] =
 };
 static const u8 sGiratinaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -14882,6 +15526,7 @@ static const u8 sGiratinaTMHMLearnset[] =
 };
 static const u8 sCresseliaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM04_CALM_MIND),
@@ -14910,6 +15555,7 @@ static const u8 sCresseliaTMHMLearnset[] =
 };
 static const u8 sPhioneTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM64_SWAMPY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM14_BLIZZARD),
@@ -14935,6 +15581,7 @@ static const u8 sPhioneTMHMLearnset[] =
 };
 static const u8 sManaphyTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM64_SWAMPY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM14_BLIZZARD),
@@ -14968,6 +15615,7 @@ static const u8 sManaphyTMHMLearnset[] =
 };
 static const u8 sDarkraiTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM14_BLIZZARD),
@@ -15006,6 +15654,7 @@ static const u8 sDarkraiTMHMLearnset[] =
 };
 static const u8 sShayminTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM09_BULLET_SEED),
@@ -15029,6 +15678,7 @@ static const u8 sShayminTMHMLearnset[] =
 };
 static const u8 sArceusTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -15085,6 +15735,7 @@ static const u8 sArceusTMHMLearnset[] =
 };
 static const u8 sVictiniTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM57_BURNING_TERRAIN),
@@ -15120,6 +15771,7 @@ static const u8 sVictiniTMHMLearnset[] =
 };
 static const u8 sSnivyTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM40_AERIAL_ACE),
@@ -15151,6 +15803,7 @@ static const u8 sSnivyTMHMLearnset[] =
 };
 static const u8 sServineTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM40_AERIAL_ACE),
@@ -15182,6 +15835,7 @@ static const u8 sServineTMHMLearnset[] =
 };
 static const u8 sSerperiorTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM52_WORK_UP),
@@ -15216,6 +15870,7 @@ static const u8 sSerperiorTMHMLearnset[] =
 };
 static const u8 sTepigTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM57_BURNING_TERRAIN),
@@ -15246,6 +15901,7 @@ static const u8 sTepigTMHMLearnset[] =
 };
 static const u8 sPigniteTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM57_BURNING_TERRAIN),
@@ -15278,6 +15934,7 @@ static const u8 sPigniteTMHMLearnset[] =
 };
 static const u8 sEmboarTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM57_BURNING_TERRAIN),
@@ -15313,6 +15970,8 @@ static const u8 sEmboarTMHMLearnset[] =
 };
 static const u8 sOshawottTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM52_WORK_UP),
@@ -15343,6 +16002,8 @@ static const u8 sOshawottTMHMLearnset[] =
 };
 static const u8 sDewottTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -15373,6 +16034,8 @@ static const u8 sDewottTMHMLearnset[] =
 };
 static const u8 sSamurottTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -15405,6 +16068,7 @@ static const u8 sSamurottTMHMLearnset[] =
 };
 static const u8 sPatratTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM52_WORK_UP),
@@ -15430,6 +16094,7 @@ static const u8 sPatratTMHMLearnset[] =
 };
 static const u8 sWatchogTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(HM01_CUT),
@@ -15462,6 +16127,7 @@ static const u8 sWatchogTMHMLearnset[] =
 };
 static const u8 sLillipupTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -15489,6 +16155,7 @@ static const u8 sLillipupTMHMLearnset[] =
 };
 static const u8 sHerdierTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM52_WORK_UP),
@@ -15518,6 +16185,7 @@ static const u8 sHerdierTMHMLearnset[] =
 };
 static const u8 sStoutlandTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -15549,6 +16217,7 @@ static const u8 sStoutlandTMHMLearnset[] =
 };
 static const u8 sPurrloinTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -15574,6 +16243,7 @@ static const u8 sPurrloinTMHMLearnset[] =
 };
 static const u8 sLiepardTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -15601,6 +16271,7 @@ static const u8 sLiepardTMHMLearnset[] =
 };
 static const u8 sPansageTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -15632,6 +16303,7 @@ static const u8 sPansageTMHMLearnset[] =
 };
 static const u8 sSimisageTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM31_BRICK_BREAK),
@@ -15664,6 +16336,7 @@ static const u8 sSimisageTMHMLearnset[] =
 };
 static const u8 sPansearTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM57_BURNING_TERRAIN),
     TMHM(TM45_ATTRACT),
@@ -15695,6 +16368,7 @@ static const u8 sPansearTMHMLearnset[] =
 };
 static const u8 sSimisearTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM57_BURNING_TERRAIN),
     TMHM(TM45_ATTRACT),
@@ -15728,6 +16402,8 @@ static const u8 sSimisearTMHMLearnset[] =
 };
 static const u8 sPanpourTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM51_BRINE),
@@ -15762,6 +16438,8 @@ static const u8 sPanpourTMHMLearnset[] =
 };
 static const u8 sSimipourTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM14_BLIZZARD),
@@ -15797,6 +16475,7 @@ static const u8 sSimipourTMHMLearnset[] =
 };
 static const u8 sMunnaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM04_CALM_MIND),
@@ -15824,6 +16503,7 @@ static const u8 sMunnaTMHMLearnset[] =
 };
 static const u8 sMusharnaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM04_CALM_MIND),
@@ -15852,6 +16532,7 @@ static const u8 sMusharnaTMHMLearnset[] =
 };
 static const u8 sPidoveTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -15874,6 +16555,7 @@ static const u8 sPidoveTMHMLearnset[] =
 };
 static const u8 sTranquillTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM52_WORK_UP),
@@ -15896,6 +16578,7 @@ static const u8 sTranquillTMHMLearnset[] =
 };
 static const u8 sUnfezantTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -15919,6 +16602,7 @@ static const u8 sUnfezantTMHMLearnset[] =
 };
 static const u8 sBlitzleTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -15942,6 +16626,7 @@ static const u8 sBlitzleTMHMLearnset[] =
 };
 static const u8 sZebstrikaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -15968,6 +16653,7 @@ static const u8 sZebstrikaTMHMLearnset[] =
 };
 static const u8 sRoggenrolaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
@@ -15991,6 +16677,7 @@ static const u8 sRoggenrolaTMHMLearnset[] =
 };
 static const u8 sBoldoreTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
@@ -16014,6 +16701,7 @@ static const u8 sBoldoreTMHMLearnset[] =
 };
 static const u8 sGigalithTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
@@ -16039,6 +16727,7 @@ static const u8 sGigalithTMHMLearnset[] =
 };
 static const u8 sWoobatTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -16071,6 +16760,7 @@ static const u8 sWoobatTMHMLearnset[] =
 };
 static const u8 sSwoobatTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -16104,6 +16794,7 @@ static const u8 sSwoobatTMHMLearnset[] =
 };
 static const u8 sDrilburTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -16130,6 +16821,7 @@ static const u8 sDrilburTMHMLearnset[] =
 };
 static const u8 sExcadrillTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -16157,6 +16849,7 @@ static const u8 sExcadrillTMHMLearnset[] =
 };
 static const u8 sAudinoTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -16197,6 +16890,7 @@ static const u8 sAudinoTMHMLearnset[] =
 };
 static const u8 sTimburrTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM52_WORK_UP),
@@ -16223,6 +16917,7 @@ static const u8 sTimburrTMHMLearnset[] =
 };
 static const u8 sGurdurrTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM52_WORK_UP),
@@ -16249,6 +16944,7 @@ static const u8 sGurdurrTMHMLearnset[] =
 };
 static const u8 sConkeldurrTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM52_WORK_UP),
@@ -16277,6 +16973,7 @@ static const u8 sConkeldurrTMHMLearnset[] =
 };
 static const u8 sTympoleTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM64_SWAMPY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -16298,6 +16995,7 @@ static const u8 sTympoleTMHMLearnset[] =
 };
 static const u8 sPalpitoadTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM64_SWAMPY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -16321,6 +17019,7 @@ static const u8 sPalpitoadTMHMLearnset[] =
 };
 static const u8 sSeismitoadTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM64_SWAMPY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -16350,6 +17049,7 @@ static const u8 sSeismitoadTMHMLearnset[] =
 };
 static const u8 sThrohTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM31_BRICK_BREAK),
@@ -16377,6 +17077,7 @@ static const u8 sThrohTMHMLearnset[] =
 };
 static const u8 sSawkTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM31_BRICK_BREAK),
@@ -16404,6 +17105,7 @@ static const u8 sSawkTMHMLearnset[] =
 };
 static const u8 sSewaddleTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -16429,6 +17131,7 @@ static const u8 sSewaddleTMHMLearnset[] =
 };
 static const u8 sSwadloonTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -16454,6 +17157,7 @@ static const u8 sSwadloonTMHMLearnset[] =
 };
 static const u8 sLeavannyTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM40_AERIAL_ACE),
@@ -16483,6 +17187,7 @@ static const u8 sLeavannyTMHMLearnset[] =
 };
 static const u8 sVenipedeTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM32_DOUBLE_TEAM),
@@ -16502,6 +17207,7 @@ static const u8 sVenipedeTMHMLearnset[] =
 };
 static const u8 sWhirlipedeTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM32_DOUBLE_TEAM),
@@ -16521,6 +17227,7 @@ static const u8 sWhirlipedeTMHMLearnset[] =
 };
 static const u8 sScolipedeTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(HM01_CUT),
@@ -16548,6 +17255,7 @@ static const u8 sScolipedeTMHMLearnset[] =
 };
 static const u8 sCottoneeTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -16570,6 +17278,7 @@ static const u8 sCottoneeTMHMLearnset[] =
 };
 static const u8 sWhimsicottTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM32_DOUBLE_TEAM),
@@ -16597,6 +17306,7 @@ static const u8 sWhimsicottTMHMLearnset[] =
 };
 static const u8 sPetililTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -16619,6 +17329,7 @@ static const u8 sPetililTMHMLearnset[] =
 };
 static const u8 sLilligantTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
@@ -16644,6 +17355,7 @@ static const u8 sLilligantTMHMLearnset[] =
 };
 static const u8 sBasculinTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM51_BRINE),
@@ -16668,6 +17380,7 @@ static const u8 sBasculinTMHMLearnset[] =
 };
 static const u8 sSandileTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -16696,6 +17409,7 @@ static const u8 sSandileTMHMLearnset[] =
 };
 static const u8 sKrokorokTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -16728,6 +17442,7 @@ static const u8 sKrokorokTMHMLearnset[] =
 };
 static const u8 sKrookodileTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -16764,6 +17479,7 @@ static const u8 sKrookodileTMHMLearnset[] =
 };
 static const u8 sDarumakaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM57_BURNING_TERRAIN),
     TMHM(TM45_ATTRACT),
@@ -16796,6 +17512,7 @@ static const u8 sDarumakaTMHMLearnset[] =
 };
 static const u8 sDarmanitanTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM57_BURNING_TERRAIN),
     TMHM(TM45_ATTRACT),
@@ -16834,6 +17551,7 @@ static const u8 sDarmanitanTMHMLearnset[] =
 };
 static const u8 sMaractusTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM40_AERIAL_ACE),
@@ -16856,6 +17574,7 @@ static const u8 sMaractusTMHMLearnset[] =
 };
 static const u8 sDwebbleTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
@@ -16882,6 +17601,7 @@ static const u8 sDwebbleTMHMLearnset[] =
 };
 static const u8 sCrustleTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
@@ -16910,6 +17630,7 @@ static const u8 sCrustleTMHMLearnset[] =
 };
 static const u8 sScraggyTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM31_BRICK_BREAK),
@@ -16942,6 +17663,7 @@ static const u8 sScraggyTMHMLearnset[] =
 };
 static const u8 sScraftyTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM31_BRICK_BREAK),
@@ -16976,6 +17698,7 @@ static const u8 sScraftyTMHMLearnset[] =
 };
 static const u8 sSigilyphTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -17008,6 +17731,7 @@ static const u8 sSigilyphTMHMLearnset[] =
 };
 static const u8 sYamaskTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM04_CALM_MIND),
@@ -17033,6 +17757,7 @@ static const u8 sYamaskTMHMLearnset[] =
 };
 static const u8 sCofagrigusTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM55_BODY_PRESS),
@@ -17060,6 +17785,7 @@ static const u8 sCofagrigusTMHMLearnset[] =
 };
 static const u8 sTirtougaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM64_SWAMPY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -17091,6 +17817,7 @@ static const u8 sTirtougaTMHMLearnset[] =
 };
 static const u8 sCarracostaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM64_SWAMPY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -17123,6 +17850,7 @@ static const u8 sCarracostaTMHMLearnset[] =
 };
 static const u8 sArchenTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -17151,6 +17879,7 @@ static const u8 sArchenTMHMLearnset[] =
 };
 static const u8 sArcheopsTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -17181,6 +17910,7 @@ static const u8 sArcheopsTMHMLearnset[] =
 };
 static const u8 sTrubbishTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM32_DOUBLE_TEAM),
@@ -17201,6 +17931,7 @@ static const u8 sTrubbishTMHMLearnset[] =
 };
 static const u8 sGarbodorTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM55_BODY_PRESS),
@@ -17226,6 +17957,7 @@ static const u8 sGarbodorTMHMLearnset[] =
 };
 static const u8 sZoruaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -17253,6 +17985,7 @@ static const u8 sZoruaTMHMLearnset[] =
 };
 static const u8 sZoroarkTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -17284,6 +18017,7 @@ static const u8 sZoroarkTMHMLearnset[] =
 };
 static const u8 sMinccinoTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM04_CALM_MIND),
@@ -17309,6 +18043,7 @@ static const u8 sMinccinoTMHMLearnset[] =
 };
 static const u8 sCinccinoTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM52_WORK_UP),
@@ -17338,6 +18073,7 @@ static const u8 sCinccinoTMHMLearnset[] =
 };
 static const u8 sGothitaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM04_CALM_MIND),
@@ -17369,6 +18105,7 @@ static const u8 sGothitaTMHMLearnset[] =
 };
 static const u8 sGothoritaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM04_CALM_MIND),
@@ -17400,6 +18137,7 @@ static const u8 sGothoritaTMHMLearnset[] =
 };
 static const u8 sGothitelleTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM31_BRICK_BREAK),
@@ -17433,6 +18171,7 @@ static const u8 sGothitelleTMHMLearnset[] =
 };
 static const u8 sSolosisTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM04_CALM_MIND),
@@ -17461,6 +18200,7 @@ static const u8 sSolosisTMHMLearnset[] =
 };
 static const u8 sDuosionTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM04_CALM_MIND),
@@ -17489,6 +18229,7 @@ static const u8 sDuosionTMHMLearnset[] =
 };
 static const u8 sReuniclusTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM04_CALM_MIND),
@@ -17521,6 +18262,7 @@ static const u8 sReuniclusTMHMLearnset[] =
 };
 static const u8 sDucklettTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM64_SWAMPY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
@@ -17547,6 +18289,7 @@ static const u8 sDucklettTMHMLearnset[] =
 };
 static const u8 sSwannaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM64_SWAMPY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
@@ -17574,6 +18317,7 @@ static const u8 sSwannaTMHMLearnset[] =
 };
 static const u8 sVanilliteTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM62_FROZEN_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -17597,6 +18341,7 @@ static const u8 sVanilliteTMHMLearnset[] =
 };
 static const u8 sVanillishTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM62_FROZEN_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -17620,6 +18365,7 @@ static const u8 sVanillishTMHMLearnset[] =
 };
 static const u8 sVanilluxeTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM62_FROZEN_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -17644,6 +18390,7 @@ static const u8 sVanilluxeTMHMLearnset[] =
 };
 static const u8 sDeerlingTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
@@ -17670,6 +18417,7 @@ static const u8 sDeerlingTMHMLearnset[] =
 };
 static const u8 sSawsbuckTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
@@ -17699,6 +18447,7 @@ static const u8 sSawsbuckTMHMLearnset[] =
 };
 static const u8 sEmolgaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -17725,6 +18474,7 @@ static const u8 sEmolgaTMHMLearnset[] =
 };
 static const u8 sKarrablastTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM53_BUG_BUZZ),
@@ -17745,6 +18495,7 @@ static const u8 sKarrablastTMHMLearnset[] =
 };
 static const u8 sEscavalierTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM53_BUG_BUZZ),
@@ -17767,6 +18518,7 @@ static const u8 sEscavalierTMHMLearnset[] =
 };
 static const u8 sFoongusTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -17789,6 +18541,7 @@ static const u8 sFoongusTMHMLearnset[] =
 };
 static const u8 sAmoongussTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -17812,6 +18565,7 @@ static const u8 sAmoongussTMHMLearnset[] =
 };
 static const u8 sFrillishTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM64_SWAMPY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -17845,6 +18599,7 @@ static const u8 sFrillishTMHMLearnset[] =
 };
 static const u8 sJellicentTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM64_SWAMPY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -17879,6 +18634,8 @@ static const u8 sJellicentTMHMLearnset[] =
 };
 static const u8 sAlomomolaTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM51_BRINE),
@@ -17908,6 +18665,7 @@ static const u8 sAlomomolaTMHMLearnset[] =
 };
 static const u8 sJoltikTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -17933,6 +18691,7 @@ static const u8 sJoltikTMHMLearnset[] =
 };
 static const u8 sGalvantulaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM53_BUG_BUZZ),
@@ -17960,6 +18719,7 @@ static const u8 sGalvantulaTMHMLearnset[] =
 };
 static const u8 sFerroseedTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM09_BULLET_SEED),
@@ -17982,6 +18742,7 @@ static const u8 sFerroseedTMHMLearnset[] =
 };
 static const u8 sFerrothornTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM40_AERIAL_ACE),
@@ -18010,6 +18771,8 @@ static const u8 sFerrothornTMHMLearnset[] =
 };
 static const u8 sKlinkTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM32_DOUBLE_TEAM),
@@ -18030,6 +18793,8 @@ static const u8 sKlinkTMHMLearnset[] =
 };
 static const u8 sKlangTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM32_DOUBLE_TEAM),
@@ -18050,6 +18815,8 @@ static const u8 sKlangTMHMLearnset[] =
 };
 static const u8 sKlinklangTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM32_DOUBLE_TEAM),
     TMHM(TM42_FACADE),
@@ -18071,11 +18838,14 @@ static const u8 sKlinklangTMHMLearnset[] =
 };
 static const u8 sTynamoTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     0xFF,
 };
 static const u8 sEelektrikTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -18100,6 +18870,8 @@ static const u8 sEelektrikTMHMLearnset[] =
 };
 static const u8 sEelektrossTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -18134,6 +18906,7 @@ static const u8 sEelektrossTMHMLearnset[] =
 };
 static const u8 sElgyemTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM04_CALM_MIND),
@@ -18164,6 +18937,7 @@ static const u8 sElgyemTMHMLearnset[] =
 };
 static const u8 sBeheeyemTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -18196,6 +18970,7 @@ static const u8 sBeheeyemTMHMLearnset[] =
 };
 static const u8 sLitwickTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM57_BURNING_TERRAIN),
     TMHM(TM45_ATTRACT),
@@ -18225,6 +19000,7 @@ static const u8 sLitwickTMHMLearnset[] =
 };
 static const u8 sLampentTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM57_BURNING_TERRAIN),
     TMHM(TM45_ATTRACT),
@@ -18254,6 +19030,7 @@ static const u8 sLampentTMHMLearnset[] =
 };
 static const u8 sChandelureTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM57_BURNING_TERRAIN),
     TMHM(TM45_ATTRACT),
@@ -18284,6 +19061,7 @@ static const u8 sChandelureTMHMLearnset[] =
 };
 static const u8 sAxewTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -18312,6 +19090,7 @@ static const u8 sAxewTMHMLearnset[] =
 };
 static const u8 sFraxureTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -18340,6 +19119,7 @@ static const u8 sFraxureTMHMLearnset[] =
 };
 static const u8 sHaxorusTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -18372,6 +19152,8 @@ static const u8 sHaxorusTMHMLearnset[] =
 };
 static const u8 sCubchooTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM62_FROZEN_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -18402,6 +19184,8 @@ static const u8 sCubchooTMHMLearnset[] =
 };
 static const u8 sBearticTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM62_FROZEN_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -18439,6 +19223,8 @@ static const u8 sBearticTMHMLearnset[] =
 };
 static const u8 sCryogonalTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM62_FROZEN_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -18464,6 +19250,7 @@ static const u8 sCryogonalTMHMLearnset[] =
 };
 static const u8 sShelmetTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM53_BUG_BUZZ),
@@ -18483,6 +19270,7 @@ static const u8 sShelmetTMHMLearnset[] =
 };
 static const u8 sAccelgorTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM53_BUG_BUZZ),
@@ -18504,6 +19292,7 @@ static const u8 sAccelgorTMHMLearnset[] =
 };
 static const u8 sStunfiskTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -18532,6 +19321,7 @@ static const u8 sStunfiskTMHMLearnset[] =
 };
 static const u8 sMienfooTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -18561,6 +19351,7 @@ static const u8 sMienfooTMHMLearnset[] =
 };
 static const u8 sMienshaoTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -18591,6 +19382,7 @@ static const u8 sMienshaoTMHMLearnset[] =
 };
 static const u8 sDruddigonTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -18626,6 +19418,7 @@ static const u8 sDruddigonTMHMLearnset[] =
 };
 static const u8 sGolettTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM31_BRICK_BREAK),
     TMHM(TM32_DOUBLE_TEAM),
@@ -18654,6 +19447,7 @@ static const u8 sGolettTMHMLearnset[] =
 };
 static const u8 sGolurkTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM31_BRICK_BREAK),
     TMHM(TM55_BODY_PRESS),
@@ -18688,6 +19482,7 @@ static const u8 sGolurkTMHMLearnset[] =
 };
 static const u8 sPawniardTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -18715,6 +19510,7 @@ static const u8 sPawniardTMHMLearnset[] =
 };
 static const u8 sBisharpTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -18743,6 +19539,7 @@ static const u8 sBisharpTMHMLearnset[] =
 };
 static const u8 sBouffalantTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -18770,6 +19567,7 @@ static const u8 sBouffalantTMHMLearnset[] =
 };
 static const u8 sRuffletTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -18797,6 +19595,7 @@ static const u8 sRuffletTMHMLearnset[] =
 };
 static const u8 sBraviaryTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -18825,6 +19624,7 @@ static const u8 sBraviaryTMHMLearnset[] =
 };
 static const u8 sVullabyTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -18854,6 +19654,7 @@ static const u8 sVullabyTMHMLearnset[] =
 };
 static const u8 sMandibuzzTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -18884,6 +19685,7 @@ static const u8 sMandibuzzTMHMLearnset[] =
 };
 static const u8 sHeatmorTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM57_BURNING_TERRAIN),
     TMHM(TM40_AERIAL_ACE),
@@ -18916,6 +19718,7 @@ static const u8 sHeatmorTMHMLearnset[] =
 };
 static const u8 sDurantTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -18938,6 +19741,7 @@ static const u8 sDurantTMHMLearnset[] =
 };
 static const u8 sDeinoTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM52_WORK_UP),
@@ -18963,6 +19767,7 @@ static const u8 sDeinoTMHMLearnset[] =
 };
 static const u8 sZweilousTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM52_WORK_UP),
@@ -18988,6 +19793,7 @@ static const u8 sZweilousTMHMLearnset[] =
 };
 static const u8 sHydreigonTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -19024,6 +19830,7 @@ static const u8 sHydreigonTMHMLearnset[] =
 };
 static const u8 sLarvestaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM57_BURNING_TERRAIN),
@@ -19051,6 +19858,7 @@ static const u8 sLarvestaTMHMLearnset[] =
 };
 static const u8 sVolcaronaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM57_BURNING_TERRAIN),
@@ -19081,6 +19889,7 @@ static const u8 sVolcaronaTMHMLearnset[] =
 };
 static const u8 sCobalionTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM52_WORK_UP),
@@ -19107,6 +19916,7 @@ static const u8 sCobalionTMHMLearnset[] =
 };
 static const u8 sTerrakionTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM52_WORK_UP),
@@ -19135,6 +19945,7 @@ static const u8 sTerrakionTMHMLearnset[] =
 };
 static const u8 sVirizionTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM40_AERIAL_ACE),
@@ -19166,6 +19977,8 @@ static const u8 sVirizionTMHMLearnset[] =
 };
 static const u8 sTornadusTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -19195,6 +20008,7 @@ static const u8 sTornadusTMHMLearnset[] =
 };
 static const u8 sThundurusTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM45_ATTRACT),
@@ -19227,6 +20041,7 @@ static const u8 sThundurusTMHMLearnset[] =
 };
 static const u8 sReshiramTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM57_BURNING_TERRAIN),
     TMHM(HM01_CUT),
@@ -19262,6 +20077,7 @@ static const u8 sReshiramTMHMLearnset[] =
 };
 static const u8 sZekromTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(HM01_CUT),
@@ -19296,6 +20112,7 @@ static const u8 sZekromTMHMLearnset[] =
 };
 static const u8 sLandorusTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -19326,6 +20143,7 @@ static const u8 sLandorusTMHMLearnset[] =
 };
 static const u8 sKyuremTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM62_FROZEN_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM14_BLIZZARD),
@@ -19360,6 +20178,7 @@ static const u8 sKyuremTMHMLearnset[] =
 };
 static const u8 sKeldeoTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM52_WORK_UP),
@@ -19389,6 +20208,7 @@ static const u8 sKeldeoTMHMLearnset[] =
 };
 static const u8 sMeloettaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM31_BRICK_BREAK),
     TMHM(TM52_WORK_UP),
@@ -19422,6 +20242,8 @@ static const u8 sMeloettaTMHMLearnset[] =
 };
 static const u8 sGenesectTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -19453,6 +20275,7 @@ static const u8 sGenesectTMHMLearnset[] =
 };
 static const u8 sChespinTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM40_AERIAL_ACE),
@@ -19488,6 +20311,7 @@ static const u8 sChespinTMHMLearnset[] =
 };
 static const u8 sQuilladinTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM40_AERIAL_ACE),
@@ -19523,6 +20347,7 @@ static const u8 sQuilladinTMHMLearnset[] =
 };
 static const u8 sChesnaughtTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM40_AERIAL_ACE),
@@ -19561,6 +20386,7 @@ static const u8 sChesnaughtTMHMLearnset[] =
 };
 static const u8 sFennekinTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM57_BURNING_TERRAIN),
     TMHM(TM45_ATTRACT),
@@ -19590,6 +20416,7 @@ static const u8 sFennekinTMHMLearnset[] =
 };
 static const u8 sBraixenTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM57_BURNING_TERRAIN),
     TMHM(TM45_ATTRACT),
@@ -19622,6 +20449,7 @@ static const u8 sBraixenTMHMLearnset[] =
 };
 static const u8 sDelphoxTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM57_BURNING_TERRAIN),
     TMHM(TM45_ATTRACT),
@@ -19657,6 +20485,8 @@ static const u8 sDelphoxTMHMLearnset[] =
 };
 static const u8 sFroakieTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -19689,6 +20519,8 @@ static const u8 sFroakieTMHMLearnset[] =
 };
 static const u8 sFrogadierTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -19721,6 +20553,8 @@ static const u8 sFrogadierTMHMLearnset[] =
 };
 static const u8 sGreninjaTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -19754,6 +20588,7 @@ static const u8 sGreninjaTMHMLearnset[] =
 };
 static const u8 sBunnelbyTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
@@ -19787,6 +20622,7 @@ static const u8 sBunnelbyTMHMLearnset[] =
 };
 static const u8 sDiggersbyTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
@@ -19823,6 +20659,7 @@ static const u8 sDiggersbyTMHMLearnset[] =
 };
 static const u8 sFletchlingTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -19847,6 +20684,7 @@ static const u8 sFletchlingTMHMLearnset[] =
 };
 static const u8 sFletchinderTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -19873,6 +20711,7 @@ static const u8 sFletchinderTMHMLearnset[] =
 };
 static const u8 sTalonflameTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM57_BURNING_TERRAIN),
     TMHM(TM40_AERIAL_ACE),
@@ -19903,17 +20742,20 @@ static const u8 sTalonflameTMHMLearnset[] =
 };
 static const u8 sScatterbugTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     0xFF,
 };
 static const u8 sSpewpaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM17_PROTECT),
     0xFF,
 };
 static const u8 sVivillonTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM53_BUG_BUZZ),
@@ -19942,6 +20784,7 @@ static const u8 sVivillonTMHMLearnset[] =
 };
 static const u8 sLitleoTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -19973,6 +20816,7 @@ static const u8 sLitleoTMHMLearnset[] =
 };
 static const u8 sPyroarTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -20005,6 +20849,8 @@ static const u8 sPyroarTMHMLearnset[] =
 };
 static const u8 sFlabebeTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -20029,6 +20875,8 @@ static const u8 sFlabebeTMHMLearnset[] =
 };
 static const u8 sFloetteTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM04_CALM_MIND),
@@ -20052,6 +20900,7 @@ static const u8 sFloetteTMHMLearnset[] =
 };
 static const u8 sFlorgesTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -20078,6 +20927,7 @@ static const u8 sFlorgesTMHMLearnset[] =
 };
 static const u8 sSkiddoTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
@@ -20108,6 +20958,7 @@ static const u8 sSkiddoTMHMLearnset[] =
 };
 static const u8 sGogoatTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
@@ -20141,6 +20992,7 @@ static const u8 sGogoatTMHMLearnset[] =
 };
 static const u8 sPanchamTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM52_WORK_UP),
@@ -20173,6 +21025,7 @@ static const u8 sPanchamTMHMLearnset[] =
 };
 static const u8 sPangoroTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM52_WORK_UP),
@@ -20210,6 +21063,7 @@ static const u8 sPangoroTMHMLearnset[] =
 };
 static const u8 sFurfrouTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -20235,6 +21089,7 @@ static const u8 sFurfrouTMHMLearnset[] =
 };
 static const u8 sEspurrTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM04_CALM_MIND),
@@ -20266,6 +21121,7 @@ static const u8 sEspurrTMHMLearnset[] =
 };
 static const u8 sMeowsticTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM04_CALM_MIND),
@@ -20300,6 +21156,7 @@ static const u8 sMeowsticTMHMLearnset[] =
 };
 static const u8 sHonedgeTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -20322,6 +21179,7 @@ static const u8 sHonedgeTMHMLearnset[] =
 };
 static const u8 sDoubladeTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -20344,6 +21202,7 @@ static const u8 sDoubladeTMHMLearnset[] =
 };
 static const u8 sAegislashTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -20369,6 +21228,7 @@ static const u8 sAegislashTMHMLearnset[] =
 };
 static const u8 sSpritzeeTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM04_CALM_MIND),
@@ -20394,6 +21254,7 @@ static const u8 sSpritzeeTMHMLearnset[] =
 };
 static const u8 sAromatisseTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM04_CALM_MIND),
@@ -20421,6 +21282,7 @@ static const u8 sAromatisseTMHMLearnset[] =
 };
 static const u8 sSwirlixTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM04_CALM_MIND),
@@ -20447,6 +21309,7 @@ static const u8 sSwirlixTMHMLearnset[] =
 };
 static const u8 sSlurpuffTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM04_CALM_MIND),
@@ -20474,6 +21337,7 @@ static const u8 sSlurpuffTMHMLearnset[] =
 };
 static const u8 sInkayTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -20504,6 +21368,7 @@ static const u8 sInkayTMHMLearnset[] =
 };
 static const u8 sMalamarTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -20535,6 +21400,7 @@ static const u8 sMalamarTMHMLearnset[] =
 };
 static const u8 sBinacleTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM40_AERIAL_ACE),
@@ -20570,6 +21436,7 @@ static const u8 sBinacleTMHMLearnset[] =
 };
 static const u8 sBarbaracleTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM40_AERIAL_ACE),
@@ -20608,6 +21475,8 @@ static const u8 sBarbaracleTMHMLearnset[] =
 };
 static const u8 sSkrelpTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(HM08_DIVE),
@@ -20634,6 +21503,8 @@ static const u8 sSkrelpTMHMLearnset[] =
 };
 static const u8 sDragalgeTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(HM08_DIVE),
@@ -20662,6 +21533,8 @@ static const u8 sDragalgeTMHMLearnset[] =
 };
 static const u8 sClauncherTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(HM01_CUT),
@@ -20686,6 +21559,8 @@ static const u8 sClauncherTMHMLearnset[] =
 };
 static const u8 sClawitzerTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(HM01_CUT),
@@ -20712,6 +21587,7 @@ static const u8 sClawitzerTMHMLearnset[] =
 };
 static const u8 sHelioptileTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
@@ -20741,6 +21617,7 @@ static const u8 sHelioptileTMHMLearnset[] =
 };
 static const u8 sHelioliskTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
@@ -20771,6 +21648,7 @@ static const u8 sHelioliskTMHMLearnset[] =
 };
 static const u8 sTyruntTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -20798,6 +21676,7 @@ static const u8 sTyruntTMHMLearnset[] =
 };
 static const u8 sTyrantrumTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -20826,6 +21705,7 @@ static const u8 sTyrantrumTMHMLearnset[] =
 };
 static const u8 sAmauraTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM62_FROZEN_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
@@ -20860,6 +21740,7 @@ static const u8 sAmauraTMHMLearnset[] =
 };
 static const u8 sAurorusTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM62_FROZEN_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
@@ -20897,6 +21778,7 @@ static const u8 sAurorusTMHMLearnset[] =
 };
 static const u8 sSylveonTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM04_CALM_MIND),
@@ -20926,6 +21808,7 @@ static const u8 sSylveonTMHMLearnset[] =
 };
 static const u8 sHawluchaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM55_BODY_PRESS),
@@ -20958,6 +21841,7 @@ static const u8 sHawluchaTMHMLearnset[] =
 };
 static const u8 sDedenneTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -20985,6 +21869,7 @@ static const u8 sDedenneTMHMLearnset[] =
 };
 static const u8 sCarbinkTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM04_CALM_MIND),
@@ -21012,6 +21897,8 @@ static const u8 sCarbinkTMHMLearnset[] =
 };
 static const u8 sGoomyTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM64_SWAMPY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -21035,6 +21922,8 @@ static const u8 sGoomyTMHMLearnset[] =
 };
 static const u8 sSliggooTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM64_SWAMPY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -21060,6 +21949,8 @@ static const u8 sSliggooTMHMLearnset[] =
 };
 static const u8 sGoodraTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM64_SWAMPY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -21095,6 +21986,7 @@ static const u8 sGoodraTMHMLearnset[] =
 };
 static const u8 sKlefkiTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM04_CALM_MIND),
@@ -21121,6 +22013,7 @@ static const u8 sKlefkiTMHMLearnset[] =
 };
 static const u8 sPhantumpTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -21150,6 +22043,7 @@ static const u8 sPhantumpTMHMLearnset[] =
 };
 static const u8 sTrevenantTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -21182,6 +22076,7 @@ static const u8 sTrevenantTMHMLearnset[] =
 };
 static const u8 sPumpkabooTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -21213,6 +22108,7 @@ static const u8 sPumpkabooTMHMLearnset[] =
 };
 static const u8 sGourgeistTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -21245,6 +22141,8 @@ static const u8 sGourgeistTMHMLearnset[] =
 };
 static const u8 sBergmiteTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM62_FROZEN_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -21272,6 +22170,8 @@ static const u8 sBergmiteTMHMLearnset[] =
 };
 static const u8 sAvaluggTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM62_FROZEN_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -21303,6 +22203,7 @@ static const u8 sAvaluggTMHMLearnset[] =
 };
 static const u8 sNoibatTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -21334,6 +22235,7 @@ static const u8 sNoibatTMHMLearnset[] =
 };
 static const u8 sNoivernTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -21368,6 +22270,7 @@ static const u8 sNoivernTMHMLearnset[] =
 };
 static const u8 sXerneasTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM04_CALM_MIND),
@@ -21396,6 +22299,7 @@ static const u8 sXerneasTMHMLearnset[] =
 };
 static const u8 sYveltalTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(HM01_CUT),
@@ -21423,6 +22327,7 @@ static const u8 sYveltalTMHMLearnset[] =
 };
 static const u8 sZygardeTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM31_BRICK_BREAK),
@@ -21449,6 +22354,7 @@ static const u8 sZygardeTMHMLearnset[] =
 };
 static const u8 sDiancieTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM04_CALM_MIND),
@@ -21477,6 +22383,7 @@ static const u8 sDiancieTMHMLearnset[] =
 };
 static const u8 sHoopaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM31_BRICK_BREAK),
     TMHM(TM04_CALM_MIND),
@@ -21510,6 +22417,7 @@ static const u8 sHoopaTMHMLearnset[] =
 };
 static const u8 sVolcanionTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM31_BRICK_BREAK),
     TMHM(TM55_BODY_PRESS),
@@ -21541,6 +22449,7 @@ static const u8 sVolcanionTMHMLearnset[] =
 };
 static const u8 sRowletTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -21563,6 +22472,7 @@ static const u8 sRowletTMHMLearnset[] =
 };
 static const u8 sDartrixTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -21585,6 +22495,7 @@ static const u8 sDartrixTMHMLearnset[] =
 };
 static const u8 sDecidueyeTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -21608,6 +22519,7 @@ static const u8 sDecidueyeTMHMLearnset[] =
 };
 static const u8 sLittenTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM57_BURNING_TERRAIN),
     TMHM(TM45_ATTRACT),
@@ -21632,6 +22544,7 @@ static const u8 sLittenTMHMLearnset[] =
 };
 static const u8 sTorracatTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM57_BURNING_TERRAIN),
     TMHM(TM45_ATTRACT),
@@ -21656,6 +22569,7 @@ static const u8 sTorracatTMHMLearnset[] =
 };
 static const u8 sIncineroarTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM57_BURNING_TERRAIN),
     TMHM(TM45_ATTRACT),
@@ -21686,6 +22600,7 @@ static const u8 sIncineroarTMHMLearnset[] =
 };
 static const u8 sPopplioTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM52_WORK_UP),
@@ -21710,6 +22625,7 @@ static const u8 sPopplioTMHMLearnset[] =
 };
 static const u8 sBrionneTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM51_BRINE),
@@ -21734,6 +22650,7 @@ static const u8 sBrionneTMHMLearnset[] =
 };
 static const u8 sPrimarinaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM51_BRINE),
@@ -21762,6 +22679,7 @@ static const u8 sPrimarinaTMHMLearnset[] =
 };
 static const u8 sPikipekTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -21784,6 +22702,7 @@ static const u8 sPikipekTMHMLearnset[] =
 };
 static const u8 sTrumbeakTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -21806,6 +22725,7 @@ static const u8 sTrumbeakTMHMLearnset[] =
 };
 static const u8 sToucannonTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -21829,6 +22749,8 @@ static const u8 sToucannonTMHMLearnset[] =
 };
 static const u8 sYungoosTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM32_DOUBLE_TEAM),
@@ -21852,6 +22774,8 @@ static const u8 sYungoosTMHMLearnset[] =
 };
 static const u8 sGumshoosTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM32_DOUBLE_TEAM),
@@ -21876,6 +22800,7 @@ static const u8 sGumshoosTMHMLearnset[] =
 };
 static const u8 sGrubbinTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -21896,6 +22821,7 @@ static const u8 sGrubbinTMHMLearnset[] =
 };
 static const u8 sCharjabugTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -21916,6 +22842,8 @@ static const u8 sCharjabugTMHMLearnset[] =
 };
 static const u8 sVikavoltTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -21940,6 +22868,8 @@ static const u8 sVikavoltTMHMLearnset[] =
 };
 static const u8 sCrabrawlerTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM31_BRICK_BREAK),
@@ -21964,6 +22894,8 @@ static const u8 sCrabrawlerTMHMLearnset[] =
 };
 static const u8 sCrabominableTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM62_FROZEN_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -21992,6 +22924,7 @@ static const u8 sCrabominableTMHMLearnset[] =
 };
 static const u8 sOricorioTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -22014,6 +22947,7 @@ static const u8 sOricorioTMHMLearnset[] =
 };
 static const u8 sCutieflyTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM53_BUG_BUZZ),
@@ -22038,6 +22972,7 @@ static const u8 sCutieflyTMHMLearnset[] =
 };
 static const u8 sRibombeeTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM40_AERIAL_ACE),
@@ -22064,6 +22999,7 @@ static const u8 sRibombeeTMHMLearnset[] =
 };
 static const u8 sRockruffTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM32_DOUBLE_TEAM),
@@ -22082,6 +23018,7 @@ static const u8 sRockruffTMHMLearnset[] =
 };
 static const u8 sLycanrocTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM31_BRICK_BREAK),
@@ -22102,6 +23039,7 @@ static const u8 sLycanrocTMHMLearnset[] =
 };
 static const u8 sWishiwashiTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM51_BRINE),
@@ -22126,6 +23064,8 @@ static const u8 sWishiwashiTMHMLearnset[] =
 };
 static const u8 sMareanieTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM51_BRINE),
@@ -22150,6 +23090,8 @@ static const u8 sMareanieTMHMLearnset[] =
 };
 static const u8 sToxapexTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM51_BRINE),
@@ -22175,6 +23117,7 @@ static const u8 sToxapexTMHMLearnset[] =
 };
 static const u8 sMudbrayTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -22194,6 +23137,7 @@ static const u8 sMudbrayTMHMLearnset[] =
 };
 static const u8 sMudsdaleTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -22214,6 +23158,7 @@ static const u8 sMudsdaleTMHMLearnset[] =
 };
 static const u8 sDewpiderTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM53_BUG_BUZZ),
@@ -22236,6 +23181,7 @@ static const u8 sDewpiderTMHMLearnset[] =
 };
 static const u8 sAraquanidTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM53_BUG_BUZZ),
@@ -22260,6 +23206,7 @@ static const u8 sAraquanidTMHMLearnset[] =
 };
 static const u8 sFomantisTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -22279,6 +23226,7 @@ static const u8 sFomantisTMHMLearnset[] =
 };
 static const u8 sLurantisTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM40_AERIAL_ACE),
@@ -22301,6 +23249,7 @@ static const u8 sLurantisTMHMLearnset[] =
 };
 static const u8 sMorelullTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -22322,6 +23271,7 @@ static const u8 sMorelullTMHMLearnset[] =
 };
 static const u8 sShiinoticTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -22343,6 +23293,7 @@ static const u8 sShiinoticTMHMLearnset[] =
 };
 static const u8 sSalanditTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM57_BURNING_TERRAIN),
     TMHM(TM45_ATTRACT),
@@ -22368,6 +23319,7 @@ static const u8 sSalanditTMHMLearnset[] =
 };
 static const u8 sSalazzleTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM57_BURNING_TERRAIN),
     TMHM(TM45_ATTRACT),
@@ -22393,6 +23345,7 @@ static const u8 sSalazzleTMHMLearnset[] =
 };
 static const u8 sStuffulTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -22416,6 +23369,7 @@ static const u8 sStuffulTMHMLearnset[] =
 };
 static const u8 sBewearTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM55_BODY_PRESS),
@@ -22442,6 +23396,7 @@ static const u8 sBewearTMHMLearnset[] =
 };
 static const u8 sBounsweetTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -22463,6 +23418,7 @@ static const u8 sBounsweetTMHMLearnset[] =
 };
 static const u8 sSteeneeTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -22484,6 +23440,7 @@ static const u8 sSteeneeTMHMLearnset[] =
 };
 static const u8 sTsareenaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -22505,6 +23462,7 @@ static const u8 sTsareenaTMHMLearnset[] =
 };
 static const u8 sComfeyTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -22529,6 +23487,8 @@ static const u8 sComfeyTMHMLearnset[] =
 };
 static const u8 sOranguruTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM31_BRICK_BREAK),
@@ -22558,6 +23518,8 @@ static const u8 sOranguruTMHMLearnset[] =
 };
 static const u8 sPassimianTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -22589,6 +23551,7 @@ static const u8 sPassimianTMHMLearnset[] =
 };
 static const u8 sWimpodTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM53_BUG_BUZZ),
@@ -22609,6 +23572,7 @@ static const u8 sWimpodTMHMLearnset[] =
 };
 static const u8 sGolisopodTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM53_BUG_BUZZ),
@@ -22638,6 +23602,8 @@ static const u8 sGolisopodTMHMLearnset[] =
 };
 static const u8 sSandygastTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -22661,6 +23627,8 @@ static const u8 sSandygastTMHMLearnset[] =
 };
 static const u8 sPalossandTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -22685,6 +23653,7 @@ static const u8 sPalossandTMHMLearnset[] =
 };
 static const u8 sPyukumukuTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM32_DOUBLE_TEAM),
@@ -22701,6 +23670,7 @@ static const u8 sPyukumukuTMHMLearnset[] =
 };
 static const u8 sTypeNullTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM40_AERIAL_ACE),
@@ -22723,6 +23693,7 @@ static const u8 sTypeNullTMHMLearnset[] =
 };
 static const u8 sSilvallyTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM40_AERIAL_ACE),
@@ -22752,6 +23723,7 @@ static const u8 sSilvallyTMHMLearnset[] =
 };
 static const u8 sMiniorTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM04_CALM_MIND),
@@ -22776,6 +23748,7 @@ static const u8 sMiniorTMHMLearnset[] =
 };
 static const u8 sKomalaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM31_BRICK_BREAK),
@@ -22795,6 +23768,7 @@ static const u8 sKomalaTMHMLearnset[] =
 };
 static const u8 sTurtonatorTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM57_BURNING_TERRAIN),
     TMHM(TM45_ATTRACT),
@@ -22827,6 +23801,7 @@ static const u8 sTurtonatorTMHMLearnset[] =
 };
 static const u8 sTogedemaruTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -22849,6 +23824,7 @@ static const u8 sTogedemaruTMHMLearnset[] =
 };
 static const u8 sMimikyuTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM08_BULK_UP),
@@ -22876,6 +23852,8 @@ static const u8 sMimikyuTMHMLearnset[] =
 };
 static const u8 sBruxishTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -22907,6 +23885,7 @@ static const u8 sBruxishTMHMLearnset[] =
 };
 static const u8 sDrampaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -22945,6 +23924,7 @@ static const u8 sDrampaTMHMLearnset[] =
 };
 static const u8 sDhelmiseTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM55_BODY_PRESS),
@@ -22972,6 +23952,7 @@ static const u8 sDhelmiseTMHMLearnset[] =
 };
 static const u8 sJangmoOTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM52_WORK_UP),
@@ -22998,6 +23979,7 @@ static const u8 sJangmoOTMHMLearnset[] =
 };
 static const u8 sHakamoOTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM52_WORK_UP),
@@ -23024,6 +24006,7 @@ static const u8 sHakamoOTMHMLearnset[] =
 };
 static const u8 sKommoOTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM55_BODY_PRESS),
@@ -23056,6 +24039,7 @@ static const u8 sKommoOTMHMLearnset[] =
 };
 static const u8 sTapuKokoTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -23087,6 +24071,7 @@ static const u8 sTapuKokoTMHMLearnset[] =
 };
 static const u8 sTapuLeleTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM04_CALM_MIND),
@@ -23114,6 +24099,7 @@ static const u8 sTapuLeleTMHMLearnset[] =
 };
 static const u8 sTapuBuluTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM31_BRICK_BREAK),
@@ -23142,6 +24128,7 @@ static const u8 sTapuBuluTMHMLearnset[] =
 };
 static const u8 sTapuFiniTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
@@ -23171,16 +24158,19 @@ static const u8 sTapuFiniTMHMLearnset[] =
 };
 static const u8 sCosmogTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     0xFF,
 };
 static const u8 sCosmoemTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     0xFF,
 };
 static const u8 sSolgaleoTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM04_CALM_MIND),
@@ -23214,6 +24204,7 @@ static const u8 sSolgaleoTMHMLearnset[] =
 };
 static const u8 sLunalaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM14_BLIZZARD),
@@ -23245,6 +24236,7 @@ static const u8 sLunalaTMHMLearnset[] =
 };
 static const u8 sNihilegoTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM32_DOUBLE_TEAM),
     TMHM(TM42_FACADE),
@@ -23266,6 +24258,7 @@ static const u8 sNihilegoTMHMLearnset[] =
 };
 static const u8 sBuzzwoleTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM31_BRICK_BREAK),
     TMHM(TM08_BULK_UP),
@@ -23286,6 +24279,7 @@ static const u8 sBuzzwoleTMHMLearnset[] =
 };
 static const u8 sPheromosaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM14_BLIZZARD),
     TMHM(TM53_BUG_BUZZ),
@@ -23308,6 +24302,8 @@ static const u8 sPheromosaTMHMLearnset[] =
 };
 static const u8 sXurkitreeTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
@@ -23333,6 +24329,7 @@ static const u8 sXurkitreeTMHMLearnset[] =
 };
 static const u8 sCelesteelaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM32_DOUBLE_TEAM),
     TMHM(TM26_EARTHQUAKE),
@@ -23354,6 +24351,7 @@ static const u8 sCelesteelaTMHMLearnset[] =
 };
 static const u8 sKartanaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -23372,6 +24370,7 @@ static const u8 sKartanaTMHMLearnset[] =
 };
 static const u8 sGuzzlordTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM31_BRICK_BREAK),
     TMHM(TM55_BODY_PRESS),
@@ -23398,6 +24397,7 @@ static const u8 sGuzzlordTMHMLearnset[] =
 };
 static const u8 sNecrozmaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM31_BRICK_BREAK),
@@ -23423,6 +24423,8 @@ static const u8 sNecrozmaTMHMLearnset[] =
 };
 static const u8 sMagearnaTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM31_BRICK_BREAK),
@@ -23444,6 +24446,7 @@ static const u8 sMagearnaTMHMLearnset[] =
 };
 static const u8 sMarshadowTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM31_BRICK_BREAK),
     TMHM(TM08_BULK_UP),
@@ -23466,6 +24469,7 @@ static const u8 sMarshadowTMHMLearnset[] =
 };
 static const u8 sPoipoleTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM42_FACADE),
     TMHM(TM21_FRUSTRATION),
@@ -23481,6 +24485,7 @@ static const u8 sPoipoleTMHMLearnset[] =
 };
 static const u8 sNaganadelTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM32_DOUBLE_TEAM),
@@ -23506,6 +24511,7 @@ static const u8 sNaganadelTMHMLearnset[] =
 };
 static const u8 sStakatakaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM26_EARTHQUAKE),
     TMHM(TM55_BODY_PRESS),
@@ -23527,6 +24533,7 @@ static const u8 sStakatakaTMHMLearnset[] =
 };
 static const u8 sBlacephalonTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM57_BURNING_TERRAIN),
     TMHM(TM04_CALM_MIND),
@@ -23553,6 +24560,7 @@ static const u8 sBlacephalonTMHMLearnset[] =
 };
 static const u8 sZeraoraTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -23579,12 +24587,14 @@ static const u8 sZeraoraTMHMLearnset[] =
 };
 static const u8 sMeltanTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM10_HIDDEN_POWER),
     0xFF,
 };
 static const u8 sMelmetalTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM55_BODY_PRESS),
@@ -23592,6 +24602,7 @@ static const u8 sMelmetalTMHMLearnset[] =
 };
 static const u8 sGrookeyTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -23608,6 +24619,7 @@ static const u8 sGrookeyTMHMLearnset[] =
 };
 static const u8 sThwackeyTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -23623,6 +24635,7 @@ static const u8 sThwackeyTMHMLearnset[] =
 };
 static const u8 sRillaboomTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -23644,6 +24657,7 @@ static const u8 sRillaboomTMHMLearnset[] =
 };
 static const u8 sScorbunnyTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM57_BURNING_TERRAIN),
@@ -23661,6 +24675,7 @@ static const u8 sScorbunnyTMHMLearnset[] =
 };
 static const u8 sRabootTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM57_BURNING_TERRAIN),
@@ -23679,6 +24694,7 @@ static const u8 sRabootTMHMLearnset[] =
 };
 static const u8 sCinderaceTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM57_BURNING_TERRAIN),
@@ -23699,6 +24715,8 @@ static const u8 sCinderaceTMHMLearnset[] =
 };
 static const u8 sSobbleTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -23718,6 +24736,8 @@ static const u8 sSobbleTMHMLearnset[] =
 };
 static const u8 sDrizzileTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -23736,6 +24756,8 @@ static const u8 sDrizzileTMHMLearnset[] =
 };
 static const u8 sInteleonTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -23759,6 +24781,7 @@ static const u8 sInteleonTMHMLearnset[] =
 };
 static const u8 sSkwovetTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -23773,6 +24796,7 @@ static const u8 sSkwovetTMHMLearnset[] =
 };
 static const u8 sGreedentTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
@@ -23791,6 +24815,7 @@ static const u8 sGreedentTMHMLearnset[] =
 };
 static const u8 sRookideeTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -23806,6 +24831,7 @@ static const u8 sRookideeTMHMLearnset[] =
 };
 static const u8 sCorvisquireTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -23820,6 +24846,7 @@ static const u8 sCorvisquireTMHMLearnset[] =
 };
 static const u8 sCorviknightTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -23840,11 +24867,13 @@ static const u8 sCorviknightTMHMLearnset[] =
 };
 static const u8 sBlipbugTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     0xFF,
 };
 static const u8 sDottlerTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -23865,6 +24894,7 @@ static const u8 sDottlerTMHMLearnset[] =
 };
 static const u8 sOrbeetleTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -23887,6 +24917,7 @@ static const u8 sOrbeetleTMHMLearnset[] =
 };
 static const u8 sNickitTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -23901,6 +24932,7 @@ static const u8 sNickitTMHMLearnset[] =
 };
 static const u8 sThievulTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -23917,6 +24949,7 @@ static const u8 sThievulTMHMLearnset[] =
 };
 static const u8 sGossifleurTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -23932,6 +24965,7 @@ static const u8 sGossifleurTMHMLearnset[] =
 };
 static const u8 sEldegossTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -23948,6 +24982,7 @@ static const u8 sEldegossTMHMLearnset[] =
 };
 static const u8 sWoolooTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
@@ -23959,6 +24994,7 @@ static const u8 sWoolooTMHMLearnset[] =
 };
 static const u8 sDubwoolTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
@@ -23972,6 +25008,8 @@ static const u8 sDubwoolTMHMLearnset[] =
 };
 static const u8 sChewtleTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -23985,6 +25023,8 @@ static const u8 sChewtleTMHMLearnset[] =
 };
 static const u8 sDrednawTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -24008,6 +25048,7 @@ static const u8 sDrednawTMHMLearnset[] =
 };
 static const u8 sYamperTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
@@ -24023,6 +25064,7 @@ static const u8 sYamperTMHMLearnset[] =
 };
 static const u8 sBoltundTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
@@ -24040,6 +25082,7 @@ static const u8 sBoltundTMHMLearnset[] =
 };
 static const u8 sRolycolyTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -24055,6 +25098,7 @@ static const u8 sRolycolyTMHMLearnset[] =
 };
 static const u8 sCarkolTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM57_BURNING_TERRAIN),
@@ -24075,6 +25119,7 @@ static const u8 sCarkolTMHMLearnset[] =
 };
 static const u8 sCoalossalTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM57_BURNING_TERRAIN),
@@ -24098,12 +25143,14 @@ static const u8 sCoalossalTMHMLearnset[] =
 };
 static const u8 sApplinTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     0xFF,
 };
 static const u8 sFlappleTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -24120,6 +25167,7 @@ static const u8 sFlappleTMHMLearnset[] =
 };
 static const u8 sAppletunTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -24140,6 +25188,7 @@ static const u8 sAppletunTMHMLearnset[] =
 };
 static const u8 sSilicobraTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
@@ -24154,6 +25203,7 @@ static const u8 sSilicobraTMHMLearnset[] =
 };
 static const u8 sSandacondaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
@@ -24171,6 +25221,7 @@ static const u8 sSandacondaTMHMLearnset[] =
 };
 static const u8 sCramorantTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -24191,6 +25242,8 @@ static const u8 sCramorantTMHMLearnset[] =
 };
 static const u8 sArrokudaTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -24205,6 +25258,8 @@ static const u8 sArrokudaTMHMLearnset[] =
 };
 static const u8 sBarraskewdaTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -24221,6 +25276,7 @@ static const u8 sBarraskewdaTMHMLearnset[] =
 };
 static const u8 sToxelTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -24231,6 +25287,7 @@ static const u8 sToxelTMHMLearnset[] =
 };
 static const u8 sToxtricityTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
@@ -24249,6 +25306,7 @@ static const u8 sToxtricityTMHMLearnset[] =
 };
 static const u8 sSizzlipedeTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM57_BURNING_TERRAIN),
@@ -24263,6 +25321,7 @@ static const u8 sSizzlipedeTMHMLearnset[] =
 };
 static const u8 sCentiskorchTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM57_BURNING_TERRAIN),
@@ -24282,6 +25341,7 @@ static const u8 sCentiskorchTMHMLearnset[] =
 };
 static const u8 sClobbopusTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -24300,6 +25360,7 @@ static const u8 sClobbopusTMHMLearnset[] =
 };
 static const u8 sGrapploctTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -24321,6 +25382,7 @@ static const u8 sGrapploctTMHMLearnset[] =
 };
 static const u8 sSinisteaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM42_FACADE),
@@ -24333,6 +25395,7 @@ static const u8 sSinisteaTMHMLearnset[] =
 };
 static const u8 sPolteageistTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM42_FACADE),
@@ -24348,6 +25411,7 @@ static const u8 sPolteageistTMHMLearnset[] =
 };
 static const u8 sHatennaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -24364,6 +25428,7 @@ static const u8 sHatennaTMHMLearnset[] =
 };
 static const u8 sHattremTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -24380,6 +25445,7 @@ static const u8 sHattremTMHMLearnset[] =
 };
 static const u8 sHattereneTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -24398,6 +25464,8 @@ static const u8 sHattereneTMHMLearnset[] =
 };
 static const u8 sImpidimpTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -24411,6 +25479,8 @@ static const u8 sImpidimpTMHMLearnset[] =
 };
 static const u8 sMorgremTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -24426,6 +25496,8 @@ static const u8 sMorgremTMHMLearnset[] =
 };
 static const u8 sGrimmsnarlTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -24445,6 +25517,7 @@ static const u8 sGrimmsnarlTMHMLearnset[] =
 };
 static const u8 sObstagoonTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -24472,6 +25545,8 @@ static const u8 sObstagoonTMHMLearnset[] =
 };
 static const u8 sPerrserkerTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -24493,6 +25568,7 @@ static const u8 sPerrserkerTMHMLearnset[] =
 };
 static const u8 sCursolaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -24522,6 +25598,7 @@ static const u8 sCursolaTMHMLearnset[] =
 };
 static const u8 sSirfetchdTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
@@ -24538,6 +25615,7 @@ static const u8 sSirfetchdTMHMLearnset[] =
 };
 static const u8 sMrRimeTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM62_FROZEN_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
@@ -24568,6 +25646,7 @@ static const u8 sMrRimeTMHMLearnset[] =
 };
 static const u8 sRunerigusTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
@@ -24592,6 +25671,7 @@ static const u8 sRunerigusTMHMLearnset[] =
 };
 static const u8 sMilceryTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -24602,6 +25682,7 @@ static const u8 sMilceryTMHMLearnset[] =
 };
 static const u8 sAlcremieTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
@@ -24620,6 +25701,7 @@ static const u8 sAlcremieTMHMLearnset[] =
 };
 static const u8 sFalinksTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM31_BRICK_BREAK),
@@ -24634,6 +25716,8 @@ static const u8 sFalinksTMHMLearnset[] =
 };
 static const u8 sPincurchinTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -24649,6 +25733,7 @@ static const u8 sPincurchinTMHMLearnset[] =
 };
 static const u8 sSnomTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -24660,6 +25745,7 @@ static const u8 sSnomTMHMLearnset[] =
 };
 static const u8 sFrosmothTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM62_FROZEN_TERRAIN),
@@ -24682,6 +25768,7 @@ static const u8 sFrosmothTMHMLearnset[] =
 };
 static const u8 sStonjournerTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -24699,6 +25786,8 @@ static const u8 sStonjournerTMHMLearnset[] =
 };
 static const u8 sEiscueTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM62_FROZEN_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
@@ -24718,6 +25807,7 @@ static const u8 sEiscueTMHMLearnset[] =
 };
 static const u8 sIndeedeeTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
@@ -24732,6 +25822,7 @@ static const u8 sIndeedeeTMHMLearnset[] =
 };
 static const u8 sMorpekoTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
@@ -24750,6 +25841,7 @@ static const u8 sMorpekoTMHMLearnset[] =
 };
 static const u8 sCufantTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -24767,6 +25859,7 @@ static const u8 sCufantTMHMLearnset[] =
 };
 static const u8 sCopperajahTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -24788,6 +25881,7 @@ static const u8 sCopperajahTMHMLearnset[] =
 };
 static const u8 sDracozoltTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
@@ -24811,6 +25905,7 @@ static const u8 sDracozoltTMHMLearnset[] =
 };
 static const u8 sArctozoltTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM62_FROZEN_TERRAIN),
     TMHM(TM61_WILD_CHARGE),
@@ -24833,6 +25928,7 @@ static const u8 sArctozoltTMHMLearnset[] =
 };
 static const u8 sDracovishTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(HM08_DIVE),
@@ -24850,6 +25946,7 @@ static const u8 sDracovishTMHMLearnset[] =
 };
 static const u8 sArctovishTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM62_FROZEN_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
@@ -24870,6 +25967,7 @@ static const u8 sArctovishTMHMLearnset[] =
 };
 static const u8 sDuraludonTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -24891,6 +25989,7 @@ static const u8 sDuraludonTMHMLearnset[] =
 };
 static const u8 sDreepyTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -24902,6 +26001,7 @@ static const u8 sDreepyTMHMLearnset[] =
 };
 static const u8 sDrakloakTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -24922,6 +26022,7 @@ static const u8 sDrakloakTMHMLearnset[] =
 };
 static const u8 sDragapultTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
@@ -24949,6 +26050,7 @@ static const u8 sDragapultTMHMLearnset[] =
 };
 static const u8 sZacianTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
@@ -24964,6 +26066,8 @@ static const u8 sZacianTMHMLearnset[] =
 };
 static const u8 sZamazentaTMHMLearnset[] =
 {
+    TMHM(TM55_BODY_PRESS),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
@@ -24982,6 +26086,7 @@ static const u8 sZamazentaTMHMLearnset[] =
 };
 static const u8 sEternatusTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM42_FACADE),
@@ -25000,6 +26105,7 @@ static const u8 sEternatusTMHMLearnset[] =
 };
 static const u8 sKubfuTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -25017,6 +26123,8 @@ static const u8 sKubfuTMHMLearnset[] =
 };
 static const u8 sUrshifuTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -25037,6 +26145,7 @@ static const u8 sUrshifuTMHMLearnset[] =
 };
 static const u8 sZarudeTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM31_BRICK_BREAK),
@@ -25058,6 +26167,8 @@ static const u8 sZarudeTMHMLearnset[] =
 };
 static const u8 sRegielekiTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM61_WILD_CHARGE),
@@ -25075,6 +26186,8 @@ static const u8 sRegielekiTMHMLearnset[] =
 };
 static const u8 sRegidragoTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM02_DRAGON_CLAW),
@@ -25088,6 +26201,7 @@ static const u8 sRegidragoTMHMLearnset[] =
 };
 static const u8 sGlastrierTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM62_FROZEN_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
@@ -25105,6 +26219,7 @@ static const u8 sGlastrierTMHMLearnset[] =
 };
 static const u8 sSpectrierTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM04_CALM_MIND),
@@ -25118,6 +26233,7 @@ static const u8 sSpectrierTMHMLearnset[] =
 };
 static const u8 sCalyrexTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
@@ -25139,6 +26255,7 @@ static const u8 sCalyrexTMHMLearnset[] =
 };
 static const u8 sRattataAlolanTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
@@ -25159,6 +26276,7 @@ static const u8 sRattataAlolanTMHMLearnset[] =
 };
 static const u8 sRaticateAlolanTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
@@ -25181,6 +26299,8 @@ static const u8 sRaticateAlolanTMHMLearnset[] =
 };
 static const u8 sRaichuAlolanTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
@@ -25205,6 +26325,7 @@ static const u8 sRaichuAlolanTMHMLearnset[] =
 };
 static const u8 sSandshrewAlolanTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM14_BLIZZARD),
@@ -25226,6 +26347,7 @@ static const u8 sSandshrewAlolanTMHMLearnset[] =
 };
 static const u8 sSandslashAlolanTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM14_BLIZZARD),
@@ -25248,6 +26370,7 @@ static const u8 sSandslashAlolanTMHMLearnset[] =
 };
 static const u8 sVulpixAlolanTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM62_FROZEN_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
@@ -25264,6 +26387,7 @@ static const u8 sVulpixAlolanTMHMLearnset[] =
 };
 static const u8 sNinetalesAlolanTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM62_FROZEN_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
@@ -25282,6 +26406,7 @@ static const u8 sNinetalesAlolanTMHMLearnset[] =
 };
 static const u8 sDiglettAlolanTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
@@ -25299,6 +26424,7 @@ static const u8 sDiglettAlolanTMHMLearnset[] =
 };
 static const u8 sDugtrioAlolanTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM60_TRI_ATTACK),
@@ -25318,6 +26444,9 @@ static const u8 sDugtrioAlolanTMHMLearnset[] =
 };
 static const u8 sMeowthAlolanTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(HM01_CUT),
@@ -25336,6 +26465,9 @@ static const u8 sMeowthAlolanTMHMLearnset[] =
 };
 static const u8 sPersianAlolanTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(HM01_CUT),
@@ -25355,6 +26487,7 @@ static const u8 sPersianAlolanTMHMLearnset[] =
 };
 static const u8 sGeodudeAlolanTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
@@ -25376,6 +26509,7 @@ static const u8 sGeodudeAlolanTMHMLearnset[] =
 };
 static const u8 sGravelerAlolanTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
@@ -25397,6 +26531,7 @@ static const u8 sGravelerAlolanTMHMLearnset[] =
 };
 static const u8 sGolemAlolanTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM61_WILD_CHARGE),
@@ -25420,6 +26555,8 @@ static const u8 sGolemAlolanTMHMLearnset[] =
 };
 static const u8 sGrimerAlolanTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM28_DIG),
@@ -25437,6 +26574,8 @@ static const u8 sGrimerAlolanTMHMLearnset[] =
 };
 static const u8 sMukAlolanTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM31_BRICK_BREAK),
@@ -25457,6 +26596,7 @@ static const u8 sMukAlolanTMHMLearnset[] =
 };
 static const u8 sExeggutorAlolanTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
@@ -25480,6 +26620,7 @@ static const u8 sExeggutorAlolanTMHMLearnset[] =
 };
 static const u8 sMarowakAlolanTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
@@ -25506,6 +26647,7 @@ static const u8 sMarowakAlolanTMHMLearnset[] =
 };
 static const u8 sMeowthGalarianTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -25526,6 +26668,7 @@ static const u8 sMeowthGalarianTMHMLearnset[] =
 };
 static const u8 sPonytaGalarianTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
@@ -25540,6 +26683,7 @@ static const u8 sPonytaGalarianTMHMLearnset[] =
 };
 static const u8 sRapidashGalarianTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
@@ -25555,6 +26699,8 @@ static const u8 sRapidashGalarianTMHMLearnset[] =
 };
 static const u8 sSlowpokeGalarianTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
@@ -25586,6 +26732,8 @@ static const u8 sSlowpokeGalarianTMHMLearnset[] =
 };
 static const u8 sSlowbroGalarianTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
@@ -25620,6 +26768,7 @@ static const u8 sSlowbroGalarianTMHMLearnset[] =
 };
 static const u8 sFarfetchdGalarianTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
@@ -25636,6 +26785,8 @@ static const u8 sFarfetchdGalarianTMHMLearnset[] =
 };
 static const u8 sWeezingGalarianTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
@@ -25660,6 +26811,7 @@ static const u8 sWeezingGalarianTMHMLearnset[] =
 };
 static const u8 sMrMimeGalarianTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM62_FROZEN_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
@@ -25690,6 +26842,8 @@ static const u8 sMrMimeGalarianTMHMLearnset[] =
 };
 static const u8 sArticunoGalarianTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM04_CALM_MIND),
@@ -25708,6 +26862,8 @@ static const u8 sArticunoGalarianTMHMLearnset[] =
 };
 static const u8 sZapdosGalarianTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM31_BRICK_BREAK),
@@ -25725,6 +26881,7 @@ static const u8 sZapdosGalarianTMHMLearnset[] =
 };
 static const u8 sMoltresGalarianTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM57_BURNING_TERRAIN),
@@ -25760,6 +26917,8 @@ static const u8 sMoltresGalarianTMHMLearnset[] =
 };
 static const u8 sSlowkingGalarianTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
@@ -25794,6 +26953,7 @@ static const u8 sSlowkingGalarianTMHMLearnset[] =
 };
 static const u8 sCorsolaGalarianTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -25823,6 +26983,7 @@ static const u8 sCorsolaGalarianTMHMLearnset[] =
 };
 static const u8 sZigzagoonGalarianTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -25846,6 +27007,7 @@ static const u8 sZigzagoonGalarianTMHMLearnset[] =
 };
 static const u8 sLinooneGalarianTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -25871,6 +27033,7 @@ static const u8 sLinooneGalarianTMHMLearnset[] =
 };
 static const u8 sDarumakaGalarianTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -25895,6 +27058,7 @@ static const u8 sDarumakaGalarianTMHMLearnset[] =
 };
 static const u8 sDarmanitanGalarianTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -25923,6 +27087,7 @@ static const u8 sDarmanitanGalarianTMHMLearnset[] =
 };
 static const u8 sYamaskGalarianTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -25943,6 +27108,7 @@ static const u8 sYamaskGalarianTMHMLearnset[] =
 };
 static const u8 sStunfiskGalarianTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
@@ -25961,6 +27127,8 @@ static const u8 sStunfiskGalarianTMHMLearnset[] =
 };
 static const u8 sPikachuCosplayTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -25992,6 +27160,8 @@ static const u8 sPikachuCosplayTMHMLearnset[] =
 };
 static const u8 sPikachuRockStarTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -26023,6 +27193,8 @@ static const u8 sPikachuRockStarTMHMLearnset[] =
 };
 static const u8 sPikachuBelleTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -26054,6 +27226,8 @@ static const u8 sPikachuBelleTMHMLearnset[] =
 };
 static const u8 sPikachuPopStarTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -26085,6 +27259,8 @@ static const u8 sPikachuPopStarTMHMLearnset[] =
 };
 static const u8 sPikachuPhDTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -26116,6 +27292,8 @@ static const u8 sPikachuPhDTMHMLearnset[] =
 };
 static const u8 sPikachuLibreTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -26147,6 +27325,8 @@ static const u8 sPikachuLibreTMHMLearnset[] =
 };
 static const u8 sPikachuOriginalCapTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -26178,6 +27358,8 @@ static const u8 sPikachuOriginalCapTMHMLearnset[] =
 };
 static const u8 sPikachuHoennCapTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -26209,6 +27391,8 @@ static const u8 sPikachuHoennCapTMHMLearnset[] =
 };
 static const u8 sPikachuSinnohCapTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -26240,6 +27424,8 @@ static const u8 sPikachuSinnohCapTMHMLearnset[] =
 };
 static const u8 sPikachuUnovaCapTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -26271,6 +27457,8 @@ static const u8 sPikachuUnovaCapTMHMLearnset[] =
 };
 static const u8 sPikachuKalosCapTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM45_ATTRACT),
     TMHM(TM31_BRICK_BREAK),
@@ -26301,6 +27489,8 @@ static const u8 sPikachuKalosCapTMHMLearnset[] =
 };
 static const u8 sPikachuAlolaCapTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM45_ATTRACT),
@@ -26332,6 +27522,8 @@ static const u8 sPikachuAlolaCapTMHMLearnset[] =
 };
 static const u8 sPikachuPartnerCapTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -26363,6 +27555,8 @@ static const u8 sPikachuPartnerCapTMHMLearnset[] =
 };
 static const u8 sPichuSpikyEaredTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM32_DOUBLE_TEAM),
@@ -26386,141 +27580,170 @@ static const u8 sPichuSpikyEaredTMHMLearnset[] =
 };
 static const u8 sUnownBTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     0xFF,
 };
 static const u8 sUnownCTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     0xFF,
 };
 static const u8 sUnownDTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     0xFF,
 };
 static const u8 sUnownETMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     0xFF,
 };
 static const u8 sUnownFTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     0xFF,
 };
 static const u8 sUnownGTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     0xFF,
 };
 static const u8 sUnownHTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     0xFF,
 };
 static const u8 sUnownITMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     0xFF,
 };
 static const u8 sUnownJTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     0xFF,
 };
 static const u8 sUnownKTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     0xFF,
 };
 static const u8 sUnownLTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     0xFF,
 };
 static const u8 sUnownMTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     0xFF,
 };
 static const u8 sUnownNTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     0xFF,
 };
 static const u8 sUnownOTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     0xFF,
 };
 static const u8 sUnownPTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     0xFF,
 };
 static const u8 sUnownQTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     0xFF,
 };
 static const u8 sUnownRTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     0xFF,
 };
 static const u8 sUnownSTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     0xFF,
 };
 static const u8 sUnownTTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     0xFF,
 };
 static const u8 sUnownUTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     0xFF,
 };
 static const u8 sUnownVTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     0xFF,
 };
 static const u8 sUnownWTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     0xFF,
 };
 static const u8 sUnownXTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     0xFF,
 };
 static const u8 sUnownYTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     0xFF,
 };
 static const u8 sUnownZTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     0xFF,
 };
 static const u8 sUnownEmarkTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     0xFF,
 };
 static const u8 sUnownQmarkTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     0xFF,
 };
 static const u8 sDeoxysAttackTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM31_BRICK_BREAK),
@@ -26562,6 +27785,8 @@ static const u8 sDeoxysAttackTMHMLearnset[] =
 };
 static const u8 sDeoxysDefenseTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM31_BRICK_BREAK),
@@ -26603,6 +27828,8 @@ static const u8 sDeoxysDefenseTMHMLearnset[] =
 };
 static const u8 sDeoxysSpeedTMHMLearnset[] =
 {
+    TMHM(TM67_ZAP_CANNON),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM31_BRICK_BREAK),
@@ -26644,6 +27871,7 @@ static const u8 sDeoxysSpeedTMHMLearnset[] =
 };
 static const u8 sBurmySandyCloakTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM17_PROTECT),
@@ -26651,6 +27879,7 @@ static const u8 sBurmySandyCloakTMHMLearnset[] =
 };
 static const u8 sBurmyTrashCloakTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM17_PROTECT),
@@ -26658,6 +27887,7 @@ static const u8 sBurmyTrashCloakTMHMLearnset[] =
 };
 static const u8 sWormadamSandyCloakTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM53_BUG_BUZZ),
@@ -26687,6 +27917,7 @@ static const u8 sWormadamSandyCloakTMHMLearnset[] =
 };
 static const u8 sWormadamTrashCloakTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM53_BUG_BUZZ),
@@ -26712,6 +27943,7 @@ static const u8 sWormadamTrashCloakTMHMLearnset[] =
 };
 static const u8 sShellosEastSeaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM64_SWAMPY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -26736,6 +27968,7 @@ static const u8 sShellosEastSeaTMHMLearnset[] =
 };
 static const u8 sGastrodonEastSeaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM64_SWAMPY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -26770,6 +28003,7 @@ static const u8 sGastrodonEastSeaTMHMLearnset[] =
 };
 static const u8 sRotomHeatTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM32_DOUBLE_TEAM),
     TMHM(TM42_FACADE),
@@ -26796,6 +28030,7 @@ static const u8 sRotomHeatTMHMLearnset[] =
 };
 static const u8 sRotomWashTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM32_DOUBLE_TEAM),
     TMHM(TM42_FACADE),
@@ -26821,6 +28056,7 @@ static const u8 sRotomWashTMHMLearnset[] =
 };
 static const u8 sRotomFrostTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM32_DOUBLE_TEAM),
     TMHM(TM42_FACADE),
@@ -26847,6 +28083,7 @@ static const u8 sRotomFrostTMHMLearnset[] =
 };
 static const u8 sRotomFanTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM32_DOUBLE_TEAM),
     TMHM(TM42_FACADE),
@@ -26872,6 +28109,7 @@ static const u8 sRotomFanTMHMLearnset[] =
 };
 static const u8 sRotomMowTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM32_DOUBLE_TEAM),
     TMHM(TM42_FACADE),
@@ -26897,6 +28135,7 @@ static const u8 sRotomMowTMHMLearnset[] =
 };
 static const u8 sGiratinaOriginTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -26932,6 +28171,7 @@ static const u8 sGiratinaOriginTMHMLearnset[] =
 };
 static const u8 sShayminSkyTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM09_BULLET_SEED),
@@ -26955,6 +28195,7 @@ static const u8 sShayminSkyTMHMLearnset[] =
 };
 static const u8 sArceusFightingTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM14_BLIZZARD),
@@ -27008,6 +28249,7 @@ static const u8 sArceusFightingTMHMLearnset[] =
 };
 static const u8 sArceusFlyingTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM14_BLIZZARD),
@@ -27061,6 +28303,7 @@ static const u8 sArceusFlyingTMHMLearnset[] =
 };
 static const u8 sArceusPoisonTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM14_BLIZZARD),
@@ -27114,6 +28357,7 @@ static const u8 sArceusPoisonTMHMLearnset[] =
 };
 static const u8 sArceusGroundTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM14_BLIZZARD),
@@ -27167,6 +28411,7 @@ static const u8 sArceusGroundTMHMLearnset[] =
 };
 static const u8 sArceusRockTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM14_BLIZZARD),
@@ -27220,6 +28465,7 @@ static const u8 sArceusRockTMHMLearnset[] =
 };
 static const u8 sArceusBugTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM14_BLIZZARD),
@@ -27273,6 +28519,7 @@ static const u8 sArceusBugTMHMLearnset[] =
 };
 static const u8 sArceusGhostTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM14_BLIZZARD),
@@ -27326,6 +28573,7 @@ static const u8 sArceusGhostTMHMLearnset[] =
 };
 static const u8 sArceusSteelTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM14_BLIZZARD),
@@ -27379,6 +28627,7 @@ static const u8 sArceusSteelTMHMLearnset[] =
 };
 static const u8 sArceusFireTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM14_BLIZZARD),
@@ -27432,6 +28681,7 @@ static const u8 sArceusFireTMHMLearnset[] =
 };
 static const u8 sArceusWaterTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM14_BLIZZARD),
@@ -27485,6 +28735,7 @@ static const u8 sArceusWaterTMHMLearnset[] =
 };
 static const u8 sArceusGrassTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM14_BLIZZARD),
@@ -27538,6 +28789,7 @@ static const u8 sArceusGrassTMHMLearnset[] =
 };
 static const u8 sArceusElectricTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM14_BLIZZARD),
@@ -27591,6 +28843,7 @@ static const u8 sArceusElectricTMHMLearnset[] =
 };
 static const u8 sArceusPsychicTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM14_BLIZZARD),
@@ -27644,6 +28897,7 @@ static const u8 sArceusPsychicTMHMLearnset[] =
 };
 static const u8 sArceusIceTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM14_BLIZZARD),
@@ -27697,6 +28951,7 @@ static const u8 sArceusIceTMHMLearnset[] =
 };
 static const u8 sArceusDragonTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM14_BLIZZARD),
@@ -27750,6 +29005,7 @@ static const u8 sArceusDragonTMHMLearnset[] =
 };
 static const u8 sArceusDarkTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM14_BLIZZARD),
@@ -27803,6 +29059,7 @@ static const u8 sArceusDarkTMHMLearnset[] =
 };
 static const u8 sArceusFairyTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM14_BLIZZARD),
@@ -27856,6 +29113,7 @@ static const u8 sArceusFairyTMHMLearnset[] =
 };
 static const u8 sBasculinBlueStripeTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(HM01_CUT),
@@ -27879,6 +29137,7 @@ static const u8 sBasculinBlueStripeTMHMLearnset[] =
 };
 static const u8 sDeerlingSummerTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -27903,6 +29162,7 @@ static const u8 sDeerlingSummerTMHMLearnset[] =
 };
 static const u8 sDeerlingAutumnTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM45_ATTRACT),
@@ -27927,6 +29187,7 @@ static const u8 sDeerlingAutumnTMHMLearnset[] =
 };
 static const u8 sDeerlingWinterTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM45_ATTRACT),
@@ -27951,6 +29212,7 @@ static const u8 sDeerlingWinterTMHMLearnset[] =
 };
 static const u8 sSawsbuckSummerTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -27978,6 +29240,7 @@ static const u8 sSawsbuckSummerTMHMLearnset[] =
 };
 static const u8 sSawsbuckAutumnTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -28005,6 +29268,7 @@ static const u8 sSawsbuckAutumnTMHMLearnset[] =
 };
 static const u8 sSawsbuckWinterTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -28032,6 +29296,8 @@ static const u8 sSawsbuckWinterTMHMLearnset[] =
 };
 static const u8 sTornadusTherianTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -28061,6 +29327,7 @@ static const u8 sTornadusTherianTMHMLearnset[] =
 };
 static const u8 sThundurusTherianTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM31_BRICK_BREAK),
@@ -28092,6 +29359,7 @@ static const u8 sThundurusTherianTMHMLearnset[] =
 };
 static const u8 sLandorusTherianTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -28122,6 +29390,7 @@ static const u8 sLandorusTherianTMHMLearnset[] =
 };
 static const u8 sKyuremWhiteTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM62_FROZEN_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM14_BLIZZARD),
@@ -28156,6 +29425,7 @@ static const u8 sKyuremWhiteTMHMLearnset[] =
 };
 static const u8 sKyuremBlackTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM62_FROZEN_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM14_BLIZZARD),
@@ -28190,6 +29460,7 @@ static const u8 sKyuremBlackTMHMLearnset[] =
 };
 static const u8 sKeldeoResoluteTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM04_CALM_MIND),
@@ -28218,6 +29489,7 @@ static const u8 sKeldeoResoluteTMHMLearnset[] =
 };
 static const u8 sGenesectDouseDriveTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM14_BLIZZARD),
@@ -28247,6 +29519,7 @@ static const u8 sGenesectDouseDriveTMHMLearnset[] =
 };
 static const u8 sGenesectShockDriveTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM14_BLIZZARD),
@@ -28276,6 +29549,7 @@ static const u8 sGenesectShockDriveTMHMLearnset[] =
 };
 static const u8 sGenesectBurnDriveTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM14_BLIZZARD),
@@ -28305,6 +29579,7 @@ static const u8 sGenesectBurnDriveTMHMLearnset[] =
 };
 static const u8 sGenesectChillDriveTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM14_BLIZZARD),
@@ -28334,6 +29609,7 @@ static const u8 sGenesectChillDriveTMHMLearnset[] =
 };
 static const u8 sGreninjaBattleBondTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -28366,6 +29642,7 @@ static const u8 sGreninjaBattleBondTMHMLearnset[] =
 };
 static const u8 sVivillonPolarTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -28393,6 +29670,7 @@ static const u8 sVivillonPolarTMHMLearnset[] =
 };
 static const u8 sVivillonTundraTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -28420,6 +29698,7 @@ static const u8 sVivillonTundraTMHMLearnset[] =
 };
 static const u8 sVivillonContinentalTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -28447,6 +29726,7 @@ static const u8 sVivillonContinentalTMHMLearnset[] =
 };
 static const u8 sVivillonGardenTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -28474,6 +29754,7 @@ static const u8 sVivillonGardenTMHMLearnset[] =
 };
 static const u8 sVivillonElegantTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -28501,6 +29782,7 @@ static const u8 sVivillonElegantTMHMLearnset[] =
 };
 static const u8 sVivillonMeadowTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -28528,6 +29810,7 @@ static const u8 sVivillonMeadowTMHMLearnset[] =
 };
 static const u8 sVivillonModernTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -28555,6 +29838,7 @@ static const u8 sVivillonModernTMHMLearnset[] =
 };
 static const u8 sVivillonMarineTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -28582,6 +29866,7 @@ static const u8 sVivillonMarineTMHMLearnset[] =
 };
 static const u8 sVivillonArchipelagoTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -28609,6 +29894,7 @@ static const u8 sVivillonArchipelagoTMHMLearnset[] =
 };
 static const u8 sVivillonHighPlainsTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -28636,6 +29922,7 @@ static const u8 sVivillonHighPlainsTMHMLearnset[] =
 };
 static const u8 sVivillonSandstormTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -28663,6 +29950,7 @@ static const u8 sVivillonSandstormTMHMLearnset[] =
 };
 static const u8 sVivillonRiverTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -28690,6 +29978,7 @@ static const u8 sVivillonRiverTMHMLearnset[] =
 };
 static const u8 sVivillonMonsoonTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -28717,6 +30006,7 @@ static const u8 sVivillonMonsoonTMHMLearnset[] =
 };
 static const u8 sVivillonSavannaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -28744,6 +30034,7 @@ static const u8 sVivillonSavannaTMHMLearnset[] =
 };
 static const u8 sVivillonSunTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -28771,6 +30062,7 @@ static const u8 sVivillonSunTMHMLearnset[] =
 };
 static const u8 sVivillonOceanTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -28798,6 +30090,7 @@ static const u8 sVivillonOceanTMHMLearnset[] =
 };
 static const u8 sVivillonJungleTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -28825,6 +30118,7 @@ static const u8 sVivillonJungleTMHMLearnset[] =
 };
 static const u8 sVivillonFancyTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -28852,6 +30146,7 @@ static const u8 sVivillonFancyTMHMLearnset[] =
 };
 static const u8 sVivillonPokeBallTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -28879,6 +30174,8 @@ static const u8 sVivillonPokeBallTMHMLearnset[] =
 };
 static const u8 sFlabebeYellowFloweTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -28903,6 +30200,8 @@ static const u8 sFlabebeYellowFloweTMHMLearnset[] =
 };
 static const u8 sFlabebeOrangeFloweTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -28927,6 +30226,8 @@ static const u8 sFlabebeOrangeFloweTMHMLearnset[] =
 };
 static const u8 sFlabebeBlueFlowerTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -28951,6 +30252,8 @@ static const u8 sFlabebeBlueFlowerTMHMLearnset[] =
 };
 static const u8 sFlabebeWhiteFlowerTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -28975,6 +30278,8 @@ static const u8 sFlabebeWhiteFlowerTMHMLearnset[] =
 };
 static const u8 sFloetteYellowFloweTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM04_CALM_MIND),
@@ -28998,6 +30303,8 @@ static const u8 sFloetteYellowFloweTMHMLearnset[] =
 };
 static const u8 sFloetteOrangeFloweTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM04_CALM_MIND),
@@ -29021,6 +30328,8 @@ static const u8 sFloetteOrangeFloweTMHMLearnset[] =
 };
 static const u8 sFloetteBlueFlowerTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM04_CALM_MIND),
@@ -29044,6 +30353,8 @@ static const u8 sFloetteBlueFlowerTMHMLearnset[] =
 };
 static const u8 sFloetteWhiteFlowerTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM04_CALM_MIND),
@@ -29067,6 +30378,8 @@ static const u8 sFloetteWhiteFlowerTMHMLearnset[] =
 };
 static const u8 sFloetteEternalFlowTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM04_CALM_MIND),
@@ -29090,6 +30403,8 @@ static const u8 sFloetteEternalFlowTMHMLearnset[] =
 };
 static const u8 sFlorgesYellowFloweTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -29116,6 +30431,8 @@ static const u8 sFlorgesYellowFloweTMHMLearnset[] =
 };
 static const u8 sFlorgesOrangeFloweTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -29142,6 +30459,8 @@ static const u8 sFlorgesOrangeFloweTMHMLearnset[] =
 };
 static const u8 sFlorgesBlueFlowerTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -29168,6 +30487,8 @@ static const u8 sFlorgesBlueFlowerTMHMLearnset[] =
 };
 static const u8 sFlorgesWhiteFlowerTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -29194,6 +30515,8 @@ static const u8 sFlorgesWhiteFlowerTMHMLearnset[] =
 };
 static const u8 sFurfrouHeartTrimTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -29218,6 +30541,8 @@ static const u8 sFurfrouHeartTrimTMHMLearnset[] =
 };
 static const u8 sFurfrouStarTrimTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -29242,6 +30567,7 @@ static const u8 sFurfrouStarTrimTMHMLearnset[] =
 };
 static const u8 sFurfrouDiamondTrimTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -29266,6 +30592,7 @@ static const u8 sFurfrouDiamondTrimTMHMLearnset[] =
 };
 static const u8 sFurfrouDebutanteTrTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM45_ATTRACT),
@@ -29290,6 +30617,7 @@ static const u8 sFurfrouDebutanteTrTMHMLearnset[] =
 };
 static const u8 sFurfrouMatronTrimTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM61_WILD_CHARGE),
@@ -29314,6 +30642,7 @@ static const u8 sFurfrouMatronTrimTMHMLearnset[] =
 };
 static const u8 sFurfrouDandyTrimTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM28_DIG),
@@ -29338,6 +30667,7 @@ static const u8 sFurfrouDandyTrimTMHMLearnset[] =
 };
 static const u8 sFurfrouLaReineTriTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM28_DIG),
@@ -29362,6 +30692,7 @@ static const u8 sFurfrouLaReineTriTMHMLearnset[] =
 };
 static const u8 sFurfrouKabukiTrimTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM28_DIG),
@@ -29386,6 +30717,7 @@ static const u8 sFurfrouKabukiTrimTMHMLearnset[] =
 };
 static const u8 sFurfrouPharaohTrimTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM28_DIG),
@@ -29410,6 +30742,7 @@ static const u8 sFurfrouPharaohTrimTMHMLearnset[] =
 };
 static const u8 sMeowsticFemaleTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM04_CALM_MIND),
@@ -29443,6 +30776,7 @@ static const u8 sMeowsticFemaleTMHMLearnset[] =
 };
 static const u8 sPumpkabooSmallTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -29474,6 +30808,7 @@ static const u8 sPumpkabooSmallTMHMLearnset[] =
 };
 static const u8 sPumpkabooLargeTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -29505,6 +30840,7 @@ static const u8 sPumpkabooLargeTMHMLearnset[] =
 };
 static const u8 sPumpkabooSuperTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -29536,6 +30872,7 @@ static const u8 sPumpkabooSuperTMHMLearnset[] =
 };
 static const u8 sGourgeistSmallTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -29568,6 +30905,7 @@ static const u8 sGourgeistSmallTMHMLearnset[] =
 };
 static const u8 sGourgeistLargeTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -29600,6 +30938,7 @@ static const u8 sGourgeistLargeTMHMLearnset[] =
 };
 static const u8 sGourgeistSuperTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),
@@ -29632,6 +30971,7 @@ static const u8 sGourgeistSuperTMHMLearnset[] =
 };
 static const u8 sZygarde10TMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM31_BRICK_BREAK),
@@ -29658,6 +30998,7 @@ static const u8 sZygarde10TMHMLearnset[] =
 };
 static const u8 sZygarde10PowerConTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM31_BRICK_BREAK),
@@ -29684,6 +31025,7 @@ static const u8 sZygarde10PowerConTMHMLearnset[] =
 };
 static const u8 sZygarde50PowerConTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM31_BRICK_BREAK),
@@ -29710,6 +31052,7 @@ static const u8 sZygarde50PowerConTMHMLearnset[] =
 };
 static const u8 sZygardeCompleteTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM63_SANDY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM31_BRICK_BREAK),
@@ -29736,6 +31079,7 @@ static const u8 sZygardeCompleteTMHMLearnset[] =
 };
 static const u8 sHoopaUnboundTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM31_BRICK_BREAK),
     TMHM(TM04_CALM_MIND),
@@ -29769,6 +31113,7 @@ static const u8 sHoopaUnboundTMHMLearnset[] =
 };
 static const u8 sOricorioPomPomTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -29791,6 +31136,7 @@ static const u8 sOricorioPomPomTMHMLearnset[] =
 };
 static const u8 sOricorioPauTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -29813,6 +31159,7 @@ static const u8 sOricorioPauTMHMLearnset[] =
 };
 static const u8 sOricorioSensuTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -29835,6 +31182,7 @@ static const u8 sOricorioSensuTMHMLearnset[] =
 };
 static const u8 sRockruffOwnTempoTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM32_DOUBLE_TEAM),
@@ -29853,6 +31201,7 @@ static const u8 sRockruffOwnTempoTMHMLearnset[] =
 };
 static const u8 sLycanrocMidnightTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM31_BRICK_BREAK),
@@ -29873,6 +31222,7 @@ static const u8 sLycanrocMidnightTMHMLearnset[] =
 };
 static const u8 sLycanrocDuskTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM31_BRICK_BREAK),
@@ -29894,6 +31244,7 @@ static const u8 sLycanrocDuskTMHMLearnset[] =
 };
 static const u8 sSilvallyFightingTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -29922,6 +31273,7 @@ static const u8 sSilvallyFightingTMHMLearnset[] =
 };
 static const u8 sSilvallyFlyingTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -29950,6 +31302,7 @@ static const u8 sSilvallyFlyingTMHMLearnset[] =
 };
 static const u8 sSilvallyPoisonTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -29978,6 +31331,7 @@ static const u8 sSilvallyPoisonTMHMLearnset[] =
 };
 static const u8 sSilvallyGroundTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -30006,6 +31360,7 @@ static const u8 sSilvallyGroundTMHMLearnset[] =
 };
 static const u8 sSilvallyRockTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM40_AERIAL_ACE),
@@ -30034,6 +31389,7 @@ static const u8 sSilvallyRockTMHMLearnset[] =
 };
 static const u8 sSilvallyBugTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -30062,6 +31418,7 @@ static const u8 sSilvallyBugTMHMLearnset[] =
 };
 static const u8 sSilvallyGhostTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -30090,6 +31447,7 @@ static const u8 sSilvallyGhostTMHMLearnset[] =
 };
 static const u8 sSilvallySteelTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -30118,6 +31476,7 @@ static const u8 sSilvallySteelTMHMLearnset[] =
 };
 static const u8 sSilvallyFireTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -30146,6 +31505,7 @@ static const u8 sSilvallyFireTMHMLearnset[] =
 };
 static const u8 sSilvallyWaterTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -30174,6 +31534,7 @@ static const u8 sSilvallyWaterTMHMLearnset[] =
 };
 static const u8 sSilvallyGrassTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -30202,6 +31563,7 @@ static const u8 sSilvallyGrassTMHMLearnset[] =
 };
 static const u8 sSilvallyElectricTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -30230,6 +31592,7 @@ static const u8 sSilvallyElectricTMHMLearnset[] =
 };
 static const u8 sSilvallyPsychicTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM40_AERIAL_ACE),
@@ -30258,6 +31621,7 @@ static const u8 sSilvallyPsychicTMHMLearnset[] =
 };
 static const u8 sSilvallyIceTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -30286,6 +31650,7 @@ static const u8 sSilvallyIceTMHMLearnset[] =
 };
 static const u8 sSilvallyDragonTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -30314,6 +31679,7 @@ static const u8 sSilvallyDragonTMHMLearnset[] =
 };
 static const u8 sSilvallyDarkTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -30342,6 +31708,7 @@ static const u8 sSilvallyDarkTMHMLearnset[] =
 };
 static const u8 sSilvallyFairyTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -30370,6 +31737,7 @@ static const u8 sSilvallyFairyTMHMLearnset[] =
 };
 static const u8 sMiniorCoreRedTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM04_CALM_MIND),
@@ -30394,6 +31762,7 @@ static const u8 sMiniorCoreRedTMHMLearnset[] =
 };
 static const u8 sMiniorCoreOrangeTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM04_CALM_MIND),
@@ -30418,6 +31787,7 @@ static const u8 sMiniorCoreOrangeTMHMLearnset[] =
 };
 static const u8 sMiniorCoreYellowTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM04_CALM_MIND),
@@ -30442,6 +31812,7 @@ static const u8 sMiniorCoreYellowTMHMLearnset[] =
 };
 static const u8 sMiniorCoreGreenTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM04_CALM_MIND),
@@ -30466,6 +31837,7 @@ static const u8 sMiniorCoreGreenTMHMLearnset[] =
 };
 static const u8 sMiniorCoreBlueTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM04_CALM_MIND),
@@ -30490,6 +31862,7 @@ static const u8 sMiniorCoreBlueTMHMLearnset[] =
 };
 static const u8 sMiniorCoreIndigoTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM04_CALM_MIND),
@@ -30514,6 +31887,7 @@ static const u8 sMiniorCoreIndigoTMHMLearnset[] =
 };
 static const u8 sMiniorCoreVioletTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM04_CALM_MIND),
@@ -30538,6 +31912,7 @@ static const u8 sMiniorCoreVioletTMHMLearnset[] =
 };
 static const u8 sNecrozmaDuskManeTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM31_BRICK_BREAK),
@@ -30563,6 +31938,7 @@ static const u8 sNecrozmaDuskManeTMHMLearnset[] =
 };
 static const u8 sNecrozmaDawnWingsTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM31_BRICK_BREAK),
@@ -30588,6 +31964,7 @@ static const u8 sNecrozmaDawnWingsTMHMLearnset[] =
 };
 static const u8 sMagearnaOriginalCoTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM31_BRICK_BREAK),
     TMHM(TM04_CALM_MIND),
@@ -30608,6 +31985,7 @@ static const u8 sMagearnaOriginalCoTMHMLearnset[] =
 };
 static const u8 sToxtricityLowKeyTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
@@ -30626,6 +32004,7 @@ static const u8 sToxtricityLowKeyTMHMLearnset[] =
 };
 static const u8 sSinisteaAntiqueTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM42_FACADE),
@@ -30638,6 +32017,7 @@ static const u8 sSinisteaAntiqueTMHMLearnset[] =
 };
 static const u8 sPolteageistAntiqueTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM42_FACADE),
@@ -30653,6 +32033,7 @@ static const u8 sPolteageistAntiqueTMHMLearnset[] =
 };
 static const u8 sAlcremieRubyCreamTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
@@ -30671,6 +32052,7 @@ static const u8 sAlcremieRubyCreamTMHMLearnset[] =
 };
 static const u8 sAlcremieMatchaCreaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
@@ -30689,6 +32071,7 @@ static const u8 sAlcremieMatchaCreaTMHMLearnset[] =
 };
 static const u8 sAlcremieMintCreamTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM60_TRI_ATTACK),
@@ -30707,6 +32090,7 @@ static const u8 sAlcremieMintCreamTMHMLearnset[] =
 };
 static const u8 sAlcremieLemonCreamTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
@@ -30725,6 +32109,7 @@ static const u8 sAlcremieLemonCreamTMHMLearnset[] =
 };
 static const u8 sAlcremieSaltedCreaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
@@ -30743,6 +32128,7 @@ static const u8 sAlcremieSaltedCreaTMHMLearnset[] =
 };
 static const u8 sAlcremieRubySwirlTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
@@ -30761,6 +32147,7 @@ static const u8 sAlcremieRubySwirlTMHMLearnset[] =
 };
 static const u8 sAlcremieCaramelSwiTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
@@ -30779,6 +32166,7 @@ static const u8 sAlcremieCaramelSwiTMHMLearnset[] =
 };
 static const u8 sAlcremieRainbowSwiTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
@@ -30797,6 +32185,7 @@ static const u8 sAlcremieRainbowSwiTMHMLearnset[] =
 };
 static const u8 sIndeedeeFemaleTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
@@ -30814,6 +32203,7 @@ static const u8 sIndeedeeFemaleTMHMLearnset[] =
 };
 static const u8 sUrshifuRapidStrikeTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -30838,6 +32228,7 @@ static const u8 sUrshifuRapidStrikeTMHMLearnset[] =
 };
 static const u8 sZarudeDadaTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM31_BRICK_BREAK),
@@ -30859,6 +32250,7 @@ static const u8 sZarudeDadaTMHMLearnset[] =
 };
 static const u8 sCalyrexIceRiderTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM62_FROZEN_TERRAIN),
     TMHM(TM60_TRI_ATTACK),
@@ -30887,6 +32279,7 @@ static const u8 sCalyrexIceRiderTMHMLearnset[] =
 };
 static const u8 sCalyrexShadowRiderTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM10_HIDDEN_POWER),
     TMHM(TM60_TRI_ATTACK),
     TMHM(TM59_NATURAL_GIFT),
@@ -30911,6 +32304,7 @@ static const u8 sCalyrexShadowRiderTMHMLearnset[] =
 
 static const u8 sWyrdeerTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -30946,6 +32340,7 @@ static const u8 sWyrdeerTMHMLearnset[] =
 
 static const u8 sBasculegionTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM51_BRINE),
@@ -30971,6 +32366,7 @@ static const u8 sBasculegionTMHMLearnset[] =
 
 static const u8 sSneaslerTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -31004,6 +32400,7 @@ static const u8 sSneaslerTMHMLearnset[] =
 
 static const u8 sOverqwilTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM51_BRINE),
@@ -31033,6 +32430,7 @@ static const u8 sOverqwilTMHMLearnset[] =
 
 static const u8 sEnamorusTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM31_BRICK_BREAK),
@@ -31059,6 +32457,7 @@ static const u8 sEnamorusTMHMLearnset[] =
 
 static const u8 sEnamorusTherianTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM31_BRICK_BREAK),
@@ -31085,6 +32484,7 @@ static const u8 sEnamorusTherianTMHMLearnset[] =
 
 static const u8 sGrowlitheHisuianTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM57_BURNING_TERRAIN),
@@ -31116,6 +32516,7 @@ static const u8 sGrowlitheHisuianTMHMLearnset[] =
 
 static const u8 sArcanineHisuianTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM57_BURNING_TERRAIN),
@@ -31149,6 +32550,7 @@ static const u8 sArcanineHisuianTMHMLearnset[] =
 
 static const u8 sVoltorbHisuianTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM32_DOUBLE_TEAM),
@@ -31180,6 +32582,7 @@ static const u8 sVoltorbHisuianTMHMLearnset[] =
 
 static const u8 sElectrodeHisuianTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM32_DOUBLE_TEAM),
@@ -31211,6 +32614,7 @@ static const u8 sElectrodeHisuianTMHMLearnset[] =
 
 static const u8 sTyphlosionHisuianTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM61_WILD_CHARGE),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
@@ -31249,6 +32653,7 @@ static const u8 sTyphlosionHisuianTMHMLearnset[] =
 
 static const u8 sQwilfishHisuianTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
     TMHM(TM51_BRINE),
@@ -31278,6 +32683,7 @@ static const u8 sQwilfishHisuianTMHMLearnset[] =
 
 static const u8 sSneaselHisuianTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -31311,6 +32717,8 @@ static const u8 sSneaselHisuianTMHMLearnset[] =
 
 static const u8 sSamurottHisuianTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -31344,6 +32752,7 @@ static const u8 sSamurottHisuianTMHMLearnset[] =
 
 static const u8 sLilligantHisuianTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
@@ -31370,6 +32779,7 @@ static const u8 sLilligantHisuianTMHMLearnset[] =
 
 static const u8 sZoruaHisuianTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -31398,6 +32808,7 @@ static const u8 sZoruaHisuianTMHMLearnset[] =
 
 static const u8 sZoroarkHisuianTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
     TMHM(TM45_ATTRACT),
@@ -31430,6 +32841,7 @@ static const u8 sZoroarkHisuianTMHMLearnset[] =
 
 static const u8 sBraviaryHisuianTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM65_FOG),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM40_AERIAL_ACE),
@@ -31459,6 +32871,8 @@ static const u8 sBraviaryHisuianTMHMLearnset[] =
 
 static const u8 sSliggooHisuianTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM64_SWAMPY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -31485,6 +32899,8 @@ static const u8 sSliggooHisuianTMHMLearnset[] =
 
 static const u8 sGoodraHisuianTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM64_SWAMPY_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -31521,6 +32937,8 @@ static const u8 sGoodraHisuianTMHMLearnset[] =
 
 static const u8 sAvaluggHisuianTMHMLearnset[] =
 {
+    TMHM(TM68_CHILLING_WATER),
+    TMHM(TM66_HEADBUTT),
     TMHM(TM62_FROZEN_TERRAIN),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM45_ATTRACT),
@@ -31553,6 +32971,7 @@ static const u8 sAvaluggHisuianTMHMLearnset[] =
 
 static const u8 sDecidueyeHisuianTMHMLearnset[] =
 {
+    TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
     TMHM(TM45_ATTRACT),

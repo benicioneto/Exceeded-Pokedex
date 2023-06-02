@@ -601,6 +601,9 @@ static const u8 sWrestlingHeelDescription[] = _("Adds Fighting-type to Pokémon.
 static const u8 sProvokingFeudsDescription[] = _("Always hit after status move.");
 static const u8 sOutbreakDescription[] = _("Mutates when KOed.");
 static const u8 sPandemicDescription[] = _("Spreads cordyceps on contact.");
+static const u8 sGrimtoothDescription[] = _("Camouflages itself.");
+static const u8 sSlottedShellDescription[] = _("Each shell have an effect.");
+static const u8 sTraumaticFistDescription[] = _("Punching move may lower stat.");
 
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
 {
@@ -1136,6 +1139,9 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_PROVOKING_FEUDS] = _("Provoking Feuds"),
     [ABILITY_OUTBREAK] = _("Outbreak"),
     [ABILITY_PANDEMIC] = _("Pandemic"),
+    [ABILITY_GRIMTOOTH] = _("Grimtooth"),
+    [ABILITY_SLOTTED_SHELL] = _("Slotted Shell"),
+    [ABILITY_TRAUMATIC_FIST] = _("Traumatic Fist"),
 };
 
 const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
@@ -1672,6 +1678,9 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_PROVOKING_FEUDS] = sProvokingFeudsDescription,
     [ABILITY_OUTBREAK] = sOutbreakDescription,
     [ABILITY_PANDEMIC] = sPandemicDescription,
+    [ABILITY_GRIMTOOTH] = sGrimtoothDescription,
+    [ABILITY_SLOTTED_SHELL] = sSlottedShellDescription,
+    [ABILITY_TRAUMATIC_FIST] = sTraumaticFistDescription,
 };
 
 static const u8 sNoneDescriptionExtended[] = _("");
@@ -2055,7 +2064,7 @@ static const u8 sChargeAttackDescriptionExtended[] = _("The Pokémon has its Att
 static const u8 sSubterraneanDescriptionExtended[] = _("The first time that the Pokém-\non enters the battlefield, it \nburrows underground, avoinding\nany entry hazard and most att-\nacks. After the Pokémon uses a-\nny move or switches out, it wi-\nll emerge (if the used move is\nDig or Underground Bite, it w-\nill ignore its first turn char-\nge and will be executed immedi-\nately).");
 static const u8 sElectricBurstDescriptionExtended[] = _("The Pokémon's Electric-type m-\noves are boosted by 30%, but t-\nhe Pokémon takes 10% of its ma-\nximum HP as recoil.");
 static const u8 sAbyssalVoyagerDescriptionExtended[] = _("The first time that the Pokém-\non enters the battlefield, it \ndives underwater, avoinding an-\ny entry hazard and most attack-\ns. After the Pokémon uses any \nmove or switches out, it will \nemerge (if the used move is Di-\nve, it will ignore its first t-\nurn charge and will be execute-\nd immediately).");
-static const u8 sCamouflageDescriptionExtended[] = _("Camouflages itself in battle \nas soon as the Pokémon enters \nthe battlefield. While camoufl-\naged, the Accuracy of single-t-\narget move used against the Po-\nkémon is modified by a factor \nof 20%.");
+static const u8 sCamouflageDescriptionExtended[] = _("The first time that the Pokém-\non enters the battlefield, it \ncamouflages itself. While camo-\nuflaged, the Accuracy of singl-\ne-target move used against the\nPokémon is modified by a fact-\nor of 20%.");
 static const u8 sInflatableDescriptionExtended[] = _("When the Pokémon is hit by a \nFire- or Flying-type move, its\nDefense and Special Defense s-\ntats are increased by one stag-\ne.");
 static const u8 sDistortionWorldDescriptionExtended[] = _("When the Pokémon is in battle\nin its Origin form, all effec-\nts of weather and terrain are \nnegated (though the weather or\nterrain itself does not disap-\npear) and Shadow Force will ig-\nnore its first turn charge and\nwill be executed immediately.");
 static const u8 sCoilUpDescriptionExtended[] = _("The Pokémon enters the battle-\nfield coiled up, increasing th-\ne priority of the next biting \nmove by one.");
@@ -2150,7 +2159,7 @@ static const u8 sFrictionManeDescriptionExtended[] = _("Whenever the Pokémon us
 static const u8 sThundercloudsDescriptionExtended[] = _("Summons thunderclouds in batt-\nle as soon as the Pokémon ente-\nrs the battlefield. The thunde-\nrclouds lasts for five turns. \nThunderclouds: Deals Electric-\ntype damage with 30 power at t-\nhe end of each turn to all opp-\nosing Pokémon.");
 static const u8 sMetalmorphDescriptionExtended[] = _("The Pokémon becomes pure Stee-\nl-type as soon as the Pokémon \nenters the battlefield. Also, \nthe Pokémon gains same-type at-\ntack bonus with moves of the o-\nriginal types regardless the P-\nokémon's current typing.");
 static const u8 sTrampleDescriptionExtended[] = _("Whenever the Pokémon uses a d-\nance move, all other Pokémon o-\nn the ground takes damage equa-\nl to 1/16 of their maximum HP.");
-static const u8 sVoodooDollDescriptionExtended[] = _("The Pokémon puts a voodoo cur-\nse on opposing Pokémon for one\nturn as soon as it enters the\nbattlefield. Whenever the Pok-\némon would take damage, it tra-\nnsfers the incoming damage to \nthe cursed target instead.");
+static const u8 sVoodooDollDescriptionExtended[] = _("The first time that the Pokém-\non enters the battlefield, it \nputs a voodoo curse on opposin-\ng Pokémon for one turn. Whenev-\ner the Pokémon would take dama-\nge, it transfers the incoming \ndamage to the cursed target in-\nstead, but that target cannot \nfaint because of the curse.");
 static const u8 sNightfallLullabyDescriptionExtended[] = _("The first time that the Pokém-\non enters the battlefield, it \nputs all other into sleep in t-\nhe battlefield.");
 static const u8 sLunarVeilDescriptionExtended[] = _("The first time that the Pokém-\non enters the battlefield, it \nrestores HP of all ally Pokémo-\nn in the battlefield and in th-\ne Trainer's party equal to 1/8\nof their maximum HP while cur-\ning any sleeping Pokémon.");
 static const u8 sPsychokineticDescriptionExtended[] = _("The Pokémon uses its Special \nAttack stat in addition to the\nAttack stat for physical move-\ns during the damage calculatio-\nn. The Special Attack stat sta-\nges, items and abilities still\naffects the value.");
@@ -2166,16 +2175,19 @@ static const u8 sGraniticBodyDescriptionExtended[] = _("Doubles the Pokémon's D
 static const u8 sPyroclasticDescriptionExtended[] = _("Doubles the power of Fire- an-\nd Poison-type moves used by th-\ne Pokémon and prevents the Pok-\némon from being burned or pois-\noned.");
 static const u8 sHollowShellDescriptionExtended[] = _("When the Pokémon faints by a \ndamaging move from an opposing\nPokémon, the attacker will fa-\nint too.");
 static const u8 sPetrifyingGazeDescriptionExtended[] = _("The user intimidates the foe \nwith the pattern on its belly \nto cause paralysis when the Po-\nkémon enters the battlefield. \nIf the Pokémon is in the first\nplace in the party (even if f-\nainted), there is a 50% chance\nit will prevent a random wild\nencounter that would have occ-\nurred if the wild Pokémon woul-\nd be at least 5 levels lower.");
-static const u8 sPatriarchDescriptionExtended[] = _("The first time that the Pokém-\non enters the battlefield, it \nbecomes the patriach. As the p-\natriach, for each Pokémon with\nopposite gender in the party,\nincrease the Pokémon's Attack\n, Special Attack and Speed sta-\nts by 3%. Forces single-target\nmoves against matriarch to ta-\nrget the Pokémon with this abi-\nlity. There can be only one pa-\ntriach in the party.");
-static const u8 sMatriarchDescriptionExtended[] = _("The first time that the Pokém-\non enters the battlefield, it \nbecomes the matriach. As the m-\natriach, for each Pokémon that\nis able to evolve in the part-\ny, increase the Pokémon's stat-\ns by 5%. Forces single-target \nmoves against Pokémon that is \nable to evolve to target the P-\nokémon with this ability. Ther-\ne can be only one matriach in \nthe party.");
+static const u8 sPatriarchDescriptionExtended[] = _("The first time that the Pokém-\non enters the battlefield, it \nbecomes the patriach. As the p-\natriach, for each Pokémon with\nopposite gender in the party,\nincrease the Pokémon's Attack\n, Special Attack and Speed sta-\nts by 3%. Forces single-target\ndamaging moves against matria-\nrch to target the Pokémon with\nthis ability. There can be on-\nly one patriach in the party.");
+static const u8 sMatriarchDescriptionExtended[] = _("The first time that the Pokém-\non enters the battlefield, it \nbecomes the matriach. As the m-\natriach, for each Pokémon that\nis able to evolve in the part-\ny, increase the Pokémon's stat-\ns by 5%. Forces single-target \ndamaging moves against Pokémon\nthat is able to evolve to tar-\nget the Pokémon with this abil-\nity. There can be only one mat-\nriach in the party.");
 static const u8 sGemHoarderDescriptionExtended[] = _("Increases Defense stat by one\nstage when it consumes a Gem.\nAt the end of each turn, ther-\ne is 30% to take a random Gem,\nprioritizing the correspondin-\ng type of one damaging move of\nPokémon.");
 static const u8 sCleansingChimeDescriptionExtended[] = _("When the Pokémon enters the b-\nattlefield, it cures the Pokém-\non and all Pokémon in the Trai-\nner's party of all status cond-\nition.");
 static const u8 sJawTrapDescriptionExtended[] = _("Whenever the Pokémon is hit b-\ny a move that makes contact, t-\nhe Pokémon uses its jaw to cou-\nnter with a bite that deals Da-\nrk-type damage with 25 power.");
 static const u8 sPolarizationDescriptionExtended[] = _("If the Pokémon has Minus or P-\nlus ability while its ally has\nthe other ability, increases \nall stats of the Pokémon by 30\n%.");
 static const u8 sWrestlingHeelDescriptionExtended[] = _("Adds the Fighting-type to the\nPokémon, in addition to the P-\nokémon's original type(s) and \nmoves that would be “supereffe-\nctive” against pure Fighting-t-\nype Pokémon will be only norma-\nlly effective instead.");
-static const u8 sProvokingFeudsDescriptionExtended[] = _("After using single-target sta-\ntus move, your damaging move a-\ngainst that target will bypass\nAccuracy check in the next tu-\nrn.");
-static const u8 sOutbreakDescriptionExtended[] = _("When the Pokémon faints, the \nfungus mutates and becomes mor-\ne contagious.");
+static const u8 sProvokingFeudsDescriptionExtended[] = _("Swagger's Accuracy is increas-\ned to 100%. After using single\n-target status move, your dama-\nging move against that target \nwill deal 20% more damage and \nbypass Accuracy check in the n-\next turn.");
+static const u8 sOutbreakDescriptionExtended[] = _("When the Pokémon faints, the \nparasitic fungus mutates and b-\necomes more contagious.");
 static const u8 sPandemicDescriptionExtended[] = _("When the Pokémon attacks or i-\ns attacked by a move that make-\ns contact, the opposing Pokémo-\nn becomes infected by Cordycep-\ns.");
+static const u8 sGrimtoothDescriptionExtended[] = _("The Pokémon camouflages itsel-\nf as soon as it enters the bat-\ntlefield. While camouflaged, t-\nhe Accuracy of single-target m-\nove used against the Pokémon i-\ns modified by a factor of 20%.\nUsing a damaging move will re-\nmove the camouflage, but gun a-\nnd shot moves will always be c-\nritical hit.");
+static const u8 sSlottedShellDescriptionExtended[] = _("The Pokémon creates a random \nshell whenever it enters the b-\nattlefield or after using gun \nand shot moves. Shrapnel Shell-\n: Deals 1/16 of maximum HP. Pi-\nercing Shell: Bonus of 33% of \ntarget's Defense. Explosive Sh-\nell: Ignores ignorable abiliti-\nes. Incendiary Shell: Burns th-\ne target. Shotgun Slug: May fl-\ninch. Anti-Material Shell: Dea-\nls physical or special damage.");
+static const u8 sTraumaticFistDescriptionExtended[] = _("Punching moves have a chance \nof lowering a random stat of t-\nhe target by one stage, depend-\ning on the base power of the u-\nsed move. Special Technique: I-\nce Hammer and Hammer Arm alway-\ns lower target's Speed stat by\ntwo stages.");
 
 const u8 *const gAbilityDescriptionExtendedPointers[ABILITIES_COUNT] =
 {
@@ -2682,4 +2694,7 @@ const u8 *const gAbilityDescriptionExtendedPointers[ABILITIES_COUNT] =
     [ABILITY_PROVOKING_FEUDS] = sProvokingFeudsDescriptionExtended,
     [ABILITY_OUTBREAK] = sOutbreakDescriptionExtended,
     [ABILITY_PANDEMIC] = sPandemicDescriptionExtended,
+    [ABILITY_GRIMTOOTH] = sGrimtoothDescriptionExtended,
+    [ABILITY_SLOTTED_SHELL] = sSlottedShellDescriptionExtended,
+    [ABILITY_TRAUMATIC_FIST] = sTraumaticFistDescriptionExtended,
 };

@@ -2466,7 +2466,6 @@ static const struct LevelUpMove sCloysterLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sGastlyLevelUpLearnset[] = {
-    LEVEL_UP_MOVE( 1, MOVE_MUSTARD_GAS),
     LEVEL_UP_MOVE( 1, MOVE_LICK),
     LEVEL_UP_MOVE( 1, MOVE_CONFUSE_RAY),
     LEVEL_UP_MOVE( 1, MOVE_HYPNOSIS),
@@ -20597,6 +20596,7 @@ static const struct LevelUpMove sInteleonLevelUpLearnset[] = {
     LEVEL_UP_MOVE(30, MOVE_U_TURN),
     LEVEL_UP_MOVE(38, MOVE_LIQUIDATION),
     LEVEL_UP_MOVE(46, MOVE_SOAK),
+    LEVEL_UP_MOVE(50, MOVE_FIRE_IN_THE_HOLE),
     LEVEL_UP_MOVE(54, MOVE_RAIN_DANCE),
     LEVEL_UP_MOVE(62, MOVE_HYDRO_PUMP),
     LEVEL_UP_END

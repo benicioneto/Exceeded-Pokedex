@@ -551,7 +551,7 @@ static const u8 sGlareDescription[] = _(
 
 static const u8 sDreamEaterDescription[] = _(
     "Inflicts double damage on\n"
-    "a sleeping foe.");
+    "a sleeping foe. Steal HP.");
 
 static const u8 sPoisonGasDescription[] = _(
     "Envelops the foe in a toxic\n"
@@ -1318,7 +1318,7 @@ static const u8 sSheerColdDescription[] = _(
 
 static const u8 sMuddyWaterDescription[] = _(
     "Can hit Flying foes.\n"
-    "May lower accuracy.");
+    "May lower speed.");
 
 static const u8 sBulletSeedDescription[] = _(
     "Shoots 2 to 5 seeds. Each\n"
@@ -3445,7 +3445,7 @@ static const u8 sFANCIFUL_FIREWORKSDescription[] = _(
 
 static const u8 sMOCKING_SHOUTDescription[] = _(
     "Says bad thing to\n"
-    "lower Attack and Defense.");
+    "lower Attack and Speed.");
 
 static const u8 sSTREAM_IMPULSEDescription[] = _(
     "The user levitates and\n"
@@ -3585,6 +3585,14 @@ static const u8 sAURORA_DANCEDescription[] = _(
 static const u8 sMUSTARD_GASDescription[] = _(
     "Poison-type {PKMN} gain\n"
     "STAB. May burn.");
+
+static const u8 sABSOLUTE_ZERODescription[] = _(
+    "May freeze all Pokémon,\n"
+    "including the user.");
+
+static const u8 sFIRE_IN_THE_HOLEDescription[] = _(
+    "Water sphere that explode\n"
+    "2 turns later and burn.");
 
 // MOVE_NONE is ignored in this table. Make sure to always subtract 1 before getting the right pointer.
 const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
@@ -4506,4 +4514,6 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_DESPAIR_KISS - 1] = sDESPAIR_KISSDescription,
     [MOVE_AURORA_DANCE - 1] = sAURORA_DANCEDescription,
     [MOVE_MUSTARD_GAS - 1] = sMUSTARD_GASDescription,
+    [MOVE_ABSOLUTE_ZERO - 1] = sABSOLUTE_ZERODescription,
+    [MOVE_FIRE_IN_THE_HOLE - 1] = sFIRE_IN_THE_HOLEDescription,
 };

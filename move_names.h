@@ -918,6 +918,8 @@ const u8 gMoveNames[MOVES_COUNT][MOVE_NAME_LENGTH + 1] =
     [MOVE_DESPAIR_KISS] = _("Despair Kiss"),
     [MOVE_AURORA_DANCE] = _("Aurora Dance"),
     [MOVE_MUSTARD_GAS] = _("Mustard Gas"),
+    [MOVE_ABSOLUTE_ZERO] = _("Absolute Zero"),
+    [MOVE_FIRE_IN_THE_HOLE] = _("Fire in the Hole"),
 };
 
 static const u8 sText_Breakneck_Blitz[] = _("Breakneck Blitz");

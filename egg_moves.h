@@ -619,6 +619,7 @@ const u16 gEggMoves[] = {
               MOVE_TWINEEDLE),
 
     egg_moves(GASTLY,
+              MOVE_MUSTARD_GAS,
               MOVE_ASTONISH,
               MOVE_CLEAR_SMOG,
               MOVE_DISABLE,
