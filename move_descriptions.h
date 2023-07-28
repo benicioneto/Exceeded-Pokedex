@@ -1393,8 +1393,8 @@ static const u8 sLeafBladeDescription[] = _(
     "High critical-hit ratio.");
 
 static const u8 sDragonDanceDescription[] = _(
-    "A mystical dance that ups\n"
-    "Attack and Speed.");
+    "Ups Speed and either Attack\n"
+    "or Special Attack.");
 
 static const u8 sRockBlastDescription[] = _(
     "Hurls boulders at the foe\n"
@@ -2465,8 +2465,8 @@ static const u8 sSPOTLIGHTDescription[] = _(
     "spotlighted Pokémon.");
 
 static const u8 sTOXIC_THREADDescription[] = _(
-    "Attacks with a thread that\n"
-    "poisons and drops Speed.");
+    "Poisons and drops speed.\n"
+    "Sets Toxic Spikes and Web.");
 
 static const u8 sLASER_FOCUSDescription[] = _(
     "Guarantees the next move\n"
@@ -3384,8 +3384,8 @@ static const u8 sWATERBURST_SHURIKENDescription[] = _(
     "lowers target's Speed.");
 
 static const u8 sGATLING_GULP_MISSILEDescription[] = _(
-    "Hits 5 times, lowers\n"
-    "defenses or paralyzes.");
+    "Throws one to ten water\n"
+    "balls in a row.");
 
 static const u8 sDEATHROLLDescription[] = _(
     "Vicious bite that ignores\n"
@@ -3593,6 +3593,50 @@ static const u8 sABSOLUTE_ZERODescription[] = _(
 static const u8 sFIRE_IN_THE_HOLEDescription[] = _(
     "Water sphere that explode\n"
     "2 turns later and burn.");
+
+static const u8 sBAD_BREATHDescription[] = _(
+    "Ups damage and paralyze\n"
+    "for each berry eaten.");
+
+static const u8 sWATER_BALLDescription[] = _(
+    "Hits up to 5 times, or\n"
+    "up to 10 times in water.");
+
+static const u8 sDRAGON_FANGDescription[] = _(
+    "A bite attack that may\n"
+    "raise the user's Attack.");
+
+static const u8 sBELLY_BASHDescription[] = _(
+    "The user consume its HP to\n"
+    "damage the foe.");
+
+static const u8 sFORCE_HEALINGDescription[] = _(
+    "Recovers up to half the\n"
+    "user's maximum HP.");
+
+static const u8 sSHADOW_STORMDescription[] = _(
+    "Blasts water at high power\n"
+    "to strike the foe.");
+
+static const u8 sSHADOW_CHILLDescription[] = _(
+    "Blasts the foe with an icy\n"
+    "beam that may freeze it.");
+
+static const u8 sSHADOW_FIREDescription[] = _(
+    "A powerful fire attack that\n"
+    "may inflict a burn.");
+
+static const u8 sSHADOW_BOLTDescription[] = _(
+    "A strong electrical attack\n"
+    "that may paralyze the foe.");
+
+static const u8 sSHADOW_BLASTDescription[] = _(
+    "Always be a critical hit.\n"
+    "Lifts entry hazards in air.");
+
+static const u8 sSHADOW_ENDDescription[] = _(
+    "User's highest attack stat\n"
+    "determines its category.");
 
 // MOVE_NONE is ignored in this table. Make sure to always subtract 1 before getting the right pointer.
 const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
@@ -4516,4 +4560,15 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_MUSTARD_GAS - 1] = sMUSTARD_GASDescription,
     [MOVE_ABSOLUTE_ZERO - 1] = sABSOLUTE_ZERODescription,
     [MOVE_FIRE_IN_THE_HOLE - 1] = sFIRE_IN_THE_HOLEDescription,
+    [MOVE_BAD_BREATH - 1] = sBAD_BREATHDescription,
+    [MOVE_WATER_BALL - 1] = sWATER_BALLDescription,
+    [MOVE_DRAGON_FANG - 1] = sDRAGON_FANGDescription,
+    [MOVE_BELLY_BASH - 1] = sBELLY_BASHDescription,
+    [MOVE_FORCE_HEALING - 1] = sFORCE_HEALINGDescription,
+    [MOVE_SHADOW_STORM - 1] = sSHADOW_STORMDescription,
+    [MOVE_SHADOW_CHILL - 1] = sSHADOW_CHILLDescription,
+    [MOVE_SHADOW_FIRE - 1] = sSHADOW_FIREDescription,
+    [MOVE_SHADOW_BOLT - 1] = sSHADOW_BOLTDescription,
+    [MOVE_SHADOW_BLAST - 1] = sSHADOW_BLASTDescription,
+    [MOVE_SHADOW_END - 1] = sSHADOW_ENDDescription,
 };

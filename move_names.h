@@ -920,6 +920,17 @@ const u8 gMoveNames[MOVES_COUNT][MOVE_NAME_LENGTH + 1] =
     [MOVE_MUSTARD_GAS] = _("Mustard Gas"),
     [MOVE_ABSOLUTE_ZERO] = _("Absolute Zero"),
     [MOVE_FIRE_IN_THE_HOLE] = _("Fire in the Hole"),
+    [MOVE_BAD_BREATH] = _("Bad Breath"),
+    [MOVE_WATER_BALL] = _("Water Ball"),
+    [MOVE_DRAGON_FANG] = _("Dragon Fang"),
+    [MOVE_BELLY_BASH] = _("Belly Bash"),
+    [MOVE_FORCE_HEALING] = _("Force Healing"),
+    [MOVE_SHADOW_STORM] = _("Shadow Storm"),
+    [MOVE_SHADOW_CHILL] = _("Shadow Chill"),
+    [MOVE_SHADOW_FIRE] = _("Shadow Fire"),
+    [MOVE_SHADOW_BOLT] = _("Shadow Bolt"),
+    [MOVE_SHADOW_BLAST] = _("Shadow Blast"),
+    [MOVE_SHADOW_END] = _("Shadow End"),
 };
 
 static const u8 sText_Breakneck_Blitz[] = _("Breakneck Blitz");

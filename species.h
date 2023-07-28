@@ -1387,8 +1387,16 @@
 #define SPECIES_MAGCARGO_GRANITIC            FORMS_START + 349
 #define SPECIES_PARAS_ZOMBIFIED              FORMS_START + 350
 #define SPECIES_PARASECT_ZOMBIFIED           FORMS_START + 351
+#define SPECIES_SUDOWOODO_GOLDEN             FORMS_START + 352
+#define SPECIES_EEVEE_GENETIC                FORMS_START + 353
+#define SPECIES_VAPOREON_GENETIC             FORMS_START + 354
+#define SPECIES_JOLTEON_GENETIC              FORMS_START + 355
+#define SPECIES_FLAREON_GENETIC              FORMS_START + 356
+#define SPECIES_THU_FI_ZER                   FORMS_START + 357
+#define SPECIES_THU_FI_ZER_GALARIAN          FORMS_START + 358
+#define SPECIES_SHADOW_LUGIA                 FORMS_START + 359
 
-#define SPECIES_EGG                         (SPECIES_PARASECT_ZOMBIFIED + 1)
+#define SPECIES_EGG                         (SPECIES_SHADOW_LUGIA + 1)
 #define NUM_SPECIES SPECIES_EGG
 
 // National Dex Index Defines

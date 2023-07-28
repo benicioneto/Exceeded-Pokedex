@@ -140,6 +140,10 @@ const struct CompressedSpriteSheet gMonFrontPicTable[] =
     SPECIES_SPRITE(VAPOREON, gMonFrontPic_Vaporeon),
     SPECIES_SPRITE(JOLTEON, gMonFrontPic_Jolteon),
     SPECIES_SPRITE(FLAREON, gMonFrontPic_Flareon),
+    SPECIES_SPRITE(EEVEE_GENETIC, gMonFrontPic_Eevee),
+    SPECIES_SPRITE(VAPOREON_GENETIC, gMonFrontPic_Vaporeon),
+    SPECIES_SPRITE(JOLTEON_GENETIC, gMonFrontPic_Jolteon),
+    SPECIES_SPRITE(FLAREON_GENETIC, gMonFrontPic_Flareon),
     SPECIES_SPRITE(PORYGON, gMonFrontPic_Porygon),
     SPECIES_SPRITE(OMANYTE, gMonFrontPic_Omanyte),
     SPECIES_SPRITE(OMASTAR, gMonFrontPic_Omastar),
@@ -189,6 +193,7 @@ const struct CompressedSpriteSheet gMonFrontPicTable[] =
     SPECIES_SPRITE(MARILL, gMonFrontPic_Marill),
     SPECIES_SPRITE(AZUMARILL, gMonFrontPic_Azumarill),
     SPECIES_SPRITE(SUDOWOODO, gMonFrontPic_Sudowoodo),
+    SPECIES_SPRITE(SUDOWOODO_GOLDEN, gMonFrontPic_Sudowoodo),
     SPECIES_SPRITE(POLITOED, gMonFrontPic_Politoed),
     SPECIES_SPRITE(HOPPIP, gMonFrontPic_Hoppip),
     SPECIES_SPRITE(SKIPLOOM, gMonFrontPic_Skiploom),
@@ -255,6 +260,7 @@ const struct CompressedSpriteSheet gMonFrontPicTable[] =
     SPECIES_SPRITE(PUPITAR, gMonFrontPic_Pupitar),
     SPECIES_SPRITE(TYRANITAR, gMonFrontPic_Tyranitar),
     SPECIES_SPRITE(LUGIA, gMonFrontPic_Lugia),
+    SPECIES_SPRITE(SHADOW_LUGIA, gMonFrontPic_ShadowLugia),
     SPECIES_SPRITE(HO_OH, gMonFrontPic_HoOh),
     SPECIES_SPRITE(MYSTIC_EGG, gMonFrontPic_MysticEgg),
     SPECIES_SPRITE(COCOON_EGG, gMonFrontPic_CocoonEgg),
@@ -1317,6 +1323,8 @@ const struct CompressedSpriteSheet gMonFrontPicTable[] =
     SPECIES_SPRITE(SNORLAX_SNOW, gMonFrontPic_SnorlaxSnow),
     SPECIES_SPRITE(PIKACHU_FLYING, gMonFrontPic_PikachuFlying),
     SPECIES_SPRITE(PIKACHU_SURFING, gMonFrontPic_PikachuSurfing),
+    SPECIES_SPRITE(THU_FI_ZER, gMonFrontPic_ThuFiZer),
+    SPECIES_SPRITE(THU_FI_ZER_GALARIAN, gMonFrontPic_ThuFiZerGalarian),
 };
 
 const struct CompressedSpriteSheet gMonFrontPicTableFemale[] =
@@ -1337,4 +1345,5 @@ const struct CompressedSpriteSheet gMonFrontPicTableFemale[] =
     SPECIES_SPRITE(JELLICENT, gMonFrontPic_JellicentF),
     SPECIES_SPRITE(PYROAR, gMonFrontPic_PyroarF),
     SPECIES_SPRITE(BASCULEGION, gMonFrontPic_BasculegionF),
+    SPECIES_SPRITE(EEVEE_GENETIC, gMonFrontPic_EeveeF),
 };

@@ -1162,3 +1162,11 @@ static const u16 sYveltalFormSpeciesIdTable[] = {
     SPECIES_COCOON_EGG,
     FORM_SPECIES_END,
 };
+
+static const u16 sEeveeGeneticFormSpeciesIdTable[] = {
+    SPECIES_EEVEE_GENETIC,
+    SPECIES_VAPOREON_GENETIC,
+    SPECIES_JOLTEON_GENETIC,
+    SPECIES_FLAREON_GENETIC,
+    FORM_SPECIES_END,
+};

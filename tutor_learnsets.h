@@ -33,6 +33,7 @@ const u16 gTutorMoves[] =
     [TUTOR_MOVE_ANCIENT_POWER] = MOVE_ANCIENT_POWER,        //ok
     [TUTOR_MOVE_SIGNAL_BEAM] = MOVE_SIGNAL_BEAM,        //ok
     [TUTOR_MOVE_BLAZE_KICK] = MOVE_BLAZE_KICK,        //ok
+    [TUTOR_MOVE_WATER_BALL] = MOVE_WATER_BALL,        //ok
     //Special Tutor Moves
     [TUTOR_MOVE_BURN_UP] = MOVE_BURN_UP,        //ok
     [TUTOR_MOVE_DRACO_METEOR] = MOVE_DRACO_METEOR,        //ok
@@ -175,6 +176,7 @@ static const u8 sCharizardTutorLearnset[] =
 };
 static const u8 sSquirtleTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(COUNTER),
     TUTOR(DEFENSE_CURL),
@@ -197,6 +199,7 @@ static const u8 sSquirtleTutorLearnset[] =
 };
 static const u8 sWartortleTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(COUNTER),
     TUTOR(DEFENSE_CURL),
@@ -219,6 +222,7 @@ static const u8 sWartortleTutorLearnset[] =
 };
 static const u8 sBlastoiseTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(SIGNAL_BEAM),
     TUTOR(COUNTER),
@@ -417,6 +421,7 @@ static const u8 sArbokTutorLearnset[] =
 };
 static const u8 sPikachuTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(SIGNAL_BEAM),
     TUTOR(COUNTER),
@@ -944,6 +949,7 @@ static const u8 sPersianTutorLearnset[] =
 };
 static const u8 sPsyduckTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(SIGNAL_BEAM),
     TUTOR(COUNTER),
@@ -967,6 +973,7 @@ static const u8 sPsyduckTutorLearnset[] =
 };
 static const u8 sGolduckTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(SIGNAL_BEAM),
     TUTOR(COUNTER),
@@ -1072,6 +1079,7 @@ static const u8 sArcanineTutorLearnset[] =
 };
 static const u8 sPoliwagTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(DEFENSE_CURL),
     TUTOR(DOUBLE_EDGE),
@@ -1086,6 +1094,7 @@ static const u8 sPoliwagTutorLearnset[] =
 };
 static const u8 sPoliwhirlTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(COUNTER),
     TUTOR(DEFENSE_CURL),
@@ -1107,6 +1116,7 @@ static const u8 sPoliwhirlTutorLearnset[] =
 };
 static const u8 sPoliwrathTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(COUNTER),
     TUTOR(DEFENSE_CURL),
@@ -1311,6 +1321,7 @@ static const u8 sVictreebelTutorLearnset[] =
 };
 static const u8 sTentacoolTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(DOUBLE_EDGE),
     TUTOR(ENDURE),
     TUTOR(ICY_WIND),
@@ -1324,6 +1335,7 @@ static const u8 sTentacoolTutorLearnset[] =
 };
 static const u8 sTentacruelTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(DOUBLE_EDGE),
     TUTOR(ENDURE),
     TUTOR(ICY_WIND),
@@ -1440,6 +1452,7 @@ static const u8 sRapidashTutorLearnset[] =
 };
 static const u8 sSlowpokeTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(SIGNAL_BEAM),
     TUTOR(DOUBLE_EDGE),
@@ -1459,6 +1472,7 @@ static const u8 sSlowpokeTutorLearnset[] =
 };
 static const u8 sSlowbroTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(SIGNAL_BEAM),
     TUTOR(COUNTER),
@@ -1564,6 +1578,7 @@ static const u8 sDodrioTutorLearnset[] =
 };
 static const u8 sSeelTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(SIGNAL_BEAM),
     TUTOR(DOUBLE_EDGE),
@@ -1578,6 +1593,7 @@ static const u8 sSeelTutorLearnset[] =
 };
 static const u8 sDewgongTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(SIGNAL_BEAM),
     TUTOR(DOUBLE_EDGE),
@@ -1628,6 +1644,7 @@ static const u8 sMukTutorLearnset[] =
 };
 static const u8 sShellderTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(DOUBLE_EDGE),
     TUTOR(ENDURE),
     TUTOR(EXPLOSION),
@@ -1642,6 +1659,7 @@ static const u8 sShellderTutorLearnset[] =
 };
 static const u8 sCloysterTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(DOUBLE_EDGE),
     TUTOR(SIGNAL_BEAM),
     TUTOR(ENDURE),
@@ -1804,6 +1822,7 @@ static const u8 sHypnoTutorLearnset[] =
 };
 static const u8 sKrabbyTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(ANCIENT_POWER),
     TUTOR(DOUBLE_EDGE),
@@ -1822,6 +1841,7 @@ static const u8 sKrabbyTutorLearnset[] =
 };
 static const u8 sKinglerTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(ANCIENT_POWER),
     TUTOR(DOUBLE_EDGE),
@@ -1998,6 +2018,7 @@ static const u8 sHitmonchanTutorLearnset[] =
 };
 static const u8 sLickitungTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(COUNTER),
     TUTOR(DEFENSE_CURL),
@@ -2165,6 +2186,7 @@ static const u8 sKangaskhanTutorLearnset[] =
 };
 static const u8 sHorseaTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(DOUBLE_EDGE),
     TUTOR(SIGNAL_BEAM),
     TUTOR(ENDURE),
@@ -2179,6 +2201,7 @@ static const u8 sHorseaTutorLearnset[] =
 };
 static const u8 sSeadraTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(DOUBLE_EDGE),
     TUTOR(SIGNAL_BEAM),
     TUTOR(ENDURE),
@@ -2193,6 +2216,7 @@ static const u8 sSeadraTutorLearnset[] =
 };
 static const u8 sGoldeenTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(SIGNAL_BEAM),
     TUTOR(DOUBLE_EDGE),
@@ -2210,6 +2234,7 @@ static const u8 sGoldeenTutorLearnset[] =
 };
 static const u8 sSeakingTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(DOUBLE_EDGE),
     TUTOR(SIGNAL_BEAM),
     TUTOR(ENDURE),
@@ -2226,6 +2251,7 @@ static const u8 sSeakingTutorLearnset[] =
 };
 static const u8 sStaryuTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(DOUBLE_EDGE),
     TUTOR(SIGNAL_BEAM),
     TUTOR(ENDURE),
@@ -2243,6 +2269,7 @@ static const u8 sStaryuTutorLearnset[] =
 };
 static const u8 sStarmieTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(DOUBLE_EDGE),
     TUTOR(SIGNAL_BEAM),
     TUTOR(DREAM_EATER),
@@ -2422,6 +2449,7 @@ static const u8 sMagikarpTutorLearnset[] =
 };
 static const u8 sGyaradosTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(DOUBLE_EDGE),
     TUTOR(ENDURE),
@@ -2466,6 +2494,23 @@ static const u8 sEeveeTutorLearnset[] =
     TUTOR(SUBSTITUTE),
     TUTOR(SWAGGER),
     TUTOR(SWIFT),
+    0xFF,
+};
+static const u8 sEeveeGeneticTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ICY_WIND),
+    TUTOR(THUNDER_WAVE),
     0xFF,
 };
 static const u8 sVaporeonTutorLearnset[] =
@@ -2534,6 +2579,7 @@ static const u8 sPorygonTutorLearnset[] =
 };
 static const u8 sOmanyteTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(ANCIENT_POWER),
     TUTOR(DOUBLE_EDGE),
@@ -2550,6 +2596,7 @@ static const u8 sOmanyteTutorLearnset[] =
 };
 static const u8 sOmastarTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(ANCIENT_POWER),
     TUTOR(DOUBLE_EDGE),
@@ -2567,6 +2614,7 @@ static const u8 sOmastarTutorLearnset[] =
 };
 static const u8 sKabutoTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(ANCIENT_POWER),
     TUTOR(DOUBLE_EDGE),
@@ -2584,6 +2632,7 @@ static const u8 sKabutoTutorLearnset[] =
 };
 static const u8 sKabutopsTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(ANCIENT_POWER),
     TUTOR(DOUBLE_EDGE),
@@ -2670,6 +2719,23 @@ static const u8 sSnorlaxSnowTutorLearnset[] =
     TUTOR(THUNDER_PUNCH),
     0xFF,
 };
+static const u8 sThuFiZerTutorLearnset[] =
+{
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
 static const u8 sArticunoTutorLearnset[] =
 {
     TUTOR(DOUBLE_EDGE),
@@ -2718,6 +2784,7 @@ static const u8 sMoltresTutorLearnset[] =
 };
 static const u8 sDratiniTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(DOUBLE_EDGE),
     TUTOR(ENDURE),
@@ -2733,6 +2800,7 @@ static const u8 sDratiniTutorLearnset[] =
 };
 static const u8 sDragonairTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(DOUBLE_EDGE),
     TUTOR(ENDURE),
@@ -2748,6 +2816,7 @@ static const u8 sDragonairTutorLearnset[] =
 };
 static const u8 sDragoniteTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(DOUBLE_EDGE),
     TUTOR(DYNAMIC_PUNCH),
@@ -2800,6 +2869,7 @@ static const u8 sMewtwoTutorLearnset[] =
 };
 static const u8 sMewTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(BLAZE_KICK),
     TUTOR(SIGNAL_BEAM),
@@ -2946,6 +3016,7 @@ static const u8 sTyphlosionTutorLearnset[] =
 };
 static const u8 sTotodileTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(ANCIENT_POWER),
     TUTOR(COUNTER),
@@ -2969,6 +3040,7 @@ static const u8 sTotodileTutorLearnset[] =
 };
 static const u8 sCroconawTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(ANCIENT_POWER),
     TUTOR(COUNTER),
@@ -2993,6 +3065,7 @@ static const u8 sCroconawTutorLearnset[] =
 };
 static const u8 sFeraligatrTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(ANCIENT_POWER),
     TUTOR(COUNTER),
@@ -3017,6 +3090,7 @@ static const u8 sFeraligatrTutorLearnset[] =
 };
 static const u8 sSentretTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(DEFENSE_CURL),
     TUTOR(DOUBLE_EDGE),
@@ -3038,6 +3112,7 @@ static const u8 sSentretTutorLearnset[] =
 };
 static const u8 sFurretTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(DEFENSE_CURL),
     TUTOR(DOUBLE_EDGE),
@@ -3165,6 +3240,7 @@ static const u8 sCrobatTutorLearnset[] =
 };
 static const u8 sChinchouTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(DOUBLE_EDGE),
     TUTOR(SIGNAL_BEAM),
     TUTOR(ENDURE),
@@ -3179,6 +3255,7 @@ static const u8 sChinchouTutorLearnset[] =
 };
 static const u8 sLanturnTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(DOUBLE_EDGE),
     TUTOR(SIGNAL_BEAM),
     TUTOR(ENDURE),
@@ -3193,6 +3270,7 @@ static const u8 sLanturnTutorLearnset[] =
 };
 static const u8 sPichuTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(SIGNAL_BEAM),
     TUTOR(COUNTER),
@@ -3425,6 +3503,7 @@ static const u8 sBellossomTutorLearnset[] =
 };
 static const u8 sMarillTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(DEFENSE_CURL),
     TUTOR(DOUBLE_EDGE),
@@ -3447,6 +3526,7 @@ static const u8 sMarillTutorLearnset[] =
 };
 static const u8 sAzumarillTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(DEFENSE_CURL),
     TUTOR(DOUBLE_EDGE),
@@ -3495,6 +3575,7 @@ static const u8 sSudowoodoTutorLearnset[] =
 };
 static const u8 sPolitoedTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(COUNTER),
     TUTOR(DEFENSE_CURL),
@@ -3719,6 +3800,7 @@ static const u8 sMurkrowTutorLearnset[] =
 };
 static const u8 sSlowkingTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(SIGNAL_BEAM),
     TUTOR(COUNTER),
@@ -3931,6 +4013,7 @@ static const u8 sGranbullTutorLearnset[] =
 };
 static const u8 sQwilfishTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(DEFENSE_CURL),
     TUTOR(SIGNAL_BEAM),
     TUTOR(DOUBLE_EDGE),
@@ -4209,6 +4292,7 @@ static const u8 sPiloswineTutorLearnset[] =
 };
 static const u8 sCorsolaTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(ANCIENT_POWER),
     TUTOR(DEFENSE_CURL),
@@ -4228,6 +4312,7 @@ static const u8 sCorsolaTutorLearnset[] =
 };
 static const u8 sRemoraidTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(DEFENSE_CURL),
     TUTOR(SIGNAL_BEAM),
     TUTOR(DOUBLE_EDGE),
@@ -4245,6 +4330,7 @@ static const u8 sRemoraidTutorLearnset[] =
 };
 static const u8 sOctilleryTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(DEFENSE_CURL),
     TUTOR(SIGNAL_BEAM),
     TUTOR(DOUBLE_EDGE),
@@ -4285,6 +4371,7 @@ static const u8 sDelibirdTutorLearnset[] =
 };
 static const u8 sMantineTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(SIGNAL_BEAM),
     TUTOR(DOUBLE_EDGE),
@@ -4352,6 +4439,7 @@ static const u8 sHoundoomTutorLearnset[] =
 };
 static const u8 sKingdraTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(SIGNAL_BEAM),
     TUTOR(DOUBLE_EDGE),
@@ -4483,6 +4571,7 @@ static const u8 sHitmontopTutorLearnset[] =
 };
 static const u8 sSmoochumTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(SIGNAL_BEAM),
     TUTOR(COUNTER),
@@ -4507,6 +4596,7 @@ static const u8 sSmoochumTutorLearnset[] =
 };
 static const u8 sElekidTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(SIGNAL_BEAM),
     TUTOR(COUNTER),
@@ -4551,6 +4641,7 @@ static const u8 sMagbyTutorLearnset[] =
 };
 static const u8 sMiltankTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(COUNTER),
     TUTOR(DEFENSE_CURL),
@@ -4641,6 +4732,7 @@ static const u8 sEnteiTutorLearnset[] =
 };
 static const u8 sSuicuneTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(SIGNAL_BEAM),
     TUTOR(DOUBLE_EDGE),
@@ -4712,6 +4804,26 @@ static const u8 sTyranitarTutorLearnset[] =
     0xFF,
 };
 static const u8 sLugiaTutorLearnset[] =
+{
+    TUTOR(BODY_SLAM),
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(ICY_WIND),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
+    0xFF,
+};
+static const u8 sShadowLugiaTutorLearnset[] =
 {
     TUTOR(BODY_SLAM),
     TUTOR(SIGNAL_BEAM),
@@ -4912,6 +5024,7 @@ static const u8 sBlazikenTutorLearnset[] =
 };
 static const u8 sMudkipTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(ANCIENT_POWER),
     TUTOR(COUNTER),
@@ -4931,6 +5044,7 @@ static const u8 sMudkipTutorLearnset[] =
 };
 static const u8 sMarshtompTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(ANCIENT_POWER),
     TUTOR(COUNTER),
@@ -4955,6 +5069,7 @@ static const u8 sMarshtompTutorLearnset[] =
 };
 static const u8 sSwampertTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(ANCIENT_POWER),
     TUTOR(COUNTER),
@@ -5086,6 +5201,7 @@ static const u8 sDustoxTutorLearnset[] =
 };
 static const u8 sLotadTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(COUNTER),
     TUTOR(DOUBLE_EDGE),
@@ -5101,6 +5217,7 @@ static const u8 sLotadTutorLearnset[] =
 };
 static const u8 sLombreTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(DOUBLE_EDGE),
     TUTOR(DYNAMIC_PUNCH),
@@ -5120,6 +5237,7 @@ static const u8 sLombreTutorLearnset[] =
 };
 static const u8 sLudicoloTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(COUNTER),
     TUTOR(DOUBLE_EDGE),
@@ -5233,6 +5351,7 @@ static const u8 sSwellowTutorLearnset[] =
 };
 static const u8 sWingullTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(DOUBLE_EDGE),
     TUTOR(ENDURE),
     TUTOR(ICY_WIND),
@@ -5247,6 +5366,7 @@ static const u8 sWingullTutorLearnset[] =
 };
 static const u8 sPelipperTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(DOUBLE_EDGE),
     TUTOR(ENDURE),
     TUTOR(ICY_WIND),
@@ -5589,6 +5709,7 @@ static const u8 sExploudTutorLearnset[] =
 };
 static const u8 sMakuhitaTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(COUNTER),
     TUTOR(DOUBLE_EDGE),
@@ -5612,6 +5733,7 @@ static const u8 sMakuhitaTutorLearnset[] =
 };
 static const u8 sHariyamaTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(COUNTER),
     TUTOR(DOUBLE_EDGE),
@@ -5635,6 +5757,7 @@ static const u8 sHariyamaTutorLearnset[] =
 };
 static const u8 sAzurillTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(DEFENSE_CURL),
     TUTOR(DOUBLE_EDGE),
@@ -6078,6 +6201,7 @@ static const u8 sSwalotTutorLearnset[] =
 };
 static const u8 sCarvanhaTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(DOUBLE_EDGE),
     TUTOR(ANCIENT_POWER),
     TUTOR(ENDURE),
@@ -6094,6 +6218,7 @@ static const u8 sCarvanhaTutorLearnset[] =
 };
 static const u8 sSharpedoTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(DOUBLE_EDGE),
     TUTOR(ANCIENT_POWER),
     TUTOR(ENDURE),
@@ -6110,6 +6235,7 @@ static const u8 sSharpedoTutorLearnset[] =
 };
 static const u8 sWailmerTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(DEFENSE_CURL),
     TUTOR(DOUBLE_EDGE),
@@ -6125,6 +6251,7 @@ static const u8 sWailmerTutorLearnset[] =
 };
 static const u8 sWailordTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(DEFENSE_CURL),
     TUTOR(DOUBLE_EDGE),
@@ -6476,6 +6603,7 @@ static const u8 sSolrockTutorLearnset[] =
 };
 static const u8 sBarboachTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(DOUBLE_EDGE),
     TUTOR(ENDURE),
     TUTOR(ICY_WIND),
@@ -6489,6 +6617,7 @@ static const u8 sBarboachTutorLearnset[] =
 };
 static const u8 sWhiscashTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(DOUBLE_EDGE),
     TUTOR(ENDURE),
     TUTOR(ICY_WIND),
@@ -6503,6 +6632,7 @@ static const u8 sWhiscashTutorLearnset[] =
 };
 static const u8 sCorphishTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(ANCIENT_POWER),
     TUTOR(COUNTER),
@@ -6522,6 +6652,7 @@ static const u8 sCorphishTutorLearnset[] =
 };
 static const u8 sCrawdauntTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(ANCIENT_POWER),
     TUTOR(COUNTER),
@@ -6660,6 +6791,7 @@ static const u8 sFeebasTutorLearnset[] =
 };
 static const u8 sMiloticTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(DOUBLE_EDGE),
     TUTOR(ENDURE),
@@ -6890,6 +7022,7 @@ static const u8 sGlalieTutorLearnset[] =
 };
 static const u8 sSphealTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(SIGNAL_BEAM),
     TUTOR(DEFENSE_CURL),
@@ -6908,6 +7041,7 @@ static const u8 sSphealTutorLearnset[] =
 };
 static const u8 sSealeoTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(SIGNAL_BEAM),
     TUTOR(DEFENSE_CURL),
@@ -6926,6 +7060,7 @@ static const u8 sSealeoTutorLearnset[] =
 };
 static const u8 sWalreinTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(SIGNAL_BEAM),
     TUTOR(DEFENSE_CURL),
@@ -6958,6 +7093,7 @@ static const u8 sClamperlTutorLearnset[] =
 };
 static const u8 sHuntailTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(DOUBLE_EDGE),
     TUTOR(ENDURE),
@@ -6973,6 +7109,7 @@ static const u8 sHuntailTutorLearnset[] =
 };
 static const u8 sGorebyssTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(SIGNAL_BEAM),
     TUTOR(DOUBLE_EDGE),
@@ -6990,6 +7127,7 @@ static const u8 sGorebyssTutorLearnset[] =
 };
 static const u8 sRelicanthTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(ANCIENT_POWER),
     TUTOR(DOUBLE_EDGE),
@@ -7007,6 +7145,7 @@ static const u8 sRelicanthTutorLearnset[] =
 };
 static const u8 sLuvdiscTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(DOUBLE_EDGE),
     TUTOR(ENDURE),
     TUTOR(ICY_WIND),
@@ -7461,6 +7600,7 @@ static const u8 sInfernapeTutorLearnset[] =
 };
 static const u8 sPiplupTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(ENDURE),
     TUTOR(SIGNAL_BEAM),
     TUTOR(ICY_WIND),
@@ -7473,6 +7613,7 @@ static const u8 sPiplupTutorLearnset[] =
 };
 static const u8 sPrinplupTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(ENDURE),
     TUTOR(SIGNAL_BEAM),
     TUTOR(ICY_WIND),
@@ -7485,6 +7626,7 @@ static const u8 sPrinplupTutorLearnset[] =
 };
 static const u8 sEmpoleonTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(ENDURE),
     TUTOR(SIGNAL_BEAM),
     TUTOR(FURY_CUTTER),
@@ -7534,6 +7676,7 @@ static const u8 sStaraptorTutorLearnset[] =
 };
 static const u8 sBidoofTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(DEFENSE_CURL),
     TUTOR(DOUBLE_EDGE),
     TUTOR(ENDURE),
@@ -7552,6 +7695,7 @@ static const u8 sBidoofTutorLearnset[] =
 };
 static const u8 sBibarelTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(DEFENSE_CURL),
     TUTOR(ENDURE),
     TUTOR(FURY_CUTTER),
@@ -7780,6 +7924,7 @@ static const u8 sPachirisuTutorLearnset[] =
 };
 static const u8 sBuizelTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(ENDURE),
     TUTOR(FURY_CUTTER),
     TUTOR(ICE_PUNCH),
@@ -7794,6 +7939,7 @@ static const u8 sBuizelTutorLearnset[] =
 };
 static const u8 sFloatzelTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(ENDURE),
     TUTOR(ICE_PUNCH),
     TUTOR(ICY_WIND),
@@ -7830,6 +7976,7 @@ static const u8 sCherrimTutorLearnset[] =
 };
 static const u8 sShellosTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(ANCIENT_POWER),
     TUTOR(COUNTER),
@@ -7844,6 +7991,7 @@ static const u8 sShellosTutorLearnset[] =
 };
 static const u8 sGastrodonTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(ANCIENT_POWER),
     TUTOR(ENDURE),
@@ -7858,6 +8006,7 @@ static const u8 sGastrodonTutorLearnset[] =
 };
 static const u8 sShellosEastSeaTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(ANCIENT_POWER),
     TUTOR(COUNTER),
@@ -7872,6 +8021,7 @@ static const u8 sShellosEastSeaTutorLearnset[] =
 };
 static const u8 sGastrodonEastSeaTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(ANCIENT_POWER),
     TUTOR(ENDURE),
@@ -8256,6 +8406,7 @@ static const u8 sGarchompTutorLearnset[] =
 };
 static const u8 sMunchlaxTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(COUNTER),
     TUTOR(DEFENSE_CURL),
@@ -8363,6 +8514,7 @@ static const u8 sDrapionTutorLearnset[] =
 };
 static const u8 sCroagunkTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(COUNTER),
     TUTOR(DYNAMIC_PUNCH),
     TUTOR(ENDURE),
@@ -8380,6 +8532,7 @@ static const u8 sCroagunkTutorLearnset[] =
 };
 static const u8 sToxicroakTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(ENDURE),
     TUTOR(FURY_CUTTER),
     TUTOR(ICE_PUNCH),
@@ -8408,6 +8561,7 @@ static const u8 sCarnivineTutorLearnset[] =
 };
 static const u8 sFinneonTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(ENDURE),
     TUTOR(SIGNAL_BEAM),
     TUTOR(ICY_WIND),
@@ -8421,6 +8575,7 @@ static const u8 sFinneonTutorLearnset[] =
 };
 static const u8 sLumineonTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(ENDURE),
     TUTOR(SIGNAL_BEAM),
     TUTOR(ICY_WIND),
@@ -8434,6 +8589,7 @@ static const u8 sLumineonTutorLearnset[] =
 };
 static const u8 sMantykeTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(ENDURE),
     TUTOR(ICY_WIND),
     TUTOR(MUD_SLAP),
@@ -8507,6 +8663,7 @@ static const u8 sMagnezoneTutorLearnset[] =
 };
 static const u8 sLickilickyTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(DEFENSE_CURL),
     TUTOR(DREAM_EATER),
     TUTOR(ENDURE),
@@ -8932,6 +9089,7 @@ static const u8 sCresseliaTutorLearnset[] =
 };
 static const u8 sPhioneTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(ENDURE),
     TUTOR(SIGNAL_BEAM),
     TUTOR(ANCIENT_POWER),
@@ -8947,6 +9105,7 @@ static const u8 sPhioneTutorLearnset[] =
 };
 static const u8 sManaphyTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(ENDURE),
     TUTOR(SIGNAL_BEAM),
     TUTOR(ANCIENT_POWER),
@@ -9094,6 +9253,7 @@ static const u8 sEmboarTutorLearnset[] =
 };
 static const u8 sOshawottTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(FURY_CUTTER),
     TUTOR(ICY_WIND),
     TUTOR(SLEEP_TALK),
@@ -9105,6 +9265,7 @@ static const u8 sOshawottTutorLearnset[] =
 };
 static const u8 sDewottTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(FURY_CUTTER),
     TUTOR(ICY_WIND),
     TUTOR(SLEEP_TALK),
@@ -9116,6 +9277,7 @@ static const u8 sDewottTutorLearnset[] =
 };
 static const u8 sSamurottTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(FURY_CUTTER),
     TUTOR(ICY_WIND),
     TUTOR(SLEEP_TALK),
@@ -9152,6 +9314,7 @@ static const u8 sWatchogTutorLearnset[] =
 };
 static const u8 sLillipupTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(ENDURE),
     TUTOR(MUD_SLAP),
     TUTOR(SLEEP_TALK),
@@ -9163,6 +9326,7 @@ static const u8 sLillipupTutorLearnset[] =
 };
 static const u8 sHerdierTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(SLEEP_TALK),
     TUTOR(SNORE),
     TUTOR(SUBSTITUTE),
@@ -9172,6 +9336,7 @@ static const u8 sHerdierTutorLearnset[] =
 };
 static const u8 sStoutlandTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(SLEEP_TALK),
     TUTOR(SNORE),
     TUTOR(SUBSTITUTE),
@@ -9241,6 +9406,7 @@ static const u8 sSimisearTutorLearnset[] =
 };
 static const u8 sPanpourTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(ICE_PUNCH),
     TUTOR(ICY_WIND),
     TUTOR(SLEEP_TALK),
@@ -9251,6 +9417,7 @@ static const u8 sPanpourTutorLearnset[] =
 };
 static const u8 sSimipourTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(ICE_PUNCH),
     TUTOR(ICY_WIND),
     TUTOR(ROCK_SLIDE),
@@ -9484,6 +9651,7 @@ static const u8 sTympoleTutorLearnset[] =
 };
 static const u8 sPalpitoadTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(ICY_WIND),
     TUTOR(SLEEP_TALK),
     TUTOR(SNORE),
@@ -9493,6 +9661,7 @@ static const u8 sPalpitoadTutorLearnset[] =
 };
 static const u8 sSeismitoadTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(ICE_PUNCH),
     TUTOR(ICY_WIND),
     TUTOR(ROCK_SLIDE),
@@ -9642,6 +9811,7 @@ static const u8 sLilligantTutorLearnset[] =
 };
 static const u8 sBasculinTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(DOUBLE_EDGE),
     TUTOR(ICY_WIND),
     TUTOR(SLEEP_TALK),
@@ -9800,6 +9970,7 @@ static const u8 sCofagrigusTutorLearnset[] =
 };
 static const u8 sTirtougaTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(ICY_WIND),
     TUTOR(ROCK_SLIDE),
@@ -9812,6 +9983,7 @@ static const u8 sTirtougaTutorLearnset[] =
 };
 static const u8 sCarracostaTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(ICY_WIND),
     TUTOR(ROCK_SLIDE),
     TUTOR(ROLLOUT),
@@ -9991,6 +10163,7 @@ static const u8 sReuniclusTutorLearnset[] =
 };
 static const u8 sDucklettTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(ICY_WIND),
     TUTOR(SLEEP_TALK),
     TUTOR(SNORE),
@@ -10000,6 +10173,7 @@ static const u8 sDucklettTutorLearnset[] =
 };
 static const u8 sSwannaTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(ICY_WIND),
     TUTOR(SLEEP_TALK),
     TUTOR(SNORE),
@@ -10118,6 +10292,7 @@ static const u8 sAmoongussTutorLearnset[] =
 };
 static const u8 sFrillishTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(DREAM_EATER),
     TUTOR(ICY_WIND),
     TUTOR(PSYCH_UP),
@@ -10129,6 +10304,7 @@ static const u8 sFrillishTutorLearnset[] =
 };
 static const u8 sJellicentTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(DREAM_EATER),
     TUTOR(ICY_WIND),
     TUTOR(PSYCH_UP),
@@ -10140,6 +10316,7 @@ static const u8 sJellicentTutorLearnset[] =
 };
 static const u8 sAlomomolaTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(ENDURE),
     TUTOR(ICY_WIND),
     TUTOR(PSYCH_UP),
@@ -10341,6 +10518,7 @@ static const u8 sHaxorusTutorLearnset[] =
 };
 static const u8 sCubchooTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(ENDURE),
     TUTOR(ICE_PUNCH),
     TUTOR(ICY_WIND),
@@ -10352,6 +10530,7 @@ static const u8 sCubchooTutorLearnset[] =
 };
 static const u8 sBearticTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(ENDURE),
     TUTOR(ICE_PUNCH),
     TUTOR(ICY_WIND),
@@ -10727,6 +10906,7 @@ static const u8 sKyuremTutorLearnset[] =
 };
 static const u8 sKeldeoTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(ICY_WIND),
     TUTOR(PSYCH_UP),
     TUTOR(SLEEP_TALK),
@@ -10841,6 +11021,7 @@ static const u8 sDelphoxTutorLearnset[] =
 };
 static const u8 sFroakieTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(ICY_WIND),
     TUTOR(ROCK_SLIDE),
     TUTOR(SLEEP_TALK),
@@ -10851,6 +11032,7 @@ static const u8 sFroakieTutorLearnset[] =
 };
 static const u8 sFrogadierTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(ICE_PUNCH),
     TUTOR(ICY_WIND),
     TUTOR(ROCK_SLIDE),
@@ -10862,6 +11044,7 @@ static const u8 sFrogadierTutorLearnset[] =
 };
 static const u8 sGreninjaTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(ICE_PUNCH),
     TUTOR(ICY_WIND),
     TUTOR(ROCK_SLIDE),
@@ -11163,6 +11346,7 @@ static const u8 sMalamarTutorLearnset[] =
 };
 static const u8 sBinacleTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(FURY_CUTTER),
     TUTOR(ICY_WIND),
     TUTOR(MUD_SLAP),
@@ -11176,6 +11360,7 @@ static const u8 sBinacleTutorLearnset[] =
 };
 static const u8 sBarbaracleTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(FURY_CUTTER),
     TUTOR(ICY_WIND),
     TUTOR(MUD_SLAP),
@@ -11189,6 +11374,7 @@ static const u8 sBarbaracleTutorLearnset[] =
 };
 static const u8 sSkrelpTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(ICY_WIND),
     TUTOR(SLEEP_TALK),
     TUTOR(SNORE),
@@ -11198,6 +11384,7 @@ static const u8 sSkrelpTutorLearnset[] =
 };
 static const u8 sDragalgeTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(ICY_WIND),
     TUTOR(SLEEP_TALK),
     TUTOR(SNORE),
@@ -11207,6 +11394,7 @@ static const u8 sDragalgeTutorLearnset[] =
 };
 static const u8 sClauncherTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(ENDURE),
     TUTOR(ICY_WIND),
     TUTOR(ROCK_SLIDE),
@@ -11219,6 +11407,7 @@ static const u8 sClauncherTutorLearnset[] =
 };
 static const u8 sClawitzerTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(ICY_WIND),
     TUTOR(ROCK_SLIDE),
     TUTOR(SLEEP_TALK),
@@ -11230,6 +11419,7 @@ static const u8 sClawitzerTutorLearnset[] =
 };
 static const u8 sHelioptileTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(MUD_SLAP),
     TUTOR(SIGNAL_BEAM),
     TUTOR(PSYCH_UP),
@@ -11243,6 +11433,7 @@ static const u8 sHelioptileTutorLearnset[] =
 };
 static const u8 sHelioliskTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(FIRE_PUNCH),
     TUTOR(SIGNAL_BEAM),
     TUTOR(PSYCH_UP),
@@ -11596,6 +11787,7 @@ static const u8 sIncineroarTutorLearnset[] =
 };
 static const u8 sPopplioTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(ICY_WIND),
     TUTOR(SLEEP_TALK),
     TUTOR(SNORE),
@@ -11605,6 +11797,7 @@ static const u8 sPopplioTutorLearnset[] =
 };
 static const u8 sBrionneTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(ICY_WIND),
     TUTOR(SLEEP_TALK),
     TUTOR(SNORE),
@@ -11614,6 +11807,7 @@ static const u8 sBrionneTutorLearnset[] =
 };
 static const u8 sPrimarinaTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(ICY_WIND),
     TUTOR(PSYCH_UP),
     TUTOR(SLEEP_TALK),
@@ -11780,6 +11974,7 @@ static const u8 sLycanrocTutorLearnset[] =
 };
 static const u8 sWishiwashiTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(DOUBLE_EDGE),
     TUTOR(SLEEP_TALK),
     TUTOR(SNORE),
@@ -11789,6 +11984,7 @@ static const u8 sWishiwashiTutorLearnset[] =
 };
 static const u8 sMareanieTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(ICY_WIND),
     TUTOR(SLEEP_TALK),
     TUTOR(SNORE),
@@ -11798,6 +11994,7 @@ static const u8 sMareanieTutorLearnset[] =
 };
 static const u8 sToxapexTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(ICY_WIND),
     TUTOR(SLEEP_TALK),
     TUTOR(SNORE),
@@ -11833,6 +12030,7 @@ static const u8 sMudsdaleTutorLearnset[] =
 };
 static const u8 sDewpiderTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(ICY_WIND),
     TUTOR(SIGNAL_BEAM),
     TUTOR(SLEEP_TALK),
@@ -11843,6 +12041,7 @@ static const u8 sDewpiderTutorLearnset[] =
 };
 static const u8 sAraquanidTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(ICY_WIND),
     TUTOR(SIGNAL_BEAM),
     TUTOR(SLEEP_TALK),
@@ -12005,6 +12204,7 @@ static const u8 sWimpodTutorLearnset[] =
 };
 static const u8 sGolisopodTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(FURY_CUTTER),
     TUTOR(ICY_WIND),
     TUTOR(PSYCH_UP),
@@ -12138,6 +12338,7 @@ static const u8 sMimikyuTutorLearnset[] =
 };
 static const u8 sBruxishTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(DREAM_EATER),
     TUTOR(SIGNAL_BEAM),
     TUTOR(SLEEP_TALK),
@@ -12149,6 +12350,7 @@ static const u8 sBruxishTutorLearnset[] =
 };
 static const u8 sDrampaTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(ICY_WIND),
     TUTOR(SIGNAL_BEAM),
     TUTOR(PSYCH_UP),
@@ -12161,6 +12363,7 @@ static const u8 sDrampaTutorLearnset[] =
 };
 static const u8 sDhelmiseTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(ROCK_SLIDE),
     TUTOR(SLEEP_TALK),
     TUTOR(SNORE),
@@ -12236,6 +12439,7 @@ static const u8 sTapuBuluTutorLearnset[] =
 };
 static const u8 sTapuFiniTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(ICE_PUNCH),
     TUTOR(ICY_WIND),
     TUTOR(PSYCH_UP),
@@ -12514,6 +12718,7 @@ static const u8 sCinderaceTutorLearnset[] =
 };
 static const u8 sSobbleTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(ENDURE),
     TUTOR(SLEEP_TALK),
     TUTOR(SNORE),
@@ -12523,6 +12728,7 @@ static const u8 sSobbleTutorLearnset[] =
 };
 static const u8 sDrizzileTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(ENDURE),
     TUTOR(SLEEP_TALK),
     TUTOR(SNORE),
@@ -12532,6 +12738,7 @@ static const u8 sDrizzileTutorLearnset[] =
 };
 static const u8 sInteleonTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(ENDURE),
     TUTOR(ICY_WIND),
     TUTOR(METRONOME),
@@ -12679,6 +12886,7 @@ static const u8 sDubwoolTutorLearnset[] =
 };
 static const u8 sChewtleTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(COUNTER),
     TUTOR(ENDURE),
@@ -12689,6 +12897,7 @@ static const u8 sChewtleTutorLearnset[] =
 };
 static const u8 sDrednawTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(COUNTER),
     TUTOR(ENDURE),
@@ -12796,6 +13005,7 @@ static const u8 sSandacondaTutorLearnset[] =
 };
 static const u8 sCramorantTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(ENDURE),
     TUTOR(ICY_WIND),
     TUTOR(SLEEP_TALK),
@@ -12805,6 +13015,7 @@ static const u8 sCramorantTutorLearnset[] =
 };
 static const u8 sArrokudaTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(DOUBLE_EDGE),
     TUTOR(ENDURE),
     TUTOR(SLEEP_TALK),
@@ -12815,6 +13026,7 @@ static const u8 sArrokudaTutorLearnset[] =
 };
 static const u8 sBarraskewdaTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(DOUBLE_EDGE),
     TUTOR(ENDURE),
     TUTOR(SLEEP_TALK),
@@ -12866,6 +13078,7 @@ static const u8 sCentiskorchTutorLearnset[] =
 };
 static const u8 sClobbopusTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(ENDURE),
     TUTOR(ICE_PUNCH),
@@ -12878,6 +13091,7 @@ static const u8 sClobbopusTutorLearnset[] =
 };
 static const u8 sGrapploctTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(BODY_SLAM),
     TUTOR(ENDURE),
     TUTOR(ICE_PUNCH),
@@ -13515,6 +13729,25 @@ static const u8 sMrMimeGalarianTutorLearnset[] =
     TUTOR(THUNDER_WAVE),
     0xFF,
 };
+static const u8 sThuFiZerGalarianTutorLearnset[] =
+{
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWIFT),
+    TUTOR(COUNTER),
+    TUTOR(BLAZE_KICK),
+    TUTOR(MEGA_KICK),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(ENDURE),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(SWAGGER),
+    0xFF,
+};
 static const u8 sArticunoGalarianTutorLearnset[] =
 {
     TUTOR(DREAM_EATER),
@@ -13998,6 +14231,7 @@ static const u8 sWyrdeerTutorLearnset[] =
 
 static const u8 sBasculegionTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(DOUBLE_EDGE),
     TUTOR(ICY_WIND),
     TUTOR(SLEEP_TALK),
@@ -14032,6 +14266,7 @@ static const u8 sSneaslerTutorLearnset[] =
 
 static const u8 sOverqwilTutorLearnset[] =
 {
+    TUTOR(WATER_BALL),
     TUTOR(DEFENSE_CURL),
     TUTOR(SIGNAL_BEAM),
     TUTOR(DOUBLE_EDGE),
@@ -14445,6 +14680,10 @@ const u8 *const gTutorLearnsets[] =
     [SPECIES_VAPOREON] = sVaporeonTutorLearnset,
     [SPECIES_JOLTEON] = sJolteonTutorLearnset,
     [SPECIES_FLAREON] = sFlareonTutorLearnset,
+    [SPECIES_EEVEE_GENETIC] = sEeveeGeneticTutorLearnset,
+    [SPECIES_VAPOREON_GENETIC] = sVaporeonTutorLearnset,
+    [SPECIES_JOLTEON_GENETIC] = sJolteonTutorLearnset,
+    [SPECIES_FLAREON_GENETIC] = sFlareonTutorLearnset,
     [SPECIES_PORYGON] = sPorygonTutorLearnset,
     [SPECIES_OMANYTE] = sOmanyteTutorLearnset,
     [SPECIES_OMASTAR] = sOmastarTutorLearnset,
@@ -14495,6 +14734,7 @@ const u8 *const gTutorLearnsets[] =
     [SPECIES_MARILL] = sMarillTutorLearnset,
     [SPECIES_AZUMARILL] = sAzumarillTutorLearnset,
     [SPECIES_SUDOWOODO] = sSudowoodoTutorLearnset,
+    [SPECIES_SUDOWOODO_GOLDEN] = sSudowoodoTutorLearnset,
     [SPECIES_POLITOED] = sPolitoedTutorLearnset,
     [SPECIES_HOPPIP] = sHoppipTutorLearnset,
     [SPECIES_SKIPLOOM] = sSkiploomTutorLearnset,
@@ -14561,6 +14801,7 @@ const u8 *const gTutorLearnsets[] =
     [SPECIES_PUPITAR] = sPupitarTutorLearnset,
     [SPECIES_TYRANITAR] = sTyranitarTutorLearnset,
     [SPECIES_LUGIA] = sLugiaTutorLearnset,
+    [SPECIES_SHADOW_LUGIA] = sShadowLugiaTutorLearnset,
     [SPECIES_HO_OH] = sHoOhTutorLearnset,
     [SPECIES_MYSTIC_EGG] = sHoOhTutorLearnset,
     [SPECIES_COCOON_EGG] = sYveltalTutorLearnset,
@@ -15298,4 +15539,6 @@ const u8 *const gTutorLearnsets[] =
     [SPECIES_GOODRA_HISUIAN] = sGoodraHisuianTutorLearnset,
     [SPECIES_AVALUGG_HISUIAN] = sAvaluggHisuianTutorLearnset,
     [SPECIES_DECIDUEYE_HISUIAN] = sDecidueyeHisuianTutorLearnset,
+    [SPECIES_THU_FI_ZER] = sThuFiZerTutorLearnset,
+    [SPECIES_THU_FI_ZER_GALARIAN] = sThuFiZerGalarianTutorLearnset,
 };
