@@ -1,0 +1,118 @@
+{
+  "id": "MAP_RUINS_OF_ALPH_KABUTO_CHAMBER",
+  "name": "RuinsOfAlph_KabutoChamber",
+  "layout": "LAYOUT_ROUTE111_RUINS_OF_ALPH1",
+  "music": "MUS_ABANDONED_SHIP",
+  "region_map_section": "MAPSEC_RUINS_OF_ALPH",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_UNDERGROUND",
+  "allow_cycling": false,
+  "allow_escaping": true,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": 0,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_3",
+      "x": 7,
+      "y": 7,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "RuinsOfAlph_KabutoChamber_EventScript_Receptionist",
+      "flag": "FLAG_SOLVED_KABUTO_PUZZLE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_1",
+      "x": 4,
+      "y": 2,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "RuinsOfAlph_KabutoChamber_EventScript_Scientist",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 5,
+      "y": 10,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE111",
+      "dest_warp_id": 8
+    },
+    {
+      "x": 4,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_RUINS_OF_ALPH_INNER_CHAMBER",
+      "dest_warp_id": 1
+    },
+    {
+      "x": 5,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_RUINS_OF_ALPH_INNER_CHAMBER",
+      "dest_warp_id": 2
+    },
+    {
+      "x": 6,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_RUINS_OF_ALPH_INNER_CHAMBER",
+      "dest_warp_id": 3
+    },
+    {
+      "x": 5,
+      "y": 1,
+      "elevation": 0,
+      "dest_map": "MAP_RUINS_OF_ALPH_KABUTO_ITEM_ROOM",
+      "dest_warp_id": 0
+    }
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 4,
+      "y": 4,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "RuinsOfAlph_KabutoChamber_EventScript_KabutoDescription"
+    },
+    {
+      "type": "sign",
+      "x": 5,
+      "y": 4,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "RuinsOfAlph_KabutoChamber_EventScript_KabutoPuzzle"
+    },
+    {
+      "type": "sign",
+      "x": 6,
+      "y": 4,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "RuinsOfAlph_KabutoChamber_EventScript_KabutoDescription"
+    },
+    {
+      "type": "sign",
+      "x": 5,
+      "y": 1,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "RuinsOfAlph_KabutoChamber_EventScript_BackWall"
+    }
+  ]
+}

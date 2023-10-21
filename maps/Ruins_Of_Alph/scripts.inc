@@ -1,0 +1,26 @@
+Ruins_Of_Alph_MapScripts::
+	map_script MAP_SCRIPT_ON_TRANSITION, Ruins_Of_Alph_OnTransition
+	.byte 0
+
+Ruins_Of_Alph_OnTransition:
+	call Ruins_Of_Alph_EventScript_TryHideOrShowSpiritombWisps
+	end
+
+Ruins_Of_Alph_EventScript_TryHideOrShowSpiritombWisps:
+	gettimeofday
+	compare VAR_0x8000, 2
+	goto_if_eq Ruins_Of_Alph_EventScript_TryShowWisps
+	goto Ruins_Of_Alph_EventScript_HideWisps
+	end
+
+Ruins_Of_Alph_EventScript_TryShowWisps:
+	goto_if_unset FLAG_RECEIVED_WISPS_12, Ruins_Of_Alph_EventScript_ShowWisp
+	return
+
+Ruins_Of_Alph_EventScript_ShowWisp:
+	clearflag FLAG_HIDE_WISPS_12
+	return
+
+Ruins_Of_Alph_EventScript_HideWisps:
+	setflag FLAG_HIDE_WISPS_12
+	return

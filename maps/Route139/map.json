@@ -1,0 +1,76 @@
+{
+  "id": "MAP_ROUTE139",
+  "name": "Route139",
+  "layout": "LAYOUT_ROUTE139",
+  "music": "MUS_ROUTE119",
+  "region_map_section": "MAPSEC_ROUTE_131",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_OCEAN_ROUTE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "direction": "left",
+      "offset": 0,
+      "map": "MAP_ROUTE138"
+    },
+    {
+      "direction": "down",
+      "offset": 0,
+      "map": "MAP_ROUTE131"
+    },
+    {
+      "direction": "down",
+      "offset": -20,
+      "map": "MAP_PACIFIDLOG_TOWN"
+    }
+  ],
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ZYGARDE_CELL",
+      "x": 11,
+      "y": 9,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "General_EventScript_ZygardeCell",
+      "flag": "FLAG_ZYGARDE_CELL04"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 3,
+      "y": 16,
+      "elevation": 0,
+      "dest_map": "MAP_PACIFIDLOG_ISLAND_HOUSE1",
+      "dest_warp_id": 0
+    },
+    {
+      "x": 7,
+      "y": 12,
+      "elevation": 0,
+      "dest_map": "MAP_PACIFIDLOG_ISLAND_HOUSE2",
+      "dest_warp_id": 0
+    },
+    {
+      "x": 10,
+      "y": 15,
+      "elevation": 0,
+      "dest_map": "MAP_PACIFIDLOG_ISLAND_HOUSE3",
+      "dest_warp_id": 0
+    }
+  ],
+  "coord_events": [
+
+  ],
+  "bg_events": [
+
+  ]
+}
