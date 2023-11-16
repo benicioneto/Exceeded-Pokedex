@@ -441,15 +441,18 @@ VerdanturfTown_BattleTentLobby_ExchangeServiceCorner_EventScript_ChooseHoldItem:
 	switch VAR_RESULT
 	case 0, VerdanturfTown_BattleTentLobby_ExchangeServiceCorner_EventScript_FireStone
 	case 1, VerdanturfTown_BattleTentLobby_ExchangeServiceCorner_EventScript_WaterStone
-	case 2, VerdanturfTown_BattleTentLobby_ExchangeServiceCorner_EventScript_ThunderStone
-	case 3, VerdanturfTown_BattleTentLobby_ExchangeServiceCorner_EventScript_LeafStone
-	case 4, VerdanturfTown_BattleTentLobby_ExchangeServiceCorner_EventScript_MoonStone
-	case 5, VerdanturfTown_BattleTentLobby_ExchangeServiceCorner_EventScript_SunStone
-	case 6, VerdanturfTown_BattleTentLobby_ExchangeServiceCorner_EventScript_ShinyStone
-	case 7, VerdanturfTown_BattleTentLobby_ExchangeServiceCorner_EventScript_DuskStone
-	case 8, VerdanturfTown_BattleTentLobby_ExchangeServiceCorner_EventScript_DawnStone
-	case 9, VerdanturfTown_BattleTentLobby_ExchangeServiceCorner_EventScript_IceStone
-	case 10, VerdanturfTown_BattleTentLobby__ExchangeServiceCorner_EventScript_ClerkGoodbye
+	case 2, VerdanturfTown_BattleTentLobby_ExchangeServiceCorner_EventScript_UnremarkableTeacup
+	case 3, VerdanturfTown_BattleTentLobby_ExchangeServiceCorner_EventScript_MasterpieceTeacup
+	case 4, VerdanturfTown_BattleTentLobby_ExchangeServiceCorner_EventScript_ThunderStone
+	case 5, VerdanturfTown_BattleTentLobby_ExchangeServiceCorner_EventScript_LeafStone
+	case 6, VerdanturfTown_BattleTentLobby_ExchangeServiceCorner_EventScript_MoonStone
+	case 7, VerdanturfTown_BattleTentLobby_ExchangeServiceCorner_EventScript_SunStone
+	case 8, VerdanturfTown_BattleTentLobby_ExchangeServiceCorner_EventScript_SyrupyApple
+	case 9, VerdanturfTown_BattleTentLobby_ExchangeServiceCorner_EventScript_ShinyStone
+	case 10, VerdanturfTown_BattleTentLobby_ExchangeServiceCorner_EventScript_DuskStone
+	case 11, VerdanturfTown_BattleTentLobby_ExchangeServiceCorner_EventScript_DawnStone
+	case 12, VerdanturfTown_BattleTentLobby_ExchangeServiceCorner_EventScript_IceStone
+	case 13, VerdanturfTown_BattleTentLobby__ExchangeServiceCorner_EventScript_ClerkGoodbye
 	case MULTI_B_PRESSED, VerdanturfTown_BattleTentLobby__ExchangeServiceCorner_EventScript_ClerkGoodbye
 	end
 
@@ -468,6 +471,24 @@ VerdanturfTown_BattleTentLobby_ExchangeServiceCorner_EventScript_WaterStone::
 	goto_if_eq VerdanturfTown_BattleTentLobby_ExchangeServiceCorner_EventScript_ChooseHoldItem
 	setvar VAR_0x8008, 64
 	setvar VAR_0x8009, ITEM_CRACKED_POT
+	goto VerdanturfTown_BattleTentLobby_ExchangeServiceCorner_EventScript_TryPurchasePrize
+	end
+
+VerdanturfTown_BattleTentLobby_ExchangeServiceCorner_EventScript_UnremarkableTeacup::
+	msgbox VerdanturfTown_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmUnremarkableTeacup, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq VerdanturfTown_BattleTentLobby_ExchangeServiceCorner_EventScript_ChooseHoldItem
+	setvar VAR_0x8008, 64
+	setvar VAR_0x8009, ITEM_UNREMARKABLE_TEACUP
+	goto VerdanturfTown_BattleTentLobby_ExchangeServiceCorner_EventScript_TryPurchasePrize
+	end
+
+VerdanturfTown_BattleTentLobby_ExchangeServiceCorner_EventScript_MasterpieceTeacup::
+	msgbox VerdanturfTown_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmMasterpieceTeacup, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq VerdanturfTown_BattleTentLobby_ExchangeServiceCorner_EventScript_ChooseHoldItem
+	setvar VAR_0x8008, 64
+	setvar VAR_0x8009, ITEM_MASTERPIECE_TEACUP
 	goto VerdanturfTown_BattleTentLobby_ExchangeServiceCorner_EventScript_TryPurchasePrize
 	end
 
@@ -504,6 +525,15 @@ VerdanturfTown_BattleTentLobby_ExchangeServiceCorner_EventScript_SunStone::
 	goto_if_eq VerdanturfTown_BattleTentLobby_ExchangeServiceCorner_EventScript_ChooseHoldItem
 	setvar VAR_0x8008, 99
 	setvar VAR_0x8009, ITEM_TART_APPLE
+	goto VerdanturfTown_BattleTentLobby_ExchangeServiceCorner_EventScript_TryPurchasePrize
+	end
+
+VerdanturfTown_BattleTentLobby_ExchangeServiceCorner_EventScript_SyrupyApple::
+	msgbox VerdanturfTown_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmSyrupyApple, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq VerdanturfTown_BattleTentLobby_ExchangeServiceCorner_EventScript_ChooseHoldItem
+	setvar VAR_0x8008, 99
+	setvar VAR_0x8009, ITEM_SYRUPY_APPLE
 	goto VerdanturfTown_BattleTentLobby_ExchangeServiceCorner_EventScript_TryPurchasePrize
 	end
 
@@ -579,6 +609,14 @@ VerdanturfTown_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmWaterStone:
 	.string "You've chosen the Cracked Pot.\n"
 	.string "Is that correct?$"
 
+VerdanturfTown_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmUnremarkableTeacup:
+	.string "You've chosen the Unremarkable Teacup.\n"
+	.string "Is that correct?$"
+
+VerdanturfTown_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmMasterpieceTeacup:
+	.string "You've chosen the Masterpiece Teacup.\n"
+	.string "Is that correct?$"
+
 VerdanturfTown_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmThunderStone:
 	.string "You've chosen the Galarica Cuff.\n"
 	.string "Is that correct?$"
@@ -593,6 +631,10 @@ VerdanturfTown_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmMoonStone:
 
 VerdanturfTown_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmSunStone:
 	.string "You've chosen the Tart Apple.\n"
+	.string "Is that correct?$"
+
+VerdanturfTown_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmSyrupyApple:
+	.string "You've chosen the Syrupy Apple.\n"
 	.string "Is that correct?$"
 
 VerdanturfTown_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmShinyStone:

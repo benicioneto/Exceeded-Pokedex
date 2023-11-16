@@ -425,7 +425,9 @@ FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_ChooseHoldItem::
 	case 8, FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_DawnStone
 	case 9, FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_IceStone
 	case 10, FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_PrismScale
-	case 11, FallarborTown_BattleTentLobby__ExchangeServiceCorner_EventScript_ClerkGoodbye
+	case 11, FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_AuspiciousArmor
+	case 12, FallarborTown_BattleTentLobby__ExchangeServiceCorner_EventScript_MaliciousArmor
+	case 13, FallarborTown_BattleTentLobby__ExchangeServiceCorner_EventScript_ClerkGoodbye
 	case MULTI_B_PRESSED, FallarborTown_BattleTentLobby__ExchangeServiceCorner_EventScript_ClerkGoodbye
 	end
 
@@ -528,6 +530,24 @@ FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_PrismScale::
 	goto FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_TryPurchasePrize
 	end
 
+FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_AuspiciousArmor::
+	msgbox FallarborTown_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmAuspiciousArmor, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_ChooseHoldItem
+	setvar VAR_0x8008, 128
+	setvar VAR_0x8009, ITEM_AUSPICIOUS_ARMOR
+	goto FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_TryPurchasePrize
+	end
+
+FallarborTown_BattleTentLobby__ExchangeServiceCorner_EventScript_MaliciousArmor::
+	msgbox FallarborTown_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmMaliciousArmor, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_ChooseHoldItem
+	setvar VAR_0x8008, 128
+	setvar VAR_0x8009, ITEM_MALICIOUS_ARMOR
+	goto FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_TryPurchasePrize
+	end
+
 FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_TryPurchasePrize::
 	specialvar VAR_TEMP_1, GetFallarborTentPoints
 	compare VAR_TEMP_1, VAR_0x8008
@@ -598,6 +618,14 @@ FallarborTown_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmIceStone:
 
 FallarborTown_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmPrismScale:
 	.string "You've chosen the Prism Scale.\n"
+	.string "Is that correct?$"
+
+FallarborTown_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmAuspiciousArmor:
+	.string "You've chosen the Auspicious Armor.\n"
+	.string "Is that correct?$"
+
+FallarborTown_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmMaliciousArmor:
+	.string "You've chosen the Malicious Armor.\n"
 	.string "Is that correct?$"
 
 FallarborTown_BattleTentLobby_ExchangeServiceCorner_Text_ThankYouVisitWithPoints:

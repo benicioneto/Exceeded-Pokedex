@@ -31,7 +31,7 @@ static const u8 sFirePunchDescription[] = _(
 
 static const u8 sIcePunchDescription[] = _(
     "An icy punch that may\n"
-    "freeze the foe.");
+    "leave the foe with frostbite.");
 
 static const u8 sThunderPunchDescription[] = _(
     "An electrified punch that\n"
@@ -231,11 +231,11 @@ static const u8 sSurfDescription[] = _(
 
 static const u8 sIceBeamDescription[] = _(
     "Blasts the foe with an icy\n"
-    "beam that may freeze it.");
+    "beam. May cause frostbite.");
 
 static const u8 sBlizzardDescription[] = _(
     "Hits the foe with an icy\n"
-    "storm that may freeze it.");
+    "storm. May cause frostbite.");
 
 static const u8 sPsybeamDescription[] = _(
     "Fires a peculiar ray that\n"
@@ -1569,8 +1569,8 @@ static const u8 sAQUA_RINGDescription[] = _(
     "halves Electric-type damage.");
 
 static const u8 sMAGNET_RISEDescription[] = _(
-    "The user levitates and\n"
-    "doubles Speed stat.");
+    "Levitates and doubles Speed\n"
+    "stat for 5 turns.");
 
 static const u8 sFLARE_BLITZDescription[] = _(
     "A charge that may burn the\n"
@@ -1866,7 +1866,7 @@ static const u8 sVENOSHOCKDescription[] = _(
 
 static const u8 sAUTOTOMIZEDescription[] = _(
     "Sheds additional weight to\n"
-    "boost base Speed to 120.");
+    "boost base Speed by 100.");
 
 static const u8 sRAGE_POWDERDescription[] = _(
     "Scatters powder to make\n"
@@ -3231,10 +3231,34 @@ static const u8 sCombatTorqueDescription[] = _(
 static const u8 sMagicalTorqueDescription[] = _(
     "---");
 
+static const u8 sPsybladeDescription[] = _(
+    "This move's power increases\n"
+    "when on Electric Terrain.");
+
+static const u8 sHydroSteamDescription[] = _(
+    "This move's power increases\n"
+    "under harsh sunlight.");
+
+static const u8 sBloodMoonDescription[] = _(
+    "Unleashes the blood moon.\n"
+    "Can't be used twice in a row.");
+
+static const u8 sMatchaGotchaDescription[] = _(
+    "Absorbs half the damage\n"
+    "inflicted. May cause a burn.");
+
+static const u8 sSyrupBombDescription[] = _(
+    "Lowers the foe's speed\n"
+    "each turn for 3 turns.");
+
+static const u8 sIvyCudgelDescription[] = _(
+    "Type changes with held mask.\n"
+    "High critical-hit ratio.");
+
 static const u8 sNotDoneYetDescription[] = _(
     "Not done yet.");
 
-
+// Custom Moves
 static const u8 sKINGS_GRACEDescription[] = _(
     "Receives the King's Grace for\n"
     "3 turns.");
@@ -3435,7 +3459,7 @@ static const u8 sBLAZING_BICYCLE_KICKDescription[] = _(
     "Deals additional 15% of\n"
     "target's missing HP.");
 
-static const u8 sCOUP_DA_GRACEDescription[] = _(
+static const u8 sCOUP_DE_GRACEDescription[] = _(
     "Deals additional 15% of\n"
     "target's missing HP.");
 
@@ -3452,12 +3476,12 @@ static const u8 sSTREAM_IMPULSEDescription[] = _(
     "doubles Speed stat.");
 
 static const u8 sDARK_BARGAINDescription[] = _(
-    "Raises offensive stats, but\n"
+    "Raises all stats, but\n"
     "the Pokémon become cursed.");
 
 static const u8 sBLOOD_PACTDescription[] = _(
     "The user uses half of its\n"
-    "HP to raise all its stats.");
+    "HP to raise offensive stats.");
 
 static const u8 sFOGDescription[] = _(
     "Causes a fog that blinds\n"
@@ -3551,12 +3575,12 @@ static const u8 sALI_SHUFFLEDescription[] = _(
     "the foe if struck.");
 
 static const u8 sATOMIC_BREATHDescription[] = _(
-    "Powerful, but leaves the\n"
-    "user immobile the next turn.");
+    "Leaves the user immobile the\n"
+    "next turn if no Elec. Terrain.");
 
 static const u8 sPROTON_SCREAMDescription[] = _(
-    "Powerful, but leaves the\n"
-    "user immobile the next turn.");
+    "Leaves the user immobile the\n"
+    "next turn if no Elec. Terrain.");
 
 static const u8 sFORCE_CHOKEDescription[] = _(
     "Psychically chokes to disable\n"
@@ -3637,6 +3661,26 @@ static const u8 sSHADOW_BLASTDescription[] = _(
 static const u8 sSHADOW_ENDDescription[] = _(
     "User's highest attack stat\n"
     "determines its category.");
+
+static const u8 sDARK_HARVESTDescription[] = _(
+    "If it knocks out a foe\n"
+    "the Attack stat is raised.");
+
+static const u8 sBLACK_MAGICDescription[] = _(
+    "If it knocks out a foe\n"
+    "curses the next {PKMN}.");
+
+static const u8 sJUSTICE_KICKDescription[] = _(
+    "A 1st-turn, 1st-strike kick\n"
+    "that causes high damage.");
+
+static const u8 sSOULBLADESDescription[] = _(
+    "It does special damage that\n"
+    "is boosted by target's Def.");
+
+static const u8 sCONVERGENCEDescription[] = _(
+    "Raises Defense, Special\n"
+    "Attack and Special Defense.");
 
 // MOVE_NONE is ignored in this table. Make sure to always subtract 1 before getting the right pointer.
 const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
@@ -4469,6 +4513,12 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_NOXIOUS_TORQUE - 1] = sNoxiousTorqueDescription,
     [MOVE_COMBAT_TORQUE - 1] = sCombatTorqueDescription,
     [MOVE_MAGICAL_TORQUE - 1] = sMagicalTorqueDescription,
+    [MOVE_PSYBLADE - 1] = sPsybladeDescription,
+    [MOVE_HYDRO_STEAM - 1] = sHydroSteamDescription,
+    [MOVE_BLOOD_MOON - 1] = sBloodMoonDescription,
+    [MOVE_MATCHA_GOTCHA - 1] = sMatchaGotchaDescription,
+    [MOVE_SYRUP_BOMB - 1] = sSyrupBombDescription,
+    [MOVE_IVY_CUDGEL - 1] = sIvyCudgelDescription,
     [MOVE_KINGS_GRACE - 1] = sKINGS_GRACEDescription,
     [MOVE_FROZEN_TERRAIN - 1] = sFROZEN_TERRAINDescription,
     [MOVE_CURSED_TERRAIN - 1] = sCURSED_TERRAINDescription,
@@ -4519,7 +4569,7 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_SNOW_GLOBE - 1] = sSNOW_GLOBEDescription,
     [MOVE_HYDRO_TYPHOON - 1] = sHYDRO_TYPHOONDescription,
     [MOVE_BLAZING_BICYCLE_KICK - 1] = sBLAZING_BICYCLE_KICKDescription,
-    [MOVE_COUP_DA_GRACE - 1] = sCOUP_DA_GRACEDescription,
+    [MOVE_COUP_DE_GRACE - 1] = sCOUP_DE_GRACEDescription,
     [MOVE_FANCIFUL_FIREWORKS - 1] = sFANCIFUL_FIREWORKSDescription,
     [MOVE_MOCKING_SHOUT - 1] = sMOCKING_SHOUTDescription,
     [MOVE_STREAM_IMPULSE - 1] = sSTREAM_IMPULSEDescription,
@@ -4571,4 +4621,9 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_SHADOW_BOLT - 1] = sSHADOW_BOLTDescription,
     [MOVE_SHADOW_BLAST - 1] = sSHADOW_BLASTDescription,
     [MOVE_SHADOW_END - 1] = sSHADOW_ENDDescription,
+    [MOVE_DARK_HARVEST - 1] = sDARK_HARVESTDescription,
+    [MOVE_BLACK_MAGIC - 1] = sBLACK_MAGICDescription,
+    [MOVE_JUSTICE_KICK - 1] = sJUSTICE_KICKDescription,
+    [MOVE_SOULBLADES - 1] = sSOULBLADESDescription,
+    [MOVE_CONVERGENCE - 1] = sCONVERGENCEDescription,
 };

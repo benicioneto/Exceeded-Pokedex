@@ -868,6 +868,14 @@ BattleFrontier_ExchangeServiceCorner_Text_CrackedPotDesc::
 	.string "Makes certain species of\n"
 	.string "Pokémon evolve.$"
 
+BattleFrontier_ExchangeServiceCorner_Text_UnremarkableTeacupDesc::
+	.string "Makes certain species of\n"
+	.string "Pokémon evolve.$"
+
+BattleFrontier_ExchangeServiceCorner_Text_MasterpieceTeacupDesc::
+	.string "Makes certain species of\n"
+	.string "Pokémon evolve.$"
+
 BattleFrontier_ExchangeServiceCorner_Text_GalaricaCuffDesc::
 	.string "Makes certain species of\n"
 	.string "Pokémon evolve.$"
@@ -881,6 +889,10 @@ BattleFrontier_ExchangeServiceCorner_Text_SweetAppleDesc::
 	.string "Pokémon evolve.$"
 
 BattleFrontier_ExchangeServiceCorner_Text_TarAppleDesc::
+	.string "Makes certain species of\n"
+	.string "Pokémon evolve.$"
+
+BattleFrontier_ExchangeServiceCorner_Text_SyrupyAppleDesc::
 	.string "Makes certain species of\n"
 	.string "Pokémon evolve.$"
 
@@ -920,6 +932,12 @@ BattleFrontier_ExchangeServiceCorner_Text_ReaperClothDesc::
 	.string "It's loved by a certain Pokémon.$"
 
 BattleFrontier_ExchangeServiceCorner_Text_PrismScaleDesc::
+	.string "It's loved by a certain Pokémon.$"
+
+BattleFrontier_ExchangeServiceCorner_Text_AuspiciousArmorDesc::
+	.string "It's loved by a certain Pokémon.$"
+
+BattleFrontier_ExchangeServiceCorner_Text_MaliciousArmorDesc::
 	.string "It's loved by a certain Pokémon.$"
 
 Blacksmith_Text_Masamune::

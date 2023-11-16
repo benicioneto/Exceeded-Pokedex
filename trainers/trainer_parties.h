@@ -3955,10 +3955,10 @@ static const struct TrainerParty sParty_Wallace1[] = {
     .lvl = 43,
     .evSatk = 255,
     .evHp = 255,
-    .species = SPECIES_WAILORD,
-    .abilityNum = HIDDEN_ABILITY,
-    .heldItem = {ITEM_LEFTOVERS},
-    .moves = {MOVE_BOOMBURST, MOVE_REST, MOVE_SNORE, MOVE_ICE_BEAM}
+    .species = SPECIES_LANTURN,
+    //.abilityNum = HIDDEN_ABILITY,
+    .heldItem = {ITEM_SHELL_BELL, ITEM_LEFTOVERS},
+    .moves = {MOVE_ICE_BEAM, MOVE_SURF, MOVE_DISCHARGE, MOVE_CONFUSE_RAY}
     },
     {
     .iv = 255,

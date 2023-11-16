@@ -1992,7 +1992,8 @@ bool8 IfSpeciesIsBlockedForOneTypeChallenge(u16 species)
 	for (i = 0; i < EVOS_PER_MON; ++i)
 	{
         evolutionSpeciesTier[i] = gEvolutionTable[species][i].targetSpecies;
-        if (evolutionSpeciesTier[i] == SPECIES_NONE 
+        if (evolutionSpeciesTier[i] == SPECIES_NONE
+        || gEvolutionTable[species][i].method == EVO_MEGA_EVOLUTION
         || (GetTypeBySpecies(evolutionSpeciesTier[i], 1) != typeChallenge && GetTypeBySpecies(evolutionSpeciesTier[i], 2) != typeChallenge))
             continue;
         return FALSE;
@@ -2005,6 +2006,7 @@ bool8 IfSpeciesIsBlockedForOneTypeChallenge(u16 species)
         for (j = 0; j < EVOS_PER_MON; ++j)
         {
             if (gEvolutionTable[evolutionSpeciesTier[i]][j].targetSpecies == SPECIES_NONE
+            || gEvolutionTable[evolutionSpeciesTier[i]][j].method == EVO_MEGA_EVOLUTION
             || (GetTypeBySpecies(gEvolutionTable[evolutionSpeciesTier[i]][j].targetSpecies, 1) != typeChallenge 
             && GetTypeBySpecies(gEvolutionTable[evolutionSpeciesTier[i]][j].targetSpecies, 2) != typeChallenge))
                 continue;
