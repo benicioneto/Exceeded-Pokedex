@@ -20,9 +20,9 @@ MauvilleCity_PokemonSchool_EventScript_Lass2::
 	end
 
 MauvilleCity_PokemonSchool_Text_ConfusedPokemonAttacksItself2:
-	.string "There are some Trainers that uses\n"
-	.string "strategy of using some weather and\l"
-	.string "terrain advantage over their enemies.$"
+	.string "Some Pokémon Trainers use weather\n"
+	.string "and terrain to their advantage\l"
+	.string "to be victorious.$"
 
 MauvilleCity_PokemonSchool_EventScript_Lass3::
 	msgbox MauvilleCity_PokemonSchool_Text_ConfusedPokemonAttacksItself3, MSGBOX_NPC

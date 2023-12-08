@@ -410,6 +410,7 @@ PetalburgCity_Gym_EventScript_GiveEnigmaBerry::
 PetalburgCity_Gym_EventScript_NormanBattle::
 	msgbox PetalburgCity_Gym_Text_NormanIntro, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_NORMAN_1, PetalburgCity_Gym_Text_NormanDefeat
+	call EventScript_RocketEdition_TryStealPokemon
 	message PetalburgCity_Gym_Text_ReceivedBalanceBadge
 	waitmessage
 	call Common_EventScript_PlayGymBadgeFanfare
@@ -954,6 +955,7 @@ PetalburgCity_Gym_EventScript_SlideOpenSpeedRoomDoors::
 	setvar VAR_0x8005, 0
 	call PetalburgCity_Gym_EventScript_OpenSpeedRoomDoors
 	special DrawWholeMapView
+	call EventScript_RocketEdition_TryStealPokemon
 	release
 	end
 
@@ -971,6 +973,7 @@ PetalburgCity_Gym_EventScript_SlideOpenConfusionRoomDoors::
 	setvar VAR_0x8005, 0
 	call PetalburgCity_Gym_EventScript_OpenConfusionRoomDoors
 	special DrawWholeMapView
+	call EventScript_RocketEdition_TryStealPokemon
 	release
 	end
 
@@ -988,6 +991,7 @@ PetalburgCity_Gym_EventScript_SlideOpenRecoveryRoomDoors::
 	setvar VAR_0x8005, 0
 	call PetalburgCity_Gym_EventScript_OpenRecoveryRoomDoors
 	special DrawWholeMapView
+	call EventScript_RocketEdition_TryStealPokemon
 	release
 	end
 
@@ -1005,6 +1009,7 @@ PetalburgCity_Gym_EventScript_SlideOpenOHKORoomDoors::
 	setvar VAR_0x8005, 0
 	call PetalburgCity_Gym_EventScript_OpenOHKORoomDoors
 	special DrawWholeMapView
+	call EventScript_RocketEdition_TryStealPokemon
 	release
 	end
 
@@ -1022,6 +1027,7 @@ PetalburgCity_Gym_EventScript_SlideOpenAccuracyRoomDoors::
 	setvar VAR_0x8005, 0
 	call PetalburgCity_Gym_EventScript_OpenAccuracyRoomDoors
 	special DrawWholeMapView
+	call EventScript_RocketEdition_TryStealPokemon
 	release
 	end
 
@@ -1039,6 +1045,7 @@ PetalburgCity_Gym_EventScript_SlideOpenDefenseRoomDoors::
 	setvar VAR_0x8005, 0
 	call PetalburgCity_Gym_EventScript_OpenDefenseRoomDoors
 	special DrawWholeMapView
+	call EventScript_RocketEdition_TryStealPokemon
 	release
 	end
 
@@ -1056,6 +1063,7 @@ PetalburgCity_Gym_EventScript_SlideOpenStrengthRoomDoors::
 	setvar VAR_0x8005, 0
 	call PetalburgCity_Gym_EventScript_OpenStrengthRoomDoors
 	special DrawWholeMapView
+	call EventScript_RocketEdition_TryStealPokemon
 	release
 	end
 

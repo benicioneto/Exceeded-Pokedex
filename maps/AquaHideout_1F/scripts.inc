@@ -47,6 +47,7 @@ AquaHideout_1F_EventScript_Grunt1::
 
 AquaHideout_1F_EventScript_Grunt1Defeated::
 	msgbox AquaHideout_1F_Text_Grunt1PostBattle, MSGBOX_DEFAULT
+	call EventScript_RocketEdition_TryStealPokemon
 	release
 	end
 

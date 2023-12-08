@@ -93,10 +93,12 @@ Route109_SeashoreHouse_EventScript_CheckTrainersCompletion::
 	goto_if_not_defeated TRAINER_JOHANNA, Route109_SeashoreHouse_EventScript_TrainersNotCompleted
 	goto_if_not_defeated TRAINER_SIMON, Route109_SeashoreHouse_EventScript_TrainersNotCompleted
 	setflag FLAG_DEFEATED_SEASHORE_HOUSE
+	call EventScript_RocketEdition_TryStealPokemon
 	release
 	end
 
 Route109_SeashoreHouse_EventScript_TrainersNotCompleted::
+	call EventScript_RocketEdition_TryStealPokemon
 	release
 	end
 

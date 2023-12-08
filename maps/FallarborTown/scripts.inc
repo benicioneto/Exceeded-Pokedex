@@ -175,6 +175,7 @@ FallarborTown_EventScript_TeamRocketGruntF1::
 	msgbox FallarborTown_Text_TeamRocketGruntBattle, MSGBOX_DEFAULT
 	closemessage
 	trainerbattle_no_intro TRAINER_ROCKET_GRUNT_FALLARBORTOWN, FallarborTown_EventScript_Text_GruntDefeat
+	call EventScript_RocketEdition_TryStealPokemon
 	setflag FLAG_BEAT_ROCKET_GRUNT_FALLARBOR_TOWN
 	applymovement LOCALID_FALLARBOR_TOWN_GRUNT, Common_Movement_FaceOriginalDirection
 	waitmovement 0

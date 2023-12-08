@@ -12,6 +12,7 @@ GraniteCave_EventScript_TeamGalacticFoundItem::
 	msgbox GraniteCave_Text_TeamGalacticBattle, MSGBOX_DEFAULT
 	closemessage
 	trainerbattle_no_intro TRAINER_GALACTIC_GRUNT_GRANITE_CAVE, GraniteCave_EventScript_Text_GruntDefeat
+	call EventScript_RocketEdition_TryStealPokemon
 	msgbox GraniteCave_GraniteCave_Text_BossGoingToBeFurious, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_TEAM_GALACTIC_GRUNT, GraniteCave_Movement_GruntExit1
@@ -34,6 +35,7 @@ GraniteCave_EventScript_TeamGalacticFoundItem2::
 	msgbox GraniteCave_Text_TeamGalacticBattle, MSGBOX_DEFAULT
 	closemessage
 	trainerbattle_no_intro TRAINER_GALACTIC_GRUNT_GRANITE_CAVE, GraniteCave_EventScript_Text_GruntDefeat
+	call EventScript_RocketEdition_TryStealPokemon
 	msgbox GraniteCave_GraniteCave_Text_BossGoingToBeFurious, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_TEAM_GALACTIC_GRUNT, GraniteCave_Movement_GruntExit2

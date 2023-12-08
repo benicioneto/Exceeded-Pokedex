@@ -177,6 +177,7 @@ DewfordTown_Gym_EventScript_BrawlyDefeated::
 	setflag FLAG_ENABLE_BRAWLY_MATCH_CALL
 	setvar VAR_ROXANNE_CALL_STEP_COUNTER, 0
 	setflag FLAG_ENABLE_ROXANNE_FIRST_CALL
+	call EventScript_RocketEdition_TryStealPokemon
 	release
 	end
 
@@ -209,6 +210,7 @@ DewfordTown_Gym_EventScript_Takao::
 
 DewfordTown_Gym_EventScript_TakaoBrightenRoom::
 	call DewfordTown_Gym_EventScript_BrightenRoom
+	call EventScript_RocketEdition_TryStealPokemon
 	release
 	end
 
@@ -219,6 +221,7 @@ DewfordTown_Gym_EventScript_Jocelyn::
 
 DewfordTown_Gym_EventScript_JocelynBrightenRoom::
 	call DewfordTown_Gym_EventScript_BrightenRoom
+	call EventScript_RocketEdition_TryStealPokemon
 	release
 	end
 
@@ -229,6 +232,7 @@ DewfordTown_Gym_EventScript_Laura::
 
 DewfordTown_Gym_EventScript_LauraBrightenRoom::
 	call DewfordTown_Gym_EventScript_BrightenRoom
+	call EventScript_RocketEdition_TryStealPokemon
 	release
 	end
 
@@ -239,6 +243,7 @@ DewfordTown_Gym_EventScript_Brenden::
 
 DewfordTown_Gym_EventScript_BrendenBrightenRoom::
 	call DewfordTown_Gym_EventScript_BrightenRoom
+	call EventScript_RocketEdition_TryStealPokemon
 	release
 	end
 
@@ -249,6 +254,7 @@ DewfordTown_Gym_EventScript_Cristian::
 
 DewfordTown_Gym_EventScript_CristianBrightenRoom::
 	call DewfordTown_Gym_EventScript_BrightenRoom
+	call EventScript_RocketEdition_TryStealPokemon
 	release
 	end
 
@@ -259,6 +265,7 @@ DewfordTown_Gym_EventScript_Lilith::
 
 DewfordTown_Gym_EventScript_LilithBrightenRoom::
 	call DewfordTown_Gym_EventScript_BrightenRoom
+	call EventScript_RocketEdition_TryStealPokemon
 	release
 	end
 

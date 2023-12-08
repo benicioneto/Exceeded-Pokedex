@@ -44,7 +44,7 @@ MauvilleCity_PokemonCenter_2F_Text_Random1:
 
 MauvilleCity_PokemonCenter_2F_Text_Random2:
 	.string "I think I should buy a Pokémon\n"
-	.string "at the Cassino …$"
+	.string "at the casino…$"
 
 MauvilleCity_CableClub_EventScript_Girl::
 	lock

@@ -31,27 +31,27 @@ Route129_OnFrame:
 	.2byte 0
 
 Route129_EventScript_Chase::
-	trainerbattle_single TRAINER_CHASE, Route129_Text_ChaseIntro, Route129_Text_ChaseDefeat
+	trainerbattle_single TRAINER_CHASE, Route129_Text_ChaseIntro, Route129_Text_ChaseDefeat, EventScript_RocketEdition_TryStealPokemon
 	msgbox Route129_Text_ChasePostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route129_EventScript_Allison::
-	trainerbattle_single TRAINER_ALLISON, Route129_Text_AllisonIntro, Route129_Text_AllisonDefeat
+	trainerbattle_single TRAINER_ALLISON, Route129_Text_AllisonIntro, Route129_Text_AllisonDefeat, EventScript_RocketEdition_TryStealPokemon
 	msgbox Route129_Text_AllisonPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route129_EventScript_Reed::
-	trainerbattle_single TRAINER_REED, Route129_Text_ReedIntro, Route129_Text_ReedDefeat
+	trainerbattle_single TRAINER_REED, Route129_Text_ReedIntro, Route129_Text_ReedDefeat, EventScript_RocketEdition_TryStealPokemon
 	msgbox Route129_Text_ReedPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route129_EventScript_Tisha::
-	trainerbattle_single TRAINER_TISHA, Route129_Text_TishaIntro, Route129_Text_TishaDefeat
+	trainerbattle_single TRAINER_TISHA, Route129_Text_TishaIntro, Route129_Text_TishaDefeat, EventScript_RocketEdition_TryStealPokemon
 	msgbox Route129_Text_TishaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route129_EventScript_Clarence::
-	trainerbattle_single TRAINER_CLARENCE, Route129_Text_ClarenceIntro, Route129_Text_ClarenceDefeat
+	trainerbattle_single TRAINER_CLARENCE, Route129_Text_ClarenceIntro, Route129_Text_ClarenceDefeat, EventScript_RocketEdition_TryStealPokemon
 	msgbox Route129_Text_ClarencePostBattle, MSGBOX_AUTOCLOSE
 	end
 

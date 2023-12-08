@@ -26,22 +26,22 @@ Route125_OnFrame:
 	.2byte 0
 
 Route125_EventScript_Nolen::
-	trainerbattle_single TRAINER_NOLEN, Route125_Text_NolenIntro, Route125_Text_NolenDefeat
+	trainerbattle_single TRAINER_NOLEN, Route125_Text_NolenIntro, Route125_Text_NolenDefeat, EventScript_RocketEdition_TryStealPokemon
 	msgbox Route125_Text_NolenPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route125_EventScript_Stan::
-	trainerbattle_single TRAINER_STAN, Route125_Text_StanIntro, Route125_Text_StanDefeat
+	trainerbattle_single TRAINER_STAN, Route125_Text_StanIntro, Route125_Text_StanDefeat, EventScript_RocketEdition_TryStealPokemon
 	msgbox Route125_Text_StanPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route125_EventScript_Tanya::
-	trainerbattle_single TRAINER_TANYA, Route125_Text_TanyaIntro, Route125_Text_TanyaDefeat
+	trainerbattle_single TRAINER_TANYA, Route125_Text_TanyaIntro, Route125_Text_TanyaDefeat, EventScript_RocketEdition_TryStealPokemon
 	msgbox Route125_Text_TanyaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route125_EventScript_Sharon::
-	trainerbattle_single TRAINER_SHARON, Route125_Text_SharonIntro, Route125_Text_SharonDefeat
+	trainerbattle_single TRAINER_SHARON, Route125_Text_SharonIntro, Route125_Text_SharonDefeat, EventScript_RocketEdition_TryStealPokemon
 	msgbox Route125_Text_SharonPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -59,6 +59,7 @@ Route125_EventScript_RegisterErnest::
 	waitmovement 0
 	msgbox Route125_Text_ErnestRegister, MSGBOX_DEFAULT
 	register_matchcall TRAINER_ERNEST_1
+	call EventScript_RocketEdition_TryStealPokemon
 	release
 	end
 
@@ -68,22 +69,22 @@ Route125_EventScript_RematchErnest::
 	end
 
 Route125_EventScript_Kim::
-	trainerbattle_double TRAINER_KIM_AND_IRIS, Route125_Text_KimIntro, Route125_Text_KimDefeat, Route125_Text_KimNotEnoughMons
+	trainerbattle_double TRAINER_KIM_AND_IRIS, Route125_Text_KimIntro, Route125_Text_KimDefeat, Route125_Text_KimNotEnoughMons,  EventScript_RocketEdition_TryStealPokemon
 	msgbox Route125_Text_KimPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route125_EventScript_Iris::
-	trainerbattle_double TRAINER_KIM_AND_IRIS, Route125_Text_IrisIntro, Route125_Text_IrisDefeat, Route125_Text_IrisNotEnoughMons
+	trainerbattle_double TRAINER_KIM_AND_IRIS, Route125_Text_IrisIntro, Route125_Text_IrisDefeat, Route125_Text_IrisNotEnoughMons,  EventScript_RocketEdition_TryStealPokemon
 	msgbox Route125_Text_IrisPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route125_EventScript_Presley::
-	trainerbattle_single TRAINER_PRESLEY, Route125_Text_PresleyIntro, Route125_Text_PresleyDefeat
+	trainerbattle_single TRAINER_PRESLEY, Route125_Text_PresleyIntro, Route125_Text_PresleyDefeat, EventScript_RocketEdition_TryStealPokemon
 	msgbox Route125_Text_PresleyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route125_EventScript_Auron::
-	trainerbattle_single TRAINER_AURON, Route125_Text_AuronIntro, Route125_Text_AuronDefeat
+	trainerbattle_single TRAINER_AURON, Route125_Text_AuronIntro, Route125_Text_AuronDefeat, EventScript_RocketEdition_TryStealPokemon
 	msgbox Route125_Text_AuronPostBattle, MSGBOX_AUTOCLOSE
 	end
 

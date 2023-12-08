@@ -1211,6 +1211,7 @@ gText_Collected:
 	.include "data/text/birch_speech.inc"
     .include "data/scripts/dexnav.inc"
     .include "data/scripts/itemfinder.inc"
+	.include "data/scripts/rocket_edition.inc"
 
 	.include "data/maps/Route135/scripts.inc"
 

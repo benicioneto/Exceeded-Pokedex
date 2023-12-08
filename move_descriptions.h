@@ -1905,8 +1905,8 @@ static const u8 sHEAVY_SLAMDescription[] = _(
     "user outweighs the foe.");
 
 static const u8 sSYNCHRONOISEDescription[] = _(
-    "An odd shock wave that only\n"
-    "damages same-type foes.");
+    "Super effective against\n"
+    "the same types as user.");
 
 static const u8 sELECTRO_BALLDescription[] = _(
     "Hurls an orb that does more\n"
@@ -3674,13 +3674,29 @@ static const u8 sJUSTICE_KICKDescription[] = _(
     "A 1st-turn, 1st-strike kick\n"
     "that causes high damage.");
 
-static const u8 sSOULBLADESDescription[] = _(
+static const u8 sSOUL_BLADESDescription[] = _(
     "It does special damage that\n"
     "is boosted by target's Def.");
 
 static const u8 sCONVERGENCEDescription[] = _(
     "Raises Defense, Special\n"
     "Attack and Special Defense.");
+
+static const u8 sTWIN_BITEDescription[] = _(
+    "Bites twice. First may lower\n"
+    "Defense, second Sp. Defense.");
+
+static const u8 sPUNISHING_KICKDescription[] = _(
+    "Inflicts more damage when\n"
+    "the user's HP is down.");
+
+static const u8 sFLYING_SIDE_KICKDescription[] = _(
+    "Deals more damage & priority\n"
+    "if used in first turn.");
+
+static const u8 sSOUL_ENERGYDescription[] = _(
+    "The user exhaust its soul\n"
+    "to damage everything around.");
 
 // MOVE_NONE is ignored in this table. Make sure to always subtract 1 before getting the right pointer.
 const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
@@ -4624,6 +4640,10 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_DARK_HARVEST - 1] = sDARK_HARVESTDescription,
     [MOVE_BLACK_MAGIC - 1] = sBLACK_MAGICDescription,
     [MOVE_JUSTICE_KICK - 1] = sJUSTICE_KICKDescription,
-    [MOVE_SOULBLADES - 1] = sSOULBLADESDescription,
+    [MOVE_SOUL_BLADES - 1] = sSOUL_BLADESDescription,
     [MOVE_CONVERGENCE - 1] = sCONVERGENCEDescription,
+    [MOVE_TWIN_BITE - 1] = sTWIN_BITEDescription,
+    [MOVE_PUNISHING_KICK - 1] = sPUNISHING_KICKDescription,
+    [MOVE_FLYING_SIDE_KICK - 1] = sFLYING_SIDE_KICKDescription,
+    [MOVE_SOUL_ENERGY - 1] = sSOUL_ENERGYDescription,
 };

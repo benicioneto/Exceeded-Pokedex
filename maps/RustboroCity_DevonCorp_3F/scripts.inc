@@ -167,6 +167,7 @@ RustboroCity_DevonCorp_3F_EventScript_MrStone::
 RustboroCity_DevonCorp_3F_EventScript_GiveDexNav::
 	msgbox RustboroCity_DevonCorp_3F_Text_ThankYouForDeliveringLetter, MSGBOX_DEFAULT
 	setflag FLAG_SYS_DEXNAV_GET
+	setflag FLAG_SYS_DETECTOR_MODE
 	playfanfare MUS_OBTAIN_ITEM
 	message RustboroCity_DevonCorp_3F_Text_ReceivedDexnav
 	waitfanfare

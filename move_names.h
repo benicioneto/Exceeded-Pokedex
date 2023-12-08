@@ -994,8 +994,12 @@ const u8 gMoveNames[MOVES_COUNT_DYNAMAX][MOVE_NAME_LENGTH + 1] =
     [MOVE_DARK_HARVEST] = _("Dark Harvest"),
     [MOVE_BLACK_MAGIC] = _("Black Magic"),
     [MOVE_JUSTICE_KICK] = _("Justice Kick"),
-    [MOVE_SOULBLADES] = _("Soulblades"),
+    [MOVE_SOUL_BLADES] = _("Soul Blades"),
     [MOVE_CONVERGENCE] = _("Convergence"),
+    [MOVE_TWIN_BITE] = _("Twin Bite"),
+    [MOVE_PUNISHING_KICK] = _("Punishing Kick"),
+    [MOVE_FLYING_SIDE_KICK] = _("Flying Side Kick"),
+    [MOVE_SOUL_ENERGY] = _("Soul Energy"),
 };
 
 static const u8 sText_Breakneck_Blitz[] = _("Breakneck Blitz");

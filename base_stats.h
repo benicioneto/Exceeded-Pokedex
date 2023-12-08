@@ -5184,7 +5184,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_FIELD,
-        .abilities = {ABILITY_INNER_FOCUS, ABILITY_NONE, ABILITY_EARLY_BIRD},
+        .abilities = {ABILITY_INNER_FOCUS, ABILITY_EARLY_BIRD, ABILITY_CUD_CHEW},
         .bodyColor = BODY_COLOR_YELLOW,
         .noFlip = FALSE,
         .innates = {ABILITY_MULTI_HEADED, ABILITY_STRONG_JAW, ABILITY_SAP_SIPPER},
@@ -11886,7 +11886,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_LIGHTNING_ROD, ABILITY_ROCK_HEAD, ABILITY_RECKLESS},
         .bodyColor = BODY_COLOR_GRAY,
         .noFlip = FALSE,
-        .innates = {ABILITY_SOLID_ROCK, ABILITY_JUGGERNAUT, ABILITY_BATTLE_ARMOR},
+        .innates = {ABILITY_SOLID_ROCK, ABILITY_JUGGERNAUT, ABILITY_HEAVILY_ARMOURED},
     },
 
     [SPECIES_TANGROWTH] =
@@ -20137,7 +20137,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_SLOW,
         .eggGroup1 = EGG_GROUP_UNDISCOVERED,
         .eggGroup2 = EGG_GROUP_UNDISCOVERED,
-        .abilities = {ABILITY_MISTY_SURGE, ABILITY_NONE},
+        .abilities = {ABILITY_SWAMP_SURGE, ABILITY_NONE},
         .bodyColor = BODY_COLOR_PURPLE,
         .noFlip = FALSE,
         .flags = FLAG_LEGENDARY,
@@ -22392,10 +22392,10 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_FAIRY,
-        .abilities = {ABILITY_HUNGER_SWITCH, ABILITY_NONE},
+        .abilities = {ABILITY_STATIC, ABILITY_NONE, ABILITY_LIGHTNING_ROD},
         .bodyColor = BODY_COLOR_YELLOW,
         .noFlip = FALSE,
-        .innates = {ABILITY_PLUS, ABILITY_HANGRY_MODE, ABILITY_FULL_BELLY},
+        .innates = {ABILITY_PLUS, ABILITY_HUNGER_SWITCH, ABILITY_FULL_BELLY},
     },
 
     [SPECIES_CUFANT] =
@@ -24742,7 +24742,7 @@ const struct BaseStats gBaseStats[] =
         .bodyColor = BODY_COLOR_WHITE,
         .noFlip = FALSE,
         .flags = FLAG_GALARIAN_FORM,
-        .innates = {ABILITY_MYSTICAL_HORN, ABILITY_PIXILATE},
+        .innates = {ABILITY_MYSTICAL_HORN, ABILITY_PIXILATE, ABILITY_CHARGE_ATTACK},
     },
 
     [SPECIES_RAPIDASH_GALARIAN] =
@@ -24768,7 +24768,7 @@ const struct BaseStats gBaseStats[] =
         .bodyColor = BODY_COLOR_WHITE,
         .noFlip = FALSE,
         .flags = FLAG_GALARIAN_FORM,
-        .innates = {ABILITY_MYSTICAL_HORN, ABILITY_PIXILATE},
+        .innates = {ABILITY_MYSTICAL_HORN, ABILITY_PIXILATE, ABILITY_CHARGE_ATTACK},
     },
 
     [SPECIES_SLOWPOKE_GALARIAN] =
@@ -24924,7 +24924,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_COMPETITIVE, ABILITY_NONE},
         .bodyColor = BODY_COLOR_PURPLE,
         .noFlip = FALSE,
-        .flags = FLAG_GALARIAN_FORM,
+        .flags = FLAG_LEGENDARY | FLAG_GALARIAN_FORM,
         .innates = {ABILITY_PRESSURE, ABILITY_NONE},
     },
 
@@ -24950,7 +24950,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_DEFIANT, ABILITY_NONE},
         .bodyColor = BODY_COLOR_YELLOW,
         .noFlip = FALSE,
-        .flags = FLAG_GALARIAN_FORM,
+        .flags = FLAG_LEGENDARY | FLAG_GALARIAN_FORM,
         .innates = {ABILITY_PRESSURE, ABILITY_NONE},
     },
 
@@ -24976,7 +24976,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_BERSERK, ABILITY_NONE},
         .bodyColor = BODY_COLOR_RED,
         .noFlip = FALSE,
-        .flags = FLAG_GALARIAN_FORM,
+        .flags = FLAG_LEGENDARY | FLAG_GALARIAN_FORM,
         .innates = {ABILITY_PRESSURE, ABILITY_FLASH_FIRE, ABILITY_DARK_FLAMES},
     },
 
@@ -30705,10 +30705,10 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_FAIRY,
-        .abilities = {ABILITY_HUNGER_SWITCH, ABILITY_NONE},
+        .abilities = {ABILITY_STATIC, ABILITY_NONE, ABILITY_LIGHTNING_ROD},
         .bodyColor = BODY_COLOR_YELLOW,
         .noFlip = FALSE,
-        .innates = {ABILITY_PLUS, ABILITY_HANGRY_MODE, ABILITY_FULL_BELLY},
+        .innates = {ABILITY_PLUS, ABILITY_HUNGER_SWITCH, ABILITY_FULL_BELLY},
     },
 
     [SPECIES_ZACIAN_CROWNED_SWORD] =
@@ -33599,7 +33599,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_BUG,
         .eggGroup2 = EGG_GROUP_BUG,
-        .abilities = {ABILITY_SAP_SIPPER, ABILITY_NONE, ABILITY_TACTICAL_RETREAT},
+        .abilities = {ABILITY_SAP_SIPPER, ABILITY_TACTICAL_RETREAT, ABILITY_RATTLED},
         .bodyColor = BODY_COLOR_GRAY,
         .noFlip = FALSE,
         .innates = {ABILITY_SWARM, ABILITY_TINTED_LENS},
@@ -33624,10 +33624,10 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_BUG,
         .eggGroup2 = EGG_GROUP_BUG,
-        .abilities = {ABILITY_SAP_SIPPER, ABILITY_NONE, ABILITY_TACTICAL_RETREAT},
+        .abilities = {ABILITY_SAP_SIPPER, ABILITY_TACTICAL_RETREAT, ABILITY_ULTIMATE_SHOWDOWN},
         .bodyColor = BODY_COLOR_GRAY,
         .noFlip = FALSE,
-        .innates = {ABILITY_SWARM, ABILITY_TINTED_LENS},
+        .innates = {ABILITY_SWARM, ABILITY_TINTED_LENS, ABILITY_KAMEN_RIDER},
     },
 
     [SPECIES_PAWMI] =
@@ -34127,7 +34127,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_BATTLE_ARMOR, ABILITY_NONE, ABILITY_WEAK_ARMOR},
         .bodyColor = BODY_COLOR_RED,
         .noFlip = FALSE,
-        .innates = {ABILITY_FLAME_BODY, ABILITY_FLASH_FIRE},
+        .innates = {ABILITY_FLAME_BODY, ABILITY_FLASH_FIRE, ABILITY_BATTLE_NETWORK},
     },
 
     [SPECIES_CERULEDGE] =
@@ -34152,7 +34152,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_BATTLE_ARMOR, ABILITY_NONE, ABILITY_WEAK_ARMOR},
         .bodyColor = BODY_COLOR_BLUE,
         .noFlip = FALSE,
-        .innates = {ABILITY_FLAME_BODY, ABILITY_FLASH_FIRE},
+        .innates = {ABILITY_FLAME_BODY, ABILITY_FLASH_FIRE, ABILITY_NOISE_CHANGE},
     },
 
     [SPECIES_TADBULB] =
@@ -35427,7 +35427,7 @@ const struct BaseStats gBaseStats[] =
         .bodyColor = BODY_COLOR_GRAY,
         .noFlip = FALSE,
         .flags = FLAG_PARADOX,
-        .innates = {ABILITY_METALMORPH, ABILITY_NONE},
+        .innates = {ABILITY_METALMORPH, ABILITY_BATTLE_ARMOR},
     },
 
     [SPECIES_IRON_BUNDLE] =
@@ -35833,7 +35833,7 @@ const struct BaseStats gBaseStats[] =
         .bodyColor = BODY_COLOR_GREEN,
         .noFlip = FALSE,
         .flags = FLAG_PARADOX,
-        .innates = {ABILITY_OVERWHELM, ABILITY_RAMPAGE},
+        .innates = {ABILITY_LEVITATE, ABILITY_OVERWHELM, ABILITY_RAMPAGE},
     },
 
     [SPECIES_IRON_VALIANT] =
@@ -35885,7 +35885,7 @@ const struct BaseStats gBaseStats[] =
         .bodyColor = BODY_COLOR_RED,
         .noFlip = FALSE,
         .flags = FLAG_LEGENDARY | FLAG_PARADOX,
-        .innates = {ABILITY_PRESSURE, ABILITY_LEVITATE},
+        .innates = {ABILITY_PRESSURE, ABILITY_LEVITATE, ABILITY_HEAT_CARBURETTOR},
     },
 
     [SPECIES_MIRAIDON] =
@@ -35911,7 +35911,7 @@ const struct BaseStats gBaseStats[] =
         .bodyColor = BODY_COLOR_BLUE,
         .noFlip = FALSE,
         .flags = FLAG_LEGENDARY | FLAG_PARADOX,
-        .innates = {ABILITY_PRESSURE, ABILITY_LEVITATE},
+        .innates = {ABILITY_PRESSURE, ABILITY_LEVITATE, ABILITY_NEUTRINO_EXHAUST},
     },
 
     [SPECIES_WALKING_WAKE] =
@@ -36140,7 +36140,7 @@ const struct BaseStats gBaseStats[] =
         .bodyColor = BODY_COLOR_BLACK,
         .noFlip = FALSE,
         .flags = FLAG_LEGENDARY,
-        .innates = {ABILITY_TOXIC_CHAIN, ABILITY_NONE},
+        .innates = {ABILITY_TOXIC_CHAIN, ABILITY_LEVITATE},
     },
 
     [SPECIES_OGERPON_TEAL_MASK] =
@@ -36460,7 +36460,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_FIELD,
-        .abilities = {ABILITY_CUD_CHEW, ABILITY_NONE, ABILITY_EARLY_BIRD},
+        .abilities = {ABILITY_INNER_FOCUS, ABILITY_EARLY_BIRD, ABILITY_CUD_CHEW},
         .bodyColor = BODY_COLOR_BROWN,
         .noFlip = FALSE,
         .innates = {ABILITY_ARMOR_TAIL, ABILITY_CONNECTED_BRAINS, ABILITY_SAP_SIPPER},

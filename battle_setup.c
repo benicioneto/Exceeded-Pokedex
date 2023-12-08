@@ -113,9 +113,10 @@ EWRAM_DATA static bool8 sShouldCheckTrainerBScript = FALSE;
 EWRAM_DATA static u8 sNoOfPossibleTrainerRetScripts = 0;
 
 //tx_difficulty_options
-EWRAM_DATA u8 NuzlockeIsCaptureBlocked = FALSE;
-EWRAM_DATA u8 NuzlockeIsSpeciesClauseActive = FALSE;
-EWRAM_DATA u8 OneTypeChallengeCaptureBlocked = FALSE;
+EWRAM_DATA bool8 NuzlockeIsMapBlocked[PARTY_SIZE] = {0};
+EWRAM_DATA bool8 NuzlockeIsSpeciesAlreadyCaught[PARTY_SIZE] = {0};
+EWRAM_DATA bool8 NuzlockeIsEvoLineAlreadyCaught[PARTY_SIZE] = {0};
+EWRAM_DATA bool8 OneTypeChallengeIsTypeBlocked[PARTY_SIZE] = {0};
 
 // const rom data
 
@@ -398,7 +399,8 @@ static void CreateBattleStartTask(u8 transition, u16 song)
 
 void BattleSetup_StartWildBattle(void)
 {
-    SetNuzlockeChecks(); //tx_randomizer_and_challenges
+    if (gSaveBlock2Ptr->newGameOptions.tx_Challenges_PkmnCenter == 1)
+        HealPlayerParty();
     if (GetSafariZoneFlag())
         DoSafariBattle();
     else
@@ -407,11 +409,15 @@ void BattleSetup_StartWildBattle(void)
 
 void BattleSetup_StartDoubleWildBattle(void)
 {
+    if (gSaveBlock2Ptr->newGameOptions.tx_Challenges_PkmnCenter == 1)
+        HealPlayerParty();
     DoStandardWildBattle(TRUE);
 }
 
 void BattleSetup_StartBattlePikeWildBattle(void)
 {
+    if (gSaveBlock2Ptr->newGameOptions.tx_Challenges_PkmnCenter == 1)
+        HealPlayerParty();
     DoBattlePikeWildBattle();
 }
 
@@ -429,6 +435,9 @@ static void DoStandardWildBattle(bool32 isDouble)
         VarSet(VAR_TEMP_E, 0);
         gBattleTypeFlags |= BATTLE_TYPE_PYRAMID;
     }
+    if (gSaveBlock2Ptr->newGameOptions.tx_Challenges_PkmnCenter == 1)
+        HealPlayerParty();
+    SetChallengesChecks(); //tx_randomizer_and_challenges
     CreateBattleStartTask(GetWildBattleTransition(), 0);
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
     IncrementGameStat(GAME_STAT_WILD_BATTLES);
@@ -443,6 +452,9 @@ void BattleSetup_StartRoamerBattle(void)
     sub_808BCF4();
     gMain.savedCallback = CB2_EndWildBattle;
     gBattleTypeFlags = BATTLE_TYPE_ROAMER;
+    if (gSaveBlock2Ptr->newGameOptions.tx_Challenges_PkmnCenter == 1)
+        HealPlayerParty();
+    SetChallengesChecks(); //tx_randomizer_and_challenges
     CreateBattleStartTask(GetWildBattleTransition(), 0);
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
     IncrementGameStat(GAME_STAT_WILD_BATTLES);
@@ -457,6 +469,7 @@ static void DoSafariBattle(void)
     sub_808BCF4();
     gMain.savedCallback = CB2_EndSafariBattle;
     gBattleTypeFlags = BATTLE_TYPE_SAFARI;
+    SetChallengesChecks(); //tx_randomizer_and_challenges
     CreateBattleStartTask(GetWildBattleTransition(), 0);
 }
 
@@ -482,7 +495,7 @@ static void DoTrainerBattle(void)
     TryUpdateGymLeaderRematchFromTrainer();
 }
 
-static void sub_80B0828(void)
+static void DoBattlePyramidTrainerHillBattle(void)
 {
     if (InBattlePyramid())
         CreateBattleStartTask(GetSpecialBattleTransition(10), 0);
@@ -509,6 +522,9 @@ void BattleSetup_StartScriptedWildBattle(void)
     ScriptContext2_Enable();
     gMain.savedCallback = CB2_EndScriptedWildBattle;
     gBattleTypeFlags = 0;
+    if (gSaveBlock2Ptr->newGameOptions.tx_Challenges_PkmnCenter == 1)
+        HealPlayerParty();
+    SetChallengesChecks(); //tx_randomizer_and_challenges
     CreateBattleStartTask(GetWildBattleTransition(), 0);
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
     IncrementGameStat(GAME_STAT_WILD_BATTLES);
@@ -521,6 +537,9 @@ void BattleSetup_StartScriptedDoubleWildBattle(void)
     ScriptContext2_Enable();
     gMain.savedCallback = CB2_EndScriptedWildBattle;
     gBattleTypeFlags = BATTLE_TYPE_DOUBLE;
+    if (gSaveBlock2Ptr->newGameOptions.tx_Challenges_PkmnCenter == 1)
+        HealPlayerParty();
+    SetChallengesChecks(); //tx_randomizer_and_challenges
     CreateBattleStartTask(GetWildBattleTransition(), 0);
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
     IncrementGameStat(GAME_STAT_WILD_BATTLES);
@@ -533,6 +552,9 @@ void BattleSetup_StartLatiBattle(void)
     ScriptContext2_Enable();
     gMain.savedCallback = CB2_EndScriptedWildBattle;
     gBattleTypeFlags = BATTLE_TYPE_LEGENDARY;
+    if (gSaveBlock2Ptr->newGameOptions.tx_Challenges_PkmnCenter == 1)
+        HealPlayerParty();
+    SetChallengesChecks(); //tx_randomizer_and_challenges
     CreateBattleStartTask(GetWildBattleTransition(), 0);
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
     IncrementGameStat(GAME_STAT_WILD_BATTLES);
@@ -545,6 +567,10 @@ void BattleSetup_StartLegendaryBattle(void)
     ScriptContext2_Enable();
     gMain.savedCallback = CB2_EndScriptedWildBattle;
     gBattleTypeFlags = BATTLE_TYPE_LEGENDARY;
+
+    if (gSaveBlock2Ptr->newGameOptions.tx_Challenges_PkmnCenter == 1)
+        HealPlayerParty();
+    SetChallengesChecks(); //tx_randomizer_and_challenges
 
     switch (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL))
     {
@@ -589,8 +615,11 @@ void StartRegiBattle(void)
     gMain.savedCallback = CB2_EndScriptedWildBattle;
     gBattleTypeFlags = BATTLE_TYPE_LEGENDARY | BATTLE_TYPE_REGI;
 
-    species = GetMonData(&gEnemyParty[0], MON_DATA_SPECIES);
-    switch (species)
+    if (gSaveBlock2Ptr->newGameOptions.tx_Challenges_PkmnCenter == 1)
+        HealPlayerParty();
+    SetChallengesChecks(); //tx_randomizer_and_challenges
+
+    switch (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES))
     {
     case SPECIES_REGIROCK:
         transitionId = B_TRANSITION_REGIROCK;
@@ -1357,9 +1386,13 @@ void BattleSetup_StartTrainerBattle(void)
     gMain.savedCallback = CB2_EndTrainerBattle;
 
     if (InBattlePyramid() || InTrainerHillChallenge())
-        sub_80B0828();
+        DoBattlePyramidTrainerHillBattle();
     else
+    {
+        if (gSaveBlock2Ptr->newGameOptions.tx_Challenges_PkmnCenter == 1)
+            HealPlayerParty();
         DoTrainerBattle();
+    }
 
     ScriptContext1_Stop();
 }
@@ -1425,6 +1458,8 @@ void BattleSetup_StartRematchBattle(void)
 {
     gBattleTypeFlags = BATTLE_TYPE_TRAINER;
     gMain.savedCallback = CB2_EndRematchBattle;
+    if (gSaveBlock2Ptr->newGameOptions.tx_Challenges_PkmnCenter == 1)
+        HealPlayerParty();
     DoTrainerBattle();
     ScriptContext1_Stop();
 }
@@ -1961,20 +1996,21 @@ u16 CountBattledRematchTeams(u16 trainerId)
 }
 
 //tx_randomizer_and_challenges
-u8 NuzlockeIsCaptureBlockedBySpeciesClause(u16 species) // @Kurausukun
+bool8 NuzlockeIsCaptureBlockedBySameSpecies(u16 species) // @Kurausukun
 {
     u8 i;
-    if (!gSaveBlock2Ptr->newGameOptions.tx_Nuzlocke_SpeciesClause)
-        return FALSE;
-
     //disable double catch
     if (GetSetPokedexFlag(SpeciesToNationalPokedexNum(species), FLAG_GET_CAUGHT))
-        return 2; //player already has this exact pokemon
-
+        return TRUE; //player already has this exact pokemon
+    return FALSE;
+}
+bool8 NuzlockeIsCaptureBlockedBySameEvoline(u16 species)
+{
+    u8 i;
     for (i = 0; i < EVOS_PER_LINE; i++)
     {
         if (GetSetPokedexFlag(SpeciesToNationalPokedexNum(gEvolutionLines[species][i]), FLAG_GET_CAUGHT))
-            return TRUE;
+            return TRUE;    // Player already has this species evo line
     }
     return FALSE;
 }
@@ -2016,30 +2052,77 @@ bool8 IfSpeciesIsBlockedForOneTypeChallenge(u16 species)
     return TRUE;
 }
 
-void SetNuzlockeChecks(void)
+void SetChallengesChecks(void)
 {
-    OneTypeChallengeCaptureBlocked = FALSE;
-    NuzlockeIsSpeciesClauseActive = FALSE;
-    NuzlockeIsCaptureBlocked = FALSE;
+    u8 i;
+    u16 species;
+    struct Pokemon *mon;
 
-    if (IsOneTypeChallengeActive())
-        OneTypeChallengeCaptureBlocked = IfSpeciesIsBlockedForOneTypeChallenge(GetMonData(&gEnemyParty[0], MON_DATA_SPECIES));
+    ClearChallengesChecks();
 
-    if (IsNuzlockeActive())
+    for (i = 0; i < PARTY_SIZE; i++)
     {
-        NuzlockeIsSpeciesClauseActive = NuzlockeIsCaptureBlockedBySpeciesClause(GetMonData(&gEnemyParty[0], MON_DATA_SPECIES));
+        mon = &gEnemyParty[i];
+        species = GetMonData(mon, MON_DATA_SPECIES);
 
-        NuzlockeIsCaptureBlocked = NuzlockeFlagGet(NuzlockeGetCurrentRegionMapSectionId());
+        if (species == SPECIES_NONE && species == SPECIES_EGG)
+            continue;
 
-        if (IsMonShiny(&gEnemyParty[0]) && gSaveBlock2Ptr->newGameOptions.tx_Nuzlocke_ShinyClause)
+        if (IsOneTypeChallengeActive())
+            OneTypeChallengeIsTypeBlocked[i] = IfSpeciesIsBlockedForOneTypeChallenge(species);
+
+        if (IsNuzlockeActive())
         {
-            NuzlockeIsCaptureBlocked = FALSE;
-            NuzlockeIsSpeciesClauseActive = FALSE;
+            NuzlockeIsMapBlocked[i] = NuzlockeFlagGet(NuzlockeGetCurrentRegionMapSectionId());
+
+            if (gSaveBlock2Ptr->newGameOptions.tx_Nuzlocke_SpeciesClause)
+            {
+                NuzlockeIsSpeciesAlreadyCaught[i] = NuzlockeIsCaptureBlockedBySameSpecies(species);
+                NuzlockeIsEvoLineAlreadyCaught[i] = NuzlockeIsCaptureBlockedBySameEvoline(species);
+            }
+
+            if (gSaveBlock2Ptr->newGameOptions.tx_Nuzlocke_ShinyClause && IsMonShiny(mon))
+            {
+                NuzlockeIsMapBlocked[i] = FALSE;
+                NuzlockeIsSpeciesAlreadyCaught[i] = FALSE;
+            }
         }
     }
-    else
+}
+
+void ClearChallengesChecks(void)
+{
+    u8 i;
+
+    for (i = 0; i < PARTY_SIZE; i++)
     {
-        NuzlockeIsCaptureBlocked = FALSE;
-        NuzlockeIsSpeciesClauseActive = FALSE;
+        NuzlockeIsMapBlocked[i] = FALSE;
+        OneTypeChallengeIsTypeBlocked[i] = FALSE;
+        NuzlockeIsSpeciesAlreadyCaught[i] = FALSE;
+        NuzlockeIsEvoLineAlreadyCaught[i] = FALSE;
     }
 }
+
+bool8 PlayerCouldCatchPokemon(void)
+{
+    u8 i;
+    u16 species;
+    struct Pokemon *mon;
+
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        mon = &gEnemyParty[i];
+        species = GetMonData(mon, MON_DATA_SPECIES);
+
+        if (species == SPECIES_NONE && species == SPECIES_EGG)
+            continue;
+
+        if (!NuzlockeIsMapBlocked[i]
+        && !NuzlockeIsSpeciesAlreadyCaught[i]
+        && !NuzlockeIsEvoLineAlreadyCaught[i]
+        && !OneTypeChallengeIsTypeBlocked[i])
+            return TRUE;
+    }
+    return FALSE;
+}
+
