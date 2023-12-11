@@ -1000,6 +1000,10 @@ const u8 gMoveNames[MOVES_COUNT_DYNAMAX][MOVE_NAME_LENGTH + 1] =
     [MOVE_PUNISHING_KICK] = _("Punishing Kick"),
     [MOVE_FLYING_SIDE_KICK] = _("Flying Side Kick"),
     [MOVE_SOUL_ENERGY] = _("Soul Energy"),
+    [MOVE_JACK_O_LANTERN] = _("Jack-O'-Lantern"),
+    [MOVE_EERIE_TUNE] = _("Eerie Tune"),
+    [MOVE_HALLOWEEN] = _("Halloween"),
+    [MOVE_DOUBLE_LARIAT] = _("Double Lariat"),
 };
 
 static const u8 sText_Breakneck_Blitz[] = _("Breakneck Blitz");

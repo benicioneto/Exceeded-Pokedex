@@ -20,7 +20,7 @@ SSTidalRooms_EventScript_ExplainSnatch::
 	end
 
 SSTidalRooms_EventScript_Bed::
-	specialvar VAR_RESULT, IsPokecenterChallengeActivated
+	specialvar VAR_RESULT, IsPokecenterBlockedChallengeActivated
 	compare VAR_RESULT, TRUE
 	goto_if_eq SSTidalRooms_EventScript_Bed_PokecenterChallenge
 	lockall

@@ -1290,7 +1290,7 @@ ProfessorBirchHouse_Text_BrichsWife:
 	.string "I'm Prof. Birch's wife and\n"
 	.string "my kids are on the their room.\l"
 	.string "Don't be shy! Go play with them\l"
-	.string "upstars!$"
+	.string "upstairs!$"
 
 ProfessorBirchHouse_Text_BrichsWife_Left:
 	.string "My kids left for a new adventure!\n"

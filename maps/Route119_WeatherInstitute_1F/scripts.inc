@@ -56,7 +56,7 @@ Route119_WeatherInstitute_1F_EventScript_InstituteWorker2::
 	end
 
 Route119_WeatherInstitute_1F_EventScript_Bed::
-	specialvar VAR_RESULT, IsPokecenterChallengeActivated
+	specialvar VAR_RESULT, IsPokecenterBlockedChallengeActivated
 	compare VAR_RESULT, TRUE
 	goto_if_eq Route119_WeatherInstitute_1F_EventScript_Bed_PokecenterChallenge
 	lockall

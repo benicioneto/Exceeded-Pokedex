@@ -895,7 +895,6 @@ RustboroCity_EventScript_RivalEncounter::
 	end
 
 RustboroCity_EventScript_MayEncounter::
-	call EventScript_RocketEdition_TryStealPokemon
 	goto_if_set FLAG_DEFEATED_RIVAL_RUSTBORO, RustboroCity_EventScript_MayBrineyHint
 	goto_if_set FLAG_MET_RIVAL_RUSTBORO, RustboroCity_EventScript_MayAskToBattle
 	setflag FLAG_MET_RIVAL_RUSTBORO
@@ -951,6 +950,7 @@ RustboroCity_EventScript_RestoreBgm::
 RustboroCity_EventScript_BattleMayTreecko::
     setvar VAR_MUGSHOT_ID, MUGSHOT_LEAF
 	trainerbattle_no_intro TRAINER_MAY_RUSTBORO_TREECKO, RustboroCity_Text_MayDefeat
+	call EventScript_RocketEdition_TryStealPokemon
 	setflag FLAG_DEFEATED_RIVAL_RUSTBORO
 	goto RustboroCity_EventScript_MayBrineyHint
 	end
@@ -958,6 +958,7 @@ RustboroCity_EventScript_BattleMayTreecko::
 RustboroCity_EventScript_BattleMayTorchic::
     setvar VAR_MUGSHOT_ID, MUGSHOT_LEAF
 	trainerbattle_no_intro TRAINER_MAY_RUSTBORO_TORCHIC, RustboroCity_Text_MayDefeat
+	call EventScript_RocketEdition_TryStealPokemon
 	setflag FLAG_DEFEATED_RIVAL_RUSTBORO
 	goto RustboroCity_EventScript_MayBrineyHint
 	end
@@ -965,6 +966,7 @@ RustboroCity_EventScript_BattleMayTorchic::
 RustboroCity_EventScript_BattleMayMudkip::
     setvar VAR_MUGSHOT_ID, MUGSHOT_LEAF
 	trainerbattle_no_intro TRAINER_MAY_RUSTBORO_MUDKIP, RustboroCity_Text_MayDefeat
+	call EventScript_RocketEdition_TryStealPokemon
 	setflag FLAG_DEFEATED_RIVAL_RUSTBORO
 	goto RustboroCity_EventScript_MayBrineyHint
 	end
@@ -1009,7 +1011,6 @@ RustboroCity_EventScript_BattleBrendan::
 	end
 
 RustboroCity_EventScript_BrendanBrineyHint::
-	call EventScript_RocketEdition_TryStealPokemon
 	msgbox RustboroCity_Text_BrendanMrBrineyHint, MSGBOX_DEFAULT
 	compare VAR_0x8008, 0
 	call_if_eq RustboroCity_EventScript_RestoreBgm
@@ -1019,6 +1020,7 @@ RustboroCity_EventScript_BrendanBrineyHint::
 RustboroCity_EventScript_BattleBrendanTreecko::
     setvar VAR_MUGSHOT_ID, MUGSHOT_RED
 	trainerbattle_no_intro TRAINER_BRENDAN_RUSTBORO_TREECKO, RustboroCity_Text_BrendanDefeat
+	call EventScript_RocketEdition_TryStealPokemon
 	setflag FLAG_DEFEATED_RIVAL_RUSTBORO
 	goto RustboroCity_EventScript_BrendanBrineyHint
 	end
@@ -1026,6 +1028,7 @@ RustboroCity_EventScript_BattleBrendanTreecko::
 RustboroCity_EventScript_BattleBrendanTorchic::
     setvar VAR_MUGSHOT_ID, MUGSHOT_RED
 	trainerbattle_no_intro TRAINER_BRENDAN_RUSTBORO_TORCHIC, RustboroCity_Text_BrendanDefeat
+	call EventScript_RocketEdition_TryStealPokemon
 	setflag FLAG_DEFEATED_RIVAL_RUSTBORO
 	goto RustboroCity_EventScript_BrendanBrineyHint
 	end
@@ -1033,6 +1036,7 @@ RustboroCity_EventScript_BattleBrendanTorchic::
 RustboroCity_EventScript_BattleBrendanMudkip::
     setvar VAR_MUGSHOT_ID, MUGSHOT_RED
 	trainerbattle_no_intro TRAINER_BRENDAN_RUSTBORO_MUDKIP, RustboroCity_Text_BrendanDefeat
+	call EventScript_RocketEdition_TryStealPokemon
 	setflag FLAG_DEFEATED_RIVAL_RUSTBORO
 	goto RustboroCity_EventScript_BrendanBrineyHint
 	end

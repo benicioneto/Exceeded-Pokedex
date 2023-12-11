@@ -13853,6 +13853,6 @@ static const struct TrainerParty sParty_HideoutRocket5Hard[] = {
     .evAtk = 127,
     .evSpd = 127,
     .species = SPECIES_SCOLIPEDE,
-    .moves = {MOVE_ROLLOUT, MOVE_MEGAHORN, MOVE_POISON_TAIL, MOVE_STEAMROLLER}
+    .moves = {MOVE_ROLLOUT, MOVE_BUG_BITE, MOVE_POISON_TAIL, MOVE_STEAMROLLER}
     }
 };

@@ -663,7 +663,9 @@ static const u8 sHeatCarburettorDescription[] = _("Ups Fire in sunlight.");
 static const u8 sKamenRiderDescription[] = _("Adds Fighting-type to Pokémon.");
 static const u8 sUltimateShowdownDescription[] = _("Power up in a pinch.");
 static const u8 sBattleNetworkDescription[] = _("Sync with Noise Change.");
-static const u8 sNoiseChangeDescription[] = _("Sync with Battle Network");
+static const u8 sNoiseChangeDescription[] = _("Sync with Battle Network.");
+static const u8 sCallReinforcementDescription[] = _("Restore HP each turn.");
+static const u8 sSoloLevelingDescription[] = _("Boosts is Solo form.");
 
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
 {
@@ -1265,6 +1267,8 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_ULTIMATE_SHOWDOWN] = _("Ultimate Showdown"),
     [ABILITY_BATTLE_NETWORK] = _("Battle Network"),
     [ABILITY_NOISE_CHANGE] = _("Noise Change"),
+    [ABILITY_CALL_REINFORCEMENT] = _("Call Reinforcement"),
+    [ABILITY_SOLO_LEVELING] = _("Solo Leveling"),
 };
 
 const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
@@ -1867,6 +1871,8 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_ULTIMATE_SHOWDOWN] = sUltimateShowdownDescription,
     [ABILITY_BATTLE_NETWORK] = sBattleNetworkDescription,
     [ABILITY_NOISE_CHANGE] = sNoiseChangeDescription,
+    [ABILITY_CALL_REINFORCEMENT] = sCallReinforcementDescription,
+    [ABILITY_SOLO_LEVELING] = sSoloLevelingDescription,
 };
 
 static const u8 sNoneDescriptionExtended[] = _("");
@@ -2021,7 +2027,7 @@ static const u8 sAnalyticDescriptionExtended[] = _("If the Pokémon executes its
 static const u8 sIllusionDescriptionExtended[] = _("When the Pokémon enters battl-\ne, changes the appearance of t-\nhe Pokémon to that of the last\nconscious, non-Egg Pokémon in\nits Trainer's party.");
 static const u8 sImposterDescriptionExtended[] = _("As soon as the user comes int-\no battle, it transforms into i-\nts opponent, coping its appear-\nance, moves (which all have 5 \nPP), ability, stats (except HP-\n), stat changes.");
 static const u8 sInfiltratorDescriptionExtended[] = _("Moves used by the Pokémon byp-\nass the effects of targets' Re-\nflect, Light Screen, Aurora Ve-\nil, Safeguard, Mist and substi-\ntute.");
-static const u8 sMummyDescriptionExtended[] = _("When the Pokémon is hit, the \nattacker's ability is changed \nto Mummy. Pokémon with Mummy l-\noses 20% of all stats, except \nGhost-type Pokémon.");
+static const u8 sMummyDescriptionExtended[] = _("When the Pokémon is hit by a \ndamaging move, the attacker's \nability is changed to Mummy. P-\nokémon with Mummy loses 20% of\nall stats, except Ghost-type \nPokémon.");
 static const u8 sMoxieDescriptionExtended[] = _("When the Pokémon directly cau-\nses another Pokémon (including\nallies) to faint by using a d-\namaging move, its highest offe-\nnsive stat is increased by one\nstage.");
 static const u8 sJustifiedDescriptionExtended[] = _("When the Pokémon is hit by a \nDark-type damaging move, its h-\nighest offensive stat is incre-\nased by one stage.");
 static const u8 sRattledDescriptionExtended[] = _("When the Pokémon is hit by a \nBug-, Dark-, or Ghost-type dam-\naging move, its Speed is incre-\nased by one stage. Activates i-\nf the Pokémon is affected by I-\nntimidate or Frighten.");
@@ -2077,7 +2083,7 @@ static const u8 sLiquidVoiceDescriptionExtended[] = _("All sound-based moves bec
 static const u8 sTriageDescriptionExtended[] = _("Increases the priority of mov-\nes that restore HP used by the\nPokémon with this Ability by \n3, including both damaging mov-\nes and status moves.");
 static const u8 sGalvanizeDescriptionExtended[] = _("All Normal-type moves used by\nthe Pokémon become Electric-t-\nype and receive a 20% power bo-\nost.");
 static const u8 sSurgeSurferDescriptionExtended[] = _("When the battlefield is under\nthe effects of Electric Terra-\nin, increases the Speed of Pok-\némon by 33%.");
-static const u8 sSchoolingDescriptionExtended[] = _("If level 20 or higher, at the\nstart of battle or the end of\na turn, if HP is above 25%, c-\nhanges to School form or, if H-\nP is 25% or below, changes to \nSolo form.");
+static const u8 sSchoolingDescriptionExtended[] = _("If the Pokémon is level 20 or\nhigher, at the start of battl-\ne or the end of a turn, if HP \nis above 25%, changes to Schoo-\nl form or, if HP is 25% or bel-\now, changes to Solo form.");
 static const u8 sDisguiseDescriptionExtended[] = _("Once per battle, the shroud t-\nhat covers the Pokémon can pro-\ntect it from an attack.");
 static const u8 sBattleBondDescriptionExtended[] = _("Bond Phenomenon may be achiev-\ned when the trust between the \nTrainer and Pokémon reaches ma-\nximum. When the Greninja direc-\ntly causes another Pokémon to \nfaint by using a damaging move\n, it will change into Ash-Gren-\ninja. If Ash-Greninja uses Wat-\ner Shuriken, the move's power \nbecomes 20 and always hits thr-\nee times.");
 static const u8 sPowerConstructDescriptionExtended[] = _("At the end of a turn, if the \nHP of a Zygarde at 10% or 50% \nform is below half, it changes\ninto Complete form. If all Zy-\ngarde Cores and Zygarde Cells \nwere colleted, Zygarde stays p-\nermanently in its Complete for-\nm.");
@@ -2123,11 +2129,11 @@ static const u8 sMimicryDescriptionExtended[] = _("Depending on the terrain, the
 static const u8 sScreenCleanerDescriptionExtended[] = _("When the Pokémon is sent out,\nthe effects of Light Screen, \nReflect, and Aurora Veil end o-\nn both sides of the field.");
 static const u8 sSteelySpiritDescriptionExtended[] = _("The power of Steel-type moves\nused by the Pokémon and its a-\nllies is increased by 50%.");
 static const u8 sPerishBodyDescriptionExtended[] = _("When the Pokémon is hit with \na contact move, both the attac-\nker and the Pokémon will faint\nin three turns.");
-static const u8 sWanderingSpiritDescriptionExtended[] = _("The Pokémon exchanges abiliti-\nes with the attacker. Every se-\ncond turn, the Pokémon cannot \nuse a move. Both effects don't\naffects Ghost-type Pokémon.");
+static const u8 sWanderingSpiritDescriptionExtended[] = _("When the Pokémon is hit by a \ndamaging move, the Pokémon exc-\nhanges abilities with the atta-\ncker. Pokémon with Wandering S-\npirit cannot use a move every \nsecond turn. Both effects don'-\nt affects Ghost-type Pokémon. ");
 static const u8 sGorillaTacticsDescriptionExtended[] = _("Boosts the Pokémon's Attack b-\ny 50%, but limits the Pokémon \nto using only one move.");
 static const u8 sNeutralizingGasDescriptionExtended[] = _("Neutralizing Gas suppresses t-\nhe effects of abilities of oth-\ner Pokémon currently in battle\n.");
 static const u8 sPastelVeilDescriptionExtended[] = _("Prevents the Pokémon and its \nallies from being afflicted by\npoison. It also heals the poi-\nsoned status condition of alli-\nes if the Pokémon is sent out \ninto battle.");
-static const u8 sHungerSwitchDescriptionExtended[] = _("At the end of the turn during\nthe Full Belly Mode, Morpeko \nstarts getting angry because o-\nf hunger, changing to Hangry M-\node. During Hangry Mode, incre-\nases Morpeko's Attack and Spec-\nial Attack stats by 50%.");
+static const u8 sHungerSwitchDescriptionExtended[] = _("At the end of the turn during\nthe Full Belly Mode, Morpeko \nstarts getting angry because o-\nf hunger, changing to Hangry m-\node. During Hangry mode, incre-\nases Morpeko's Attack and Spec-\nial Attack stats by 50%.");
 static const u8 sQuickDrawDescriptionExtended[] = _("If the Pokémon selects a dama-\nging move, it has a 30% chance\nof going first in its priorit-\ny bracket. ");
 static const u8 sUnseenFistDescriptionExtended[] = _("When using a contact move, th-\ne Pokémon ignore protection mo-\nves in effect for their target-\ns.");
 static const u8 sCuriousMedicineDescriptionExtended[] = _("When the Pokémon enters the b-\nattle, stat stages of ally Pok-\némon are reset to 0.");
@@ -2201,7 +2207,7 @@ static const u8 sBigLeavesDescriptionExtended[] = _("The Pokémon uses moves and
 static const u8 sCurseSurgeDescriptionExtended[] = _("When the Pokémon enters the b-\nattle, it creates the effect o-\nf the move Cursed Terrain on t-\nhe battlefield for five turns.\nCursed Terrain: Increases the\npower of Ghost-type moves by \n30%, prevents healing effects \nof non-Ghost- or Dark-type Pok-\némon and Phantom Force and Sha-\ndow Force are immediately exec-\nuted by grounded Pokémon.");
 static const u8 sExpertiseDescriptionExtended[] = _("The first damaging move in or-\nder in the Pokémon's movepool \nthat isn't the same type of th-\ne Pokémon will gain same-type \nattack bonus regarless its typ-\ne.");
 static const u8 sForstbiteDescriptionExtended[] = _("When the Pokémon attacks or i-\ns attacked by a move that make-\ns contact, there is a 30% chan-\nce that the opposing Pokémon w-\nill get a frosbite.");
-static const u8 sFullBellyModeDescriptionExtended[] = _("At the end of the turn during\nthe Hangry Mode, Morpeko eats\na berry seed from its pouch, \nchanging to Full Belly Mode wh-\nile restoring 1/6 of its maxim-\num HP. Each activation increas-\nes the berry eaten count by on-\ne.");
+static const u8 sFullBellyModeDescriptionExtended[] = _("At the end of the turn during\nthe Hangry mode, Morpeko eats\na berry seed from its pouch, \nchanging to Full Belly mode wh-\nile restoring 1/6 of its maxim-\num HP. Each activation increas-\nes the berry eaten count by on-\ne.");
 static const u8 sHangryModeDescriptionExtended[] = _("During Hangry Mode, increases\nMorpeko's Attack and Special \nAttack stats by 50%.");
 static const u8 sGiantWingsDescriptionExtended[] = _("Boosts the power of wing and \nwind moves by 50%. Also, if th-\ne Pokémon uses Tailwind its du-\nration is increased to 6 turns\n.");
 static const u8 sHibernateDescriptionExtended[] = _("If the Pokémon eats a berry, \nhe becomes ready to Hibernate,\nbecoming sleep and restore it-\ns HP to maximum. If the Pokémo-\nn is asleep or loafing around,\nrestores the Pokémon's HP by \n1/8 of its maximum HP.");
@@ -2466,6 +2472,8 @@ static const u8 sKamenRiderDescriptionExtended[] = _("Adds the Fighting-type to 
 static const u8 sUltimateShowdownDescriptionExtended[] = _("For the first time in battle,\nwhen the HP of the Pokémon dr-\nops below half, it enters in S-\nhowdown Mode, increasing all s-\ntats by one stage, but losing \n1/16 of its maximum HP at the \nend of each turn. The Pokémon \ncannot faint due to this effec-\nt.");
 static const u8 sBattleNetworkDescriptionExtended[] = _("If there is a Ceruledge with \nNoise Change in your party, th-\nis Pokémon Ghost-type moves ga-\nin same-type attack bonus rega-\nrdless its typing and 25% of d-\namage to the target by damagin-\ng move is restored to the user\nas HP.");
 static const u8 sNoiseChangeDescriptionExtended[] = _("If there is an Armarouge with\nBattle Network in your party,\nthis Pokémon Psychic-type mov-\nes gain same-type attack bonus\nregardless its typing and red-\nuces damage from “supereffecti-\nve” moves by 25%.");
+static const u8 sCallReinforcementDescriptionExtended[] = _("If the Pokémon is level 20 or\nhigher, it will regain 1/16 o-\nf its maximum HP at the end of\neach turn.");
+static const u8 sSoloLevelingDescriptionExtended[] = _("If the Pokémon is level 50 or\nhigher, all stats are tripled\nduring its Solo form.");
 
 const u8 *const gAbilityDescriptionExtendedPointers[ABILITIES_COUNT] =
 {
@@ -3067,4 +3075,6 @@ const u8 *const gAbilityDescriptionExtendedPointers[ABILITIES_COUNT] =
     [ABILITY_ULTIMATE_SHOWDOWN] = sUltimateShowdownDescriptionExtended,
     [ABILITY_BATTLE_NETWORK] = sBattleNetworkDescriptionExtended,
     [ABILITY_NOISE_CHANGE] = sNoiseChangeDescriptionExtended,
+    [ABILITY_CALL_REINFORCEMENT] = sCallReinforcementDescriptionExtended,
+    [ABILITY_SOLO_LEVELING] = sSoloLevelingDescriptionExtended,
 };

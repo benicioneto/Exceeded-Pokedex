@@ -42,16 +42,16 @@ static const u8 sScratchDescription[] = _(
     "sharp claws.");
 
 static const u8 sViseGripDescription[] = _(
-    "Grips the foe with large and\n"
-    "powerful pincers.");
+    "Grips the foe with pincers.\n"
+    "High critical-hit ratio.");
 
 static const u8 sGuillotineDescription[] = _(
     "A powerful pincer attack.\n"
     "High critical-hit ratio.");
 
 static const u8 sRazorWindDescription[] = _(
-    "A 2-turn move that strikes\n"
-    "the foe on the 2nd turn.");
+    "A 2-turn move that raises\n"
+    "Speed on the 1nd turn.");
 
 static const u8 sSwordsDanceDescription[] = _(
     "A fighting dance that\n"
@@ -190,8 +190,8 @@ static const u8 sSingDescription[] = _(
     "foe into a deep slumber.");
 
 static const u8 sSupersonicDescription[] = _(
-    "Emits bizarre sound waves\n"
-    "that may confuse the foe.");
+    "May confuse the foe and\n"
+    "lower Evasion stat.");
 
 static const u8 sSonicBoomDescription[] = _(
     "Damage scales with user\n"
@@ -243,11 +243,11 @@ static const u8 sPsybeamDescription[] = _(
 
 static const u8 sBubbleBeamDescription[] = _(
     "Forcefully sprays bubbles\n"
-    "that may lower Speed.");
+    "that lowers Speed.");
 
 static const u8 sAuroraBeamDescription[] = _(
     "Fires a rainbow-colored\n"
-    "beam that may lower Attack.");
+    "beam that lowers Attack.");
 
 static const u8 sHyperBeamDescription[] = _(
     "Powerful, but leaves the\n"
@@ -291,7 +291,7 @@ static const u8 sMegaDrainDescription[] = _(
 
 static const u8 sLeechSeedDescription[] = _(
     "Plants a seed on the foe to\n"
-    "steal HP on every turn.");
+    "drain HP on every turn.");
 
 static const u8 sGrowthDescription[] = _(
     "Forces the body to grow\n"
@@ -551,7 +551,7 @@ static const u8 sGlareDescription[] = _(
 
 static const u8 sDreamEaterDescription[] = _(
     "Inflicts double damage on\n"
-    "a sleeping foe. Steal HP.");
+    "a sleeping foe. Drains HP.");
 
 static const u8 sPoisonGasDescription[] = _(
     "Envelops the foe in a toxic\n"
@@ -562,7 +562,7 @@ static const u8 sBarrageDescription[] = _(
     "foe 2 to 5 times.");
 
 static const u8 sLeechLifeDescription[] = _(
-    "An attack that steals half\n"
+    "An attack that drains half\n"
     "the damage inflicted.");
 
 static const u8 sLovelyKissDescription[] = _(
@@ -806,7 +806,7 @@ static const u8 sSandstormDescription[] = _(
     "rages for several turns.");
 
 static const u8 sGigaDrainDescription[] = _(
-    "An attack that steals half\n"
+    "An attack that drains half\n"
     "the damage inflicted.");
 
 static const u8 sEndureDescription[] = _(
@@ -894,8 +894,8 @@ static const u8 sDynamicPunchDescription[] = _(
     "confusion, but inaccurate.");
 
 static const u8 sMegahornDescription[] = _(
-    "Ignores Defense stages.\n"
-    "Matches user's first type.");
+    "A brutal out-thrust horns.\n"
+    "Ignores Defense stages.");
 
 static const u8 sDragonBreathDescription[] = _(
     "Super effective on Dragon-\n"
@@ -3535,7 +3535,7 @@ static const u8 sHELL_GATEDescription[] = _(
     "inflicts user's missing HP.");
 
 static const u8 sCORDYCEPSDescription[] = _(
-    "A Fungus that steal HP\n"
+    "A Fungus that drain HP\n"
     "and offensive stats.");
 
 static const u8 sAQUA_FANGDescription[] = _(
@@ -3596,15 +3596,15 @@ static const u8 sTRASHDescription[] = _(
 
 static const u8 sHEAT_SIPHONDescription[] = _(
     "Super effective on Fire-\n"
-    "types. Steal heat.");
+    "types. Drains heat.");
 
 static const u8 sDESPAIR_KISSDescription[] = _(
     "An attack that absorbs over\n"
     "half the damage inflicted.");
 
 static const u8 sAURORA_DANCEDescription[] = _(
-    "Boosts all stats, but\n"
-    "only usable with hail once.");
+    "Boosts all stats, but only\n"
+    "usable on hail once.");
 
 static const u8 sMUSTARD_GASDescription[] = _(
     "Poison-type {PKMN} gain\n"
@@ -3698,6 +3698,22 @@ static const u8 sSOUL_ENERGYDescription[] = _(
     "The user exhaust its soul\n"
     "to damage everything around.");
 
+static const u8 sJACK_O_LANTERNDescription[] = _(
+    "Ghost-type {PKMN} gain STAB.\n"
+    "Lowers target's Speed stat.");
+
+static const u8 sEERIE_TUNEDescription[] = _(
+    "Saps the foe's Sp. Atk to\n"
+    "heal HP, then drops Sp. Atk.");
+
+static const u8 sHALLOWEENDescription[] = _(
+    "Boosts all stats, but only\n"
+    "usable on curse terrain once.");
+
+static const u8 sDOUBLE_LARIATDescription[] = _(
+    "A move that inflicts damage.\n"
+    "Others can join in too.");
+
 // MOVE_NONE is ignored in this table. Make sure to always subtract 1 before getting the right pointer.
 const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
 {
@@ -3734,7 +3750,7 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_FURY_ATTACK - 1] = sFuryAttackDescription,
     [MOVE_HORN_DRILL - 1] = sHornDrillDescription,
     [MOVE_TACKLE - 1] = sTackleDescription,
-    [MOVE_BODY_SLAM - 1] = sHEAVY_SLAMDescription,
+    [MOVE_BODY_SLAM - 1] = sBodySlamDescription,
     [MOVE_WRAP - 1] = sWrapDescription,
     [MOVE_TAKE_DOWN - 1] = sTakeDownDescription,
     [MOVE_THRASH - 1] = sThrashDescription,
@@ -4646,4 +4662,8 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_PUNISHING_KICK - 1] = sPUNISHING_KICKDescription,
     [MOVE_FLYING_SIDE_KICK - 1] = sFLYING_SIDE_KICKDescription,
     [MOVE_SOUL_ENERGY - 1] = sSOUL_ENERGYDescription,
+    [MOVE_JACK_O_LANTERN - 1] = sJACK_O_LANTERNDescription,
+    [MOVE_EERIE_TUNE - 1] = sEERIE_TUNEDescription,
+    [MOVE_HALLOWEEN - 1] = sHALLOWEENDescription,
+    [MOVE_DOUBLE_LARIAT - 1] = sDOUBLE_LARIATDescription,
 };

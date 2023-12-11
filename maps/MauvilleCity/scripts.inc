@@ -110,10 +110,10 @@ MauvilleCity_EventScript_Wally::
 	end
 
 MauvilleCity_EventScript_BattleWallyPrompt::
-	compare VAR_RESULT, YES
-	call_if_eq MauvilleCity_EventScript_BattleWally
 	compare VAR_RESULT, NO
 	goto_if_eq MauvilleCity_EventScript_DeclineWallyBattle
+	compare VAR_RESULT, YES
+	call_if_eq MauvilleCity_EventScript_BattleWally
 	closemessage
 	switch VAR_FACING
 	case DIR_NORTH, MauvilleCity_EventScript_WallyAndUncleExitNorth

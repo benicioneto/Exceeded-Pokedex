@@ -17,7 +17,7 @@ Route111_OldLadysRestStop_EventScript_OldLady::
 	end
 
 Route111_OldLadysRestStop_EventScript_Rest::
-	specialvar VAR_RESULT, IsPokecenterChallengeActivated
+	specialvar VAR_RESULT, IsPokecenterBlockedChallengeActivated
 	compare VAR_RESULT, TRUE
     goto_if_eq Route111_OldLadysRestStop_EventScript_Rest_PokecenterChallenge
 	msgbox Route111_OldLadysRestStop_Text_TakeYourTimeRestUp, MSGBOX_DEFAULT
