@@ -58,7 +58,7 @@ PetalburgCity_Gym_EventScript_MoveNormanToEntrance::
 	return
 
 PetalburgCity_Gym_EventScript_CheckNormanForRematch::
-	setorcopyvar VAR_TRAINER_BATTLE_OPPONENT_A, TRAINER_NORMAN_1
+	setorcopyvar VAR_TRAINER_BATTLE_OPPONENT_A, TRAINER_GYM_LEADER_NORMAN_1
 	specialvar VAR_RESULT, IsTrainerReadyForRematch
 	compare VAR_RESULT, TRUE
 	goto_if_eq PetalburgCity_Gym_EventScript_DontMoveNormanToFront
@@ -375,7 +375,7 @@ PetalburgCity_Gym_EventScript_GiveFacade2::
 	end
 
 PetalburgCity_Gym_EventScript_NormanRematch::
-	trainerbattle_rematch_double TRAINER_NORMAN_1, PetalburgCity_Gym_Text_NormanPreRematch, PetalburgCity_Gym_Text_NormanRematchDefeat, PetalburgCity_Gym_Text_NormanRematchNeedTwoMons
+	trainerbattle_rematch_double TRAINER_GYM_LEADER_NORMAN_1, PetalburgCity_Gym_Text_NormanPreRematch, PetalburgCity_Gym_Text_NormanRematchDefeat, PetalburgCity_Gym_Text_NormanRematchNeedTwoMons
 	msgbox PetalburgCity_Gym_Text_NormanPostRematch, MSGBOX_AUTOCLOSE
 	end
 
@@ -409,7 +409,7 @@ PetalburgCity_Gym_EventScript_GiveEnigmaBerry::
 
 PetalburgCity_Gym_EventScript_NormanBattle::
 	msgbox PetalburgCity_Gym_Text_NormanIntro, MSGBOX_DEFAULT
-	trainerbattle_no_intro TRAINER_NORMAN_1, PetalburgCity_Gym_Text_NormanDefeat
+	trainerbattle_no_intro TRAINER_GYM_LEADER_NORMAN_1, PetalburgCity_Gym_Text_NormanDefeat
 	call EventScript_RocketEdition_TryStealPokemon
 	message PetalburgCity_Gym_Text_ReceivedBalanceBadge
 	waitmessage

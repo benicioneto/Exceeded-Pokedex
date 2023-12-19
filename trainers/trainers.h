@@ -4175,7 +4175,7 @@ const struct Trainer gTrainers[] = {
         .hardparty = {.HardParty = sParty_Walter5Hard},
     },
 
-    [TRAINER_SIDNEY] =
+    [TRAINER_ELITE_FOUR_SIDNEY] =
     {
         .partyFlags = 0,
         .trainerClass = TRAINER_CLASS_ELITE_FOUR,
@@ -4191,7 +4191,7 @@ const struct Trainer gTrainers[] = {
         .hardparty = {.HardParty = sParty_SidneyHard},
     },
 
-    [TRAINER_PHOEBE] =
+    [TRAINER_ELITE_FOUR_PHOEBE] =
     {
         .partyFlags = 0,
         .trainerClass = TRAINER_CLASS_ELITE_FOUR,
@@ -4207,7 +4207,7 @@ const struct Trainer gTrainers[] = {
         .hardparty = {.HardParty = sParty_PhoebeHard},
     },
 
-    [TRAINER_GLACIA] =
+    [TRAINER_ELITE_FOUR_GLACIA] =
     {
         .partyFlags = 0,
         .trainerClass = TRAINER_CLASS_ELITE_FOUR,
@@ -4223,7 +4223,7 @@ const struct Trainer gTrainers[] = {
         .hardparty = {.HardParty = sParty_GlaciaHard},
     },
 
-    [TRAINER_DRAKE] =
+    [TRAINER_ELITE_FOUR_DRAKE] =
     {
         .partyFlags = 0,
         .trainerClass = TRAINER_CLASS_ELITE_FOUR,
@@ -4239,7 +4239,7 @@ const struct Trainer gTrainers[] = {
         .hardparty = {.HardParty = sParty_DrakeHard},
     },
 
-    [TRAINER_ROXANNE_1] =
+    [TRAINER_GYM_LEADER_ROXANNE_1] =
     {
         .partyFlags = 0,
         .trainerClass = TRAINER_CLASS_LEADER,
@@ -4255,7 +4255,7 @@ const struct Trainer gTrainers[] = {
         .hardparty = {.HardParty = sParty_Roxanne1Hard},
     },
 
-    [TRAINER_BRAWLY_1] =
+    [TRAINER_GYM_LEADER_BRAWLY_1] =
     {
         .partyFlags = 0,
         .trainerClass = TRAINER_CLASS_LEADER,
@@ -4271,7 +4271,7 @@ const struct Trainer gTrainers[] = {
         .hardparty = {.HardParty = sParty_Brawly1Hard},
     },
 
-    [TRAINER_WATTSON_1] =
+    [TRAINER_GYM_LEADER_WATTSON_1] =
     {
         .partyFlags = 0,
         .trainerClass = TRAINER_CLASS_LEADER,
@@ -4287,7 +4287,7 @@ const struct Trainer gTrainers[] = {
         .hardparty = {.HardParty = sParty_Wattson1Hard},
     },
 
-    [TRAINER_FLANNERY_1] =
+    [TRAINER_GYM_LEADER_FLANNERY_1] =
     {
         .partyFlags = 0,
         .trainerClass = TRAINER_CLASS_LEADER,
@@ -4303,7 +4303,7 @@ const struct Trainer gTrainers[] = {
         .hardparty = {.HardParty = sParty_Flannery1Hard},
     },
 
-    [TRAINER_NORMAN_1] =
+    [TRAINER_GYM_LEADER_NORMAN_1] =
     {
         .partyFlags = 0,
         .trainerClass = TRAINER_CLASS_LEADER,
@@ -4319,7 +4319,7 @@ const struct Trainer gTrainers[] = {
         .hardparty = {.HardParty = sParty_Norman1Hard},
     },
 
-    [TRAINER_WINONA_1] =
+    [TRAINER_GYM_LEADER_WINONA_1] =
     {
         .partyFlags = 0,
         .trainerClass = TRAINER_CLASS_LEADER,
@@ -4335,7 +4335,7 @@ const struct Trainer gTrainers[] = {
         .hardparty = {.HardParty = sParty_Winona1Hard},
     },
 
-    [TRAINER_TATE_AND_LIZA_1] =
+    [TRAINER_GYM_LEADER_TATE_AND_LIZA_1] =
     {
         .partyFlags = 0,
         .trainerClass = TRAINER_CLASS_LEADER,
@@ -4351,7 +4351,7 @@ const struct Trainer gTrainers[] = {
         .hardparty = {.HardParty = sParty_TateAndLiza1Hard},
     },
 
-    [TRAINER_WALLACE_1] =
+    [TRAINER_GYM_LEADER_WALLACE_1] =
     {
         .partyFlags = 0,
         .trainerClass = TRAINER_CLASS_LEADER,
@@ -5359,7 +5359,7 @@ const struct Trainer gTrainers[] = {
         .hardparty = {.HardParty = sParty_TimmyHard},
     },
 
-    [TRAINER_WALLACE] =
+    [TRAINER_GYM_LEADER_WALLACE] =
     {
         .partyFlags = 0,
         .trainerClass = TRAINER_CLASS_CHAMPION,
@@ -12379,7 +12379,7 @@ const struct Trainer gTrainers[] = {
         .hardparty = {.HardParty = sParty_MayRustboroTorchicHard},
     },
 
-    [TRAINER_ROXANNE_2] =
+    [TRAINER_GYM_LEADER_ROXANNE_2] =
     {
         .partyFlags = 0,
         .trainerClass = TRAINER_CLASS_LEADER,
@@ -12395,7 +12395,7 @@ const struct Trainer gTrainers[] = {
         .hardparty = {.HardParty = sParty_Roxanne2Hard},
     },
 
-    [TRAINER_ROXANNE_3] =
+    [TRAINER_GYM_LEADER_ROXANNE_3] =
     {
         .partyFlags = 0,
         .trainerClass = TRAINER_CLASS_LEADER,
@@ -12411,7 +12411,7 @@ const struct Trainer gTrainers[] = {
         .hardparty = {.HardParty = sParty_Roxanne3Hard},
     },
 
-    [TRAINER_ROXANNE_4] =
+    [TRAINER_GYM_LEADER_ROXANNE_4] =
     {
         .partyFlags = 0,
         .trainerClass = TRAINER_CLASS_LEADER,
@@ -12427,7 +12427,7 @@ const struct Trainer gTrainers[] = {
         .hardparty = {.HardParty = sParty_Roxanne4Hard},
     },
 
-    [TRAINER_ROXANNE_5] =
+    [TRAINER_GYM_LEADER_ROXANNE_5] =
     {
         .partyFlags = 0,
         .trainerClass = TRAINER_CLASS_LEADER,
@@ -12443,7 +12443,7 @@ const struct Trainer gTrainers[] = {
         .hardparty = {.HardParty = sParty_Roxanne5Hard},
     },
 
-    [TRAINER_BRAWLY_2] =
+    [TRAINER_GYM_LEADER_BRAWLY_2] =
     {
         .partyFlags = 0,
         .trainerClass = TRAINER_CLASS_LEADER,
@@ -12459,7 +12459,7 @@ const struct Trainer gTrainers[] = {
         .hardparty = {.HardParty = sParty_Brawly2Hard},
     },
 
-    [TRAINER_BRAWLY_3] =
+    [TRAINER_GYM_LEADER_BRAWLY_3] =
     {
         .partyFlags = 0,
         .trainerClass = TRAINER_CLASS_LEADER,
@@ -12475,7 +12475,7 @@ const struct Trainer gTrainers[] = {
         .hardparty = {.HardParty = sParty_Brawly3Hard},
     },
 
-    [TRAINER_BRAWLY_4] =
+    [TRAINER_GYM_LEADER_BRAWLY_4] =
     {
         .partyFlags = 0,
         .trainerClass = TRAINER_CLASS_LEADER,
@@ -12491,7 +12491,7 @@ const struct Trainer gTrainers[] = {
         .hardparty = {.HardParty = sParty_Brawly4Hard},
     },
 
-    [TRAINER_BRAWLY_5] =
+    [TRAINER_GYM_LEADER_BRAWLY_5] =
     {
         .partyFlags = 0,
         .trainerClass = TRAINER_CLASS_LEADER,
@@ -12507,7 +12507,7 @@ const struct Trainer gTrainers[] = {
         .hardparty = {.HardParty = sParty_Brawly5Hard},
     },
 
-    [TRAINER_WATTSON_2] =
+    [TRAINER_GYM_LEADER_WATTSON_2] =
     {
         .partyFlags = 0,
         .trainerClass = TRAINER_CLASS_LEADER,
@@ -12523,7 +12523,7 @@ const struct Trainer gTrainers[] = {
         .hardparty = {.HardParty = sParty_Wattson2Hard},
     },
 
-    [TRAINER_WATTSON_3] =
+    [TRAINER_GYM_LEADER_WATTSON_3] =
     {
         .partyFlags = 0,
         .trainerClass = TRAINER_CLASS_LEADER,
@@ -12539,7 +12539,7 @@ const struct Trainer gTrainers[] = {
         .hardparty = {.HardParty = sParty_Wattson3Hard},
     },
 
-    [TRAINER_WATTSON_4] =
+    [TRAINER_GYM_LEADER_WATTSON_4] =
     {
         .partyFlags = 0,
         .trainerClass = TRAINER_CLASS_LEADER,
@@ -12555,7 +12555,7 @@ const struct Trainer gTrainers[] = {
         .hardparty = {.HardParty = sParty_Wattson4Hard},
     },
 
-    [TRAINER_WATTSON_5] =
+    [TRAINER_GYM_LEADER_WATTSON_5] =
     {
         .partyFlags = 0,
         .trainerClass = TRAINER_CLASS_LEADER,
@@ -12571,7 +12571,7 @@ const struct Trainer gTrainers[] = {
         .hardparty = {.HardParty = sParty_Wattson5Hard},
     },
 
-    [TRAINER_FLANNERY_2] =
+    [TRAINER_GYM_LEADER_FLANNERY_2] =
     {
         .partyFlags = 0,
         .trainerClass = TRAINER_CLASS_LEADER,
@@ -12587,7 +12587,7 @@ const struct Trainer gTrainers[] = {
         .hardparty = {.HardParty = sParty_Flannery2Hard},
     },
 
-    [TRAINER_FLANNERY_3] =
+    [TRAINER_GYM_LEADER_FLANNERY_3] =
     {
         .partyFlags = 0,
         .trainerClass = TRAINER_CLASS_LEADER,
@@ -12603,7 +12603,7 @@ const struct Trainer gTrainers[] = {
         .hardparty = {.HardParty = sParty_Flannery3Hard},
     },
 
-    [TRAINER_FLANNERY_4] =
+    [TRAINER_GYM_LEADER_FLANNERY_4] =
     {
         .partyFlags = 0,
         .trainerClass = TRAINER_CLASS_LEADER,
@@ -12619,7 +12619,7 @@ const struct Trainer gTrainers[] = {
         .hardparty = {.HardParty = sParty_Flannery4Hard},
     },
 
-    [TRAINER_FLANNERY_5] =
+    [TRAINER_GYM_LEADER_FLANNERY_5] =
     {
         .partyFlags = 0,
         .trainerClass = TRAINER_CLASS_LEADER,
@@ -12635,7 +12635,7 @@ const struct Trainer gTrainers[] = {
         .hardparty = {.HardParty = sParty_Flannery5Hard},
     },
 
-    [TRAINER_NORMAN_2] =
+    [TRAINER_GYM_LEADER_NORMAN_2] =
     {
         .partyFlags = 0,
         .trainerClass = TRAINER_CLASS_LEADER,
@@ -12651,7 +12651,7 @@ const struct Trainer gTrainers[] = {
         .hardparty = {.HardParty = sParty_Norman2Hard},
     },
 
-    [TRAINER_NORMAN_3] =
+    [TRAINER_GYM_LEADER_NORMAN_3] =
     {
         .partyFlags = 0,
         .trainerClass = TRAINER_CLASS_LEADER,
@@ -12667,7 +12667,7 @@ const struct Trainer gTrainers[] = {
         .hardparty = {.HardParty = sParty_Norman3Hard},
     },
 
-    [TRAINER_NORMAN_4] =
+    [TRAINER_GYM_LEADER_NORMAN_4] =
     {
         .partyFlags = 0,
         .trainerClass = TRAINER_CLASS_LEADER,
@@ -12683,7 +12683,7 @@ const struct Trainer gTrainers[] = {
         .hardparty = {.HardParty = sParty_Norman4Hard},
     },
 
-    [TRAINER_NORMAN_5] =
+    [TRAINER_GYM_LEADER_NORMAN_5] =
     {
         .partyFlags = 0,
         .trainerClass = TRAINER_CLASS_LEADER,
@@ -12699,7 +12699,7 @@ const struct Trainer gTrainers[] = {
         .hardparty = {.HardParty = sParty_Norman5Hard},
     },
 
-    [TRAINER_WINONA_2] =
+    [TRAINER_GYM_LEADER_WINONA_2] =
     {
         .partyFlags = 0,
         .trainerClass = TRAINER_CLASS_LEADER,
@@ -12715,7 +12715,7 @@ const struct Trainer gTrainers[] = {
         .hardparty = {.HardParty = sParty_Winona2Hard},
     },
 
-    [TRAINER_WINONA_3] =
+    [TRAINER_GYM_LEADER_WINONA_3] =
     {
         .partyFlags = 0,
         .trainerClass = TRAINER_CLASS_LEADER,
@@ -12731,7 +12731,7 @@ const struct Trainer gTrainers[] = {
         .hardparty = {.HardParty = sParty_Winona3Hard},
     },
 
-    [TRAINER_WINONA_4] =
+    [TRAINER_GYM_LEADER_WINONA_4] =
     {
         .partyFlags = 0,
         .trainerClass = TRAINER_CLASS_LEADER,
@@ -12747,7 +12747,7 @@ const struct Trainer gTrainers[] = {
         .hardparty = {.HardParty = sParty_Winona4Hard},
     },
 
-    [TRAINER_WINONA_5] =
+    [TRAINER_GYM_LEADER_WINONA_5] =
     {
         .partyFlags = 0,
         .trainerClass = TRAINER_CLASS_LEADER,
@@ -12763,7 +12763,7 @@ const struct Trainer gTrainers[] = {
         .hardparty = {.HardParty = sParty_Winona5Hard},
     },
 
-    [TRAINER_TATE_AND_LIZA_2] =
+    [TRAINER_GYM_LEADER_TATE_AND_LIZA_2] =
     {
         .partyFlags = 0,
         .trainerClass = TRAINER_CLASS_LEADER,
@@ -12779,7 +12779,7 @@ const struct Trainer gTrainers[] = {
         .hardparty = {.HardParty = sParty_TateAndLiza2Hard},
     },
 
-    [TRAINER_TATE_AND_LIZA_3] =
+    [TRAINER_GYM_LEADER_TATE_AND_LIZA_3] =
     {
         .partyFlags = 0,
         .trainerClass = TRAINER_CLASS_LEADER,
@@ -12795,7 +12795,7 @@ const struct Trainer gTrainers[] = {
         .hardparty = {.HardParty = sParty_TateAndLiza3Hard},
     },
 
-    [TRAINER_TATE_AND_LIZA_4] =
+    [TRAINER_GYM_LEADER_TATE_AND_LIZA_4] =
     {
         .partyFlags = 0,
         .trainerClass = TRAINER_CLASS_LEADER,
@@ -12811,7 +12811,7 @@ const struct Trainer gTrainers[] = {
         .hardparty = {.HardParty = sParty_TateAndLiza4Hard},
     },
 
-    [TRAINER_TATE_AND_LIZA_5] =
+    [TRAINER_GYM_LEADER_TATE_AND_LIZA_5] =
     {
         .partyFlags = 0,
         .trainerClass = TRAINER_CLASS_LEADER,
@@ -12827,7 +12827,7 @@ const struct Trainer gTrainers[] = {
         .hardparty = {.HardParty = sParty_TateAndLiza5Hard},
     },
 
-    [TRAINER_WALLACE_2] =
+    [TRAINER_GYM_LEADER_WALLACE_2] =
     {
         .partyFlags = 0,
         .trainerClass = TRAINER_CLASS_LEADER,
@@ -12843,7 +12843,7 @@ const struct Trainer gTrainers[] = {
         .hardparty = {.HardParty = sParty_Wallace2Hard},
     },
 
-    [TRAINER_WALLACE_3] =
+    [TRAINER_GYM_LEADER_WALLACE_3] =
     {
         .partyFlags = 0,
         .trainerClass = TRAINER_CLASS_LEADER,
@@ -12859,7 +12859,7 @@ const struct Trainer gTrainers[] = {
         .hardparty = {.HardParty = sParty_Wallace3Hard},
     },
 
-    [TRAINER_WALLACE_4] =
+    [TRAINER_GYM_LEADER_WALLACE_4] =
     {
         .partyFlags = 0,
         .trainerClass = TRAINER_CLASS_LEADER,
@@ -12875,7 +12875,7 @@ const struct Trainer gTrainers[] = {
         .hardparty = {.HardParty = sParty_Wallace4Hard},
     },
 
-    [TRAINER_WALLACE_5] =
+    [TRAINER_GYM_LEADER_WALLACE_5] =
     {
         .partyFlags = 0,
         .trainerClass = TRAINER_CLASS_LEADER,
