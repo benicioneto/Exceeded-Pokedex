@@ -1097,7 +1097,7 @@ static const u8 sAssistDescription[] = _(
     "of the partner's moves.");
 
 static const u8 sIngrainDescription[] = _(
-    "Restores HP, become like\n"
+    "Restores HP, moves act like\n"
     "being affected by sunlight.");
 
 static const u8 sSuperpowerDescription[] = _(
@@ -3714,6 +3714,22 @@ static const u8 sDOUBLE_LARIATDescription[] = _(
     "A move that inflicts damage.\n"
     "Others can join in too.");
 
+static const u8 sWONDER_WISHDescription[] = _(
+    "Waggles a finger to use any\n"
+    "Pokémon move at random.");
+
+static const u8 sPLAY_WITH_MEDescription[] = _(
+    "For 3 turns, traps both\n"
+    "user and foe. Drains HP.");
+
+static const u8 sBACK_STABDescription[] = _(
+    "A 1st-turn move that flinch\n"
+    "and can be user vanished.");
+
+static const u8 sTHORN_TRAPDescription[] = _(
+    "For 3 turns, traps both\n"
+    "user and foe. Drains HP.");
+
 // MOVE_NONE is ignored in this table. Make sure to always subtract 1 before getting the right pointer.
 const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
 {
@@ -4666,4 +4682,8 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_EERIE_TUNE - 1] = sEERIE_TUNEDescription,
     [MOVE_HALLOWEEN - 1] = sHALLOWEENDescription,
     [MOVE_DOUBLE_LARIAT - 1] = sDOUBLE_LARIATDescription,
+    [MOVE_WONDER_WISH - 1] = sWONDER_WISHDescription,
+    [MOVE_PLAY_WITH_ME - 1] = sPLAY_WITH_MEDescription,
+    [MOVE_BACK_STAB - 1] = sBACK_STABDescription,
+    [MOVE_THORN_TRAP - 1] = sTHORN_TRAPDescription,
 };

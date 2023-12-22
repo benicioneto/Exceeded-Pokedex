@@ -1549,7 +1549,7 @@ PetalburgCity_Gym_Text_MaryPostBattle:
 	.string "There are some even stronger\n"
 	.string "Trainers waiting for you.\p"
 	.string "The left is the Defense Room, and\n"
-	.string "the right is the RECOVERY Room.\p"
+	.string "the right is the Recovery Room.\p"
 	.string "Your Pokémon's Attack power will be\n"
 	.string "on trial either way.$"
 

@@ -1004,6 +1004,10 @@ const u8 gMoveNames[MOVES_COUNT_DYNAMAX][MOVE_NAME_LENGTH + 1] =
     [MOVE_EERIE_TUNE] = _("Eerie Tune"),
     [MOVE_HALLOWEEN] = _("Halloween"),
     [MOVE_DOUBLE_LARIAT] = _("Double Lariat"),
+    [MOVE_WONDER_WISH] = _("Wonder Wish"),
+    [MOVE_PLAY_WITH_ME] = _("Play With Me"),
+    [MOVE_BACK_STAB] = _("Back Stab"),
+    [MOVE_THORN_TRAP] = _("Thorn Trap"),
 };
 
 static const u8 sText_Breakneck_Blitz[] = _("Breakneck Blitz");
