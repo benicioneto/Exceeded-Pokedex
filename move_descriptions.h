@@ -3724,7 +3724,7 @@ static const u8 sPLAY_WITH_MEDescription[] = _(
 
 static const u8 sBACK_STABDescription[] = _(
     "A 1st-turn move that flinch\n"
-    "and can be user vanished.");
+    "and can be used vanished.");
 
 static const u8 sTHORN_TRAPDescription[] = _(
     "For 3 turns, traps both\n"
