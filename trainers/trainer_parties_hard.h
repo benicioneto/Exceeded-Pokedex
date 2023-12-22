@@ -4215,8 +4215,7 @@ static const struct TrainerParty sParty_Wallace1Hard[] = {
     .evSatk = 255,
     .evSpd = 255,
     .nature = NATURE_MODEST,
-    //.abilityNum = HIDDEN_ABILITY,
-    .species = SPECIES_TATSUGIRI,
+    .species = SPECIES_TATSUGIRI_CURLY,
     .heldItem = {ITEM_SHELL_BELL, ITEM_LEFTOVERS, ITEM_MYSTIC_WATER},
     .moves = {MOVE_SURF, MOVE_ICE_BEAM, MOVE_MUDDY_WATER, MOVE_SWAMP_TERRAIN}
     },

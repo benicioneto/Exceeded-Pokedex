@@ -4038,21 +4038,21 @@ static const struct TrainerParty sParty_TateAndLiza1[] = {
 static const struct TrainerParty sParty_Wallace1[] = {
     {
     .iv = 255,
+    .lvl = 41,
+    .evSatk = 255,
+    .evSpd = 255,
+    .species = SPECIES_TATSUGIRI_CURLY,
+    .heldItem = {ITEM_NONE, ITEM_NONE},
+    .moves = {MOVE_SURF, MOVE_ICE_BEAM, MOVE_DRAGON_PULSE, MOVE_MUDDY_WATER}
+    },
+    {
+    .iv = 255,
     .lvl = 44,
     .evAtk = 255,
     .evHp = 255,
     .species = SPECIES_DONDOZO,
     .heldItem = {ITEM_NONE, ITEM_CHESTO_BERRY},
     .moves = {MOVE_REST, MOVE_EARTHQUAKE, MOVE_AQUA_TAIL, MOVE_ORDER_UP}
-    },
-    {
-    .iv = 255,
-    .lvl = 41,
-    .evSatk = 255,
-    .evSpd = 255,
-    .species = SPECIES_TATSUGIRI,
-    .heldItem = {ITEM_NONE, ITEM_NONE},
-    .moves = {MOVE_SURF, MOVE_ICE_BEAM, MOVE_DRAGON_PULSE, MOVE_MUDDY_WATER}
     },
     {
     .iv = 255,
