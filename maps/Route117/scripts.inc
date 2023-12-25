@@ -63,7 +63,7 @@ Route117_EventScript_RegisterIsaac::
 	waitmovement 0
 	msgbox Route117_Text_IsaacRegister, MSGBOX_DEFAULT
 	register_matchcall TRAINER_ISAAC_1
-	call EventScript_RocketEdition_TryStealPokemon
+	call EventScript_RocketEdition_TryStealPokemon_Return
 	release
 	end
 
@@ -86,7 +86,7 @@ Route117_EventScript_RegisterLydia::
 	waitmovement 0
 	msgbox Route117_Text_LydiaRegister, MSGBOX_DEFAULT
 	register_matchcall TRAINER_LYDIA_1
-	call EventScript_RocketEdition_TryStealPokemon
+	call EventScript_RocketEdition_TryStealPokemon_Return
 	release
 	end
 
@@ -109,7 +109,7 @@ Route117_EventScript_RegisterDylan::
 	waitmovement 0
 	msgbox Route117_Text_DylanRegister, MSGBOX_DEFAULT
 	register_matchcall TRAINER_DYLAN_1
-	call EventScript_RocketEdition_TryStealPokemon
+	call EventScript_RocketEdition_TryStealPokemon_Return
 	release
 	end
 
@@ -132,7 +132,7 @@ Route117_EventScript_RegisterMaria::
 	waitmovement 0
 	msgbox Route117_Text_MariaRegister, MSGBOX_DEFAULT
 	register_matchcall TRAINER_MARIA_1
-	call EventScript_RocketEdition_TryStealPokemon
+	call EventScript_RocketEdition_TryStealPokemon_Return
 	release
 	end
 
@@ -142,7 +142,7 @@ Route117_EventScript_RematchMaria::
 	end
 
 Route117_EventScript_Derek::
-	trainerbattle_single TRAINER_DEREK, Route117_Text_DerekIntro, Route117_Text_DerekDefeat, EventScript_RocketEdition_TryStealPokemon
+	trainerbattle_single TRAINER_DEREK, Route117_Text_DerekIntro, Route117_Text_DerekDefeat, EventScript_RocketEdition_TryStealPokemon_Releaseall
 	msgbox Route117_Text_DerekPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -158,7 +158,7 @@ Route117_EventScript_Anna::
 Route117_EventScript_RegisterAnna::
 	msgbox Route117_Text_AnnaAndMegRegister, MSGBOX_DEFAULT
 	register_matchcall TRAINER_ANNA_AND_MEG_1
-	call EventScript_RocketEdition_TryStealPokemon
+	call EventScript_RocketEdition_TryStealPokemon_Return
 	release
 	end
 
@@ -179,7 +179,7 @@ Route117_EventScript_Meg::
 Route117_EventScript_RegisterMeg::
 	msgbox Route117_Text_AnnaAndMegRegister, MSGBOX_DEFAULT
 	register_matchcall TRAINER_ANNA_AND_MEG_1
-	call EventScript_RocketEdition_TryStealPokemon
+	call EventScript_RocketEdition_TryStealPokemon_Return
 	release
 	end
 
@@ -189,17 +189,17 @@ Route117_EventScript_RematchMeg::
 	end
 
 Route117_EventScript_Melina::
-	trainerbattle_single TRAINER_MELINA, Route117_Text_MelinaIntro, Route117_Text_MelinaDefeat, EventScript_RocketEdition_TryStealPokemon
+	trainerbattle_single TRAINER_MELINA, Route117_Text_MelinaIntro, Route117_Text_MelinaDefeat, EventScript_RocketEdition_TryStealPokemon_Releaseall
 	msgbox Route117_Text_MelinaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route117_EventScript_Brandi::
-	trainerbattle_single TRAINER_BRANDI, Route117_Text_BrandiIntro, Route117_Text_BrandiDefeat, EventScript_RocketEdition_TryStealPokemon
+	trainerbattle_single TRAINER_BRANDI, Route117_Text_BrandiIntro, Route117_Text_BrandiDefeat, EventScript_RocketEdition_TryStealPokemon_Releaseall
 	msgbox Route117_Text_BrandiPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route117_EventScript_Aisha::
-	trainerbattle_single TRAINER_AISHA, Route117_Text_AishaIntro, Route117_Text_AishaDefeat, EventScript_RocketEdition_TryStealPokemon
+	trainerbattle_single TRAINER_AISHA, Route117_Text_AishaIntro, Route117_Text_AishaDefeat, EventScript_RocketEdition_TryStealPokemon_Releaseall
 	msgbox Route117_Text_AishaPostBattle, MSGBOX_AUTOCLOSE
 	end
 

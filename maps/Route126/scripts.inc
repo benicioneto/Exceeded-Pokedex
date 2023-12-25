@@ -7,37 +7,37 @@ Route126_OnTransition:
 	end
 
 Route126_EventScript_Barry::
-	trainerbattle_single TRAINER_BARRY, Route126_Text_BarryIntro, Route126_Text_BarryDefeat, EventScript_RocketEdition_TryStealPokemon
+	trainerbattle_single TRAINER_BARRY, Route126_Text_BarryIntro, Route126_Text_BarryDefeat, EventScript_RocketEdition_TryStealPokemon_Releaseall
 	msgbox Route126_Text_BarryPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route126_EventScript_Dean::
-	trainerbattle_single TRAINER_DEAN, Route126_Text_DeanIntro, Route126_Text_DeanDefeat, EventScript_RocketEdition_TryStealPokemon
+	trainerbattle_single TRAINER_DEAN, Route126_Text_DeanIntro, Route126_Text_DeanDefeat, EventScript_RocketEdition_TryStealPokemon_Releaseall
 	msgbox Route126_Text_DeanPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route126_EventScript_Nikki::
-	trainerbattle_single TRAINER_NIKKI, Route126_Text_NikkiIntro, Route126_Text_NikkiDefeat, EventScript_RocketEdition_TryStealPokemon
+	trainerbattle_single TRAINER_NIKKI, Route126_Text_NikkiIntro, Route126_Text_NikkiDefeat, EventScript_RocketEdition_TryStealPokemon_Releaseall
 	msgbox Route126_Text_NikkiPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route126_EventScript_Brenda::
-	trainerbattle_single TRAINER_BRENDA, Route126_Text_BrendaIntro, Route126_Text_BrendaDefeat, EventScript_RocketEdition_TryStealPokemon
+	trainerbattle_single TRAINER_BRENDA, Route126_Text_BrendaIntro, Route126_Text_BrendaDefeat, EventScript_RocketEdition_TryStealPokemon_Releaseall
 	msgbox Route126_Text_BrendaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route126_EventScript_Leonardo::
-	trainerbattle_single TRAINER_LEONARDO, Route126_Text_LeonardoIntro, Route126_Text_LeonardoDefeat, EventScript_RocketEdition_TryStealPokemon
+	trainerbattle_single TRAINER_LEONARDO, Route126_Text_LeonardoIntro, Route126_Text_LeonardoDefeat, EventScript_RocketEdition_TryStealPokemon_Releaseall
 	msgbox Route126_Text_LeonardoPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route126_EventScript_Isobel::
-	trainerbattle_single TRAINER_ISOBEL, Route126_Text_IsobelIntro, Route126_Text_IsobelDefeat, EventScript_RocketEdition_TryStealPokemon
+	trainerbattle_single TRAINER_ISOBEL, Route126_Text_IsobelIntro, Route126_Text_IsobelDefeat, EventScript_RocketEdition_TryStealPokemon_Releaseall
 	msgbox Route126_Text_IsobelPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route126_EventScript_Sienna::
-	trainerbattle_single TRAINER_SIENNA, Route126_Text_SiennaIntro, Route126_Text_SiennaDefeat, EventScript_RocketEdition_TryStealPokemon
+	trainerbattle_single TRAINER_SIENNA, Route126_Text_SiennaIntro, Route126_Text_SiennaDefeat, EventScript_RocketEdition_TryStealPokemon_Releaseall
 	msgbox Route126_Text_SiennaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -55,7 +55,7 @@ Route126_EventScript_RegisterPablo::
 	waitmovement 0
 	msgbox Route126_Text_PabloRegister, MSGBOX_DEFAULT
 	register_matchcall TRAINER_PABLO_1
-	call EventScript_RocketEdition_TryStealPokemon
+	call EventScript_RocketEdition_TryStealPokemon_Return
 	release
 	end
 

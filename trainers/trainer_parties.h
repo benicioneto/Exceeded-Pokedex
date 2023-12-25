@@ -3536,7 +3536,7 @@ static const struct TrainerParty sParty_Sidney[] = {
     .nature = NATURE_JOLLY,
     .species = SPECIES_BISHARP,
     .heldItem = {ITEM_FOCUS_SASH},
-    .moves = {MOVE_NIGHT_SLASH, MOVE_PSYCHO_CUT, MOVE_SWORDS_DANCE, MOVE_EXCALIBUR}
+    .moves = {MOVE_NIGHT_SLASH, MOVE_PSYCHO_CUT, MOVE_SWORDS_DANCE, MOVE_METAL_CLAW}
     },
     {
     .iv = 255,
@@ -3746,7 +3746,6 @@ static const struct TrainerParty sParty_Roxanne1[] = {
     .iv = 100,
     .lvl = 13,
     .species = SPECIES_SHUCKLE,
-    .lowHp = TRUE,
     .heldItem = {ITEM_NONE, ITEM_BERRY_JUICE},
     .moves = {MOVE_TOXIC, MOVE_SANDSTORM, MOVE_WRAP, MOVE_WITHDRAW}
     },
@@ -3775,7 +3774,6 @@ static const struct TrainerParty sParty_Brawly1[] = {
     .iv = 100,
     .lvl = 16,
     .species = SPECIES_HERACROSS,
-    .lowHp = TRUE,
     .heldItem = {ITEM_NONE, ITEM_COBA_BERRY},
     .moves = {MOVE_BRICK_BREAK, MOVE_HORN_ATTACK, MOVE_COUNTER, MOVE_BULK_UP}
     },
@@ -3816,7 +3814,6 @@ static const struct TrainerParty sParty_Wattson1[] = {
     .iv = 200,
     .lvl = 22,
     .species = SPECIES_ELECTABUZZ,
-    .lowHp = TRUE,
     .heldItem = {ITEM_NONE},
     .moves = {MOVE_CHARGE, MOVE_SHOCK_WAVE, MOVE_SWIFT, MOVE_ELECTRIC_TERRAIN}
     },
@@ -3858,7 +3855,6 @@ static const struct TrainerParty sParty_Flannery1[] = {
     .iv = 250,
     .lvl = 26,
     .species = SPECIES_CAMERUPT,
-    .lowHp = TRUE,
     .heldItem = {ITEM_NONE},
     .moves = {MOVE_ERUPTION, MOVE_EARTHQUAKE, MOVE_BURNING_TERRAIN, MOVE_LAVA_PLUME}
     },
@@ -3890,7 +3886,6 @@ static const struct TrainerParty sParty_Norman1[] = {
     .evAtk = 255,
     .evHp = 255,
     .species = SPECIES_LICKILICKY,
-    .lowHp = TRUE,
     .heldItem = {ITEM_NONE, ITEM_SITRUS_BERRY},
     .moves = {MOVE_POWER_WHIP, MOVE_FIRE_LASH, MOVE_GIGA_IMPACT, MOVE_LICK}
     },
@@ -3942,7 +3937,6 @@ static const struct TrainerParty sParty_Winona1[] = {
     .iv = 255,
     .lvl = 31,
     .species = SPECIES_STARAPTOR,
-    .lowHp = TRUE,
     .evAtk = 255,
     .evSpd = 255,
     .heldItem = {ITEM_SHELL_BELL, ITEM_LEFTOVERS},
@@ -3979,7 +3973,7 @@ static const struct TrainerParty sParty_TateAndLiza1[] = {
     .evDef = 255,
     .evSpd = 255,
     .species = SPECIES_CLAYDOL,
-    .heldItem = {ITEM_DEVIOLITE, ITEM_LEFTOVERS},
+    .heldItem = {ITEM_DEVIOLITE, ITEM_NONE},
     .moves = {MOVE_EARTHQUAKE, MOVE_EXPLOSION, MOVE_ROCK_SLIDE, MOVE_BULLDOZE}
     },
     {
@@ -3988,7 +3982,7 @@ static const struct TrainerParty sParty_TateAndLiza1[] = {
     .evSatk = 255,
     .evSpd = 255,
     .species = SPECIES_MEDICHAM,
-    .heldItem = {ITEM_DEVIOLITE, ITEM_SITRUS_BERRY},
+    .heldItem = {ITEM_DEVIOLITE, ITEM_NONE},
     .moves = {MOVE_CALM_MIND, MOVE_PSYCHIC, MOVE_FOCUS_BLAST, MOVE_RECOVER}
     },
     {
@@ -4019,7 +4013,6 @@ static const struct TrainerParty sParty_TateAndLiza1[] = {
     .evSpd = 255,
     .abilityNum = HIDDEN_ABILITY,
     .species = SPECIES_SOLROCK,
-    .lowHp = TRUE,
     .heldItem = {ITEM_SHELL_BELL, ITEM_LEFTOVERS},
     .moves = {MOVE_EARTHQUAKE, MOVE_COSMIC_POWER, MOVE_FLARE_BLITZ, MOVE_ROCK_SLIDE}
     },
@@ -4029,7 +4022,6 @@ static const struct TrainerParty sParty_TateAndLiza1[] = {
     .evSatk = 255,
     .evSpd = 255,
     .species = SPECIES_LUNATONE,
-    .lowHp = TRUE,
     .heldItem = {ITEM_SHELL_BELL, ITEM_LEFTOVERS},
     .moves = {MOVE_MOONBLAST, MOVE_PSYCHIC, MOVE_COSMIC_POWER, MOVE_ICE_BEAM}
     }
@@ -4062,7 +4054,7 @@ static const struct TrainerParty sParty_Wallace1[] = {
     .nature = NATURE_MODEST,
     .species = SPECIES_WHISCASH,
     .heldItem = {ITEM_SHELL_BELL, ITEM_NONE},
-    .moves = {MOVE_SURF, MOVE_MUDDY_WATER, MOVE_HYPER_VOICE, MOVE_SWAMP_TERRAIN}
+    .moves = {MOVE_SURF, MOVE_MUDDY_WATER, MOVE_SPARK, MOVE_AMNESIA}
     },
     {
     .iv = 255,
@@ -4070,7 +4062,6 @@ static const struct TrainerParty sParty_Wallace1[] = {
     .evSatk = 255,
     .evHp = 255,
     .species = SPECIES_OCTILLERY,
-    .lowHp = TRUE,
     .heldItem = {ITEM_NONE, ITEM_LEFTOVERS},
     .moves = {MOVE_RECOVER, MOVE_HYDRO_PUMP, MOVE_OCTAZOOKA, MOVE_ZAP_CANNON}
     },

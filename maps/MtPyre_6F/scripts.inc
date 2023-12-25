@@ -15,7 +15,7 @@ MtPyre_6F_EventScript_RegisterValerie::
 	waitmovement 0
 	msgbox MtPyre_6F_Text_ValerieRegister, MSGBOX_DEFAULT
 	register_matchcall TRAINER_VALERIE_1
-	call EventScript_RocketEdition_TryStealPokemon
+	call EventScript_RocketEdition_TryStealPokemon_Return
 	release
 	end
 
@@ -25,7 +25,7 @@ MtPyre_6F_EventScript_RematchValerie::
 	end
 
 MtPyre_6F_EventScript_Cedric::
-	trainerbattle_single TRAINER_CEDRIC, MtPyre_6F_Text_CedricIntro, MtPyre_6F_Text_CedricDefeat, EventScript_RocketEdition_TryStealPokemon
+	trainerbattle_single TRAINER_CEDRIC, MtPyre_6F_Text_CedricIntro, MtPyre_6F_Text_CedricDefeat, EventScript_RocketEdition_TryStealPokemon_Releaseall
 	msgbox MtPyre_6F_Text_CedricPostBattle, MSGBOX_AUTOCLOSE
 	end
 

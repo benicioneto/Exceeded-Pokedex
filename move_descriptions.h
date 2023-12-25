@@ -1834,7 +1834,7 @@ static const u8 sSHADOW_FORCEDescription[] = _(
 
 static const u8 sHONE_CLAWSDescription[] = _(
     "Sharpens its claws to raise\n"
-    "Attack and Accuracy.");
+    "Attack, Accuracy & crit.");
 
 static const u8 sWIDE_GUARDDescription[] = _(
     "Evades wide-ranging attacks\n"
@@ -3730,6 +3730,14 @@ static const u8 sTHORN_TRAPDescription[] = _(
     "For 3 turns, traps both\n"
     "user and foe. Drains HP.");
 
+static const u8 sZANTETSUKENDescription[] = _(
+    "Usable after using all\n"
+    "moves. KOs low HP foes.");
+
+static const u8 sDROP_WEIGHTSDescription[] = _(
+    "The Pokémon drops all held\n"
+    "items to increase Speed.");
+
 // MOVE_NONE is ignored in this table. Make sure to always subtract 1 before getting the right pointer.
 const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
 {
@@ -4686,4 +4694,6 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_PLAY_WITH_ME - 1] = sPLAY_WITH_MEDescription,
     [MOVE_BACK_STAB - 1] = sBACK_STABDescription,
     [MOVE_THORN_TRAP - 1] = sTHORN_TRAPDescription,
+    [MOVE_ZANTETSUKEN - 1] = sZANTETSUKENDescription,
+    [MOVE_DROP_WEIGHTS - 1] = sDROP_WEIGHTSDescription,
 };

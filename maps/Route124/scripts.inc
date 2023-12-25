@@ -11,12 +11,12 @@ Route124_EventScript_HuntersHouseSign::
 	end
 
 Route124_EventScript_Spencer::
-	trainerbattle_single TRAINER_SPENCER, Route124_Text_SpencerIntro, Route124_Text_SpencerDefeat, EventScript_RocketEdition_TryStealPokemon
+	trainerbattle_single TRAINER_SPENCER, Route124_Text_SpencerIntro, Route124_Text_SpencerDefeat, EventScript_RocketEdition_TryStealPokemon_Releaseall
 	msgbox Route124_Text_SpencerPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route124_EventScript_Roland::
-	trainerbattle_single TRAINER_ROLAND, Route124_Text_RolandIntro, Route124_Text_RolandDefeat, EventScript_RocketEdition_TryStealPokemon
+	trainerbattle_single TRAINER_ROLAND, Route124_Text_RolandIntro, Route124_Text_RolandDefeat, EventScript_RocketEdition_TryStealPokemon_Releaseall
 	msgbox Route124_Text_RolandPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -34,7 +34,7 @@ Route124_EventScript_RegisterJenny::
 	waitmovement 0
 	msgbox Route124_Text_JennyRegister, MSGBOX_DEFAULT
 	register_matchcall TRAINER_JENNY_1
-	call EventScript_RocketEdition_TryStealPokemon
+	call EventScript_RocketEdition_TryStealPokemon_Return
 	release
 	end
 
@@ -44,12 +44,12 @@ Route124_EventScript_RematchJenny::
 	end
 
 Route124_EventScript_Grace::
-	trainerbattle_single TRAINER_GRACE, Route124_Text_GraceIntro, Route124_Text_GraceDefeat, EventScript_RocketEdition_TryStealPokemon
+	trainerbattle_single TRAINER_GRACE, Route124_Text_GraceIntro, Route124_Text_GraceDefeat, EventScript_RocketEdition_TryStealPokemon_Releaseall
 	msgbox Route124_Text_GracePostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route124_EventScript_Chad::
-	trainerbattle_single TRAINER_CHAD, Route124_Text_ChadIntro, Route124_Text_ChadDefeat, EventScript_RocketEdition_TryStealPokemon
+	trainerbattle_single TRAINER_CHAD, Route124_Text_ChadIntro, Route124_Text_ChadDefeat, EventScript_RocketEdition_TryStealPokemon_Releaseall
 	msgbox Route124_Text_ChadPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -65,7 +65,7 @@ Route124_EventScript_Lila::
 Route124_EventScript_RegisterLila::
 	msgbox Route124_Text_LilaRoyRegister, MSGBOX_DEFAULT
 	register_matchcall TRAINER_LILA_AND_ROY_1
-	call EventScript_RocketEdition_TryStealPokemon
+	call EventScript_RocketEdition_TryStealPokemon_Return
 	release
 	end
 
@@ -86,7 +86,7 @@ Route124_EventScript_Roy::
 Route124_EventScript_RegisterRoy::
 	msgbox Route124_Text_LilaRoyRegister, MSGBOX_DEFAULT
 	register_matchcall TRAINER_LILA_AND_ROY_1
-	call EventScript_RocketEdition_TryStealPokemon
+	call EventScript_RocketEdition_TryStealPokemon_Return
 	release
 	end
 
@@ -96,12 +96,12 @@ Route124_EventScript_RematchRoy::
 	end
 
 Route124_EventScript_Declan::
-	trainerbattle_single TRAINER_DECLAN, Route124_Text_DeclanIntro, Route124_Text_DeclanDefeat, EventScript_RocketEdition_TryStealPokemon
+	trainerbattle_single TRAINER_DECLAN, Route124_Text_DeclanIntro, Route124_Text_DeclanDefeat, EventScript_RocketEdition_TryStealPokemon_Releaseall
 	msgbox Route124_Text_DeclanPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route124_EventScript_Isabella::
-	trainerbattle_single TRAINER_ISABELLA, Route124_Text_IsabellaIntro, Route124_Text_IsabellaDefeat, EventScript_RocketEdition_TryStealPokemon
+	trainerbattle_single TRAINER_ISABELLA, Route124_Text_IsabellaIntro, Route124_Text_IsabellaDefeat, EventScript_RocketEdition_TryStealPokemon_Releaseall
 	msgbox Route124_Text_IsabellaPostBattle, MSGBOX_AUTOCLOSE
 	end
 

@@ -34,14 +34,14 @@ Route102_EventScript_CalvinRegisterMatchCallAfterBattle::
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
 	goto_if_set FLAG_HAS_MATCH_CALL, Route102_EventScript_CalvinRegisterMatchCall
-	call EventScript_RocketEdition_TryStealPokemon
+	call EventScript_RocketEdition_TryStealPokemon_Return
 	release
 	end
 
 Route102_EventScript_CalvinRegisterMatchCall::
 	msgbox Route102_Text_CalvinRegisterShort, MSGBOX_DEFAULT
 	register_matchcall TRAINER_CALVIN_1
-	call EventScript_RocketEdition_TryStealPokemon
+	call EventScript_RocketEdition_TryStealPokemon_Return
 	release
 	end
 
@@ -63,17 +63,17 @@ Route102_EventScript_CalvinRematch::
 	end
 
 Route102_EventScript_Rick::
-	trainerbattle_single TRAINER_RICK, Route102_Text_RickIntro, Route102_Text_RickDefeated, EventScript_RocketEdition_TryStealPokemon
+	trainerbattle_single TRAINER_RICK, Route102_Text_RickIntro, Route102_Text_RickDefeated, EventScript_RocketEdition_TryStealPokemon_Releaseall
 	msgbox Route102_Text_RickPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route102_EventScript_Tiana::
-	trainerbattle_single TRAINER_TIANA, Route102_Text_TianaIntro, Route102_Text_TianaDefeated, EventScript_RocketEdition_TryStealPokemon
+	trainerbattle_single TRAINER_TIANA, Route102_Text_TianaIntro, Route102_Text_TianaDefeated, EventScript_RocketEdition_TryStealPokemon_Releaseall
 	msgbox Route102_Text_TianaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route102_EventScript_Allen::
-	trainerbattle_single TRAINER_ALLEN, Route102_Text_AllenIntro, Route102_Text_AllenDefeated, EventScript_RocketEdition_TryStealPokemon
+	trainerbattle_single TRAINER_ALLEN, Route102_Text_AllenIntro, Route102_Text_AllenDefeated, EventScript_RocketEdition_TryStealPokemon_Releaseall
 	msgbox Route102_Text_AllenPostBattle, MSGBOX_AUTOCLOSE
 	end
 

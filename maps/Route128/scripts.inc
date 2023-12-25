@@ -192,7 +192,7 @@ Route128_EventScript_RegisterIsaiah::
 	waitmovement 0
 	msgbox Route128_Text_IsaiahRegister, MSGBOX_DEFAULT
 	register_matchcall TRAINER_ISAIAH_1
-	call EventScript_RocketEdition_TryStealPokemon
+	call EventScript_RocketEdition_TryStealPokemon_Return
 	release
 	end
 
@@ -215,7 +215,7 @@ Route128_EventScript_RegisterKatelyn::
 	waitmovement 0
 	msgbox Route128_Text_KatelynRegister, MSGBOX_DEFAULT
 	register_matchcall TRAINER_KATELYN_1
-	call EventScript_RocketEdition_TryStealPokemon
+	call EventScript_RocketEdition_TryStealPokemon_Return
 	release
 	end
 
@@ -225,27 +225,27 @@ Route128_EventScript_RematchKatelyn::
 	end
 
 Route128_EventScript_Alexa::
-	trainerbattle_single TRAINER_ALEXA, Route128_Text_AlexaIntro, Route128_Text_AlexaDefeat, EventScript_RocketEdition_TryStealPokemon
+	trainerbattle_single TRAINER_ALEXA, Route128_Text_AlexaIntro, Route128_Text_AlexaDefeat, EventScript_RocketEdition_TryStealPokemon_Releaseall
 	msgbox Route128_Text_AlexaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route128_EventScript_Ruben::
-	trainerbattle_single TRAINER_RUBEN, Route128_Text_RubenIntro, Route128_Text_RubenDefeat, EventScript_RocketEdition_TryStealPokemon
+	trainerbattle_single TRAINER_RUBEN, Route128_Text_RubenIntro, Route128_Text_RubenDefeat, EventScript_RocketEdition_TryStealPokemon_Releaseall
 	msgbox Route128_Text_RubenPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route128_EventScript_Wayne::
-	trainerbattle_single TRAINER_WAYNE, Route128_Text_WayneIntro, Route128_Text_WayneDefeat, EventScript_RocketEdition_TryStealPokemon
+	trainerbattle_single TRAINER_WAYNE, Route128_Text_WayneIntro, Route128_Text_WayneDefeat, EventScript_RocketEdition_TryStealPokemon_Releaseall
 	msgbox Route128_Text_WaynePostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route128_EventScript_Harrison::
-	trainerbattle_single TRAINER_HARRISON, Route128_Text_HarrisonIntro, Route128_Text_HarrisonDefeat, EventScript_RocketEdition_TryStealPokemon
+	trainerbattle_single TRAINER_HARRISON, Route128_Text_HarrisonIntro, Route128_Text_HarrisonDefeat, EventScript_RocketEdition_TryStealPokemon_Releaseall
 	msgbox Route128_Text_HarrisonPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route128_EventScript_Carlee::
-	trainerbattle_single TRAINER_CARLEE, Route128_Text_CarleeIntro, Route128_Text_CarleeDefeat, EventScript_RocketEdition_TryStealPokemon
+	trainerbattle_single TRAINER_CARLEE, Route128_Text_CarleeIntro, Route128_Text_CarleeDefeat, EventScript_RocketEdition_TryStealPokemon_Releaseall
 	msgbox Route128_Text_CarleePostBattle, MSGBOX_AUTOCLOSE
 	end
 

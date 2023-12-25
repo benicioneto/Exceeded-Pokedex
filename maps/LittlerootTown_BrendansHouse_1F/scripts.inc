@@ -320,7 +320,7 @@ PlayersHouse_1F_Text_MoversPokemonGoSetClock:
 	.string "{PLAYER}, your room is upstairs.\n"
 	.string "Go check it out, dear!\p"
 	.string "Your Dad bought you a new candy\n"
-	.string "and left it in your Item Storage.\l"
+	.string "and left it in your room.\l"
 	.string "Don't forget to take it!\p"
 	.string "Also, did you see that truck outside?\n"
 	.string "It's a new family that will live\n"

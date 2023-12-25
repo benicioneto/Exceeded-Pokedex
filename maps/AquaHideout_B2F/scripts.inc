@@ -32,7 +32,7 @@ AquaHideout_B2F_EventScript_Matt::
 	end
 
 AquaHideout_B2F_EventScript_SubmarineEscape::
-	call EventScript_RocketEdition_TryStealPokemon
+	call EventScript_RocketEdition_TryStealPokemon_Return
 	setvar VAR_0x8008, LOCALID_MATT
 	setvar VAR_0x8009, LOCALID_SUBMARINE
 	applymovement VAR_0x8008, Common_Movement_WalkInPlaceFastestLeft
@@ -77,17 +77,17 @@ AquaHideout_B2F_EventScript_Grunt4::
 
 AquaHideout_B2F_EventScript_Grunt4Defeated::
 	msgbox AquaHideout_B2F_Text_Grunt4PostBattle, MSGBOX_DEFAULT
-	call EventScript_RocketEdition_TryStealPokemon
+	call EventScript_RocketEdition_TryStealPokemon_Return
 	release
 	end
 
 AquaHideout_B2F_EventScript_Grunt6::
-	trainerbattle_single TRAINER_GRUNT_AQUA_HIDEOUT_6, AquaHideout_B2F_Text_Grunt6Intro, AquaHideout_B2F_Text_Grunt6Defeat, EventScript_RocketEdition_TryStealPokemon
+	trainerbattle_single TRAINER_GRUNT_AQUA_HIDEOUT_6, AquaHideout_B2F_Text_Grunt6Intro, AquaHideout_B2F_Text_Grunt6Defeat, EventScript_RocketEdition_TryStealPokemon_Releaseall
 	msgbox AquaHideout_B2F_Text_Grunt6PostBattle, MSGBOX_AUTOCLOSE
 	end
 
 AquaHideout_B2F_EventScript_Grunt8::
-	trainerbattle_single TRAINER_GRUNT_AQUA_HIDEOUT_8, AquaHideout_B2F_Text_Grunt8Intro, AquaHideout_B2F_Text_Grunt8Defeat, EventScript_RocketEdition_TryStealPokemon
+	trainerbattle_single TRAINER_GRUNT_AQUA_HIDEOUT_8, AquaHideout_B2F_Text_Grunt8Intro, AquaHideout_B2F_Text_Grunt8Defeat, EventScript_RocketEdition_TryStealPokemon_Releaseall
 	msgbox AquaHideout_B2F_Text_Grunt8PostBattle, MSGBOX_AUTOCLOSE
 	end
 

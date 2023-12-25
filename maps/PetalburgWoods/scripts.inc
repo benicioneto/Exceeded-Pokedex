@@ -56,7 +56,7 @@ PetalburgWoods_EventScript_DevonResearcherLeft::
 	waitmovement 0
 	msgbox PetalburgWoods_Text_NoOneCrossesTeamAqua, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_GRUNT_PETALBURG_WOODS, PetalburgWoods_Text_YoureKiddingMe
-	call EventScript_RocketEdition_TryStealPokemon
+	call EventScript_RocketEdition_TryStealPokemon_Return
 	applymovement LOCALID_GRUNT, PetalburgWoods_Movement_AquaBackOff
 	waitmovement 0
 	call PetalburgWoods_EventScript_DevonResearcherPostBattle
@@ -93,7 +93,7 @@ PetalburgWoods_EventScript_DevonResearcherRight::
 	waitmovement 0
 	msgbox PetalburgWoods_Text_NoOneCrossesTeamAqua, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_GRUNT_PETALBURG_WOODS, PetalburgWoods_Text_YoureKiddingMe
-	call EventScript_RocketEdition_TryStealPokemon
+	call EventScript_RocketEdition_TryStealPokemon_Return
 	applymovement LOCALID_GRUNT, PetalburgWoods_Movement_AquaBackOff
 	waitmovement 0
 	call PetalburgWoods_EventScript_DevonResearcherPostBattle
@@ -308,7 +308,7 @@ PetalburgWoods_EventScript_Sign2::
 	end
 
 PetalburgWoods_EventScript_Lyle::
-	trainerbattle_single TRAINER_LYLE, PetalburgWoods_Text_GoBugPokemonTeam, PetalburgWoods_Text_ICouldntWin, EventScript_RocketEdition_TryStealPokemon
+	trainerbattle_single TRAINER_LYLE, PetalburgWoods_Text_GoBugPokemonTeam, PetalburgWoods_Text_ICouldntWin, EventScript_RocketEdition_TryStealPokemon_Releaseall
 	msgbox PetalburgWoods_Text_ImOutOfPokeBalls, MSGBOX_AUTOCLOSE
 	end
 
@@ -329,14 +329,14 @@ PetalburgWoods_EventScript_TryRegisterJames::
 	special PlayerFaceTrainerAfterBattle
 	waitmovement 0
 	goto_if_set FLAG_HAS_MATCH_CALL, PetalburgWoods_EventScript_RegisterJames
-	call EventScript_RocketEdition_TryStealPokemon
+	call EventScript_RocketEdition_TryStealPokemon_Return
 	release
 	end
 
 PetalburgWoods_EventScript_RegisterJames::
 	msgbox PetalburgWoods_Text_IWantRematch1, MSGBOX_DEFAULT
 	register_matchcall TRAINER_JAMES_1
-	call EventScript_RocketEdition_TryStealPokemon
+	call EventScript_RocketEdition_TryStealPokemon_Return
 	release
 	end
 
@@ -586,7 +586,7 @@ EventScript_PokemonGotCaptured:
 	return
 
 PikachuMove1:  
-    delay B_WAIT_TIME_SHORT
+    delay 32
     fadescreen FADE_TO_BLACK
     removeobject LOCALID_PIKACHU_COSPLAY 
     setobjectxyperm LOCALID_PIKACHU_COSPLAY, 40, 35
@@ -599,7 +599,7 @@ PikachuMove1:
     end
 
 PikachuMove2: 
-    delay B_WAIT_TIME_SHORT
+    delay 32
     fadescreen FADE_TO_BLACK
     removeobject LOCALID_PIKACHU_COSPLAY 
     setobjectxyperm LOCALID_PIKACHU_COSPLAY, 7, 28
@@ -612,7 +612,7 @@ PikachuMove2:
     end
 
 PikachuMove3:  
-    delay B_WAIT_TIME_SHORT
+    delay 32
     fadescreen FADE_TO_BLACK
     removeobject LOCALID_PIKACHU_COSPLAY 
     setobjectxyperm LOCALID_PIKACHU_COSPLAY, 5, 18
@@ -626,7 +626,7 @@ PikachuMove3:
     end
 
 PikachuMove4:   
-    delay B_WAIT_TIME_SHORT
+    delay 32
     fadescreen FADE_TO_BLACK
     removeobject LOCALID_PIKACHU_COSPLAY 
     setobjectxyperm LOCALID_PIKACHU_COSPLAY, 26, 8
@@ -640,7 +640,7 @@ PikachuMove4:
     end
 
 PikachuMove5:   
-    delay B_WAIT_TIME_SHORT
+    delay 32
     fadescreen FADE_TO_BLACK
     removeobject LOCALID_PIKACHU_COSPLAY 
     setobjectxyperm LOCALID_PIKACHU_COSPLAY, 42, 26
@@ -654,7 +654,7 @@ PikachuMove5:
     end
 
 PikachuMove6:   
-    delay B_WAIT_TIME_SHORT
+    delay 32
     fadescreen FADE_TO_BLACK
     removeobject LOCALID_PIKACHU_COSPLAY 
     setobjectxyperm LOCALID_PIKACHU_COSPLAY, 37, 45
@@ -668,7 +668,7 @@ PikachuMove6:
     end
 
 PikachuMove7:     
-    delay B_WAIT_TIME_SHORT
+    delay 32
     fadescreen FADE_TO_BLACK
     removeobject LOCALID_PIKACHU_COSPLAY 
     setobjectxyperm LOCALID_PIKACHU_COSPLAY, 14, 7

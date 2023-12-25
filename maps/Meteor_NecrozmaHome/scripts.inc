@@ -36,7 +36,7 @@ Meteor_NecrozmaHome_EventScript_Necrozma::
 
 Meteor_NecrozmaHome_EventScript_DefeatedNecrozma:
 	setvar VAR_END_OF_THE_WORLD, 3
-    delay B_WAIT_TIME_SHORT
+    delay 32
     fadescreen FADE_TO_BLACK
     msgbox Meteor_NecrozmaHome_Text_Shadow_UsedDragonAscent, MSGBOX_DEFAULT
 	closemessage
@@ -51,7 +51,7 @@ Meteor_NecrozmaHome_EventScript_DefeatedNecrozma:
 	playse SE_M_EXPLOSION
     msgbox Meteor_NecrozmaHome_Text_Shadow_MeteorWasDestroyed, MSGBOX_AUTOCLOSE
 	waitse
-    delay B_WAIT_TIME_SHORT
+    delay 32
 	setflag FLAG_HIDE_MAP_NAME_POPUP
 	clearflag FLAG_HIDE_CELEBI
 	warpsilent MAP_METEOR_FALLS_DRACONID_TRIBE, 255, 18, 17

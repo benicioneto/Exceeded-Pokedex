@@ -96,7 +96,7 @@ PacifidlogCave_1F_EventScript_MarshadowHit:
 	goto_if_eq PacifidlogCave_1F_Movement_Shadow_StealRainbowWing
 	compare VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED
 	goto_if_eq PacifidlogCave_1F_Movement_Shadow_StealRainbowWing
-    delay B_WAIT_TIME_SHORT
+    delay 32
     fadescreen FADE_TO_BLACK
     removeobject LOCALID_MARSHADOW_1
     removeobject LOCALID_MARSHADOW_2
@@ -107,7 +107,7 @@ PacifidlogCave_1F_EventScript_MarshadowHit:
 	end
 
 PacifidlogCave_1F_Movement_Shadow_StealRainbowWing:
-    delay B_WAIT_TIME_SHORT
+    delay 32
     fadescreen FADE_TO_BLACK
     removeobject LOCALID_MARSHADOW_1
     removeobject LOCALID_MARSHADOW_2
@@ -120,7 +120,7 @@ PacifidlogCave_1F_Movement_Shadow_StealRainbowWing:
     end
 
 PacifidlogCave_1F_Movement_Shadow_StealRainbowWingFainted:
-    delay B_WAIT_TIME_SHORT
+    delay 32
     fadescreen FADE_TO_BLACK
     removeobject LOCALID_MARSHADOW_1
     removeobject LOCALID_MARSHADOW_2

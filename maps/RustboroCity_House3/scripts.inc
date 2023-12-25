@@ -12,7 +12,7 @@ RustboroCity_House3_EventScript_OldMan::
 RustboroCity_House3_EventScript_OldWoman::
 	lock
 	goto_if_unset FLAG_CAPTURED_PETALWOOD_GALARIAN_FARFETCH, RustboroCity_House3_EventScript_SomethingInTheWoods
-	goto_if_unset FLAG_BADGE03_GET, RustboroCity_House3_EventScript_TakeTimeToGoAgain
+	@goto_if_unset FLAG_BADGE03_GET, RustboroCity_House3_EventScript_TakeTimeToGoAgain
 	goto_if_unset FLAG_ITEM_RUSTBOROCITY_LEEK, RustboroCity_House3_EventScript_CapturedFarfetchGiveLeek
 	msgbox RustboroCity_House3_Text_Worried, MSGBOX_NPC
 	release

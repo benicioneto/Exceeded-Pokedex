@@ -26,37 +26,37 @@ Route127_OnFrame:
 	.2byte 0
 
 Route127_EventScript_Camden::
-	trainerbattle_single TRAINER_CAMDEN, Route127_Text_CamdenIntro, Route127_Text_CamdenDefeat, EventScript_RocketEdition_TryStealPokemon
+	trainerbattle_single TRAINER_CAMDEN, Route127_Text_CamdenIntro, Route127_Text_CamdenDefeat, EventScript_RocketEdition_TryStealPokemon_Releaseall
 	msgbox Route127_Text_CamdenPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route127_EventScript_Donny::
-	trainerbattle_single TRAINER_DONNY, Route127_Text_DonnyIntro, Route127_Text_DonnyDefeat, EventScript_RocketEdition_TryStealPokemon
+	trainerbattle_single TRAINER_DONNY, Route127_Text_DonnyIntro, Route127_Text_DonnyDefeat, EventScript_RocketEdition_TryStealPokemon_Releaseall
 	msgbox Route127_Text_DonnyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route127_EventScript_Jonah::
-	trainerbattle_single TRAINER_JONAH, Route127_Text_JonahIntro, Route127_Text_JonahDefeat, EventScript_RocketEdition_TryStealPokemon
+	trainerbattle_single TRAINER_JONAH, Route127_Text_JonahIntro, Route127_Text_JonahDefeat, EventScript_RocketEdition_TryStealPokemon_Releaseall
 	msgbox Route127_Text_JonahPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route127_EventScript_Henry::
-	trainerbattle_single TRAINER_HENRY, Route127_Text_HenryIntro, Route127_Text_HenryDefeat, EventScript_RocketEdition_TryStealPokemon
+	trainerbattle_single TRAINER_HENRY, Route127_Text_HenryIntro, Route127_Text_HenryDefeat, EventScript_RocketEdition_TryStealPokemon_Releaseall
 	msgbox Route127_Text_HenryPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route127_EventScript_Roger::
-	trainerbattle_single TRAINER_ROGER, Route127_Text_RogerIntro, Route127_Text_RogerDefeat, EventScript_RocketEdition_TryStealPokemon
+	trainerbattle_single TRAINER_ROGER, Route127_Text_RogerIntro, Route127_Text_RogerDefeat, EventScript_RocketEdition_TryStealPokemon_Releaseall
 	msgbox Route127_Text_RogerPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route127_EventScript_Aidan::
-	trainerbattle_single TRAINER_AIDAN, Route127_Text_AidanIntro, Route127_Text_AidanDefeat, EventScript_RocketEdition_TryStealPokemon
+	trainerbattle_single TRAINER_AIDAN, Route127_Text_AidanIntro, Route127_Text_AidanDefeat, EventScript_RocketEdition_TryStealPokemon_Releaseall
 	msgbox Route127_Text_AidanPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route127_EventScript_Athena::
-	trainerbattle_single TRAINER_ATHENA, Route127_Text_AthenaIntro, Route127_Text_AthenaDefeat, EventScript_RocketEdition_TryStealPokemon
+	trainerbattle_single TRAINER_ATHENA, Route127_Text_AthenaIntro, Route127_Text_AthenaDefeat, EventScript_RocketEdition_TryStealPokemon_Releaseall
 	msgbox Route127_Text_AthenaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -74,7 +74,7 @@ Route127_EventScript_RegisterKoji::
 	waitmovement 0
 	msgbox Route127_Text_KojiRegister, MSGBOX_DEFAULT
 	register_matchcall TRAINER_KOJI_1
-	call EventScript_RocketEdition_TryStealPokemon
+	call EventScript_RocketEdition_TryStealPokemon_Return
 	release
 	end
 

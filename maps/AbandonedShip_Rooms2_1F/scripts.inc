@@ -13,7 +13,7 @@ AbandonedShip_Rooms2_1F_EventScript_Dan::
 AbandonedShip_Rooms2_1F_EventScript_RegisterDan::
 	msgbox AbandonedShip_Rooms2_1F_Text_KiraRegister, MSGBOX_DEFAULT  @ Kira speaks for both when registering KiraAndDan
 	register_matchcall TRAINER_KIRA_AND_DAN_1
-	call EventScript_RocketEdition_TryStealPokemon
+	call EventScript_RocketEdition_TryStealPokemon_Return
 	release
 	end
 
@@ -34,7 +34,7 @@ AbandonedShip_Rooms2_1F_EventScript_Kira::
 AbandonedShip_Rooms2_1F_EventScript_RegisterKira::
 	msgbox AbandonedShip_Rooms2_1F_Text_KiraRegister, MSGBOX_DEFAULT
 	register_matchcall TRAINER_KIRA_AND_DAN_1
-	call EventScript_RocketEdition_TryStealPokemon
+	call EventScript_RocketEdition_TryStealPokemon_Return
 	release
 	end
 
@@ -44,12 +44,12 @@ AbandonedShip_Rooms2_1F_EventScript_KiraRematch::
 	end
 
 AbandonedShip_Rooms2_1F_EventScript_Jani::
-	trainerbattle_single TRAINER_JANI, AbandonedShip_Rooms2_1F_Text_JaniIntro, AbandonedShip_Rooms2_1F_Text_JaniDefeat, EventScript_RocketEdition_TryStealPokemon
+	trainerbattle_single TRAINER_JANI, AbandonedShip_Rooms2_1F_Text_JaniIntro, AbandonedShip_Rooms2_1F_Text_JaniDefeat, EventScript_RocketEdition_TryStealPokemon_Releaseall
 	msgbox AbandonedShip_Rooms2_1F_Text_JaniPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 AbandonedShip_Rooms2_1F_EventScript_Garrison::
-	trainerbattle_single TRAINER_GARRISON, AbandonedShip_Rooms2_1F_Text_GarrisonIntro, AbandonedShip_Rooms2_1F_Text_GarrisonDefeat, EventScript_RocketEdition_TryStealPokemon
+	trainerbattle_single TRAINER_GARRISON, AbandonedShip_Rooms2_1F_Text_GarrisonIntro, AbandonedShip_Rooms2_1F_Text_GarrisonDefeat, EventScript_RocketEdition_TryStealPokemon_Releaseall
 	msgbox AbandonedShip_Rooms2_1F_Text_GarrisonPostBattle, MSGBOX_AUTOCLOSE
 	end
 

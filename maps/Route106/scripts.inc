@@ -6,12 +6,12 @@ Route106_EventScript_TrainerTipsSign::
 	end
 
 Route106_EventScript_Douglas::
-	trainerbattle_single TRAINER_DOUGLAS, Route106_Text_DouglasIntro, Route106_Text_DouglasDefeated, EventScript_RocketEdition_TryStealPokemon
+	trainerbattle_single TRAINER_DOUGLAS, Route106_Text_DouglasIntro, Route106_Text_DouglasDefeated, EventScript_RocketEdition_TryStealPokemon_Releaseall
 	msgbox Route106_Text_DouglasPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Route106_EventScript_Kyla::
-	trainerbattle_single TRAINER_KYLA, Route106_Text_KylaIntro, Route106_Text_KylaDefeated, EventScript_RocketEdition_TryStealPokemon
+	trainerbattle_single TRAINER_KYLA, Route106_Text_KylaIntro, Route106_Text_KylaDefeated, EventScript_RocketEdition_TryStealPokemon_Releaseall
 	msgbox Route106_Text_KylaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -29,7 +29,7 @@ Route106_EventScript_ElliotRegisterMatchCallAfterBattle::
 	waitmovement 0
 	msgbox Route106_Text_ElliotRegister, MSGBOX_DEFAULT
 	register_matchcall TRAINER_ELLIOT_1
-	call EventScript_RocketEdition_TryStealPokemon
+	call EventScript_RocketEdition_TryStealPokemon_Return
 	release
 	end
 
@@ -39,7 +39,7 @@ Route106_EventScript_ElliotRematch::
 	end
 
 Route106_EventScript_Ned::
-	trainerbattle_single TRAINER_NED, Route106_Text_NedIntro, Route106_Text_NedDefeated, EventScript_RocketEdition_TryStealPokemon
+	trainerbattle_single TRAINER_NED, Route106_Text_NedIntro, Route106_Text_NedDefeated, EventScript_RocketEdition_TryStealPokemon_Releaseall
 	msgbox Route106_Text_NedPostBattle, MSGBOX_AUTOCLOSE
 	end
 

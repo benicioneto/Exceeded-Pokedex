@@ -245,11 +245,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_SWORDS_DANCE] =
     {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .pp = 20,
-        #else
-            .pp = 30,
-        #endif
+        .pp = 20,
         .effect = EFFECT_USER_ATTACK_UP_2,
         .power = 0,
         .type = TYPE_NORMAL,
@@ -6776,13 +6772,8 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_LAST_RESORT] =
     {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .power = 140,
-            .zMovePower = 200,
-        #else
-            .power = 130,
-            .zMovePower = 195,
-        #endif
+        .power = 140,
+        .zMovePower = 200,
         .effect = EFFECT_LAST_RESORT,
         .type = TYPE_NORMAL,
         .accuracy = 100,
@@ -17136,11 +17127,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_SHADOW_FIRE] =
     {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 90,
-        #else
-            .power = 95,
-        #endif
+        .power = 90,
         .effect = EFFECT_TARGET_BURN_ON_HIT,
         .type = TYPE_FIRE,
         .accuracy = 100,
@@ -17174,11 +17161,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_SHADOW_CHILL] =
     {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .power = 90,
-        #else
-            .power = 95,
-        #endif
+        .power = 90,
         .effect = EFFECT_TARGET_FROSTBITE_ON_HIT,
         .type = TYPE_ICE,
         .accuracy = 100,
@@ -17494,7 +17477,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .pp = 10,
         .zMovePower = 175,
         .effect = EFFECT_THORN_TRAP,
-        .type = TYPE_GHOST,
+        .type = TYPE_FAIRY,
         .accuracy = 100,
         .secondaryEffectChance = 100,
         .target = MOVE_TARGET_SELECTED,
@@ -17502,5 +17485,39 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
         .split = SPLIT_PHYSICAL,
         .zMoveEffect = Z_EFFECT_NONE,
+    },
+
+    [MOVE_ZANTETSUKEN] =
+    {
+        .effect = EFFECT_ZANTETSUKEN,
+        .power = 130,
+        .type = TYPE_STEEL,
+        .accuracy = 0,
+        .pp = 5,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
+        .flags2 = FLAG_SLICING_MOVE,
+        .split = SPLIT_PHYSICAL,
+        .zMovePower = 195,
+        .zMoveEffect = Z_EFFECT_NONE,
+    },
+
+    [MOVE_DROP_WEIGHTS] =
+    {
+        .pp = 20,
+        .effect = EFFECT_DROP_WEIGHTS,
+        .power = 0,
+        .type = TYPE_FIGHTING,
+        .accuracy = 0,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_USER,
+        .priority = 0,
+        .flags = 0,
+        .flags2 = 0,
+        .split = SPLIT_STATUS,
+        .zMovePower = 0,
+        .zMoveEffect = Z_EFFECT_RESET_STATS,
     },
 };

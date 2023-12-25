@@ -2,12 +2,12 @@ MtPyre_3F_MapScripts::
 	.byte 0
 
 MtPyre_3F_EventScript_William::
-	trainerbattle_single TRAINER_WILLIAM, MtPyre_3F_Text_WilliamIntro, MtPyre_3F_Text_WilliamDefeat, EventScript_RocketEdition_TryStealPokemon
+	trainerbattle_single TRAINER_WILLIAM, MtPyre_3F_Text_WilliamIntro, MtPyre_3F_Text_WilliamDefeat, EventScript_RocketEdition_TryStealPokemon_Releaseall
 	msgbox MtPyre_3F_Text_WilliamPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 MtPyre_3F_EventScript_Kayla::
-	trainerbattle_single TRAINER_KAYLA, MtPyre_3F_Text_KaylaIntro MtPyre_3F_Text_KaylaDefeat, EventScript_RocketEdition_TryStealPokemon
+	trainerbattle_single TRAINER_KAYLA, MtPyre_3F_Text_KaylaIntro MtPyre_3F_Text_KaylaDefeat, EventScript_RocketEdition_TryStealPokemon_Releaseall
 	msgbox MtPyre_3F_Text_KaylaPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -25,7 +25,7 @@ MtPyre_3F_EventScript_RegisterGabrielle::
 	waitmovement 0
 	msgbox MtPyre_3F_Text_GabrielleRegister, MSGBOX_DEFAULT
 	register_matchcall TRAINER_GABRIELLE_1
-	call EventScript_RocketEdition_TryStealPokemon
+	call EventScript_RocketEdition_TryStealPokemon_Return
 	release
 	end
 
