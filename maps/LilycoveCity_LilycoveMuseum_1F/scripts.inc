@@ -539,14 +539,11 @@ LilycoveCity_LilycoveMuseum_1F_EventScript_TryStealHeavyArt::
 	compare VAR_RESULT, NO
 	goto_if_eq LilycoveCity_LilycoveMuseum_1F_EventScript_StealHeavyArt
 	msgbox LilycoveCity_LilycoveMuseum_1F_Text_StealHeavyArt, MSGBOX_DEFAULT
-	closemessage
-	end
-
-LilycoveCity_LilycoveMuseum_1F_EventScript_NoSteal:
-	closemessage
+	release
 	end
 
 LilycoveCity_LilycoveMuseum_1F_EventScript_StealHeavyArt:
+	release
 	end
 
 LilycoveCity_LilycoveMuseum_1F_Text_StealHeavyArt:

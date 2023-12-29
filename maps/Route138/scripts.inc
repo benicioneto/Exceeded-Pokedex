@@ -9,7 +9,7 @@ Route138_OnTransition::
 	compare VAR_RESULT, FALSE
 	goto_if_eq Route138_EventScript_ShouldHideHooh
 	special GetDayOfWeek
-	compare VAR_RESULT, 1 @sunday
+	compare VAR_RESULT, 0 @sunday
 	goto_if_eq Route138_EventScript_ShowHooh
 Route138_EventScript_ShouldHideHooh:
 	goto Route138_EventScript_HideHooh

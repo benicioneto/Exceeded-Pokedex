@@ -20,7 +20,7 @@ Route110_OnTransition:
 	compare VAR_CYCLING_CHALLENGE_STATE, 1
 	call_if_eq Route110_EventScript_SaveCyclingMusic
 	special GetDayOfWeek
-	compare VAR_RESULT, 6 @friday
+	compare VAR_RESULT, 5 @friday
 	call_if_ne Route110_EventScript_HideDrifloon
 	end
 

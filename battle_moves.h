@@ -3149,11 +3149,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_PROTECT] =
     {
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .priority = 4,
-        #else
-            .priority = 3,
-        #endif
+        .priority = 4,
         .effect = EFFECT_USER_PREVENT_MOVE,
         .power = 0,
         .type = TYPE_NORMAL,
@@ -14292,6 +14288,212 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .zMoveEffect = Z_EFFECT_NONE,
         .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_HIGH_CRITICAL_HIT_RATIO,
         .flags2 = FLAG_SCENT_MARK_AFFECTED,
+    },
+
+    [MOVE_ELECTRO_SHOT] =
+    {
+        .effect = EFFECT_PLACEHOLDER, //EFFECT_ELECTRO_SHOT
+        .power = 130,
+        .type = TYPE_ELECTRIC,
+        .accuracy = 100,
+        .pp = 10,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_SPECIAL,
+    },
+
+    [MOVE_TERA_STARSTORM] =
+    {
+        .effect = EFFECT_PLACEHOLDER, //EFFECT_TERA_STARSTORM
+        .power = 120,
+        .type = TYPE_NORMAL, // Stellar type if used by Terapagos-Stellar
+        .accuracy = 100,
+        .pp = 5,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED, // MOVE_TARGET_BOTH if used by Terapagos-Stellar
+        .priority = 0,
+        .split = SPLIT_SPECIAL,
+    },
+
+    [MOVE_FICKLE_BEAM] =
+    {
+        .effect = EFFECT_PLACEHOLDER, //EFFECT_FICKLE_BEAM
+        .power = 80,
+        .type = TYPE_DRAGON,
+        .accuracy = 100,
+        .pp = 5,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_SPECIAL,
+    },
+
+    [MOVE_BURNING_BULWARK] =
+    {
+        .effect = EFFECT_USER_PREVENT_MOVE, // NEEDS ACTUAL PROTECT SIDE EFFECT
+        .power = 0,
+        .type = TYPE_FIRE,
+        .accuracy = 0,
+        .pp = 10,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_USER,
+        .priority = 4,
+        .flags = FLAG_PROTECTION_MOVE,
+        .split = SPLIT_STATUS,
+        .zMoveEffect = Z_EFFECT_RESET_STATS,
+    },
+
+    [MOVE_THUNDERCLAP] =
+    {
+        .effect = EFFECT_SUCKER_PUNCH,
+        .power = 70,
+        .type = TYPE_ELECTRIC,
+        .accuracy = 100,
+        .pp = 5,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 1,
+        .split = SPLIT_SPECIAL,
+    },
+
+    [MOVE_MIGHTY_CLEAVE] =
+    {
+        .effect = EFFECT_TARGET_REMOVE_PROTECTION_ON_HIT,
+        .power = 95,
+        .type = TYPE_ROCK,
+        .accuracy = 100,
+        .pp = 5,
+        .secondaryEffectChance = 100,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_PHYSICAL,
+        .flags = FLAG_MAKES_CONTACT,
+        .flags2 = FLAG_SLICING_MOVE,
+    },
+
+    [MOVE_TACHYON_CUTTER] =
+    {
+        .effect = EFFECT_TARGET_DOUBLE_HIT,
+        .power = 50,
+        .type = TYPE_STEEL,
+        .accuracy = 0,
+        .pp = 10,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_SPECIAL,
+        .flags2 = FLAG_SLICING_MOVE,
+    },
+
+    [MOVE_HARD_PRESS] =
+    {
+        .effect = EFFECT_WRING_OUT,
+        .power = 1,
+        .type = TYPE_STEEL,
+        .accuracy = 100,
+        .pp = 10,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_PHYSICAL,
+        .flags = FLAG_MAKES_CONTACT,
+    },
+
+    [MOVE_DRAGON_CHEER] =
+    {
+        .effect = EFFECT_PLACEHOLDER, //EFFECT_DRAGON_CHEER
+        .power = 0,
+        .type = TYPE_DRAGON,
+        .accuracy = 0,
+        .pp = 15,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_ALLY,
+        .priority = 0,
+        .split = SPLIT_STATUS,
+    },
+
+    [MOVE_ALLURING_VOICE] =
+    {
+        .effect = EFFECT_PLACEHOLDER, //EFFECT_ALLURING_VOICE
+        .power = 80,
+        .type = TYPE_FAIRY,
+        .accuracy = 100,
+        .pp = 10,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_SPECIAL,
+        .flags = FLAG_SOUND_BASED_MOVE,
+    },
+
+    [MOVE_TEMPER_FLARE] =
+    {
+        .effect = EFFECT_STOMPING_TANTRUM,
+        .power = 75,
+        .type = TYPE_FIRE,
+        .accuracy = 100,
+        .pp = 10,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_PHYSICAL,
+        .flags = FLAG_MAKES_CONTACT,
+    },
+
+    [MOVE_SUPERCELL_SLAM] =
+    {
+        .effect = EFFECT_USER_REDUCE_50_HP_IF_MISS,
+        .power = 100,
+        .type = TYPE_ELECTRIC,
+        .accuracy = 95,
+        .pp = 15,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_PHYSICAL,
+        .flags = FLAG_MAKES_CONTACT,
+    },
+
+    [MOVE_PSYCHIC_NOISE] =
+    {
+        .effect = EFFECT_PLACEHOLDER, //EFFECT_PSYCHIC_NOISE
+        .power = 75,
+        .type = TYPE_PSYCHIC,
+        .accuracy = 100,
+        .pp = 10,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_SPECIAL,
+        .flags = FLAG_SOUND_BASED_MOVE,
+    },
+
+    [MOVE_UPPER_HAND] =
+    {
+        .effect = EFFECT_PLACEHOLDER, //EFFECT_UPPER_HAND
+        .power = 65,
+        .type = TYPE_FIGHTING,
+        .accuracy = 100,
+        .pp = 15,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 3,
+        .split = SPLIT_PHYSICAL,
+        .flags = FLAG_MAKES_CONTACT,
+    },
+
+    [MOVE_MALIGNANT_CHAIN] =
+    {
+        .effect = EFFECT_TARGET_BADLY_POISON_ON_HIT,
+        .power = 100,
+        .type = TYPE_POISON,
+        .accuracy = 100,
+        .pp = 5,
+        .secondaryEffectChance = 50,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .split = SPLIT_SPECIAL,
     },
 
     // Z-Moves

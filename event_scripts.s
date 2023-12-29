@@ -1318,3 +1318,7 @@ gText_Collected:
 	.include "data/maps/LilycoveCity_PoliceStation/scripts.inc"
 
 	.include "data/maps/MauvilleCity_TeamRocketHideout/scripts.inc"
+
+	.include "data/maps/DewfordTown_Dojo/scripts.inc"
+
+	.include "data/maps/DewfordTown_Dojo_Rooms/scripts.inc"

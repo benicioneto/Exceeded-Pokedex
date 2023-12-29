@@ -810,3 +810,15 @@ DewfordTown_Text_YeahDefinitionOfInRightNow:
 	.string "Yeah, absolutely right!\p"
 	.string "“{STR_VAR_1}” is the\n"
 	.string "definition of “in” right now.$"
+
+@@@@@ Dojo @@@@@
+
+DewfordTown_EventScript_DojoSign::
+	msgbox DewfordTown_Text_DojoSign, MSGBOX_SIGN
+	end
+
+DewfordTown_Text_DojoSign:
+	.string "Dewford Town Pokémon Dojo\n"
+	.string "Leader: Bruno\l"
+	.string "“I've lived and trained\l"
+	.string "with my fighting Pokémon.”$"

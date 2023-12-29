@@ -3517,6 +3517,62 @@ static const struct TrainerParty sParty_Walter5Hard[] = {
     }
 };
 
+static const struct TrainerParty sParty_BrunoHard[] = {
+    {
+    .iv = 255,
+    .lvl = 20,
+    .evAtk = 255,
+    .evSpd = 255,
+    .nature = NATURE_JOLLY,
+    .species = SPECIES_ONIX,
+    .heldItem = {ITEM_FOCUS_SASH, ITEM_SITRUS_BERRY, ITEM_HARD_STONE},
+    .moves = {MOVE_DIG, MOVE_ROCK_SLIDE, MOVE_SANDSTORM, MOVE_IRON_TAIL}
+    },
+    {
+    .iv = 255,
+    .lvl = 22,
+    .evSatk = 255,
+    .evSpd = 255,
+    .species = SPECIES_HITMONCHAN,
+    .nature = NATURE_ADAMANT,
+    .abilityNum = HIDDEN_ABILITY,
+    .heldItem = {ITEM_PUNCHING_GLOVE, ITEM_LEFTOVERS, ITEM_BLACK_BELT},
+    .moves = {MOVE_DRAGON_COMBO, MOVE_SKY_UPPERCUT, MOVE_ICE_PUNCH, MOVE_THUNDER_PUNCH}
+    },
+    {
+    .iv = 255,
+    .lvl = 22,
+    .evAtk = 255,
+    .evSpd = 255,
+    .species = SPECIES_HITMONLEE,
+    .nature = NATURE_ADAMANT,
+    .abilityNum = HIDDEN_ABILITY,
+    .heldItem = {ITEM_IRON_BALL, ITEM_WEAKNESS_POLICY, ITEM_MACHO_BRACE},
+    .moves = {MOVE_DROP_WEIGHTS, MOVE_EARTHQUAKE, MOVE_ROCK_SLIDE, MOVE_BLAZE_KICK}
+    },
+    {
+    .iv = 255,
+    .lvl = 23,
+    .evAtk = 255,
+    .evSpd = 255,
+    .nature = NATURE_ADAMANT,
+    //.abilityNum = SECOND_ABILITY,
+    .species = SPECIES_HITMONTOP,
+    .heldItem = {ITEM_SHELL_BELL, ITEM_SITRUS_BERRY, ITEM_BLACK_BELT},
+    .moves = {MOVE_BULK_UP, MOVE_TRIPLE_KICK, MOVE_PURSUIT, MOVE_EARTHQUAKE}
+    },
+    {
+    .iv = 255,
+    .lvl = 24,
+    .evAtk = 255,
+    .evHp = 255,
+    .nature = NATURE_ADAMANT,
+    .species = SPECIES_MACHAMP,
+    .heldItem = {ITEM_MUSCLE_BAND, ITEM_SITRUS_BERRY, ITEM_BLACK_BELT},
+    .moves = {MOVE_ROCK_SLIDE, MOVE_BULK_UP, MOVE_EARTHQUAKE, MOVE_DYNAMIC_PUNCH}
+    }
+};
+
 static const struct TrainerParty sParty_SidneyHard[] = {
     {
     .iv = 255,

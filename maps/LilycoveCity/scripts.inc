@@ -1081,7 +1081,7 @@ LilycoveCity_EventScript_RethinkActions:
 	end
 
 LilycoveCity_Text_PoliceArrestDay:
-	.string "Did you thing you could steal a\n"
+	.string "Did you think you could steal a\n"
 	.string "work of art in broad daylight\l"
 	.string "and no one would notice?\p"
 	.string "Someone called me right away.\n"

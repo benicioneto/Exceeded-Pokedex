@@ -3527,6 +3527,58 @@ static const struct TrainerParty sParty_Walter5[] = {
     }
 };
 
+static const struct TrainerParty sParty_Bruno[] = {
+    {
+    .iv = 255,
+    .lvl = 20,
+    .evAtk = 255,
+    .evSpd = 255,
+    .nature = NATURE_JOLLY,
+    .species = SPECIES_ONIX,
+    .heldItem = {ITEM_FOCUS_SASH, ITEM_SITRUS_BERRY},
+    .moves = {MOVE_DIG, MOVE_ROCK_SLIDE, MOVE_SANDSTORM, MOVE_IRON_TAIL}
+    },
+    {
+    .iv = 255,
+    .lvl = 22,
+    .evSatk = 255,
+    .evSpd = 255,
+    .species = SPECIES_HITMONCHAN,
+    .abilityNum = HIDDEN_ABILITY,
+    .heldItem = {ITEM_NONE},
+    .moves = {MOVE_DRAGON_COMBO, MOVE_SKY_UPPERCUT, MOVE_ICE_PUNCH, MOVE_THUNDER_PUNCH}
+    },
+    {
+    .iv = 255,
+    .lvl = 22,
+    .evAtk = 255,
+    .evSpd = 255,
+    .species = SPECIES_HITMONLEE,
+    .abilityNum = HIDDEN_ABILITY,
+    .heldItem = {ITEM_IRON_BALL, ITEM_LEFTOVERS, ITEM_MACHO_BRACE},
+    .moves = {MOVE_DROP_WEIGHTS, MOVE_EARTHQUAKE, MOVE_ROCK_SLIDE, MOVE_BLAZE_KICK}
+    },
+    {
+    .iv = 255,
+    .lvl = 23,
+    .evAtk = 255,
+    .evSpd = 255,
+    //.abilityNum = SECOND_ABILITY,
+    .species = SPECIES_HITMONTOP,
+    .heldItem = {ITEM_NONE, ITEM_SITRUS_BERRY, ITEM_NONE},
+    .moves = {MOVE_DIG, MOVE_TRIPLE_KICK, MOVE_PURSUIT, MOVE_EARTHQUAKE}
+    },
+    {
+    .iv = 255,
+    .lvl = 24,
+    .evAtk = 255,
+    .evHp = 255,
+    .species = SPECIES_MACHAMP,
+    .heldItem = {ITEM_MUSCLE_BAND, ITEM_SITRUS_BERRY, ITEM_BLACK_BELT},
+    .moves = {MOVE_ROCK_SLIDE, MOVE_BULK_UP, MOVE_EARTHQUAKE, MOVE_DYNAMIC_PUNCH}
+    }
+};
+
 static const struct TrainerParty sParty_Sidney[] = {
     {
     .iv = 255,

@@ -4175,6 +4175,22 @@ const struct Trainer gTrainers[] = {
         .hardparty = {.HardParty = sParty_Walter5Hard},
     },
 
+    [TRAINER_ELITE_FOUR_BRUNO] =
+    {
+        .partyFlags = 0,
+        .trainerClass = TRAINER_CLASS_ELITE_FOUR,
+        .encounterMusic_gender = TRAINER_ENCOUNTER_MUSIC_ELITE_FOUR,
+        .trainerPic = TRAINER_PIC_ELITE_FOUR_BRUNO,
+        .trainerName = _("Bruno"),
+        .items = {ITEM_MAX_POTION, ITEM_FULL_HEAL, ITEM_NONE, ITEM_NONE},
+        .doubleBattle = FALSE,
+        .aiFlags = AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY | AI_FLAG_SETUP_FIRST_TURN,
+        .partySize = ARRAY_COUNT(sParty_Bruno),
+        .hardpartySize = ARRAY_COUNT(sParty_BrunoHard),
+        .party = {.NormalParty = sParty_Bruno},
+        .hardparty = {.HardParty = sParty_BrunoHard},
+    },
+
     [TRAINER_ELITE_FOUR_SIDNEY] =
     {
         .partyFlags = 0,

@@ -815,6 +815,8 @@ u8 GetTrainerBattleTransition(void)
 
     if (gTrainers[gTrainerBattleOpponent_A].trainerClass == TRAINER_CLASS_ELITE_FOUR)
     {
+        if (gTrainerBattleOpponent_A == TRAINER_ELITE_FOUR_BRUNO)
+            return B_TRANSITION_BRUNO;
         if (gTrainerBattleOpponent_A == TRAINER_ELITE_FOUR_SIDNEY)
             return B_TRANSITION_SIDNEY;
         if (gTrainerBattleOpponent_A == TRAINER_ELITE_FOUR_PHOEBE)
@@ -2078,6 +2080,9 @@ bool8 PlayerCouldCatchPokemon(void)
     u8 i;
     u16 species;
     bool8 oneTypeOn = IsOneTypeChallengeActive();
+
+    if (!FlagGet(FLAG_SYS_POKEMON_GET) || !FlagGet(FLAG_ADVENTURE_STARTED))
+        return FALSE;
 
     for (i = 0; i < PARTY_SIZE; i++)
     {

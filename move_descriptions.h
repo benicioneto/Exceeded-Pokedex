@@ -462,8 +462,8 @@ static const u8 sReflectDescription[] = _(
     "weakens physical attacks.");
 
 static const u8 sFocusEnergyDescription[] = _(
-    "Focuses power to raise the\n"
-    "critical-hit ratio.");
+    "Enhance critical-hit ratio,\n"
+    "Focus Blast and Focus Punch.");
 
 static const u8 sBideDescription[] = _(
     "Endures attack for 2\n"
@@ -1452,7 +1452,7 @@ static const u8 sNATURAL_GIFTDescription[] = _(
     "The effectiveness varies\n"
     "with the held Berry.");
 
-static const u8 sFEINTDescription[] = _(
+static const u8 sFeintDescription[] = _(
     "An attack that hits foes\n"
     "using moves like Protect.");
 
@@ -1508,7 +1508,7 @@ static const u8 sHEAL_BLOCKDescription[] = _(
     "Prevents the foe from\n"
     "recovering any HP.");
 
-static const u8 sWRING_OUTDescription[] = _(
+static const u8 sWringOutDescription[] = _(
     "The higher the foe's HP\n"
     "the more damage caused.");
 
@@ -1552,7 +1552,7 @@ static const u8 sWORRY_SEEDDescription[] = _(
     "Plants a seed on the foe\n"
     "giving it Insomnia.");
 
-static const u8 sSUCKER_PUNCHDescription[] = _(
+static const u8 sSuckerPunchDescription[] = _(
     "Strikes first if the foe\n"
     "is preparing an attack.");
 
@@ -3255,6 +3255,54 @@ static const u8 sIvyCudgelDescription[] = _(
     "Type changes with held mask.\n"
     "High critical-hit ratio.");
 
+static const u8 sElectroShotDescription[] = _(
+    "Absorbs electricity in one turn,\n"
+    "then attacks next turn.");
+
+static const u8 sTeraStarstormDescription[] = _(
+    "Damages all opponents if user is\n"
+    "Stellar form Terapagos.");
+
+static const u8 sFickleBeamDescription[] = _(
+    "Shoots a beam of light. Sometimes\n"
+    "twice as strong.");
+
+static const u8 sBurningBulwarkDescription[] = _(
+    "Evades attack, and burns\n"
+    "the foe if struck.");
+
+static const u8 sTachyonCutterDescription[] = _(
+    "Launches particle blades at\n"
+    "the target. Strikes twice.");
+
+static const u8 sDragonCheerDescription[] = _(
+    "Increases allies' critical hit\n"
+    "ration, especially if Dragons.");
+
+static const u8 sAlluringVoiceDescription[] = _(
+    "Confuses the target if their\n"
+    "stats were boosted this turn.");
+
+static const u8 sTemperFlareDescription[] = _(
+    "A desperation attack. Power\n"
+    "doubles if last move failed.");
+
+static const u8 sSupercellSlamDescription[] = _(
+    "An electrified slam. If it\n"
+    "misses, the user is hurt.");
+
+static const u8 sPsychicNoiseDescription[] = _(
+    "Unpleasant sound waves that\n"
+    "damage and prevent healing.");
+
+static const u8 sUpperHandDescription[] = _(
+    "Makes the target flinch if\n"
+    "readying a priority move.");
+
+static const u8 sMalignantChainDescription[] = _(
+    "A corrosive chain attack\n"
+    "that may badly poison.");
+
 static const u8 sNotDoneYetDescription[] = _(
     "Not done yet.");
 
@@ -4104,7 +4152,7 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_HEALING_WISH - 1] = sHEALING_WISHDescription,
     [MOVE_BRINE - 1] = sBRINEDescription,
     [MOVE_NATURAL_GIFT - 1] = sNATURAL_GIFTDescription,
-    [MOVE_FEINT - 1] = sFEINTDescription,
+    [MOVE_FEINT - 1] = sFeintDescription,
     [MOVE_PLUCK - 1] = sPLUCKDescription,
     [MOVE_TAILWIND - 1] = sTAILWINDDescription,
     [MOVE_ACUPRESSURE - 1] = sACUPRESSUREDescription,
@@ -4118,7 +4166,7 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_PSYCHO_SHIFT - 1] = sPSYCHO_SHIFTDescription,
     [MOVE_TRUMP_CARD - 1] = sTRUMP_CARDDescription,
     [MOVE_HEAL_BLOCK - 1] = sHEAL_BLOCKDescription,
-    [MOVE_WRING_OUT - 1] = sWRING_OUTDescription,
+    [MOVE_WRING_OUT - 1] = sWringOutDescription,
     [MOVE_POWER_TRICK - 1] = sPOWER_TRICKDescription,
     [MOVE_GASTRO_ACID - 1] = sGASTRO_ACIDDescription,
     [MOVE_LUCKY_CHANT - 1] = sLUCKY_CHANTDescription,
@@ -4129,7 +4177,7 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_PUNISHMENT - 1] = sPUNISHMENTDescription,
     [MOVE_LAST_RESORT - 1] = sLAST_RESORTDescription,
     [MOVE_WORRY_SEED - 1] = sWORRY_SEEDDescription,
-    [MOVE_SUCKER_PUNCH - 1] = sSUCKER_PUNCHDescription,
+    [MOVE_SUCKER_PUNCH - 1] = sSuckerPunchDescription,
     [MOVE_TOXIC_SPIKES - 1] = sTOXIC_SPIKESDescription,
     [MOVE_HEART_SWAP - 1] = sHEART_SWAPDescription,
     [MOVE_AQUA_RING - 1] = sAQUA_RINGDescription,
@@ -4202,7 +4250,7 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_ROAR_OF_TIME - 1] = sROAR_OF_TIMEDescription,
     [MOVE_SPACIAL_REND - 1] = sSPACIAL_RENDDescription,
     [MOVE_LUNAR_DANCE - 1] = sHEALING_WISHDescription,
-    [MOVE_CRUSH_GRIP - 1] = sWRING_OUTDescription,
+    [MOVE_CRUSH_GRIP - 1] = sWringOutDescription,
     [MOVE_MAGMA_STORM - 1] = sMAGMA_STORMDescription,
     [MOVE_DARK_VOID - 1] = sDARK_VOIDDescription,
     [MOVE_SEED_FLARE - 1] = sSEED_FLAREDescription,
@@ -4575,6 +4623,21 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_MATCHA_GOTCHA - 1] = sMatchaGotchaDescription,
     [MOVE_SYRUP_BOMB - 1] = sSyrupBombDescription,
     [MOVE_IVY_CUDGEL - 1] = sIvyCudgelDescription,
+    [MOVE_ELECTRO_SHOT - 1] = sElectroShotDescription,
+    [MOVE_TERA_STARSTORM - 1] = sTeraStarstormDescription,
+    [MOVE_FICKLE_BEAM - 1] = sFickleBeamDescription,
+    [MOVE_BURNING_BULWARK - 1] = sBurningBulwarkDescription,
+    [MOVE_THUNDERCLAP - 1] = sSuckerPunchDescription,
+    [MOVE_MIGHTY_CLEAVE - 1] = sFeintDescription,
+    [MOVE_TACHYON_CUTTER - 1] = sTachyonCutterDescription,
+    [MOVE_HARD_PRESS - 1] = sWringOutDescription,
+    [MOVE_DRAGON_CHEER - 1] = sDragonCheerDescription,
+    [MOVE_ALLURING_VOICE - 1] = sAlluringVoiceDescription,
+    [MOVE_TEMPER_FLARE - 1] = sTemperFlareDescription,
+    [MOVE_SUPERCELL_SLAM - 1] = sSupercellSlamDescription,
+    [MOVE_PSYCHIC_NOISE - 1] = sPsychicNoiseDescription,
+    [MOVE_UPPER_HAND - 1] = sUpperHandDescription,
+    [MOVE_MALIGNANT_CHAIN - 1] = sMalignantChainDescription,
     [MOVE_KINGS_GRACE - 1] = sKINGS_GRACEDescription,
     [MOVE_FROZEN_TERRAIN - 1] = sFROZEN_TERRAINDescription,
     [MOVE_CURSED_TERRAIN - 1] = sCURSED_TERRAINDescription,
