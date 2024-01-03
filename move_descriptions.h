@@ -2005,7 +2005,7 @@ static const u8 sCIRCLE_THROWDescription[] = _(
     "the battle.");
 
 static const u8 sINCINERATEDescription[] = _(
-    "Burns up Berries and Gems\n"
+    "Burns up consumables\n"
     "preventing their use.");
 
 static const u8 sQUASHDescription[] = _(
@@ -2226,7 +2226,7 @@ static const u8 sPETAL_BLIZZARDDescription[] = _(
 
 static const u8 sFREEZE_DRYDescription[] = _(
     "Super effective on Water-\n"
-    "types. May cause freezing.");
+    "types. May cause frostbite.");
 
 static const u8 sDISARMING_VOICEDescription[] = _(
     "Lets out a charming cry\n"
@@ -2926,7 +2926,7 @@ static const u8 sDRAGON_ENERGYDescription[] = _(
 
 static const u8 sFREEZING_GLAREDescription[] = _(
     "Shoots psychic power from\n"
-    "the eyes. May freeze the foe.");
+    "the eyes. May get frostbite.");
 
 static const u8 sFIERY_WRATHDescription[] = _(
     "An attack fueled by your\n"
@@ -3496,8 +3496,8 @@ static const u8 sRUBBLE_ROUSERDescription[] = _(
     "damages on contact.");
 
 static const u8 sSNOW_GLOBEDescription[] = _(
-    "Chilly blast of snow that\n"
-    "may freeze or lower Speed.");
+    "Chilly blast that may cause\n"
+    "frostbite or lower Speed.");
 
 static const u8 sHYDRO_TYPHOONDescription[] = _(
     "Sweeps powerful water jets.\n"
@@ -3692,7 +3692,7 @@ static const u8 sSHADOW_STORMDescription[] = _(
 
 static const u8 sSHADOW_CHILLDescription[] = _(
     "Blasts the foe with an icy\n"
-    "beam that may freeze it.");
+    "beam that may cause frostbite.");
 
 static const u8 sSHADOW_FIREDescription[] = _(
     "A powerful fire attack that\n"
@@ -3785,6 +3785,130 @@ static const u8 sZANTETSUKENDescription[] = _(
 static const u8 sDROP_WEIGHTSDescription[] = _(
     "The Pokémon drops all held\n"
     "items to increase Speed.");
+
+static const u8 sCOMPUTE_AND_CRUSHDescription[] = _(
+    "Computes to raise Attack,\n"
+    "Speed and Accuracy.");
+
+static const u8 sIGNITE_MIDNIGHTDescription[] = _(
+    "A desintegrating beam that\n"
+    "lasts for 2 to 3 turns.");
+
+static const u8 sCOTTON_CLOUD_CRASHDescription[] = _(
+    "Floats, then down the\n"
+    "next turn. Lowers Speed.");
+
+static const u8 sMOONLIGHT_PRANCEDescription[] = _(
+    "Steal foe's positive\n"
+    "effects before attack.");
+
+static const u8 sTRIPLE_TRAMPLEDescription[] = _(
+    "Runs over target with foot\n"
+    "3 times in a row.");
+
+static const u8 sDREEP_AND_DESTROYDescription[] = _(
+    "The Pokémon drops all held\n"
+    "items to increase Speed.");
+
+static const u8 sINFINITE_PSYBURNDescription[] = _(
+    "Releases immense power\n"
+    "that affects foe's party.");
+
+static const u8 sSOVEREIGN_SWORDDescription[] = _(
+    "A 2-turn move that raises\n"
+    "Attack before attacking.");
+
+static const u8 sAZURE_SPY_VISIONDescription[] = _(
+    "The Pokémon loads with a\n"
+    "special shell next shot.");
+
+static const u8 sMYSTICAL_MIRAGEDescription[] = _(
+    "The Pokémon and its partner\n"
+    "vanish until next move.");
+
+static const u8 sSLOWBEAMDescription[] = _(
+    "Slow frequency beam that\n"
+    "slows foe for 2 turns.");
+
+static const u8 sNIGHTFALL_DAZEDescription[] = _(
+    "Summons gloomy night for\n"
+    "for 5 turns.");
+
+static const u8 sSPINNING_FLAME_FISTDescription[] = _(
+    "Removes binding effects and\n"
+    "increases Speed. May burn.");
+
+static const u8 sSPINNING_FLAME_KICKDescription[] = _(
+    "Removes binding effects and\n"
+    "increases Attack. May burn.");
+
+static const u8 sGLACIAL_STAGEDescription[] = _(
+    "Summons frozen terrain.\n"
+    "The user also switches out.");
+
+static const u8 sLAPRAS_EXPRESSDescription[] = _(
+    "Carries its partner, making\n"
+    "it moves right after.");
+
+static const u8 sFLOWERY_FIELDS_FOREVERDescription[] = _(
+    "Creates a permanent grassy\n"
+    "terrain.");
+
+static const u8 sGREEN_ILLUSION_DIVEDescription[] = _(
+    "Raises Evasion stat if used\n"
+    "by green Pokémon.");
+
+static const u8 sRED_ILLUSION_DIVEDescription[] = _(
+    "Raises Evasion stat if used\n"
+    "by red Pokémon.");
+
+static const u8 sEMERALD_TWO_STEPDescription[] = _(
+    "Bounces up, then down the\n"
+    "next turn. May paralyze.");
+
+static const u8 sFAIRY_FROLICDescription[] = _(
+    "Restore HP instead taking\n"
+    "damage, but may fail.");
+
+static const u8 sEBON_FISTDescription[] = _(
+    "A follow-up move of\n"
+    "Wicked Bow.");
+
+static const u8 sFLOWING_FISTSDescription[] = _(
+    "A follow-up move of\n"
+    "Surging Strikes.");
+
+static const u8 sPSYCHIC_SOLAIREDescription[] = _(
+    "Makes the foe float. It is\n"
+    "easier to hit for 3 turns.");
+
+static const u8 sRIGHT_AS_RAINDescription[] = _(
+    "Summons a permanent rain\n"
+    "in the battlefield.");
+
+static const u8 sSHOWTIMEDescription[] = _(
+    "A expectacular show that\n"
+    "flinches all other {PKMN}.");
+
+static const u8 sPLASMA_GALEDescription[] = _(
+    "Summons a electric terrain\n"
+    "in the battlefield.");
+
+static const u8 sCHAOS_GLOWERDescription[] = _(
+    "A 1st-turn: flinch foe.\n"
+    "Otherwise, lowers Speed.");
+
+static const u8 sSTARLIGHT_RECITALDescription[] = _(
+    "Heals HP and status of\n"
+    "itself and allies in battle.");
+
+static const u8 sFLORAL_FLOURISHDescription[] = _(
+    "A blade waltz that\n"
+    "lasts for 2 to 3 turns.");
+
+static const u8 sGLOOMY_NIGHTDescription[] = _(
+    "Summons gloomy night for\n"
+    "for 5 turns.");
 
 // MOVE_NONE is ignored in this table. Make sure to always subtract 1 before getting the right pointer.
 const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
@@ -4759,4 +4883,35 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_THORN_TRAP - 1] = sTHORN_TRAPDescription,
     [MOVE_ZANTETSUKEN - 1] = sZANTETSUKENDescription,
     [MOVE_DROP_WEIGHTS - 1] = sDROP_WEIGHTSDescription,
+    [MOVE_COMPUTE_AND_CRUSH - 1] = sCOMPUTE_AND_CRUSHDescription,
+    [MOVE_IGNITE_MIDNIGHT - 1] = sIGNITE_MIDNIGHTDescription,
+    [MOVE_COTTON_CLOUD_CRASH - 1] = sCOTTON_CLOUD_CRASHDescription,
+    [MOVE_MOONLIGHT_PRANCE - 1] = sMOONLIGHT_PRANCEDescription,
+    [MOVE_TRIPLE_TRAMPLE - 1] = sTRIPLE_TRAMPLEDescription,
+    [MOVE_DREEP_AND_DESTROY - 1] = sDREEP_AND_DESTROYDescription,
+    [MOVE_INFINITE_PSYBURN - 1] = sINFINITE_PSYBURNDescription,
+    [MOVE_SOVEREIGN_SWORD - 1] = sSOVEREIGN_SWORDDescription,
+    [MOVE_AZURE_SPY_VISION - 1] = sAZURE_SPY_VISIONDescription,
+    [MOVE_MYSTICAL_MIRAGE - 1] = sMYSTICAL_MIRAGEDescription,
+    [MOVE_SLOWBEAM - 1] = sSLOWBEAMDescription,
+    [MOVE_NIGHTFALL_DAZE - 1] = sNIGHTFALL_DAZEDescription,
+    [MOVE_SPINNING_FLAME_FIST - 1] = sSPINNING_FLAME_FISTDescription,
+    [MOVE_SPINNING_FLAME_KICK - 1] = sSPINNING_FLAME_KICKDescription,
+    [MOVE_GLACIAL_STAGE - 1] = sGLACIAL_STAGEDescription,
+    [MOVE_LAPRAS_EXPRESS - 1] = sLAPRAS_EXPRESSDescription,
+    [MOVE_FLOWERY_FIELDS_FOREVER - 1] = sFLOWERY_FIELDS_FOREVERDescription,
+    [MOVE_GREEN_ILLUSION_DIVE - 1] = sGREEN_ILLUSION_DIVEDescription,
+    [MOVE_RED_ILLUSION_DIVE - 1] = sRED_ILLUSION_DIVEDescription,
+    [MOVE_EMERALD_TWO_STEP - 1] = sEMERALD_TWO_STEPDescription,
+    [MOVE_FAIRY_FROLIC - 1] = sFAIRY_FROLICDescription,
+    [MOVE_EBON_FIST - 1] = sEBON_FISTDescription,
+    [MOVE_FLOWING_FISTS - 1] = sFLOWING_FISTSDescription,
+    [MOVE_PSYCHIC_SOLAIRE - 1] = sPSYCHIC_SOLAIREDescription,
+    [MOVE_RIGHT_AS_RAIN - 1] = sRIGHT_AS_RAINDescription,
+    [MOVE_SHOWTIME - 1] = sSHOWTIMEDescription,
+    [MOVE_PLASMA_GALE - 1] = sPLASMA_GALEDescription,
+    [MOVE_CHAOS_GLOWER - 1] = sCHAOS_GLOWERDescription,
+    [MOVE_STARLIGHT_RECITAL - 1] = sSTARLIGHT_RECITALDescription,
+    [MOVE_FLORAL_FLOURISH - 1] = sFLORAL_FLOURISHDescription,
+    [MOVE_GLOOMY_NIGHT - 1] = sGLOOMY_NIGHTDescription,
 };

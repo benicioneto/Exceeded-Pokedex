@@ -41,7 +41,7 @@ FortreeCity_CableClub_EventScript_LittleBoy::
 	goto_if_ne FortreeCity_CableClub_EventScript_NotRequestedMon
 	copyvar VAR_0x8004, VAR_0x8008
 	copyvar VAR_0x8005, VAR_0x800A
-	removeobject 8
+	removeobject 5
 	special CreateInGameTradePokemon
 	special DoInGameTradeScene
 	waitstate
@@ -86,7 +86,7 @@ FortreeCity_CableClub_Text_AnyPokemonCanBeCute:
 FortreeCity_PokemonCenter_2F_EventScript_Pokemon::
 	lock
 	faceplayer
-	setvar VAR_0x8009, SPECIES_WOOPER_PALDEAN
+	setvar VAR_0x8009, SPECIES_WIGLETT
 	playmoncry VAR_0x8009, 0
 	msgbox FortreeCity_PokemonCenter_2F_Text_Pokemon, MSGBOX_DEFAULT
 	waitmoncry

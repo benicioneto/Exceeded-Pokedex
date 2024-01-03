@@ -51,7 +51,7 @@ MossdeepCity_CableClub_EventScript_LittleBoy::
 	goto_if_ne MossdeepCity_CableClub_EventScript_NotRequestedMon
 	copyvar VAR_0x8004, VAR_0x8008
 	copyvar VAR_0x8005, VAR_0x800A
-	removeobject 8
+	removeobject 7
 	special CreateInGameTradePokemon
 	special DoInGameTradeScene
 	waitstate

@@ -125,3 +125,82 @@ DewfordTown_CableClub_Text_GivesTmBodyPress:
 DewfordTown_CableClub_Text_RandomTalk:
 	.string "We arrived here from another\n"
 	.string "continent to discover new Pokémon.$"
+
+@ Toedscool
+DewfordTown_CableClub_EventScript_OldMan::
+	lock
+	faceplayer
+	goto_if_set FLAG_DEWFORD_TRADE_TOEDSCOOL, DewfordTown_CableClub_EventScript_TradeCompleted2
+	setvar VAR_0x8008, INGAME_TRADE_TOEDSCOOL
+	copyvar VAR_0x8004, VAR_0x8008
+	specialvar VAR_RESULT, GetInGameTradeSpeciesInfo
+	copyvar VAR_0x8009, VAR_RESULT
+	msgbox DewfordTown_CableClub_Text_IllTradeIfYouWant2, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq DewfordTown_CableClub_EventScript_DeclineTrade2
+	special ChoosePartyMon
+	waitstate
+	copyvar VAR_0x800A, VAR_0x8004
+	compare VAR_0x8004, 255
+	goto_if_eq DewfordTown_CableClub_EventScript_DeclineTrade2
+	copyvar VAR_0x8005, VAR_0x800A
+	specialvar VAR_RESULT, GetTradeSpecies
+	copyvar VAR_0x800B, VAR_RESULT
+	compare VAR_RESULT, VAR_0x8009
+	goto_if_ne DewfordTown_CableClub_EventScript_NotRequestedMon2
+	copyvar VAR_0x8004, VAR_0x8008
+	copyvar VAR_0x8005, VAR_0x800A
+	removeobject 9
+	special CreateInGameTradePokemon
+	special DoInGameTradeScene
+	waitstate
+	msgbox DewfordTown_CableClub_Text_PleaseBeGoodToMyPokemon2, MSGBOX_DEFAULT
+	setflag FLAG_DEWFORD_TRADE_TOEDSCOOL
+	release
+	end
+
+DewfordTown_PokemonCenter_2F_EventScript_Pokemon2::
+	lock
+	faceplayer
+	setvar VAR_0x8009, SPECIES_TOEDSCOOL
+	playmoncry VAR_0x8009, 0
+	msgbox DewfordTown_PokemonCenter_2F_Text_Pokemon2, MSGBOX_DEFAULT
+	waitmoncry
+	release
+	end
+
+DewfordTown_PokemonCenter_2F_Text_Pokemon2:
+	.string "Co-ol!$"
+
+DewfordTown_CableClub_EventScript_DeclineTrade2::
+	msgbox DewfordTown_CableClub_Text_YouDontWantToThatsOkay2, MSGBOX_DEFAULT
+	release
+	end
+
+DewfordTown_CableClub_EventScript_NotRequestedMon2::
+	bufferspeciesname 0, VAR_0x8009
+	msgbox DewfordTown_CableClub_Text_DoesntLookLikeMonToMe2, MSGBOX_DEFAULT
+	release
+	end
+
+DewfordTown_CableClub_EventScript_TradeCompleted2::
+	msgbox DewfordTown_CableClub_Text_AnyPokemonCanBeCute2, MSGBOX_DEFAULT
+	release
+	end
+
+DewfordTown_CableClub_Text_IllTradeIfYouWant2:
+	.string "I'll trade you my {STR_VAR_2} for\n"
+	.string "a normal {STR_VAR_1} if you want.$"
+
+DewfordTown_CableClub_Text_PleaseBeGoodToMyPokemon2:
+	.string "Is Toedscool doing well?$"
+
+DewfordTown_CableClub_Text_DoesntLookLikeMonToMe2:
+	.string "That doesn't look\n"
+	.string "a {STR_VAR_1}.$"
+
+DewfordTown_CableClub_Text_YouDontWantToThatsOkay2:
+	.string "Maybe after you get some fishing rod.$"
+
+DewfordTown_CableClub_Text_AnyPokemonCanBeCute2:
+	.string "Don't try to make Toedscool surf!$"

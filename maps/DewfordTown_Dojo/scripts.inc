@@ -42,12 +42,15 @@ DewfordTown_Dojo_Text_TEPIG:
 	.string "Te-pig!$"
 
 DewfordTown_Dojo_Text_OldMan:
-	.string "If you want to train your body and,\n"
-	.string "mind, you came to the right place.$"
+	.string "If you want to train your body and\n"
+	.string "mind, you came to the right place.\p"
+	.string "But if you want to train your\n"
+	.string "Pokémon, Trainer Hill might be."
+	.string "better.$"
 
 DewfordTown_Dojo_Text_LittleBoy:
 	.string "I can't wait to see the next fight\n"
-	.string "between Brawly and Bruno this weekend!.$"
+	.string "between Brawly and Bruno this weekend!$"
 
 DewfordTown_Dojo_Text_LittleGirl:
 	.string "Everyone in this tiny island comes\n"
@@ -189,8 +192,6 @@ DewfordTown_Dojo_EventScript_PlayerWon:
     msgbox DewfordTown_Dojo_Text_Congratulations, MSGBOX_DEFAULT
     closemessage
 	call DewfordTown_Dojo_EventScript_ExitArena
-    msgbox DewfordTown_Dojo_Text_HereTakeYourPrize, MSGBOX_DEFAULT
-    closemessage
 	addvar VAR_DEWFORD_DOJO_STATE, 1
 	compare VAR_DEWFORD_DOJO_STATE, 1
     goto_if_eq DewfordTown_Dojo_EventScript_GiveTepig	@ Little Kid
@@ -203,26 +204,35 @@ DewfordTown_Dojo_EventScript_PlayerWon:
 	goto DewfordTown_Dojo_EventScript_GiveNothing
 
 DewfordTown_Dojo_EventScript_GiveNothing:
+    msgbox DewfordTown_Dojo_Text_PlayerWonRepeat, MSGBOX_DEFAULT
 	release
 	end
 
 DewfordTown_Dojo_EventScript_GiveRareCandy:
+    msgbox DewfordTown_Dojo_Text_PlayerWonFatMan, MSGBOX_DEFAULT
+    closemessage
 	giveitem ITEM_RARE_CANDY
 	release
 	end
 
 DewfordTown_Dojo_EventScript_GivePunchingGloves:
+    msgbox DewfordTown_Dojo_Text_HereTakeYourPrize, MSGBOX_DEFAULT
+    closemessage
 	giveitem ITEM_PUNCHING_GLOVE
 	release
 	end
 
 DewfordTown_Dojo_EventScript_GiveKubfu:
+    msgbox DewfordTown_Dojo_Text_HereTakeYourPrize, MSGBOX_DEFAULT
+    closemessage
 	givemon SPECIES_KUBFU, 12, ITEM_BLACK_BELT
 	bufferspeciesname 0, SPECIES_KUBFU
 	setvar VAR_TEMP_1, SPECIES_KUBFU
 	goto DewfordTown_Dojo_EventScript_GiveMon
 
 DewfordTown_Dojo_EventScript_GiveTepig:
+    msgbox DewfordTown_Dojo_Text_PlayerWonLittleBoy, MSGBOX_DEFAULT
+    closemessage
 	removeobject LOCALID_TEPIG
 	setflag FLAG_DEWFORD_DOJO_TEPIG
 	givemon SPECIES_TEPIG, 8, ITEM_CHARCOAL
@@ -422,6 +432,9 @@ DewfordTown_Dojo_EventScript_OpponentUsedBelly:
 	playse SE_M_MEGA_KICK2
 	applymovement VAR_TEMP_1, DewfordTown_Dojo_Movement_OpponentReturn
 	waitmovement 0
+	callfunc ScrFunc_PlayerWasDefeated
+	compare VAR_TEMP_C, 1
+    goto_if_eq DewfordTown_Dojo_EventScript_OpponentWon
 	compare VAR_TEMP_B, 1 @Opponent missed
 	goto_if_eq DewfordTown_Dojo_EventScript_ButItMissed
 	compare VAR_TEMP_5, 3 @ DOJO_GUARD
@@ -595,3 +608,20 @@ DewfordTown_Dojo_Text_HereTakeYourPrize:
 DewfordTown_Dojo_Text_ReceivedKubfu:
 	.string "{PLAYER} received the {STR_VAR_1}\n"
 	.string "from Black Belt!$"
+
+DewfordTown_Dojo_Text_PlayerWonLittleBoy:
+	.string "I never thought that you would\n"
+	.string "hit a little kid…\p"
+	.string "But damn, that was brutal!\p"
+	.string "Here, you can take your reward!\n"
+	.string "But please don't be a bully\l"
+	.string "anymore!$"
+
+DewfordTown_Dojo_Text_PlayerWonFatMan:
+	.string "That fight was a piece of\n"
+	.string "cake, right?\p"
+	.string "Here, take your reward!$"
+
+DewfordTown_Dojo_Text_PlayerWonRepeat:
+	.string "Come here again for more\n"
+	.string "fights!$"
