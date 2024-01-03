@@ -3807,8 +3807,8 @@ static const u8 sTRIPLE_TRAMPLEDescription[] = _(
     "3 times in a row.");
 
 static const u8 sDREEP_AND_DESTROYDescription[] = _(
-    "The Pokémon drops all held\n"
-    "items to increase Speed.");
+    "The user attacks twice. Hurts\n"
+    "more the lower target's HP.");
 
 static const u8 sINFINITE_PSYBURNDescription[] = _(
     "Releases immense power\n"
@@ -3827,12 +3827,12 @@ static const u8 sMYSTICAL_MIRAGEDescription[] = _(
     "vanish until next move.");
 
 static const u8 sSLOWBEAMDescription[] = _(
-    "Slow frequency beam that\n"
+    "Low frequency beam that\n"
     "slows foe for 2 turns.");
 
 static const u8 sNIGHTFALL_DAZEDescription[] = _(
-    "Summons gloomy night for\n"
-    "for 5 turns.");
+    "A darkness remains in the\n"
+    "battlefield for 5 turns.");
 
 static const u8 sSPINNING_FLAME_FISTDescription[] = _(
     "Removes binding effects and\n"
@@ -3871,12 +3871,12 @@ static const u8 sFAIRY_FROLICDescription[] = _(
     "damage, but may fail.");
 
 static const u8 sEBON_FISTDescription[] = _(
-    "A follow-up move of\n"
-    "Wicked Bow.");
+    "A follow-up move of Wicked\n"
+    "Bow. May cause flinch.");
 
 static const u8 sFLOWING_FISTSDescription[] = _(
-    "A follow-up move of\n"
-    "Surging Strikes.");
+    "A follow-up move of Surging\n"
+    "Strikes. May cause flinch.");
 
 static const u8 sPSYCHIC_SOLAIREDescription[] = _(
     "Makes the foe float. It is\n"
@@ -3891,11 +3891,11 @@ static const u8 sSHOWTIMEDescription[] = _(
     "flinches all other {PKMN}.");
 
 static const u8 sPLASMA_GALEDescription[] = _(
-    "Summons a electric terrain\n"
+    "Summons an electric terrain\n"
     "in the battlefield.");
 
 static const u8 sCHAOS_GLOWERDescription[] = _(
-    "A 1st-turn: flinch foe.\n"
+    "Flinches foe on 1st-turn.\n"
     "Otherwise, lowers Speed.");
 
 static const u8 sSTARLIGHT_RECITALDescription[] = _(
@@ -3907,7 +3907,7 @@ static const u8 sFLORAL_FLOURISHDescription[] = _(
     "lasts for 2 to 3 turns.");
 
 static const u8 sGLOOMY_NIGHTDescription[] = _(
-    "Summons gloomy night for\n"
+    "Summons a gloomy night\n"
     "for 5 turns.");
 
 // MOVE_NONE is ignored in this table. Make sure to always subtract 1 before getting the right pointer.
