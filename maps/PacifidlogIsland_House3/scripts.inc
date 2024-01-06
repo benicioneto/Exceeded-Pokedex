@@ -7,6 +7,6 @@ PacifidlogIsland_House3_EventScript_Girl::
 	end
 
 PacifidlogIsland_House3_Text_Girl:
-	.string "The people of Pacifidlog is born\n"
+	.string "The people of Pacifidlog are born\n"
 	.string "in the water, even the people that\l"
 	.string "lives in this island.$"

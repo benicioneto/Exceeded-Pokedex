@@ -678,6 +678,8 @@ static const u8 sBranchSwingDescription[] = _("Raises Speed on grassy terrain.")
 static const u8 sScentMarkDescription[] = _("Moves before switch out.");
 static const u8 sHighTideDescription[] = _("May trap foes for few turns.");
 static const u8 sTogetherWeStandDescription[] = _("Heal each turn.");
+static const u8 sPlagueSpreadingDescription[] = _("Lowers Attack when poisons.");
+static const u8 sStockingPreyDescription[] = _("Stockpiles when changes form.");
 
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
 {
@@ -1293,6 +1295,8 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_SCENT_MARK] = _("Scent Mark"),
     [ABILITY_HIGH_TIDE] = _("High Tide"),
     [ABILITY_TOGETHER_WE_STAND] = _("Together We Stand"),
+    [ABILITY_PLAGUE_SPREADING] = _("Plague Spreading"),
+    [ABILITY_STOCKING_PREY] = _("Stocking Prey"),
 };
 
 const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
@@ -1909,6 +1913,8 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_SCENT_MARK] = sScentMarkDescription,
     [ABILITY_HIGH_TIDE] = sHighTideDescription,
     [ABILITY_TOGETHER_WE_STAND] = sTogetherWeStandDescription,
+    [ABILITY_PLAGUE_SPREADING] = sPlagueSpreadingDescription,
+    [ABILITY_STOCKING_PREY] = sStockingPreyDescription,
 };
 
 // ABILITY_TRUANT
@@ -2153,7 +2159,7 @@ static const u8 sBallFetchDescriptionExtended[] = _("At any time after the first
 static const u8 sCottonDownDescriptionExtended[] = _("When the Pokémon is hit by a \ndamaging move, the Speed of al-\nl other Pokémon is decreased b-\ny one stage.");
 static const u8 sPropellerTailDescriptionExtended[] = _("Makes the Pokémon's moves ign-\nore the target-redirecting eff-\nects of moves and abilities.");
 static const u8 sMirrorArmorDescriptionExtended[] = _("Reflects the stat-lowering ef-\nfects of moves and abilities b-\nack to the user.");
-static const u8 sGulpMissileDescriptionExtended[] = _("After the Pokémon uses Surf o-\nr Dive, if its HP is over half\n, it catches an Arrokuda, othe-\nrwise, it catches a Pikachu. I-\nf hit by an attack in either f-\norm, Cramorant spits out its c-\natch at the attacker, dealing \ndamage equal to 25% of the att-\nacker's maximum HP and lowerin-\ng Defense and Special Defense \nby one stage, while Pikachu pa-\nralyzes them.");
+static const u8 sGulpMissileDescriptionExtended[] = _("After the Pokémon uses Dive, \nGatling G. Missile, Stockpile \nor Surf, if its HP is over hal-\nf, it catches an Arrokuda, oth-\nerwise, it catches a Pikachu. \nIf attacked in either form, Cr-\namorant spits out its catch, d-\nealing damage equal to 25% of \nthe attacker's maximum HP and \nlowering Defense and Special D-\nefense by one stage, while Pik-\nachu paralyzes them.");
 static const u8 sStalwartDescriptionExtended[] = _("Makes the Pokémon's moves ign-\nore the target-redirecting eff-\nects of moves and abilities.");
 static const u8 sSteamEngineDescriptionExtended[] = _("When the Pokémon is hit by a \nFire- or Water-type move, its \nSpeed stat is increased by six\nstages. If the Pokémon is in \nthe party (even if fainted), t-\nhe number of cycles it takes f-\nor all Pokémon Eggs in the par-\nty to hatch are halved. This e-\nffect does not stack with itse-\nlf, Magma Armor, or Flame Body\n.");
 static const u8 sPunkRockDescriptionExtended[] = _("Boosts the power of the Pokém-\non's sound-based moves by 30%.\nThe Pokémon takes half damage\nfrom damaging sound-based mov-\nes.");
@@ -2273,7 +2279,7 @@ static const u8 sWeaknessExploitDescriptionExtended[] = _("Increases the Pokémo
 static const u8 sSolenoglyphsDescriptionExtended[] = _("There is a 50% chance of badl-\ny poisoning opposing Pokémon w-\nith biting moves.");
 static const u8 sLeechFangsDescriptionExtended[] = _("50% of the damage dealt by bi-\nting move is converted as the \nPokémon's HP.");
 static const u8 sScavengerDescriptionExtended[] = _("When the Pokémon directly cau-\nses another Pokémon (including\nallies) to faint by using a d-\namaging move, restores the Pok-\némon's HP by 25% of its maximu-\nm HP.");
-static const u8 sNocturnalDescriptionExtended[] = _("At night or gloomy night, it \nadds the Dark-type to the Poké-\nmon, in addition to the Pokémo-\nn's original type(s), also the\nSpeed stat of the Pokémon is \nincreased by 50%, regardless o-\nf the Pokémon's typing.");
+static const u8 sNocturnalDescriptionExtended[] = _("At night or gloomy night, it \nadds the Dark-type to the Poké-\nmon, in addition to the Pokémo-\nn's original type(s). Also, th-\ne Speed stat of the Pokémon is\nincreased by 50% during a glo-\nomy night, regardless of the P-\nokémon's typing.");
 static const u8 sEtherealDescriptionExtended[] = _("The Accuracy of physical move\nused against the Pokémon is r-\neduced by a percentage equal t-\no 10 plus Pokémon's base Speed\ndivided by 10.");
 static const u8 sOverwhelmDescriptionExtended[] = _("The Pokémon can hit Fairy-typ-\ne Pokémon with damage-dealing \nDragon-type moves. Also, block-\ns Intimidate and Frighten.");
 static const u8 sImpenetrableDescriptionExtended[] = _("Prevents the Pokémon from rec-\neiving damage from weather, po-\nison, burn, Curse, Leech Seed,\nentry hazards, recoil, crash \ndamage and items like Life Orb-\n. It doesn't prevent from beco-\nming afflicted by statuses.");
@@ -2336,7 +2342,7 @@ static const u8 sChargeAttackDescriptionExtended[] = _("The Pokémon has its Att
 static const u8 sSubterraneanDescriptionExtended[] = _("The first time that the Pokém-\non enters the battlefield, it \nburrows underground, avoinding\nany entry hazard and most att-\nacks. After the Pokémon uses a-\nny move or switches out, it wi-\nll emerge (if the used move is\nDig or Underground Bite, it w-\nill ignore its first turn char-\nge and will be executed immedi-\nately).");
 static const u8 sElectricBurstDescriptionExtended[] = _("The Pokémon's Electric-type m-\noves are boosted by 30%, but t-\nhe Pokémon takes 10% of its ma-\nximum HP as recoil.");
 static const u8 sAbyssalVoyagerDescriptionExtended[] = _("The first time that the Pokém-\non enters the battlefield, it \ndives underwater, avoinding an-\ny entry hazard and most attack-\ns. After the Pokémon uses any \nmove or switches out, it will \nemerge (if the used move is Di-\nve, it will ignore its first t-\nurn charge and will be execute-\nd immediately).");
-static const u8 sCamouflageDescriptionExtended[] = _("The first time that the Pokém-\non enters the battlefield, it \ncamouflages itself. While camo-\nuflaged, the Accuracy of singl-\ne-target move used against the\nPokémon is modified by a fact-\nor of 20%.");
+static const u8 sCamouflageDescriptionExtended[] = _("The Pokémon becomes a type co-\nrresponding to the battlefield\nterrain as soon as the Pokémo-\nn enters the battlefield. Also\n, the Pokémon gains same-type \nattack bonus with moves of the\noriginal types regardless the\nPokémon's current typing.");
 static const u8 sInflatableDescriptionExtended[] = _("When the Pokémon is hit by a \nFire- or Flying-type move, its\nDefense and Special Defense s-\ntats are increased by one stag-\ne.");
 static const u8 sDistortionWorldDescriptionExtended[] = _("When the Pokémon is in battle\nin its Origin form, all effec-\nts of weather and terrain are \nnegated (though the weather or\nterrain itself does not disap-\npear) and Shadow Force will ig-\nnore its first turn charge and\nwill be executed immediately.");
 static const u8 sCoilUpDescriptionExtended[] = _("The Pokémon enters the battle-\nfield coiled up, increasing th-\ne priority of the next biting \nmove by one.");
@@ -2423,7 +2429,7 @@ static const u8 sApexPredatorDescriptionExtended[] = _("Moves with the same type
 static const u8 sSilkArmorDescriptionExtended[] = _("Protects the Pokémon from sli-\ncing moves.");
 static const u8 sEternalLifeDescriptionExtended[] = _("When the Pokémon faints, star-\nts a 15 turns countdown. When \nthe countdown reaches 0, the P-\nokémon is revived in the end o-\nf the turn while restoring its\nHP by half of its maximum HP \nand up to 5 PPs. Each time the\nPokémon faints, increases the\nnext coundown by 15 and reduc-\nes the restored HP and PP.");
 static const u8 sAdamantiumSkinDescriptionExtended[] = _("Physical moves that would be \n“supereffective” against the P-\nokémon will be only normally e-\nffective instead.");
-static const u8 sDevourerDescriptionExtended[] = _("At the end of each turn, the \nPokémon increases its Stockpil-\ne count by 1 while increasing \nits Defense and Special Defens-\ne stats by one stage. If the P-\nokémon has already reached the\nstock count limit, it takes d-\namage equal to 1/6 of its maxi-\nmum HP instead.");
+static const u8 sDevourerDescriptionExtended[] = _("At the end of each turn, the \nPokémon increases its Stockpil-\ne count by 1 while increasing \nits Defense and Special Defens-\ne stats by one stage. If the P-\nokémon has already reached the\nstock count limit, it takes d-\namage equal to 1/4 of its maxi-\nmum HP instead.");
 static const u8 sSightSharingDescriptionExtended[] = _("Increases the Accuracy of mov-\nes used by the Pokémon's allie-\ns in battle by 20%. If the Pok-\némon is Latias or Latios, the \nAccuracy boost is activated if\nthe other Pokémon with this a-\nbility is in the Trainer's par-\nty, even if the Pokémon isn't \nin the battlefield, but is los-\nt if the other Pokémon is fain-\nted.");
 static const u8 sSpellFistDescriptionExtended[] = _("The power of punching moves u-\nsed by the Pokémon are increas-\ned by 20% and uses Special Att-\nack stat instead of Attack sta-\nt for the damage calculation o-\nnly. Special Technique: Power-\nUp Punch and Meteor Mash incre-\nase Special Attack stat stage \ninstead of Attack stat stage.");
 static const u8 sFrictionManeDescriptionExtended[] = _("Whenever the Pokémon uses a d-\namaging move, or other Pokémon\nuses an Electric-type move, t-\nhe Pokémon gains 1 friction ch-\narge. When the Pokémon is hit \nby a move that makes contact, \nconsumes all charges to deal E-\nlectric-type damage with 20 po-\nwer per charge. If the Pokémon\nreaches 4 charges, consumes a-\nll charges to use Discharge.");
@@ -2455,7 +2461,7 @@ static const u8 sWrestlingHeelDescriptionExtended[] = _("Adds the Fighting-type 
 static const u8 sProvokingFeudsDescriptionExtended[] = _("Swagger's Accuracy is increas-\ned to 100%. After using single\n-target status move, your dama-\nging move against that target \nwill deal 20% more damage and \nbypass Accuracy check in the n-\next turn.");
 static const u8 sOutbreakDescriptionExtended[] = _("When the Pokémon faints, the \nparasitic fungus mutates and b-\necomes more contagious.");
 static const u8 sPandemicDescriptionExtended[] = _("When the Pokémon attacks or i-\ns attacked by a move that make-\ns contact, the opposing Pokémo-\nn becomes infected by Cordycep-\ns. Cordyceps effect: Steal 25%\nof the infected Pokémon's Att-\nack and Special Attack stats a-\nnd steal 1/8 of their maximum \nHP each turn. They may attack \nits allies in Double Battles.");
-static const u8 sGrimtoothDescriptionExtended[] = _("The Pokémon camouflages itsel-\nf as soon as it enters the bat-\ntlefield. While camouflaged, t-\nhe Accuracy of single-target m-\nove used against the Pokémon i-\ns modified by a factor of 20%.\nUsing a damaging move will re-\nmove the camouflage, but gun a-\nnd shot moves will always be c-\nritical hit.");
+static const u8 sGrimtoothDescriptionExtended[] = _("The Pokémon cloaks itself as \nsoon as it enters the battlefi-\neld. While cloaked, the Accura-\ncy of single-target move used \nagainst the Pokémon is reduced\nby 20%. Using a damaging move\nwill remove the cloak, but gu-\nn and shot moves will always b-\ne critical hit.");
 static const u8 sSlottedShellDescriptionExtended[] = _("The Pokémon creates a random \nshell whenever it enters the b-\nattlefield or after using gun \nand shot moves. Shrapnel Shell-\n: Deals 1/16 of maximum HP. Pi-\nercing Shell: Bonus of 33% of \ntarget's Defense. Explosive Sh-\nell: Ignores ignorable abiliti-\nes. Incendiary Shell: Burns th-\ne target. Shotgun Slug: May fl-\ninch. Anti-Material Shell: Dea-\nls physical or special damage.");
 static const u8 sTraumaticFistDescriptionExtended[] = _("Punching moves have a chance \nof lowering a random stat of t-\nhe target by one stage, depend-\ning on the base power of the u-\nsed move. Special Technique: I-\nce Hammer and Hammer Arm alway-\ns lower target's Speed stat by\ntwo stages.");
 static const u8 sGoldenArmorDescriptionExtended[] = _("The Pokémon is healed instead\nof being damaged by recoil fr-\nom moves, except when using St-\nruggle.");
@@ -2523,6 +2529,8 @@ static const u8 sBranchSwingDescriptionExtended[] = _("The Speed stat of the Pok
 static const u8 sScentMarkDescriptionExtended[] = _("If the target Pokémon is swit-\nched out on the turn a move is\nused, it will immediately be \nused before that Pokémon is sw-\nitched out. Only certain moves\nare allowed to activate this \nability.");
 static const u8 sHighTideDescriptionExtended[] = _("Water-type moves have 30% cha-\nnce to trap the foe inside a v-\nortex for two to three turns.");
 static const u8 sTogetherWeStandDescriptionExtended[] = _("At the end of each turn, if t-\nhe Pokémon has a status condit-\nion in School form, it loses 1\n/16 of its maximum HP to heal \ntheir status condition. Also, \nthe Pokémon is immune to Intim-\nidade or Frighten in School fo-\nrm.");
+static const u8 sPlagueSpreadingDescriptionExtended[] = _("When the Pokémon inflicts poi-\nson condition, it will also lo-\nwer Attack stat by one stage a-\nnd the status problem is sprea-\nd to a random Pokémon in the o-\npposing team.");
+static const u8 sStockingPreyDescriptionExtended[] = _("When the Pokémon changes to G-\nulping or Gorging form, increa-\nses its Stockpile count by 1 w-\nhile increasing its Defense an-\nd Special Defense stats by one\nstage. If the Pokémon has alr-\neady reached the Stockpile cou-\nnt limit, it takes damage equa-\nl to 1/4 of its maximum HP ins-\ntead.");
 
 const u8 *const gAbilityDescriptionExtendedPointers[ABILITIES_COUNT] =
 {
@@ -3138,4 +3146,6 @@ const u8 *const gAbilityDescriptionExtendedPointers[ABILITIES_COUNT] =
     [ABILITY_SCENT_MARK] = sScentMarkDescriptionExtended,
     [ABILITY_HIGH_TIDE] = sHighTideDescriptionExtended,
     [ABILITY_TOGETHER_WE_STAND] = sTogetherWeStandDescriptionExtended,
+    [ABILITY_PLAGUE_SPREADING] = sPlagueSpreadingDescriptionExtended,
+    [ABILITY_STOCKING_PREY] = sStockingPreyDescriptionExtended,
 };

@@ -371,7 +371,7 @@ static const u8 sToxicDescription[] = _(
 
 static const u8 sConfusionDescription[] = _(
     "Deals double damage if\n"
-    "confused. May confuse user.");
+    "confused. May confuse both.");
 
 static const u8 sPsychicDescription[] = _(
     "A powerful psychic attack\n"
@@ -3456,8 +3456,8 @@ static const u8 sWATERBURST_SHURIKENDescription[] = _(
     "lowers target's Speed.");
 
 static const u8 sGATLING_GULP_MISSILEDescription[] = _(
-    "Throws one to ten water\n"
-    "balls in a row.");
+    "Throws one to ten Arrokudas\n"
+    "or Pikachus in a row.");
 
 static const u8 sDEATHROLLDescription[] = _(
     "Vicious bite that ignores\n"
@@ -3803,8 +3803,8 @@ static const u8 sMOONLIGHT_PRANCEDescription[] = _(
     "effects before attack.");
 
 static const u8 sTRIPLE_TRAMPLEDescription[] = _(
-    "Runs over target with foot\n"
-    "3 times in a row.");
+    "Runs over target 3 times in\n"
+    "a row with rising intensity.");
 
 static const u8 sDREEP_AND_DESTROYDescription[] = _(
     "The user attacks twice. Hurts\n"
@@ -3831,8 +3831,8 @@ static const u8 sSLOWBEAMDescription[] = _(
     "slows foe for 2 turns.");
 
 static const u8 sNIGHTFALL_DAZEDescription[] = _(
-    "A darkness remains in the\n"
-    "battlefield for 5 turns.");
+    "Surround in darkness, then\n"
+    "attacks on the next turn.");
 
 static const u8 sSPINNING_FLAME_FISTDescription[] = _(
     "Removes binding effects and\n"
@@ -3872,11 +3872,11 @@ static const u8 sFAIRY_FROLICDescription[] = _(
 
 static const u8 sEBON_FISTDescription[] = _(
     "A follow-up move of Wicked\n"
-    "Bow. May cause flinch.");
+    "Bow with a critical hit.");
 
 static const u8 sFLOWING_FISTSDescription[] = _(
     "A follow-up move of Surging\n"
-    "Strikes. May cause flinch.");
+    "Strikes with 5 critical hits.");
 
 static const u8 sPSYCHIC_SOLAIREDescription[] = _(
     "Makes the foe float. It is\n"

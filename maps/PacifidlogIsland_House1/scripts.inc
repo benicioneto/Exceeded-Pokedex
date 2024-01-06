@@ -15,6 +15,6 @@ PacifidlogIsland_House1_Text_OldBoy:
 	.string "I'm talking about a phoenix\n"
 	.string "like Pokémon.\l"
 	.string "Once every ten years, this Pokémon\l"
-	.string "come to this island, and all people\l"
+	.string "comes to this island, and all people\l"
 	.string "from Pacifidlog come here to this\l"
 	.string "island to commemorate and feast!$"

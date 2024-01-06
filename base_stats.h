@@ -483,10 +483,10 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_FIELD,
-        .abilities = {ABILITY_RUN_AWAY, ABILITY_NONE, ABILITY_HUSTLE},
+        .abilities = {ABILITY_RUN_AWAY, ABILITY_GUTS, ABILITY_HUSTLE},
         .bodyColor = BODY_COLOR_PURPLE,
         .noFlip = FALSE,
-        .innates = {ABILITY_GUTS, ABILITY_NONE},
+        .innates = {ABILITY_GROWING_TOOTH, ABILITY_DEFENSIVE_MANEUVER, ABILITY_PLAGUE_SPREADING},
     },
 
     [SPECIES_RATICATE] =
@@ -508,10 +508,10 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_FIELD,
-        .abilities = {ABILITY_RUN_AWAY, ABILITY_NONE, ABILITY_HUSTLE},
+        .abilities = {ABILITY_RUN_AWAY, ABILITY_GUTS, ABILITY_HUSTLE},
         .bodyColor = BODY_COLOR_BROWN,
         .noFlip = FALSE,
-        .innates = {ABILITY_GUTS, ABILITY_GROWING_TOOTH},
+        .innates = {ABILITY_GROWING_TOOTH, ABILITY_DEFENSIVE_MANEUVER, ABILITY_PLAGUE_SPREADING},
     },
 
     [SPECIES_SPEAROW] =
@@ -14574,7 +14574,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_POISON_ABSORB, ABILITY_WEAK_ARMOR, ABILITY_AFTERMATH},
         .bodyColor = BODY_COLOR_GREEN,
         .noFlip = TRUE,
-        .innates = {ABILITY_STENCH, ABILITY_LITTERING, ABILITY_STICKY_HOLD},
+        .innates = {ABILITY_STENCH, ABILITY_LITTERING, ABILITY_PLAGUE_SPREADING},
     },
 
     [SPECIES_ZORUA] =
@@ -17986,7 +17986,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_SLOW,
         .eggGroup1 = EGG_GROUP_DRAGON,
         .eggGroup2 = EGG_GROUP_DRAGON,
-        .abilities = {ABILITY_SAP_SIPPER, ABILITY_NONE, ABILITY_GOOEY},
+        .abilities = {ABILITY_SAP_SIPPER, ABILITY_RAIN_DISH, ABILITY_GOOEY},
         .bodyColor = BODY_COLOR_PURPLE,
         .noFlip = FALSE,
         .innates = {ABILITY_AMPHIBIOUS, ABILITY_NONE},
@@ -18012,7 +18012,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_SLOW,
         .eggGroup1 = EGG_GROUP_DRAGON,
         .eggGroup2 = EGG_GROUP_DRAGON,
-        .abilities = {ABILITY_SAP_SIPPER, ABILITY_NONE, ABILITY_GOOEY},
+        .abilities = {ABILITY_SAP_SIPPER, ABILITY_RAIN_DISH, ABILITY_GOOEY},
         .bodyColor = BODY_COLOR_PURPLE,
         .noFlip = FALSE,
         .innates = {ABILITY_AMPHIBIOUS, ABILITY_HYDRATE},
@@ -18037,7 +18037,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_SLOW,
         .eggGroup1 = EGG_GROUP_DRAGON,
         .eggGroup2 = EGG_GROUP_DRAGON,
-        .abilities = {ABILITY_SAP_SIPPER, ABILITY_NONE, ABILITY_GOOEY},
+        .abilities = {ABILITY_SAP_SIPPER, ABILITY_RAIN_DISH, ABILITY_GOOEY},
         .bodyColor = BODY_COLOR_PURPLE,
         .noFlip = FALSE,
         .innates = {ABILITY_AMPHIBIOUS, ABILITY_HYDRATE, ABILITY_RAMPAGE},
@@ -21596,7 +21596,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_GULP_MISSILE, ABILITY_NONE},
         .bodyColor = BODY_COLOR_BLUE,
         .noFlip = FALSE,
-        .innates = {ABILITY_GLUTTONY, ABILITY_KEEN_EYE},
+        .innates = {ABILITY_GLUTTONY, ABILITY_KEEN_EYE, ABILITY_STOCKING_PREY},
     },
 
     [SPECIES_ARROKUDA] =
@@ -24234,11 +24234,11 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_FIELD,
-        .abilities = {ABILITY_RUN_AWAY, ABILITY_HUSTLE, ABILITY_CHEEK_POUCH},
+        .abilities = {ABILITY_GLUTTONY, ABILITY_HUSTLE, ABILITY_CHEEK_POUCH},
         .bodyColor = BODY_COLOR_BLACK,
         .noFlip = FALSE,
         .flags = FLAG_ALOLAN_FORM,
-        .innates = {ABILITY_THICK_FAT, ABILITY_GLUTTONY},
+        .innates = {ABILITY_GROWING_TOOTH, ABILITY_DEFENSIVE_MANEUVER},
     },
 
     [SPECIES_RATICATE_ALOLAN] =
@@ -24261,11 +24261,11 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroup1 = EGG_GROUP_FIELD,
         .eggGroup2 = EGG_GROUP_FIELD,
-        .abilities = {ABILITY_RUN_AWAY, ABILITY_HUSTLE, ABILITY_CHEEK_POUCH},
+        .abilities = {ABILITY_GLUTTONY, ABILITY_HUSTLE, ABILITY_CHEEK_POUCH},
         .bodyColor = BODY_COLOR_BLACK,
         .noFlip = FALSE,
         .flags = FLAG_ALOLAN_FORM,
-        .innates = {ABILITY_THICK_FAT, ABILITY_GLUTTONY, ABILITY_GROWING_TOOTH},
+        .innates = {ABILITY_GROWING_TOOTH, ABILITY_DEFENSIVE_MANEUVER, ABILITY_THICK_FAT},
     },
 
     [SPECIES_RAICHU_ALOLAN] =
@@ -30349,7 +30349,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_GULP_MISSILE, ABILITY_NONE},
         .bodyColor = BODY_COLOR_BLUE,
         .noFlip = FALSE,
-        .innates = {ABILITY_GLUTTONY, ABILITY_KEEN_EYE},
+        .innates = {ABILITY_GLUTTONY, ABILITY_KEEN_EYE, ABILITY_STOCKING_PREY},
     },
 
     [SPECIES_CRAMORANT_GORGING] =
@@ -30374,7 +30374,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_GULP_MISSILE, ABILITY_NONE},
         .bodyColor = BODY_COLOR_BLUE,
         .noFlip = FALSE,
-        .innates = {ABILITY_GLUTTONY, ABILITY_KEEN_EYE},
+        .innates = {ABILITY_GLUTTONY, ABILITY_KEEN_EYE, ABILITY_STOCKING_PREY},
     },
 
     [SPECIES_TOXTRICITY_LOW_KEY] =
@@ -31749,7 +31749,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_SLOW,
         .eggGroup1 = EGG_GROUP_DRAGON,
         .eggGroup2 = EGG_GROUP_DRAGON,
-        .abilities = {ABILITY_SAP_SIPPER, ABILITY_NONE, ABILITY_GOOEY},
+        .abilities = {ABILITY_SAP_SIPPER, ABILITY_RAIN_DISH, ABILITY_GOOEY},
         .bodyColor = BODY_COLOR_PURPLE,
         .noFlip = FALSE,
         .flags = FLAG_HISUIAN_FORM,
@@ -31775,7 +31775,7 @@ const struct BaseStats gBaseStats[] =
         .growthRate = GROWTH_SLOW,
         .eggGroup1 = EGG_GROUP_DRAGON,
         .eggGroup2 = EGG_GROUP_DRAGON,
-        .abilities = {ABILITY_SAP_SIPPER, ABILITY_NONE, ABILITY_GOOEY},
+        .abilities = {ABILITY_SAP_SIPPER, ABILITY_RAIN_DISH, ABILITY_GOOEY},
         .bodyColor = BODY_COLOR_PURPLE,
         .noFlip = FALSE,
         .flags = FLAG_HISUIAN_FORM,

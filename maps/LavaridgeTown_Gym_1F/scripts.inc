@@ -115,6 +115,7 @@ LavaridgeTown_Gym_1F_EventScript_Cole::
 
 LavaridgeTown_Gym_EventScript_CheckTrainerScript::
 	call LavaridgeTown_Gym_1F_EventScript_SetTrainerTempVars
+	call EventScript_RocketEdition_TryStealPokemon_Return
 	release
 	special ShouldTryGetTrainerScript
 	compare VAR_RESULT, 1
