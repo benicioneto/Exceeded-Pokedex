@@ -42,7 +42,7 @@ DewfordTown_Dojo_Rooms_EventScript_AcceptedTyrogue:
 	msgbox DewfordTown_Dojo_Rooms_Text_BrunoAfterDefeat, MSGBOX_DEFAULT
 	closemessage
 	setflag FLAG_RECEIVED_TYROGUE
-	givecustommonsimple SPECIES_TYROGUE, 10, ITEM_NONE, MOVE_DIZZY_PUNCH, MOVE_HIGH_JUMP_KICK, MOVE_FAKE_OUT, MOVE_HELPING_HAND
+	givemonsimple SPECIES_TYROGUE, 10, ITEM_NONE, ITEM_NONE, ITEM_NONE, MOVE_DIZZY_PUNCH, MOVE_HIGH_JUMP_KICK, MOVE_FAKE_OUT, MOVE_HELPING_HAND
 	bufferspeciesname 0, SPECIES_TYROGUE
 	setvar VAR_TEMP_1, SPECIES_TYROGUE
 	goto DewfordTown_Dojo_EventScript_GiveMon
@@ -57,7 +57,7 @@ DewfordTown_Dojo_Rooms_Text_BrunoAfterDefeat:
 	.string "this reward.$"
 
 DewfordTown_Dojo_Rooms_Text_BrunoDefeat:
-	.string "why? How could I lose?.$"
+	.string "why? How could I lose?$"
 
 DewfordTown_Dojo_Rooms_Text_DeclinedTyrogue:
 	.string "You won't become the next\n"
@@ -66,8 +66,8 @@ DewfordTown_Dojo_Rooms_Text_DeclinedTyrogue:
 DewfordTown_Dojo_Rooms_Text_TryGiveTyrogue:
 	.string "I'm Bruno, one of the Elite\n"
 	.string "Four member from Johto!\p"
-	.string "I came to Hoenn to train with\n"
-	.string "Brawly!\p"
+	.string "I came to Hoenn to train\n"
+	.string "with Brawly!\p"
 	.string "Through rigorous training, people\n"
 	.string "and Pokémon can become stronger!\p"
 	.string "I've weight trained with my\n"

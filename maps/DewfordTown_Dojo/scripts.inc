@@ -45,8 +45,8 @@ DewfordTown_Dojo_Text_OldMan:
 	.string "If you want to train your body and\n"
 	.string "mind, you came to the right place.\p"
 	.string "But if you want to train your\n"
-	.string "Pokémon, Trainer Hill might be."
-	.string "better.$"
+	.string "Pokémon, Trainer Hill might be\l"
+	.string "the place.$"
 
 DewfordTown_Dojo_Text_LittleBoy:
 	.string "I can't wait to see the next fight\n"
@@ -62,7 +62,7 @@ DewfordTown_Dojo_Text_LittleGirl:
 DewfordTown_Dojo_Text_Fatman:
 	.string "I'm one of the best fighters\n"
 	.string "here!\p"
-	.string "Are you laughing on me?$"
+	.string "Are you laughing at me?$"
 
 DewfordTown_Dojo_Text_BlackBelt:
 	.string "Bruno is undefeated here!\n"
@@ -90,11 +90,11 @@ DewfordTown_Dojo_EventScript_AcceptedFight:
 	msgbox DewfordTown_Dojo_Text_GoToPlace, MSGBOX_DEFAULT
 	waitmessage
 	closemessage
-    switch VAR_DEWFORD_DOJO_STATE
-    case 0, DewfordTown_Dojo_EventScript_LittleBoyFight
-    case 1, DewfordTown_Dojo_EventScript_FatManFight
-    case 2, DewfordTown_Dojo_EventScript_BlackBeltFight
-    case 3, DewfordTown_Dojo_EventScript_OldManFight
+	switch VAR_DEWFORD_DOJO_STATE
+	case 0, DewfordTown_Dojo_EventScript_LittleBoyFight
+	case 1, DewfordTown_Dojo_EventScript_FatManFight
+	case 2, DewfordTown_Dojo_EventScript_BlackBeltFight
+	case 3, DewfordTown_Dojo_EventScript_OldManFight
 	goto DewfordTown_Dojo_EventScript_OldManFight
 
 @ VAR_TEMP_0 = number of rounds
@@ -171,68 +171,68 @@ DewfordTown_Dojo_EventScript_BattleContinues:
 	call DewfordTown_Dojo_EventScript_PlayerCounter
 	callfunc ScrFunc_WhatNext
 	compare VAR_TEMP_C, 0
-    goto_if_eq DewfordTown_Dojo_EventScript_BattleContinues
+	goto_if_eq DewfordTown_Dojo_EventScript_BattleContinues
 	compare VAR_TEMP_C, 1
-    goto_if_eq DewfordTown_Dojo_EventScript_OpponentWon
+	goto_if_eq DewfordTown_Dojo_EventScript_OpponentWon
 	compare VAR_TEMP_C, 2
-    goto_if_eq DewfordTown_Dojo_EventScript_PlayerWon
+	goto_if_eq DewfordTown_Dojo_EventScript_PlayerWon
 	release
 	end
 
 DewfordTown_Dojo_EventScript_OpponentWon:
 	playbgm MUS_B_ARENA, FALSE
-    msgbox DewfordTown_Dojo_Text_TooBad, MSGBOX_DEFAULT
-    closemessage
+	msgbox DewfordTown_Dojo_Text_TooBad, MSGBOX_DEFAULT
+	closemessage
 	call DewfordTown_Dojo_EventScript_ExitArena
 	release
 	end
 
 DewfordTown_Dojo_EventScript_PlayerWon:
 	playbgm MUS_B_ARENA, FALSE
-    msgbox DewfordTown_Dojo_Text_Congratulations, MSGBOX_DEFAULT
-    closemessage
+	msgbox DewfordTown_Dojo_Text_Congratulations, MSGBOX_DEFAULT
+	closemessage
 	call DewfordTown_Dojo_EventScript_ExitArena
 	addvar VAR_DEWFORD_DOJO_STATE, 1
 	compare VAR_DEWFORD_DOJO_STATE, 1
-    goto_if_eq DewfordTown_Dojo_EventScript_GiveTepig	@ Little Kid
+	goto_if_eq DewfordTown_Dojo_EventScript_GiveTepig	@ Little Kid
 	compare VAR_DEWFORD_DOJO_STATE, 2
-    goto_if_eq DewfordTown_Dojo_EventScript_GiveRareCandy @ Fat man
+	goto_if_eq DewfordTown_Dojo_EventScript_GiveRareCandy @ Fat man
 	compare VAR_DEWFORD_DOJO_STATE, 3
-    goto_if_eq DewfordTown_Dojo_EventScript_GivePunchingGloves @ Black Belt / Judge
+	goto_if_eq DewfordTown_Dojo_EventScript_GivePunchingGloves @ Black Belt / Judge
 	compare VAR_DEWFORD_DOJO_STATE, 4
-    goto_if_eq DewfordTown_Dojo_EventScript_GiveKubfu @ Old Man 
+	goto_if_eq DewfordTown_Dojo_EventScript_GiveKubfu @ Old Man 
 	goto DewfordTown_Dojo_EventScript_GiveNothing
 
 DewfordTown_Dojo_EventScript_GiveNothing:
-    msgbox DewfordTown_Dojo_Text_PlayerWonRepeat, MSGBOX_DEFAULT
+	msgbox DewfordTown_Dojo_Text_PlayerWonRepeat, MSGBOX_DEFAULT
 	release
 	end
 
 DewfordTown_Dojo_EventScript_GiveRareCandy:
-    msgbox DewfordTown_Dojo_Text_PlayerWonFatMan, MSGBOX_DEFAULT
-    closemessage
+	msgbox DewfordTown_Dojo_Text_PlayerWonFatMan, MSGBOX_DEFAULT
+	closemessage
 	giveitem ITEM_RARE_CANDY
 	release
 	end
 
 DewfordTown_Dojo_EventScript_GivePunchingGloves:
-    msgbox DewfordTown_Dojo_Text_HereTakeYourPrize, MSGBOX_DEFAULT
-    closemessage
+	msgbox DewfordTown_Dojo_Text_HereTakeYourPrize, MSGBOX_DEFAULT
+	closemessage
 	giveitem ITEM_PUNCHING_GLOVE
 	release
 	end
 
 DewfordTown_Dojo_EventScript_GiveKubfu:
-    msgbox DewfordTown_Dojo_Text_HereTakeYourPrize, MSGBOX_DEFAULT
-    closemessage
+	msgbox DewfordTown_Dojo_Text_HereTakeYourPrize, MSGBOX_DEFAULT
+	closemessage
 	givemon SPECIES_KUBFU, 12, ITEM_BLACK_BELT
 	bufferspeciesname 0, SPECIES_KUBFU
 	setvar VAR_TEMP_1, SPECIES_KUBFU
 	goto DewfordTown_Dojo_EventScript_GiveMon
 
 DewfordTown_Dojo_EventScript_GiveTepig:
-    msgbox DewfordTown_Dojo_Text_PlayerWonLittleBoy, MSGBOX_DEFAULT
-    closemessage
+	msgbox DewfordTown_Dojo_Text_PlayerWonLittleBoy, MSGBOX_DEFAULT
+	closemessage
 	removeobject LOCALID_TEPIG
 	setflag FLAG_DEWFORD_DOJO_TEPIG
 	givemon SPECIES_TEPIG, 8, ITEM_CHARCOAL
@@ -249,27 +249,27 @@ DewfordTown_Dojo_EventScript_GiveMon:
 
 DewfordTown_Dojo_EventScript_SendKubfuToParty:
 	call DewfordTown_Dojo_EventScript_ReceivedKubfu
-    msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
-    compare VAR_RESULT, 0
-    goto_if_eq DewfordTown_Dojo_EventScript_KubfuEnd
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_eq DewfordTown_Dojo_EventScript_KubfuEnd
 	call Common_EventScript_GetGiftMonPartySlot
 	call Common_EventScript_NameReceivedPartyMon
 	goto DewfordTown_Dojo_EventScript_KubfuEnd
 
 DewfordTown_Dojo_EventScript_SendKubfuToPC:
 	call DewfordTown_Dojo_EventScript_ReceivedKubfu
-    msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
-    compare VAR_RESULT, 0
-    goto_if_eq DewfordTown_Dojo_EventScript_KubfuTransferredToPC
-    call Common_EventScript_NameReceivedBoxMon
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_eq DewfordTown_Dojo_EventScript_KubfuTransferredToPC
+	call Common_EventScript_NameReceivedBoxMon
 	goto DewfordTown_Dojo_EventScript_KubfuTransferredToPC
 	end
 
 DewfordTown_Dojo_EventScript_KubfuTransferredToPC:
-    call Common_EventScript_TransferredToPC
+	call Common_EventScript_TransferredToPC
 DewfordTown_Dojo_EventScript_KubfuEnd:
-    release
-    end
+	release
+	end
 
 DewfordTown_Dojo_EventScript_ReceivedKubfu:
 	playfanfare MUS_OBTAIN_ITEM
@@ -279,47 +279,47 @@ DewfordTown_Dojo_EventScript_ReceivedKubfu:
 	return
 
 DewfordTown_Dojo_EventScript_ExitArena:
-    fadescreen FADE_TO_BLACK
+	fadescreen FADE_TO_BLACK
 	@ Player (need to applymovement because of camera)
 	applymovement OBJ_EVENT_ID_PLAYER, DewfordTown_Dojo_Movement_PlayerExitArena
 	waitmovement 0
 	@ LittleBoy
-    setobjectxy LOCALID_LITTLEBOY, 15, 9
+	setobjectxy LOCALID_LITTLEBOY, 15, 9
 	applymovement LOCALID_LITTLEBOY, Common_Movement_FaceLeft
 	waitmovement 0
 	@ Judge
-    setobjectxy LOCALID_JUDGE, 11, 14
+	setobjectxy LOCALID_JUDGE, 11, 14
 	applymovement LOCALID_JUDGE, Common_Movement_FaceDown
 	waitmovement 0
 	@ Fatman
-    setobjectxy LOCALID_FATMAN, 4, 11
+	setobjectxy LOCALID_FATMAN, 4, 11
 	applymovement LOCALID_FATMAN, Common_Movement_FaceRight
 	waitmovement 0
 	@ Black Belt
-    setobjectxy LOCALID_BLACK_BELT, 8, 7
+	setobjectxy LOCALID_BLACK_BELT, 8, 7
 	applymovement LOCALID_BLACK_BELT, Common_Movement_FaceDown
 	waitmovement 0
 	@ OldMan
-    setobjectxy LOCALID_OLDMAN, 2, 17
+	setobjectxy LOCALID_OLDMAN, 2, 17
 	waitmovement 0
-    fadescreen FADE_FROM_BLACK
+	fadescreen FADE_FROM_BLACK
 	delay 6
 	return
 
 DewfordTown_Dojo_EventScript_PlaceFightersInPlaceForFight:
-    fadescreen FADE_TO_BLACK
+	fadescreen FADE_TO_BLACK
 	@ Player (need to applymovement because of camera)
 	applymovement OBJ_EVENT_ID_PLAYER, DewfordTown_Dojo_Movement_PlayerGetsInPlace
 	waitmovement 0
 	@ Opponent
-    setobjectxy VAR_TEMP_1, 11, 11
+	setobjectxy VAR_TEMP_1, 11, 11
 	applymovement VAR_TEMP_1, Common_Movement_FaceLeft
 	waitmovement 0
 	@ Judge
-    setobjectxy LOCALID_JUDGE, 10, 13
+	setobjectxy LOCALID_JUDGE, 10, 13
 	applymovement LOCALID_JUDGE, Common_Movement_FaceUp
 	waitmovement 0
-    fadescreen FADE_FROM_BLACK
+	fadescreen FADE_FROM_BLACK
 	delay 6
 	msgbox DewfordTown_Dojo_Text_Round1Fight, MSGBOX_DEFAULT
 	waitmessage
@@ -327,17 +327,17 @@ DewfordTown_Dojo_EventScript_PlaceFightersInPlaceForFight:
 
 DewfordTown_Dojo_EventScript_PreparePlayerMoves:
 	callfunc ScrFunc_ShowBattlersHP
-    msgbox DewfordTown_Dojo_Text_WhichMove, MSGBOX_DEFAULT
-    closemessage
+	msgbox DewfordTown_Dojo_Text_WhichMove, MSGBOX_DEFAULT
+	closemessage
 	callfunc ScrFunc_PreparePlayerMoves @store moves name in gStringVars, choice opponent move, and handles variables
-    compare VAR_TEMP_4, 0
-    call_if_eq DewfordTown_Dojo_EventScript_Option1ForMoves
-    compare VAR_TEMP_4, 1
-    call_if_eq DewfordTown_Dojo_EventScript_Option2ForMoves
-    compare VAR_TEMP_4, 2
-    call_if_eq DewfordTown_Dojo_EventScript_Option3ForMoves
-    compare VAR_TEMP_4, 3
-    call_if_eq DewfordTown_Dojo_EventScript_Option4ForMoves
+	compare VAR_TEMP_4, 0
+	call_if_eq DewfordTown_Dojo_EventScript_Option1ForMoves
+	compare VAR_TEMP_4, 1
+	call_if_eq DewfordTown_Dojo_EventScript_Option2ForMoves
+	compare VAR_TEMP_4, 2
+	call_if_eq DewfordTown_Dojo_EventScript_Option3ForMoves
+	compare VAR_TEMP_4, 3
+	call_if_eq DewfordTown_Dojo_EventScript_Option4ForMoves
 	return
 
 DewfordTown_Dojo_EventScript_SelectOpponentMoveAndCalculations:
@@ -348,63 +348,151 @@ DewfordTown_Dojo_EventScript_SelectOpponentMoveAndCalculations:
 DewfordTown_Dojo_EventScript_PlayerMovement:
 	callfunc ScrFunc_SetPlayerMoveInString
 	compare VAR_TEMP_5, 0
-    call_if_eq DewfordTown_Dojo_EventScript_PlayerUsedPunch
+	call_if_eq DewfordTown_Dojo_EventScript_PlayerUsedPunch
 	compare VAR_TEMP_5, 1
-    call_if_eq DewfordTown_Dojo_EventScript_PlayerUsedKick
+	call_if_eq DewfordTown_Dojo_EventScript_PlayerUsedKick
 	compare VAR_TEMP_5, 5
-    call_if_eq DewfordTown_Dojo_EventScript_PlayerUsedSuperPunch
+	call_if_eq DewfordTown_Dojo_EventScript_PlayerUsedSuperPunch
 	compare VAR_TEMP_5, 6
-    call_if_eq DewfordTown_Dojo_EventScript_PlayerUsedSuperKick
+	call_if_eq DewfordTown_Dojo_EventScript_PlayerUsedSuperKick
 	compare VAR_TEMP_5, 8
-    call_if_eq DewfordTown_Dojo_EventScript_PlayerUsedOnePunch
+	call_if_eq DewfordTown_Dojo_EventScript_PlayerUsedOnePunch
 	return
 
 DewfordTown_Dojo_EventScript_PlayerCounter:
 	callfunc ScrFunc_SetPlayerMoveInString
 	compare VAR_TEMP_5, 4
-    call_if_eq DewfordTown_Dojo_EventScript_PlayerUsedCounter
+	call_if_eq DewfordTown_Dojo_EventScript_PlayerUsedCounter
 	return
 
 DewfordTown_Dojo_EventScript_OpponentMovement:
 	callfunc ScrFunc_SetOpponentMoveInString
 	compare VAR_TEMP_6, 0
-    call_if_eq DewfordTown_Dojo_EventScript_OpponentUsedPunch
+	call_if_eq DewfordTown_Dojo_EventScript_OpponentUsedPunch
 	compare VAR_TEMP_6, 1
-    call_if_eq DewfordTown_Dojo_EventScript_OpponentUsedKick
+	call_if_eq DewfordTown_Dojo_EventScript_OpponentUsedKick
 	compare VAR_TEMP_6, 4
-    call_if_eq DewfordTown_Dojo_EventScript_OpponentUsedCounter
+	call_if_eq DewfordTown_Dojo_EventScript_OpponentUsedCounter
 	compare VAR_TEMP_6, 5
-    call_if_eq DewfordTown_Dojo_EventScript_OpponentUsedSuperPunch
+	call_if_eq DewfordTown_Dojo_EventScript_OpponentUsedSuperPunch
 	compare VAR_TEMP_6, 6
-    call_if_eq DewfordTown_Dojo_EventScript_OpponentUsedSuperKick
+	call_if_eq DewfordTown_Dojo_EventScript_OpponentUsedSuperKick
 	compare VAR_TEMP_6, 8
-    call_if_eq DewfordTown_Dojo_EventScript_OpponentUsedOnePunch
+	call_if_eq DewfordTown_Dojo_EventScript_OpponentUsedOnePunch
 	compare VAR_TEMP_6, 9
-    call_if_eq DewfordTown_Dojo_EventScript_OpponentUsedSlap
+	call_if_eq DewfordTown_Dojo_EventScript_OpponentUsedSlap
 	compare VAR_TEMP_6, 10
-    call_if_eq DewfordTown_Dojo_EventScript_OpponentUsedBelly
+	call_if_eq DewfordTown_Dojo_EventScript_OpponentUsedBelly
 	return
 
 DewfordTown_Dojo_EventScript_PlayerUsedPunch:
-DewfordTown_Dojo_EventScript_PlayerUsedKick:
 DewfordTown_Dojo_EventScript_PlayerUsedCounter:
-DewfordTown_Dojo_EventScript_PlayerUsedSuperPunch:
-DewfordTown_Dojo_EventScript_PlayerUsedSuperKick:
-DewfordTown_Dojo_EventScript_PlayerUsedOnePunch:
 	callfunc ScrFunc_SetPlayerMoveInString
-    msgbox DewfordTown_Dojo_Text_PlayerUsed, MSGBOX_DEFAULT
+	msgbox DewfordTown_Dojo_Text_PlayerUsed, MSGBOX_DEFAULT
 	waitmessage
-    closemessage
+	closemessage
 	compare VAR_TEMP_A, 1 @Player missed
 	call_if_eq DewfordTown_Dojo_EventScript_OpponentDodge
 	applymovement OBJ_EVENT_ID_PLAYER, DewfordTown_Dojo_Movement_PlayerPunch
+	waitmovement 0
+	playse SE_M_VITAL_THROW2
+	applymovement OBJ_EVENT_ID_PLAYER, DewfordTown_Dojo_Movement_PlayerReturn
+	waitmovement 0
+	callfunc ScrFunc_OpponentWasDefeated
+	compare VAR_TEMP_C, 1
+	goto_if_eq DewfordTown_Dojo_EventScript_PlayerWon
+	compare VAR_TEMP_A, 1 @Player missed
+	goto_if_eq DewfordTown_Dojo_EventScript_ButItMissed
+	compare VAR_TEMP_6, 3 @ DOJO_GUARD
+	goto_if_eq DewfordTown_Dojo_EventScript_ButItGuarded
+	compare VAR_TEMP_6, 7 @ DOJO_SUPER_GUARD
+	goto_if_eq DewfordTown_Dojo_EventScript_ButItSuperGuarded
+	return
+
+DewfordTown_Dojo_EventScript_PlayerUsedSuperPunch:
+	callfunc ScrFunc_SetPlayerMoveInString
+	msgbox DewfordTown_Dojo_Text_PlayerUsed, MSGBOX_DEFAULT
+	waitmessage
+	closemessage
+	compare VAR_TEMP_A, 1 @Player missed
+	call_if_eq DewfordTown_Dojo_EventScript_OpponentDodge
+	applymovement OBJ_EVENT_ID_PLAYER, DewfordTown_Dojo_Movement_PlayerSuperPunch
+	waitmovement 0
+	playse SE_M_VITAL_THROW2
+	applymovement OBJ_EVENT_ID_PLAYER, DewfordTown_Dojo_Movement_PlayerReturn
+	waitmovement 0
+	callfunc ScrFunc_OpponentWasDefeated
+	compare VAR_TEMP_C, 1
+	goto_if_eq DewfordTown_Dojo_EventScript_PlayerWon
+	compare VAR_TEMP_A, 1 @Player missed
+	goto_if_eq DewfordTown_Dojo_EventScript_ButItMissed
+	compare VAR_TEMP_6, 3 @ DOJO_GUARD
+	goto_if_eq DewfordTown_Dojo_EventScript_ButItGuarded
+	compare VAR_TEMP_6, 7 @ DOJO_SUPER_GUARD
+	goto_if_eq DewfordTown_Dojo_EventScript_ButItSuperGuarded
+	return
+
+DewfordTown_Dojo_EventScript_PlayerUsedOnePunch:
+	callfunc ScrFunc_SetPlayerMoveInString
+	msgbox DewfordTown_Dojo_Text_PlayerUsed, MSGBOX_DEFAULT
+	waitmessage
+	closemessage
+	compare VAR_TEMP_A, 1 @Player missed
+	call_if_eq DewfordTown_Dojo_EventScript_OpponentDodge
+	applymovement OBJ_EVENT_ID_PLAYER, DewfordTown_Dojo_Movement_PlayerOnePunch
+	waitmovement 0
+	playse SE_M_EXPLOSION
+	applymovement OBJ_EVENT_ID_PLAYER, DewfordTown_Dojo_Movement_PlayerReturn
+	waitmovement 0
+	callfunc ScrFunc_OpponentWasDefeated
+	compare VAR_TEMP_C, 1
+	goto_if_eq DewfordTown_Dojo_EventScript_PlayerWon
+	compare VAR_TEMP_A, 1 @Player missed
+	goto_if_eq DewfordTown_Dojo_EventScript_ButItMissed
+	compare VAR_TEMP_6, 3 @ DOJO_GUARD
+	goto_if_eq DewfordTown_Dojo_EventScript_ButItGuarded
+	compare VAR_TEMP_6, 7 @ DOJO_SUPER_GUARD
+	goto_if_eq DewfordTown_Dojo_EventScript_ButItSuperGuarded
+	return
+
+DewfordTown_Dojo_EventScript_PlayerUsedKick:
+	callfunc ScrFunc_SetPlayerMoveInString
+	msgbox DewfordTown_Dojo_Text_PlayerUsed, MSGBOX_DEFAULT
+	waitmessage
+	closemessage
+	compare VAR_TEMP_A, 1 @Player missed
+	call_if_eq DewfordTown_Dojo_EventScript_OpponentDodge
+	applymovement OBJ_EVENT_ID_PLAYER, DewfordTown_Dojo_Movement_PlayerKick
 	waitmovement 0
 	playse SE_M_MEGA_KICK2
 	applymovement OBJ_EVENT_ID_PLAYER, DewfordTown_Dojo_Movement_PlayerReturn
 	waitmovement 0
 	callfunc ScrFunc_OpponentWasDefeated
 	compare VAR_TEMP_C, 1
-    goto_if_eq DewfordTown_Dojo_EventScript_PlayerWon
+	goto_if_eq DewfordTown_Dojo_EventScript_PlayerWon
+	compare VAR_TEMP_A, 1 @Player missed
+	goto_if_eq DewfordTown_Dojo_EventScript_ButItMissed
+	compare VAR_TEMP_6, 3 @ DOJO_GUARD
+	goto_if_eq DewfordTown_Dojo_EventScript_ButItGuarded
+	compare VAR_TEMP_6, 7 @ DOJO_SUPER_GUARD
+	goto_if_eq DewfordTown_Dojo_EventScript_ButItSuperGuarded
+	return
+
+DewfordTown_Dojo_EventScript_PlayerUsedSuperKick:
+	callfunc ScrFunc_SetPlayerMoveInString
+	msgbox DewfordTown_Dojo_Text_PlayerUsed, MSGBOX_DEFAULT
+	waitmessage
+	closemessage
+	compare VAR_TEMP_A, 1 @Player missed
+	call_if_eq DewfordTown_Dojo_EventScript_OpponentDodge
+	applymovement OBJ_EVENT_ID_PLAYER, DewfordTown_Dojo_Movement_PlayerSuperKick
+	waitmovement 0
+	playse SE_M_MEGA_KICK2
+	applymovement OBJ_EVENT_ID_PLAYER, DewfordTown_Dojo_Movement_PlayerReturn
+	waitmovement 0
+	callfunc ScrFunc_OpponentWasDefeated
+	compare VAR_TEMP_C, 1
+	goto_if_eq DewfordTown_Dojo_EventScript_PlayerWon
 	compare VAR_TEMP_A, 1 @Player missed
 	goto_if_eq DewfordTown_Dojo_EventScript_ButItMissed
 	compare VAR_TEMP_6, 3 @ DOJO_GUARD
@@ -414,27 +502,115 @@ DewfordTown_Dojo_EventScript_PlayerUsedOnePunch:
 	return
 
 DewfordTown_Dojo_EventScript_OpponentUsedPunch:
-DewfordTown_Dojo_EventScript_OpponentUsedKick:
 DewfordTown_Dojo_EventScript_OpponentUsedCounter:
-DewfordTown_Dojo_EventScript_OpponentUsedSuperPunch:
-DewfordTown_Dojo_EventScript_OpponentUsedSuperKick:
-DewfordTown_Dojo_EventScript_OpponentUsedOnePunch:
 DewfordTown_Dojo_EventScript_OpponentUsedSlap:
 DewfordTown_Dojo_EventScript_OpponentUsedBelly:
 	callfunc ScrFunc_SetOpponentMoveInString
-    msgbox DewfordTown_Dojo_Text_OpponentUsed, MSGBOX_DEFAULT
+	msgbox DewfordTown_Dojo_Text_OpponentUsed, MSGBOX_DEFAULT
 	waitmessage
-    closemessage
+	closemessage
 	compare VAR_TEMP_B, 1 @Opponent missed
 	call_if_eq DewfordTown_Dojo_EventScript_PlayerDodge
 	applymovement VAR_TEMP_1, DewfordTown_Dojo_Movement_OpponentPunch
+	waitmovement 0
+	playse SE_M_VITAL_THROW2
+	applymovement VAR_TEMP_1, DewfordTown_Dojo_Movement_OpponentReturn
+	waitmovement 0
+	callfunc ScrFunc_PlayerWasDefeated
+	compare VAR_TEMP_C, 1
+	goto_if_eq DewfordTown_Dojo_EventScript_OpponentWon
+	compare VAR_TEMP_B, 1 @Opponent missed
+	goto_if_eq DewfordTown_Dojo_EventScript_ButItMissed
+	compare VAR_TEMP_5, 3 @ DOJO_GUARD
+	goto_if_eq DewfordTown_Dojo_EventScript_ButItGuarded
+	compare VAR_TEMP_5, 7 @ DOJO_SUPER_GUARD
+	goto_if_eq DewfordTown_Dojo_EventScript_ButItSuperGuarded
+	return
+
+DewfordTown_Dojo_EventScript_OpponentUsedSuperPunch:
+	callfunc ScrFunc_SetOpponentMoveInString
+	msgbox DewfordTown_Dojo_Text_OpponentUsed, MSGBOX_DEFAULT
+	waitmessage
+	closemessage
+	compare VAR_TEMP_B, 1 @Opponent missed
+	call_if_eq DewfordTown_Dojo_EventScript_PlayerDodge
+	applymovement VAR_TEMP_1, DewfordTown_Dojo_Movement_OpponentSuperPunch
+	waitmovement 0
+	playse SE_M_VITAL_THROW2
+	applymovement VAR_TEMP_1, DewfordTown_Dojo_Movement_OpponentReturn
+	waitmovement 0
+	callfunc ScrFunc_PlayerWasDefeated
+	compare VAR_TEMP_C, 1
+	goto_if_eq DewfordTown_Dojo_EventScript_OpponentWon
+	compare VAR_TEMP_B, 1 @Opponent missed
+	goto_if_eq DewfordTown_Dojo_EventScript_ButItMissed
+	compare VAR_TEMP_5, 3 @ DOJO_GUARD
+	goto_if_eq DewfordTown_Dojo_EventScript_ButItGuarded
+	compare VAR_TEMP_5, 7 @ DOJO_SUPER_GUARD
+	goto_if_eq DewfordTown_Dojo_EventScript_ButItSuperGuarded
+	return
+
+DewfordTown_Dojo_EventScript_OpponentUsedOnePunch:
+	callfunc ScrFunc_SetOpponentMoveInString
+	msgbox DewfordTown_Dojo_Text_OpponentUsed, MSGBOX_DEFAULT
+	waitmessage
+	closemessage
+	compare VAR_TEMP_B, 1 @Opponent missed
+	call_if_eq DewfordTown_Dojo_EventScript_PlayerDodge
+	applymovement VAR_TEMP_1, DewfordTown_Dojo_Movement_OpponentOnePunch
+	waitmovement 0
+	playse SE_M_EXPLOSION
+	applymovement VAR_TEMP_1, DewfordTown_Dojo_Movement_OpponentReturn
+	waitmovement 0
+	callfunc ScrFunc_PlayerWasDefeated
+	compare VAR_TEMP_C, 1
+	goto_if_eq DewfordTown_Dojo_EventScript_OpponentWon
+	compare VAR_TEMP_B, 1 @Opponent missed
+	goto_if_eq DewfordTown_Dojo_EventScript_ButItMissed
+	compare VAR_TEMP_5, 3 @ DOJO_GUARD
+	goto_if_eq DewfordTown_Dojo_EventScript_ButItGuarded
+	compare VAR_TEMP_5, 7 @ DOJO_SUPER_GUARD
+	goto_if_eq DewfordTown_Dojo_EventScript_ButItSuperGuarded
+	return
+
+DewfordTown_Dojo_EventScript_OpponentUsedKick:
+	callfunc ScrFunc_SetOpponentMoveInString
+	msgbox DewfordTown_Dojo_Text_OpponentUsed, MSGBOX_DEFAULT
+	waitmessage
+	closemessage
+	compare VAR_TEMP_B, 1 @Opponent missed
+	call_if_eq DewfordTown_Dojo_EventScript_PlayerDodge
+	applymovement VAR_TEMP_1, DewfordTown_Dojo_Movement_OpponentKick
 	waitmovement 0
 	playse SE_M_MEGA_KICK2
 	applymovement VAR_TEMP_1, DewfordTown_Dojo_Movement_OpponentReturn
 	waitmovement 0
 	callfunc ScrFunc_PlayerWasDefeated
 	compare VAR_TEMP_C, 1
-    goto_if_eq DewfordTown_Dojo_EventScript_OpponentWon
+	goto_if_eq DewfordTown_Dojo_EventScript_OpponentWon
+	compare VAR_TEMP_B, 1 @Opponent missed
+	goto_if_eq DewfordTown_Dojo_EventScript_ButItMissed
+	compare VAR_TEMP_5, 3 @ DOJO_GUARD
+	goto_if_eq DewfordTown_Dojo_EventScript_ButItGuarded
+	compare VAR_TEMP_5, 7 @ DOJO_SUPER_GUARD
+	goto_if_eq DewfordTown_Dojo_EventScript_ButItSuperGuarded
+	return
+
+DewfordTown_Dojo_EventScript_OpponentUsedSuperKick:
+	callfunc ScrFunc_SetOpponentMoveInString
+	msgbox DewfordTown_Dojo_Text_OpponentUsed, MSGBOX_DEFAULT
+	waitmessage
+	closemessage
+	compare VAR_TEMP_B, 1 @Opponent missed
+	call_if_eq DewfordTown_Dojo_EventScript_PlayerDodge
+	applymovement VAR_TEMP_1, DewfordTown_Dojo_Movement_OpponentSuperKick
+	waitmovement 0
+	playse SE_M_MEGA_KICK2
+	applymovement VAR_TEMP_1, DewfordTown_Dojo_Movement_OpponentReturn
+	waitmovement 0
+	callfunc ScrFunc_PlayerWasDefeated
+	compare VAR_TEMP_C, 1
+	goto_if_eq DewfordTown_Dojo_EventScript_OpponentWon
 	compare VAR_TEMP_B, 1 @Opponent missed
 	goto_if_eq DewfordTown_Dojo_EventScript_ButItMissed
 	compare VAR_TEMP_5, 3 @ DOJO_GUARD
@@ -452,40 +628,40 @@ DewfordTown_Dojo_EventScript_PlayerDodge:
 	return
 
 DewfordTown_Dojo_EventScript_ButItMissed:
-    msgbox DewfordTown_Dojo_Text_ButItMissed, MSGBOX_DEFAULT
+	msgbox DewfordTown_Dojo_Text_ButItMissed, MSGBOX_DEFAULT
 	waitmessage
-    closemessage
+	closemessage
 	return
 
 DewfordTown_Dojo_EventScript_ButItGuarded:
-    msgbox DewfordTown_Dojo_Text_ButItGuarded, MSGBOX_DEFAULT
+	msgbox DewfordTown_Dojo_Text_ButItGuarded, MSGBOX_DEFAULT
 	waitmessage
-    closemessage
+	closemessage
 	return
 
 DewfordTown_Dojo_EventScript_ButItSuperGuarded:
-    msgbox DewfordTown_Dojo_Text_ButItSuperGuarded, MSGBOX_DEFAULT
+	msgbox DewfordTown_Dojo_Text_ButItSuperGuarded, MSGBOX_DEFAULT
 	waitmessage
-    closemessage
+	closemessage
 	return
 
 DewfordTown_Dojo_EventScript_Option1ForMoves:
-    multichoice 0, 0, MULTI_DYNAMIC_MULTICHOICE_4, TRUE, FALSE
+	multichoice 0, 0, MULTI_DYNAMIC_MULTICHOICE_4, TRUE, FALSE
 	callfunc ScrFunc_GetPlayerMove
 	return
 
 DewfordTown_Dojo_EventScript_Option2ForMoves:
-    multichoice 0, 0, MULTI_DYNAMIC_MULTICHOICE_5, TRUE, FALSE
+	multichoice 0, 0, MULTI_DYNAMIC_MULTICHOICE_5, TRUE, FALSE
 	callfunc ScrFunc_GetPlayerMove
 	return
 
 DewfordTown_Dojo_EventScript_Option3ForMoves:
-    multichoice 0, 0, MULTI_DYNAMIC_MULTICHOICE_7, TRUE, FALSE
+	multichoice 0, 0, MULTI_DYNAMIC_MULTICHOICE_7, TRUE, FALSE
 	callfunc ScrFunc_GetPlayerMove
 	return
 
 DewfordTown_Dojo_EventScript_Option4ForMoves:
-    multichoice 0, 0, MULTI_DYNAMIC_MULTICHOICE_6, TRUE, FALSE
+	multichoice 0, 0, MULTI_DYNAMIC_MULTICHOICE_6, TRUE, FALSE
 	callfunc ScrFunc_GetPlayerMove
 	return
 
@@ -494,6 +670,35 @@ DewfordTown_Dojo_Movement_PlayerPunch:
 	walk_fast_right
 	walk_fast_right
 	walk_fast_right
+	step_end
+
+DewfordTown_Dojo_Movement_PlayerSuperPunch:
+	walk_fastest_right
+	walk_fastest_right
+	walk_fastest_right
+	step_end
+
+DewfordTown_Dojo_Movement_PlayerOnePunch:
+	walk_in_place_fastest_right
+	walk_in_place_fastest_right
+	walk_in_place_fastest_right
+	walk_in_place_fastest_right
+	walk_in_place_fastest_right
+	walk_fastest_right
+	walk_fastest_right
+	walk_fastest_right
+	step_end
+
+DewfordTown_Dojo_Movement_PlayerKick:
+	walk_fast_right
+	walk_fast_right
+	jump_right
+	step_end
+
+DewfordTown_Dojo_Movement_PlayerSuperKick:
+	walk_fastest_right
+	walk_fastest_right
+	jump_right
 	step_end
 
 DewfordTown_Dojo_Movement_PlayerReturn:
@@ -508,6 +713,35 @@ DewfordTown_Dojo_Movement_OpponentPunch:
 	walk_fast_left
 	walk_fast_left
 	walk_fast_left
+	step_end
+
+DewfordTown_Dojo_Movement_OpponentSuperPunch:
+	walk_fastest_left
+	walk_fastest_left
+	walk_fastest_left
+	step_end
+
+DewfordTown_Dojo_Movement_OpponentOnePunch:
+	walk_in_place_fastest_left
+	walk_in_place_fastest_left
+	walk_in_place_fastest_left
+	walk_in_place_fastest_left
+	walk_in_place_fastest_left
+	walk_fastest_left
+	walk_fastest_left
+	walk_fastest_left
+	step_end
+
+DewfordTown_Dojo_Movement_OpponentKick:
+	walk_fast_left
+	walk_fast_left
+	jump_left
+	step_end
+
+DewfordTown_Dojo_Movement_OpponentSuperKick:
+	walk_fastest_left
+	walk_fastest_left
+	jump_left
 	step_end
 
 DewfordTown_Dojo_Movement_OpponentReturn:
@@ -576,10 +810,10 @@ DewfordTown_Dojo_Text_Round1Fight:
 	.string "Fight!$"
 
 DewfordTown_Dojo_Text_PlayerUsed:
-    .string "{PLAYER} used {STR_VAR_1}!$"
+	.string "{PLAYER} used {STR_VAR_1}!$"
 
 DewfordTown_Dojo_Text_OpponentUsed:
-    .string "Opponent used {STR_VAR_2}!$"
+	.string "Opponent used {STR_VAR_2}!$"
 
 DewfordTown_Dojo_Text_ButItMissed:
 	.string "… But It missed!$"
@@ -591,19 +825,19 @@ DewfordTown_Dojo_Text_ButItSuperGuarded:
 	.string "… But It was super guarded!$"
 
 DewfordTown_Dojo_Text_WhichMove:
-    .string "Use which move?\n"
-    .string "{PLAYER}'s HP: {STR_VAR_1} / Opponent's HP: {STR_VAR_2}$"
+	.string "Use which move?\n"
+	.string "{PLAYER}'s HP: {STR_VAR_1} / Opponent's HP: {STR_VAR_2}$"
 
 DewfordTown_Dojo_Text_TooBad:
-    .string "Too bad…\n"
-    .string "Good luck next time!$"
+	.string "Too bad…\n"
+	.string "Good luck next time!$"
 
 DewfordTown_Dojo_Text_Congratulations:
-    .string "Congratulations!\n"
-    .string "Let's get down from Arena to\l"
-    .string "get your reward.$"
+	.string "Congratulations!\n"
+	.string "Let's get down from Arena to\l"
+	.string "get your reward.$"
 DewfordTown_Dojo_Text_HereTakeYourPrize:
-    .string "Here, take your prize!$"
+	.string "Here, take your prize!$"
 
 DewfordTown_Dojo_Text_ReceivedKubfu:
 	.string "{PLAYER} received the {STR_VAR_1}\n"

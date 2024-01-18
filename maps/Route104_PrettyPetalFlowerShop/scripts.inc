@@ -38,7 +38,7 @@ Route104_PrettyPetalFlowerShop_EventScript_ClientWantsBonsly:
 	playfanfare MUS_OBTAIN_ITEM
 	bufferspeciesname 0, SPECIES_BONSLY
 	setvar VAR_TEMP_1, SPECIES_BONSLY
-	givemon SPECIES_BONSLY, 2, ITEM_NONE
+	givemon SPECIES_BONSLY, 2
     switch VAR_RESULT
     case 0, EventScript_SendBonslyToParty
     case 1, EventScript_SendBonslyToPC

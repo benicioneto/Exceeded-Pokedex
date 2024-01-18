@@ -314,7 +314,7 @@ MeteorFalls_1F_1R_EventScript_DontJoin:
 	end
 
 MeteorFalls_1F_1R_EventScript_Join:
-	givemon SPECIES_COSMOG, 5, ITEM_NONE
+	givemon SPECIES_COSMOG, 5
 	bufferspeciesname 0, SPECIES_COSMOG
 	compare VAR_RESULT, 0
 	goto_if_eq MeteorFalls_1F_1R_EventScript_SendCosmogToParty

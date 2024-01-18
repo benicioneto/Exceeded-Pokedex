@@ -3858,6 +3858,23 @@ static const u8 sMisdreavusTutorLearnset[] =
 };
 static const u8 sUnownTutorLearnset[] =
 {
+    TUTOR(SIGNAL_BEAM),
+    TUTOR(ANCIENT_POWER),
+    TUTOR(DOUBLE_EDGE),
+    TUTOR(DREAM_EATER),
+    TUTOR(ENDURE),
+    TUTOR(EXPLOSION),
+    TUTOR(ICY_WIND),
+    TUTOR(METRONOME),
+    TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
+    TUTOR(PSYCH_UP),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    TUTOR(SWAGGER),
+    TUTOR(SWIFT),
+    TUTOR(THUNDER_WAVE),
     0xFF,
 };
 static const u8 sWobbuffetTutorLearnset[] =
@@ -6859,19 +6876,23 @@ static const u8 sMiloticTutorLearnset[] =
 };
 static const u8 sCastformTutorLearnset[] =
 {
+    TUTOR(ANCIENT_POWER),
     TUTOR(BODY_SLAM),
     TUTOR(DEFENSE_CURL),
     TUTOR(DOUBLE_EDGE),
     TUTOR(ENDURE),
     TUTOR(ICY_WIND),
     TUTOR(MIMIC),
+    TUTOR(MUD_SLAP),
     TUTOR(PSYCH_UP),
+    TUTOR(ROCK_SLIDE),
     TUTOR(SLEEP_TALK),
     TUTOR(SNORE),
     TUTOR(SUBSTITUTE),
     TUTOR(SWAGGER),
     TUTOR(SWIFT),
     TUTOR(THUNDER_WAVE),
+    TUTOR(WATER_BALL),
     0xFF,
 };
 static const u8 sKecleonTutorLearnset[] =
@@ -16956,4 +16977,5 @@ const u8 *const gTutorLearnsets[NUM_SPECIES] =
     //Custom Pokémon
     [SPECIES_THU_FI_ZER] = sThuFiZerTutorLearnset,
     [SPECIES_THU_FI_ZER_GALARIAN] = sThuFiZerGalarianTutorLearnset,
+    [SPECIES_UNOWN_UNITY] = sUnownTutorLearnset,
 };

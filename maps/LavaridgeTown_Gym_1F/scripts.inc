@@ -365,8 +365,8 @@ LavaridgeTown_Gym_1F_Text_RegisteredFlannery:
 
 LavaridgeTown_Gym_1F_Text_FlanneryPostBattle:
 	.string "Your power reminds me of someone…\p"
-	.string "Someone from Kanto that I don't\n"
-	.string "see a long time ago…$"
+	.string "Someone from Kanto that I\n"
+	.string "haven't seen a long time ago…$"
 
 LavaridgeTown_Gym_1F_Text_GymStatue:
 	.string "Lavaridge Town Pokémon Gym$"

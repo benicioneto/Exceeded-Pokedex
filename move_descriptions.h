@@ -407,7 +407,7 @@ static const u8 sNightShadeDescription[] = _(
 
 static const u8 sMimicDescription[] = _(
     "Copies a move used by the\n"
-    "foe during one battle.");
+    "foe, immediately use it.");
 
 static const u8 sScreechDescription[] = _(
     "Emits a screech to sharply\n"
@@ -534,8 +534,8 @@ static const u8 sAmnesiaDescription[] = _(
     "and sharply raises Sp. Def.");
 
 static const u8 sKinesisDescription[] = _(
-    "Distracts the foe.\n"
-    "May lower accuracy.");
+    "Distracts the foe. Lowers\n"
+    "accuracy & ups Sp. Atk.");
 
 static const u8 sSoftBoiledDescription[] = _(
     "Recovers up to half the\n"
@@ -958,10 +958,10 @@ static const u8 sTwisterDescription[] = _(
     "Lifts entry hazards in air.");
 
 static const u8 sRainDanceDescription[] = _(
-    "Summons rain for 5 turns.");
+    "Summons a rain for 5 turns.");
 
 static const u8 sSunnyDayDescription[] = _(
-    "Summons harshy sunlight\n"
+    "Summons a harsh sunlight\n"
     "for 5 turns.");
 
 static const u8 sCrunchDescription[] = _(
@@ -1630,7 +1630,7 @@ static const u8 sDRAGON_RUSHDescription[] = _(
 
 static const u8 sPOWER_GEMDescription[] = _(
     "Attacks with rays of light\n"
-    "that sparkle like diamonds.");
+    "with the type of held gems.");
 
 static const u8 sVACUUM_WAVEDescription[] = _(
     "Sends a shockwave with fist\n"
@@ -3828,7 +3828,7 @@ static const u8 sMYSTICAL_MIRAGEDescription[] = _(
 
 static const u8 sSLOWBEAMDescription[] = _(
     "Low frequency beam that\n"
-    "slows foe for 2 turns.");
+    "slows foe for 3 turns.");
 
 static const u8 sNIGHTFALL_DAZEDescription[] = _(
     "Surround in darkness, then\n"
@@ -3872,7 +3872,7 @@ static const u8 sFAIRY_FROLICDescription[] = _(
 
 static const u8 sEBON_FISTDescription[] = _(
     "A follow-up move of Wicked\n"
-    "Bow with a critical hit.");
+    "Blow with a critical hit.");
 
 static const u8 sFLOWING_FISTSDescription[] = _(
     "A follow-up move of Surging\n"
@@ -3906,9 +3906,21 @@ static const u8 sFLORAL_FLOURISHDescription[] = _(
     "A blade waltz that\n"
     "lasts for 2 to 3 turns.");
 
-static const u8 sGLOOMY_NIGHTDescription[] = _(
-    "Summons a gloomy night\n"
+static const u8 sMOONY_NIGHTDescription[] = _(
+    "Summons a gloom moonlight\n"
     "for 5 turns.");
+
+static const u8 sLEGEND_POWERDescription[] = _(
+    "The effectiveness varies\n"
+    "with the target.");
+
+static const u8 sDRAGON_CURRENTDescription[] = _(
+    "Dives first turn, then traps\n"
+    "in vortex for 2 to 5 turns.");
+
+static const u8 sPSYSHIELDDescription[] = _(
+    "Creates a shield of 1/4\n"
+    "of the user's maximum HP.");
 
 // MOVE_NONE is ignored in this table. Make sure to always subtract 1 before getting the right pointer.
 const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
@@ -4913,5 +4925,8 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_CHAOS_GLOWER - 1] = sCHAOS_GLOWERDescription,
     [MOVE_STARLIGHT_RECITAL - 1] = sSTARLIGHT_RECITALDescription,
     [MOVE_FLORAL_FLOURISH - 1] = sFLORAL_FLOURISHDescription,
-    [MOVE_GLOOMY_NIGHT - 1] = sGLOOMY_NIGHTDescription,
+    [MOVE_MOONY_NIGHT - 1] = sMOONY_NIGHTDescription,
+    [MOVE_LEGEND_POWER - 1] = sLEGEND_POWERDescription,
+    [MOVE_DRAGON_CURRENT - 1] = sDRAGON_CURRENTDescription,
+    [MOVE_PSYSHIELD - 1] = sPSYSHIELDDescription,
 };

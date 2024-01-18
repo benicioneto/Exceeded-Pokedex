@@ -1718,8 +1718,11 @@
 #define SPECIES_THU_FI_ZER                              CUSTOM_START + 22
 #define SPECIES_THU_FI_ZER_GALARIAN                     CUSTOM_START + 23
 #define SPECIES_SHADOW_LUGIA                            CUSTOM_START + 24
+#define SPECIES_UNOWN_UNITY                             CUSTOM_START + 25
+#define SPECIES_CASTFORM_ROCKY                          CUSTOM_START + 26
+#define SPECIES_CASTFORM_DARKY                          CUSTOM_START + 27
 
-#define SPECIES_EGG                                     (SPECIES_SHADOW_LUGIA + 1)
+#define SPECIES_EGG                                     (SPECIES_CASTFORM_DARKY + 1)
 #define NUM_SPECIES                                     SPECIES_EGG
 
 // National Dex Index Defines

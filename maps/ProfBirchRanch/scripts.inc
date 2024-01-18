@@ -17,7 +17,7 @@ ProfBirchRanch_EventScript_TakePokemon:
     compare VAR_RESULT, 0 
     goto_if_eq ProfBirchRanch_EventScript_DontTake
 	hidemonpic
-    givemon VAR_0x8009, 5, ITEM_NONE
+    givemon VAR_0x8009, 5
     switch VAR_RESULT
     case 0, ProfBirchRanch_EventScript_SendToParty
     case 1, ProfBirchRanch_EventScript_SendToPC

@@ -1562,6 +1562,8 @@ const struct CompressedSpriteSheet gMonFrontPicTable[] =
     SPECIES_SPRITE(PIKACHU_SURFING, gMonFrontPic_PikachuSurfing),
     SPECIES_SPRITE(THU_FI_ZER, gMonFrontPic_ThuFiZer),
     SPECIES_SPRITE(THU_FI_ZER_GALARIAN, gMonFrontPic_ThuFiZerGalarian),
+    SPECIES_SPRITE(CASTFORM_ROCKY, gMonFrontPic_CastformRocky),
+    SPECIES_SPRITE(CASTFORM_DARKY, gMonFrontPic_CastformDarky),
 };
 
 const struct CompressedSpriteSheet gMonFrontPicTableFemale[] =
@@ -1666,4 +1668,5 @@ const struct CompressedSpriteSheet gMonFrontPicTableFemale[] =
 
     // custom Pokémon
     SPECIES_SPRITE(EEVEE_GENETIC, gMonFrontPic_EeveeF),
+    SPECIES_SPRITE(UNOWN_UNITY, gMonFrontPic_CircledQuestionMark),
 };

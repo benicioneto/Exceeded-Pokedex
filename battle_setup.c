@@ -497,7 +497,7 @@ static void DoBattlePyramidTrainerHillBattle(void)
 // Initiates battle where Wally catches Ralts
 void StartWallyTutorialBattle(void)
 {
-    CreateMaleMon(&gEnemyParty[0], SPECIES_RALTS, 5);
+    CreateMonSimple(&gEnemyParty[0], SPECIES_RALTS, 5, MON_MALE, USE_RANDOM_NATURE, USE_RANDOM_IVS, FALSE, 0, OT_ID_PRESET, Random32());
     ScriptContext2_Enable();
     gMain.savedCallback = CB2_ReturnToFieldContinueScriptPlayMapMusic;
     gBattleTypeFlags = BATTLE_TYPE_WALLY_TUTORIAL;
@@ -930,6 +930,7 @@ void ChooseStarter(void)
 static void CB2_GiveStarter(void)
 {
     u16 starterMon;
+    u16 items[MAX_MON_EQUIPSLOTS] = {0, 0, 0};
 
     *GetVarPointer(VAR_STARTER_MON) = gSpecialVar_Result;
     starterMon = GetStarterPokemon(gSpecialVar_Result);
@@ -948,7 +949,7 @@ static void CB2_GiveStarter(void)
         FlagClear(FLAG_RECEIVED_TOTODILE);
         FlagClear(FLAG_RECEIVED_CHARMANDER);
     }
-    ScriptGiveMonSimple(starterMon, 5, ITEM_NONE);
+    GiveMonSimple(starterMon, 5, items);
     // sets the follower to the first party pokémon
     if (gSaveBlock2Ptr->newGameOptions.tx_Mechanics_Followers
     && GetSpeciesOverworldSprite(GetMonData(&gPlayerParty[0], MON_DATA_SPECIES2)))

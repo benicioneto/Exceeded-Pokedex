@@ -50,7 +50,7 @@ LilycoveCity_PoliceStation_PoliceAttendantArrestTeamRocket:
 	removeobject LOCALID_GROWLITHE
 	bufferspeciesname 0, SPECIES_GROWLITHE_HISUIAN
 	setvar VAR_TEMP_1, SPECIES_GROWLITHE_HISUIAN
-    givemon SPECIES_GROWLITHE_HISUIAN, 25, ITEM_NONE
+    givemon SPECIES_GROWLITHE_HISUIAN, 25
     switch VAR_RESULT
     case 0, EventScript_SendGrowlitheHisuianToParty
     case 1, EventScript_SendGrowlitheHisuianToPC

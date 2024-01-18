@@ -1514,4 +1514,7 @@ const struct LevelUpMove *const gLevelUpLearnsets[NUM_SPECIES] =
     [SPECIES_MAGCARGO_GRANITIC] = sMagcargoLevelUpLearnset,
     [SPECIES_PIKACHU_FLYING] = sPikachuLevelUpLearnset,
     [SPECIES_PIKACHU_SURFING] = sPikachuLevelUpLearnset,
+    [SPECIES_UNOWN_UNITY] = sUnownLevelUpLearnset,
+    [SPECIES_CASTFORM_ROCKY] = sCastformLevelUpLearnset,
+    [SPECIES_CASTFORM_DARKY] = sCastformLevelUpLearnset,
 };

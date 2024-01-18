@@ -1581,9 +1581,7 @@ PetalburgCity_Gym_Text_AlexiaPostBadge:
 
 PetalburgCity_Gym_Text_JodyIntro:
 	.string "Our Gym Leader told us to go all out\n"
-	.string "and beat you.\p"
-	.string "Even if you happen to be the\n"
-	.string "Leader's kid!$"
+	.string "and beat you.$"
 
 PetalburgCity_Gym_Text_JodyDefeat:
 	.string "But… I went all out!$"

@@ -1091,7 +1091,7 @@ MauvilleCity_GameCorner_EventScript_BuyTRAPINCH::
 	compare VAR_TEMP_2, TRAPINCH_COINS
 	goto_if_lt MauvilleCity_GameCorner_EventScript_NotEnoughCoinsForPokemon
 	removecoins TRAPINCH_COINS
-	givemon SPECIES_TRAPINCH, 10, ITEM_NONE
+	givemon SPECIES_TRAPINCH, 10
 	updatecoinsbox 1, 1
 	playse SE_SHOP
 	msgbox MauvilleCity_GameCorner_Text_HereYouGo, MSGBOX_DEFAULT
@@ -1103,7 +1103,7 @@ MauvilleCity_GameCorner_EventScript_BuyHORSEA::
 	compare VAR_TEMP_2, HORSEA_COINS
 	goto_if_lt MauvilleCity_GameCorner_EventScript_NotEnoughCoinsForPokemon
 	removecoins HORSEA_COINS
-	givemon SPECIES_HORSEA, 10, ITEM_NONE
+	givemon SPECIES_HORSEA, 10
 	updatecoinsbox 1, 1
 	playse SE_SHOP
 	msgbox MauvilleCity_GameCorner_Text_HereYouGo, MSGBOX_DEFAULT
@@ -1115,7 +1115,7 @@ MauvilleCity_GameCorner_EventScript_BuyPANPOUR::
 	compare VAR_TEMP_2, PANPOUR_COINS
 	goto_if_lt MauvilleCity_GameCorner_EventScript_NotEnoughCoinsForPokemon
 	removecoins PANPOUR_COINS
-	givemon SPECIES_PANPOUR, 10, ITEM_NONE
+	givemon SPECIES_PANPOUR, 10
 	updatecoinsbox 1, 1
 	playse SE_SHOP
 	msgbox MauvilleCity_GameCorner_Text_HereYouGo, MSGBOX_DEFAULT
@@ -1127,7 +1127,7 @@ MauvilleCity_GameCorner_EventScript_BuyPANSAGE::
 	compare VAR_TEMP_2, PANSAGE_COINS
 	goto_if_lt MauvilleCity_GameCorner_EventScript_NotEnoughCoinsForPokemon
 	removecoins PANSAGE_COINS
-	givemon SPECIES_PANSAGE, 10, ITEM_NONE
+	givemon SPECIES_PANSAGE, 10
 	updatecoinsbox 1, 1
 	playse SE_SHOP
 	msgbox MauvilleCity_GameCorner_Text_HereYouGo, MSGBOX_DEFAULT
@@ -1139,7 +1139,7 @@ MauvilleCity_GameCorner_EventScript_BuyPANSEAR::
 	compare VAR_TEMP_2, PANSEAR_COINS
 	goto_if_lt MauvilleCity_GameCorner_EventScript_NotEnoughCoinsForPokemon
 	removecoins PANSEAR_COINS
-	givemon SPECIES_PANSEAR, 10, ITEM_NONE
+	givemon SPECIES_PANSEAR, 10
 	updatecoinsbox 1, 1
 	playse SE_SHOP
 	msgbox MauvilleCity_GameCorner_Text_HereYouGo, MSGBOX_DEFAULT
@@ -1151,7 +1151,7 @@ MauvilleCity_GameCorner_EventScript_BuyHERACROSS::
 	compare VAR_TEMP_2, HERACROSS_COINS
 	goto_if_lt MauvilleCity_GameCorner_EventScript_NotEnoughCoinsForPokemon
 	removecoins HERACROSS_COINS
-	givemon SPECIES_HERACROSS, 25, ITEM_NONE
+	givemon SPECIES_HERACROSS, 25
 	updatecoinsbox 1, 1
 	playse SE_SHOP
 	msgbox MauvilleCity_GameCorner_Text_HereYouGo, MSGBOX_DEFAULT
@@ -1163,7 +1163,7 @@ MauvilleCity_GameCorner_EventScript_BuySOBBLE::
 	compare VAR_TEMP_2, SOBBLE_COINS
 	goto_if_lt MauvilleCity_GameCorner_EventScript_NotEnoughCoinsForPokemon
 	removecoins SOBBLE_COINS
-	givemon SPECIES_SOBBLE, 5, ITEM_NONE
+	givemon SPECIES_SOBBLE, 5
 	updatecoinsbox 1, 1
 	playse SE_SHOP
 	msgbox MauvilleCity_GameCorner_Text_HereYouGo, MSGBOX_DEFAULT
@@ -1175,7 +1175,7 @@ MauvilleCity_GameCorner_EventScript_BuyGROOKEY::
 	compare VAR_TEMP_2, GROOKEY_COINS
 	goto_if_lt MauvilleCity_GameCorner_EventScript_NotEnoughCoinsForPokemon
 	removecoins GROOKEY_COINS
-	givemon SPECIES_GROOKEY, 5, ITEM_NONE
+	givemon SPECIES_GROOKEY, 5
 	updatecoinsbox 1, 1
 	playse SE_SHOP
 	msgbox MauvilleCity_GameCorner_Text_HereYouGo, MSGBOX_DEFAULT
@@ -1187,7 +1187,7 @@ MauvilleCity_GameCorner_EventScript_BuySCORBUNNY::
 	compare VAR_TEMP_2, SCORBUNNY_COINS
 	goto_if_lt MauvilleCity_GameCorner_EventScript_NotEnoughCoinsForPokemon
 	removecoins SCORBUNNY_COINS
-	givemon SPECIES_SCORBUNNY, 5, ITEM_NONE
+	givemon SPECIES_SCORBUNNY, 5
 	updatecoinsbox 1, 1
 	playse SE_SHOP
 	msgbox MauvilleCity_GameCorner_Text_HereYouGo, MSGBOX_DEFAULT
@@ -1199,7 +1199,7 @@ MauvilleCity_GameCorner_EventScript_BuyJANGMOO::
 	compare VAR_TEMP_2, JANGMOO_COINS
 	goto_if_lt MauvilleCity_GameCorner_EventScript_NotEnoughCoinsForPokemon
 	removecoins JANGMOO_COINS
-	givemon SPECIES_JANGMO_O, 5, ITEM_NONE
+	givemon SPECIES_JANGMO_O, 5
 	updatecoinsbox 1, 1
 	playse SE_SHOP
 	msgbox MauvilleCity_GameCorner_Text_HereYouGo, MSGBOX_DEFAULT
@@ -1211,7 +1211,7 @@ MauvilleCity_GameCorner_EventScript_BuyMELTAN::
 	compare VAR_TEMP_2, MELTAN_COINS
 	goto_if_lt MauvilleCity_GameCorner_EventScript_NotEnoughCoinsForPokemon
 	removecoins MELTAN_COINS
-	givemon SPECIES_MELTAN, 5, ITEM_NONE
+	givemon SPECIES_MELTAN, 5
 	updatecoinsbox 1, 1
 	playse SE_SHOP
 	msgbox MauvilleCity_GameCorner_Text_HereYouGo, MSGBOX_DEFAULT

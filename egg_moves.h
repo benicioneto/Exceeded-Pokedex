@@ -2266,6 +2266,7 @@ const u16 gEggMoves[] = {
               MOVE_BULLET_PUNCH,
               MOVE_DRAIN_PUNCH,
               MOVE_DYNAMIC_PUNCH,
+              MOVE_POWER_UP_PUNCH,
               MOVE_FAKE_OUT,
               MOVE_FIRE_PUNCH,
               MOVE_FORESIGHT,

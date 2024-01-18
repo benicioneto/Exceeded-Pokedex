@@ -53,7 +53,7 @@ GivePanpour:
     msgbox PanpourBenefits, MSGBOX_NPC
 	bufferspeciesname 0, SPECIES_PANPOUR
 	setvar VAR_TEMP_1, SPECIES_PANPOUR
-    givemon SPECIES_PANPOUR, 5, ITEM_NONE
+    givemon SPECIES_PANPOUR, 5
     switch VAR_RESULT
     case 0, EventScript_SendMonkeyToParty
     case 1, EventScript_SendMonkeyToPC
@@ -67,7 +67,7 @@ GivePansear:
     msgbox PansearBenefits, MSGBOX_NPC
 	bufferspeciesname 0, SPECIES_PANSEAR
 	setvar VAR_TEMP_1, SPECIES_PANSEAR
-    givemon SPECIES_PANSEAR, 5, ITEM_NONE
+    givemon SPECIES_PANSEAR, 5
     switch VAR_RESULT
     case 0, EventScript_SendMonkeyToParty
     case 1, EventScript_SendMonkeyToPC
@@ -81,7 +81,7 @@ GivePansage:
     msgbox PansageBenefits, MSGBOX_NPC
 	bufferspeciesname 0, SPECIES_PANSAGE
 	setvar VAR_TEMP_1, SPECIES_PANSAGE
-    givemon SPECIES_PANSAGE, 5, ITEM_NONE
+    givemon SPECIES_PANSAGE, 5
     switch VAR_RESULT
     case 0, EventScript_SendMonkeyToParty
     case 1, EventScript_SendMonkeyToPC

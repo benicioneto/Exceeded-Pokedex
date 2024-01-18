@@ -1148,7 +1148,7 @@ LilycoveCity_ContestLobby_EventScript_TryGivePikachuCosplay:
     compare VAR_RESULT, 0
     goto_if_eq LilycoveCity_ContestLobby_EventScript_DontWantPikachu
     msgbox LilycoveCity_ContestLobby_Thanks, MSGBOX_DEFAULT
-	givemon SPECIES_PIKACHU_COSPLAY, 30, ITEM_NONE
+	givemon SPECIES_PIKACHU_COSPLAY, 30
 	bufferspeciesname 0, SPECIES_PIKACHU_COSPLAY
 	compare VAR_RESULT, 0
 	goto_if_eq LilycoveCity_ContestLobby_EventScript_SendPikachuCosplayToParty

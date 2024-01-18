@@ -1494,7 +1494,7 @@ RustboroCity_Text_PartOfGhostbursters:
 RustboroCity_Text_TryGiveOddKeystone:
 	.string "Venkman: There are wisps around,\n"
 	.string "but they only appear at night…\p"
-	.string "Could you capture wisps for me?$"
+	.string "Would you capture wisps for me?$"
 
 RustboroCity_Text_BilltalkAgree:
 	.string "Venkman: Thank you!\n"

@@ -12,7 +12,7 @@ SlateportCity_House_EventScript_Girl::
 	msgbox SlateportCity_House_Text_MustBeGoingToBattleTent, MSGBOX_YESNO
 	compare VAR_RESULT, 0
 	goto_if_eq SlateportCity_House_EventScript_GirlDecline
-	givemon SPECIES_MORPEKO, 15, ITEM_NONE
+	givemon SPECIES_MORPEKO, 15
 	bufferspeciesname 0, SPECIES_MORPEKO
 	compare VAR_RESULT, 0
 	goto_if_eq SlateportCity_House_EventScript_SendMorpekoCosplayToParty

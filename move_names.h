@@ -1055,7 +1055,10 @@ const u8 gMoveNames[MOVES_COUNT_DYNAMAX][MOVE_NAME_LENGTH + 1] =
     [MOVE_CHAOS_GLOWER] = _("Chaos Glower"),
     [MOVE_STARLIGHT_RECITAL] = _("StarlightRecital"),
     [MOVE_FLORAL_FLOURISH] = _("Floral Flourish"),
-    [MOVE_GLOOMY_NIGHT] = _("Gloomy Night"),
+    [MOVE_MOONY_NIGHT] = _("Moony Night"),
+    [MOVE_LEGEND_POWER] = _("Legend Power"),
+    [MOVE_DRAGON_CURRENT] = _("Dragon Current"),
+    [MOVE_PSYSHIELD] = _("Psyshield"),
 };
 
 static const u8 sText_Breakneck_Blitz[] = _("Breakneck Blitz");

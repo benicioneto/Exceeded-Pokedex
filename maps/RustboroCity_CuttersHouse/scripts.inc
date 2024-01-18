@@ -38,7 +38,7 @@ RustboroCity_CuttersHouse_Text_ExplainCut:
 	.string "short, is Cut.\p"
 	.string "An HM move is one that can be used\n"
 	.string "by Pokémon outside of battle.\p"
-	.string "Any Pokémon that's learned Cut can\n"
+	.string "Any Pokémon that can learn Cut can\n"
 	.string "chop down thin trees if the Trainer\l"
 	.string "has earned the Stone badge.\p"
 	.string "And an HM can be used\n"

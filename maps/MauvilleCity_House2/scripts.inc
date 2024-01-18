@@ -51,14 +51,14 @@ MauvilleCity_House2_Text_BuyHarborMailAtSlateport:
 
 MauvilleCity_House2_Text_TradeHarborMailForCoinCase:
 	.string "Oh! You have Harbor Mail?\n"
-	.string "Will you trade it for a METAL COAT?$"
+	.string "Will you trade it for a Metal Coat?$"
 
 MauvilleCity_House2_Text_IllTradeYouCoinCase:
 	.string "Oh, I'm so happy!\n"
-	.string "Okay, I'll trade you a METAL COAT!$"
+	.string "Okay, I'll trade you a Metal Coat!$"
 
 MauvilleCity_House2_Text_UseCoinCaseAtGameCorner:
-	.string "That METAL COAT can be used\n"
+	.string "That Metal Coat can be used\n"
 	.string "to evolve some Pokémon.$"
 
 MauvilleCity_House2_Text_ThatsDisappointing:

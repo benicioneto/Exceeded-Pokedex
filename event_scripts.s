@@ -1212,6 +1212,7 @@ gText_Collected:
     .include "data/scripts/dexnav.inc"
     .include "data/scripts/itemfinder.inc"
 	.include "data/scripts/rocket_edition.inc"
+	.include "data/scripts/ability_tutors.inc"
 
 	.include "data/maps/Route135/scripts.inc"
 
