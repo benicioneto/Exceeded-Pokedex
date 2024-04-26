@@ -1,0 +1,15 @@
+LittlerootTown_ProfessorBirchHouse_MapScripts::
+	.byte 0
+
+LittlerootTown_ProfessorBirchHouse_EventScript_ProfBirchWife::
+	lock
+	faceplayer
+	goto_if_set FLAG_HIDE_BIRCHHOUSE_BRENDAN_AND_MAY, LittlerootTown_ProfessorBirchHouse_EventScript_ProfBirchWife_KidsLeft
+	msgbox ProfessorBirchHouse_Text_BrichsWife, MSGBOX_DEFAULT
+	release
+	end
+
+LittlerootTown_ProfessorBirchHouse_EventScript_ProfBirchWife_KidsLeft:
+	msgbox ProfessorBirchHouse_Text_BrichsWife_Left, MSGBOX_DEFAULT
+	release
+	end

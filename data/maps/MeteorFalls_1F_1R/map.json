@@ -1,0 +1,329 @@
+{
+  "id": "MAP_METEOR_FALLS_1F_1R",
+  "name": "MeteorFalls_1F_1R",
+  "layout": "LAYOUT_METEOR_FALLS_1F_1R",
+  "music": "MUS_CAVE_OF_ORIGIN",
+  "region_map_section": "MAPSEC_METEOR_FALLS",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_UNDERGROUND",
+  "allow_cycling": true,
+  "allow_escaping": true,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": 0,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_TM_BALL",
+      "x": 2,
+      "y": 4,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "MeteorFalls_1F_1R_EventScript_ItemTM23",
+      "flag": "FLAG_ITEM_METEOR_FALLS_1F_1R_TM_23"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 2,
+      "y": 14,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "MeteorFalls_1F_1R_EventScript_ItemMoonStone",
+      "flag": "FLAG_ITEM_METEOR_FALLS_1F_1R_MOON_STONE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 27,
+      "y": 5,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "MeteorFalls_1F_1R_EventScript_ItemFullHeal",
+      "flag": "FLAG_ITEM_METEOR_FALLS_1F_1R_FULL_HEAL"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 15,
+      "y": 35,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "MeteorFalls_1F_1R_EventScript_ItemPPUP",
+      "flag": "FLAG_ITEM_METEOR_FALLS_1F_1R_PP_UP"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GALACTIC_GRUNT_MALE",
+      "x": 11,
+      "y": 20,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "0x0",
+      "flag": "FLAG_HIDE_VILLAINS_IN_METEOR_FALLS_AND_FALLARBOR_TOWN"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GALACTIC_GRUNT_MALE",
+      "x": 12,
+      "y": 21,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "0x0",
+      "flag": "FLAG_HIDE_VILLAINS_IN_METEOR_FALLS_AND_FALLARBOR_TOWN"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GALACTIC_ADM_MARS",
+      "x": 10,
+      "y": 21,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "0x0",
+      "flag": "FLAG_HIDE_VILLAINS_IN_METEOR_FALLS_AND_FALLARBOR_TOWN"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_386",
+      "x": 3,
+      "y": 20,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_DEOXYS"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ZYGARDE_CORE",
+      "x": 27,
+      "y": 32,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "General_EventScript_ZygardeCore",
+      "flag": "FLAG_ZYGARDE_CORE4"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_DEOXYS_TRIANGLE",
+      "x": 8,
+      "y": 21,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_BLACK_TRIANGLE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_JESSIE",
+      "x": 17,
+      "y": 17,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_DEFEATED_JESSIE_JAMES_METEOR_FALLS"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_JAMES",
+      "x": 17,
+      "y": 20,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_DEFEATED_JESSIE_JAMES_METEOR_FALLS"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MEOWTH",
+      "x": 28,
+      "y": 26,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_MEOWTH_METEOR_FALL"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MEGASTONE_SPARKLE",
+      "x": 21,
+      "y": 31,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "MeteorFalls_EventScript_ItemSalamencite",
+      "flag": "FLAG_RECEIVED_SALAMENCITE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GALACTIC_ADM_SATURN",
+      "x": 9,
+      "y": 22,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_VILLAINS_IN_METEOR_FALLS_AND_FALLARBOR_TOWN"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ULTRA_WORMHOLE",
+      "x": 9,
+      "y": 18,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "MeteorFalls_1F_1R_EventScript_UltraWormhole",
+      "flag": "FLAG_HIDE_ULTRA_WORMHOLE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_789",
+      "x": 9,
+      "y": 18,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "NULL",
+      "flag": "FLAG_HIDE_COSMOG_METEOR_FALLS"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 27,
+      "y": 18,
+      "elevation": 4,
+      "dest_map": "MAP_ROUTE114",
+      "dest_warp_id": 0
+    },
+    {
+      "x": 6,
+      "y": 39,
+      "elevation": 3,
+      "dest_map": "MAP_ROUTE115",
+      "dest_warp_id": 0
+    },
+    {
+      "x": 10,
+      "y": 3,
+      "elevation": 3,
+      "dest_map": "MAP_METEOR_FALLS_1F_2R",
+      "dest_warp_id": 0
+    },
+    {
+      "x": 5,
+      "y": 4,
+      "elevation": 3,
+      "dest_map": "MAP_METEOR_FALLS_B1F_1R",
+      "dest_warp_id": 4
+    },
+    {
+      "x": 26,
+      "y": 28,
+      "elevation": 3,
+      "dest_map": "MAP_METEOR_FALLS_B1F_1R",
+      "dest_warp_id": 5
+    },
+    {
+      "x": 4,
+      "y": 2,
+      "elevation": 0,
+      "dest_map": "MAP_METEOR_FALLS_STEVENS_CAVE",
+      "dest_warp_id": 0
+    },
+    {
+      "x": 19,
+      "y": 29,
+      "elevation": 0,
+      "dest_map": "MAP_METEOR_FALLS_BEHIND_WATERFALL",
+      "dest_warp_id": 0
+    }
+  ],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 14,
+      "y": 20,
+      "elevation": 0,
+      "var": "VAR_TEAM_GALACTIC_STATE",
+      "var_value": "3",
+      "script": "MeteorFalls_1F_1R_EventScript_GalacticTeamPlans"
+    },
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 18,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "0",
+      "script": "MeteorFalls_1F_1R_EventScript_TeamRocketTrigger1"
+    },
+    {
+      "type": "trigger",
+      "x": 17,
+      "y": 19,
+      "elevation": 0,
+      "var": "VAR_TEMP_5",
+      "var_value": "0",
+      "script": "MeteorFalls_1F_1R_EventScript_TeamRocketTrigger2"
+    }
+  ],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 9,
+      "y": 58,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MeteorFalls_1F_1R_EventScript_GalacticTeamPlans"
+    }
+  ]
+}
