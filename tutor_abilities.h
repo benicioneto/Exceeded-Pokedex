@@ -1,6 +1,7 @@
 const u16 gTutorAbilities[] =
 {
-    [TUTOR_ABILITY_DRAGON_HOARD] = ABILITY_DRAGON_HOARD,
+    [TUTOR_ABILITY_DRAGON_HOARD]     = ABILITY_DRAGON_HOARD,
+    [TUTOR_ABILITY_BUG_CATCHER]      = ABILITY_BUG_CATCHER,
 };
 
 #define TUTOR2(tutor) ((u8) (TUTOR_ABILITY_##tutor))
@@ -72,14 +73,17 @@ static const u8 sBeedrillTutorAbility[] =
 };
 static const u8 sPidgeyTutorAbility[] =
 {
+    TUTOR2(BUG_CATCHER),
     0xFF,
 };
 static const u8 sPidgeottoTutorAbility[] =
 {
+    TUTOR2(BUG_CATCHER),
     0xFF,
 };
 static const u8 sPidgeotTutorAbility[] =
 {
+    TUTOR2(BUG_CATCHER),
     0xFF,
 };
 static const u8 sRattataTutorAbility[] =
@@ -92,10 +96,12 @@ static const u8 sRaticateTutorAbility[] =
 };
 static const u8 sSpearowTutorAbility[] =
 {
+    TUTOR2(BUG_CATCHER),
     0xFF,
 };
 static const u8 sFearowTutorAbility[] =
 {
+    TUTOR2(BUG_CATCHER),
     0xFF,
 };
 static const u8 sEkansTutorAbility[] =
@@ -506,10 +512,12 @@ static const u8 sMrMimeTutorAbility[] =
 };
 static const u8 sScytherTutorAbility[] =
 {
+    TUTOR2(BUG_CATCHER),
     0xFF,
 };
 static const u8 sKleavorTutorAbility[] =
 {
+    TUTOR2(BUG_CATCHER),
     0xFF,
 };
 static const u8 sJynxTutorAbility[] =
@@ -526,6 +534,7 @@ static const u8 sMagmarTutorAbility[] =
 };
 static const u8 sPinsirTutorAbility[] =
 {
+    TUTOR2(BUG_CATCHER),
     0xFF,
 };
 static const u8 sTaurosTutorAbility[] =
@@ -686,10 +695,12 @@ static const u8 sFurretTutorAbility[] =
 };
 static const u8 sHoothootTutorAbility[] =
 {
+    TUTOR2(BUG_CATCHER),
     0xFF,
 };
 static const u8 sNoctowlTutorAbility[] =
 {
+    TUTOR2(BUG_CATCHER),
     0xFF,
 };
 static const u8 sLedybaTutorAbility[] =
@@ -742,10 +753,12 @@ static const u8 sTogeticTutorAbility[] =
 };
 static const u8 sNatuTutorAbility[] =
 {
+    TUTOR2(BUG_CATCHER),
     0xFF,
 };
 static const u8 sXatuTutorAbility[] =
 {
+    TUTOR2(BUG_CATCHER),
     0xFF,
 };
 static const u8 sMareepTutorAbility[] =
@@ -884,6 +897,7 @@ static const u8 sQwilfishTutorAbility[] =
 };
 static const u8 sScizorTutorAbility[] =
 {
+    TUTOR2(BUG_CATCHER),
     0xFF,
 };
 static const u8 sShuckleTutorAbility[] =
@@ -961,6 +975,7 @@ static const u8 sMantineTutorAbility[] =
 };
 static const u8 sSkarmoryTutorAbility[] =
 {
+    TUTOR2(BUG_CATCHER),
     0xFF,
 };
 static const u8 sHoundourTutorAbility[] =
@@ -1644,26 +1659,32 @@ static const u8 sInfernapeTutorAbility[] =
 };
 static const u8 sPiplupTutorAbility[] =
 {
+    TUTOR2(BUG_CATCHER),
     0xFF,
 };
 static const u8 sPrinplupTutorAbility[] =
 {
+    TUTOR2(BUG_CATCHER),
     0xFF,
 };
 static const u8 sEmpoleonTutorAbility[] =
 {
+    TUTOR2(BUG_CATCHER),
     0xFF,
 };
 static const u8 sStarlyTutorAbility[] =
 {
+    TUTOR2(BUG_CATCHER),
     0xFF,
 };
 static const u8 sStaraviaTutorAbility[] =
 {
+    TUTOR2(BUG_CATCHER),
     0xFF,
 };
 static const u8 sStaraptorTutorAbility[] =
 {
+    TUTOR2(BUG_CATCHER),
     0xFF,
 };
 static const u8 sBidoofTutorAbility[] =
@@ -1676,10 +1697,12 @@ static const u8 sBibarelTutorAbility[] =
 };
 static const u8 sKricketotTutorAbility[] =
 {
+    TUTOR2(BUG_CATCHER),
     0xFF,
 };
 static const u8 sKricketuneTutorAbility[] =
 {
+    TUTOR2(BUG_CATCHER),
     0xFF,
 };
 static const u8 sShinxTutorAbility[] =
@@ -1971,6 +1994,7 @@ static const u8 sTogekissTutorAbility[] =
 };
 static const u8 sYanmegaTutorAbility[] =
 {
+    TUTOR2(BUG_CATCHER),
     0xFF,
 };
 static const u8 sLeafeonTutorAbility[] =
@@ -2174,14 +2198,17 @@ static const u8 sMusharnaTutorAbility[] =
 };
 static const u8 sPidoveTutorAbility[] =
 {
+    TUTOR2(BUG_CATCHER),
     0xFF,
 };
 static const u8 sTranquillTutorAbility[] =
 {
+    TUTOR2(BUG_CATCHER),
     0xFF,
 };
 static const u8 sUnfezantTutorAbility[] =
 {
+    TUTOR2(BUG_CATCHER),
     0xFF,
 };
 static const u8 sBlitzleTutorAbility[] =
@@ -2278,6 +2305,7 @@ static const u8 sWhirlipedeTutorAbility[] =
 };
 static const u8 sScolipedeTutorAbility[] =
 {
+    TUTOR2(BUG_CATCHER),
     0xFF,
 };
 static const u8 sCottoneeTutorAbility[] =
@@ -2750,14 +2778,17 @@ static const u8 sDiggersbyTutorAbility[] =
 };
 static const u8 sFletchlingTutorAbility[] =
 {
+    TUTOR2(BUG_CATCHER),
     0xFF,
 };
 static const u8 sFletchinderTutorAbility[] =
 {
+    TUTOR2(BUG_CATCHER),
     0xFF,
 };
 static const u8 sTalonflameTutorAbility[] =
 {
+    TUTOR2(BUG_CATCHER),
     0xFF,
 };
 static const u8 sScatterbugTutorAbility[] =
@@ -3034,14 +3065,17 @@ static const u8 sPrimarinaTutorAbility[] =
 };
 static const u8 sPikipekTutorAbility[] =
 {
+    TUTOR2(BUG_CATCHER),
     0xFF,
 };
 static const u8 sTrumbeakTutorAbility[] =
 {
+    TUTOR2(BUG_CATCHER),
     0xFF,
 };
 static const u8 sToucannonTutorAbility[] =
 {
+    TUTOR2(BUG_CATCHER),
     0xFF,
 };
 static const u8 sYungoosTutorAbility[] =
@@ -3062,6 +3096,7 @@ static const u8 sCharjabugTutorAbility[] =
 };
 static const u8 sVikavoltTutorAbility[] =
 {
+    TUTOR2(BUG_CATCHER),
     0xFF,
 };
 static const u8 sCrabrawlerTutorAbility[] =
@@ -3074,6 +3109,7 @@ static const u8 sCrabominableTutorAbility[] =
 };
 static const u8 sOricorioTutorAbility[] =
 {
+    TUTOR2(BUG_CATCHER),
     0xFF,
 };
 static const u8 sCutieflyTutorAbility[] =
@@ -3122,10 +3158,12 @@ static const u8 sAraquanidTutorAbility[] =
 };
 static const u8 sFomantisTutorAbility[] =
 {
+    TUTOR2(BUG_CATCHER),
     0xFF,
 };
 static const u8 sLurantisTutorAbility[] =
 {
+    TUTOR2(BUG_CATCHER),
     0xFF,
 };
 static const u8 sMorelullTutorAbility[] =
@@ -3398,14 +3436,17 @@ static const u8 sGreedentTutorAbility[] =
 };
 static const u8 sRookideeTutorAbility[] =
 {
+    TUTOR2(BUG_CATCHER),
     0xFF,
 };
 static const u8 sCorvisquireTutorAbility[] =
 {
+    TUTOR2(BUG_CATCHER),
     0xFF,
 };
 static const u8 sCorviknightTutorAbility[] =
 {
+    TUTOR2(BUG_CATCHER),
     0xFF,
 };
 static const u8 sBlipbugTutorAbility[] =
@@ -4120,6 +4161,7 @@ static const u8 sArbolivaTutorAbility[] = {
 };
 
 static const u8 sSquawkabillyTutorAbility[] = {
+    TUTOR2(BUG_CATCHER),
     0xFF,
 };
 

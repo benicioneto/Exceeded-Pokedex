@@ -17,6 +17,7 @@ SafariZone_South_EventScript_EnterSafariZone::
 	waitmovement 0
 	setobjectxyperm LOCALID_ATTENDANT, 32, 34
 	setvar VAR_SAFARI_ZONE_STATE, 0
+	special POF_RenableFollower
 	releaseall
 	end
 

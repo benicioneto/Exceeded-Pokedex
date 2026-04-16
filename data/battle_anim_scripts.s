@@ -1032,6 +1032,7 @@ gBattleAnims_Moves::
 	.4byte Move_DRAGON_CURRENT
 	.4byte Move_PSYSHIELD
 	.4byte Move_MIDNIGHT_BEAM
+	.4byte Move_BANSHEES_CRY
 @@@@@@@@@@@@ Z MOVES @@@@@@@@@@@
 	.4byte Move_BREAKNECK_BLITZ
 	.4byte Move_ALL_OUT_PUMMELING
@@ -29134,6 +29135,7 @@ Move_BLAZE_KICK:
 	blendoff
 	end
 
+Move_BANSHEES_CRY:
 Move_HYPER_VOICE:
 	loadspritegfx ANIM_TAG_THIN_RING
 	createvisualtask SoundTask_PlayCryWithEcho, 5, 0

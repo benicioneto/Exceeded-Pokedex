@@ -490,8 +490,8 @@ static const u8 sLickDescription[] = _(
     "injure. May also paralyze.");
 
 static const u8 sSmogDescription[] = _(
-    "An exhaust-gas attack\n"
-    "that may badly poison.");
+    "Fire-type {PKMN} gain\n"
+    "STAB. May badly poison.");
 
 static const u8 sSludgeDescription[] = _(
     "Sludge is hurled to inflict\n"
@@ -3922,6 +3922,14 @@ static const u8 sPSYSHIELDDescription[] = _(
     "Creates a shield of 1/4\n"
     "of the user's maximum HP.");
 
+static const u8 sMIDNIGHT_BEAMDescription[] = _(
+    "Absorbs moonlight in one turn,\n"
+    "then attacks next turn.");
+
+static const u8 sBANSHEEA_CRYDescription[] = _(
+    "Can only be used if every\n"
+    "other move has been used.");
+
 // MOVE_NONE is ignored in this table. Make sure to always subtract 1 before getting the right pointer.
 const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
 {
@@ -4929,4 +4937,6 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_LEGEND_POWER - 1] = sLEGEND_POWERDescription,
     [MOVE_DRAGON_CURRENT - 1] = sDRAGON_CURRENTDescription,
     [MOVE_PSYSHIELD - 1] = sPSYSHIELDDescription,
+    [MOVE_MIDNIGHT_BEAM - 1] = sMIDNIGHT_BEAMDescription,
+    [MOVE_BANSHEES_CRY - 1] = sBANSHEEA_CRYDescription,
 };
