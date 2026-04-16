@@ -18206,4 +18206,20 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .zMovePower = 200,
         .zMoveEffect = Z_EFFECT_NONE,
     },
+
+    [MOVE_POLLINATION_TERRAIN] =
+    {
+        .effect = EFFECT_POLLINATION_TERRAIN,
+        .power = 0,
+        .type = TYPE_BUG,
+        .accuracy = 0,
+        .pp = 10,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_ALL_BATTLERS,
+        .priority = 0,
+        .flags = 0,
+        .split = SPLIT_STATUS,
+        .zMovePower = 0,
+        .zMoveEffect = Z_EFFECT_DEF_UP_1,
+    },
 };

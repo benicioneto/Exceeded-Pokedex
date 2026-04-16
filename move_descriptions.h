@@ -3930,6 +3930,10 @@ static const u8 sBANSHEEA_CRYDescription[] = _(
     "Attacks with a eerie cry.\n"
     "The user must then rest.");
 
+static const u8 sPOLLINATION_TERRAINDescription[] = _(
+    "Summons an bug-type terrain\n"
+    "in the battlefield.");
+
 // MOVE_NONE is ignored in this table. Make sure to always subtract 1 before getting the right pointer.
 const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
 {
@@ -4939,4 +4943,5 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_PSYSHIELD - 1] = sPSYSHIELDDescription,
     [MOVE_MIDNIGHT_BEAM - 1] = sMIDNIGHT_BEAMDescription,
     [MOVE_BANSHEES_CRY - 1] = sBANSHEEA_CRYDescription,
+    [MOVE_POLLINATION_TERRAIN - 1] = sPOLLINATION_TERRAINDescription,
 };

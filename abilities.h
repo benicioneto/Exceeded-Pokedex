@@ -695,6 +695,8 @@ static const u8 sSawtoothRushDescription[] = _("Bite ignores high Defense.");
 static const u8 sNoxiousFumesDescription[] = _("Weakens non-Poison Pokémon.");
 static const u8 sVolatileFumesDescription[] = _("Burns attacking Pokémon.");
 static const u8 sUmbralDominionDescription[] = _("Summons night in battle.");
+static const u8 sChrysalisVeilDescription[] = _("Ups base stats.");
+static const u8 sPollinationSurgeDescription[] = _("Field becomes Buggy.");
 
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
 {
@@ -1327,7 +1329,10 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_NOXIOUS_FUMES] = _("Noxious Fumes"),
     [ABILITY_VOLATILE_FUMES] = _("Volatile Fumes"),
     [ABILITY_UMBRAL_DOMINION] = _("Umbral Dominion"),
+    [ABILITY_CHRYSALIS_VEIL] = _("Chrysalis Veil"),
+    [ABILITY_POLLINATION_SURGE] = _("Pollination Surge"),
 };
+
 const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
 {
     [ABILITY_NONE] = sNoneDescription,
@@ -1959,6 +1964,8 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_NOXIOUS_FUMES] = sNoxiousFumesDescription,
     [ABILITY_VOLATILE_FUMES] = sVolatileFumesDescription,
     [ABILITY_UMBRAL_DOMINION] = sUmbralDominionDescription,
+    [ABILITY_CHRYSALIS_VEIL] = sChrysalisVeilDescription,
+    [ABILITY_POLLINATION_SURGE] = sPollinationSurgeDescription,
 };
 
 // ABILITY_TRUANT
@@ -2590,6 +2597,8 @@ static const u8 sSawtoothRushDescriptionExtended[] = _("(Not Implemented)");
 static const u8 sNoxiousFumesDescriptionExtended[] = _("While the Pokémon is in the f-\nield, lowers the damage dealt \nby non-Poison or non-Steel-typ-\ne Pokémon by 25% for all Pokém-\non, increased to 50% if the Po-\nkémon is Poisoned.");
 static const u8 sVolatileFumesDescriptionExtended[] = _("When the Pokémon is hit by a \ndamaging move, the attacking P-\nokémon will become burned. Als-\no, boosts the power of Fire-ty-\npe moves by 50%.");
 static const u8 sUmbralDominionDescriptionExtended[] = _("When the Pokémon enters the f-\nield, it summons gloomy night \nfor five turns. Gloomy Night: \nBoosts Dark-type moves by 50%,\ndoubles Speed stat if the Pok-\némon has Nocturnal ability, Mo-\nonlight restores more HP, Morn-\ning Sun and Synthesis restores\nless HP.");
+static const u8 sChrysalisVeilDescriptionExtended[] = _("Increases the Pokémon's base \nstats by their previous evolut-\nion's base stats.");
+static const u8 sPollinationSurgeDescriptionExtended[] = _("When the Pokémon enters the b-\nattle, it creates the effect o-\nf the move Pollination Terrain\non the battlefield for five t-\nurns. Pollination Terrain: Boo-\nsts the power of Bug-type move-\ns by 30% of Pokémon that are o-\nn the ground.");
 
 const u8 *const gAbilityDescriptionExtendedPointers[ABILITIES_COUNT] =
 {
@@ -3222,4 +3231,6 @@ const u8 *const gAbilityDescriptionExtendedPointers[ABILITIES_COUNT] =
     [ABILITY_NOXIOUS_FUMES] = sNoxiousFumesDescriptionExtended,
     [ABILITY_VOLATILE_FUMES] = sVolatileFumesDescriptionExtended,
     [ABILITY_UMBRAL_DOMINION] = sUmbralDominionDescriptionExtended,
+    [ABILITY_CHRYSALIS_VEIL] = sChrysalisVeilDescriptionExtended,
+    [ABILITY_POLLINATION_SURGE] = sPollinationSurgeDescriptionExtended,
 };

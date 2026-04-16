@@ -1061,6 +1061,7 @@ const u8 gMoveNames[MOVES_COUNT_DYNAMAX][MOVE_NAME_LENGTH + 1] =
     [MOVE_PSYSHIELD] = _("Psyshield"),
     [MOVE_MIDNIGHT_BEAM] = _("Midnight Beam"),
     [MOVE_BANSHEES_CRY] = _("Banshee's Cry"),
+    [MOVE_POLLINATION_TERRAIN] = _("Pollination Trn."),
 };
 
 static const u8 sText_Breakneck_Blitz[] = _("Breakneck Blitz");

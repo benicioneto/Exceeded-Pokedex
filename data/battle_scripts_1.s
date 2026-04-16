@@ -553,6 +553,7 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectShowtime									@ EFFECT_SHOWTIME
 	.4byte BattleScript_EffectPsyshield									@ EFFECT_PSYSHIELD
 	.4byte BattleScript_EffectHit										@ EFFECT_POWER_GEM
+	.4byte BattleScript_EffectPollinationTerrain           				@ EFFECT_POLLINATION_TERRAIN
 
 BattleScript_EffectPsyshield:
 	attackcanceler
@@ -4679,6 +4680,7 @@ BattleScript_EffectMistyTerrain:
 BattleScript_EffectGrassyTerrain:
 BattleScript_EffectElectricTerrain:
 BattleScript_EffectPsychicTerrain:
+BattleScript_EffectPollinationTerrain::
 	attackcanceler
 	attackstring
 	ppreduce

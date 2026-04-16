@@ -1033,6 +1033,7 @@ gBattleAnims_Moves::
 	.4byte Move_PSYSHIELD
 	.4byte Move_MIDNIGHT_BEAM
 	.4byte Move_BANSHEES_CRY
+	.4byte Move_POLLINATION_TERRAIN
 @@@@@@@@@@@@ Z MOVES @@@@@@@@@@@
 	.4byte Move_BREAKNECK_BLITZ
 	.4byte Move_ALL_OUT_PUMMELING
@@ -9244,6 +9245,7 @@ Move_FLOWER_SHIELD::
 	blendoff
 	end
 
+Move_POLLINATION_TERRAIN::
 Move_FLOWERY_FIELDS_FOREVER::
 Move_GRASSY_TERRAIN::
 	loadspritegfx ANIM_TAG_ORBS @Recover Ball
