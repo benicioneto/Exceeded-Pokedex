@@ -3927,8 +3927,8 @@ static const u8 sMIDNIGHT_BEAMDescription[] = _(
     "then attacks next turn.");
 
 static const u8 sBANSHEEA_CRYDescription[] = _(
-    "Can only be used if every\n"
-    "other move has been used.");
+    "Attacks with a eerie cry.\n"
+    "The user must then rest.");
 
 // MOVE_NONE is ignored in this table. Make sure to always subtract 1 before getting the right pointer.
 const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =

@@ -18193,10 +18193,10 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_BANSHEES_CRY] =
     {
-        .effect = EFFECT_LAST_RESORT,
-        .power = 140,
+        .effect = EFFECT_USER_RECHARGE,
+        .power = 150,
         .type = TYPE_FAIRY,
-        .accuracy = 100,
+        .accuracy = 90,
         .pp = 5,
         .secondaryEffectChance = 0,
         .target = MOVE_TARGET_BOTH,
