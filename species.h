@@ -961,545 +961,7 @@
 #define SPECIES_ENAMORUS                                SPECIES_ENAMORUS_INCARNATE
 #define SPECIES_ENAMORUS_INCARNATE                      905
 
-#define FORMS_START SPECIES_ENAMORUS_INCARNATE
-
-// Megas
-#define SPECIES_VENUSAUR_MEGA                           FORMS_START + 1
-#define SPECIES_CHARIZARD_MEGA_X                        FORMS_START + 2
-#define SPECIES_CHARIZARD_MEGA_Y                        FORMS_START + 3
-#define SPECIES_BLASTOISE_MEGA                          FORMS_START + 4
-#define SPECIES_BEEDRILL_MEGA                           FORMS_START + 5
-#define SPECIES_PIDGEOT_MEGA                            FORMS_START + 6
-#define SPECIES_ALAKAZAM_MEGA                           FORMS_START + 7
-#define SPECIES_SLOWBRO_MEGA                            FORMS_START + 8
-#define SPECIES_GENGAR_MEGA                             FORMS_START + 9
-#define SPECIES_KANGASKHAN_MEGA                         FORMS_START + 10
-#define SPECIES_PINSIR_MEGA                             FORMS_START + 11
-#define SPECIES_GYARADOS_MEGA                           FORMS_START + 12
-#define SPECIES_AERODACTYL_MEGA                         FORMS_START + 13
-#define SPECIES_MEWTWO_MEGA_X                           FORMS_START + 14
-#define SPECIES_MEWTWO_MEGA_Y                           FORMS_START + 15
-#define SPECIES_AMPHAROS_MEGA                           FORMS_START + 16
-#define SPECIES_STEELIX_MEGA                            FORMS_START + 17
-#define SPECIES_SCIZOR_MEGA                             FORMS_START + 18
-#define SPECIES_HERACROSS_MEGA                          FORMS_START + 19
-#define SPECIES_HOUNDOOM_MEGA                           FORMS_START + 20
-#define SPECIES_TYRANITAR_MEGA                          FORMS_START + 21
-#define SPECIES_SCEPTILE_MEGA                           FORMS_START + 22
-#define SPECIES_BLAZIKEN_MEGA                           FORMS_START + 23
-#define SPECIES_SWAMPERT_MEGA                           FORMS_START + 24
-#define SPECIES_GARDEVOIR_MEGA                          FORMS_START + 25
-#define SPECIES_SABLEYE_MEGA                            FORMS_START + 26
-#define SPECIES_MAWILE_MEGA                             FORMS_START + 27
-#define SPECIES_AGGRON_MEGA                             FORMS_START + 28
-#define SPECIES_MEDICHAM_MEGA                           FORMS_START + 29
-#define SPECIES_MANECTRIC_MEGA                          FORMS_START + 30
-#define SPECIES_SHARPEDO_MEGA                           FORMS_START + 31
-#define SPECIES_CAMERUPT_MEGA                           FORMS_START + 32
-#define SPECIES_ALTARIA_MEGA                            FORMS_START + 33
-#define SPECIES_BANETTE_MEGA                            FORMS_START + 34
-#define SPECIES_ABSOL_MEGA                              FORMS_START + 35
-#define SPECIES_GLALIE_MEGA                             FORMS_START + 36
-#define SPECIES_SALAMENCE_MEGA                          FORMS_START + 37
-#define SPECIES_METAGROSS_MEGA                          FORMS_START + 38
-#define SPECIES_LATIAS_MEGA                             FORMS_START + 39
-#define SPECIES_LATIOS_MEGA                             FORMS_START + 40
-#define SPECIES_LOPUNNY_MEGA                            FORMS_START + 41
-#define SPECIES_GARCHOMP_MEGA                           FORMS_START + 42
-#define SPECIES_LUCARIO_MEGA                            FORMS_START + 43
-#define SPECIES_ABOMASNOW_MEGA                          FORMS_START + 44
-#define SPECIES_GALLADE_MEGA                            FORMS_START + 45
-#define SPECIES_AUDINO_MEGA                             FORMS_START + 46
-#define SPECIES_DIANCIE_MEGA                            FORMS_START + 47
-
-// Special Mega + Primals
-#define SPECIES_RAYQUAZA_MEGA                           FORMS_START + 48
-#define SPECIES_KYOGRE_PRIMAL                           FORMS_START + 49
-#define SPECIES_GROUDON_PRIMAL                          FORMS_START + 50
-
-// Alolan Forms
-#define SPECIES_RATTATA_ALOLAN                          FORMS_START + 51
-#define SPECIES_RATICATE_ALOLAN                         FORMS_START + 52
-#define SPECIES_RAICHU_ALOLAN                           FORMS_START + 53
-#define SPECIES_SANDSHREW_ALOLAN                        FORMS_START + 54
-#define SPECIES_SANDSLASH_ALOLAN                        FORMS_START + 55
-#define SPECIES_VULPIX_ALOLAN                           FORMS_START + 56
-#define SPECIES_NINETALES_ALOLAN                        FORMS_START + 57
-#define SPECIES_DIGLETT_ALOLAN                          FORMS_START + 58
-#define SPECIES_DUGTRIO_ALOLAN                          FORMS_START + 59
-#define SPECIES_MEOWTH_ALOLAN                           FORMS_START + 60
-#define SPECIES_PERSIAN_ALOLAN                          FORMS_START + 61
-#define SPECIES_GEODUDE_ALOLAN                          FORMS_START + 62
-#define SPECIES_GRAVELER_ALOLAN                         FORMS_START + 63
-#define SPECIES_GOLEM_ALOLAN                            FORMS_START + 64
-#define SPECIES_GRIMER_ALOLAN                           FORMS_START + 65
-#define SPECIES_MUK_ALOLAN                              FORMS_START + 66
-#define SPECIES_EXEGGUTOR_ALOLAN                        FORMS_START + 67
-#define SPECIES_MAROWAK_ALOLAN                          FORMS_START + 68
-
-// Galarian Forms
-#define SPECIES_MEOWTH_GALARIAN                         FORMS_START + 69
-#define SPECIES_PONYTA_GALARIAN                         FORMS_START + 70
-#define SPECIES_RAPIDASH_GALARIAN                       FORMS_START + 71
-#define SPECIES_SLOWPOKE_GALARIAN                       FORMS_START + 72
-#define SPECIES_SLOWBRO_GALARIAN                        FORMS_START + 73
-#define SPECIES_FARFETCHD_GALARIAN                      FORMS_START + 74
-#define SPECIES_WEEZING_GALARIAN                        FORMS_START + 75
-#define SPECIES_MR_MIME_GALARIAN                        FORMS_START + 76
-#define SPECIES_ARTICUNO_GALARIAN                       FORMS_START + 77
-#define SPECIES_ZAPDOS_GALARIAN                         FORMS_START + 78
-#define SPECIES_MOLTRES_GALARIAN                        FORMS_START + 79
-#define SPECIES_SLOWKING_GALARIAN                       FORMS_START + 80
-#define SPECIES_CORSOLA_GALARIAN                        FORMS_START + 81
-#define SPECIES_ZIGZAGOON_GALARIAN                      FORMS_START + 82
-#define SPECIES_LINOONE_GALARIAN                        FORMS_START + 83
-#define SPECIES_DARUMAKA_GALARIAN                       FORMS_START + 84
-#define SPECIES_DARMANITAN_GALARIAN                     SPECIES_DARMANITAN_GALARIAN_STANDARD_MODE
-#define SPECIES_DARMANITAN_GALARIAN_STANDARD_MODE       FORMS_START + 85
-#define SPECIES_YAMASK_GALARIAN                         FORMS_START + 86
-#define SPECIES_STUNFISK_GALARIAN                       FORMS_START + 87
-
-//Hisuian Forms
-#define SPECIES_GROWLITHE_HISUIAN                       FORMS_START + 88
-#define SPECIES_ARCANINE_HISUIAN                        FORMS_START + 89
-#define SPECIES_VOLTORB_HISUIAN                         FORMS_START + 90
-#define SPECIES_ELECTRODE_HISUIAN                       FORMS_START + 91
-#define SPECIES_TYPHLOSION_HISUIAN                      FORMS_START + 92
-#define SPECIES_QWILFISH_HISUIAN                        FORMS_START + 93
-#define SPECIES_SNEASEL_HISUIAN                         FORMS_START + 94
-#define SPECIES_SAMUROTT_HISUIAN                        FORMS_START + 95
-#define SPECIES_LILLIGANT_HISUIAN                       FORMS_START + 96
-#define SPECIES_ZORUA_HISUIAN                           FORMS_START + 97
-#define SPECIES_ZOROARK_HISUIAN                         FORMS_START + 98
-#define SPECIES_BRAVIARY_HISUIAN                        FORMS_START + 99
-#define SPECIES_SLIGGOO_HISUIAN                         FORMS_START + 100
-#define SPECIES_GOODRA_HISUIAN                          FORMS_START + 101
-#define SPECIES_AVALUGG_HISUIAN                         FORMS_START + 102
-#define SPECIES_DECIDUEYE_HISUIAN                       FORMS_START + 103
-
-// Misc Forms
-
-// Cosplay Pikachu
-#define SPECIES_PIKACHU_COSPLAY                         FORMS_START + 104
-#define SPECIES_PIKACHU_ROCK_STAR                       FORMS_START + 105
-#define SPECIES_PIKACHU_BELLE                           FORMS_START + 106
-#define SPECIES_PIKACHU_POP_STAR                        FORMS_START + 107
-#define SPECIES_PIKACHU_PH_D                            FORMS_START + 108
-#define SPECIES_PIKACHU_LIBRE                           FORMS_START + 109
-
-// Cap Pikachu
-#define SPECIES_PIKACHU_ORIGINAL_CAP                    FORMS_START + 110
-#define SPECIES_PIKACHU_HOENN_CAP                       FORMS_START + 111
-#define SPECIES_PIKACHU_SINNOH_CAP                      FORMS_START + 112
-#define SPECIES_PIKACHU_UNOVA_CAP                       FORMS_START + 113
-#define SPECIES_PIKACHU_KALOS_CAP                       FORMS_START + 114
-#define SPECIES_PIKACHU_ALOLA_CAP                       FORMS_START + 115
-#define SPECIES_PIKACHU_PARTNER_CAP                     FORMS_START + 116
-#define SPECIES_PIKACHU_WORLD_CAP                       FORMS_START + 117
-
-// Pichu
-#define SPECIES_PICHU_SPIKY_EARED                       FORMS_START + 118
-
-// Unown
-#define SPECIES_UNOWN_B                                 FORMS_START + 119
-#define SPECIES_UNOWN_C                                 FORMS_START + 120
-#define SPECIES_UNOWN_D                                 FORMS_START + 121
-#define SPECIES_UNOWN_E                                 FORMS_START + 122
-#define SPECIES_UNOWN_F                                 FORMS_START + 123
-#define SPECIES_UNOWN_G                                 FORMS_START + 124
-#define SPECIES_UNOWN_H                                 FORMS_START + 125
-#define SPECIES_UNOWN_I                                 FORMS_START + 126
-#define SPECIES_UNOWN_J                                 FORMS_START + 127
-#define SPECIES_UNOWN_K                                 FORMS_START + 128
-#define SPECIES_UNOWN_L                                 FORMS_START + 129
-#define SPECIES_UNOWN_M                                 FORMS_START + 130
-#define SPECIES_UNOWN_N                                 FORMS_START + 131
-#define SPECIES_UNOWN_O                                 FORMS_START + 132
-#define SPECIES_UNOWN_P                                 FORMS_START + 133
-#define SPECIES_UNOWN_Q                                 FORMS_START + 134
-#define SPECIES_UNOWN_R                                 FORMS_START + 135
-#define SPECIES_UNOWN_S                                 FORMS_START + 136
-#define SPECIES_UNOWN_T                                 FORMS_START + 137
-#define SPECIES_UNOWN_U                                 FORMS_START + 138
-#define SPECIES_UNOWN_V                                 FORMS_START + 139
-#define SPECIES_UNOWN_W                                 FORMS_START + 140
-#define SPECIES_UNOWN_X                                 FORMS_START + 141
-#define SPECIES_UNOWN_Y                                 FORMS_START + 142
-#define SPECIES_UNOWN_Z                                 FORMS_START + 143
-#define SPECIES_UNOWN_EMARK                             FORMS_START + 144
-#define SPECIES_UNOWN_QMARK                             FORMS_START + 145
-
-// Castform
-#define SPECIES_CASTFORM_SUNNY                          FORMS_START + 146
-#define SPECIES_CASTFORM_RAINY                          FORMS_START + 147
-#define SPECIES_CASTFORM_SNOWY                          FORMS_START + 148
-
-// Deoxys
-#define SPECIES_DEOXYS_ATTACK                           FORMS_START + 149
-#define SPECIES_DEOXYS_DEFENSE                          FORMS_START + 150
-#define SPECIES_DEOXYS_SPEED                            FORMS_START + 151
-
-// Burmy
-#define SPECIES_BURMY_SANDY_CLOAK                       FORMS_START + 152
-#define SPECIES_BURMY_TRASH_CLOAK                       FORMS_START + 153
-
-// Wormadam
-#define SPECIES_WORMADAM_SANDY_CLOAK                    FORMS_START + 154
-#define SPECIES_WORMADAM_TRASH_CLOAK                    FORMS_START + 155
-
-// Cherrim
-#define SPECIES_CHERRIM_SUNSHINE                        FORMS_START + 156
-
-// Shellos
-#define SPECIES_SHELLOS_EAST_SEA                        FORMS_START + 157
-
-// Gastrodon
-#define SPECIES_GASTRODON_EAST_SEA                      FORMS_START + 158
-
-// Rotom
-#define SPECIES_ROTOM_HEAT                              FORMS_START + 159
-#define SPECIES_ROTOM_WASH                              FORMS_START + 160
-#define SPECIES_ROTOM_FROST                             FORMS_START + 161
-#define SPECIES_ROTOM_FAN                               FORMS_START + 162
-#define SPECIES_ROTOM_MOW                               FORMS_START + 163
-
-// Origin Forme
-#define SPECIES_DIALGA_ORIGIN                           FORMS_START + 164
-#define SPECIES_PALKIA_ORIGIN                           FORMS_START + 165
-#define SPECIES_GIRATINA_ORIGIN                         FORMS_START + 166
-
-// Shaymin
-#define SPECIES_SHAYMIN_SKY                             FORMS_START + 167
-
-// Arceus
-#define SPECIES_ARCEUS_FIGHTING                         FORMS_START + 168
-#define SPECIES_ARCEUS_FLYING                           FORMS_START + 169
-#define SPECIES_ARCEUS_POISON                           FORMS_START + 170
-#define SPECIES_ARCEUS_GROUND                           FORMS_START + 171
-#define SPECIES_ARCEUS_ROCK                             FORMS_START + 172
-#define SPECIES_ARCEUS_BUG                              FORMS_START + 173
-#define SPECIES_ARCEUS_GHOST                            FORMS_START + 174
-#define SPECIES_ARCEUS_STEEL                            FORMS_START + 175
-#define SPECIES_ARCEUS_FIRE                             FORMS_START + 176
-#define SPECIES_ARCEUS_WATER                            FORMS_START + 177
-#define SPECIES_ARCEUS_GRASS                            FORMS_START + 178
-#define SPECIES_ARCEUS_ELECTRIC                         FORMS_START + 179
-#define SPECIES_ARCEUS_PSYCHIC                          FORMS_START + 180
-#define SPECIES_ARCEUS_ICE                              FORMS_START + 181
-#define SPECIES_ARCEUS_DRAGON                           FORMS_START + 182
-#define SPECIES_ARCEUS_DARK                             FORMS_START + 183
-#define SPECIES_ARCEUS_FAIRY                            FORMS_START + 184
-
-// Basculin
-#define SPECIES_BASCULIN_BLUE_STRIPED                   FORMS_START + 185
-#define SPECIES_BASCULIN_WHITE_STRIPED                  FORMS_START + 186
-
-// Darmanitan
-#define SPECIES_DARMANITAN_ZEN_MODE                     FORMS_START + 187
-#define SPECIES_DARMANITAN_GALARIAN_ZEN_MODE            FORMS_START + 188
-
-// Deerling
-#define SPECIES_DEERLING_SUMMER                         FORMS_START + 189
-#define SPECIES_DEERLING_AUTUMN                         FORMS_START + 190
-#define SPECIES_DEERLING_WINTER                         FORMS_START + 191
-
-// Sawsbuck
-#define SPECIES_SAWSBUCK_SUMMER                         FORMS_START + 192
-#define SPECIES_SAWSBUCK_AUTUMN                         FORMS_START + 193
-#define SPECIES_SAWSBUCK_WINTER                         FORMS_START + 194
-
-// Therian Forms
-#define SPECIES_TORNADUS_THERIAN                        FORMS_START + 195
-#define SPECIES_THUNDURUS_THERIAN                       FORMS_START + 196
-#define SPECIES_LANDORUS_THERIAN                        FORMS_START + 197
-#define SPECIES_ENAMORUS_THERIAN                        FORMS_START + 198
-
-// Kyurem
-#define SPECIES_KYUREM_WHITE                            FORMS_START + 199
-#define SPECIES_KYUREM_BLACK                            FORMS_START + 200
-
-// Keldeo
-#define SPECIES_KELDEO_RESOLUTE                         FORMS_START + 201
-
-// Meloetta
-#define SPECIES_MELOETTA_PIROUETTE                      FORMS_START + 202
-
-// Genesect
-#define SPECIES_GENESECT_DOUSE_DRIVE                    FORMS_START + 203
-#define SPECIES_GENESECT_SHOCK_DRIVE                    FORMS_START + 204
-#define SPECIES_GENESECT_BURN_DRIVE                     FORMS_START + 205
-#define SPECIES_GENESECT_CHILL_DRIVE                    FORMS_START + 206
-
-// Greninja
-#define SPECIES_GRENINJA_BATTLE_BOND                    FORMS_START + 207
-#define SPECIES_GRENINJA_ASH                            FORMS_START + 208
-
-// Vivillon
-#define SPECIES_VIVILLON_POLAR                          FORMS_START + 209
-#define SPECIES_VIVILLON_TUNDRA                         FORMS_START + 210
-#define SPECIES_VIVILLON_CONTINENTAL                    FORMS_START + 211
-#define SPECIES_VIVILLON_GARDEN                         FORMS_START + 212
-#define SPECIES_VIVILLON_ELEGANT                        FORMS_START + 213
-#define SPECIES_VIVILLON_MEADOW                         FORMS_START + 214
-#define SPECIES_VIVILLON_MODERN                         FORMS_START + 215
-#define SPECIES_VIVILLON_MARINE                         FORMS_START + 216
-#define SPECIES_VIVILLON_ARCHIPELAGO                    FORMS_START + 217
-#define SPECIES_VIVILLON_HIGH_PLAINS                    FORMS_START + 218
-#define SPECIES_VIVILLON_SANDSTORM                      FORMS_START + 219
-#define SPECIES_VIVILLON_RIVER                          FORMS_START + 220
-#define SPECIES_VIVILLON_MONSOON                        FORMS_START + 221
-#define SPECIES_VIVILLON_SAVANNA                        FORMS_START + 222
-#define SPECIES_VIVILLON_SUN                            FORMS_START + 223
-#define SPECIES_VIVILLON_OCEAN                          FORMS_START + 224
-#define SPECIES_VIVILLON_JUNGLE                         FORMS_START + 225
-#define SPECIES_VIVILLON_FANCY                          FORMS_START + 226
-#define SPECIES_VIVILLON_POKE_BALL                      FORMS_START + 227
-
-// Flabébé
-#define SPECIES_FLABEBE_YELLOW_FLOWER                   FORMS_START + 228
-#define SPECIES_FLABEBE_ORANGE_FLOWER                   FORMS_START + 229
-#define SPECIES_FLABEBE_BLUE_FLOWER                     FORMS_START + 230
-#define SPECIES_FLABEBE_WHITE_FLOWER                    FORMS_START + 231
-
-// Floette
-#define SPECIES_FLOETTE_YELLOW_FLOWER                   FORMS_START + 232
-#define SPECIES_FLOETTE_ORANGE_FLOWER                   FORMS_START + 233
-#define SPECIES_FLOETTE_BLUE_FLOWER                     FORMS_START + 234
-#define SPECIES_FLOETTE_WHITE_FLOWER                    FORMS_START + 235
-#define SPECIES_FLOETTE_ETERNAL_FLOWER                  FORMS_START + 236
-
-// Florges
-#define SPECIES_FLORGES_YELLOW_FLOWER                   FORMS_START + 237
-#define SPECIES_FLORGES_ORANGE_FLOWER                   FORMS_START + 238
-#define SPECIES_FLORGES_BLUE_FLOWER                     FORMS_START + 239
-#define SPECIES_FLORGES_WHITE_FLOWER                    FORMS_START + 240
-
-// Furfrou
-#define SPECIES_FURFROU_HEART_TRIM                      FORMS_START + 241
-#define SPECIES_FURFROU_STAR_TRIM                       FORMS_START + 242
-#define SPECIES_FURFROU_DIAMOND_TRIM                    FORMS_START + 243
-#define SPECIES_FURFROU_DEBUTANTE_TRIM                  FORMS_START + 244
-#define SPECIES_FURFROU_MATRON_TRIM                     FORMS_START + 245
-#define SPECIES_FURFROU_DANDY_TRIM                      FORMS_START + 246
-#define SPECIES_FURFROU_LA_REINE_TRIM                   FORMS_START + 247
-#define SPECIES_FURFROU_KABUKI_TRIM                     FORMS_START + 248
-#define SPECIES_FURFROU_PHARAOH_TRIM                    FORMS_START + 249
-
-// Meowstic
-#define SPECIES_MEOWSTIC_FEMALE                         FORMS_START + 250
-
-// Aegislash
-#define SPECIES_AEGISLASH_BLADE                         FORMS_START + 251
-
-// Pumpkaboo
-#define SPECIES_PUMPKABOO_SMALL                         FORMS_START + 252
-#define SPECIES_PUMPKABOO_LARGE                         FORMS_START + 253
-#define SPECIES_PUMPKABOO_SUPER                         FORMS_START + 254
-
-// Gourgeist
-#define SPECIES_GOURGEIST_SMALL                         FORMS_START + 255
-#define SPECIES_GOURGEIST_LARGE                         FORMS_START + 256
-#define SPECIES_GOURGEIST_SUPER                         FORMS_START + 257
-
-// Xerneas
-#define SPECIES_XERNEAS_ACTIVE                          FORMS_START + 258
-
-// Zygarde
-#define SPECIES_ZYGARDE_10                              SPECIES_ZYGARDE_10_AURA_BREAK
-#define SPECIES_ZYGARDE_10_AURA_BREAK                   FORMS_START + 259
-#define SPECIES_ZYGARDE_10_POWER_CONSTRUCT              FORMS_START + 260
-#define SPECIES_ZYGARDE_50_POWER_CONSTRUCT              FORMS_START + 261
-#define SPECIES_ZYGARDE_COMPLETE                        FORMS_START + 262
-
-// Hoopa
-#define SPECIES_HOOPA_UNBOUND                           FORMS_START + 263
-
-// Oricorio
-#define SPECIES_ORICORIO_POM_POM                        FORMS_START + 264
-#define SPECIES_ORICORIO_PAU                            FORMS_START + 265
-#define SPECIES_ORICORIO_SENSU                          FORMS_START + 266
-
-// Rockruff
-#define SPECIES_ROCKRUFF_OWN_TEMPO                      FORMS_START + 267
-
-// Lycanroc
-#define SPECIES_LYCANROC_MIDNIGHT                       FORMS_START + 268
-#define SPECIES_LYCANROC_DUSK                           FORMS_START + 269
-
-// Wishiwashi
-#define SPECIES_WISHIWASHI_SCHOOL                       FORMS_START + 270
-
-// Silvally
-#define SPECIES_SILVALLY_FIGHTING                       FORMS_START + 271
-#define SPECIES_SILVALLY_FLYING                         FORMS_START + 272
-#define SPECIES_SILVALLY_POISON                         FORMS_START + 273
-#define SPECIES_SILVALLY_GROUND                         FORMS_START + 274
-#define SPECIES_SILVALLY_ROCK                           FORMS_START + 275
-#define SPECIES_SILVALLY_BUG                            FORMS_START + 276
-#define SPECIES_SILVALLY_GHOST                          FORMS_START + 277
-#define SPECIES_SILVALLY_STEEL                          FORMS_START + 278
-#define SPECIES_SILVALLY_FIRE                           FORMS_START + 279
-#define SPECIES_SILVALLY_WATER                          FORMS_START + 280
-#define SPECIES_SILVALLY_GRASS                          FORMS_START + 281
-#define SPECIES_SILVALLY_ELECTRIC                       FORMS_START + 282
-#define SPECIES_SILVALLY_PSYCHIC                        FORMS_START + 283
-#define SPECIES_SILVALLY_ICE                            FORMS_START + 284
-#define SPECIES_SILVALLY_DRAGON                         FORMS_START + 285
-#define SPECIES_SILVALLY_DARK                           FORMS_START + 286
-#define SPECIES_SILVALLY_FAIRY                          FORMS_START + 287
-
-// Minior
-#define SPECIES_MINIOR_METEOR_ORANGE                    FORMS_START + 288
-#define SPECIES_MINIOR_METEOR_YELLOW                    FORMS_START + 289
-#define SPECIES_MINIOR_METEOR_GREEN                     FORMS_START + 290
-#define SPECIES_MINIOR_METEOR_BLUE                      FORMS_START + 291
-#define SPECIES_MINIOR_METEOR_INDIGO                    FORMS_START + 292
-#define SPECIES_MINIOR_METEOR_VIOLET                    FORMS_START + 293
-#define SPECIES_MINIOR_CORE                             SPECIES_MINIOR_CORE_RED
-#define SPECIES_MINIOR_CORE_RED                         FORMS_START + 294
-#define SPECIES_MINIOR_CORE_ORANGE                      FORMS_START + 295
-#define SPECIES_MINIOR_CORE_YELLOW                      FORMS_START + 296
-#define SPECIES_MINIOR_CORE_GREEN                       FORMS_START + 297
-#define SPECIES_MINIOR_CORE_BLUE                        FORMS_START + 298
-#define SPECIES_MINIOR_CORE_INDIGO                      FORMS_START + 299
-#define SPECIES_MINIOR_CORE_VIOLET                      FORMS_START + 300
-
-// Mimikyu
-#define SPECIES_MIMIKYU_BUSTED                          FORMS_START + 301
-
-// Necrozma
-#define SPECIES_NECROZMA_DUSK_MANE                      FORMS_START + 302
-#define SPECIES_NECROZMA_DAWN_WINGS                     FORMS_START + 303
-#define SPECIES_NECROZMA_ULTRA                          FORMS_START + 304
-
-// Magearna
-#define SPECIES_MAGEARNA_ORIGINAL_COLOR                 FORMS_START + 305
-
-// Cramorant
-#define SPECIES_CRAMORANT_GULPING                       FORMS_START + 306
-#define SPECIES_CRAMORANT_GORGING                       FORMS_START + 307
-
-// Toxtricity
-#define SPECIES_TOXTRICITY_LOW_KEY                      FORMS_START + 308
-
-// Sinistea
-#define SPECIES_SINISTEA_ANTIQUE                        FORMS_START + 309
-
-// Polteageist
-#define SPECIES_POLTEAGEIST_ANTIQUE                     FORMS_START + 310
-
-// Alcremie
-#define SPECIES_ALCREMIE_RUBY_CREAM                     SPECIES_ALCREMIE_STRAWBERRY_RUBY_CREAM
-#define SPECIES_ALCREMIE_MATCHA_CREAM                   SPECIES_ALCREMIE_STRAWBERRY_MATCHA_CREAM
-#define SPECIES_ALCREMIE_MINT_CREAM                     SPECIES_ALCREMIE_STRAWBERRY_MINT_CREAM
-#define SPECIES_ALCREMIE_LEMON_CREAM                    SPECIES_ALCREMIE_STRAWBERRY_LEMON_CREAM
-#define SPECIES_ALCREMIE_SALTED_CREAM                   SPECIES_ALCREMIE_STRAWBERRY_SALTED_CREAM
-#define SPECIES_ALCREMIE_RUBY_SWIRL                     SPECIES_ALCREMIE_STRAWBERRY_RUBY_SWIRL
-#define SPECIES_ALCREMIE_CARAMEL_SWIRL                  SPECIES_ALCREMIE_STRAWBERRY_CARAMEL_SWIRL
-#define SPECIES_ALCREMIE_RAINBOW_SWIRL                  SPECIES_ALCREMIE_STRAWBERRY_RAINBOW_SWIRL
-#define SPECIES_ALCREMIE_STRAWBERRY_RUBY_CREAM          FORMS_START + 311
-#define SPECIES_ALCREMIE_STRAWBERRY_MATCHA_CREAM        FORMS_START + 312
-#define SPECIES_ALCREMIE_STRAWBERRY_MINT_CREAM          FORMS_START + 313
-#define SPECIES_ALCREMIE_STRAWBERRY_LEMON_CREAM         FORMS_START + 314
-#define SPECIES_ALCREMIE_STRAWBERRY_SALTED_CREAM        FORMS_START + 315
-#define SPECIES_ALCREMIE_STRAWBERRY_RUBY_SWIRL          FORMS_START + 316
-#define SPECIES_ALCREMIE_STRAWBERRY_CARAMEL_SWIRL       FORMS_START + 317
-#define SPECIES_ALCREMIE_STRAWBERRY_RAINBOW_SWIRL       FORMS_START + 318
-
-// Eiscue
-#define SPECIES_EISCUE_NOICE_FACE                       FORMS_START + 319
-
-// Indeedee
-#define SPECIES_INDEEDEE_FEMALE                         FORMS_START + 320
-
-// Morpeko
-#define SPECIES_MORPEKO_HANGRY                          FORMS_START + 321
-
-// Zacian
-#define SPECIES_ZACIAN_CROWNED_SWORD                    FORMS_START + 322
-
-// Zamazenta
-#define SPECIES_ZAMAZENTA_CROWNED_SHIELD                FORMS_START + 323
-
-// Eternatus
-#define SPECIES_ETERNATUS_ETERNAMAX                     FORMS_START + 324
-
-// Urshifu
-#define SPECIES_URSHIFU_RAPID_STRIKE_STYLE              FORMS_START + 325
-
-// Zarude
-#define SPECIES_ZARUDE_DADA                             FORMS_START + 326
-
-// Calyrex
-#define SPECIES_CALYREX_ICE_RIDER                       FORMS_START + 327
-#define SPECIES_CALYREX_SHADOW_RIDER                    FORMS_START + 328
-
-// Basculegion
-#define SPECIES_BASCULEGION_FEMALE                      FORMS_START + 329
-
-// More Alcremie
-#define SPECIES_ALCREMIE_BERRY                          SPECIES_ALCREMIE_BERRY_VANILLA_CREAM
-#define SPECIES_ALCREMIE_BERRY_VANILLA_CREAM            FORMS_START + 330
-#define SPECIES_ALCREMIE_BERRY_RUBY_CREAM               FORMS_START + 331
-#define SPECIES_ALCREMIE_BERRY_MATCHA_CREAM             FORMS_START + 332
-#define SPECIES_ALCREMIE_BERRY_MINT_CREAM               FORMS_START + 333
-#define SPECIES_ALCREMIE_BERRY_LEMON_CREAM              FORMS_START + 334
-#define SPECIES_ALCREMIE_BERRY_SALTED_CREAM             FORMS_START + 335
-#define SPECIES_ALCREMIE_BERRY_RUBY_SWIRL               FORMS_START + 336
-#define SPECIES_ALCREMIE_BERRY_CARAMEL_SWIRL            FORMS_START + 337
-#define SPECIES_ALCREMIE_BERRY_RAINBOW_SWIRL            FORMS_START + 338
-#define SPECIES_ALCREMIE_LOVE                           SPECIES_ALCREMIE_LOVE_VANILLA_CREAM
-#define SPECIES_ALCREMIE_LOVE_VANILLA_CREAM             FORMS_START + 339
-#define SPECIES_ALCREMIE_LOVE_RUBY_CREAM                FORMS_START + 340
-#define SPECIES_ALCREMIE_LOVE_MATCHA_CREAM              FORMS_START + 341
-#define SPECIES_ALCREMIE_LOVE_MINT_CREAM                FORMS_START + 342
-#define SPECIES_ALCREMIE_LOVE_LEMON_CREAM               FORMS_START + 343
-#define SPECIES_ALCREMIE_LOVE_SALTED_CREAM              FORMS_START + 344
-#define SPECIES_ALCREMIE_LOVE_RUBY_SWIRL                FORMS_START + 345
-#define SPECIES_ALCREMIE_LOVE_CARAMEL_SWIRL             FORMS_START + 346
-#define SPECIES_ALCREMIE_LOVE_RAINBOW_SWIRL             FORMS_START + 347
-#define SPECIES_ALCREMIE_STAR                           SPECIES_ALCREMIE_STAR_VANILLA_CREAM
-#define SPECIES_ALCREMIE_STAR_VANILLA_CREAM             FORMS_START + 348
-#define SPECIES_ALCREMIE_STAR_RUBY_CREAM                FORMS_START + 349
-#define SPECIES_ALCREMIE_STAR_MATCHA_CREAM              FORMS_START + 350
-#define SPECIES_ALCREMIE_STAR_MINT_CREAM                FORMS_START + 351
-#define SPECIES_ALCREMIE_STAR_LEMON_CREAM               FORMS_START + 352
-#define SPECIES_ALCREMIE_STAR_SALTED_CREAM              FORMS_START + 353
-#define SPECIES_ALCREMIE_STAR_RUBY_SWIRL                FORMS_START + 354
-#define SPECIES_ALCREMIE_STAR_CARAMEL_SWIRL             FORMS_START + 355
-#define SPECIES_ALCREMIE_STAR_RAINBOW_SWIRL             FORMS_START + 356
-#define SPECIES_ALCREMIE_CLOVER                         SPECIES_ALCREMIE_CLOVER_VANILLA_CREAM
-#define SPECIES_ALCREMIE_CLOVER_VANILLA_CREAM           FORMS_START + 357
-#define SPECIES_ALCREMIE_CLOVER_RUBY_CREAM              FORMS_START + 358
-#define SPECIES_ALCREMIE_CLOVER_MATCHA_CREAM            FORMS_START + 359
-#define SPECIES_ALCREMIE_CLOVER_MINT_CREAM              FORMS_START + 360
-#define SPECIES_ALCREMIE_CLOVER_LEMON_CREAM             FORMS_START + 361
-#define SPECIES_ALCREMIE_CLOVER_SALTED_CREAM            FORMS_START + 362
-#define SPECIES_ALCREMIE_CLOVER_RUBY_SWIRL              FORMS_START + 363
-#define SPECIES_ALCREMIE_CLOVER_CARAMEL_SWIRL           FORMS_START + 364
-#define SPECIES_ALCREMIE_CLOVER_RAINBOW_SWIRL           FORMS_START + 365
-#define SPECIES_ALCREMIE_FLOWER                         SPECIES_ALCREMIE_FLOWER_VANILLA_CREAM
-#define SPECIES_ALCREMIE_FLOWER_VANILLA_CREAM           FORMS_START + 366
-#define SPECIES_ALCREMIE_FLOWER_RUBY_CREAM              FORMS_START + 367
-#define SPECIES_ALCREMIE_FLOWER_MATCHA_CREAM            FORMS_START + 368
-#define SPECIES_ALCREMIE_FLOWER_MINT_CREAM              FORMS_START + 369
-#define SPECIES_ALCREMIE_FLOWER_LEMON_CREAM             FORMS_START + 370
-#define SPECIES_ALCREMIE_FLOWER_SALTED_CREAM            FORMS_START + 371
-#define SPECIES_ALCREMIE_FLOWER_RUBY_SWIRL              FORMS_START + 372
-#define SPECIES_ALCREMIE_FLOWER_CARAMEL_SWIRL           FORMS_START + 373
-#define SPECIES_ALCREMIE_FLOWER_RAINBOW_SWIRL           FORMS_START + 374
-#define SPECIES_ALCREMIE_RIBBON                         SPECIES_ALCREMIE_RIBBON_VANILLA_CREAM
-#define SPECIES_ALCREMIE_RIBBON_VANILLA_CREAM           FORMS_START + 375
-#define SPECIES_ALCREMIE_RIBBON_RUBY_CREAM              FORMS_START + 376
-#define SPECIES_ALCREMIE_RIBBON_MATCHA_CREAM            FORMS_START + 377
-#define SPECIES_ALCREMIE_RIBBON_MINT_CREAM              FORMS_START + 378
-#define SPECIES_ALCREMIE_RIBBON_LEMON_CREAM             FORMS_START + 379
-#define SPECIES_ALCREMIE_RIBBON_SALTED_CREAM            FORMS_START + 380
-#define SPECIES_ALCREMIE_RIBBON_RUBY_SWIRL              FORMS_START + 381
-#define SPECIES_ALCREMIE_RIBBON_CARAMEL_SWIRL           FORMS_START + 382
-#define SPECIES_ALCREMIE_RIBBON_RAINBOW_SWIRL           FORMS_START + 383
-
-#define GEN9_START                                      SPECIES_ALCREMIE_RIBBON_RAINBOW_SWIRL
+#define GEN9_START                                      SPECIES_ENAMORUS_INCARNATE
 
 #define SPECIES_SPRIGATITO                              GEN9_START + 1
 #define SPECIES_FLORAGATO                               GEN9_START + 2
@@ -1645,13 +1107,490 @@
 #define SPECIES_OGERPON_WELLSPRING_MASK                 GEN9_START + 129
 #define SPECIES_OGERPON_HEARTHFLAME_MASK                GEN9_START + 130
 #define SPECIES_OGERPON_CORNERSTONE_MASK                GEN9_START + 131
-#define SPECIES_OGERPON_TEAL_MASK_TERA                  GEN9_START + 132
-#define SPECIES_OGERPON_WELLSPRING_MASK_TERA            GEN9_START + 133
-#define SPECIES_OGERPON_HEARTHFLAME_MASK_TERA           GEN9_START + 134
-#define SPECIES_OGERPON_CORNERSTONE_MASK_TERA           GEN9_START + 135
-#define SPECIES_URSALUNA_BLOODMOON                      GEN9_START + 136
+#define SPECIES_URSALUNA_BLOODMOON                      GEN9_START + 132
+// Indigo Disk
+#define SPECIES_ARCHALUDON                              GEN9_START + 133
+#define SPECIES_HYDRAPPLE                               GEN9_START + 134
+#define SPECIES_GOUGING_FIRE                            GEN9_START + 135
+#define SPECIES_RAGING_BOLT                             GEN9_START + 136
+#define SPECIES_IRON_BOULDER                            GEN9_START + 137
+#define SPECIES_IRON_CROWN                              GEN9_START + 138
+#define SPECIES_TERAPAGOS                               SPECIES_TERAPAGOS_NORMAL
+#define SPECIES_TERAPAGOS_NORMAL                        GEN9_START + 139
+#define SPECIES_TERAPAGOS_TERASTAL                      GEN9_START + 140
+#define SPECIES_TERAPAGOS_STELLAR                       GEN9_START + 141
+#define SPECIES_PECHARUNT                               GEN9_START + 142
 
-#define GIGANTAMAX_START                                SPECIES_URSALUNA_BLOODMOON
+#define REGIONAL_FORMS_START                            SPECIES_PECHARUNT
+
+// Alolan Forms
+#define SPECIES_RATTATA_ALOLAN                          REGIONAL_FORMS_START + 1
+#define SPECIES_RATICATE_ALOLAN                         REGIONAL_FORMS_START + 2
+#define SPECIES_RAICHU_ALOLAN                           REGIONAL_FORMS_START + 3
+#define SPECIES_SANDSHREW_ALOLAN                        REGIONAL_FORMS_START + 4
+#define SPECIES_SANDSLASH_ALOLAN                        REGIONAL_FORMS_START + 5
+#define SPECIES_VULPIX_ALOLAN                           REGIONAL_FORMS_START + 6
+#define SPECIES_NINETALES_ALOLAN                        REGIONAL_FORMS_START + 7
+#define SPECIES_DIGLETT_ALOLAN                          REGIONAL_FORMS_START + 8
+#define SPECIES_DUGTRIO_ALOLAN                          REGIONAL_FORMS_START + 9
+#define SPECIES_MEOWTH_ALOLAN                           REGIONAL_FORMS_START + 10
+#define SPECIES_PERSIAN_ALOLAN                          REGIONAL_FORMS_START + 11
+#define SPECIES_GEODUDE_ALOLAN                          REGIONAL_FORMS_START + 12
+#define SPECIES_GRAVELER_ALOLAN                         REGIONAL_FORMS_START + 13
+#define SPECIES_GOLEM_ALOLAN                            REGIONAL_FORMS_START + 14
+#define SPECIES_GRIMER_ALOLAN                           REGIONAL_FORMS_START + 15
+#define SPECIES_MUK_ALOLAN                              REGIONAL_FORMS_START + 16
+#define SPECIES_EXEGGUTOR_ALOLAN                        REGIONAL_FORMS_START + 17
+#define SPECIES_MAROWAK_ALOLAN                          REGIONAL_FORMS_START + 18
+
+// Galarian Forms
+#define SPECIES_MEOWTH_GALARIAN                         REGIONAL_FORMS_START + 19
+#define SPECIES_PONYTA_GALARIAN                         REGIONAL_FORMS_START + 20
+#define SPECIES_RAPIDASH_GALARIAN                       REGIONAL_FORMS_START + 21
+#define SPECIES_SLOWPOKE_GALARIAN                       REGIONAL_FORMS_START + 22
+#define SPECIES_SLOWBRO_GALARIAN                        REGIONAL_FORMS_START + 23
+#define SPECIES_FARFETCHD_GALARIAN                      REGIONAL_FORMS_START + 24
+#define SPECIES_WEEZING_GALARIAN                        REGIONAL_FORMS_START + 25
+#define SPECIES_MR_MIME_GALARIAN                        REGIONAL_FORMS_START + 26
+#define SPECIES_ARTICUNO_GALARIAN                       REGIONAL_FORMS_START + 27
+#define SPECIES_ZAPDOS_GALARIAN                         REGIONAL_FORMS_START + 28
+#define SPECIES_MOLTRES_GALARIAN                        REGIONAL_FORMS_START + 29
+#define SPECIES_SLOWKING_GALARIAN                       REGIONAL_FORMS_START + 30
+#define SPECIES_CORSOLA_GALARIAN                        REGIONAL_FORMS_START + 31
+#define SPECIES_ZIGZAGOON_GALARIAN                      REGIONAL_FORMS_START + 32
+#define SPECIES_LINOONE_GALARIAN                        REGIONAL_FORMS_START + 33
+#define SPECIES_DARUMAKA_GALARIAN                       REGIONAL_FORMS_START + 34
+#define SPECIES_DARMANITAN_GALARIAN                     SPECIES_DARMANITAN_GALARIAN_STANDARD_MODE
+#define SPECIES_DARMANITAN_GALARIAN_STANDARD_MODE       REGIONAL_FORMS_START + 35
+#define SPECIES_YAMASK_GALARIAN                         REGIONAL_FORMS_START + 36
+#define SPECIES_STUNFISK_GALARIAN                       REGIONAL_FORMS_START + 37
+
+//Hisuian Forms
+#define SPECIES_GROWLITHE_HISUIAN                       REGIONAL_FORMS_START + 38
+#define SPECIES_ARCANINE_HISUIAN                        REGIONAL_FORMS_START + 39
+#define SPECIES_VOLTORB_HISUIAN                         REGIONAL_FORMS_START + 40
+#define SPECIES_ELECTRODE_HISUIAN                       REGIONAL_FORMS_START + 41
+#define SPECIES_TYPHLOSION_HISUIAN                      REGIONAL_FORMS_START + 42
+#define SPECIES_QWILFISH_HISUIAN                        REGIONAL_FORMS_START + 43
+#define SPECIES_SNEASEL_HISUIAN                         REGIONAL_FORMS_START + 44
+#define SPECIES_SAMUROTT_HISUIAN                        REGIONAL_FORMS_START + 45
+#define SPECIES_LILLIGANT_HISUIAN                       REGIONAL_FORMS_START + 46
+#define SPECIES_ZORUA_HISUIAN                           REGIONAL_FORMS_START + 47
+#define SPECIES_ZOROARK_HISUIAN                         REGIONAL_FORMS_START + 48
+#define SPECIES_BRAVIARY_HISUIAN                        REGIONAL_FORMS_START + 49
+#define SPECIES_SLIGGOO_HISUIAN                         REGIONAL_FORMS_START + 50
+#define SPECIES_GOODRA_HISUIAN                          REGIONAL_FORMS_START + 51
+#define SPECIES_AVALUGG_HISUIAN                         REGIONAL_FORMS_START + 52
+#define SPECIES_DECIDUEYE_HISUIAN                       REGIONAL_FORMS_START + 53
+
+#define SPECIAL_FORMS_START                             SPECIES_DECIDUEYE_HISUIAN
+
+#define SPECIES_PIKACHU_COSPLAY                         SPECIAL_FORMS_START + 1
+#define SPECIES_PIKACHU_ROCK_STAR                       SPECIAL_FORMS_START + 2
+#define SPECIES_PIKACHU_BELLE                           SPECIAL_FORMS_START + 3
+#define SPECIES_PIKACHU_POP_STAR                        SPECIAL_FORMS_START + 4
+#define SPECIES_PIKACHU_PH_D                            SPECIAL_FORMS_START + 5
+#define SPECIES_PIKACHU_LIBRE                           SPECIAL_FORMS_START + 6
+#define SPECIES_PIKACHU_ORIGINAL_CAP                    SPECIAL_FORMS_START + 7
+#define SPECIES_PIKACHU_HOENN_CAP                       SPECIAL_FORMS_START + 8
+#define SPECIES_PIKACHU_SINNOH_CAP                      SPECIAL_FORMS_START + 9
+#define SPECIES_PIKACHU_UNOVA_CAP                       SPECIAL_FORMS_START + 10
+#define SPECIES_PIKACHU_KALOS_CAP                       SPECIAL_FORMS_START + 11
+#define SPECIES_PIKACHU_ALOLA_CAP                       SPECIAL_FORMS_START + 12
+#define SPECIES_PIKACHU_PARTNER_CAP                     SPECIAL_FORMS_START + 13
+#define SPECIES_PIKACHU_WORLD_CAP                       SPECIAL_FORMS_START + 14
+#define SPECIES_PICHU_SPIKY_EARED                       SPECIAL_FORMS_START + 15
+#define SPECIES_UNOWN_B                                 SPECIAL_FORMS_START + 16
+#define SPECIES_UNOWN_C                                 SPECIAL_FORMS_START + 17
+#define SPECIES_UNOWN_D                                 SPECIAL_FORMS_START + 18
+#define SPECIES_UNOWN_E                                 SPECIAL_FORMS_START + 19
+#define SPECIES_UNOWN_F                                 SPECIAL_FORMS_START + 20
+#define SPECIES_UNOWN_G                                 SPECIAL_FORMS_START + 21
+#define SPECIES_UNOWN_H                                 SPECIAL_FORMS_START + 22
+#define SPECIES_UNOWN_I                                 SPECIAL_FORMS_START + 23
+#define SPECIES_UNOWN_J                                 SPECIAL_FORMS_START + 24
+#define SPECIES_UNOWN_K                                 SPECIAL_FORMS_START + 25
+#define SPECIES_UNOWN_L                                 SPECIAL_FORMS_START + 26
+#define SPECIES_UNOWN_M                                 SPECIAL_FORMS_START + 27
+#define SPECIES_UNOWN_N                                 SPECIAL_FORMS_START + 28
+#define SPECIES_UNOWN_O                                 SPECIAL_FORMS_START + 29
+#define SPECIES_UNOWN_P                                 SPECIAL_FORMS_START + 30
+#define SPECIES_UNOWN_Q                                 SPECIAL_FORMS_START + 31
+#define SPECIES_UNOWN_R                                 SPECIAL_FORMS_START + 32
+#define SPECIES_UNOWN_S                                 SPECIAL_FORMS_START + 33
+#define SPECIES_UNOWN_T                                 SPECIAL_FORMS_START + 34
+#define SPECIES_UNOWN_U                                 SPECIAL_FORMS_START + 35
+#define SPECIES_UNOWN_V                                 SPECIAL_FORMS_START + 36
+#define SPECIES_UNOWN_W                                 SPECIAL_FORMS_START + 37
+#define SPECIES_UNOWN_X                                 SPECIAL_FORMS_START + 38
+#define SPECIES_UNOWN_Y                                 SPECIAL_FORMS_START + 39
+#define SPECIES_UNOWN_Z                                 SPECIAL_FORMS_START + 40
+#define SPECIES_UNOWN_EMARK                             SPECIAL_FORMS_START + 41
+#define SPECIES_UNOWN_QMARK                             SPECIAL_FORMS_START + 42
+#define SPECIES_CASTFORM_SUNNY                          SPECIAL_FORMS_START + 43
+#define SPECIES_CASTFORM_RAINY                          SPECIAL_FORMS_START + 44
+#define SPECIES_CASTFORM_SNOWY                          SPECIAL_FORMS_START + 45
+#define SPECIES_DEOXYS_ATTACK                           SPECIAL_FORMS_START + 46
+#define SPECIES_DEOXYS_DEFENSE                          SPECIAL_FORMS_START + 47
+#define SPECIES_DEOXYS_SPEED                            SPECIAL_FORMS_START + 48
+#define SPECIES_BURMY_SANDY_CLOAK                       SPECIAL_FORMS_START + 49
+#define SPECIES_BURMY_TRASH_CLOAK                       SPECIAL_FORMS_START + 50
+#define SPECIES_WORMADAM_SANDY_CLOAK                    SPECIAL_FORMS_START + 51
+#define SPECIES_WORMADAM_TRASH_CLOAK                    SPECIAL_FORMS_START + 52
+#define SPECIES_CHERRIM_SUNSHINE                        SPECIAL_FORMS_START + 53
+#define SPECIES_SHELLOS_EAST_SEA                        SPECIAL_FORMS_START + 54
+#define SPECIES_GASTRODON_EAST_SEA                      SPECIAL_FORMS_START + 55
+#define SPECIES_ROTOM_HEAT                              SPECIAL_FORMS_START + 56
+#define SPECIES_ROTOM_WASH                              SPECIAL_FORMS_START + 57
+#define SPECIES_ROTOM_FROST                             SPECIAL_FORMS_START + 58
+#define SPECIES_ROTOM_FAN                               SPECIAL_FORMS_START + 59
+#define SPECIES_ROTOM_MOW                               SPECIAL_FORMS_START + 60
+#define SPECIES_DIALGA_ORIGIN                           SPECIAL_FORMS_START + 61
+#define SPECIES_PALKIA_ORIGIN                           SPECIAL_FORMS_START + 62
+#define SPECIES_GIRATINA_ORIGIN                         SPECIAL_FORMS_START + 63
+#define SPECIES_SHAYMIN_SKY                             SPECIAL_FORMS_START + 64
+#define SPECIES_ARCEUS_FIGHTING                         SPECIAL_FORMS_START + 65
+#define SPECIES_ARCEUS_FLYING                           SPECIAL_FORMS_START + 66
+#define SPECIES_ARCEUS_POISON                           SPECIAL_FORMS_START + 67
+#define SPECIES_ARCEUS_GROUND                           SPECIAL_FORMS_START + 68
+#define SPECIES_ARCEUS_ROCK                             SPECIAL_FORMS_START + 69
+#define SPECIES_ARCEUS_BUG                              SPECIAL_FORMS_START + 70
+#define SPECIES_ARCEUS_GHOST                            SPECIAL_FORMS_START + 71
+#define SPECIES_ARCEUS_STEEL                            SPECIAL_FORMS_START + 72
+#define SPECIES_ARCEUS_FIRE                             SPECIAL_FORMS_START + 73
+#define SPECIES_ARCEUS_WATER                            SPECIAL_FORMS_START + 74
+#define SPECIES_ARCEUS_GRASS                            SPECIAL_FORMS_START + 75
+#define SPECIES_ARCEUS_ELECTRIC                         SPECIAL_FORMS_START + 76
+#define SPECIES_ARCEUS_ICE                              SPECIAL_FORMS_START + 77
+#define SPECIES_ARCEUS_PSYCHIC                          SPECIAL_FORMS_START + 78
+#define SPECIES_ARCEUS_DRAGON                           SPECIAL_FORMS_START + 79
+#define SPECIES_ARCEUS_DARK                             SPECIAL_FORMS_START + 80
+#define SPECIES_ARCEUS_FAIRY                            SPECIAL_FORMS_START + 81
+#define SPECIES_BASCULIN_BLUE_STRIPED                   SPECIAL_FORMS_START + 82
+#define SPECIES_BASCULIN_WHITE_STRIPED                  SPECIAL_FORMS_START + 83
+#define SPECIES_DARMANITAN_ZEN_MODE                     SPECIAL_FORMS_START + 84
+#define SPECIES_DARMANITAN_GALARIAN_ZEN_MODE            SPECIAL_FORMS_START + 85
+#define SPECIES_DEERLING_SUMMER                         SPECIAL_FORMS_START + 86
+#define SPECIES_DEERLING_AUTUMN                         SPECIAL_FORMS_START + 87
+#define SPECIES_DEERLING_WINTER                         SPECIAL_FORMS_START + 88
+#define SPECIES_SAWSBUCK_SUMMER                         SPECIAL_FORMS_START + 89
+#define SPECIES_SAWSBUCK_AUTUMN                         SPECIAL_FORMS_START + 90
+#define SPECIES_SAWSBUCK_WINTER                         SPECIAL_FORMS_START + 91
+#define SPECIES_TORNADUS_THERIAN                        SPECIAL_FORMS_START + 92
+#define SPECIES_THUNDURUS_THERIAN                       SPECIAL_FORMS_START + 93
+#define SPECIES_LANDORUS_THERIAN                        SPECIAL_FORMS_START + 94
+#define SPECIES_ENAMORUS_THERIAN                        SPECIAL_FORMS_START + 95
+#define SPECIES_KYUREM_WHITE                            SPECIAL_FORMS_START + 96
+#define SPECIES_KYUREM_BLACK                            SPECIAL_FORMS_START + 97
+#define SPECIES_KELDEO_RESOLUTE                         SPECIAL_FORMS_START + 98
+#define SPECIES_MELOETTA_PIROUETTE                      SPECIAL_FORMS_START + 99
+#define SPECIES_GENESECT_DOUSE_DRIVE                    SPECIAL_FORMS_START + 100
+#define SPECIES_GENESECT_SHOCK_DRIVE                    SPECIAL_FORMS_START + 101
+#define SPECIES_GENESECT_BURN_DRIVE                     SPECIAL_FORMS_START + 102
+#define SPECIES_GENESECT_CHILL_DRIVE                    SPECIAL_FORMS_START + 103
+#define SPECIES_GRENINJA_BATTLE_BOND                    SPECIAL_FORMS_START + 104
+#define SPECIES_GRENINJA_ASH                            SPECIAL_FORMS_START + 105
+#define SPECIES_VIVILLON_POLAR                          SPECIAL_FORMS_START + 106
+#define SPECIES_VIVILLON_TUNDRA                         SPECIAL_FORMS_START + 107
+#define SPECIES_VIVILLON_CONTINENTAL                    SPECIAL_FORMS_START + 108
+#define SPECIES_VIVILLON_GARDEN                         SPECIAL_FORMS_START + 109
+#define SPECIES_VIVILLON_ELEGANT                        SPECIAL_FORMS_START + 110
+#define SPECIES_VIVILLON_MEADOW                         SPECIAL_FORMS_START + 111
+#define SPECIES_VIVILLON_MODERN                         SPECIAL_FORMS_START + 112
+#define SPECIES_VIVILLON_MARINE                         SPECIAL_FORMS_START + 113
+#define SPECIES_VIVILLON_ARCHIPELAGO                    SPECIAL_FORMS_START + 114
+#define SPECIES_VIVILLON_HIGH_PLAINS                    SPECIAL_FORMS_START + 115
+#define SPECIES_VIVILLON_SANDSTORM                      SPECIAL_FORMS_START + 116
+#define SPECIES_VIVILLON_RIVER                          SPECIAL_FORMS_START + 117
+#define SPECIES_VIVILLON_MONSOON                        SPECIAL_FORMS_START + 118
+#define SPECIES_VIVILLON_SAVANNA                        SPECIAL_FORMS_START + 119
+#define SPECIES_VIVILLON_SUN                            SPECIAL_FORMS_START + 120
+#define SPECIES_VIVILLON_OCEAN                          SPECIAL_FORMS_START + 121
+#define SPECIES_VIVILLON_JUNGLE                         SPECIAL_FORMS_START + 122
+#define SPECIES_VIVILLON_FANCY                          SPECIAL_FORMS_START + 123
+#define SPECIES_VIVILLON_POKE_BALL                      SPECIAL_FORMS_START + 124
+#define SPECIES_FLABEBE_YELLOW_FLOWER                   SPECIAL_FORMS_START + 125
+#define SPECIES_FLABEBE_ORANGE_FLOWER                   SPECIAL_FORMS_START + 126
+#define SPECIES_FLABEBE_BLUE_FLOWER                     SPECIAL_FORMS_START + 127
+#define SPECIES_FLABEBE_WHITE_FLOWER                    SPECIAL_FORMS_START + 128
+#define SPECIES_FLOETTE_YELLOW_FLOWER                   SPECIAL_FORMS_START + 129
+#define SPECIES_FLOETTE_ORANGE_FLOWER                   SPECIAL_FORMS_START + 130
+#define SPECIES_FLOETTE_BLUE_FLOWER                     SPECIAL_FORMS_START + 131
+#define SPECIES_FLOETTE_WHITE_FLOWER                    SPECIAL_FORMS_START + 132
+#define SPECIES_FLOETTE_ETERNAL_FLOWER                  SPECIAL_FORMS_START + 133
+#define SPECIES_FLORGES_YELLOW_FLOWER                   SPECIAL_FORMS_START + 134
+#define SPECIES_FLORGES_ORANGE_FLOWER                   SPECIAL_FORMS_START + 135
+#define SPECIES_FLORGES_BLUE_FLOWER                     SPECIAL_FORMS_START + 136
+#define SPECIES_FLORGES_WHITE_FLOWER                    SPECIAL_FORMS_START + 137
+#define SPECIES_FURFROU_HEART_TRIM                      SPECIAL_FORMS_START + 138
+#define SPECIES_FURFROU_STAR_TRIM                       SPECIAL_FORMS_START + 139
+#define SPECIES_FURFROU_DIAMOND_TRIM                    SPECIAL_FORMS_START + 140
+#define SPECIES_FURFROU_DEBUTANTE_TRIM                  SPECIAL_FORMS_START + 141
+#define SPECIES_FURFROU_MATRON_TRIM                     SPECIAL_FORMS_START + 142
+#define SPECIES_FURFROU_DANDY_TRIM                      SPECIAL_FORMS_START + 143
+#define SPECIES_FURFROU_LA_REINE_TRIM                   SPECIAL_FORMS_START + 144
+#define SPECIES_FURFROU_KABUKI_TRIM                     SPECIAL_FORMS_START + 145
+#define SPECIES_FURFROU_PHARAOH_TRIM                    SPECIAL_FORMS_START + 146
+#define SPECIES_MEOWSTIC_FEMALE                         SPECIAL_FORMS_START + 147
+#define SPECIES_AEGISLASH_BLADE                         SPECIAL_FORMS_START + 148
+#define SPECIES_PUMPKABOO_SMALL                         SPECIAL_FORMS_START + 149
+#define SPECIES_PUMPKABOO_LARGE                         SPECIAL_FORMS_START + 150
+#define SPECIES_PUMPKABOO_SUPER                         SPECIAL_FORMS_START + 151
+#define SPECIES_GOURGEIST_SMALL                         SPECIAL_FORMS_START + 152
+#define SPECIES_GOURGEIST_LARGE                         SPECIAL_FORMS_START + 153
+#define SPECIES_GOURGEIST_SUPER                         SPECIAL_FORMS_START + 154
+#define SPECIES_XERNEAS_ACTIVE                          SPECIAL_FORMS_START + 155
+#define SPECIES_ZYGARDE_10                              SPECIES_ZYGARDE_10_AURA_BREAK
+#define SPECIES_ZYGARDE_10_AURA_BREAK                   SPECIAL_FORMS_START + 156
+#define SPECIES_ZYGARDE_10_POWER_CONSTRUCT              SPECIAL_FORMS_START + 157
+#define SPECIES_ZYGARDE_50_POWER_CONSTRUCT              SPECIAL_FORMS_START + 158
+#define SPECIES_ZYGARDE_COMPLETE                        SPECIAL_FORMS_START + 159
+#define SPECIES_HOOPA_UNBOUND                           SPECIAL_FORMS_START + 160
+#define SPECIES_ORICORIO_POM_POM                        SPECIAL_FORMS_START + 161
+#define SPECIES_ORICORIO_PAU                            SPECIAL_FORMS_START + 162
+#define SPECIES_ORICORIO_SENSU                          SPECIAL_FORMS_START + 163
+#define SPECIES_ROCKRUFF_OWN_TEMPO                      SPECIAL_FORMS_START + 164
+#define SPECIES_LYCANROC_MIDNIGHT                       SPECIAL_FORMS_START + 165
+#define SPECIES_LYCANROC_DUSK                           SPECIAL_FORMS_START + 166
+#define SPECIES_WISHIWASHI_SCHOOL                       SPECIAL_FORMS_START + 167
+#define SPECIES_SILVALLY_FIGHTING                       SPECIAL_FORMS_START + 168
+#define SPECIES_SILVALLY_FLYING                         SPECIAL_FORMS_START + 169
+#define SPECIES_SILVALLY_POISON                         SPECIAL_FORMS_START + 170
+#define SPECIES_SILVALLY_GROUND                         SPECIAL_FORMS_START + 171
+#define SPECIES_SILVALLY_ROCK                           SPECIAL_FORMS_START + 172
+#define SPECIES_SILVALLY_BUG                            SPECIAL_FORMS_START + 173
+#define SPECIES_SILVALLY_GHOST                          SPECIAL_FORMS_START + 174
+#define SPECIES_SILVALLY_STEEL                          SPECIAL_FORMS_START + 175
+#define SPECIES_SILVALLY_FIRE                           SPECIAL_FORMS_START + 176
+#define SPECIES_SILVALLY_WATER                          SPECIAL_FORMS_START + 177
+#define SPECIES_SILVALLY_GRASS                          SPECIAL_FORMS_START + 178
+#define SPECIES_SILVALLY_ELECTRIC                       SPECIAL_FORMS_START + 179
+#define SPECIES_SILVALLY_PSYCHIC                        SPECIAL_FORMS_START + 180
+#define SPECIES_SILVALLY_ICE                            SPECIAL_FORMS_START + 181
+#define SPECIES_SILVALLY_DRAGON                         SPECIAL_FORMS_START + 182
+#define SPECIES_SILVALLY_DARK                           SPECIAL_FORMS_START + 183
+#define SPECIES_SILVALLY_FAIRY                          SPECIAL_FORMS_START + 184
+#define SPECIES_MINIOR_METEOR_ORANGE                    SPECIAL_FORMS_START + 185
+#define SPECIES_MINIOR_METEOR_YELLOW                    SPECIAL_FORMS_START + 186
+#define SPECIES_MINIOR_METEOR_GREEN                     SPECIAL_FORMS_START + 187
+#define SPECIES_MINIOR_METEOR_BLUE                      SPECIAL_FORMS_START + 188
+#define SPECIES_MINIOR_METEOR_INDIGO                    SPECIAL_FORMS_START + 189
+#define SPECIES_MINIOR_METEOR_VIOLET                    SPECIAL_FORMS_START + 190
+#define SPECIES_MINIOR_CORE                             SPECIES_MINIOR_CORE_RED
+#define SPECIES_MINIOR_CORE_RED                         SPECIAL_FORMS_START + 191
+#define SPECIES_MINIOR_CORE_ORANGE                      SPECIAL_FORMS_START + 192
+#define SPECIES_MINIOR_CORE_YELLOW                      SPECIAL_FORMS_START + 193
+#define SPECIES_MINIOR_CORE_GREEN                       SPECIAL_FORMS_START + 194
+#define SPECIES_MINIOR_CORE_BLUE                        SPECIAL_FORMS_START + 195
+#define SPECIES_MINIOR_CORE_INDIGO                      SPECIAL_FORMS_START + 196
+#define SPECIES_MINIOR_CORE_VIOLET                      SPECIAL_FORMS_START + 197
+#define SPECIES_MIMIKYU_BUSTED                          SPECIAL_FORMS_START + 198
+#define SPECIES_NECROZMA_DUSK_MANE                      SPECIAL_FORMS_START + 199
+#define SPECIES_NECROZMA_DAWN_WINGS                     SPECIAL_FORMS_START + 200
+#define SPECIES_NECROZMA_ULTRA                          SPECIAL_FORMS_START + 201
+#define SPECIES_MAGEARNA_ORIGINAL                       SPECIAL_FORMS_START + 202
+#define SPECIES_CRAMORANT_GULPING                       SPECIAL_FORMS_START + 203
+#define SPECIES_CRAMORANT_GORGING                       SPECIAL_FORMS_START + 204
+#define SPECIES_TOXTRICITY_LOW_KEY                      SPECIAL_FORMS_START + 205
+#define SPECIES_SINISTEA_ANTIQUE                        SPECIAL_FORMS_START + 206
+#define SPECIES_POLTEAGEIST_ANTIQUE                     SPECIAL_FORMS_START + 207
+#define SPECIES_ALCREMIE_RUBY_CREAM                     SPECIES_ALCREMIE_STRAWBERRY_RUBY_CREAM
+#define SPECIES_ALCREMIE_MATCHA_CREAM                   SPECIES_ALCREMIE_STRAWBERRY_MATCHA_CREAM
+#define SPECIES_ALCREMIE_MINT_CREAM                     SPECIES_ALCREMIE_STRAWBERRY_MINT_CREAM
+#define SPECIES_ALCREMIE_LEMON_CREAM                    SPECIES_ALCREMIE_STRAWBERRY_LEMON_CREAM
+#define SPECIES_ALCREMIE_SALTED_CREAM                   SPECIES_ALCREMIE_STRAWBERRY_SALTED_CREAM
+#define SPECIES_ALCREMIE_RUBY_SWIRL                     SPECIES_ALCREMIE_STRAWBERRY_RUBY_SWIRL
+#define SPECIES_ALCREMIE_CARAMEL_SWIRL                  SPECIES_ALCREMIE_STRAWBERRY_CARAMEL_SWIRL
+#define SPECIES_ALCREMIE_RAINBOW_SWIRL                  SPECIES_ALCREMIE_STRAWBERRY_RAINBOW_SWIRL
+#define SPECIES_ALCREMIE_STRAWBERRY_RUBY_CREAM          SPECIAL_FORMS_START + 208
+#define SPECIES_ALCREMIE_STRAWBERRY_MATCHA_CREAM        SPECIAL_FORMS_START + 209
+#define SPECIES_ALCREMIE_STRAWBERRY_MINT_CREAM          SPECIAL_FORMS_START + 210
+#define SPECIES_ALCREMIE_STRAWBERRY_LEMON_CREAM         SPECIAL_FORMS_START + 211
+#define SPECIES_ALCREMIE_STRAWBERRY_SALTED_CREAM        SPECIAL_FORMS_START + 212
+#define SPECIES_ALCREMIE_STRAWBERRY_RUBY_SWIRL          SPECIAL_FORMS_START + 213
+#define SPECIES_ALCREMIE_STRAWBERRY_CARAMEL_SWIRL       SPECIAL_FORMS_START + 214
+#define SPECIES_ALCREMIE_STRAWBERRY_RAINBOW_SWIRL       SPECIAL_FORMS_START + 215
+#define SPECIES_EISCUE_NOICE_FACE                       SPECIAL_FORMS_START + 216
+#define SPECIES_INDEEDEE_FEMALE                         SPECIAL_FORMS_START + 217
+#define SPECIES_MORPEKO_HANGRY                          SPECIAL_FORMS_START + 218
+#define SPECIES_ZACIAN_CROWNED_SWORD                    SPECIAL_FORMS_START + 219
+#define SPECIES_ZAMAZENTA_CROWNED_SHIELD                SPECIAL_FORMS_START + 220
+#define SPECIES_ETERNATUS_ETERNAMAX                     SPECIAL_FORMS_START + 221
+#define SPECIES_URSHIFU_RAPID_STRIKE_STYLE              SPECIAL_FORMS_START + 222
+#define SPECIES_ZARUDE_DADA                             SPECIAL_FORMS_START + 223
+#define SPECIES_CALYREX_ICE_RIDER                       SPECIAL_FORMS_START + 224
+#define SPECIES_CALYREX_SHADOW_RIDER                    SPECIAL_FORMS_START + 225
+#define SPECIES_BASCULEGION_FEMALE                      SPECIAL_FORMS_START + 226
+#define SPECIES_ALCREMIE_BERRY                          SPECIES_ALCREMIE_BERRY_VANILLA_CREAM
+#define SPECIES_ALCREMIE_BERRY_VANILLA_CREAM            SPECIAL_FORMS_START + 227
+#define SPECIES_ALCREMIE_BERRY_RUBY_CREAM               SPECIAL_FORMS_START + 228
+#define SPECIES_ALCREMIE_BERRY_MATCHA_CREAM             SPECIAL_FORMS_START + 229
+#define SPECIES_ALCREMIE_BERRY_MINT_CREAM               SPECIAL_FORMS_START + 230
+#define SPECIES_ALCREMIE_BERRY_LEMON_CREAM              SPECIAL_FORMS_START + 231
+#define SPECIES_ALCREMIE_BERRY_SALTED_CREAM             SPECIAL_FORMS_START + 232
+#define SPECIES_ALCREMIE_BERRY_RUBY_SWIRL               SPECIAL_FORMS_START + 233
+#define SPECIES_ALCREMIE_BERRY_CARAMEL_SWIRL            SPECIAL_FORMS_START + 234
+#define SPECIES_ALCREMIE_BERRY_RAINBOW_SWIRL            SPECIAL_FORMS_START + 235
+#define SPECIES_ALCREMIE_LOVE                           SPECIES_ALCREMIE_LOVE_VANILLA_CREAM
+#define SPECIES_ALCREMIE_LOVE_VANILLA_CREAM             SPECIAL_FORMS_START + 236
+#define SPECIES_ALCREMIE_LOVE_RUBY_CREAM                SPECIAL_FORMS_START + 237
+#define SPECIES_ALCREMIE_LOVE_MATCHA_CREAM              SPECIAL_FORMS_START + 238
+#define SPECIES_ALCREMIE_LOVE_MINT_CREAM                SPECIAL_FORMS_START + 239
+#define SPECIES_ALCREMIE_LOVE_LEMON_CREAM               SPECIAL_FORMS_START + 240
+#define SPECIES_ALCREMIE_LOVE_SALTED_CREAM              SPECIAL_FORMS_START + 241
+#define SPECIES_ALCREMIE_LOVE_RUBY_SWIRL                SPECIAL_FORMS_START + 242
+#define SPECIES_ALCREMIE_LOVE_CARAMEL_SWIRL             SPECIAL_FORMS_START + 243
+#define SPECIES_ALCREMIE_LOVE_RAINBOW_SWIRL             SPECIAL_FORMS_START + 244
+#define SPECIES_ALCREMIE_STAR                           SPECIES_ALCREMIE_STAR_VANILLA_CREAM
+#define SPECIES_ALCREMIE_STAR_VANILLA_CREAM             SPECIAL_FORMS_START + 245
+#define SPECIES_ALCREMIE_STAR_RUBY_CREAM                SPECIAL_FORMS_START + 246
+#define SPECIES_ALCREMIE_STAR_MATCHA_CREAM              SPECIAL_FORMS_START + 247
+#define SPECIES_ALCREMIE_STAR_MINT_CREAM                SPECIAL_FORMS_START + 248
+#define SPECIES_ALCREMIE_STAR_LEMON_CREAM               SPECIAL_FORMS_START + 249
+#define SPECIES_ALCREMIE_STAR_SALTED_CREAM              SPECIAL_FORMS_START + 250
+#define SPECIES_ALCREMIE_STAR_RUBY_SWIRL                SPECIAL_FORMS_START + 251
+#define SPECIES_ALCREMIE_STAR_CARAMEL_SWIRL             SPECIAL_FORMS_START + 252
+#define SPECIES_ALCREMIE_STAR_RAINBOW_SWIRL             SPECIAL_FORMS_START + 253
+#define SPECIES_ALCREMIE_CLOVER                         SPECIES_ALCREMIE_CLOVER_VANILLA_CREAM
+#define SPECIES_ALCREMIE_CLOVER_VANILLA_CREAM           SPECIAL_FORMS_START + 254
+#define SPECIES_ALCREMIE_CLOVER_RUBY_CREAM              SPECIAL_FORMS_START + 255
+#define SPECIES_ALCREMIE_CLOVER_MATCHA_CREAM            SPECIAL_FORMS_START + 256
+#define SPECIES_ALCREMIE_CLOVER_MINT_CREAM              SPECIAL_FORMS_START + 257
+#define SPECIES_ALCREMIE_CLOVER_LEMON_CREAM             SPECIAL_FORMS_START + 258
+#define SPECIES_ALCREMIE_CLOVER_SALTED_CREAM            SPECIAL_FORMS_START + 259
+#define SPECIES_ALCREMIE_CLOVER_RUBY_SWIRL              SPECIAL_FORMS_START + 260
+#define SPECIES_ALCREMIE_CLOVER_CARAMEL_SWIRL           SPECIAL_FORMS_START + 261
+#define SPECIES_ALCREMIE_CLOVER_RAINBOW_SWIRL           SPECIAL_FORMS_START + 262
+#define SPECIES_ALCREMIE_FLOWER                         SPECIES_ALCREMIE_FLOWER_VANILLA_CREAM
+#define SPECIES_ALCREMIE_FLOWER_VANILLA_CREAM           SPECIAL_FORMS_START + 263
+#define SPECIES_ALCREMIE_FLOWER_RUBY_CREAM              SPECIAL_FORMS_START + 264
+#define SPECIES_ALCREMIE_FLOWER_MATCHA_CREAM            SPECIAL_FORMS_START + 265
+#define SPECIES_ALCREMIE_FLOWER_MINT_CREAM              SPECIAL_FORMS_START + 266
+#define SPECIES_ALCREMIE_FLOWER_LEMON_CREAM             SPECIAL_FORMS_START + 267
+#define SPECIES_ALCREMIE_FLOWER_SALTED_CREAM            SPECIAL_FORMS_START + 268
+#define SPECIES_ALCREMIE_FLOWER_RUBY_SWIRL              SPECIAL_FORMS_START + 269
+#define SPECIES_ALCREMIE_FLOWER_CARAMEL_SWIRL           SPECIAL_FORMS_START + 270
+#define SPECIES_ALCREMIE_FLOWER_RAINBOW_SWIRL           SPECIAL_FORMS_START + 271
+#define SPECIES_ALCREMIE_RIBBON                         SPECIES_ALCREMIE_RIBBON_VANILLA_CREAM
+#define SPECIES_ALCREMIE_RIBBON_VANILLA_CREAM           SPECIAL_FORMS_START + 272
+#define SPECIES_ALCREMIE_RIBBON_RUBY_CREAM              SPECIAL_FORMS_START + 273
+#define SPECIES_ALCREMIE_RIBBON_MATCHA_CREAM            SPECIAL_FORMS_START + 274
+#define SPECIES_ALCREMIE_RIBBON_MINT_CREAM              SPECIAL_FORMS_START + 275
+#define SPECIES_ALCREMIE_RIBBON_LEMON_CREAM             SPECIAL_FORMS_START + 276
+#define SPECIES_ALCREMIE_RIBBON_SALTED_CREAM            SPECIAL_FORMS_START + 277
+#define SPECIES_ALCREMIE_RIBBON_RUBY_SWIRL              SPECIAL_FORMS_START + 278
+#define SPECIES_ALCREMIE_RIBBON_CARAMEL_SWIRL           SPECIAL_FORMS_START + 279
+#define SPECIES_ALCREMIE_RIBBON_RAINBOW_SWIRL           SPECIAL_FORMS_START + 280
+
+#define MEGA_FORMS_START                                SPECIES_ALCREMIE_RIBBON_RAINBOW_SWIRL
+
+// Megas
+#define SPECIES_VENUSAUR_MEGA                           MEGA_FORMS_START + 1
+#define SPECIES_CHARIZARD_MEGA_X                        MEGA_FORMS_START + 2
+#define SPECIES_CHARIZARD_MEGA_Y                        MEGA_FORMS_START + 3
+#define SPECIES_BLASTOISE_MEGA                          MEGA_FORMS_START + 4
+#define SPECIES_BEEDRILL_MEGA                           MEGA_FORMS_START + 5
+#define SPECIES_PIDGEOT_MEGA                            MEGA_FORMS_START + 6
+#define SPECIES_ALAKAZAM_MEGA                           MEGA_FORMS_START + 7
+#define SPECIES_SLOWBRO_MEGA                            MEGA_FORMS_START + 8
+#define SPECIES_GENGAR_MEGA                             MEGA_FORMS_START + 9
+#define SPECIES_KANGASKHAN_MEGA                         MEGA_FORMS_START + 10
+#define SPECIES_PINSIR_MEGA                             MEGA_FORMS_START + 11
+#define SPECIES_GYARADOS_MEGA                           MEGA_FORMS_START + 12
+#define SPECIES_AERODACTYL_MEGA                         MEGA_FORMS_START + 13
+#define SPECIES_MEWTWO_MEGA_X                           MEGA_FORMS_START + 14
+#define SPECIES_MEWTWO_MEGA_Y                           MEGA_FORMS_START + 15
+#define SPECIES_AMPHAROS_MEGA                           MEGA_FORMS_START + 16
+#define SPECIES_STEELIX_MEGA                            MEGA_FORMS_START + 17
+#define SPECIES_SCIZOR_MEGA                             MEGA_FORMS_START + 18
+#define SPECIES_HERACROSS_MEGA                          MEGA_FORMS_START + 19
+#define SPECIES_HOUNDOOM_MEGA                           MEGA_FORMS_START + 20
+#define SPECIES_TYRANITAR_MEGA                          MEGA_FORMS_START + 21
+#define SPECIES_SCEPTILE_MEGA                           MEGA_FORMS_START + 22
+#define SPECIES_BLAZIKEN_MEGA                           MEGA_FORMS_START + 23
+#define SPECIES_SWAMPERT_MEGA                           MEGA_FORMS_START + 24
+#define SPECIES_GARDEVOIR_MEGA                          MEGA_FORMS_START + 25
+#define SPECIES_SABLEYE_MEGA                            MEGA_FORMS_START + 26
+#define SPECIES_MAWILE_MEGA                             MEGA_FORMS_START + 27
+#define SPECIES_AGGRON_MEGA                             MEGA_FORMS_START + 28
+#define SPECIES_MEDICHAM_MEGA                           MEGA_FORMS_START + 29
+#define SPECIES_MANECTRIC_MEGA                          MEGA_FORMS_START + 30
+#define SPECIES_SHARPEDO_MEGA                           MEGA_FORMS_START + 31
+#define SPECIES_CAMERUPT_MEGA                           MEGA_FORMS_START + 32
+#define SPECIES_ALTARIA_MEGA                            MEGA_FORMS_START + 33
+#define SPECIES_BANETTE_MEGA                            MEGA_FORMS_START + 34
+#define SPECIES_ABSOL_MEGA                              MEGA_FORMS_START + 35
+#define SPECIES_GLALIE_MEGA                             MEGA_FORMS_START + 36
+#define SPECIES_SALAMENCE_MEGA                          MEGA_FORMS_START + 37
+#define SPECIES_METAGROSS_MEGA                          MEGA_FORMS_START + 38
+#define SPECIES_LATIAS_MEGA                             MEGA_FORMS_START + 39
+#define SPECIES_LATIOS_MEGA                             MEGA_FORMS_START + 40
+#define SPECIES_LOPUNNY_MEGA                            MEGA_FORMS_START + 41
+#define SPECIES_GARCHOMP_MEGA                           MEGA_FORMS_START + 42
+#define SPECIES_LUCARIO_MEGA                            MEGA_FORMS_START + 43
+#define SPECIES_ABOMASNOW_MEGA                          MEGA_FORMS_START + 44
+#define SPECIES_GALLADE_MEGA                            MEGA_FORMS_START + 45
+#define SPECIES_AUDINO_MEGA                             MEGA_FORMS_START + 46
+#define SPECIES_DIANCIE_MEGA                            MEGA_FORMS_START + 47
+// Legends Z-A
+#define SPECIES_CLEFABLE_MEGA                           MEGA_FORMS_START + 48
+#define SPECIES_VICTREEBEL_MEGA                         MEGA_FORMS_START + 49
+#define SPECIES_STARMIE_MEGA                            MEGA_FORMS_START + 50
+#define SPECIES_DRAGONITE_MEGA                          MEGA_FORMS_START + 51
+#define SPECIES_MEGANIUM_MEGA                           MEGA_FORMS_START + 52
+#define SPECIES_FERALIGATR_MEGA                         MEGA_FORMS_START + 53
+#define SPECIES_SKARMORY_MEGA                           MEGA_FORMS_START + 54
+#define SPECIES_FROSLASS_MEGA                           MEGA_FORMS_START + 55
+#define SPECIES_EMBOAR_MEGA                             MEGA_FORMS_START + 56
+#define SPECIES_EXCADRILL_MEGA                          MEGA_FORMS_START + 57
+#define SPECIES_SCOLIPEDE_MEGA                          MEGA_FORMS_START + 58
+#define SPECIES_SCRAFTY_MEGA                            MEGA_FORMS_START + 59
+#define SPECIES_EELEKTROSS_MEGA                         MEGA_FORMS_START + 60
+#define SPECIES_CHANDELURE_MEGA                         MEGA_FORMS_START + 61
+#define SPECIES_CHESNAUGHT_MEGA                         MEGA_FORMS_START + 62
+#define SPECIES_DELPHOX_MEGA                            MEGA_FORMS_START + 63
+#define SPECIES_GRENINJA_MEGA                           MEGA_FORMS_START + 64
+#define SPECIES_PYROAR_MEGA                             MEGA_FORMS_START + 65
+#define SPECIES_MALAMAR_MEGA                            MEGA_FORMS_START + 66
+#define SPECIES_DRAGALGE_MEGA                           MEGA_FORMS_START + 67
+#define SPECIES_HAWLUCHA_MEGA                           MEGA_FORMS_START + 68
+#define SPECIES_FLOETTE_MEGA                            MEGA_FORMS_START + 69
+#define SPECIES_BARBARACLE_MEGA                         MEGA_FORMS_START + 70
+#define SPECIES_ZYGARDE_MEGA                            MEGA_FORMS_START + 71
+#define SPECIES_DRAMPA_MEGA                             MEGA_FORMS_START + 72
+#define SPECIES_FALINKS_MEGA                            MEGA_FORMS_START + 73
+#define SPECIES_HEATRAN_MEGA                            MEGA_FORMS_START + 74
+#define SPECIES_DARKRAI_MEGA                            MEGA_FORMS_START + 75
+#define SPECIES_ZERAORA_MEGA                            MEGA_FORMS_START + 76
+#define SPECIES_RAICHU_MEGA_X                           MEGA_FORMS_START + 77
+#define SPECIES_RAICHU_MEGA_Y                           MEGA_FORMS_START + 78
+#define SPECIES_CHIMECHO_MEGA                           MEGA_FORMS_START + 79
+#define SPECIES_ABSOL_MEGA_Z                            MEGA_FORMS_START + 80
+#define SPECIES_STARAPTOR_MEGA                          MEGA_FORMS_START + 81
+#define SPECIES_GARCHOMP_MEGA_Z                         MEGA_FORMS_START + 82
+#define SPECIES_LUCARIO_MEGA_Z                          MEGA_FORMS_START + 83
+#define SPECIES_GOLURK_MEGA                             MEGA_FORMS_START + 84
+#define SPECIES_MEOWSTIC_M_MEGA                         MEGA_FORMS_START + 85
+#define SPECIES_MEOWSTIC_F_MEGA                         MEGA_FORMS_START + 86
+#define SPECIES_CRABOMINABLE_MEGA                       MEGA_FORMS_START + 87
+#define SPECIES_GOLISOPOD_MEGA                          MEGA_FORMS_START + 88
+#define SPECIES_MAGEARNA_MEGA                           MEGA_FORMS_START + 89
+#define SPECIES_MAGEARNA_ORIGINAL_MEGA                  MEGA_FORMS_START + 90
+#define SPECIES_SCOVILLAIN_MEGA                         MEGA_FORMS_START + 91
+#define SPECIES_BAXCALIBUR_MEGA                         MEGA_FORMS_START + 92
+#define SPECIES_TATSUGIRI_CURLY_MEGA                    MEGA_FORMS_START + 93
+#define SPECIES_TATSUGIRI_DROOPY_MEGA                   MEGA_FORMS_START + 94
+#define SPECIES_TATSUGIRI_STRETCHY_MEGA                 MEGA_FORMS_START + 95
+#define SPECIES_GLIMMORA_MEGA                           MEGA_FORMS_START + 96
+
+#define PRIMAL_FORMS_START                              SPECIES_GLIMMORA_MEGA
+
+// Special Mega + Primals
+#define SPECIES_RAYQUAZA_MEGA                           PRIMAL_FORMS_START + 1
+#define SPECIES_KYOGRE_PRIMAL                           PRIMAL_FORMS_START + 2
+#define SPECIES_GROUDON_PRIMAL                          PRIMAL_FORMS_START + 3
+
+#define GIGANTAMAX_START                                SPECIES_GROUDON_PRIMAL
 
 // Gigantamax Forms
 #define SPECIES_VENUSAUR_GIGANTAMAX                     GIGANTAMAX_START + 1
@@ -2757,11 +2696,19 @@
 #define NATIONAL_DEX_MUNKIDORI 1015
 #define NATIONAL_DEX_FEZANDIPITI 1016
 #define NATIONAL_DEX_OGERPON 1017
+#define NATIONAL_DEX_ARCHALUDON 1018
+#define NATIONAL_DEX_HYDRAPPLE 1019
+#define NATIONAL_DEX_GOUGING_FIRE 1020
+#define NATIONAL_DEX_RAGING_BOLT 1021
+#define NATIONAL_DEX_IRON_BOULDER 1022
+#define NATIONAL_DEX_IRON_CROWN 1023
+#define NATIONAL_DEX_TERAPAGOS 1024
+#define NATIONAL_DEX_PECHARUNT 1025
 
 #define KANTO_DEX_COUNT     NATIONAL_DEX_MEW
 #define JOHTO_DEX_COUNT     NATIONAL_DEX_CELEBI
 
-#define NATIONAL_DEX_COUNT  NATIONAL_DEX_OGERPON
+#define NATIONAL_DEX_COUNT  NATIONAL_DEX_PECHARUNT
 #define POKEMON_SLOTS_NUMBER (NATIONAL_DEX_COUNT + 1)
 
 // Hoenn Dex(ORAS) Index Defines

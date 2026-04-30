@@ -323,7 +323,7 @@ PlayersHouse_1F_Text_MoversPokemonGoSetClock:
 	.string "and left it in your room.\l"
 	.string "Don't forget to take it!\p"
 	.string "Also, did you see that truck outside?\n"
-	.string "It's a new family that will live\n"
+	.string "It's a new family that will live\l"
 	.string "right next our door!\p"
 	.string "What was kid's name again?$"
 	@.string "Also, why don't you introduce yourself\n"

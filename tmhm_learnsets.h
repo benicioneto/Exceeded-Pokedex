@@ -36348,7 +36348,7 @@ const u8 *const gTMHMLearnsets[NUM_SPECIES] =
     [SPECIES_MINIOR_CORE_VIOLET] = sMiniorCoreVioletTMHMLearnset,
     [SPECIES_NECROZMA_DUSK_MANE] = sNecrozmaDuskManeTMHMLearnset,
     [SPECIES_NECROZMA_DAWN_WINGS] = sNecrozmaDawnWingsTMHMLearnset,
-    [SPECIES_MAGEARNA_ORIGINAL_COLOR] = sMagearnaOriginalCoTMHMLearnset,
+    [SPECIES_MAGEARNA_ORIGINAL] = sMagearnaOriginalCoTMHMLearnset,
     [SPECIES_TOXTRICITY_LOW_KEY] = sToxtricityLowKeyTMHMLearnset,
     [SPECIES_SINISTEA_ANTIQUE] = sSinisteaAntiqueTMHMLearnset,
     [SPECIES_POLTEAGEIST_ANTIQUE] = sPolteageistAntiqueTMHMLearnset,
@@ -36520,10 +36520,6 @@ const u8 *const gTMHMLearnsets[NUM_SPECIES] =
     [SPECIES_OGERPON_WELLSPRING_MASK] = sOgerponTMHMLearnset,
     [SPECIES_OGERPON_HEARTHFLAME_MASK] = sOgerponTMHMLearnset,
     [SPECIES_OGERPON_CORNERSTONE_MASK] = sOgerponTMHMLearnset,
-    [SPECIES_OGERPON_TEAL_MASK_TERA] = sOgerponTMHMLearnset,
-    [SPECIES_OGERPON_WELLSPRING_MASK_TERA] = sOgerponTMHMLearnset,
-    [SPECIES_OGERPON_HEARTHFLAME_MASK_TERA] = sOgerponTMHMLearnset,
-    [SPECIES_OGERPON_CORNERSTONE_MASK_TERA] = sOgerponTMHMLearnset,
     // Basculegion
     [SPECIES_BASCULEGION_FEMALE] = sBasculegionTMHMLearnset,
     // Gigantamax Forms

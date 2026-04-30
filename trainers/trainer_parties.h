@@ -8646,11 +8646,6 @@ static const struct TrainerParty sParty_Tiana[] = {
     {
     .iv = 0,
     .lvl = 4,
-    .species = SPECIES_SKWOVET,
-    },
-    {
-    .iv = 0,
-    .lvl = 4,
     .species = SPECIES_SHROOMISH,
     }
 };

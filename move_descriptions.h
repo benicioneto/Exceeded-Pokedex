@@ -2486,7 +2486,7 @@ static const u8 sPOLLEN_PUFFDescription[] = _(
 
 static const u8 sANCHOR_SHOTDescription[] = _(
     "Strangles the foe with a\n"
-    "chain. The foe can't flinch.");
+    "chain. The foe can't flee.");
 
 static const u8 sPSYCHIC_TERRAINDescription[] = _(
     "The ground turns weird for\n"
@@ -3896,7 +3896,7 @@ static const u8 sPLASMA_GALEDescription[] = _(
 
 static const u8 sCHAOS_GLOWERDescription[] = _(
     "Flinches foe on 1st-turn.\n"
-    "Otherwise, lowers Speed.");
+    "Always lowers Speed.");
 
 static const u8 sSTARLIGHT_RECITALDescription[] = _(
     "Heals HP and status of\n"
@@ -3930,9 +3930,26 @@ static const u8 sBANSHEEA_CRYDescription[] = _(
     "Attacks with a eerie cry.\n"
     "The user must then rest.");
 
-static const u8 sPOLLINATION_TERRAINDescription[] = _(
-    "Summons an bug-type terrain\n"
-    "in the battlefield.");
+static const u8 sPOLLINATION_TERRAINDescription[] = _("Summons a bug-type terrain\nin the battlefield.");
+static const u8 sMARRIAGETOXINDescription[] = _("Poisons yourself and\nyour ally.");
+static const u8 sMASSIVE_BLOOMDescription[] = _("The higher the user's HP,\nthe more damage caused.");
+static const u8 sALLERGIC_EXPLOSIONDescription[] = _("Maybe inflict Poison,\nParalysis or/and Sleep.");
+static const u8 sSTEAM_CRUSHDescription[] = _("Does more damage the\nhigher the user's Def.");
+static const u8 sGUARD_PRESSDescription[] = _("Does more damage the\nhigher the user's Def.");
+static const u8 sIMPROVISED_BLOWDescription[] = _("Charges the foe with the\nclosest object.");
+static const u8 sBLACK_SHROUDDescription[] = _("Hurts foe every turn. Double\ndamage to Normal and Fairy.");
+static const u8 sCOMBUSTIONDescription[] = _("Powerful against burning\nfoes, but also heals them.");
+static const u8 sABSORB_INTELLECTDescription[] = _("Saps the foe's Sp. Atk to\nheal HP, then drops Sp. Atk.");
+static const u8 sSMASHING_PUMPKINSDescription[] = _("Inflicts severe damage but\nmakes the user faint.");
+static const u8 sFIRE_WALLDescription[] = _("Weakens all attacks, but\nonly usable on fire.");
+static const u8 sSEAWEED_SNAREDescription[] = _("Strangles the foe with a\nweed. The foe can't flee.");
+static const u8 sSOVEREIGN_SLIDEDescription[] = _("Flinches foe on 1st-turn.\nAlways lowers Speed.");
+static const u8 sTRIAD_BLITZDescription[] = _("For 3 turns, traps both\nuser and foe.");
+static const u8 sKISS_BLISS_KABOOMDescription[] = _("A 2-turn move that raises\nAttack before attacking.");
+static const u8 sFULL_POWER_PSY_AY_AYDescription[] = _("Powerful, but leaves the\nuser immobile & confused.");
+static const u8 sCOLOSSEUM_TERRAINDescription[] = _("Summons a fighting-type terrain\nin the battlefield.");
+static const u8 sDRACONIC_TERRAINDescription[] = _("Summons a dragon-type terrain\nin the battlefield.");
+static const u8 sWORST_NIGHTMAREDescription[] = _("Hurts a foe harder if it has\nan ailment. May induce sleep.");
 
 // MOVE_NONE is ignored in this table. Make sure to always subtract 1 before getting the right pointer.
 const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
@@ -4944,4 +4961,24 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_MIDNIGHT_BEAM - 1] = sMIDNIGHT_BEAMDescription,
     [MOVE_BANSHEES_CRY - 1] = sBANSHEEA_CRYDescription,
     [MOVE_POLLINATION_TERRAIN - 1] = sPOLLINATION_TERRAINDescription,
+    [MOVE_MARRIAGETOXIN - 1] = sMARRIAGETOXINDescription,
+    [MOVE_MASSIVE_BLOOM - 1] = sMASSIVE_BLOOMDescription,
+    [MOVE_ALLERGIC_EXPLOSION - 1] = sALLERGIC_EXPLOSIONDescription,
+    [MOVE_STEAM_CRUSH - 1] = sSTEAM_CRUSHDescription,
+    [MOVE_GUARD_PRESS - 1] = sGUARD_PRESSDescription,
+    [MOVE_IMPROVISED_BLOW - 1] = sIMPROVISED_BLOWDescription,
+    [MOVE_BLACK_SHROUD - 1] = sBLACK_SHROUDDescription,
+    [MOVE_COMBUSTION - 1] = sCOMBUSTIONDescription,
+    [MOVE_ABSORB_INTELLECT - 1] = sABSORB_INTELLECTDescription,
+    [MOVE_SMASHING_PUMPKINS - 1] = sSMASHING_PUMPKINSDescription,
+    [MOVE_FIRE_WALL - 1] = sFIRE_WALLDescription,
+    [MOVE_SEAWEED_SNARE - 1] = sSEAWEED_SNAREDescription,
+    [MOVE_SOVEREIGN_SLIDE - 1] = sSOVEREIGN_SLIDEDescription,
+    [MOVE_TRIAD_BLITZ - 1] = sTRIAD_BLITZDescription,
+    [MOVE_KISS_BLISS_KABOOM - 1] = sKISS_BLISS_KABOOMDescription,
+    [MOVE_FULL_POWER_PSY_AY_AY - 1] = sFULL_POWER_PSY_AY_AYDescription,
+    [MOVE_COLOSSEUM_TERRAIN - 1] = sCOLOSSEUM_TERRAINDescription,
+    [MOVE_DRACONIC_TERRAIN - 1] = sDRACONIC_TERRAINDescription,
+    [MOVE_WORST_NIGHTMARE - 1] = sWORST_NIGHTMAREDescription,
+
 };

@@ -21,10 +21,10 @@ const struct Item gItems[] =
         .price = 0,
         .description = sMasterBallDesc,
         .pocket = POCKET_POKE_BALLS,
-        .type = ITEM_MASTER_BALL - FIRST_BALL,
+        .type = ITEM_MASTER_BALL - FIRST_BALL_INDEX,
         .battleUsage = ITEM_B_USE_OTHER,
         .battleUseFunc = ItemUseInBattle_PokeBall,
-        .secondaryId = ITEM_MASTER_BALL - FIRST_BALL,
+        .secondaryId = ITEM_MASTER_BALL - FIRST_BALL_INDEX,
         .equipSlot = EQUIP_SLOT_1,
     },
 
@@ -35,10 +35,10 @@ const struct Item gItems[] =
         .price = 800,
         .description = sUltraBallDesc,
         .pocket = POCKET_POKE_BALLS,
-        .type = ITEM_ULTRA_BALL - FIRST_BALL,
+        .type = ITEM_ULTRA_BALL - FIRST_BALL_INDEX,
         .battleUsage = ITEM_B_USE_OTHER,
         .battleUseFunc = ItemUseInBattle_PokeBall,
-        .secondaryId = ITEM_ULTRA_BALL - FIRST_BALL,
+        .secondaryId = ITEM_ULTRA_BALL - FIRST_BALL_INDEX,
         .equipSlot = EQUIP_SLOT_1,
     },
 
@@ -49,10 +49,10 @@ const struct Item gItems[] =
         .price = 600,
         .description = sGreatBallDesc,
         .pocket = POCKET_POKE_BALLS,
-        .type = ITEM_GREAT_BALL - FIRST_BALL,
+        .type = ITEM_GREAT_BALL - FIRST_BALL_INDEX,
         .battleUsage = ITEM_B_USE_OTHER,
         .battleUseFunc = ItemUseInBattle_PokeBall,
-        .secondaryId = ITEM_GREAT_BALL - FIRST_BALL,
+        .secondaryId = ITEM_GREAT_BALL - FIRST_BALL_INDEX,
         .equipSlot = EQUIP_SLOT_1,
     },
 
@@ -63,10 +63,10 @@ const struct Item gItems[] =
         .price = 200,
         .description = sPokeBallDesc,
         .pocket = POCKET_POKE_BALLS,
-        .type = ITEM_POKE_BALL - FIRST_BALL,
+        .type = ITEM_POKE_BALL - FIRST_BALL_INDEX,
         .battleUsage = ITEM_B_USE_OTHER,
         .battleUseFunc = ItemUseInBattle_PokeBall,
-        .secondaryId = ITEM_POKE_BALL - FIRST_BALL,
+        .secondaryId = ITEM_POKE_BALL - FIRST_BALL_INDEX,
         .equipSlot = EQUIP_SLOT_1,
     },
 
@@ -77,10 +77,10 @@ const struct Item gItems[] =
         .price = 0,
         .description = sSafariBallDesc,
         .pocket = POCKET_POKE_BALLS,
-        .type = ITEM_SAFARI_BALL - FIRST_BALL,
+        .type = ITEM_SAFARI_BALL - FIRST_BALL_INDEX,
         .battleUsage = ITEM_B_USE_OTHER,
         .battleUseFunc = ItemUseInBattle_PokeBall,
-        .secondaryId = ITEM_SAFARI_BALL - FIRST_BALL,
+        .secondaryId = ITEM_SAFARI_BALL - FIRST_BALL_INDEX,
         .equipSlot = EQUIP_SLOT_1,
     },
 
@@ -91,10 +91,10 @@ const struct Item gItems[] =
         .price = 1000,
         .description = sNetBallDesc,
         .pocket = POCKET_POKE_BALLS,
-        .type = ITEM_NET_BALL - FIRST_BALL,
+        .type = ITEM_NET_BALL - FIRST_BALL_INDEX,
         .battleUsage = ITEM_B_USE_OTHER,
         .battleUseFunc = ItemUseInBattle_PokeBall,
-        .secondaryId = ITEM_NET_BALL - FIRST_BALL,
+        .secondaryId = ITEM_NET_BALL - FIRST_BALL_INDEX,
         .equipSlot = EQUIP_SLOT_1,
     },
 
@@ -105,10 +105,10 @@ const struct Item gItems[] =
         .price = 1000,
         .description = sDiveBallDesc,
         .pocket = POCKET_POKE_BALLS,
-        .type = ITEM_DIVE_BALL - FIRST_BALL,
+        .type = ITEM_DIVE_BALL - FIRST_BALL_INDEX,
         .battleUsage = ITEM_B_USE_OTHER,
         .battleUseFunc = ItemUseInBattle_PokeBall,
-        .secondaryId = ITEM_DIVE_BALL - FIRST_BALL,
+        .secondaryId = ITEM_DIVE_BALL - FIRST_BALL_INDEX,
         .equipSlot = EQUIP_SLOT_1,
     },
 
@@ -119,10 +119,10 @@ const struct Item gItems[] =
         .price = 1000,
         .description = sNestBallDesc,
         .pocket = POCKET_POKE_BALLS,
-        .type = ITEM_NEST_BALL - FIRST_BALL,
+        .type = ITEM_NEST_BALL - FIRST_BALL_INDEX,
         .battleUsage = ITEM_B_USE_OTHER,
         .battleUseFunc = ItemUseInBattle_PokeBall,
-        .secondaryId = ITEM_NEST_BALL - FIRST_BALL,
+        .secondaryId = ITEM_NEST_BALL - FIRST_BALL_INDEX,
         .equipSlot = EQUIP_SLOT_1,
     },
 
@@ -133,10 +133,10 @@ const struct Item gItems[] =
         .price = 1000,
         .description = sRepeatBallDesc,
         .pocket = POCKET_POKE_BALLS,
-        .type = ITEM_REPEAT_BALL - FIRST_BALL,
+        .type = ITEM_REPEAT_BALL - FIRST_BALL_INDEX,
         .battleUsage = ITEM_B_USE_OTHER,
         .battleUseFunc = ItemUseInBattle_PokeBall,
-        .secondaryId = ITEM_REPEAT_BALL - FIRST_BALL,
+        .secondaryId = ITEM_REPEAT_BALL - FIRST_BALL_INDEX,
         .equipSlot = EQUIP_SLOT_1,
     },
 
@@ -147,10 +147,10 @@ const struct Item gItems[] =
         .price = 1000,
         .description = sTimerBallDesc,
         .pocket = POCKET_POKE_BALLS,
-        .type = ITEM_TIMER_BALL - FIRST_BALL,
+        .type = ITEM_TIMER_BALL - FIRST_BALL_INDEX,
         .battleUsage = ITEM_B_USE_OTHER,
         .battleUseFunc = ItemUseInBattle_PokeBall,
-        .secondaryId = ITEM_TIMER_BALL - FIRST_BALL,
+        .secondaryId = ITEM_TIMER_BALL - FIRST_BALL_INDEX,
         .equipSlot = EQUIP_SLOT_1,
     },
 
@@ -161,10 +161,10 @@ const struct Item gItems[] =
         .price = 1000,
         .description = sLuxuryBallDesc,
         .pocket = POCKET_POKE_BALLS,
-        .type = ITEM_LUXURY_BALL - FIRST_BALL,
+        .type = ITEM_LUXURY_BALL - FIRST_BALL_INDEX,
         .battleUsage = ITEM_B_USE_OTHER,
         .battleUseFunc = ItemUseInBattle_PokeBall,
-        .secondaryId = ITEM_LUXURY_BALL - FIRST_BALL,
+        .secondaryId = ITEM_LUXURY_BALL - FIRST_BALL_INDEX,
         .equipSlot = EQUIP_SLOT_1,
     },
 
@@ -175,10 +175,10 @@ const struct Item gItems[] =
         .price = 20,
         .description = sPremierBallDesc,
         .pocket = POCKET_POKE_BALLS,
-        .type = ITEM_PREMIER_BALL - FIRST_BALL,
+        .type = ITEM_PREMIER_BALL - FIRST_BALL_INDEX,
         .battleUsage = ITEM_B_USE_OTHER,
         .battleUseFunc = ItemUseInBattle_PokeBall,
-        .secondaryId = ITEM_PREMIER_BALL - FIRST_BALL,
+        .secondaryId = ITEM_PREMIER_BALL - FIRST_BALL_INDEX,
         .equipSlot = EQUIP_SLOT_1,
     },
 
@@ -189,10 +189,10 @@ const struct Item gItems[] =
         .price = 0,
         .description = sLevelBallDesc,
         .pocket = POCKET_POKE_BALLS,
-        .type = ITEM_LEVEL_BALL - FIRST_BALL,
+        .type = ITEM_LEVEL_BALL - FIRST_BALL_INDEX,
         .battleUsage = ITEM_B_USE_OTHER,
         .battleUseFunc = ItemUseInBattle_PokeBall,
-        .secondaryId = ITEM_LEVEL_BALL - FIRST_BALL,
+        .secondaryId = ITEM_LEVEL_BALL - FIRST_BALL_INDEX,
         .equipSlot = EQUIP_SLOT_1,
     },
 
@@ -203,10 +203,10 @@ const struct Item gItems[] =
         .price = 0,
         .description = sLureBallDesc,
         .pocket = POCKET_POKE_BALLS,
-        .type = ITEM_LURE_BALL - FIRST_BALL,
+        .type = ITEM_LURE_BALL - FIRST_BALL_INDEX,
         .battleUsage = ITEM_B_USE_OTHER,
         .battleUseFunc = ItemUseInBattle_PokeBall,
-        .secondaryId = ITEM_LURE_BALL - FIRST_BALL,
+        .secondaryId = ITEM_LURE_BALL - FIRST_BALL_INDEX,
         .equipSlot = EQUIP_SLOT_1,
     },
 
@@ -217,10 +217,10 @@ const struct Item gItems[] =
         .price = 0,
         .description = sMoonBallDesc,
         .pocket = POCKET_POKE_BALLS,
-        .type = ITEM_MOON_BALL - FIRST_BALL,
+        .type = ITEM_MOON_BALL - FIRST_BALL_INDEX,
         .battleUsage = ITEM_B_USE_OTHER,
         .battleUseFunc = ItemUseInBattle_PokeBall,
-        .secondaryId = ITEM_MOON_BALL - FIRST_BALL,
+        .secondaryId = ITEM_MOON_BALL - FIRST_BALL_INDEX,
         .equipSlot = EQUIP_SLOT_1,
     },
 
@@ -231,10 +231,10 @@ const struct Item gItems[] =
         .price = 0,
         .description = sFriendBallDesc,
         .pocket = POCKET_POKE_BALLS,
-        .type = ITEM_FRIEND_BALL - FIRST_BALL,
+        .type = ITEM_FRIEND_BALL - FIRST_BALL_INDEX,
         .battleUsage = ITEM_B_USE_OTHER,
         .battleUseFunc = ItemUseInBattle_PokeBall,
-        .secondaryId = ITEM_FRIEND_BALL - FIRST_BALL,
+        .secondaryId = ITEM_FRIEND_BALL - FIRST_BALL_INDEX,
         .equipSlot = EQUIP_SLOT_1,
     },
 
@@ -245,10 +245,10 @@ const struct Item gItems[] =
         .price = 0,
         .description = sLoveBallDesc,
         .pocket = POCKET_POKE_BALLS,
-        .type = ITEM_LOVE_BALL - FIRST_BALL,
+        .type = ITEM_LOVE_BALL - FIRST_BALL_INDEX,
         .battleUsage = ITEM_B_USE_OTHER,
         .battleUseFunc = ItemUseInBattle_PokeBall,
-        .secondaryId = ITEM_LOVE_BALL - FIRST_BALL,
+        .secondaryId = ITEM_LOVE_BALL - FIRST_BALL_INDEX,
         .equipSlot = EQUIP_SLOT_1,
     },
 
@@ -259,10 +259,10 @@ const struct Item gItems[] =
         .price = 0,
         .description = sHeavyBallDesc,
         .pocket = POCKET_POKE_BALLS,
-        .type = ITEM_HEAVY_BALL - FIRST_BALL,
+        .type = ITEM_HEAVY_BALL - FIRST_BALL_INDEX,
         .battleUsage = ITEM_B_USE_OTHER,
         .battleUseFunc = ItemUseInBattle_PokeBall,
-        .secondaryId = ITEM_HEAVY_BALL - FIRST_BALL,
+        .secondaryId = ITEM_HEAVY_BALL - FIRST_BALL_INDEX,
         .equipSlot = EQUIP_SLOT_1,
     },
 
@@ -273,10 +273,10 @@ const struct Item gItems[] =
         .price = 0,
         .description = sFastBallDesc,
         .pocket = POCKET_POKE_BALLS,
-        .type = ITEM_FAST_BALL - FIRST_BALL,
+        .type = ITEM_FAST_BALL - FIRST_BALL_INDEX,
         .battleUsage = ITEM_B_USE_OTHER,
         .battleUseFunc = ItemUseInBattle_PokeBall,
-        .secondaryId = ITEM_FAST_BALL - FIRST_BALL,
+        .secondaryId = ITEM_FAST_BALL - FIRST_BALL_INDEX,
         .equipSlot = EQUIP_SLOT_1,
     },
 
@@ -287,10 +287,10 @@ const struct Item gItems[] =
         .price = 300,
         .description = sHealBallDesc,
         .pocket = POCKET_POKE_BALLS,
-        .type = ITEM_HEAL_BALL - FIRST_BALL,
+        .type = ITEM_HEAL_BALL - FIRST_BALL_INDEX,
         .battleUsage = ITEM_B_USE_OTHER,
         .battleUseFunc = ItemUseInBattle_PokeBall,
-        .secondaryId = ITEM_HEAL_BALL - FIRST_BALL,
+        .secondaryId = ITEM_HEAL_BALL - FIRST_BALL_INDEX,
         .equipSlot = EQUIP_SLOT_1,
     },
 
@@ -301,10 +301,10 @@ const struct Item gItems[] =
         .price = 1000,
         .description = sQuickBallDesc,
         .pocket = POCKET_POKE_BALLS,
-        .type = ITEM_QUICK_BALL - FIRST_BALL,
+        .type = ITEM_QUICK_BALL - FIRST_BALL_INDEX,
         .battleUsage = ITEM_B_USE_OTHER,
         .battleUseFunc = ItemUseInBattle_PokeBall,
-        .secondaryId = ITEM_QUICK_BALL - FIRST_BALL,
+        .secondaryId = ITEM_QUICK_BALL - FIRST_BALL_INDEX,
         .equipSlot = EQUIP_SLOT_1,
     },
 
@@ -315,10 +315,10 @@ const struct Item gItems[] =
         .price = 1000,
         .description = sDuskBallDesc,
         .pocket = POCKET_POKE_BALLS,
-        .type = ITEM_DUSK_BALL - FIRST_BALL,
+        .type = ITEM_DUSK_BALL - FIRST_BALL_INDEX,
         .battleUsage = ITEM_B_USE_OTHER,
         .battleUseFunc = ItemUseInBattle_PokeBall,
-        .secondaryId = ITEM_DUSK_BALL - FIRST_BALL,
+        .secondaryId = ITEM_DUSK_BALL - FIRST_BALL_INDEX,
         .equipSlot = EQUIP_SLOT_1,
     },
 
@@ -329,10 +329,10 @@ const struct Item gItems[] =
         .price = 0,
         .description = sCherishBallDesc,
         .pocket = POCKET_POKE_BALLS,
-        .type = ITEM_CHERISH_BALL - FIRST_BALL,
+        .type = ITEM_CHERISH_BALL - FIRST_BALL_INDEX,
         .battleUsage = ITEM_B_USE_OTHER,
         .battleUseFunc = ItemUseInBattle_PokeBall,
-        .secondaryId = ITEM_CHERISH_BALL - FIRST_BALL,
+        .secondaryId = ITEM_CHERISH_BALL - FIRST_BALL_INDEX,
         .equipSlot = EQUIP_SLOT_1,
     },
 
@@ -343,10 +343,10 @@ const struct Item gItems[] =
         .price = 0,
         .description = sSportBallDesc,
         .pocket = POCKET_POKE_BALLS,
-        .type = ITEM_SPORT_BALL - FIRST_BALL,
+        .type = ITEM_SPORT_BALL - FIRST_BALL_INDEX,
         .battleUsage = ITEM_B_USE_OTHER,
         .battleUseFunc = ItemUseInBattle_PokeBall,
-        .secondaryId = ITEM_SPORT_BALL - FIRST_BALL,
+        .secondaryId = ITEM_SPORT_BALL - FIRST_BALL_INDEX,
         .equipSlot = EQUIP_SLOT_1,
     },
 
@@ -357,10 +357,10 @@ const struct Item gItems[] =
         .price = 0,
         .description = sParkBallDesc,
         .pocket = POCKET_POKE_BALLS,
-        .type = ITEM_PARK_BALL - FIRST_BALL,
+        .type = ITEM_PARK_BALL - FIRST_BALL_INDEX,
         .battleUsage = ITEM_B_USE_OTHER,
         .battleUseFunc = ItemUseInBattle_PokeBall,
-        .secondaryId = ITEM_PARK_BALL - FIRST_BALL,
+        .secondaryId = ITEM_PARK_BALL - FIRST_BALL_INDEX,
         .equipSlot = EQUIP_SLOT_1,
     },
 
@@ -371,10 +371,10 @@ const struct Item gItems[] =
         .price = 0,
         .description = sDreamBallDesc,
         .pocket = POCKET_POKE_BALLS,
-        .type = ITEM_DREAM_BALL - FIRST_BALL,
+        .type = ITEM_DREAM_BALL - FIRST_BALL_INDEX,
         .battleUsage = ITEM_B_USE_OTHER,
         .battleUseFunc = ItemUseInBattle_PokeBall,
-        .secondaryId = ITEM_DREAM_BALL - FIRST_BALL,
+        .secondaryId = ITEM_DREAM_BALL - FIRST_BALL_INDEX,
         .equipSlot = EQUIP_SLOT_1,
     },
 
@@ -385,10 +385,10 @@ const struct Item gItems[] =
         .price = 0,
         .description = sBeastBallDesc,
         .pocket = POCKET_POKE_BALLS,
-        .type = ITEM_BEAST_BALL - FIRST_BALL,
+        .type = ITEM_BEAST_BALL - FIRST_BALL_INDEX,
         .battleUsage = ITEM_B_USE_OTHER,
         .battleUseFunc = ItemUseInBattle_PokeBall,
-        .secondaryId = ITEM_BEAST_BALL - FIRST_BALL,
+        .secondaryId = ITEM_BEAST_BALL - FIRST_BALL_INDEX,
         .equipSlot = EQUIP_SLOT_1,
     },
 
@@ -3344,6 +3344,21 @@ const struct Item gItems[] =
         .holdEffect = HOLD_EFFECT_STEEL_POWER,
         .holdEffectParam = 5,
         .description = sMetalCoatDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_PARTY_MENU, //ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone, //ItemUseOutOfBattle_CannotUse,
+        .flingPower = 30,
+        .equipSlot = EQUIP_SLOT_3,
+    },
+
+    [ITEM_METAL_ALLOY] =
+    {
+        .name = _("Metal Alloy"),
+        .itemId = ITEM_METAL_ALLOY,
+        .price = 2000,
+        .holdEffect = HOLD_EFFECT_STEEL_POWER,
+        .holdEffectParam = 5,
+        .description = sMetalAlloyDesc,
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_PARTY_MENU, //ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_EvolutionStone, //ItemUseOutOfBattle_CannotUse,
@@ -8614,6 +8629,816 @@ const struct Item gItems[] =
         #endif
     },
 
+    [ITEM_CLEFABLITE] =
+    {
+        .name = _("Clefablite"),
+        .itemId = ITEM_CLEFABLITE,
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = sClefabliteDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        #ifdef POWERFUL_ITEM_NERF
+        .equipSlot = EQUIP_SLOT_1_2_3,
+        #else
+        .equipSlot = EQUIP_SLOT_1,
+        #endif
+    },
+
+    [ITEM_VICTREEBELITE] =
+    {
+        .name = _("Victreebelite"),
+        .itemId = ITEM_VICTREEBELITE,
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = sVictreebeliteDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        #ifdef POWERFUL_ITEM_NERF
+        .equipSlot = EQUIP_SLOT_1_2_3,
+        #else
+        .equipSlot = EQUIP_SLOT_1,
+        #endif
+    },
+
+    [ITEM_STARMINITE] =
+    {
+        .name = _("Starminite"),
+        .itemId = ITEM_STARMINITE,
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = sStarminiteDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        #ifdef POWERFUL_ITEM_NERF
+        .equipSlot = EQUIP_SLOT_1_2_3,
+        #else
+        .equipSlot = EQUIP_SLOT_1,
+        #endif
+    },
+
+    [ITEM_DRAGONINITE] =
+    {
+        .name = _("Dragoninite"),
+        .itemId = ITEM_DRAGONINITE,
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = sDragoniniteDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        #ifdef POWERFUL_ITEM_NERF
+        .equipSlot = EQUIP_SLOT_1_2_3,
+        #else
+        .equipSlot = EQUIP_SLOT_1,
+        #endif
+    },
+
+    [ITEM_MEGANIUMITE] =
+    {
+        .name = _("Meganiumite"),
+        .itemId = ITEM_MEGANIUMITE,
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = sMeganiumiteDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        #ifdef POWERFUL_ITEM_NERF
+        .equipSlot = EQUIP_SLOT_1_2_3,
+        #else
+        .equipSlot = EQUIP_SLOT_1,
+        #endif
+    },
+
+    [ITEM_FERALIGITE] =
+    {
+        .name = _("Feraligite"),
+        .itemId = ITEM_FERALIGITE,
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = sFeraligiteDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        #ifdef POWERFUL_ITEM_NERF
+        .equipSlot = EQUIP_SLOT_1_2_3,
+        #else
+        .equipSlot = EQUIP_SLOT_1,
+        #endif
+    },
+
+    [ITEM_SKARMORITE] =
+    {
+        .name = _("Skarmorite"),
+        .itemId = ITEM_SKARMORITE,
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = sSkarmoriteDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        #ifdef POWERFUL_ITEM_NERF
+        .equipSlot = EQUIP_SLOT_1_2_3,
+        #else
+        .equipSlot = EQUIP_SLOT_1,
+        #endif
+    },
+
+    [ITEM_FROSLASSITE] =
+    {
+        .name = _("Froslassite"),
+        .itemId = ITEM_FROSLASSITE,
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = sFroslassiteDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        #ifdef POWERFUL_ITEM_NERF
+        .equipSlot = EQUIP_SLOT_1_2_3,
+        #else
+        .equipSlot = EQUIP_SLOT_1,
+        #endif
+    },
+
+    [ITEM_EMBOARITE] =
+    {
+        .name = _("Emboarite"),
+        .itemId = ITEM_EMBOARITE,
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = sEmboariteDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        #ifdef POWERFUL_ITEM_NERF
+        .equipSlot = EQUIP_SLOT_1_2_3,
+        #else
+        .equipSlot = EQUIP_SLOT_1,
+        #endif
+    },
+
+    [ITEM_EXCADRITE] =
+    {
+        .name = _("Excadrillite"),
+        .itemId = ITEM_EXCADRITE,
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = sExcadrilliteDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        #ifdef POWERFUL_ITEM_NERF
+        .equipSlot = EQUIP_SLOT_1_2_3,
+        #else
+        .equipSlot = EQUIP_SLOT_1,
+        #endif
+    },
+
+    [ITEM_SCOLIPITE] =
+    {
+        .name = _("Scolipite"),
+        .itemId = ITEM_SCOLIPITE,
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = sScolipiteDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        #ifdef POWERFUL_ITEM_NERF
+        .equipSlot = EQUIP_SLOT_1_2_3,
+        #else
+        .equipSlot = EQUIP_SLOT_1,
+        #endif
+    },
+
+    [ITEM_SCRAFTINITE] =
+    {
+        .name = _("Scraftyite"),
+        .itemId = ITEM_SCRAFTINITE,
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = sScraftiniteDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        #ifdef POWERFUL_ITEM_NERF
+        .equipSlot = EQUIP_SLOT_1_2_3,
+        #else
+        .equipSlot = EQUIP_SLOT_1,
+        #endif
+    },
+
+    [ITEM_EELEKTROSSITE] =
+    {
+        .name = _("Eelektrossite"),
+        .itemId = ITEM_EELEKTROSSITE,
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = sEelektrossiteDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        #ifdef POWERFUL_ITEM_NERF
+        .equipSlot = EQUIP_SLOT_1_2_3,
+        #else
+        .equipSlot = EQUIP_SLOT_1,
+        #endif
+    },
+
+    [ITEM_CHANDELURITE] =
+    {
+        .name = _("Chandelureite"),
+        .itemId = ITEM_CHANDELURITE,
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = sChandeluriteDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        #ifdef POWERFUL_ITEM_NERF
+        .equipSlot = EQUIP_SLOT_1_2_3,
+        #else
+        .equipSlot = EQUIP_SLOT_1,
+        #endif
+    },
+
+    [ITEM_CHESNAUGHTITE] =
+    {
+        .name = _("Chesnaughtite"),
+        .itemId = ITEM_CHESNAUGHTITE,
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = sChesnaughtiteDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        #ifdef POWERFUL_ITEM_NERF
+        .equipSlot = EQUIP_SLOT_1_2_3,
+        #else
+        .equipSlot = EQUIP_SLOT_1,
+        #endif
+    },
+
+    [ITEM_DELPHOXITE] =
+    {
+        .name = _("Delphoxite"),
+        .itemId = ITEM_DELPHOXITE,
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = sDelphoxiteDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        #ifdef POWERFUL_ITEM_NERF
+        .equipSlot = EQUIP_SLOT_1_2_3,
+        #else
+        .equipSlot = EQUIP_SLOT_1,
+        #endif
+    },
+
+    [ITEM_GRENINJITE] =
+    {
+        .name = _("Greninjaite"),
+        .itemId = ITEM_GRENINJITE,
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = sGreninjiteDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        #ifdef POWERFUL_ITEM_NERF
+        .equipSlot = EQUIP_SLOT_1_2_3,
+        #else
+        .equipSlot = EQUIP_SLOT_1,
+        #endif
+    },
+
+    [ITEM_PYROARITE] =
+    {
+        .name = _("Pyroarite"),
+        .itemId = ITEM_PYROARITE,
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = sPyroariteDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        #ifdef POWERFUL_ITEM_NERF
+        .equipSlot = EQUIP_SLOT_1_2_3,
+        #else
+        .equipSlot = EQUIP_SLOT_1,
+        #endif
+    },
+
+    [ITEM_FLOETTITE] =
+    {
+        .name = _("Floettite"),
+        .itemId = ITEM_FLOETTITE,
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = sFloettiteDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        #ifdef POWERFUL_ITEM_NERF
+        .equipSlot = EQUIP_SLOT_1_2_3,
+        #else
+        .equipSlot = EQUIP_SLOT_1,
+        #endif
+    },
+
+    [ITEM_MALAMARITE] =
+    {
+        .name = _("Malamarite"),
+        .itemId = ITEM_MALAMARITE,
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = sMalamariteDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        #ifdef POWERFUL_ITEM_NERF
+        .equipSlot = EQUIP_SLOT_1_2_3,
+        #else
+        .equipSlot = EQUIP_SLOT_1,
+        #endif
+    },
+
+    [ITEM_BARBARACITE] =
+    {
+        .name = _("Barbaracite"),
+        .itemId = ITEM_BARBARACITE,
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = sBarbaraciteDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        #ifdef POWERFUL_ITEM_NERF
+        .equipSlot = EQUIP_SLOT_1_2_3,
+        #else
+        .equipSlot = EQUIP_SLOT_1,
+        #endif
+    },
+
+    [ITEM_DRAGALGITE] =
+    {
+        .name = _("Dragalbite"),
+        .itemId = ITEM_DRAGALGITE,
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = sDragalgiteDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        #ifdef POWERFUL_ITEM_NERF
+        .equipSlot = EQUIP_SLOT_1_2_3,
+        #else
+        .equipSlot = EQUIP_SLOT_1,
+        #endif
+    },
+
+    [ITEM_HAWLUCHANITE] =
+    {
+        .name = _("Hawluchanite"),
+        .itemId = ITEM_HAWLUCHANITE,
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = sHawluchaniteDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        #ifdef POWERFUL_ITEM_NERF
+        .equipSlot = EQUIP_SLOT_1_2_3,
+        #else
+        .equipSlot = EQUIP_SLOT_1,
+        #endif
+    },
+
+    [ITEM_ZYGARDITE] =
+    {
+        .name = _("Zygardite"),
+        .itemId = ITEM_ZYGARDITE,
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = sZygarditeDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        #ifdef POWERFUL_ITEM_NERF
+        .equipSlot = EQUIP_SLOT_1_2_3,
+        #else
+        .equipSlot = EQUIP_SLOT_1,
+        #endif
+    },
+
+    [ITEM_DRAMPANITE] =
+    {
+        .name = _("Drampanite"),
+        .itemId = ITEM_DRAMPANITE,
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = sDrampaniteDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        #ifdef POWERFUL_ITEM_NERF
+        .equipSlot = EQUIP_SLOT_1_2_3,
+        #else
+        .equipSlot = EQUIP_SLOT_1,
+        #endif
+    },
+
+    [ITEM_FALINKSITE] =
+    {
+        .name = _("Falinksite"),
+        .itemId = ITEM_FALINKSITE,
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = sFalinksiteDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        #ifdef POWERFUL_ITEM_NERF
+        .equipSlot = EQUIP_SLOT_1_2_3,
+        #else
+        .equipSlot = EQUIP_SLOT_1,
+        #endif
+    },
+
+    [ITEM_HEATRANITE] =
+    {
+        .name = _("Heatranite"),
+        .itemId = ITEM_HEATRANITE,
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = sHeatraniteDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        #ifdef POWERFUL_ITEM_NERF
+        .equipSlot = EQUIP_SLOT_1_2_3,
+        #else
+        .equipSlot = EQUIP_SLOT_1,
+        #endif
+    },
+
+    [ITEM_DARKRANITE] =
+    {
+        .name = _("Darkranite"),
+        .itemId = ITEM_DARKRANITE,
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = sDarkraniteDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        #ifdef POWERFUL_ITEM_NERF
+        .equipSlot = EQUIP_SLOT_1_2_3,
+        #else
+        .equipSlot = EQUIP_SLOT_1,
+        #endif
+    },
+
+    [ITEM_ZERAORITE] =
+    {
+        .name = _("Zeraorite"),
+        .itemId = ITEM_ZERAORITE,
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = sZeraoriteDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        #ifdef POWERFUL_ITEM_NERF
+        .equipSlot = EQUIP_SLOT_1_2_3,
+        #else
+        .equipSlot = EQUIP_SLOT_1,
+        #endif
+    },
+
+    [ITEM_RAICHUNITE_X] =
+    {
+        .name = _("Raichunite X"),
+        .itemId = ITEM_RAICHUNITE_X,
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = sRaichuniteXDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        #ifdef POWERFUL_ITEM_NERF
+        .equipSlot = EQUIP_SLOT_1_2_3,
+        #else
+        .equipSlot = EQUIP_SLOT_1,
+        #endif
+    },
+
+    [ITEM_RAICHUNITE_Y] =
+    {
+        .name = _("Raichunite Y"),
+        .itemId = ITEM_RAICHUNITE_Y,
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = sRaichuniteYDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        #ifdef POWERFUL_ITEM_NERF
+        .equipSlot = EQUIP_SLOT_1_2_3,
+        #else
+        .equipSlot = EQUIP_SLOT_1,
+        #endif
+    },
+
+    [ITEM_CHIMECHITE] =
+    {
+        .name = _("Chimechite"),
+        .itemId = ITEM_CHIMECHITE,
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = sChimechiteDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        #ifdef POWERFUL_ITEM_NERF
+        .equipSlot = EQUIP_SLOT_1_2_3,
+        #else
+        .equipSlot = EQUIP_SLOT_1,
+        #endif
+    },
+
+    [ITEM_ABSOLITE_Z] =
+    {
+        .name = _("Absolite Z"),
+        .itemId = ITEM_ABSOLITE_Z,
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = sAbsoliteZDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        #ifdef POWERFUL_ITEM_NERF
+        .equipSlot = EQUIP_SLOT_1_2_3,
+        #else
+        .equipSlot = EQUIP_SLOT_1,
+        #endif
+    },
+
+    [ITEM_STARAPTITE] =
+    {
+        .name = _("Staraptorite"),
+        .itemId = ITEM_STARAPTITE,
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = sStaraptiteDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        #ifdef POWERFUL_ITEM_NERF
+        .equipSlot = EQUIP_SLOT_1_2_3,
+        #else
+        .equipSlot = EQUIP_SLOT_1,
+        #endif
+    },
+
+    [ITEM_GARCHOMPITE_Z] =
+    {
+        .name = _("Garchompite Z"),
+        .itemId = ITEM_GARCHOMPITE_Z,
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = sGarchompiteZDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        #ifdef POWERFUL_ITEM_NERF
+        .equipSlot = EQUIP_SLOT_1_2_3,
+        #else
+        .equipSlot = EQUIP_SLOT_1,
+        #endif
+    },
+
+    [ITEM_LUCARIONITE_Z] =
+    {
+        .name = _("Lucarionite Z"),
+        .itemId = ITEM_LUCARIONITE_Z,
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = sLucarioniteZDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        #ifdef POWERFUL_ITEM_NERF
+        .equipSlot = EQUIP_SLOT_1_2_3,
+        #else
+        .equipSlot = EQUIP_SLOT_1,
+        #endif
+    },
+
+    [ITEM_GOLURKITE] =
+    {
+        .name = _("Golurkite"),
+        .itemId = ITEM_GOLURKITE,
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = sGolurkiteDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        #ifdef POWERFUL_ITEM_NERF
+        .equipSlot = EQUIP_SLOT_1_2_3,
+        #else
+        .equipSlot = EQUIP_SLOT_1,
+        #endif
+    },
+
+    [ITEM_MEOWSTICITE] =
+    {
+        .name = _("Meowsticite"),
+        .itemId = ITEM_MEOWSTICITE,
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = sMeowsticiteDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        #ifdef POWERFUL_ITEM_NERF
+        .equipSlot = EQUIP_SLOT_1_2_3,
+        #else
+        .equipSlot = EQUIP_SLOT_1,
+        #endif
+    },
+
+    [ITEM_CRABOMINITE] =
+    {
+        .name = _("Crabominite"),
+        .itemId = ITEM_CRABOMINITE,
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = sCrabominiteDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        #ifdef POWERFUL_ITEM_NERF
+        .equipSlot = EQUIP_SLOT_1_2_3,
+        #else
+        .equipSlot = EQUIP_SLOT_1,
+        #endif
+    },
+
+    [ITEM_GOLISOPITE] =
+    {
+        .name = _("Golisopite"),
+        .itemId = ITEM_GOLISOPITE,
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = sGolisopiteDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        #ifdef POWERFUL_ITEM_NERF
+        .equipSlot = EQUIP_SLOT_1_2_3,
+        #else
+        .equipSlot = EQUIP_SLOT_1,
+        #endif
+    },
+
+    [ITEM_MAGEARNITE] =
+    {
+        .name = _("Magearnaite"),
+        .itemId = ITEM_MAGEARNITE,
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = sMagearniteDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        #ifdef POWERFUL_ITEM_NERF
+        .equipSlot = EQUIP_SLOT_1_2_3,
+        #else
+        .equipSlot = EQUIP_SLOT_1,
+        #endif
+    },
+
+    [ITEM_SCOVILLAINITE] =
+    {
+        .name = _("Scovillainite"),
+        .itemId = ITEM_SCOVILLAINITE,
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = sScovillainiteDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        #ifdef POWERFUL_ITEM_NERF
+        .equipSlot = EQUIP_SLOT_1_2_3,
+        #else
+        .equipSlot = EQUIP_SLOT_1,
+        #endif
+    },
+
+    [ITEM_BAXCALIBRITE] =
+    {
+        .name = _("Baxcalibrite"),
+        .itemId = ITEM_BAXCALIBRITE,
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = sBaxcalibriteDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        #ifdef POWERFUL_ITEM_NERF
+        .equipSlot = EQUIP_SLOT_1_2_3,
+        #else
+        .equipSlot = EQUIP_SLOT_1,
+        #endif
+    },
+
+    [ITEM_TATSUGIRINITE] =
+    {
+        .name = _("Tatsugirinite"),
+        .itemId = ITEM_TATSUGIRINITE,
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = sTatsugiriniteDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        #ifdef POWERFUL_ITEM_NERF
+        .equipSlot = EQUIP_SLOT_1_2_3,
+        #else
+        .equipSlot = EQUIP_SLOT_1,
+        #endif
+    },
+
+    [ITEM_GLIMMORANITE] =
+    {
+        .name = _("Glimmoranite"),
+        .itemId = ITEM_GLIMMORANITE,
+        .price = 0,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
+        .description = sGlimmoraniteDesc,
+        .pocket = POCKET_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .flingPower = 80,
+        #ifdef POWERFUL_ITEM_NERF
+        .equipSlot = EQUIP_SLOT_1_2_3,
+        #else
+        .equipSlot = EQUIP_SLOT_1,
+        #endif
+    },
+
     [ITEM_CAMERUPTITE] =
     {
         .name = _("Cameruptite"),
@@ -10482,7 +11307,7 @@ const struct Item gItems[] =
         .equipSlot = EQUIP_SLOT_2,
     },
 
-    [ITEM_GIMMIGHOUL_COIN] =
+    /* [ITEM_GIMMIGHOUL_COIN] =
     {
         .name = _("GimighoulCoin"),
         .itemId = ITEM_GIMMIGHOUL_COIN,
@@ -10491,7 +11316,7 @@ const struct Item gItems[] =
         .pocket = POCKET_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-    },
+    }, */
 
     [ITEM_LEADERS_CREST] =
     {

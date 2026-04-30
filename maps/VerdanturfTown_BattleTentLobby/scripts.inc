@@ -452,7 +452,8 @@ VerdanturfTown_BattleTentLobby_ExchangeServiceCorner_EventScript_ChooseHoldItem:
 	case 10, VerdanturfTown_BattleTentLobby_ExchangeServiceCorner_EventScript_DuskStone
 	case 11, VerdanturfTown_BattleTentLobby_ExchangeServiceCorner_EventScript_DawnStone
 	case 12, VerdanturfTown_BattleTentLobby_ExchangeServiceCorner_EventScript_IceStone
-	case 13, VerdanturfTown_BattleTentLobby__ExchangeServiceCorner_EventScript_ClerkGoodbye
+	case 13, VerdanturfTown_BattleTentLobby_ExchangeServiceCorner_EventScript_MetalAlloy
+	case 14, VerdanturfTown_BattleTentLobby__ExchangeServiceCorner_EventScript_ClerkGoodbye
 	case MULTI_B_PRESSED, VerdanturfTown_BattleTentLobby__ExchangeServiceCorner_EventScript_ClerkGoodbye
 	end
 
@@ -573,6 +574,15 @@ VerdanturfTown_BattleTentLobby_ExchangeServiceCorner_EventScript_IceStone::
 	goto VerdanturfTown_BattleTentLobby_ExchangeServiceCorner_EventScript_TryPurchasePrize
 	end
 
+VerdanturfTown_BattleTentLobby_ExchangeServiceCorner_EventScript_MetalAlloy::
+	msgbox VerdanturfTown_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmMetalAlloy, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq VerdanturfTown_BattleTentLobby_ExchangeServiceCorner_EventScript_ChooseHoldItem
+	setvar VAR_0x8008, 128
+	setvar VAR_0x8009, ITEM_METAL_ALLOY
+	goto VerdanturfTown_BattleTentLobby_ExchangeServiceCorner_EventScript_TryPurchasePrize
+	end
+
 VerdanturfTown_BattleTentLobby_ExchangeServiceCorner_EventScript_TryPurchasePrize::
 	specialvar VAR_TEMP_1, GetVerdanturfTentPoints
 	compare VAR_TEMP_1, VAR_0x8008
@@ -651,6 +661,10 @@ VerdanturfTown_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmDawnStone:
 
 VerdanturfTown_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmIceStone:
 	.string "You've chosen the Black Augurite.\n"
+	.string "Is that correct?$"
+
+VerdanturfTown_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmMetalAlloy:
+	.string "You've chosen the Metal Alloy.\n"
 	.string "Is that correct?$"
 
 VerdanturfTown_BattleTentLobby_ExchangeServiceCorner_Text_ThankYouVisitWithPoints:

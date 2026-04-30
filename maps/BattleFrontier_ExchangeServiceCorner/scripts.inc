@@ -904,6 +904,10 @@ BattleFrontier_ExchangeServiceCorner_Text_BlackAuguriteDesc::
 	.string "Makes certain species of\n"
 	.string "Pokémon evolve.$"
 
+BattleFrontier_ExchangeServiceCorner_Text_MetalAlloyDesc::
+	.string "Makes certain species of\n"
+	.string "Pokémon evolve.$"
+
 BattleFrontier_ExchangeServiceCorner_Text_WhippedDreamDesc::
 	.string "It's loved by a certain Pokémon.$"
 

@@ -874,7 +874,7 @@ gBattleAnims_Moves::
 	.4byte Move_PSYCHIC_NOISE
 	.4byte Move_UPPER_HAND
 	.4byte Move_MALIGNANT_CHAIN
-@@@@@@@@@@@@ CUSTOM @@@@@@@@@@@
+@@@@@@@@@@@@ CUSTOM @@@@@@@@@@@	
 	.4byte Move_KINGS_GRACE
 	.4byte Move_FROZEN_TERRAIN
 	.4byte Move_CURSED_TERRAIN
@@ -891,7 +891,7 @@ gBattleAnims_Moves::
 	.4byte Move_SHIELD_BASH
 	.4byte Move_DRAGON_BONE
 	.4byte Move_DRACO_IMPACT
-	.4byte Move_BLAZING_SPIRIT
+	.4byte Move_WARM_UP
 	.4byte Move_CHRISTMAS_GIFT
 	.4byte Move_ARTIC_GLIDE
 	.4byte Move_COIN_SHOWER
@@ -938,7 +938,7 @@ gBattleAnims_Moves::
 	.4byte Move_RECKLESS_SWING
 	.4byte Move_UNDERTOW
 	.4byte Move_PHOENIX_DOWN
-	.4byte MOVE_NONE_SPECIAL
+	.4byte Move_NONE_SPECIAL
 	.4byte Move_FOREST_BLESSING
 	.4byte Move_FOREST_FURY
 	.4byte Move_CRAFTY_CLOTHES
@@ -1034,6 +1034,27 @@ gBattleAnims_Moves::
 	.4byte Move_MIDNIGHT_BEAM
 	.4byte Move_BANSHEES_CRY
 	.4byte Move_POLLINATION_TERRAIN
+	.4byte Move_MARRIAGETOXIN
+	.4byte Move_MASSIVE_BLOOM
+	.4byte Move_ALLERGIC_EXPLOSION
+	.4byte Move_STEAM_CRUSH
+	.4byte Move_GUARD_PRESS
+	.4byte Move_IMPROVISED_BLOW
+	.4byte Move_BLACK_SHROUD
+	.4byte Move_COMBUSTION
+	.4byte Move_ABSORB_INTELLECT
+	.4byte Move_SMASHING_PUMPKINS
+	.4byte Move_FIRE_WALL
+	.4byte Move_SEAWEED_SNARE
+	.4byte Move_SOVEREIGN_SLIDE
+	.4byte Move_TRIAD_BLITZ
+	.4byte Move_KISS_BLISS_KABOOM
+	.4byte Move_FULL_POWER_PSY_AY_AY
+	.4byte Move_COLOSSEUM_TERRAIN
+	.4byte Move_DRACONIC_TERRAIN
+	.4byte Move_WORST_NIGHTMARE
+
+
 @@@@@@@@@@@@ Z MOVES @@@@@@@@@@@
 	.4byte Move_BREAKNECK_BLITZ
 	.4byte Move_ALL_OUT_PUMMELING
@@ -3782,6 +3803,7 @@ Move_LEAF_STORM:
 	clearmonbg ANIM_DEF_PARTNER
 	end
 
+Move_SEAWEED_SNARE:
 Move_POWER_WHIP:
 	loadspritegfx ANIM_TAG_WHIP_HIT
 	playsewithpan SE_M_JUMP_KICK, SOUND_PAN_ATTACKER
@@ -4375,6 +4397,7 @@ WoodHammerImpact:
 	createsprite gWoodHammerSmallSpriteTemplate, ANIM_TARGET, 2, -5, 0, -20, -24, 20, 2
 	return
 
+Move_SOVEREIGN_SLIDE:
 Move_AQUA_JET:
 	loadspritegfx ANIM_TAG_SPARKLE_6
 	loadspritegfx ANIM_TAG_ROUND_SHADOW
@@ -5372,6 +5395,7 @@ Move_QUIVER_DANCE:
 	call UnsetBugBg
 	end
 
+Move_GUARD_PRESS:
 Move_HEAVY_SLAM:
 	loadspritegfx ANIM_TAG_CLAW_SLASH
 	loadspritegfx ANIM_TAG_IMPACT
@@ -5752,6 +5776,7 @@ Move_CHIP_AWAY:
 	blendoff
 	end
 
+Move_BLACK_SHROUD:
 Move_CLEAR_SMOG:
 	loadspritegfx ANIM_TAG_MIST_CLOUD
 	monbg ANIM_TARGET
@@ -7091,6 +7116,8 @@ Move_RAZOR_SHELL:
 	waitforvisualfinish
 	end
 
+
+Move_STEAM_CRUSH::
 Move_HEAT_CRASH:
 	loadspritegfx ANIM_TAG_IMPACT
 	loadspritegfx ANIM_TAG_WARM_ROCK
@@ -8956,6 +8983,7 @@ Move_FORESTS_CURSE:
 	clearmonbg ANIM_ATTACKER
 	end
 
+Move_MASSIVE_BLOOM::
 Move_PETAL_BLIZZARD::
 	loadspritegfx ANIM_TAG_LEAF
 	loadspritegfx ANIM_TAG_IMPACT
@@ -16299,6 +16327,7 @@ Move_DIRE_CLAW::
 	waitforvisualfinish
 	end
 
+Move_TRIAD_BLITZ:
 Move_PSYSHIELD_BASH::
 	loadspritegfx ANIM_TAG_IMPACT
 	loadspritegfx ANIM_TAG_WATER_GUN @Blue colour
@@ -17741,6 +17770,7 @@ TwinBeamRings:
 	delay 4
 	return
 
+Move_KISS_BLISS_KABOOM:
 Move_GIGATON_HAMMER::
 	loadspritegfx ANIM_TAG_WOOD_HAMMER_HAMMER
 	loadspritegfx ANIM_TAG_IMPACT
@@ -18734,6 +18764,7 @@ Move_RAVINE_TERRAIN::
 	waitforvisualfinish
 	end
 
+Move_COLOSSEUM_TERRAIN:
 Move_BURNING_TERRAIN::
 	loadspritegfx ANIM_TAG_ORBS @Recover Ball
 	loadspritegfx ANIM_TAG_GREEN_SPARKLE @Green Star
@@ -18848,6 +18879,7 @@ Move_SWAMP_TERRAIN::
 	waitforvisualfinish
 	end
 
+Move_DRACONIC_TERRAIN:
 Move_VENOMOUS_TERRAIN::
 	loadspritegfx ANIM_TAG_ORBS @Recover Ball
 	loadspritegfx ANIM_TAG_GREEN_SPARKLE @Green Star
@@ -19046,7 +19078,8 @@ DracoImpactUnleash:
 	waitbgfadein
 	end
 
-Move_BLAZING_SPIRIT::
+Move_FIRE_WALL:
+Move_WARM_UP::
 	loadspritegfx ANIM_TAG_BLUE_STAR
 	loadspritegfx ANIM_TAG_SMALL_EMBER
 	monbg ANIM_DEF_PARTNER
@@ -20677,6 +20710,7 @@ Move_STUN_SPORE:
 	waitforvisualfinish
 	end
 
+Move_ALLERGIC_EXPLOSION::
 Move_SLEEP_POWDER:
 	loadspritegfx ANIM_TAG_SLEEP_POWDER
 	loopsewithpan SE_M_POISON_POWDER, SOUND_PAN_TARGET, 10, 6
@@ -21090,6 +21124,7 @@ Move_LEECH_SEED:
 	waitforvisualfinish
 	end
 
+Move_COMBUSTION:
 Move_EMBER:
 	loadspritegfx ANIM_TAG_SMALL_EMBER
 	loopsewithpan SE_M_EMBER, SOUND_PAN_ATTACKER, 5, 2
@@ -21129,6 +21164,7 @@ SetImpactContestsBG:
 	changebg BG_IMPACT_CONTESTS
 	goto SetImpactBackgroundRet
 
+Move_IMPROVISED_BLOW:
 Move_MEGA_PUNCH:
 	loadspritegfx ANIM_TAG_IMPACT
 	loadspritegfx ANIM_TAG_HANDS_AND_FEET
@@ -21810,6 +21846,7 @@ RisingWaterHitEffect:
 	createsprite gSmallDriftingBubblesSpriteTemplate, ANIM_ATTACKER, 4, 0, -20
 	return
 
+Move_SMASHING_PUMPKINS:
 Move_EXPLOSION:
 	loadspritegfx ANIM_TAG_EXPLOSION
 	createsprite gComplexPaletteBlendSpriteTemplate, ANIM_ATTACKER, 2, 1, 8, 9, RGB(26, 8, 8), 8, 0, 8
@@ -25167,6 +25204,7 @@ Move_INFINITE_PSYBURN::
 	call UnsetPsychicBg
 	end
 
+Move_WORST_NIGHTMARE:
 Move_PSYCHIC:
 	monbg ANIM_DEF_PARTNER
 	call SetPsychicBackground
@@ -26482,6 +26520,7 @@ Move_SYNTHESIS:
 	waitforvisualfinish
 	end
 
+Move_MARRIAGETOXIN:
 Move_TOXIC:
 	loadspritegfx ANIM_TAG_TOXIC_BUBBLE
 	loadspritegfx ANIM_TAG_POISON_BUBBLE
@@ -27594,6 +27633,7 @@ Move_LEER:
 	waitforvisualfinish
 	end
 
+Move_ABSORB_INTELLECT:
 Move_DREAM_EATER:
 	loadspritegfx ANIM_TAG_ORBS
 	loadspritegfx ANIM_TAG_BLUE_STAR
@@ -30393,6 +30433,7 @@ Move_WATER_PULSE:
 	clearmonbg ANIM_DEF_PARTNER
 	end
 
+Move_FULL_POWER_PSY_AY_AY:
 Move_PSYCHO_BOOST:
 	loadspritegfx ANIM_TAG_CIRCLE_OF_LIGHT
 	monbg ANIM_ATK_PARTNER

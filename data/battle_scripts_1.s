@@ -438,6 +438,8 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectTidyUp                  @ EFFECT_TIDY_UP
 	.4byte BattleScript_EffectAttackUpUserAlly        @ EFFECT_ATTACK_UP_USER_ALLY
 	.4byte BattleScript_EffectOrderUp                 @ EFFECT_ORDER_UP
+	.4byte BattleScript_EffectHit                     @ EFFECT_TERA_STARSTORM
+	
 	@@@@@ Custom Moves @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 	.4byte BattleScript_EffectFrozenTerrain								@ EFFECT_FROZEN_TERRAIN
 	.4byte BattleScript_EffectCursedTerrain								@ EFFECT_CURSED_TERRAIN
@@ -487,7 +489,7 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectStoneAxe									@ EFFECT_EFFECT_STONE_AXE
 	.4byte BattleScript_EffectPoisonHit									@ EFFECT_BARB_BARRAGE
 	.4byte BattleScript_EffectTripleArrows								@ EFFECT_TRIPLE_ARROWS
-	.4byte BattleScript_EffectBurnHit									@ EFFECT_INFERNAL_PARADE
+	.4byte BattleScript_EffectArgumentEffectHit							@ EFFECT_INFERNAL_PARADE
 	.4byte BattleScript_EffectCeaselessEdge								@ EFFECT_CEASELESS_EDGE
 	.4byte BattleScript_EffectTeatime									@ EFFECT_TEATIME
 	.4byte BattleScript_EffectFog										@ EFFECT_FOG
@@ -554,6 +556,55 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectPsyshield									@ EFFECT_PSYSHIELD
 	.4byte BattleScript_EffectHit										@ EFFECT_POWER_GEM
 	.4byte BattleScript_EffectPollinationTerrain           				@ EFFECT_POLLINATION_TERRAIN
+	.4byte BattleScript_EffectHit           							@ EFFECT_IMPROVISED_BLOW
+	.4byte BattleScript_EffectMarriagetoxin           					@ EFFECT_MARRIAGETOXIN
+	.4byte BattleScript_EffectBlackShroud           					@ EFFECT_BLACK_SHROUD
+	.4byte BattleScript_EffectAllergicExplosion           				@ EFFECT_ALLERGIC_EXPLOSION
+
+BattleScript_EffectArgumentEffectHit::
+	attackcanceler
+	accuracycheck BattleScript_PrintMoveMissed, ACC_CURR_MOVE
+	attackstring
+	ppreduce
+	call BattleScript_EffectDamage_Ret
+	argumenttomoveeffect
+	seteffectwithchance
+	argument2tomoveeffect
+	seteffectwithchance
+	tryfaintmon BS_TARGET, FALSE, NULL
+	moveendall
+	end
+
+BattleScript_EffectMarriagetoxin::
+	attackcanceler
+	attackstring
+	ppreduce
+	accuracycheck BattleScript_ButItFailed, ACC_CURR_MOVE
+	setmarriagetoxin BattleScript_ButItFailed
+	attackanimation
+	waitanimation
+	updatestatusicon BS_TARGET
+	setallytonexttarget BattleScript_MarriagetoxinAlly
+BattleScript_MarriagetoxinAlly:
+	updatestatusicon BS_TARGET
+	printfromtable gMarriagetoxinStringIds
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MoveEnd
+
+BattleScript_EffectAllergicExplosion::
+	attackcanceler
+	attackstring
+	ppreduce
+	accuracycheck BattleScript_ButItFailed, ACC_CURR_MOVE
+	jumpifsafeguard BattleScript_SafeguardProtected
+	jumpifkingsgrace BattleScript_KingsGraceProtected
+	setallergicexplosion BattleScript_ButItFailed
+	attackanimation
+	waitanimation
+	printfromtable gAllergicExplosionStringIds
+	waitmessage B_WAIT_TIME_LONG
+	updatestatusicon BS_TARGET
+	goto BattleScript_MoveEnd
 
 BattleScript_EffectPsyshield:
 	attackcanceler
@@ -587,14 +638,21 @@ BattleScript_EffectSpinningFlameKick:
 	setstatchanger STAT_ATK, 1, FALSE
 	goto BattleScript_RapidSpinSecondaryEffect
 
-BattleScript_EffectChaosGlower:
+BattleScript_EffectChaosGlower::
 	attackcanceler
+	accuracycheck BattleScript_PrintMoveMissed, ACC_CURR_MOVE
+	attackstring
+	ppreduce
+	call BattleScript_EffectDamage_Ret
 	jumpifnotfirstturn BattleScript_ChaosGlowerSpeedDown
 	setmoveeffect MOVE_EFFECT_FLINCH
-	goto BattleScript_HitFromAccCheck
+	seteffectwithchance
 BattleScript_ChaosGlowerSpeedDown:
 	setmoveeffect MOVE_EFFECT_SPD_MINUS_1
-	goto BattleScript_HitFromAccCheck
+	seteffectwithchance
+	tryfaintmon BS_TARGET, FALSE, NULL
+	moveendall
+	end
 
 BattleScript_EffectShowtime:
 	attackcanceler
@@ -674,7 +732,7 @@ BattleScript_EffectGlacialStage:
 	setterrain BattleScript_ButItFailed
 	attackanimation
 	waitanimation
-	printfromtable gTerrainStringIds
+	printfromtable gTerrainStartingStringIds
 	waitmessage B_WAIT_TIME_LONG
 	playanimation BS_ATTACKER, B_ANIM_RESTORE_BG, NULL
 	call BattleScript_TerrainFormChanges
@@ -1221,15 +1279,35 @@ BattleScript_EffectMatchaGotcha::
 	setmoveeffect MOVE_EFFECT_BURN
 	goto BattleScript_EffectAbsorb
 
+BattleScript_EffectBlackShroud::
+	call BattleScript_EffectHit_Ret
+	tryfaintmon BS_TARGET, FALSE, NULL
+	jumpiffainted BS_TARGET, TRUE, BattleScript_EffectBlackShroud_End
+	call BattleScript_ApplyBlackShroud_Ret
+BattleScript_EffectBlackShroud_End:
+	goto BattleScript_MoveEnd
+BattleScript_ApplyBlackShroud_Ret:
+	setbattlerstatus BS_TARGET, 4, STATUS4_BLACK_SHROUD, BattleScript_EffectBlackShroud_End
+	printstring STRINGID_TARGETISBEINGSALTCURED
+	waitmessage B_WAIT_TIME_LONG
+	return
+
 BattleScript_EffectSaltCure:
 	call BattleScript_EffectHit_Ret
 	tryfaintmon BS_TARGET, FALSE, NULL
 	jumpiffainted BS_TARGET, TRUE, BattleScript_EffectSaltCure_End
+	call BattleScript_ApplySaltCure_Ret
+BattleScript_EffectSaltCure_End:
+	goto BattleScript_MoveEnd
+
+BattleScript_SaltRitualActivates::
+	waitstate
+	call BattleScript_AbilityPopUp
+BattleScript_ApplySaltCure_Ret:
 	applysaltcure BS_TARGET
 	printstring STRINGID_TARGETISBEINGSALTCURED
 	waitmessage B_WAIT_TIME_LONG
-BattleScript_EffectSaltCure_End:
-	goto BattleScript_MoveEnd
+	return
 
 BattleScript_SaltCureExtraDamage::
 	playanimation BS_TARGET, B_ANIM_SALT_CURE_DAMAGE, NULL
@@ -1886,7 +1964,7 @@ BattleScript_EffectTerrainHit:
 	call BattleScript_EffectDamage_Ret
 	setterrain BattleScript_TryFaint
 	playanimation BS_ATTACKER, B_ANIM_RESTORE_BG, NULL
-	printfromtable gTerrainStringIds
+	printfromtable gTerrainStartingStringIds
 BattleScript_TryFaint:
 	tryfaintmon BS_TARGET, FALSE, NULL
 	goto BattleScript_MoveEnd
@@ -2111,7 +2189,7 @@ BattleScript_EffectSacredFireHealAlly:
 	goto BattleScript_MoveEnd
 
 BattleScript_EffectConfusion:
-	setmoveeffect MOVE_EFFECT_CONFUSION | MOVE_EFFECT_CERTAIN
+	setmoveeffect MOVE_EFFECT_CONFUSE_BOTH | MOVE_EFFECT_CERTAIN
 	goto BattleScript_EffectHit
 
 BattleScript_EffectInkJet:
@@ -2313,7 +2391,7 @@ BattleScript_EffectChristmasSpirit:
 	call BattleScript_WeatherFormChanges
 BattleScript_EffectChristmasSpiritHailSucessTryTerrain:
 	setterrain BattleScript_MoveEnd
-	printfromtable gTerrainStringIds
+	printfromtable gTerrainStartingStringIds
 	waitmessage B_WAIT_TIME_LONG
 	playanimation BS_ATTACKER, B_ANIM_RESTORE_BG, NULL
 	call BattleScript_TerrainFormChanges
@@ -2324,7 +2402,7 @@ BattleScript_EffectChristmasSpiritHailFailedTryTerrain:
 	setterrain BattleScript_ButItFailed
 	attackanimation
 	waitanimation
-	printfromtable gTerrainStringIds
+	printfromtable gTerrainStartingStringIds
 	waitmessage B_WAIT_TIME_LONG
 	playanimation BS_ATTACKER, B_ANIM_RESTORE_BG, NULL
 	call BattleScript_TerrainFormChanges
@@ -2500,9 +2578,8 @@ BattleScript_FlingBigRoot:
 BattleScript_FlingMiracleSeed:
 	jumpifstatus3 BS_TARGET, STATUS3_LEECHSEED, BattleScript_FlingEnd
 	jumpifhasnohp BS_TARGET, BattleScript_FlingEnd
-	setseeded
-	printfromtable gLeechSeedStringIds
-	waitmessage B_WAIT_TIME_LONG
+	setmoveeffect MOVE_EFFECT_LEECH_SEED | MOVE_EFFECT_CERTAIN
+	seteffectwithchance
 	goto BattleScript_FlingEnd
 BattleScript_FlingSoftSand:
 	setmoveeffect MOVE_EFFECT_ACC_MINUS_2 | MOVE_EFFECT_CERTAIN
@@ -2839,7 +2916,11 @@ BattleScript_TwoTurnsAttackDecideTurn:
 	jumpifmove MOVE_SOVEREIGN_SWORD, BattleScript_FirstTurnSovereignSword
 	jumpifmove MOVE_MIDNIGHT_BEAM, BattleScript_FirstTurnNightfallDaze
 	jumpifmove MOVE_ELECTRO_SHOT, BattleScript_FirstTurnElectroShot
+	jumpifmove MOVE_KISS_BLISS_KABOOM, BattleScript_FirstTurnKissBlissKaboom
 	setbyte sTWOTURN_STRINGID, B_MSG_TURN1_DRACO_IMPACT
+	goto BattleScript_FirstTurnChargingEffect
+BattleScript_FirstTurnKissBlissKaboom:
+	setbyte sTWOTURN_STRINGID, B_MSG_TURN1_KISS_BLISS_KABOOM
 	goto BattleScript_FirstTurnChargingEffect
 BattleScript_FirstTurnElectroShot:
 	setbyte sTWOTURN_STRINGID, B_MSG_TURN1_ELECTRO_SHOT
@@ -3162,18 +3243,8 @@ BattleScript_EffectFreezyFrost:
 	goto BattleScript_MoveEnd
 
 BattleScript_EffectSappySeed:
-	jumpifstatus3 BS_TARGET, STATUS3_LEECHSEED, BattleScript_EffectHit
-	attackcanceler
-	accuracycheck BattleScript_PrintMoveMissed, ACC_CURR_MOVE
-	attackstring
-	ppreduce
-	call BattleScript_EffectDamage_Ret
-	tryfaintmon BS_TARGET, FALSE, NULL
-	jumpifhasnohp BS_TARGET, BattleScript_MoveEnd
-	setseeded
-	printfromtable gLeechSeedStringIds
-	waitmessage B_WAIT_TIME_LONG
-	goto BattleScript_MoveEnd
+	setmoveeffect MOVE_EFFECT_LEECH_SEED
+	goto BattleScript_EffectHit
 
 BattleScript_EffectBaddyBad:
 	jumpifsideaffecting BS_ATTACKER, SIDE_STATUS_REFLECT, BattleScript_EffectHit
@@ -4687,7 +4758,7 @@ BattleScript_EffectPollinationTerrain::
 	setterrain BattleScript_ButItFailed
 	attackanimation
 	waitanimation
-	printfromtable gTerrainStringIds
+	printfromtable gTerrainStartingStringIds
 	waitmessage B_WAIT_TIME_LONG
 	playanimation BS_ATTACKER, B_ANIM_RESTORE_BG, NULL
 	call BattleScript_TerrainFormChanges
@@ -5666,6 +5737,7 @@ BattleScript_EffectFrostbiteHit::
 	goto BattleScript_EffectHit
 
 BattleScript_EffectExplosion::
+	jumpifabilityorinnate BS_ATTACKER, ABILITY_SIEGE_PAYLOAD, BattleScript_EffectMindBlown
 	attackcanceler
 	attackstring
 	ppreduce
@@ -6510,6 +6582,29 @@ BattleScript_EffectConfuse:
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 
+BattleScript_EffectLeechSeed::
+	attackcanceler
+	attackstring
+	pause B_WAIT_TIME_SHORT
+	ppreduce
+	jumpifsubstituteblocks BattleScript_ButItFailed
+	jumpiftype BS_TARGET, TYPE_GRASS, BattleScript_NotAffected
+	jumpifstatus3 BS_TARGET, STATUS3_LEECHSEED, BattleScript_NotAffected
+	accuracycheck BattleScript_PrintMoveMissed, ACC_CURR_MOVE
+BattleScript_DoLeechSeed::
+	attackanimation
+	waitanimation
+	setmoveeffect MOVE_EFFECT_LEECH_SEED
+	seteffectprimary
+	resultmessage
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MoveEnd
+
+BattleScript_MoveEffectLeechSeed::
+	printstring STRINGID_PKMNSEEDED
+	waitmessage B_WAIT_TIME_LONG
+	return
+
 BattleScript_InnateOwnTempoPrevents:
 	copybyte gBattlerAbility, gBattlerTarget
 	sethword sABILITY_OVERWRITE, ABILITY_OWN_TEMPO
@@ -6810,8 +6905,18 @@ BattleScript_AlreadyHasSubstitute::
 BattleScript_EffectRecharge::
 	attackcanceler
 	accuracycheck BattleScript_PrintMoveMissed, ACC_CURR_MOVE
+	attackstring
+	ppreduce
+	call BattleScript_EffectDamage_Ret
 	setmoveeffect MOVE_EFFECT_RECHARGE | MOVE_EFFECT_AFFECTS_ATTACKER | MOVE_EFFECT_CERTAIN
-	goto BattleScript_HitFromAtkString
+	seteffectwithchance
+	argumenttomoveeffect
+	seteffectwithchance
+	argument2tomoveeffect
+	seteffectwithchance
+	tryfaintmon BS_TARGET, FALSE, NULL
+	moveendall
+	end
 
 BattleScript_MoveUsedMustRecharge::
 	printstring STRINGID_PKMNMUSTRECHARGE
@@ -6852,21 +6957,6 @@ BattleScript_EffectMetronome::
 	setbyte sB_ANIM_TURN, 0
 	setbyte sB_ANIM_TARGETS_HIT, 0
 	metronome
-
-BattleScript_EffectLeechSeed::
-	attackcanceler
-	attackstring
-	pause B_WAIT_TIME_SHORT
-	ppreduce
-	jumpifsubstituteblocks BattleScript_ButItFailed
-	accuracycheck BattleScript_DoLeechSeed, ACC_CURR_MOVE
-BattleScript_DoLeechSeed::
-	setseeded
-	attackanimation
-	waitanimation
-	printfromtable gLeechSeedStringIds
-	waitmessage B_WAIT_TIME_LONG
-	goto BattleScript_MoveEnd
 
 BattleScript_EffectDoNothing::
 	attackcanceler
@@ -7209,9 +7299,12 @@ BattleScript_NightmareWorked::
 	waitanimation
 	setmoveeffect MOVE_EFFECT_NIGHTMARE
 	seteffectprimary
+	goto BattleScript_MoveEnd
+
+BattleScript_MoveEffectNightmare::
 	printstring STRINGID_PKMNFELLINTONIGHTMARE
 	waitmessage B_WAIT_TIME_LONG
-	goto BattleScript_MoveEnd
+	return
 
 BattleScript_EffectMinimize::
 	attackcanceler
@@ -9386,7 +9479,7 @@ BattleScript_OverworldWeatherStarts::
 	end3
 
 BattleScript_OverworldTerrain::
-	printfromtable gTerrainStringIds
+	printfromtable gTerrainStartingStringIds
 	waitmessage B_WAIT_TIME_LONG
 	playanimation BS_SCRIPTING, B_ANIM_RESTORE_BG, NULL
 	call BattleScript_TerrainFormChanges
@@ -9498,6 +9591,13 @@ BattleScript_RavineTerrainEnds::
 
 BattleScript_SwampTerrainEnds::
 	printstring STRINGID_SWAMPTERRAINENDS
+	waitmessage B_WAIT_TIME_LONG
+	playanimation BS_ATTACKER, B_ANIM_RESTORE_BG, NULL
+	call BattleScript_TerrainFormChanges
+	end2
+
+BattleScript_GenericTerrainEnds::
+	printstring STRINGID_GENERICTERRAINENDS
 	waitmessage B_WAIT_TIME_LONG
 	playanimation BS_ATTACKER, B_ANIM_RESTORE_BG, NULL
 	call BattleScript_TerrainFormChanges
@@ -10266,6 +10366,15 @@ BattleScript_MoveUsedIsTaunted::
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 
+BattleScript_SelectingNotAllowedMoveColosseum::
+	printselectionstring STRINGID_PKMNCANTUSEMOVECOLOSSEUM
+	endselectionscript
+
+BattleScript_MoveUsedIsColosseum::
+	printstring STRINGID_PKMNCANTUSEMOVECOLOSSEUM
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MoveEnd
+
 BattleScript_SelectingNotAllowedMoveTauntInPalace::
 	printstring STRINGID_PKMNCANTUSEMOVETAUNT
 	goto BattleScript_SelectingUnusableMoveInPalace
@@ -10473,6 +10582,12 @@ BattleScript_SelectingImprisonedMoveInPalace::
 
 BattleScript_GrudgeTakesPp::
 	printstring STRINGID_PKMNLOSTPPGRUDGE
+	waitmessage B_WAIT_TIME_LONG
+	return
+
+BattleScript_LastRitesTakesPp::
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_PKMNLOSTPPABILITY
 	waitmessage B_WAIT_TIME_LONG
 	return
 
@@ -11106,6 +11221,7 @@ BattleScript_PowderMoveNoEffect::
 	pause B_WAIT_TIME_SHORT
 	jumpiftype BS_TARGET, TYPE_GRASS, BattleScript_PowderMoveNoEffectPrint
 	jumpifabilityorinnate BS_TARGET, ABILITY_OVERCOAT, BattleScript_PowderMoveNoEffectInnateOvercoat
+	jumpifabilityorinnate BS_TARGET, ABILITY_SOOT_VEIL, BattleScript_PowderMoveNoEffectInnateOvercoat
 	printstring STRINGID_SAFETYGOGGLESPROTECTED
 	goto BattleScript_PowderMoveNoEffectWaitMsg
 BattleScript_PowderMoveNoEffectOvercoat:
@@ -11120,7 +11236,6 @@ BattleScript_PowderMoveNoEffectWaitMsg:
 
 BattleScript_PowderMoveNoEffectInnateOvercoat:
 	copybyte gBattlerAbility, gBattlerTarget
-	sethword sABILITY_OVERWRITE, ABILITY_OVERCOAT
 	goto BattleScript_PowderMoveNoEffectOvercoat
 
 BattleScript_MoveUsedDevolvedForgot::
@@ -11877,6 +11992,14 @@ BattleScript_HealerActivates::
 	waitmessage B_WAIT_TIME_LONG
 	end3
 
+BattleScript_NurseryActivates::
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_NURSERYACTIVATES
+	waitmessage B_WAIT_TIME_LONG
+	healthbarupdate BS_SCRIPTING
+	datahpupdate BS_SCRIPTING
+	end3
+
 BattleScript_SandstreamActivates::
 	pause B_WAIT_TIME_SHORT
 	call BattleScript_AbilityPopUp
@@ -12256,50 +12379,10 @@ BattleScript_TerrainSeedLoop_NextBattler:
 	restoretarget
 	return
 
-BattleScript_ElectricSurgeActivates::
+BattleScript_TerrainAbilitySurgeActivates::
 	pause B_WAIT_TIME_SHORT
 	call BattleScript_AbilityPopUp
-	printstring STRINGID_TERRAINBECOMESELECTRIC
-	waitmessage B_WAIT_TIME_LONG
-	playanimation BS_SCRIPTING, B_ANIM_RESTORE_BG, NULL
-	call BattleScript_TerrainFormChanges
-	call BattleScript_TerrainSeedLoop
-	end3
-
-BattleScript_MistySurgeActivates::
-	pause B_WAIT_TIME_SHORT
-	call BattleScript_AbilityPopUp
-	printstring STRINGID_TERRAINBECOMESMISTY
-	waitmessage B_WAIT_TIME_LONG
-	playanimation BS_SCRIPTING, B_ANIM_RESTORE_BG, NULL
-	call BattleScript_TerrainFormChanges
-	call BattleScript_TerrainSeedLoop
-	end3
-
-BattleScript_GrassySurgeActivates::
-	pause B_WAIT_TIME_SHORT
-	call BattleScript_AbilityPopUp
-	printstring STRINGID_TERRAINBECOMESGRASSY
-	waitmessage B_WAIT_TIME_LONG
-	playanimation BS_SCRIPTING, B_ANIM_RESTORE_BG, NULL
-	call BattleScript_TerrainFormChanges
-	call BattleScript_TerrainSeedLoop
-	end3
-
-BattleScript_PsychicSurgeActivates::
-	pause B_WAIT_TIME_SHORT
-	call BattleScript_AbilityPopUp
-	printstring STRINGID_TERRAINBECOMESPSYCHIC
-	waitmessage B_WAIT_TIME_LONG
-	playanimation BS_SCRIPTING, B_ANIM_RESTORE_BG, NULL
-	call BattleScript_TerrainFormChanges
-	call BattleScript_TerrainSeedLoop
-	end3
-
-BattleScript_RavineSurgeActivates::
-	pause B_WAIT_TIME_SHORT
-	call BattleScript_AbilityPopUp
-	printstring STRINGID_TERRAINBECOMESRAVINE
+	printfromtable gTerrainStartingStringIds
 	waitmessage B_WAIT_TIME_LONG
 	playanimation BS_SCRIPTING, B_ANIM_RESTORE_BG, NULL
 	call BattleScript_TerrainFormChanges
@@ -12315,60 +12398,6 @@ BattleScript_BurningSurgeActivatesReturn::
 	call BattleScript_TerrainFormChanges
 	call BattleScript_TerrainSeedLoop
 	return
-
-BattleScript_BurningSurgeActivatesEnd3::
-	call BattleScript_BurningSurgeActivatesReturn
-	end3
-
-BattleScript_CurseSurgeActivates::
-	pause B_WAIT_TIME_SHORT
-	call BattleScript_AbilityPopUp
-	printstring STRINGID_TERRAINBECOMESCURSED
-	waitmessage B_WAIT_TIME_LONG
-	playanimation BS_SCRIPTING, B_ANIM_RESTORE_BG, NULL
-	call BattleScript_TerrainFormChanges
-	call BattleScript_TerrainSeedLoop
-	end3
-
-BattleScript_SandySurgeActivates::
-	pause B_WAIT_TIME_SHORT
-	call BattleScript_AbilityPopUp
-	printstring STRINGID_TERRAINBECOMESSANDY
-	waitmessage B_WAIT_TIME_LONG
-	playanimation BS_SCRIPTING, B_ANIM_RESTORE_BG, NULL
-	call BattleScript_TerrainFormChanges
-	call BattleScript_TerrainSeedLoop
-	end3
-
-BattleScript_SwampSurgeActivates::
-	pause B_WAIT_TIME_SHORT
-	call BattleScript_AbilityPopUp
-	printstring STRINGID_TERRAINBECOMESSWAMP
-	waitmessage B_WAIT_TIME_LONG
-	playanimation BS_SCRIPTING, B_ANIM_RESTORE_BG, NULL
-	call BattleScript_TerrainFormChanges
-	call BattleScript_TerrainSeedLoop
-	end3
-
-BattleScript_VenomousSurgeActivates::
-	pause B_WAIT_TIME_SHORT
-	call BattleScript_AbilityPopUp
-	printstring STRINGID_TERRAINBECOMESVENOMOUS
-	waitmessage B_WAIT_TIME_LONG
-	playanimation BS_SCRIPTING, B_ANIM_RESTORE_BG, NULL
-	call BattleScript_TerrainFormChanges
-	call BattleScript_TerrainSeedLoop
-	end3
-
-BattleScript_FrozenSurgeActivates::
-	pause B_WAIT_TIME_SHORT
-	call BattleScript_AbilityPopUp
-	printstring STRINGID_TERRAINBECOMESFROZEN
-	waitmessage B_WAIT_TIME_LONG
-	playanimation BS_SCRIPTING, B_ANIM_RESTORE_BG, NULL
-	call BattleScript_TerrainFormChanges
-	call BattleScript_TerrainSeedLoop
-	end3
 
 BattleScript_SweetDreamsActivates::
 	setbyte gBattlerTarget, 0
@@ -12596,6 +12625,16 @@ BattleScript_SoundproofProtected::
 	orhalfword gMoveResultFlags, MOVE_RESULT_DOESNT_AFFECT_FOE
 	goto BattleScript_MoveEnd
 
+BattleScript_ObliviousProtected::
+	attackstring
+	ppreduce
+	pause B_WAIT_TIME_SHORT
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_PKMNSXBLOCKSY
+	waitmessage B_WAIT_TIME_LONG
+	orhalfword gMoveResultFlags, MOVE_RESULT_DOESNT_AFFECT_FOE
+	goto BattleScript_MoveEnd
+
 BattleScript_DazzlingProtected::
 	attackstring
 	ppreduce
@@ -12788,6 +12827,14 @@ BattleScript_StickyHoldActivates::
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 
+BattleScript_RemodelingFrameActivates::
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_PKMNCHANGEDTYPEWITH
+	waitmessage B_WAIT_TIME_LONG
+	healthbarupdate BS_TARGET
+	datahpupdate BS_TARGET
+	return
+
 BattleScript_ColorChangeActivates::
 	call BattleScript_AbilityPopUp
 	printstring STRINGID_PKMNCHANGEDTYPEWITH
@@ -12906,6 +12953,35 @@ BattleScript_BattlerAbilityStatRaiseOnSwitchIn::
 	waitmessage B_WAIT_TIME_LONG
 	end3
 
+BattleScript_PowerObeliskActivates::
+	setbyte sSTAT_ANIM_PLAYED, FALSE
+	playstatchangeanimation BS_ATTACKER, BIT_SPATK | BIT_SPDEF, 0
+	setstatchanger STAT_SPATK, 6, FALSE
+	statbuffchange MOVE_EFFECT_AFFECTS_ATTACKER | STAT_CHANGE_ALLOW_PTR, BattleScript_PowerObeliskTryDef
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_PowerObeliskTryDef
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_PowerObeliskTryDef::
+	setstatchanger STAT_SPDEF, 6, FALSE
+	statbuffchange MOVE_EFFECT_AFFECTS_ATTACKER | STAT_CHANGE_ALLOW_PTR, BattleScript_PowerObeliskEnd
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_PowerObeliskEnd
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_PowerObeliskEnd::
+	end3
+
+BattleScript_SwitchInMoveEffectMsg::
+	call BattleScript_SwitchInMoveEffectRet
+	end3
+
+BattleScript_SwitchInMoveEffectRet::
+	call BattleScript_AbilityPopUp
+	playmoveanimation BS_SCRIPTING, MOVE_NONE
+	waitanimation
+	printfromtable gSwitchInMoveEffectStringIds
+	waitmessage B_WAIT_TIME_LONG
+	return
+
 BattleScript_EvoboostSyncRaiseStat::
 	statbuffchange MOVE_EFFECT_AFFECTS_ATTACKER | STAT_BUFF_NOT_PROTECT_AFFECTED | MOVE_EFFECT_CERTAIN, NULL
 	setgraphicalstatchangevalues
@@ -12951,6 +13027,16 @@ BattleScript_TargetAbilityStatRaiseOnMoveEnd::
 BattleScript_RagnarokActivates::
 	call BattleScript_AbilityPopUp
 	printstring STRINGID_ACTIVATESRAGNAROK
+	waitmessage B_WAIT_TIME_LONG
+	return
+
+BattleScript_AttackerAbilityLoweredAttackerStatOnMoveEnd::
+	call BattleScript_AbilityPopUp
+	statbuffchange MOVE_EFFECT_AFFECTS_ATTACKER | STAT_BUFF_NOT_PROTECT_AFFECTED, NULL
+	setgraphicalstatchangevalues
+	playanimation BS_ATTACKER, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
+	waitanimation
+	printstring STRINGID_ATTACKERABILITYLOWEREDOWNSTAT
 	waitmessage B_WAIT_TIME_LONG
 	return
 
@@ -13007,6 +13093,50 @@ BattleScript_SecondRaise:
 	waitmessage B_WAIT_TIME_LONG
 BattleScript_AbilityRaiseEnd:
 	updatestatusicon BS_TARGET
+	return
+
+BattleScript_TargetAbilityTwoStatsLowerOnMoveEnd::
+	call BattleScript_AbilityPopUp
+	jumpifbyteequal sSTATCHANGER, sZero, BattleScript_TargetSecondLower
+	statbuffchange MOVE_EFFECT_CERTAIN | STAT_BUFF_NOT_PROTECT_AFFECTED, BattleScript_TargetSecondLower
+	jumpifbyte CMP_GREATER_THAN, cMULTISTRING_CHOOSER, B_MSG_DEFENDER_STAT_FELL, BattleScript_TargetSecondLower
+	setgraphicalstatchangevalues
+	playanimation BS_TARGET, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
+	printfromtable gStatDownStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_TargetSecondLower:
+	jumpifbyteequal sSAVED_STAT_CHANGER, sZero, BattleScript_TargetAbilityLowerEnd
+	copybyte sSTATCHANGER, sSAVED_STAT_CHANGER
+	statbuffchange MOVE_EFFECT_CERTAIN | STAT_BUFF_NOT_PROTECT_AFFECTED, BattleScript_TargetAbilityLowerEnd
+	jumpifbyte CMP_GREATER_THAN, cMULTISTRING_CHOOSER, B_MSG_DEFENDER_STAT_FELL, BattleScript_TargetAbilityLowerEnd
+	setgraphicalstatchangevalues
+	playanimation BS_TARGET, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
+	printfromtable gStatDownStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_TargetAbilityLowerEnd:
+	updatestatusicon BS_TARGET
+	return
+
+BattleScript_AttackerAbilityTwoStatsRaiseOnMoveEnd::
+	call BattleScript_AbilityPopUp
+	jumpifbyteequal sSTATCHANGER, sZero, BattleScript_AttackerSecondRaise
+	statbuffchange MOVE_EFFECT_AFFECTS_ATTACKER | MOVE_EFFECT_CERTAIN | STAT_BUFF_NOT_PROTECT_AFFECTED, BattleScript_AttackerSecondRaise
+	jumpifbyte CMP_GREATER_THAN, cMULTISTRING_CHOOSER, B_MSG_DEFENDER_STAT_ROSE, BattleScript_AttackerSecondRaise
+	setgraphicalstatchangevalues
+	playanimation BS_ATTACKER, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_AttackerSecondRaise:
+	jumpifbyteequal sSAVED_STAT_CHANGER, sZero, BattleScript_AttackerAbilityRaiseEnd
+	copybyte sSTATCHANGER, sSAVED_STAT_CHANGER
+	statbuffchange MOVE_EFFECT_AFFECTS_ATTACKER | MOVE_EFFECT_CERTAIN | STAT_BUFF_NOT_PROTECT_AFFECTED, BattleScript_AttackerAbilityRaiseEnd
+	jumpifbyte CMP_GREATER_THAN, cMULTISTRING_CHOOSER, B_MSG_DEFENDER_STAT_ROSE, BattleScript_AttackerAbilityRaiseEnd
+	setgraphicalstatchangevalues
+	playanimation BS_ATTACKER, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_AttackerAbilityRaiseEnd:
+	updatestatusicon BS_ATTACKER
 	return
 
 BattleScript_UltimateShowndownActivate::
@@ -13541,6 +13671,17 @@ BattleScript_ImposterActivates::
 	waitmessage B_WAIT_TIME_LONG
 	end3
 
+BattleScript_ReactiveArmorActivates::
+	pause B_WAIT_TIME_SHORT
+	call BattleScript_AbilityPopUp
+	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_PASSIVE_DAMAGE | HITMARKER_IGNORE_DISGUISE
+	healthbarupdate BS_ATTACKER
+	datahpupdate BS_ATTACKER
+	printstring STRINGID_PKMNHURTSWITH
+	waitmessage B_WAIT_TIME_LONG
+	tryfaintmon BS_ATTACKER, FALSE, NULL
+	return
+
 BattleScript_HurtAttacker:
 	orword gHitMarker, HITMARKER_IGNORE_SUBSTITUTE | HITMARKER_PASSIVE_DAMAGE | HITMARKER_IGNORE_DISGUISE
 	healthbarupdate BS_ATTACKER
@@ -13604,6 +13745,13 @@ BattleScript_IronFistTechnique::
 	printstring STRINGID_IRONFISTTECHNIQUE
 	waitmessage B_WAIT_TIME_LONG
 	tryfaintmon BS_TARGET, FALSE, NULL
+	return
+
+BattleScript_PhantomStarFirstTechnique::
+	call BattleScript_AbilityPopUp	
+	playmoveanimation BS_TARGET, MOVE_DESTINY_BOND
+	printstring STRINGID_PHANTOMFISTTECHNIQUE
+	waitmessage B_WAIT_TIME_LONG
 	return
 
 BattleScript_PoisonPointHurtsTarget::

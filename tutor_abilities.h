@@ -5722,10 +5722,6 @@ const u8 *const gTutorAbilityLearnsets[NUM_SPECIES] =
     [SPECIES_OGERPON_WELLSPRING_MASK] = sOgerponTutorAbility,
     [SPECIES_OGERPON_HEARTHFLAME_MASK] = sOgerponTutorAbility,
     [SPECIES_OGERPON_CORNERSTONE_MASK] = sOgerponTutorAbility,
-    [SPECIES_OGERPON_TEAL_MASK_TERA] = sOgerponTutorAbility,
-    [SPECIES_OGERPON_WELLSPRING_MASK_TERA] = sOgerponTutorAbility,
-    [SPECIES_OGERPON_HEARTHFLAME_MASK_TERA] = sOgerponTutorAbility,
-    [SPECIES_OGERPON_CORNERSTONE_MASK_TERA] = sOgerponTutorAbility,
     // Cosplay Pikachu
     [SPECIES_PIKACHU_COSPLAY] = sPikachuTutorAbility,
     [SPECIES_PIKACHU_ROCK_STAR] = sPikachuTutorAbility,
