@@ -830,5 +830,5 @@ MeteorFalls_1F_1R_EventScript_UltraWormhole::
 	end
 
 MeteorFalls_1F_1R_Text_UltraWormhole:
-	.string "A Ultra Wormhole…\n"
+	.string "An Ultra Wormhole…\n"
 	.string "Must not enter!$"

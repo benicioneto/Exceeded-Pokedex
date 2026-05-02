@@ -5377,6 +5377,7 @@ BattleScript_EffectSleep::
 	jumpifcantmakeasleep BattleScript_CantMakeAsleep
 	jumpifabilityorinnate BS_TARGET, ABILITY_COMATOSE, BattleScript_LeafGuardProtects
 	jumpifabilityorinnate BS_TARGET, ABILITY_PURIFYING_SALT, BattleScript_LeafGuardProtects
+	jumpifabilityorinnate BS_TARGET, ABILITY_SILVER_ARMOR, BattleScript_LeafGuardProtects
 	jumpifflowerveil BattleScript_FlowerVeilProtects
 	jumpifabilityorinnate BS_TARGET_SIDE, ABILITY_SWEET_VEIL, BattleScript_SweetVeilProtects
 	jumpifleafguardprotected BS_TARGET, BattleScript_LeafGuardProtects
@@ -6300,6 +6301,7 @@ BattleScript_EffectToxic::
 	jumpifabilityorinnate BS_TARGET, ABILITY_PYROCLASTIC, BattleScript_PyroclasticProtected
 	jumpifabilityorinnate BS_TARGET, ABILITY_COMATOSE, BattleScript_LeafGuardProtects
 	jumpifabilityorinnate BS_TARGET, ABILITY_PURIFYING_SALT, BattleScript_LeafGuardProtects
+	jumpifabilityorinnate BS_TARGET, ABILITY_SILVER_ARMOR, BattleScript_LeafGuardProtects
 	jumpifabilityorinnate BS_TARGET_SIDE, ABILITY_PASTEL_VEIL, BattleScript_PastelVeilProtects
 	jumpifflowerveil BattleScript_FlowerVeilProtects
 	jumpifleafguardprotected BS_TARGET, BattleScript_LeafGuardProtects
@@ -6715,6 +6717,7 @@ BattleScript_EffectPoison::
 	jumpifabilityorinnate BS_TARGET, ABILITY_PYROCLASTIC, BattleScript_PyroclasticProtected
 	jumpifabilityorinnate BS_TARGET, ABILITY_COMATOSE, BattleScript_LeafGuardProtects
 	jumpifabilityorinnate BS_TARGET, ABILITY_PURIFYING_SALT, BattleScript_LeafGuardProtects
+	jumpifabilityorinnate BS_TARGET, ABILITY_SILVER_ARMOR, BattleScript_LeafGuardProtects
 	jumpifabilityorinnate BS_TARGET_SIDE, ABILITY_PASTEL_VEIL, BattleScript_PastelVeilProtects
 	jumpifflowerveil BattleScript_FlowerVeilProtects
 	jumpifleafguardprotected BS_TARGET, BattleScript_LeafGuardProtects
@@ -6743,6 +6746,7 @@ BattleScript_EffectParalyze:
 	jumpifabilityorinnate BS_TARGET, ABILITY_LIMBER, BattleScript_LimberProtected
 	jumpifabilityorinnate BS_TARGET, ABILITY_COMATOSE, BattleScript_LeafGuardProtects
 	jumpifabilityorinnate BS_TARGET, ABILITY_PURIFYING_SALT, BattleScript_LeafGuardProtects
+	jumpifabilityorinnate BS_TARGET, ABILITY_SILVER_ARMOR, BattleScript_LeafGuardProtects
 	jumpifflowerveil BattleScript_FlowerVeilProtects
 	jumpifleafguardprotected BS_TARGET, BattleScript_LeafGuardProtects
 	jumpifshieldsdown BS_TARGET, BattleScript_LeafGuardProtects
@@ -8177,6 +8181,7 @@ BattleScript_EffectWillOWisp::
 	jumpifabilityorinnate BS_TARGET, ABILITY_PYROCLASTIC, BattleScript_PyroclasticPrevents
 	jumpifabilityorinnate BS_TARGET, ABILITY_COMATOSE, BattleScript_LeafGuardProtects
 	jumpifabilityorinnate BS_TARGET, ABILITY_PURIFYING_SALT, BattleScript_LeafGuardProtects
+	jumpifabilityorinnate BS_TARGET, ABILITY_SILVER_ARMOR, BattleScript_LeafGuardProtects
 	jumpifflowerveil BattleScript_FlowerVeilProtects
 	jumpifleafguardprotected BS_TARGET, BattleScript_LeafGuardProtects
 	jumpifshieldsdown BS_TARGET, BattleScript_LeafGuardProtects
@@ -8499,6 +8504,7 @@ BattleScript_EffectYawn::
 	jumpifabilityorinnate BS_TARGET, ABILITY_INSOMNIA, BattleScript_PrintBankInsomniaMadeIneffective
 	jumpifabilityorinnate BS_TARGET, ABILITY_COMATOSE, BattleScript_PrintBankAbilityMadeIneffective
 	jumpifabilityorinnate BS_TARGET, ABILITY_PURIFYING_SALT, BattleScript_PrintBankAbilityMadeIneffective
+	jumpifabilityorinnate BS_TARGET, ABILITY_SILVER_ARMOR, BattleScript_PrintBankAbilityMadeIneffective
 	jumpifflowerveil BattleScript_FlowerVeilProtects
 	jumpifleafguardprotected BS_TARGET, BattleScript_LeafGuardProtects
 	jumpifshieldsdown BS_TARGET, BattleScript_LeafGuardProtects
@@ -12971,16 +12977,12 @@ BattleScript_PowerObeliskEnd::
 	end3
 
 BattleScript_SwitchInMoveEffectMsg::
-	call BattleScript_SwitchInMoveEffectRet
-	end3
-
-BattleScript_SwitchInMoveEffectRet::
 	call BattleScript_AbilityPopUp
-	playmoveanimation BS_SCRIPTING, MOVE_NONE
+	playmoveanimation BS_TARGET, MOVE_NONE
 	waitanimation
-	printfromtable gSwitchInMoveEffectStringIds
+	printstring STRINGID_ABILITY_MOVEWASUSED
 	waitmessage B_WAIT_TIME_LONG
-	return
+	end3
 
 BattleScript_EvoboostSyncRaiseStat::
 	statbuffchange MOVE_EFFECT_AFFECTS_ATTACKER | STAT_BUFF_NOT_PROTECT_AFFECTED | MOVE_EFFECT_CERTAIN, NULL

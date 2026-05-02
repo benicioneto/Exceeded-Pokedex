@@ -169,11 +169,11 @@ LilycoveCity_PoliceStation_Text_Police1:
 	.string "region's underworld, and is supected\l"
 	.string "that their operations of illegal\l"
 	.string "poaching and Pokémon traffick\l"
-	.string "reached Hoenn region too…$"
+	.string "reached the Hoenn region too…$"
 
 LilycoveCity_PoliceStation_Text_Police2:
 	.string "It's said that agent Looker and the\n"
-	.string "International Police storm the\l"
+	.string "International Police stormed the\l"
 	.string "Viridian Gym, but couldn't handle\l"
 	.string "a single Pokémon from Giovanni…\p"
 	.string "He took care of all International\n"

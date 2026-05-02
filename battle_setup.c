@@ -37,6 +37,8 @@
 #include "mirage_tower.h"
 #include "field_screen_effect.h"
 #include "data.h"
+#include "pokemon.h"
+#include "constants/abilities.h"
 #include "constants/battle_frontier.h"
 #include "constants/battle_setup.h"
 #include "constants/game_stat.h"
@@ -1982,6 +1984,81 @@ bool8 NuzlockeIsCaptureBlockedBySameEvoline(u16 species)
     return FALSE;
 }
 
+bool8 HasSpeciesAbilityTypeChange(u16 species)
+{
+    u16 i;
+    u16 monAbility;
+    if (gSaveBlock2Ptr->newGameOptions.tx_Challenges_AbilityTypeChallenge)
+    {
+        for (i = 0; i < MAX_LEVEL_UP_MOVES && gLevelUpAbilityLearnsets[species][i].ability != LEVEL_UP_END; i++)
+        { 
+            monAbility = gLevelUpAbilityLearnsets[species][i].ability;
+            switch (gSaveBlock2Ptr->newGameOptions.tx_Challenges_OneTypeChallenge)
+            {
+                case TYPE_BUG:
+                    if (monAbility == ABILITY_CRUSTACEAN
+                    || (monAbility == ABILITY_BATESIAN_MIMICRY && (species == SPECIES_LURANTIS || species == SPECIES_FOMANTIS)))
+                        return TRUE;
+                    break;
+                case TYPE_PSYCHIC:
+                    if (monAbility == ABILITY_LATENT_PSYCHE)
+                        return TRUE;
+                    break;
+                case TYPE_FIGHTING:
+                    if (monAbility == ABILITY_KAMEN_RIDER || monAbility == ABILITY_WRESTLING_HEEL)
+                        return TRUE;
+                    break;
+                case TYPE_FIRE:
+                    if (monAbility == ABILITY_BONFIRE_BLOSSOM)
+                        return TRUE;
+                    break;
+                case TYPE_GRASS:
+                    if (monAbility == ABILITY_FLOWER_GARDENER || monAbility == ABILITY_PETRIFIED_WOOD
+                    || (monAbility == ABILITY_BATESIAN_MIMICRY && (species == SPECIES_BONSLY || species == SPECIES_SUDOWOODO || species == SPECIES_SUDOWOODO_GOLDEN)))
+                        return TRUE;
+                    break;
+                case TYPE_DARK:
+                    if (monAbility == ABILITY_VICIOUSNESS || monAbility == ABILITY_NOCTURNAL)
+                        return TRUE;
+                    break;
+                case TYPE_ELECTRIC:
+                    if (monAbility == ABILITY_ELECTROCYTES)
+                        return TRUE;
+                    break;
+                case TYPE_WATER:
+                    if (monAbility == ABILITY_AQUATIC || monAbility == ABILITY_HYDRENCHYMA)
+                        return TRUE;
+                    break;
+                case TYPE_DRAGON:
+                    if (monAbility == ABILITY_DRAGONFLY || monAbility == ABILITY_HALF_DRAKE)
+                        return TRUE;
+                    break;
+                case TYPE_ICE:
+                    if (monAbility == ABILITY_NORTH_WIND || monAbility == ABILITY_HALF_DINO)
+                        return TRUE;
+                    break;
+                case TYPE_ROCK:
+                    if (monAbility == ABILITY_FOSSILIZED)
+                        return TRUE;
+                    break;
+                case TYPE_STEEL:
+                    if (monAbility == ABILITY_IRONCLAD_KEEL)
+                        return TRUE;
+                    break;
+                case TYPE_GHOST:
+                    if (monAbility == ABILITY_PHANTOM)
+                        return TRUE;
+                    break;
+                case TYPE_GROUND:
+                    if (monAbility == ABILITY_BEDOUIN)
+                        return TRUE;
+                    break;
+            }
+        }
+    }
+    return FALSE;
+}
+
 bool8 IfSpeciesIsBlockedForOneTypeChallenge(u16 species)
 {
     u32 i, j = 0;
@@ -1991,6 +2068,10 @@ bool8 IfSpeciesIsBlockedForOneTypeChallenge(u16 species)
     if (typeChallenge == TX_CHALLENGE_TYPE_OFF)
         return FALSE;
     if (GetTypeBySpecies(species, 1) == typeChallenge || GetTypeBySpecies(species, 2) == typeChallenge)
+        return FALSE;
+
+    // Allow ability type change (third type)
+    if (HasSpeciesAbilityTypeChange(species))
         return FALSE;
 
     //First Evolution
