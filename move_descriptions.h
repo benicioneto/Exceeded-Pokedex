@@ -1205,7 +1205,7 @@ static const u8 sIceBallDescription[] = _(
     "power on successive hits.");
 
 static const u8 sNeedleArmDescription[] = _(
-    "Attacks with thorny arms.\n"
+    "Sets Spikes on target's side.\n"
     "May cause flinching.");
 
 static const u8 sSlackOffDescription[] = _(

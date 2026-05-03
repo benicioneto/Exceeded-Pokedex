@@ -1883,10 +1883,11 @@ BattleScript_EffectCeaselessEdge::
 	attackstring
 	ppreduce
 	call BattleScript_EffectDamage_Ret
-	seteffectwithchance
 	trysetspikes BattleScript_EffectCeaselessEdgeFailed
 	printstring STRINGID_SPIKESSCATTERED
 BattleScript_EffectCeaselessEdgeFailed:
+	argumenttomoveeffect
+	seteffectwithchance
 	tryfaintmon BS_TARGET, FALSE, NULL
 	moveendall
 	end
@@ -10921,6 +10922,14 @@ BattleScript_TargetFormChange::
 	playanimation BS_TARGET, B_ANIM_FORM_CHANGE, NULL
 	waitanimation
 	handleformchange BS_TARGET, 2 
+	return
+
+BattleScript_AbilityBlockedDamage::
+	pause 5
+	copybyte gBattlerAbility, gBattlerTarget
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_MOVE_WAS_BLOCKED_BY
+	waitmessage 1
 	return
 
 BattleScript_IllusionOff::
