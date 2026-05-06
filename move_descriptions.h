@@ -3303,6 +3303,10 @@ static const u8 sMalignantChainDescription[] = _(
     "A corrosive chain attack\n"
     "that may badly poison.");
 
+static const u8 sNihilLightDescription[] = _(
+    "Bypass target's stats\n"
+    "and Fairy immunity.");
+
 static const u8 sNotDoneYetDescription[] = _(
     "Not done yet.");
 
@@ -3950,6 +3954,27 @@ static const u8 sFULL_POWER_PSY_AY_AYDescription[] = _("Powerful, but leaves the
 static const u8 sCOLOSSEUM_TERRAINDescription[] = _("Summons a fighting-type terrain\nin the battlefield.");
 static const u8 sDRACONIC_TERRAINDescription[] = _("Summons a dragon-type terrain\nin the battlefield.");
 static const u8 sWORST_NIGHTMAREDescription[] = _("Hurts a foe harder if it has\nan ailment. May induce sleep.");
+static const u8 sHIGH_VOLTAGE_SIEGEDescription[] = _("Creates a thunderstorm\nfor five turns.");
+static const u8 sULTRA_SWOLE_SLAMDescription[] = _("Does double damage to foes\nwith half HP.");	
+static const u8 sEXPLOSIVE_HEAT_HAZEDescription[] = _("Eliminates all stat changes.\nBurns the target.");
+static const u8 sVERDANT_ANGERDescription[] = _("Generates a shock wave that\nsharply reduces Speed.");
+static const u8 sRENEVANT_RENDDescription[] = _("A fast swipes that stries\nfirst than foe.");	
+static const u8 sPSYKABOOMDescription[] = _("A powerful loyalty attack.\nThe user flinches if hit.");	
+static const u8 sICE_WING_WHITEOUTDescription[] = _("2 to 3 turns of rage.\nTakes less physical damage.");
+static const u8 sMIST_BLASTDescription[] = _("Summons a mind blast.\nWorks well with a eon blast.");
+static const u8 sEON_BLASTDescription[] = _("Summons a eon blast.\nWorks well with a mind blast.");	
+static const u8 sFIREBIRD_INFERNODescription[] = _("Searches out weak spots,\nthen strikes the next turn.");
+static const u8 sFLUFFY_CREAM_SUPREMEDescription[] = _("Heals you and all of\nTrainer's party.");	
+static const u8 sLUNGING_LEEK_NOVADescription[] = _("A high power lunge that\nforces recharge next turn.");	
+static const u8 sAQUAMARINE_SPLASHDescription[] = _("Knocks the foe away to end\nthe battle.");
+static const u8 sINVERSE_ROOMDescription[] = _("Inverse the type chart for\nall Pokémon for 5 turns.");
+static const u8 sWEIGHT_ROOMDescription[] = _("Lighter Pokémon get to move\nfirst for 5 turns.");
+static const u8 sAVERAGE_ROOMDescription[] = _("Average offensive and defense\nstats for 5 turns.");
+static const u8 sDINNER_ROOMDescription[] = _("All healing effects are\nincreased by half for 5 turns.");
+static const u8 sLIVING_ROOMDescription[] = _("Pokémon on the field cannot\nfaint for 1 turn.");
+static const u8 sNULL_ROOMDescription[] = _("Pokémon's abilities are negated\nfor 5 turns.");
+static const u8 sBONE_LUNGEDescription[] = _("An extremely fast attack\nthat always strikes first.");
+static const u8 sSOBERING_PUNCHDescription[] = _("Powerful against poisoned\nfoes, but also heals them.");
 
 // MOVE_NONE is ignored in this table. Make sure to always subtract 1 before getting the right pointer.
 const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
@@ -4803,6 +4828,7 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_PSYCHIC_NOISE - 1] = sPsychicNoiseDescription,
     [MOVE_UPPER_HAND - 1] = sUpperHandDescription,
     [MOVE_MALIGNANT_CHAIN - 1] = sMalignantChainDescription,
+    [MOVE_NIHIL_LIGHT - 1] = sNihilLightDescription,
     [MOVE_KINGS_GRACE - 1] = sKINGS_GRACEDescription,
     [MOVE_FROZEN_TERRAIN - 1] = sFROZEN_TERRAINDescription,
     [MOVE_CURSED_TERRAIN - 1] = sCURSED_TERRAINDescription,
@@ -4980,5 +5006,25 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_COLOSSEUM_TERRAIN - 1] = sCOLOSSEUM_TERRAINDescription,
     [MOVE_DRACONIC_TERRAIN - 1] = sDRACONIC_TERRAINDescription,
     [MOVE_WORST_NIGHTMARE - 1] = sWORST_NIGHTMAREDescription,
-
+    [MOVE_HIGH_VOLTAGE_SIEGE - 1] = sHIGH_VOLTAGE_SIEGEDescription,
+    [MOVE_ULTRA_SWOLE_SLAM - 1] = sULTRA_SWOLE_SLAMDescription,
+    [MOVE_EXPLOSIVE_HEAT_HAZE - 1] = sEXPLOSIVE_HEAT_HAZEDescription,
+    [MOVE_VERDANT_ANGER - 1] = sVERDANT_ANGERDescription,
+    [MOVE_RENEVANT_REND - 1] = sRENEVANT_RENDDescription,
+    [MOVE_PSYKABOOM - 1] = sPSYKABOOMDescription,
+    [MOVE_ICE_WING_WHITEOUT - 1] = sICE_WING_WHITEOUTDescription,
+    [MOVE_MIST_BLAST - 1] = sMIST_BLASTDescription,
+    [MOVE_EON_BLAST - 1] = sEON_BLASTDescription,
+    [MOVE_FIREBIRD_INFERNO - 1] = sFIREBIRD_INFERNODescription,
+    [MOVE_FLUFFY_CREAM_SUPREME - 1] = sFLUFFY_CREAM_SUPREMEDescription,
+    [MOVE_LUNGING_LEEK_NOVA - 1] = sLUNGING_LEEK_NOVADescription,
+    [MOVE_AQUAMARINE_SPLASH - 1] = sAQUAMARINE_SPLASHDescription,
+    [MOVE_INVERSE_ROOM - 1] = sINVERSE_ROOMDescription,
+    [MOVE_WEIGHT_ROOM - 1] = sWEIGHT_ROOMDescription,
+    [MOVE_AVERAGE_ROOM - 1] = sAVERAGE_ROOMDescription,
+    [MOVE_DINNER_ROOM - 1] = sDINNER_ROOMDescription,
+    [MOVE_LIVING_ROOM - 1] = sLIVING_ROOMDescription,
+    [MOVE_NULL_ROOM - 1] = sNULL_ROOMDescription,
+    [MOVE_BONE_LUNGE - 1] = sBONE_LUNGEDescription,
+    [MOVE_SOBERING_PUNCH - 1] = sSOBERING_PUNCHDescription,
 };

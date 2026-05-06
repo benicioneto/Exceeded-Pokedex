@@ -8793,7 +8793,7 @@ const struct Item gItems[] =
 
     [ITEM_EXCADRITE] =
     {
-        .name = _("Excadrillite"),
+        .name = _("Excadrite"),
         .itemId = ITEM_EXCADRITE,
         .price = 0,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
@@ -8829,7 +8829,7 @@ const struct Item gItems[] =
 
     [ITEM_SCRAFTINITE] =
     {
-        .name = _("Scraftyite"),
+        .name = _("Scraftinite"),
         .itemId = ITEM_SCRAFTINITE,
         .price = 0,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
@@ -8865,7 +8865,7 @@ const struct Item gItems[] =
 
     [ITEM_CHANDELURITE] =
     {
-        .name = _("Chandelureite"),
+        .name = _("Chandelurite"),
         .itemId = ITEM_CHANDELURITE,
         .price = 0,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
@@ -8919,7 +8919,7 @@ const struct Item gItems[] =
 
     [ITEM_GRENINJITE] =
     {
-        .name = _("Greninjaite"),
+        .name = _("Greninjite"),
         .itemId = ITEM_GRENINJITE,
         .price = 0,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
@@ -9009,7 +9009,7 @@ const struct Item gItems[] =
 
     [ITEM_DRAGALGITE] =
     {
-        .name = _("Dragalbite"),
+        .name = _("Dragalgite"),
         .itemId = ITEM_DRAGALGITE,
         .price = 0,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
@@ -9225,7 +9225,7 @@ const struct Item gItems[] =
 
     [ITEM_STARAPTITE] =
     {
-        .name = _("Staraptorite"),
+        .name = _("Staraptite"),
         .itemId = ITEM_STARAPTITE,
         .price = 0,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
@@ -9351,7 +9351,7 @@ const struct Item gItems[] =
 
     [ITEM_MAGEARNITE] =
     {
-        .name = _("Magearnaite"),
+        .name = _("Magearnite"),
         .itemId = ITEM_MAGEARNITE,
         .price = 0,
         .holdEffect = HOLD_EFFECT_MEGA_STONE,
@@ -11457,7 +11457,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .secondaryId = TYPE_ROCK,
-        .equipSlot = EQUIP_SLOT_1,
+        .equipSlot = EQUIP_SLOT_3,
     },
 
     [ITEM_WELLSPRING_MASK] =
@@ -11472,7 +11472,7 @@ const struct Item gItems[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .secondaryId = TYPE_WATER,
-        .equipSlot = EQUIP_SLOT_1,
+        .equipSlot = EQUIP_SLOT_3,
     },
 
     [ITEM_HEARTHFLAME_MASK] =
@@ -11487,6 +11487,6 @@ const struct Item gItems[] =
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .secondaryId = TYPE_FIRE,
-        .equipSlot = EQUIP_SLOT_1,
+        .equipSlot = EQUIP_SLOT_3,
     },
 };

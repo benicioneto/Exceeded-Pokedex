@@ -789,6 +789,9 @@ static const u8 sJuicemakerDescription[] = _("Hold Juice after berry.");
 static const u8 sGlassCannonDescription[] = _("Ups offensive loses def.");
 static const u8 sMasterKickerDescription[] = _("Kicking moves gain STAB.");
 static const u8 sLimitBreakerDescription[] = _("Boosts base stats.");
+static const u8 sDrunkenFistDescription[] = _("Drinks alcohol on entry.");
+static const u8 sSweetGaugeDescription[] = _("Boosts self healing.");
+static const u8 sBoozeRemedyDescription[] = _("Restores HP if poisoned.");
 
 const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
 {
@@ -1515,6 +1518,9 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_GLASS_CANNON] = _("Glass Cannon"),
     [ABILITY_MASTER_KICKER] = _("Master Kicker"),
     [ABILITY_LIMIT_BREAKER] = _("Limit Breaker"),
+    [ABILITY_DRUNKEN_FIST] = _("Drunken Fist"),
+    [ABILITY_SWEET_GAUGE] = _("Sweet Gauge"),
+    [ABILITY_BOOZE_REMEDY] = _("Booze Remedy"),
 };
 
 const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
@@ -2242,6 +2248,9 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_GLASS_CANNON] = sGlassCannonDescription,
     [ABILITY_MASTER_KICKER] = sMasterKickerDescription,
     [ABILITY_LIMIT_BREAKER] = sLimitBreakerDescription,
+    [ABILITY_DRUNKEN_FIST] = sDrunkenFistDescription,
+    [ABILITY_SWEET_GAUGE] = sSweetGaugeDescription,
+    [ABILITY_BOOZE_REMEDY] = sBoozeRemedyDescription,
 };
 
 // ABILITY_TRUANT
@@ -2790,7 +2799,7 @@ static const u8 sOutbreakDescriptionExtended[] = _("When the Pokémon faints, th
 static const u8 sPandemicDescriptionExtended[] = _("When the Pokémon attacks or i-\ns attacked by a move that make-\ns contact, the opposing Pokémo-\nn becomes infected by Cordycep-\ns. Cordyceps effect: Steal 25%\nof the infected Pokémon's Att-\nack and Special Attack stats a-\nnd steal 1/8 of their maximum \nHP each turn. They may attack \nits allies in Double Battles.");
 static const u8 sGrimtoothDescriptionExtended[] = _("The Pokémon cloaks itself as \nsoon as it enters the battlefi-\neld. While cloaked, the Accura-\ncy of single-target move used \nagainst the Pokémon is reduced\nby 20%. Using a damaging move\nwill remove the cloak, but gu-\nn and shot moves will always b-\ne critical hit.");
 static const u8 sSlottedShellDescriptionExtended[] = _("The Pokémon creates a random \nshell whenever it enters the b-\nattlefield or after using gun \nand shot moves. Shrapnel Shell-\n: Deals 1/16 of maximum HP. Pi-\nercing Shell: Bonus of 33% of \ntarget's Defense. Explosive Sh-\nell: Ignores ignorable abiliti-\nes. Incendiary Shell: Burns th-\ne target. Shotgun Slug: May fl-\ninch. Anti-Material Shell: Dea-\nls physical or special damage.");
-static const u8 sTraumaticFistDescriptionExtended[] = _("Punching moves have a chance \nof lowering a random stat of t-\nhe target by one stage, depend-\ning on the base power of the u-\nsed move. Special Technique: I-\nce Hammer and Hammer Arm alway-\ns lower target's Speed stat by\none stages.");
+static const u8 sTraumaticFistDescriptionExtended[] = _("Punching moves have a chance \nof lowering a random stat of t-\nhe target by one stage, depend-\ning on the base power of the u-\nsed move. Special Technique: I-\nce Hammer and Hammer Arm alway-\ns lower target's Speed stat by\none stage.");
 static const u8 sGoldenArmorDescriptionExtended[] = _("The Pokémon is healed instead\nof being damaged by recoil fr-\nom moves, except when using St-\nruggle.");
 static const u8 sElementistDescriptionExtended[] = _("When the Pokémon attacks with\nWater-, Electric- or Fire-typ-\ne damaging moves, they deal 20\n% more damage, and if it is a \nWater-type move, restore HP eq-\nual to 1/16 of the Pokémon's m-\naximum HP, or if it is a Elect-\nric-type move, there is a 20% \nchance of flinching, or if it \nis a Fire-type move, deals add-\nitional damage equal to 1/8 of\ntarget's missing HP.");
 static const u8 sGuardianDeityDescriptionExtended[] = _("When the Pokémon enters the b-\nattlefield and the Pokémon has\na type corresponding to the a-\nctive terrain, its highest sta-\nt is increased by 30%, or 50% \nif Speed is the highest stat.");
@@ -2962,11 +2971,14 @@ static const u8 sMartialProdigyDescriptionExtended[] = _("The power of punching 
 static const u8 sFutureGazeDescriptionExtended[] = _("While under harsh sunlight, b-\noosts the Pokémon's Accuracy a-\nnd Evasion by 50%.");
 static const u8 sStradivariusDescriptionExtended[] = _("When the Pokémon attacks with\na sound-based move, there is \na 30% chance the target will b-\necome asleep.");
 static const u8 sPressureBurstDescriptionExtended[] = _("When the Pokémon is attacked \nby a damaging move, its Defens-\ne and Special Defense stats ar-\ne decreased by one stage and i-\nts Attack, Special Attack and \nSpeed stats are increased by o-\nne stage.");
-static const u8 sPowerSplasherDescriptionExtended[] = _("The move Splash used by the P-\nokémon becomes Water-type Phys-\nical move, targets all other P-\nokémon on the field and has 10\n0 base power.");
-static const u8 sJuicemakerDescriptionExtended[] = _("After the Pokémon consumes it-\ns berry, it will produce an Be-\nrry Juice.");
+static const u8 sPowerSplasherDescriptionExtended[] = _("The move Splash used by the P-\nokémon becomes Water-type move\n, targets all other Pokémon on\nthe field and has 100 base po-\nwer. If the Pokémon's Attack s-\ntat is higher than its Special\nAttack, it becomes Physical m-\nove, otherwise it becomes Spec-\nial move.");
+static const u8 sJuicemakerDescriptionExtended[] = _("After the Pokémon consumes it-\ns berry, it will produce an Be-\nrry Juice. (Not Implemented)");
 static const u8 sGlassCannonDescriptionExtended[] = _("Increases the Pokémon's Attac-\nk, Special Attack and Speed by\n50%, but lowers its Defense a-\nnd Special Defense by 50%. In \nadditional, it receives recoil\ndamage equal to 33% of damage\ndealt.");
 static const u8 sMasterKickerDescriptionExtended[] = _("Kicking moves used by the Pok-\némon will gain same-type attac-\nk bonus regarless its type.");
-static const u8 sLimitBreakerDescriptionExtended[] = _("Breaks the Pokémon's limits, \nboosting its base stats: Attac-\nk is quadrupled, Special Defen-\nse and Speed are tripled, and \nDefense is doubled.");
+static const u8 sLimitBreakerDescriptionExtended[] = _("Breaks the Pokémon's limits, \nboosting its base stats: Attac-\nk stat is quadrupled, Special \nDefense and Speed stats are tr-\nipled, and Defense stat is dou-\nbled.");
+static const u8 sDrunkenFistDescriptionExtended[] = _("The Pokémon becomes Drunk upo-\nn entering the battlefield. Sp-\necial Technique: Dizzy Punch m-\nay inflict Drunk on the target\ninstead. Drunk: Applies poiso-\nn damage each turn, causes con-\nfusion and ignores most of imm-\nunities.");
+static const u8 sSweetGaugeDescriptionExtended[] = _("All healing effects on the Po-\nkémon are increased by 50%. (N-\not implemented)");
+static const u8 sBoozeRemedyDescriptionExtended[] = _("If the Pokémon is poisoned or\nbadly poisoned, its HP is res-\ntored by 1/8 of its maximum HP\nat the end of each turn inste-\nad of taking damage. Black Slu-\ndge heals the Pokémon even if \nit isn't Poison-type. The Poké-\nmon doesn't take poison damage\noutside of battle.");
 
 const u8 *const gAbilityDescriptionExtendedPointers[ABILITIES_COUNT] =
 {
@@ -3693,4 +3705,7 @@ const u8 *const gAbilityDescriptionExtendedPointers[ABILITIES_COUNT] =
     [ABILITY_GLASS_CANNON] = sGlassCannonDescriptionExtended,
     [ABILITY_MASTER_KICKER] = sMasterKickerDescriptionExtended,
     [ABILITY_LIMIT_BREAKER] = sLimitBreakerDescriptionExtended,
+    [ABILITY_DRUNKEN_FIST] = sDrunkenFistDescriptionExtended,
+    [ABILITY_SWEET_GAUGE] = sSweetGaugeDescriptionExtended,
+    [ABILITY_BOOZE_REMEDY] = sBoozeRemedyDescriptionExtended,
 };

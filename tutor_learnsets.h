@@ -4598,6 +4598,7 @@ static const u8 sTyrogueTutorLearnset[] =
     TUTOR(DOUBLE_EDGE),
     TUTOR(ENDURE),
     TUTOR(MEGA_KICK),
+    TUTOR(MEGA_PUNCH),
     TUTOR(MIMIC),
     TUTOR(MUD_SLAP),
     TUTOR(ROCK_SLIDE),

@@ -160,7 +160,7 @@ MossdeepCity_BillsHouse_Text_Zygarde10:
 	.string "I knew you could do that!!$"
 
 MossdeepCity_BillsHouse_Text_TryGiveZygardeCube:
-	.string "Bill: It appears to have cells spreaded\n"
+	.string "Bill: It appears to have cells spread\n"
 	.string "all over the Hoenn and they come to\l"
 	.string "protect nature when it is threatened.\p"
 	.string "Please, for my research I need to\n"

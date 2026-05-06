@@ -17768,6 +17768,7 @@ static const u8 sDarmanitanTMHMLearnset[] =
 };
 static const u8 sMaractusTMHMLearnset[] =
 {
+    TMHM(TM03_WATER_PULSE),
     TMHM(TM66_HEADBUTT),
     TMHM(TM59_NATURAL_GIFT),
     TMHM(TM58_NATURE_POWER),
