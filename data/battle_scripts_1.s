@@ -11209,11 +11209,15 @@ BattleScript_MoveUsedIsAsleep::
 	goto BattleScript_MoveEnd
 
 BattleScript_MoveUsedIsHibernating::
+	call BattleScript_MoveUsedIsHibernatingRet
+	goto BattleScript_MoveEnd
+
+BattleScript_MoveUsedIsHibernatingRet::
 	printstring STRINGID_PKMNFASTASLEEP
 	waitmessage B_WAIT_TIME_LONG
 	statusanimation BS_ATTACKER	
 	call BattleScript_AbilityHpHeal
-	goto BattleScript_MoveEnd
+	return
 
 BattleScript_MoveUsedWokeUp::
 	bicword gHitMarker, HITMARKER_x10
@@ -11238,13 +11242,6 @@ BattleScript_MoveUsedWokeUpWithEarlyBird::
 	printfromtable gStatUpStringIds
 	waitmessage B_WAIT_TIME_LONG
 BattleScript_MoveUsedWokeUpWithEarlyBirdEnd:
-	return
-
-BattleScript_MoveUsedIsHibernatingRet::
-	printstring STRINGID_PKMNFASTASLEEP
-	waitmessage B_WAIT_TIME_LONG
-	statusanimation BS_ATTACKER	
-	call BattleScript_AbilityHpHeal
 	return
 
 BattleScript_MonWokeUpInUproar::
@@ -12255,6 +12252,71 @@ BattleScript_FrightenPrevented:
 	waitmessage B_WAIT_TIME_LONG
 	call BattleScript_TryAdrenalineOrb
 	goto BattleScript_FrightenActivatesLoopIncrement
+
+BattleScript_ScarecrowActivatesEnd3::
+	call BattleScript_ScarecrowActivates
+	end3
+
+BattleScript_ScarecrowActivates::
+	pause B_WAIT_TIME_SHORT
+BattleScript_ScarecrowVigilActivates::
+	setbyte gBattlerTarget, 0
+	sethword sABILITY_OVERWRITE, ABILITY_SCARECROW_VIGIL
+	call BattleScript_AbilityPopUp
+BattleScript_ScarecrowVigilActivatesLoop:
+	trygetintimidatetarget BattleScript_ScarecrowVigilActivatesReturn
+	jumpifstatus2 BS_TARGET, STATUS2_SUBSTITUTION_ANY, BattleScript_ScarecrowVigilActivatesLoopIncrement
+	@jumpifabilitypreventedstatreduction BS_TARGET, STAT_ATK, BattleScript_ScarecrowVigilPrevented
+	jumpifintimidateblocked BS_TARGET, BattleScript_ScarecrowVigilPrevented
+	jumpifbattlerorsideability BS_TARGET, ABILITY_GUARD_DOG, BattleScript_ScarecrowVigilInReverse
+	statbuffchange STAT_BUFF_NOT_PROTECT_AFFECTED | STAT_CHANGE_ALLOW_PTR, BattleScript_ScarecrowVigilActivatesLoopIncrement
+	@jumpifbyte CMP_GREATER_THAN, cMULTISTRING_CHOOSER, 1, BattleScript_ScarecrowVigilActivatesLoopIncrement
+	setbyte sSTAT_ANIM_PLAYED, FALSE
+	playstatchangeanimation BS_TARGET, BIT_ATK | BIT_SPATK, STAT_CHANGE_NEGATIVE | STAT_CHANGE_MULTIPLE_STATS
+	playstatchangeanimation BS_TARGET, BIT_ATK, STAT_CHANGE_NEGATIVE
+	setstatchanger STAT_ATK, 1, TRUE
+	statbuffchange STAT_CHANGE_ALLOW_PTR, BBattleScript_ScarecrowVigilTryLowerSpAtk
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_DECREASE, BBattleScript_ScarecrowVigilTryLowerSpAtk
+	printfromtable gStatDownStringIds
+	waitmessage B_WAIT_TIME_LONG
+BBattleScript_ScarecrowVigilTryLowerSpAtk::
+	playstatchangeanimation BS_TARGET, BIT_DEF, STAT_CHANGE_NEGATIVE
+	setstatchanger STAT_SPATK, 1, TRUE
+	statbuffchange STAT_CHANGE_ALLOW_PTR, BattleScript_TickleEnd
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_DECREASE, BBattleScript_ScarecrowVigilDebufEnd
+	printfromtable gStatDownStringIds
+	waitmessage B_WAIT_TIME_LONG
+BBattleScript_ScarecrowVigilDebufEnd:
+	call BattleScript_TryAdrenalineOrb
+BattleScript_ScarecrowVigilActivatesLoopIncrement:
+	addbyte gBattlerTarget, 1
+	goto BattleScript_ScarecrowVigilActivatesLoop
+BattleScript_ScarecrowVigilActivatesReturn:
+	return
+
+BattleScript_ScarecrowVigilPrevented:
+	pause B_WAIT_TIME_SHORT
+	call BattleScript_AbilityPopUp
+	setbyte gBattleCommunication STAT_ATK
+	stattextbuffer BS_ATTACKER
+	printstring STRINGID_STATWASNOTLOWERED
+	waitmessage B_WAIT_TIME_LONG
+	call BattleScript_TryAdrenalineOrb
+	goto BattleScript_ScarecrowVigilActivatesLoopIncrement
+
+BattleScript_ScarecrowVigilInReverse:
+	copybyte gEffectBattler, gBattlerTarget
+	copybyte sBATTLER, gBattlerTarget
+	call BattleScript_AbilityPopUp
+	pause B_WAIT_TIME_SHORT
+	setstatchanger STAT_ATK, 1, FALSE
+	statbuffchange MOVE_EFFECT_AFFECTS_ATTACKER | STAT_BUFF_NOT_PROTECT_AFFECTED | MOVE_EFFECT_CERTAIN, NULL
+	setgraphicalstatchangevalues
+	playanimation BS_TARGET, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+	call BattleScript_TryAdrenalineOrb
+	goto BattleScript_ScarecrowVigilActivatesLoopIncrement
 
 BattleScript_IntimidateActivatesEnd3::
 	call BattleScript_PauseIntimidateActivates

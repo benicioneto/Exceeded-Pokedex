@@ -18705,7 +18705,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .split = SPLIT_SPECIAL,
-        .argument2 = MOVE_EFFECT_FLINCH,
+        .argument2 = MOVE_EFFECT_BURN,
         .zMovePower = 200,
         .zMoveEffect = Z_EFFECT_NONE,
     },
@@ -18872,7 +18872,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_SOBERING_PUNCH] =
     {
-        .power = 90,
+        .power = 100,
         .zMovePower = 200,
         .effect = EFFECT_SMELLINGSALT,
         .type = TYPE_PSYCHIC,
