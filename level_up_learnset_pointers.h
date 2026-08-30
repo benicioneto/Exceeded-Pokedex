@@ -1485,6 +1485,7 @@ const struct LevelUpMove *const gLevelUpLearnsets[NUM_SPECIES] =
     [SPECIES_CALYREX_SHADOW_RIDER] = sCalyrexShadowRiderLevelUpLearnset,
     [SPECIES_ENAMORUS_THERIAN] = sEnamorusLevelUpLearnset,
     [SPECIES_REMORAID_COMMENSAL] = sNoneLevelUpLearnset,
+    [SPECIES_SKRELP_MUTUALISM] = sNoneLevelUpLearnset,
     [SPECIES_ONIX_CRYSTAL] = sOnixCrystalLevelUpLearnset,
     [SPECIES_SNORLAX_SNOW] = sSnorlaxSnowLevelUpLearnset,
     [SPECIES_ZYGARDE_CELL] = sZygardeCellLevelUpLearnset,

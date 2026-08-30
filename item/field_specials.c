@@ -2114,7 +2114,7 @@ static void Task_MoveElevatorWindowLights(u8 taskId)
 void BufferVarsForIVRater(void)
 {
     u8 i;
-    u32 ivStorage[NUM_STATS];
+    u32 ivStorage[NUM_BASIC_STATS];
 
     ivStorage[STAT_HP] = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_HP_IV);
     ivStorage[STAT_ATK] = GetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_ATK_IV);
@@ -2125,7 +2125,7 @@ void BufferVarsForIVRater(void)
 
     gSpecialVar_0x8005 = 0;
 
-    for (i = 0; i < NUM_STATS; i++)
+    for (i = 0; i < NUM_BASIC_STATS; i++)
     {
         gSpecialVar_0x8005 += ivStorage[i];
     }
@@ -2133,7 +2133,7 @@ void BufferVarsForIVRater(void)
     gSpecialVar_0x8006 = 0;
     gSpecialVar_0x8007 = ivStorage[STAT_HP];
 
-    for (i = 1; i < NUM_STATS; i++)
+    for (i = 1; i < NUM_BASIC_STATS; i++)
     {
         if (ivStorage[gSpecialVar_0x8006] < ivStorage[i])
         {
@@ -2507,7 +2507,7 @@ void ShowScrollableMultichoice(void)
             break;
         case SCROLL_MULTI_ST_EXCHANGE_CORNER_EVOLVE_STONE_VENDOR:
             task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
-            task->tNumItems = 11;
+            task->tNumItems = 16;
             task->tLeft = 14;
             task->tTop = 1;
             task->tWidth = 15;
@@ -2517,7 +2517,7 @@ void ShowScrollableMultichoice(void)
             break;
         case SCROLL_MULTI_VT_EXCHANGE_CORNER_EVOLVE_ITEM_VENDOR:
             task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
-            task->tNumItems = 15;
+            task->tNumItems = 16;
             task->tLeft = 14;
             task->tTop = 1;
             task->tWidth = 15;
@@ -2527,7 +2527,7 @@ void ShowScrollableMultichoice(void)
             break;
         case SCROLL_MULTI_FT_EXCHANGE_CORNER_EVOLVE_ITEM_VENDOR:
             task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
-            task->tNumItems = 14;
+            task->tNumItems = 15;
             task->tLeft = 14;
             task->tTop = 1;
             task->tWidth = 15;
@@ -2750,6 +2750,7 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
     },
     [SCROLL_MULTI_ST_EXCHANGE_CORNER_EVOLVE_STONE_VENDOR] =
     {
+        //maximum 16 items + exit (should remove exit?)
         gText_FireStone48BP,
         gText_WaterStone48BP,
         gText_ThunderStone48BP,
@@ -2759,40 +2760,49 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_ShinyStone99BP,
         gText_DuskStone99BP,
         gText_DawnStone99BP,
-        gText_IceStone99BP,
+        gText_IceStone128BP,
+        gText_DragonScale128BP,
+        gText_Upgrade128BP,
+        gText_SweetApple128BP,
+        gText_TarApple128BP,
+        gText_SyrupyApple128BP,
         gText_Exit
     },
     [SCROLL_MULTI_VT_EXCHANGE_CORNER_EVOLVE_ITEM_VENDOR] =
     {
-        gText_ChippedPot64BP,
-        gText_CrackedPot64BP,
-        gText_UnremarkableTeacup64BP,
-        gText_MasterpieceTeacup64BP,
-        gText_GalaricaCuff64BP,
-        gText_GalaricaWreath64BP,
-        gText_SweetApple99BP,
-        gText_TarApple99BP,
-        gText_SyrupyApple99BP,
-        gText_RazorClaw128BP,
-        gText_RazorFang128BP,
-        gText_PeatBlock128BP,
+        //maximum 16 items + exit (should remove exit?)
+        gText_Sachet64BP,
+        gText_WhippedDream64BP,
+        gText_StrawberrySweet64BP,
+        gText_LoveSweet64BP,
+        gText_BerrySweet64BP,
+        gText_CloverSweet64BP,
+        gText_FlowerSweet64BP,
+        gText_StarSweet64BP,
+        gText_RibbonSweet64BP,
+        gText_GalaricaCuff99BP,
+        gText_GalaricaWreath99BP,
+        gText_RazorClaw99BP,
+        gText_RazorFang99BP,
         gText_BlackAugurite128BP,
         gText_MetalAlloy128BP,
         gText_Exit
     },
     [SCROLL_MULTI_FT_EXCHANGE_CORNER_EVOLVE_ITEM_VENDOR] =
     {
-        gText_Sachet64BP,
-        gText_WhippedDream64BP,
+        //maximum 16 items + exit (should remove exit?)
+        gText_ChippedPot64BP,
+        gText_CrackedPot64BP,
+        gText_UnremarkableTeacup64BP,
+        gText_MasterpieceTeacup64BP,
         gText_OvalStone64BP,
-        gText_DragonScale99BP,
-        gText_Upgrade99BP,
+        gText_Electirizer99BP,
+        gText_Magmarizer99BP,
+        gText_ReaperCloth99BP,
+        gText_PrismScale99BP,
         gText_DubiousDisc128BP,
-        gText_Electirizer128BP,
-        gText_Magmarizer128BP,
         gText_Protector128BP,
-        gText_ReaperCloth128BP,
-        gText_PrismScale128BP,
+        gText_PeatBlock128BP,
         gText_AuspiciousArmor128BP,
         gText_MaliciousArmor128BP,
         gText_Exit

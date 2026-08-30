@@ -527,7 +527,7 @@ static const u8 sSpikeCannonDescription[] = _(
 
 static const u8 sConstrictDescription[] = _(
     "Matches user's first type.\n"
-    "May lower Speed.");
+    "Traps, lower Speed each turn.");
 
 static const u8 sAmnesiaDescription[] = _(
     "Forgets about something\n"
@@ -770,8 +770,8 @@ static const u8 sZapCannonDescription[] = _(
     "paralysis, but inaccurate.");
 
 static const u8 sForesightDescription[] = _(
-    "Negates the foe's efforts\n"
-    "to heighten evasiveness.");
+    "Negates the foe's evasion.\n"
+    "Raises Attack and Accuracy.");
 
 static const u8 sDestinyBondDescription[] = _(
     "If the user faints, the foe\n"
@@ -874,8 +874,8 @@ static const u8 sFrustrationDescription[] = _(
     "if the Trainer is disliked.");
 
 static const u8 sSafeguardDescription[] = _(
-    "A mystical force prevents\n"
-    "all status problems.");
+    "Prevents all status problems\n"
+    "and reduces 25% all damage.");
 
 static const u8 sPainSplitDescription[] = _(
     "Adds the user and foe's HP,\n"
@@ -1069,8 +1069,8 @@ static const u8 sNaturePowerDescription[] = _(
     "depending on the location.");
 
 static const u8 sChargeDescription[] = _(
-    "Charges power to boost the\n"
-    "electric move used next.");
+    "Boost next electric move,\n"
+    "S.Def and Speed.");
 
 static const u8 sTauntDescription[] = _(
     "Taunts the foe into only\n"
@@ -1261,8 +1261,8 @@ static const u8 sOverheatDescription[] = _(
     "but sharply lowers Sp. Atk.");
 
 static const u8 sOdorSleuthDescription[] = _(
-    "Negates the foe's efforts\n"
-    "to heighten evasiveness.");
+    "Negates the foe's evasion.\n"
+    "Raises Attack and Accuracy.");
 
 static const u8 sRockTombDescription[] = _(
     "Stops the foe from moving\n"
@@ -1425,8 +1425,8 @@ static const u8 sGRAVITYDescription[] = _(
     "negating levitation.");
 
 static const u8 sMIRACLE_EYEDescription[] = _(
-    "Negate evasiveness and\n"
-    "Dark-type's immunities.");
+    "Negates evasion, Dark-type\n"
+    "immunity. Ups Sp.Atk & Acc.");
 
 static const u8 sWAKE_UP_SLAPDescription[] = _(
     "Powerful against sleeping\n"
@@ -1625,8 +1625,8 @@ static const u8 sDRAGON_PULSEDescription[] = _(
     "damage the foe.");
 
 static const u8 sDRAGON_RUSHDescription[] = _(
-    "Tackles the foe with menace.\n"
-    "May cause flinching.");
+    "A life-risking tackle that\n"
+    "seriously hurts the user.");
 
 static const u8 sPOWER_GEMDescription[] = _(
     "Attacks with rays of light\n"
@@ -3934,7 +3934,7 @@ static const u8 sBANSHEEA_CRYDescription[] = _(
     "Attacks with a eerie cry.\n"
     "The user must then rest.");
 
-static const u8 sPOLLINATION_TERRAINDescription[] = _("Summons a bug-type terrain\nin the battlefield.");
+static const u8 sPOLLINATION_TERRAINDescription[] = _("Summons a Bug terrain.\nNegates stat stages.");
 static const u8 sMARRIAGETOXINDescription[] = _("Poisons yourself and\nyour ally.");
 static const u8 sMASSIVE_BLOOMDescription[] = _("The higher the user's HP,\nthe more damage caused.");
 static const u8 sALLERGIC_EXPLOSIONDescription[] = _("Maybe inflict Poison,\nParalysis or/and Sleep.");
@@ -3945,14 +3945,14 @@ static const u8 sBLACK_SHROUDDescription[] = _("Hurts foe every turn. Double\nda
 static const u8 sCOMBUSTIONDescription[] = _("Powerful against burning\nfoes, but also heals them.");
 static const u8 sABSORB_INTELLECTDescription[] = _("Saps the foe's Sp. Atk to\nheal HP, then drops Sp. Atk.");
 static const u8 sSMASHING_PUMPKINSDescription[] = _("Inflicts severe damage but\nmakes the user faint.");
-static const u8 sFIRE_WALLDescription[] = _("Weakens all attacks, but\nonly usable on fire.");
+static const u8 sFIRE_WALLDescription[] = _("Weakens all attacks, but only\nusable under sunlight.");
 static const u8 sSEAWEED_SNAREDescription[] = _("Strangles the foe with a\nweed. The foe can't flee.");
 static const u8 sSOVEREIGN_SLIDEDescription[] = _("Flinches foe on 1st-turn.\nAlways lowers Speed.");
 static const u8 sTRIAD_BLITZDescription[] = _("For 3 turns, traps both\nuser and foe.");
 static const u8 sKISS_BLISS_KABOOMDescription[] = _("A 2-turn move that raises\nAttack before attacking.");
 static const u8 sFULL_POWER_PSY_AY_AYDescription[] = _("Powerful, but leaves the\nuser immobile & confused.");
-static const u8 sCOLOSSEUM_TERRAINDescription[] = _("Summons a fighting-type terrain\nin the battlefield.");
-static const u8 sDRACONIC_TERRAINDescription[] = _("Summons a dragon-type terrain\nin the battlefield.");
+static const u8 sCOLOSSEUM_TERRAINDescription[] = _("Summons a Fighting terrain.\nPrevents status moves.");
+static const u8 sDRACONIC_TERRAINDescription[] = _("Summons a Dragon terrain.\nWeakens Fairy moves.");
 static const u8 sWORST_NIGHTMAREDescription[] = _("Hurts a foe harder if it has\nan ailment. May induce sleep.");
 static const u8 sHIGH_VOLTAGE_SIEGEDescription[] = _("Creates a thunderstorm\nfor five turns.");
 static const u8 sULTRA_SWOLE_SLAMDescription[] = _("Does double damage to foes\nwith half HP.");	
@@ -3975,6 +3975,66 @@ static const u8 sLIVING_ROOMDescription[] = _("Pokémon on the field cannot\nfai
 static const u8 sNULL_ROOMDescription[] = _("Pokémon's abilities are negated\nfor 5 turns.");
 static const u8 sBONE_LUNGEDescription[] = _("An extremely fast attack\nthat always strikes first.");
 static const u8 sSOBERING_PUNCHDescription[] = _("Powerful against poisoned\nfoes, but also heals them.");
+static const u8 sMIRAGE_WELLSPRINGDescription[] = _("Summons a grassy terrain\nfor 5 turns.");
+static const u8 sCROWSTORMDescription[] = _("An attack that drains half\nthe damage inflicted.");
+static const u8 sSKYROCKET_BLASTDescription[] = _("Blasts itself using a gas\nstored. Lowers user Speed.");
+static const u8 sIRON_CAGEDescription[] = _("Traps the foe for 2-5 turns\ndraining HP each turn.");
+static const u8 sDEHYDRATEDescription[] = _("Super effective on Water-\ntypes. Drains water.");
+static const u8 sKUNG_FU_HUSTLEDescription[] = _("Strikes with a flurry of\npowerful martial arts.");
+static const u8 sMILK_SHOTDescription[] = _("Fires a blast of milk that\nrestores user's HP.");
+static const u8 sANCIENT_WINGSDescription[] = _("Strikes with ancient wings\nthat may raise stats.");
+static const u8 sANCIENT_SHELLDescription[] = _("Strikes with an ancient\nshell that may raise stats.");
+static const u8 sANCIENT_SLASHDescription[] = _("Slashes with an ancient\npower that may raise stats.");
+static const u8 sANCIENT_WEEDDescription[] = _("Strikes with ancient weeds\nthat may raise stats.");
+static const u8 sANCIENT_CHARGEDescription[] = _("Charges with ancient power\nthat may raise stats.");
+static const u8 sANCIENT_MAWDescription[] = _("Bites with an ancient maw\nthat may raise stats.");
+static const u8 sANCIENT_ICEDescription[] = _("Attacks with ancient ice\nthat may raise stats.");
+static const u8 sICE_LANCEDescription[] = _("Hurls a sharp lance of ice.\nIgnores Defense stages.");
+static const u8 sCOTTON_PUNCHDescription[] = _("Strikes with soft cotton\nthat lower Speed and seeds.");
+static const u8 sMANDRAGORA_HOWLDescription[] = _("A terrifying howl that may\nlower the foe's Sp. Atk.");
+static const u8 sELEMENTAL_PUNCHDescription[] = _("Strikes with three elemental\npunches at the same time.");
+static const u8 sHONE_HORNSDescription[] = _("Sharpens its horns, raising\nAttack and critical hits.");
+static const u8 sLICK_WOUNDSDescription[] = _("Licks its wounds to restore\nsome of ally's HP.");
+static const u8 sTONGUE_FLURRYDescription[] = _("Strikes the foe repeatedly\nwith its tongue.");
+static const u8 sMEGA_LICKDescription[] = _("A powerful lick that may\nparalyze the foe.");
+static const u8 sNEW_MOON_KICKDescription[] = _("A lunar kick that may cause\nthe foe to flinch.");
+static const u8 sFULL_MOON_KICKDescription[] = _("A powerful kick that follows\nNew Moon Kick. May flinch.");
+static const u8 sPITCH_NOISEDescription[] = _("High noise that reaches\nfoe's ears very fast.");
+static const u8 sSWEET_BITEDescription[] = _("Attracts opposite gender\nand doubles the damage.");
+static const u8 sCHILLING_WHISPDescription[] = _("Inflicts frostbite on\nthe foe with intense cold.");
+static const u8 sGREEK_GIFTDescription[] = _("Calls upon an ancient gift\nto aid the user.");
+static const u8 sHUNGRY_FEASTDescription[] = _("Consumes the user's Berry,\nthen sharply raises Atk.");
+static const u8 sRAVENOUS_BITEDescription[] = _("Eats the foe's held Berry,\ngaining its effect.");
+static const u8 sCORAL_FILTERDescription[] = _("Evades attacks, and heals\nthe user if struck.");
+static const u8 sDESTRUCTIVE_DRILLDescription[] = _("Ignores the target's Defense,\nprotections and abilities.");
+static const u8 sCOMETDescription[] = _("A fire comet starts to fall\nabove the user.");
+static const u8 sCATACLYSMDescription[] = _("A meteor starts to fall\nabove the user.");
+static const u8 sPILLAGEDescription[] = _("Steals all target's items,\nbut lowers user's defenses.");
+static const u8 sDISRUPTDescription[] = _("Summons an bug-type terrain\nin the battlefield.");
+static const u8 sBRAINSTORMDescription[] = _("Summons an bug-type terrain\nin the battlefield.");
+static const u8 sSWARM_PUNCHDescription[] = _("Summons an bug-type terrain\nin the battlefield.");
+static const u8 sFRIED_EGGDescription[] = _("Summons an bug-type terrain\nin the battlefield.");
+static const u8 sSPOILED_EGGDescription[] = _("Summons an bug-type terrain\nin the battlefield.");
+static const u8 sEGG_DROPDescription[] = _("Summons an bug-type terrain\nin the battlefield.");
+static const u8 sFOSSIL_EGGDescription[] = _("Summons an bug-type terrain\nin the battlefield.");
+static const u8 sDRAGON_EGGDescription[] = _("Summons an bug-type terrain\nin the battlefield.");
+static const u8 sFLYTRAP_BITEDescription[] = _("Summons an bug-type terrain\nin the battlefield.");
+static const u8 sACIDIC_MAWDescription[] = _("Summons an bug-type terrain\nin the battlefield.");
+static const u8 sNECTAR_SIPHONDescription[] = _("Summons an bug-type terrain\nin the battlefield.");
+static const u8 sHEAT_ARMORDescription[] = _("Summons an bug-type terrain\nin the battlefield.");
+static const u8 sSIRENS_MELODYDescription[] = _("Summons an bug-type terrain\nin the battlefield.");
+static const u8 sCHRONO_CHORUSDescription[] = _("Summons an bug-type terrain\nin the battlefield.");
+static const u8 sFAIRYTIME_ARIADescription[] = _("Summons an bug-type terrain\nin the battlefield.");
+static const u8 sSUMMER_TIMEDescription[] = _("Summons an bug-type terrain\nin the battlefield.");
+static const u8 sWINTER_TIMEDescription[] = _("Summons an bug-type terrain\nin the battlefield.");
+static const u8 sDEFLORESTATIONDescription[] = _("Summons an bug-type terrain\nin the battlefield.");
+static const u8 sSTONE_WALLDescription[] = _("Summons an bug-type terrain\nin the battlefield.");
+static const u8 sSCRAPYARD_TERRAINDescription[] = _("Summons a Steel terrain.\nHurts when switching in.");
+static const u8 sICY_KISSDescription[] = _("Summons an bug-type terrain\nin the battlefield.");
+static const u8 sHEATED_KISSDescription[] = _("Summons an bug-type terrain\nin the battlefield.");
+static const u8 sVENOMBANEDescription[] = _("Summons an bug-type terrain\nin the battlefield.");
+static const u8 sFISH_HARPOONDescription[] = _("Super effective on Water-\ntypes. Ignores Defense.");
+//  **************************** 27 distance letters ****************************
 
 // MOVE_NONE is ignored in this table. Make sure to always subtract 1 before getting the right pointer.
 const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
@@ -5027,4 +5087,63 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_NULL_ROOM - 1] = sNULL_ROOMDescription,
     [MOVE_BONE_LUNGE - 1] = sBONE_LUNGEDescription,
     [MOVE_SOBERING_PUNCH - 1] = sSOBERING_PUNCHDescription,
+    [MOVE_OASIS_WELLSPRING - 1] = sMIRAGE_WELLSPRINGDescription,
+    [MOVE_CROWSTORM - 1] = sCROWSTORMDescription,
+    [MOVE_SKYROCKET_BLAST - 1] = sSKYROCKET_BLASTDescription,
+    [MOVE_IRON_CAGE - 1] = sIRON_CAGEDescription,
+    [MOVE_DEHYDRATE - 1] = sDEHYDRATEDescription,
+    [MOVE_KUNG_FU_HUSTLE - 1] = sKUNG_FU_HUSTLEDescription,
+    [MOVE_MILK_SHOT - 1] = sMILK_SHOTDescription,
+    [MOVE_ANCIENT_WINGS - 1] = sANCIENT_WINGSDescription,
+    [MOVE_ANCIENT_SHELL - 1] = sANCIENT_SHELLDescription,
+    [MOVE_ANCIENT_SLASH - 1] = sANCIENT_SLASHDescription,
+    [MOVE_ANCIENT_WEED - 1] = sANCIENT_WEEDDescription,
+    [MOVE_ANCIENT_CHARGE - 1] = sANCIENT_CHARGEDescription,
+    [MOVE_ANCIENT_MAW - 1] = sANCIENT_MAWDescription,
+    [MOVE_ANCIENT_ICE - 1] = sANCIENT_ICEDescription,
+    [MOVE_ICE_LANCE - 1] = sICE_LANCEDescription,
+    [MOVE_COTTON_PUNCH - 1] = sCOTTON_PUNCHDescription,
+    [MOVE_MANDRAGORA_HOWL - 1] = sMANDRAGORA_HOWLDescription,
+    [MOVE_ELEMENTAL_PUNCH - 1] = sELEMENTAL_PUNCHDescription,
+    [MOVE_HONE_HORNS - 1] = sHONE_HORNSDescription,
+    [MOVE_LICK_WOUNDS - 1] = sLICK_WOUNDSDescription,
+    [MOVE_TONGUE_FLURRY - 1] = sTONGUE_FLURRYDescription,
+    [MOVE_MEGA_LICK - 1] = sMEGA_LICKDescription,
+    [MOVE_FULL_MOON_KICK - 1] = sFULL_MOON_KICKDescription,
+    [MOVE_NEW_MOON_KICK - 1] = sNEW_MOON_KICKDescription,
+    [MOVE_PITCH_NOISE - 1] = sPITCH_NOISEDescription,
+    [MOVE_SWEET_BITE - 1] = sSWEET_BITEDescription,
+    [MOVE_CHILLING_WHISP - 1] = sCHILLING_WHISPDescription,
+    [MOVE_GREEK_GIFT - 1] = sGREEK_GIFTDescription,
+    [MOVE_HUNGRY_FEAST - 1] = sHUNGRY_FEASTDescription,
+    [MOVE_RAVENOUS_BITE - 1] = sRAVENOUS_BITEDescription,
+    [MOVE_CORAL_FILTER - 1] = sCORAL_FILTERDescription,
+    [MOVE_DESTRUCTIVE_DRILL - 1] = sDESTRUCTIVE_DRILLDescription,
+    [MOVE_COMET - 1] = sCOMETDescription,
+    [MOVE_CATACLYSM - 1] = sCATACLYSMDescription,
+    [MOVE_PILLAGE - 1] = sPILLAGEDescription,
+    [MOVE_DISRUPT - 1] = sDISRUPTDescription,
+    [MOVE_BRAINSTORM - 1] = sBRAINSTORMDescription,
+    [MOVE_SWARM_PUNCH - 1] = sSWARM_PUNCHDescription,
+    [MOVE_FRIED_EGG - 1] = sFRIED_EGGDescription,
+    [MOVE_SPOILED_EGG - 1] = sSPOILED_EGGDescription,
+    [MOVE_EGG_DROP - 1] = sEGG_DROPDescription,
+    [MOVE_FOSSIL_EGG - 1] = sFOSSIL_EGGDescription,
+    [MOVE_DRAGON_EGG - 1] = sDRAGON_EGGDescription,
+    [MOVE_FLYTRAP_BITE - 1] = sFLYTRAP_BITEDescription,
+    [MOVE_ACIDIC_MAW - 1] = sACIDIC_MAWDescription,
+    [MOVE_NECTAR_SIPHON - 1] = sNECTAR_SIPHONDescription,
+    [MOVE_HEAT_ARMOR - 1] = sHEAT_ARMORDescription,
+    [MOVE_SIRENS_MELODY - 1] = sSIRENS_MELODYDescription,
+    [MOVE_CHRONO_CHORUS - 1] = sCHRONO_CHORUSDescription,
+    [MOVE_FAIRYTIME_ARIA - 1] = sFAIRYTIME_ARIADescription,
+    [MOVE_SUMMER_TIME - 1] = sSUMMER_TIMEDescription,
+    [MOVE_WINTER_TIME - 1] = sWINTER_TIMEDescription,
+    [MOVE_DEFLORESTATION - 1] = sDEFLORESTATIONDescription,
+    [MOVE_STONE_WALL - 1] = sSTONE_WALLDescription,
+    [MOVE_SCRAPYARD_TERRAIN - 1] = sSCRAPYARD_TERRAINDescription,
+    [MOVE_ICY_KISS - 1] = sICY_KISSDescription,
+    [MOVE_HEATED_KISS - 1] = sHEATED_KISSDescription,
+    [MOVE_VENOMBANE - 1] = sVENOMBANEDescription,
+    [MOVE_FISH_HARPOON - 1] = sFISH_HARPOONDescription,
 };

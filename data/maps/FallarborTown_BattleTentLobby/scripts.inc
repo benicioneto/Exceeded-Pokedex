@@ -416,18 +416,19 @@ FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_ChooseHoldItem::
 	switch VAR_RESULT
 	case 0, FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_FireStone
 	case 1, FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_WaterStone
-	case 2, FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_ThunderStone
-	case 3, FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_LeafStone
-	case 4, FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_MoonStone
-	case 5, FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_SunStone
-	case 6, FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_ShinyStone
-	case 7, FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_DuskStone
-	case 8, FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_DawnStone
-	case 9, FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_IceStone
-	case 10, FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_PrismScale
-	case 11, FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_AuspiciousArmor
-	case 12, FallarborTown_BattleTentLobby__ExchangeServiceCorner_EventScript_MaliciousArmor
-	case 13, FallarborTown_BattleTentLobby__ExchangeServiceCorner_EventScript_ClerkGoodbye
+	case 2, FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_StrawberrySweet
+	case 3, FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_LoveSweet
+	case 4, FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_BerrySweet
+	case 5, FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_CloverSweet
+	case 6, FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_FlowerSweet
+	case 7, FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_StarSweet
+	case 8, FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_RibbonSweet
+	case 9, FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_ThunderStone
+	case 10, FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_LeafStone
+	case 11, FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_MoonStone
+	case 12, FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_SunStone
+	case 13, FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_ShinyStone
+	case 14, FallarborTown_BattleTentLobby__ExchangeServiceCorner_EventScript_ClerkGoodbye
 	case MULTI_B_PRESSED, FallarborTown_BattleTentLobby__ExchangeServiceCorner_EventScript_ClerkGoodbye
 	end
 
@@ -436,7 +437,7 @@ FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_FireStone::
 	compare VAR_RESULT, NO
 	goto_if_eq FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_ChooseHoldItem
 	setvar VAR_0x8008, 64
-	setvar VAR_0x8009, ITEM_SACHET
+	setvar VAR_0x8009, ITEM_CHIPPED_POT
 	goto FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_TryPurchasePrize
 	end
 
@@ -445,12 +446,30 @@ FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_WaterStone::
 	compare VAR_RESULT, NO
 	goto_if_eq FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_ChooseHoldItem
 	setvar VAR_0x8008, 64
-	setvar VAR_0x8009, ITEM_WHIPPED_DREAM
+	setvar VAR_0x8009, ITEM_CRACKED_POT
 	goto FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_TryPurchasePrize
 	end
 
-FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_ThunderStone::
-	msgbox FallarborTown_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmThunderStone, MSGBOX_YESNO
+FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_StrawberrySweet::
+	msgbox FallarborTown_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmStrawberrySweet, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_ChooseHoldItem
+	setvar VAR_0x8008, 64
+	setvar VAR_0x8009, ITEM_UNREMARKABLE_TEACUP
+	goto FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_TryPurchasePrize
+	end
+
+FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_LoveSweet::
+	msgbox FallarborTown_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmLoveSweet, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_ChooseHoldItem
+	setvar VAR_0x8008, 64
+	setvar VAR_0x8009, ITEM_MASTERPIECE_TEACUP
+	goto FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_TryPurchasePrize
+	end
+
+FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_BerrySweet::
+	msgbox FallarborTown_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmBerrySweet, MSGBOX_YESNO
 	compare VAR_RESULT, NO
 	goto_if_eq FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_ChooseHoldItem
 	setvar VAR_0x8008, 64
@@ -458,12 +477,57 @@ FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_ThunderStone::
 	goto FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_TryPurchasePrize
 	end
 
+FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_CloverSweet::
+	msgbox FallarborTown_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmCloverSweet, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_ChooseHoldItem
+	setvar VAR_0x8008, 99
+	setvar VAR_0x8009, ITEM_ELECTIRIZER
+	goto FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_TryPurchasePrize
+	end
+
+FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_FlowerSweet::
+	msgbox FallarborTown_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmFlowerSweet, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_ChooseHoldItem
+	setvar VAR_0x8008, 99
+	setvar VAR_0x8009, ITEM_MAGMARIZER
+	goto FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_TryPurchasePrize
+	end
+
+FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_StarSweet::
+	msgbox FallarborTown_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmStarSweet, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_ChooseHoldItem
+	setvar VAR_0x8008, 99
+	setvar VAR_0x8009, ITEM_REAPER_CLOTH
+	goto FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_TryPurchasePrize
+	end
+
+FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_RibbonSweet::
+	msgbox FallarborTown_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmRibbonSweet, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_ChooseHoldItem
+	setvar VAR_0x8008, 99
+	setvar VAR_0x8009, ITEM_PRISM_SCALE
+	goto FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_TryPurchasePrize
+	end
+
+FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_ThunderStone::
+	msgbox FallarborTown_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmThunderStone, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_ChooseHoldItem
+	setvar VAR_0x8008, 128
+	setvar VAR_0x8009, ITEM_DUBIOUS_DISC
+	goto FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_TryPurchasePrize
+	end
+
 FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_LeafStone::
 	msgbox FallarborTown_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmLeafStone, MSGBOX_YESNO
 	compare VAR_RESULT, NO
 	goto_if_eq FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_ChooseHoldItem
-	setvar VAR_0x8008, 99
-	setvar VAR_0x8009, ITEM_DRAGON_SCALE
+	setvar VAR_0x8008, 128
+	setvar VAR_0x8009, ITEM_PROTECTOR
 	goto FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_TryPurchasePrize
 	end
 
@@ -471,8 +535,8 @@ FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_MoonStone::
 	msgbox FallarborTown_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmMoonStone, MSGBOX_YESNO
 	compare VAR_RESULT, NO
 	goto_if_eq FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_ChooseHoldItem
-	setvar VAR_0x8008, 99
-	setvar VAR_0x8009, ITEM_UP_GRADE
+	setvar VAR_0x8008, 128
+	setvar VAR_0x8009, ITEM_PEAT_BLOCK
 	goto FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_TryPurchasePrize
 	end
 
@@ -481,7 +545,7 @@ FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_SunStone::
 	compare VAR_RESULT, NO
 	goto_if_eq FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_ChooseHoldItem
 	setvar VAR_0x8008, 128
-	setvar VAR_0x8009, ITEM_DUBIOUS_DISC
+	setvar VAR_0x8009, ITEM_AUSPICIOUS_ARMOR
 	goto FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_TryPurchasePrize
 	end
 
@@ -490,7 +554,7 @@ FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_ShinyStone::
 	compare VAR_RESULT, NO
 	goto_if_eq FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_ChooseHoldItem
 	setvar VAR_0x8008, 128
-	setvar VAR_0x8009, ITEM_ELECTIRIZER
+	setvar VAR_0x8009, ITEM_MALICIOUS_ARMOR
 	goto FallarborTown_BattleTentLobby_ExchangeServiceCorner_EventScript_TryPurchasePrize
 	end
 
@@ -577,31 +641,59 @@ FallarborTown_BattleTentLobby_ExchangeServiceCorner_Text_WelcomePleaseChoosePriz
 	.string "Please choose a prize from this list.$"
 
 FallarborTown_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmFireStone:
-	.string "You've chosen the Sachet.\n"
+	.string "You've chosen the Chipped Pot.\n"
 	.string "Is that correct?$"
 
 FallarborTown_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmWaterStone:
-	.string "You've chosen the Whipped Dream.\n"
+	.string "You've chosen the Cracked Pot.\n"
 	.string "Is that correct?$"
 
-FallarborTown_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmThunderStone:
+FallarborTown_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmStrawberrySweet:
+	.string "You've chosen the Unremarkable Teacup.\n"
+	.string "Is that correct?$"
+
+FallarborTown_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmLoveSweet:
+	.string "You've chosen the Masterpiece Teacup.\n"
+	.string "Is that correct?$"
+
+FallarborTown_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmBerrySweet:
 	.string "You've chosen the Oval Stone.\n"
 	.string "Is that correct?$"
 
-FallarborTown_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmLeafStone:
-	.string "You've chosen the Dragon Scale.\n"
+FallarborTown_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmCloverSweet:
+	.string "You've chosen the Electirizer.\n"
 	.string "Is that correct?$"
 
-FallarborTown_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmMoonStone:
-	.string "You've chosen the Upgrade.\n"
+FallarborTown_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmFlowerSweet:
+	.string "You've chosen the Magmarizer.\n"
 	.string "Is that correct?$"
 
-FallarborTown_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmSunStone:
+FallarborTown_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmStarSweet:
+	.string "You've chosen the Reaper Cloth.\n"
+	.string "Is that correct?$"
+
+FallarborTown_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmRibbonSweet:
+	.string "You've chosen the Prism Scale.\n"
+	.string "Is that correct?$"
+
+FallarborTown_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmThunderStone:
 	.string "You've chosen the Dubious Disc.\n"
 	.string "Is that correct?$"
 
+FallarborTown_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmLeafStone:
+	.string "You've chosen the Protector.\n"
+	.string "Is that correct?$"
+
+FallarborTown_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmMoonStone:
+	.string "You've chosen the Peat Block.\n"
+	.string "Is that correct?$"
+
+FallarborTown_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmSunStone:
+	.string "You've chosen the Auspicious Armor.\n"
+	.string "Is that correct?$"
+
 FallarborTown_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmShinyStone:
-	.string "You've chosen the Electirizer.\n"
+	.string "You've chosen the Malicious Armor.\n"
 	.string "Is that correct?$"
 
 FallarborTown_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmDuskStone:
@@ -636,4 +728,3 @@ FallarborTown_BattleTentLobby_ExchangeServiceCorner_Text_ThankYouVisitWithPoints
 FallarborTown_BattleTentLobby_ExchangeServiceCorner_Text_DontHaveEnoughPoints:
 	.string "I'm so sorry…\n"
 	.string "You don't have enough Fallarbor Points…$"
-

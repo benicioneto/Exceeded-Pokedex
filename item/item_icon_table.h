@@ -215,7 +215,7 @@ const u32 *const gItemIconTable[][2] =
     [ITEM_LUCKY_PUNCH] = {gItemIcon_LuckyPunch, gItemIconPalette_LuckyPunch},
     [ITEM_METAL_POWDER] = {gItemIcon_MetalPowder, gItemIconPalette_MetalPowder},
     [ITEM_THICK_CLUB] = {gItemIcon_ThickClub, gItemIconPalette_ThickClub},
-    [ITEM_STICK] = {gItemIcon_Stick, gItemIconPalette_Stick},
+    [ITEM_LEEK] = {gItemIcon_Leek, gItemIconPalette_Leek},
     // Contest hold items
     [ITEM_RED_SCARF] = {gItemIcon_Scarf, gItemIconPalette_RedScarf},
     [ITEM_BLUE_SCARF] = {gItemIcon_Scarf, gItemIconPalette_BlueScarf},

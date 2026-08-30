@@ -574,8 +574,8 @@ const u32 gItemIconPalette_MetalPowder[] = INCBIN_U32("graphics/items/icon_palet
 const u32 gItemIcon_ThickClub[] = INCBIN_U32("graphics/items/icons/thick_club.4bpp.lz");
 const u32 gItemIconPalette_ThickClub[] = INCBIN_U32("graphics/items/icon_palettes/thick_club.gbapal.lz");
 
-const u32 gItemIcon_Stick[] = INCBIN_U32("graphics/items/icons/stick.4bpp.lz");
-const u32 gItemIconPalette_Stick[] = INCBIN_U32("graphics/items/icon_palettes/stick.gbapal.lz");
+const u32 gItemIcon_Leek[] = INCBIN_U32("graphics/items/icons/stick.4bpp.lz");
+const u32 gItemIconPalette_Leek[] = INCBIN_U32("graphics/items/icon_palettes/stick.gbapal.lz");
 
 const u32 gItemIcon_SuppressionHelmet[] = INCBIN_U32("graphics/items/icons/suppression_helmet.4bpp.lz");
 const u32 gItemIconPalette_SuppressionHelmet[] = INCBIN_U32("graphics/items/icon_palettes/suppression_helmet.gbapal.lz");
@@ -2040,7 +2040,7 @@ const u32 gItemIcon_MasterpieceTeacup[] = INCBIN_U32("graphics/items/icons/maste
 const u32 gItemIconPalette_MasterpieceTeacup[] = INCBIN_U32("graphics/items/icon_palettes/masterpiece_teacup.gbapal.lz");
 
 const u32 gItemIcon_MetalAlloy[] = INCBIN_U32("graphics/items/icons/metal_alloy.4bpp.lz");
-const u32 gItemIconPalette_MetalAlloy[] = INCBIN_U16("graphics/items/icon_palettes/metal_alloy.gbapal.lz");
+const u32 gItemIconPalette_MetalAlloy[] = INCBIN_U32("graphics/items/icon_palettes/metal_alloy.gbapal.lz");
 
 const u32 gItemIcon_WellspringMask[] = INCBIN_U32("graphics/items/icons/wellspring_mask.4bpp.lz");
 const u32 gItemIconPalette_WellspringMask[] = INCBIN_U32("graphics/items/icon_palettes/wellspring_mask.gbapal.lz");

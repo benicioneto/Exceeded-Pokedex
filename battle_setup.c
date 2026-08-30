@@ -2012,13 +2012,17 @@ bool8 HasSpeciesAbilityTypeChange(u16 species)
                     if (monAbility == ABILITY_BONFIRE_BLOSSOM)
                         return TRUE;
                     break;
+                case TYPE_POISON:
+                    if (monAbility == ABILITY_DINOFLAGELLATE)
+                        return TRUE;
+                    break;
                 case TYPE_GRASS:
-                    if (monAbility == ABILITY_FLOWER_GARDENER || monAbility == ABILITY_PETRIFIED_WOOD
+                    if (monAbility == ABILITY_FLOWER_GARDENER || monAbility == ABILITY_ZOOXANTHELLAE
                     || (monAbility == ABILITY_BATESIAN_MIMICRY && (species == SPECIES_BONSLY || species == SPECIES_SUDOWOODO || species == SPECIES_SUDOWOODO_GOLDEN)))
                         return TRUE;
                     break;
                 case TYPE_DARK:
-                    if (monAbility == ABILITY_VICIOUSNESS || monAbility == ABILITY_NOCTURNAL)
+                    if (monAbility == ABILITY_DARK_SIDE || monAbility == ABILITY_NOCTURNAL || monAbility == ABILITY_ONI)
                         return TRUE;
                     break;
                 case TYPE_ELECTRIC:
@@ -2030,11 +2034,11 @@ bool8 HasSpeciesAbilityTypeChange(u16 species)
                         return TRUE;
                     break;
                 case TYPE_DRAGON:
-                    if (monAbility == ABILITY_DRAGONFLY || monAbility == ABILITY_HALF_DRAKE)
+                    if (monAbility == ABILITY_DRAGONFLY || monAbility == ABILITY_HALF_DRAKE || monAbility == ABILITY_DRAGONBORN)
                         return TRUE;
                     break;
                 case TYPE_ICE:
-                    if (monAbility == ABILITY_NORTH_WIND || monAbility == ABILITY_HALF_DINO)
+                    if (monAbility == ABILITY_NORTH_WIND || monAbility == ABILITY_HALF_DINO || monAbility == ABILITY_FROSTBORN)
                         return TRUE;
                     break;
                 case TYPE_ROCK:
@@ -2046,11 +2050,11 @@ bool8 HasSpeciesAbilityTypeChange(u16 species)
                         return TRUE;
                     break;
                 case TYPE_GHOST:
-                    if (monAbility == ABILITY_PHANTOM)
+                    if (monAbility == ABILITY_PHANTOM || monAbility == ABILITY_YOKAI)
                         return TRUE;
                     break;
                 case TYPE_GROUND:
-                    if (monAbility == ABILITY_BEDOUIN)
+                    if (monAbility == ABILITY_BEDOUIN || monAbility == ABILITY_EARTHWORM || monAbility == ABILITY_BENTHIC_ORGANISM)
                         return TRUE;
                     break;
             }

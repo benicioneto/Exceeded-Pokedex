@@ -993,7 +993,7 @@ const struct BaseStats gBaseStats[] =
         .baseSpAttack  = 81,
         .baseSpDefense = 100,
         .type1 = TYPE_FIRE,
-        .type2 = TYPE_GHOST,
+        .type2 = TYPE_FIRE,
         .catchRate = 75,
         .expYield = 177,
         .evYield_Speed  = 1,
@@ -2202,7 +2202,7 @@ const struct BaseStats gBaseStats[] =
         .catchRate = 45,
         .expYield = 132,
         .evYield_Attack  = 1,
-        .item2 = ITEM_STICK,
+        .item2 = ITEM_LEEK,
         .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 20,
         .friendship = 70,
@@ -2782,7 +2782,7 @@ const struct BaseStats gBaseStats[] =
         .baseSpAttack  = 50,
         .baseSpDefense = 80,
         .type1 = TYPE_GROUND,
-        .type2 = TYPE_DRAGON,
+        .type2 = TYPE_GROUND,
         .catchRate = 75,
         .expYield = 149,
         .evYield_Defense  = 2,
@@ -4089,7 +4089,7 @@ const struct BaseStats gBaseStats[] =
         .baseSpAttack  = 83,
         .baseSpDefense = 100,
         .type1 = TYPE_GRASS,
-        .type2 = TYPE_FAIRY,
+        .type2 = TYPE_GRASS,
         .catchRate = 45,
         .expYield = 236,
         .evYield_Defense  = 1,
@@ -4799,7 +4799,7 @@ const struct BaseStats gBaseStats[] =
         .baseSpAttack  = 115,
         .baseSpDefense = 90,
         .type1 = TYPE_ELECTRIC,
-        .type2 = TYPE_DRAGON,
+        .type2 = TYPE_ELECTRIC,
         .catchRate = 45,
         .expYield = 230,
         .evYield_SpAttack  = 3,
@@ -4825,7 +4825,7 @@ const struct BaseStats gBaseStats[] =
         .baseSpAttack  = 90,
         .baseSpDefense = 100,
         .type1 = TYPE_GRASS,
-        .type2 = TYPE_FAIRY,
+        .type2 = TYPE_GRASS,
         .catchRate = 45,
         .expYield = 221,
         .evYield_SpDefense = 3,
@@ -5375,8 +5375,8 @@ const struct BaseStats gBaseStats[] =
         .baseSpeed     = 85,
         .baseSpAttack  = 90,
         .baseSpDefense = 65,
-        .type1 = TYPE_PSYCHIC,
-        .type2 = TYPE_DARK,
+        .type1 = TYPE_NORMAL,
+        .type2 = TYPE_PSYCHIC,
         .catchRate = 60,
         .expYield = 159,
         .evYield_SpAttack  = 2,
@@ -5559,7 +5559,7 @@ const struct BaseStats gBaseStats[] =
         .baseSpAttack  = 60,
         .baseSpDefense = 60,
         .type1 = TYPE_FAIRY,
-        .type2 = TYPE_DARK,
+        .type2 = TYPE_FAIRY,
         .catchRate = 75,
         .expYield = 158,
         .evYield_Attack  = 2,
@@ -5931,7 +5931,7 @@ const struct BaseStats gBaseStats[] =
         .baseSpAttack  = 105,
         .baseSpDefense = 75,
         .type1 = TYPE_WATER,
-        .type2 = TYPE_GROUND,
+        .type2 = TYPE_WATER,
         .catchRate = 75,
         .expYield = 168,
         .evYield_Attack  = 1,
@@ -5972,7 +5972,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_VITAL_SPIRIT, ABILITY_ICE_BODY, ABILITY_PRANKSTER},
         .bodyColor = BODY_COLOR_RED,
         .noFlip = FALSE,
-        .innates = {ABILITY_THICK_FAT, ABILITY_ANTARTIC_BIRD, ABILITY_CHRISTMAS_SPIRIT},
+        .innates = {ABILITY_THICK_FAT, ABILITY_ANTARCTIC_BIRD, ABILITY_CHRISTMAS_SPIRIT},
     },
 
     [SPECIES_MANTINE] =
@@ -6735,7 +6735,7 @@ const struct BaseStats gBaseStats[] =
         .baseSpAttack  = 105,
         .baseSpDefense = 85,
         .type1 = TYPE_GRASS,
-        .type2 = TYPE_DRAGON,
+        .type2 = TYPE_GRASS,
         .catchRate = 45,
         .expYield = 239,
         .evYield_Speed  = 3,
@@ -10524,7 +10524,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_COMPETITIVE, ABILITY_NONE, ABILITY_DEFIANT},
         .bodyColor = BODY_COLOR_BLUE,
         .noFlip = FALSE,
-        .innates = {ABILITY_TORRENT, ABILITY_SWIFT_SWIM, ABILITY_ANTARTIC_BIRD},
+        .innates = {ABILITY_TORRENT, ABILITY_SWIFT_SWIM, ABILITY_ANTARCTIC_BIRD},
     },
 
     [SPECIES_STARLY] =
@@ -10746,7 +10746,7 @@ const struct BaseStats gBaseStats[] =
         .baseSpAttack  = 60,
         .baseSpDefense = 49,
         .type1 = TYPE_ELECTRIC,
-        .type2 = TYPE_DARK,
+        .type2 = TYPE_ELECTRIC,
         .catchRate = 120,
         .expYield = 127,
         .evYield_Attack  = 2,
@@ -10772,7 +10772,7 @@ const struct BaseStats gBaseStats[] =
         .baseSpAttack  = 95,
         .baseSpDefense = 79,
         .type1 = TYPE_ELECTRIC,
-        .type2 = TYPE_DARK,
+        .type2 = TYPE_ELECTRIC,
         .catchRate = 45,
         .expYield = 235,
         .evYield_Attack  = 3,
@@ -12029,7 +12029,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_POISON_POINT, ABILITY_SNIPER, ABILITY_SAND_VEIL},
         .bodyColor = BODY_COLOR_PURPLE,
         .noFlip = FALSE,
-        .innates = {ABILITY_BATTLE_ARMOR, ABILITY_GRIP_PINCER, ABILITY_VICIOUSNESS},
+        .innates = {ABILITY_BATTLE_ARMOR, ABILITY_GRIP_PINCER, ABILITY_DARK_SIDE},
     },
 
     [SPECIES_CROAGUNK] =
@@ -22950,7 +22950,7 @@ const struct BaseStats gBaseStats[] =
         .catchRate = 45,
         .expYield = 177,
         .evYield_Attack  = 2,
-        .item2 = ITEM_STICK,
+        .item2 = ITEM_LEEK,
         .genderRatio = PERCENT_FEMALE(50),
         .eggCycles = 20,
         .friendship = 70,
@@ -22987,7 +22987,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_SCREEN_CLEANER, ABILITY_NONE, ABILITY_TANGLED_FEET},
         .bodyColor = BODY_COLOR_PURPLE,
         .noFlip = FALSE,
-        .innates = {ABILITY_FILTER, ABILITY_DANCER, ABILITY_TRAMPLE},
+        .innates = {ABILITY_FILTER, ABILITY_DANCER, ABILITY_TAP_DANCER},
     },
 
     [SPECIES_RUNERIGUS] =
@@ -23041,30 +23041,97 @@ const struct BaseStats gBaseStats[] =
         .noFlip = FALSE,
     },
 
-    [SPECIES_ALCREMIE] =
-    {
-        .baseHP        = 65,
-        .baseAttack    = 60,
-        .baseDefense   = 75,
-        .baseSpeed     = 64,
-        .baseSpAttack  = 110,
-        .baseSpDefense = 121,
-        .type1 = TYPE_FAIRY,
-        .type2 = TYPE_FAIRY,
-        .catchRate = 100,
-        .expYield = 173,
-        .evYield_SpDefense = 2,
-        .genderRatio = MON_FEMALE,
-        .eggCycles = 20,
-        .friendship = 70,
-        .growthRate = GROWTH_MEDIUM_FAST,
-        .eggGroup1 = EGG_GROUP_FAIRY,
-        .eggGroup2 = EGG_GROUP_AMORPHOUS,
-        .cryId = CRY_ALCREMIE,
-        .abilities = {ABILITY_SWEET_VEIL, ABILITY_NONE, ABILITY_AROMA_VEIL},
-        .bodyColor = BODY_COLOR_WHITE,
-        .noFlip = FALSE,
+#define ALCREMIE_FORM(species) \
+    [species] = \
+    { \
+        .baseHP        = 65, \
+        .baseAttack    = 60, \
+        .baseDefense   = 75, \
+        .baseSpeed     = 64, \
+        .baseSpAttack  = 110, \
+        .baseSpDefense = 121, \
+        .type1 = TYPE_FAIRY, \
+        .type2 = TYPE_FAIRY, \
+        .catchRate = 100, \
+        .expYield = 173, \
+        .evYield_SpDefense = 2, \
+        .genderRatio = MON_FEMALE, \
+        .eggCycles = 20, \
+        .friendship = 70, \
+        .growthRate = GROWTH_MEDIUM_FAST, \
+        .eggGroup1 = EGG_GROUP_FAIRY, \
+        .eggGroup2 = EGG_GROUP_AMORPHOUS, \
+        .cryId = CRY_ALCREMIE, \
+        .abilities = {ABILITY_SWEET_VEIL, ABILITY_NONE, ABILITY_AROMA_VEIL}, \
+        .bodyColor = BODY_COLOR_WHITE, \
+        .noFlip = FALSE, \
     },
+
+    ALCREMIE_FORM(SPECIES_ALCREMIE_STRAWBERRY_VANILLA_CREAM)
+    ALCREMIE_FORM(SPECIES_ALCREMIE_STRAWBERRY_RUBY_CREAM)
+    ALCREMIE_FORM(SPECIES_ALCREMIE_STRAWBERRY_MATCHA_CREAM)
+    ALCREMIE_FORM(SPECIES_ALCREMIE_STRAWBERRY_MINT_CREAM)
+    ALCREMIE_FORM(SPECIES_ALCREMIE_STRAWBERRY_LEMON_CREAM)
+    ALCREMIE_FORM(SPECIES_ALCREMIE_STRAWBERRY_SALTED_CREAM)
+    ALCREMIE_FORM(SPECIES_ALCREMIE_STRAWBERRY_RUBY_SWIRL)
+    ALCREMIE_FORM(SPECIES_ALCREMIE_STRAWBERRY_CARAMEL_SWIRL)
+    ALCREMIE_FORM(SPECIES_ALCREMIE_STRAWBERRY_RAINBOW_SWIRL)
+    ALCREMIE_FORM(SPECIES_ALCREMIE_BERRY_VANILLA_CREAM)
+    ALCREMIE_FORM(SPECIES_ALCREMIE_BERRY_RUBY_CREAM)
+    ALCREMIE_FORM(SPECIES_ALCREMIE_BERRY_MATCHA_CREAM)
+    ALCREMIE_FORM(SPECIES_ALCREMIE_BERRY_MINT_CREAM)
+    ALCREMIE_FORM(SPECIES_ALCREMIE_BERRY_LEMON_CREAM)
+    ALCREMIE_FORM(SPECIES_ALCREMIE_BERRY_SALTED_CREAM)
+    ALCREMIE_FORM(SPECIES_ALCREMIE_BERRY_RUBY_SWIRL)
+    ALCREMIE_FORM(SPECIES_ALCREMIE_BERRY_CARAMEL_SWIRL)
+    ALCREMIE_FORM(SPECIES_ALCREMIE_BERRY_RAINBOW_SWIRL)
+    ALCREMIE_FORM(SPECIES_ALCREMIE_LOVE_VANILLA_CREAM)
+    ALCREMIE_FORM(SPECIES_ALCREMIE_LOVE_RUBY_CREAM)
+    ALCREMIE_FORM(SPECIES_ALCREMIE_LOVE_MATCHA_CREAM)
+    ALCREMIE_FORM(SPECIES_ALCREMIE_LOVE_MINT_CREAM)
+    ALCREMIE_FORM(SPECIES_ALCREMIE_LOVE_LEMON_CREAM)
+    ALCREMIE_FORM(SPECIES_ALCREMIE_LOVE_SALTED_CREAM)
+    ALCREMIE_FORM(SPECIES_ALCREMIE_LOVE_RUBY_SWIRL)
+    ALCREMIE_FORM(SPECIES_ALCREMIE_LOVE_CARAMEL_SWIRL)
+    ALCREMIE_FORM(SPECIES_ALCREMIE_LOVE_RAINBOW_SWIRL)
+    ALCREMIE_FORM(SPECIES_ALCREMIE_STAR_VANILLA_CREAM)
+    ALCREMIE_FORM(SPECIES_ALCREMIE_STAR_RUBY_CREAM)
+    ALCREMIE_FORM(SPECIES_ALCREMIE_STAR_MATCHA_CREAM)
+    ALCREMIE_FORM(SPECIES_ALCREMIE_STAR_MINT_CREAM)
+    ALCREMIE_FORM(SPECIES_ALCREMIE_STAR_LEMON_CREAM)
+    ALCREMIE_FORM(SPECIES_ALCREMIE_STAR_SALTED_CREAM)
+    ALCREMIE_FORM(SPECIES_ALCREMIE_STAR_RUBY_SWIRL)
+    ALCREMIE_FORM(SPECIES_ALCREMIE_STAR_CARAMEL_SWIRL)
+    ALCREMIE_FORM(SPECIES_ALCREMIE_STAR_RAINBOW_SWIRL)
+    ALCREMIE_FORM(SPECIES_ALCREMIE_CLOVER_VANILLA_CREAM)
+    ALCREMIE_FORM(SPECIES_ALCREMIE_CLOVER_RUBY_CREAM)
+    ALCREMIE_FORM(SPECIES_ALCREMIE_CLOVER_MATCHA_CREAM)
+    ALCREMIE_FORM(SPECIES_ALCREMIE_CLOVER_MINT_CREAM)
+    ALCREMIE_FORM(SPECIES_ALCREMIE_CLOVER_LEMON_CREAM)
+    ALCREMIE_FORM(SPECIES_ALCREMIE_CLOVER_SALTED_CREAM)
+    ALCREMIE_FORM(SPECIES_ALCREMIE_CLOVER_RUBY_SWIRL)
+    ALCREMIE_FORM(SPECIES_ALCREMIE_CLOVER_CARAMEL_SWIRL)
+    ALCREMIE_FORM(SPECIES_ALCREMIE_CLOVER_RAINBOW_SWIRL)
+    ALCREMIE_FORM(SPECIES_ALCREMIE_FLOWER_VANILLA_CREAM)
+    ALCREMIE_FORM(SPECIES_ALCREMIE_FLOWER_RUBY_CREAM)
+    ALCREMIE_FORM(SPECIES_ALCREMIE_FLOWER_MATCHA_CREAM)
+    ALCREMIE_FORM(SPECIES_ALCREMIE_FLOWER_MINT_CREAM)
+    ALCREMIE_FORM(SPECIES_ALCREMIE_FLOWER_LEMON_CREAM)
+    ALCREMIE_FORM(SPECIES_ALCREMIE_FLOWER_SALTED_CREAM)
+    ALCREMIE_FORM(SPECIES_ALCREMIE_FLOWER_RUBY_SWIRL)
+    ALCREMIE_FORM(SPECIES_ALCREMIE_FLOWER_CARAMEL_SWIRL)
+    ALCREMIE_FORM(SPECIES_ALCREMIE_FLOWER_RAINBOW_SWIRL)
+    ALCREMIE_FORM(SPECIES_ALCREMIE_RIBBON_VANILLA_CREAM)
+    ALCREMIE_FORM(SPECIES_ALCREMIE_RIBBON_RUBY_CREAM)
+    ALCREMIE_FORM(SPECIES_ALCREMIE_RIBBON_MATCHA_CREAM)
+    ALCREMIE_FORM(SPECIES_ALCREMIE_RIBBON_MINT_CREAM)
+    ALCREMIE_FORM(SPECIES_ALCREMIE_RIBBON_LEMON_CREAM)
+    ALCREMIE_FORM(SPECIES_ALCREMIE_RIBBON_SALTED_CREAM)
+    ALCREMIE_FORM(SPECIES_ALCREMIE_RIBBON_RUBY_SWIRL)
+    ALCREMIE_FORM(SPECIES_ALCREMIE_RIBBON_CARAMEL_SWIRL)
+    ALCREMIE_FORM(SPECIES_ALCREMIE_RIBBON_RAINBOW_SWIRL)
+
+#undef ALCREMIE_FORM
 
     [SPECIES_FALINKS] =
     {
@@ -23221,7 +23288,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_ICE_FACE, ABILITY_NONE},
         .bodyColor = BODY_COLOR_BLUE,
         .noFlip = FALSE,
-        .innates = {ABILITY_ANTARTIC_BIRD, ABILITY_SLUSH_RUSH, ABILITY_REFRIGERATE},
+        .innates = {ABILITY_ANTARCTIC_BIRD, ABILITY_SLUSH_RUSH, ABILITY_REFRIGERATE},
     },
 
     [SPECIES_INDEEDEE] =
@@ -31640,206 +31707,6 @@ const struct BaseStats gBaseStats[] =
         .innates = {ABILITY_CURSED_BODY, ABILITY_HAUNTED_SPIRIT},
     },
 
-    [SPECIES_ALCREMIE_RUBY_CREAM] =
-    {
-        .baseHP        = 65,
-        .baseAttack    = 60,
-        .baseDefense   = 75,
-        .baseSpeed     = 64,
-        .baseSpAttack  = 110,
-        .baseSpDefense = 121,
-        .type1 = TYPE_FAIRY,
-        .type2 = TYPE_FAIRY,
-        .catchRate = 100,
-        .expYield = 173,
-        .evYield_SpDefense = 2,
-        .genderRatio = MON_FEMALE,
-        .eggCycles = 20,
-        .friendship = 70,
-        .growthRate = GROWTH_MEDIUM_FAST,
-        .eggGroup1 = EGG_GROUP_FAIRY,
-        .eggGroup2 = EGG_GROUP_AMORPHOUS,
-        .cryId = CRY_ALCREMIE,
-        .abilities = {ABILITY_SWEET_VEIL, ABILITY_NONE, ABILITY_AROMA_VEIL},
-        .bodyColor = BODY_COLOR_PINK,
-        .noFlip = FALSE,
-    },
-
-    [SPECIES_ALCREMIE_MATCHA_CREAM] =
-    {
-        .baseHP        = 65,
-        .baseAttack    = 60,
-        .baseDefense   = 75,
-        .baseSpeed     = 64,
-        .baseSpAttack  = 110,
-        .baseSpDefense = 121,
-        .type1 = TYPE_FAIRY,
-        .type2 = TYPE_FAIRY,
-        .catchRate = 100,
-        .expYield = 173,
-        .evYield_SpDefense = 2,
-        .genderRatio = MON_FEMALE,
-        .eggCycles = 20,
-        .friendship = 70,
-        .growthRate = GROWTH_MEDIUM_FAST,
-        .eggGroup1 = EGG_GROUP_FAIRY,
-        .eggGroup2 = EGG_GROUP_AMORPHOUS,
-        .cryId = CRY_ALCREMIE,
-        .abilities = {ABILITY_SWEET_VEIL, ABILITY_NONE, ABILITY_AROMA_VEIL},
-        .bodyColor = BODY_COLOR_GREEN,
-        .noFlip = FALSE,
-    },
-
-    [SPECIES_ALCREMIE_MINT_CREAM] =
-    {
-        .baseHP        = 65,
-        .baseAttack    = 60,
-        .baseDefense   = 75,
-        .baseSpeed     = 64,
-        .baseSpAttack  = 110,
-        .baseSpDefense = 121,
-        .type1 = TYPE_FAIRY,
-        .type2 = TYPE_FAIRY,
-        .catchRate = 100,
-        .expYield = 173,
-        .evYield_SpDefense = 2,
-        .genderRatio = MON_FEMALE,
-        .eggCycles = 20,
-        .friendship = 70,
-        .growthRate = GROWTH_MEDIUM_FAST,
-        .eggGroup1 = EGG_GROUP_FAIRY,
-        .eggGroup2 = EGG_GROUP_AMORPHOUS,
-        .cryId = CRY_ALCREMIE,
-        .abilities = {ABILITY_SWEET_VEIL, ABILITY_NONE, ABILITY_AROMA_VEIL},
-        .bodyColor = BODY_COLOR_BLUE,
-        .noFlip = FALSE,
-    },
-
-    [SPECIES_ALCREMIE_LEMON_CREAM] =
-    {
-        .baseHP        = 65,
-        .baseAttack    = 60,
-        .baseDefense   = 75,
-        .baseSpeed     = 64,
-        .baseSpAttack  = 110,
-        .baseSpDefense = 121,
-        .type1 = TYPE_FAIRY,
-        .type2 = TYPE_FAIRY,
-        .catchRate = 100,
-        .expYield = 173,
-        .evYield_SpDefense = 2,
-        .genderRatio = MON_FEMALE,
-        .eggCycles = 20,
-        .friendship = 70,
-        .growthRate = GROWTH_MEDIUM_FAST,
-        .eggGroup1 = EGG_GROUP_FAIRY,
-        .eggGroup2 = EGG_GROUP_AMORPHOUS,
-        .cryId = CRY_ALCREMIE,
-        .abilities = {ABILITY_SWEET_VEIL, ABILITY_NONE, ABILITY_AROMA_VEIL},
-        .bodyColor = BODY_COLOR_YELLOW,
-        .noFlip = FALSE,
-    },
-
-    [SPECIES_ALCREMIE_SALTED_CREAM] =
-    {
-        .baseHP        = 65,
-        .baseAttack    = 60,
-        .baseDefense   = 75,
-        .baseSpeed     = 64,
-        .baseSpAttack  = 110,
-        .baseSpDefense = 121,
-        .type1 = TYPE_FAIRY,
-        .type2 = TYPE_FAIRY,
-        .catchRate = 100,
-        .expYield = 173,
-        .evYield_SpDefense = 2,
-        .genderRatio = MON_FEMALE,
-        .eggCycles = 20,
-        .friendship = 70,
-        .growthRate = GROWTH_MEDIUM_FAST,
-        .eggGroup1 = EGG_GROUP_FAIRY,
-        .eggGroup2 = EGG_GROUP_AMORPHOUS,
-        .cryId = CRY_ALCREMIE,
-        .abilities = {ABILITY_SWEET_VEIL, ABILITY_NONE, ABILITY_AROMA_VEIL},
-        .bodyColor = BODY_COLOR_WHITE,
-        .noFlip = FALSE,
-    },
-
-    [SPECIES_ALCREMIE_RUBY_SWIRL] =
-    {
-        .baseHP        = 65,
-        .baseAttack    = 60,
-        .baseDefense   = 75,
-        .baseSpeed     = 64,
-        .baseSpAttack  = 110,
-        .baseSpDefense = 121,
-        .type1 = TYPE_FAIRY,
-        .type2 = TYPE_FAIRY,
-        .catchRate = 100,
-        .expYield = 173,
-        .evYield_SpDefense = 2,
-        .genderRatio = MON_FEMALE,
-        .eggCycles = 20,
-        .friendship = 70,
-        .growthRate = GROWTH_MEDIUM_FAST,
-        .eggGroup1 = EGG_GROUP_FAIRY,
-        .eggGroup2 = EGG_GROUP_AMORPHOUS,
-        .cryId = CRY_ALCREMIE,
-        .abilities = {ABILITY_SWEET_VEIL, ABILITY_NONE, ABILITY_AROMA_VEIL},
-        .bodyColor = BODY_COLOR_YELLOW,
-        .noFlip = FALSE,
-    },
-
-    [SPECIES_ALCREMIE_CARAMEL_SWIRL] =
-    {
-        .baseHP        = 65,
-        .baseAttack    = 60,
-        .baseDefense   = 75,
-        .baseSpeed     = 64,
-        .baseSpAttack  = 110,
-        .baseSpDefense = 121,
-        .type1 = TYPE_FAIRY,
-        .type2 = TYPE_FAIRY,
-        .catchRate = 100,
-        .expYield = 173,
-        .evYield_SpDefense = 2,
-        .genderRatio = MON_FEMALE,
-        .eggCycles = 20,
-        .friendship = 70,
-        .growthRate = GROWTH_MEDIUM_FAST,
-        .eggGroup1 = EGG_GROUP_FAIRY,
-        .eggGroup2 = EGG_GROUP_AMORPHOUS,
-        .cryId = CRY_ALCREMIE,
-        .abilities = {ABILITY_SWEET_VEIL, ABILITY_NONE, ABILITY_AROMA_VEIL},
-        .bodyColor = BODY_COLOR_BROWN,
-        .noFlip = FALSE,
-    },
-
-    [SPECIES_ALCREMIE_RAINBOW_SWIRL] =
-    {
-        .baseHP        = 65,
-        .baseAttack    = 60,
-        .baseDefense   = 75,
-        .baseSpeed     = 64,
-        .baseSpAttack  = 110,
-        .baseSpDefense = 121,
-        .type1 = TYPE_FAIRY,
-        .type2 = TYPE_FAIRY,
-        .catchRate = 100,
-        .expYield = 173,
-        .evYield_SpDefense = 2,
-        .genderRatio = MON_FEMALE,
-        .eggCycles = 20,
-        .friendship = 70,
-        .growthRate = GROWTH_MEDIUM_FAST,
-        .eggGroup1 = EGG_GROUP_FAIRY,
-        .eggGroup2 = EGG_GROUP_AMORPHOUS,
-        .cryId = CRY_ALCREMIE,
-        .abilities = {ABILITY_SWEET_VEIL, ABILITY_NONE, ABILITY_AROMA_VEIL},
-        .bodyColor = BODY_COLOR_YELLOW,
-        .noFlip = FALSE,
-    },
-
     [SPECIES_EISCUE_NOICE_FACE] =
     {
         .baseHP        = 75,
@@ -31863,7 +31730,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_ICE_FACE, ABILITY_NONE},
         .bodyColor = BODY_COLOR_BLUE,
         .noFlip = FALSE,
-        .innates = {ABILITY_ANTARTIC_BIRD, ABILITY_SLUSH_RUSH, ABILITY_REFRIGERATE},
+        .innates = {ABILITY_ANTARCTIC_BIRD, ABILITY_SLUSH_RUSH, ABILITY_REFRIGERATE},
     },
 
     [SPECIES_INDEEDEE_FEMALE] =
@@ -32130,6 +31997,32 @@ const struct BaseStats gBaseStats[] =
         .bodyColor = BODY_COLOR_GRAY,
         .noFlip = FALSE,
         .innates = {ABILITY_ARTILLERY, ABILITY_SWIFT_SWIM},
+    },
+
+    [SPECIES_SKRELP_MUTUALISM] =
+    {
+        .baseHP        = 65,
+        .baseAttack    = 60,
+        .baseDefense   = 60,
+        .baseSpeed     = 30,
+        .baseSpAttack  = 60,
+        .baseSpDefense = 60,
+        .type1 = TYPE_POISON,
+        .type2 = TYPE_WATER,
+        .catchRate = 225,
+        .expYield = 64,
+        .evYield_SpDefense = 1,
+        .genderRatio = PERCENT_FEMALE(50),
+        .eggCycles = 20,
+        .friendship = 70,
+        .growthRate = GROWTH_MEDIUM_FAST,
+        .eggGroup1 = EGG_GROUP_WATER_1,
+        .eggGroup2 = EGG_GROUP_DRAGON,
+        .cryId = CRY_SKRELP,
+        .abilities = {ABILITY_SWIFT_SWIM, ABILITY_NONE, ABILITY_PROPELLER_TAIL},
+        .bodyColor = BODY_COLOR_BROWN,
+        .noFlip = FALSE,
+        .innates = {ABILITY_POISON_TOUCH, ABILITY_ADAPTABILITY},
     },
 
     [SPECIES_ONIX_CRYSTAL] =
@@ -35883,7 +35776,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_CHLOROPHYLL, ABILITY_INSOMNIA, ABILITY_MOODY},
         .bodyColor = BODY_COLOR_GREEN,
         .noFlip = FALSE,
-        .innates = {ABILITY_FLASH_FIRE, ABILITY_RED_HOT_CHILI_PEPPERS, ABILITY_VICIOUSNESS},
+        .innates = {ABILITY_FLASH_FIRE, ABILITY_RED_HOT_CHILI_PEPPERS, ABILITY_DARK_SIDE},
     },
 
     [SPECIES_RELLOR] =
@@ -37779,8 +37672,8 @@ const struct BaseStats gBaseStats[] =
         .baseSpeed     = 60,
         .baseSpAttack  = 110,
         .baseSpDefense = 70,
-        .type1 = TYPE_PSYCHIC,
-        .type2 = TYPE_DARK,
+        .type1 = TYPE_NORMAL,
+        .type2 = TYPE_PSYCHIC,
         .catchRate = 45,
         .expYield = 260,
         .evYield_HP  = 3,

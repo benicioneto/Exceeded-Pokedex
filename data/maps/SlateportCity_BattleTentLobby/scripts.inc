@@ -376,7 +376,12 @@ SlateportCity_BattleTentLobby_ExchangeServiceCorner_EventScript_ChooseHoldItem::
 	case 7, SlateportCity_BattleTentLobby_ExchangeServiceCorner_EventScript_DuskStone
 	case 8, SlateportCity_BattleTentLobby_ExchangeServiceCorner_EventScript_DawnStone
 	case 9, SlateportCity_BattleTentLobby_ExchangeServiceCorner_EventScript_IceStone
-	case 10, SlateportCity_BattleTentLobby__ExchangeServiceCorner_EventScript_ClerkGoodbye
+	case 10, SlateportCity_BattleTentLobby_ExchangeServiceCorner_EventScript_DragonScale
+	case 11, SlateportCity_BattleTentLobby_ExchangeServiceCorner_EventScript_Upgrade
+	case 12, SlateportCity_BattleTentLobby_ExchangeServiceCorner_EventScript_SweetApple
+	case 13, SlateportCity_BattleTentLobby_ExchangeServiceCorner_EventScript_TarApple
+	case 14, SlateportCity_BattleTentLobby_ExchangeServiceCorner_EventScript_SyrupyApple
+	case 15, SlateportCity_BattleTentLobby__ExchangeServiceCorner_EventScript_ClerkGoodbye
 	case MULTI_B_PRESSED, SlateportCity_BattleTentLobby__ExchangeServiceCorner_EventScript_ClerkGoodbye
 	end
 
@@ -438,7 +443,7 @@ SlateportCity_BattleTentLobby_ExchangeServiceCorner_EventScript_ShinyStone::
 	msgbox SlateportCity_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmShinyStone, MSGBOX_YESNO
 	compare VAR_RESULT, NO
 	goto_if_eq SlateportCity_BattleTentLobby_ExchangeServiceCorner_EventScript_ChooseHoldItem
-	setvar VAR_0x8008, 128
+	setvar VAR_0x8008, 99
 	setvar VAR_0x8009, ITEM_SHINY_STONE
 	goto SlateportCity_BattleTentLobby_ExchangeServiceCorner_EventScript_TryPurchasePrize
 	end
@@ -467,6 +472,51 @@ SlateportCity_BattleTentLobby_ExchangeServiceCorner_EventScript_IceStone::
 	goto_if_eq SlateportCity_BattleTentLobby_ExchangeServiceCorner_EventScript_ChooseHoldItem
 	setvar VAR_0x8008, 128
 	setvar VAR_0x8009, ITEM_ICE_STONE
+	goto SlateportCity_BattleTentLobby_ExchangeServiceCorner_EventScript_TryPurchasePrize
+	end
+
+SlateportCity_BattleTentLobby_ExchangeServiceCorner_EventScript_DragonScale::
+	msgbox SlateportCity_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmDragonScale, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq SlateportCity_BattleTentLobby_ExchangeServiceCorner_EventScript_ChooseHoldItem
+	setvar VAR_0x8008, 128
+	setvar VAR_0x8009, ITEM_DRAGON_SCALE
+	goto SlateportCity_BattleTentLobby_ExchangeServiceCorner_EventScript_TryPurchasePrize
+	end
+
+SlateportCity_BattleTentLobby_ExchangeServiceCorner_EventScript_Upgrade::
+	msgbox SlateportCity_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmUpgrade, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq SlateportCity_BattleTentLobby_ExchangeServiceCorner_EventScript_ChooseHoldItem
+	setvar VAR_0x8008, 128
+	setvar VAR_0x8009, ITEM_UP_GRADE
+	goto SlateportCity_BattleTentLobby_ExchangeServiceCorner_EventScript_TryPurchasePrize
+	end
+
+SlateportCity_BattleTentLobby_ExchangeServiceCorner_EventScript_SweetApple::
+	msgbox SlateportCity_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmSweetApple, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq SlateportCity_BattleTentLobby_ExchangeServiceCorner_EventScript_ChooseHoldItem
+	setvar VAR_0x8008, 128
+	setvar VAR_0x8009, ITEM_SWEET_APPLE
+	goto SlateportCity_BattleTentLobby_ExchangeServiceCorner_EventScript_TryPurchasePrize
+	end
+
+SlateportCity_BattleTentLobby_ExchangeServiceCorner_EventScript_TarApple::
+	msgbox SlateportCity_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmTarApple, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq SlateportCity_BattleTentLobby_ExchangeServiceCorner_EventScript_ChooseHoldItem
+	setvar VAR_0x8008, 128
+	setvar VAR_0x8009, ITEM_TART_APPLE
+	goto SlateportCity_BattleTentLobby_ExchangeServiceCorner_EventScript_TryPurchasePrize
+	end
+
+SlateportCity_BattleTentLobby_ExchangeServiceCorner_EventScript_SyrupyApple::
+	msgbox SlateportCity_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmSyrupyApple, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq SlateportCity_BattleTentLobby_ExchangeServiceCorner_EventScript_ChooseHoldItem
+	setvar VAR_0x8008, 128
+	setvar VAR_0x8009, ITEM_SYRUPY_APPLE
 	goto SlateportCity_BattleTentLobby_ExchangeServiceCorner_EventScript_TryPurchasePrize
 	end
 
@@ -565,6 +615,26 @@ SlateportCity_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmDawnStone:
 	.string "You've chosen the Dawn Stone.\n"
 	.string "Is that correct?$"
 
+SlateportCity_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmDragonScale:
+	.string "You've chosen the Dragon Scale.\n"
+	.string "Is that correct?$"
+
+SlateportCity_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmUpgrade:
+	.string "You've chosen the Upgrade.\n"
+	.string "Is that correct?$"
+
+SlateportCity_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmSweetApple:
+	.string "You've chosen the Sweet Apple.\n"
+	.string "Is that correct?$"
+
+SlateportCity_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmTarApple:
+	.string "You've chosen the Tart Apple.\n"
+	.string "Is that correct?$"
+
+SlateportCity_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmSyrupyApple:
+	.string "You've chosen the Syrupy Apple.\n"
+	.string "Is that correct?$"
+
 SlateportCity_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmRazorClaw:
 	.string "You've chosen the Razor Claw.\n"
 	.string "Is that correct?$"
@@ -585,4 +655,3 @@ SlateportCity_BattleTentLobby_ExchangeServiceCorner_Text_ThankYouVisitWithPoints
 SlateportCity_BattleTentLobby_ExchangeServiceCorner_Text_DontHaveEnoughPoints:
 	.string "I'm so sorry…\n"
 	.string "You don't have enough Slateport Points…$"
-

@@ -160,5 +160,6 @@ Debug_Script_8::
 	@setflag FLAG_BENJAMIN_BUTTERFREE_BATTLE
 	@setflag FLAG_HIDE_LILYCOVE_POLICE
 	@clearflag FLAG_LILYCOVE_TEAM_ROCKET
-	goto Route119_WeatherInstitute_2F_EventScript_Shelly
+	@goto Route119_WeatherInstitute_2F_EventScript_Shelly
+	goto MossdeepCity_SpaceCenter_2F_EventScript_Steven
 	end
