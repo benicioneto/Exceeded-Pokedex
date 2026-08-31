@@ -12533,6 +12533,7 @@ BattleScript_PetrifyingGazeActivatesLoop:
 	trygetintimidatetarget BattleScript_PetrifyingGazeActivatesReturn
 	tryparalyzebattler BS_TARGET, BattleScript_PetrifyingGazeActivatesLoopIncrement
 	statusanimation BS_TARGET
+	overwritelastusedability BS_ATTACKER, ABILITY_PETRIFYING_GAZE
 	printfromtable gGotParalyzedStringIds
 	waitmessage B_WAIT_TIME_LONG
 	updatestatusicon BS_TARGET
@@ -12567,6 +12568,7 @@ BattleScript_FrightenActivatesLoop:
 	jumpifbyte CMP_GREATER_THAN, cMULTISTRING_CHOOSER, 1, BattleScript_FrightenActivatesLoopIncrement
 	setgraphicalstatchangevalues
 	playanimation BS_TARGET, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
+	overwritelastusedability BS_ATTACKER, ABILITY_FRIGHTEN
 	printstring STRINGID_PKMNCUTSSPECIALATTACKWITH
 	waitmessage B_WAIT_TIME_LONG 
 	call BattleScript_TryAdrenalineOrb
@@ -12671,6 +12673,7 @@ BattleScript_IntimidateActivatesLoop:
 	jumpifbyte CMP_GREATER_THAN, cMULTISTRING_CHOOSER, 1, BattleScript_IntimidateActivatesLoopIncrement
 	setgraphicalstatchangevalues
 	playanimation BS_TARGET, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
+	overwritelastusedability BS_ATTACKER, ABILITY_INTIMIDATE
 	printstring STRINGID_PKMNCUTSATTACKWITH
 	waitmessage B_WAIT_TIME_LONG 
 	call BattleScript_TryAdrenalineOrb
@@ -12736,6 +12739,7 @@ BattleScript_IlluminateActivatesLoop:
 	jumpifbyte CMP_GREATER_THAN, cMULTISTRING_CHOOSER, 1, BattleScript_IlluminateActivatesLoopIncrement
 	setgraphicalstatchangevalues
 	playanimation BS_TARGET, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
+	overwritelastusedability BS_ATTACKER, ABILITY_ILLUMINATE
 	printstring STRINGID_PKMNCUTSACCURACYWITH
 	waitmessage B_WAIT_TIME_LONG 
 	tryillusionoff BS_TARGET
@@ -12772,6 +12776,7 @@ BattleScript_SupersweetSyrupActivatesLoop:
 	jumpifbyte CMP_GREATER_THAN, cMULTISTRING_CHOOSER, 1, BattleScript_SupersweetSyrupActivatesLoopIncrement
 	setgraphicalstatchangevalues
 	playanimation BS_TARGET, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
+	overwritelastusedability BS_ATTACKER, ABILITY_SUPERSWEET_SYRUP
 	printstring STRINGID_PKMNCUTSEVASIONWITH
 	waitmessage B_WAIT_TIME_LONG 
 	tryillusionoff BS_TARGET

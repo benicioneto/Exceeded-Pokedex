@@ -863,6 +863,7 @@ const u16 gEggMoves[] = {
               MOVE_SIGNAL_BEAM),
 
     egg_moves(GOLDEEN,
+              MOVE_ICE_LANCE,
               MOVE_ACUPRESSURE,
               MOVE_AQUA_TAIL,
               MOVE_HAZE,
