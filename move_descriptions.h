@@ -483,7 +483,7 @@ static const u8 sSelfDestructDescription[] = _(
 
 static const u8 sEggBombDescription[] = _(
     "An egg is forcibly hurled at\n"
-    "the foe that may burn.");
+    "the foe that explode.");
 
 static const u8 sLickDescription[] = _(
     "Licks with a long tongue to\n"
@@ -4010,29 +4010,29 @@ static const u8 sDESTRUCTIVE_DRILLDescription[] = _("Ignores the target's Defens
 static const u8 sCOMETDescription[] = _("A fire comet starts to fall\nabove the user.");
 static const u8 sCATACLYSMDescription[] = _("A meteor starts to fall\nabove the user.");
 static const u8 sPILLAGEDescription[] = _("Steals all target's items,\nbut lowers user's defenses.");
-static const u8 sDISRUPTDescription[] = _("Summons an bug-type terrain\nin the battlefield.");
-static const u8 sBRAINSTORMDescription[] = _("Summons an bug-type terrain\nin the battlefield.");
-static const u8 sSWARM_PUNCHDescription[] = _("Summons an bug-type terrain\nin the battlefield.");
-static const u8 sFRIED_EGGDescription[] = _("Summons an bug-type terrain\nin the battlefield.");
-static const u8 sSPOILED_EGGDescription[] = _("Summons an bug-type terrain\nin the battlefield.");
-static const u8 sEGG_DROPDescription[] = _("Summons an bug-type terrain\nin the battlefield.");
-static const u8 sFOSSIL_EGGDescription[] = _("Summons an bug-type terrain\nin the battlefield.");
-static const u8 sDRAGON_EGGDescription[] = _("Summons an bug-type terrain\nin the battlefield.");
-static const u8 sFLYTRAP_BITEDescription[] = _("Summons an bug-type terrain\nin the battlefield.");
-static const u8 sACIDIC_MAWDescription[] = _("Summons an bug-type terrain\nin the battlefield.");
-static const u8 sNECTAR_SIPHONDescription[] = _("Summons an bug-type terrain\nin the battlefield.");
-static const u8 sHEAT_ARMORDescription[] = _("Summons an bug-type terrain\nin the battlefield.");
-static const u8 sSIRENS_MELODYDescription[] = _("Summons an bug-type terrain\nin the battlefield.");
-static const u8 sCHRONO_CHORUSDescription[] = _("Summons an bug-type terrain\nin the battlefield.");
-static const u8 sFAIRYTIME_ARIADescription[] = _("Summons an bug-type terrain\nin the battlefield.");
-static const u8 sSUMMER_TIMEDescription[] = _("Summons an bug-type terrain\nin the battlefield.");
-static const u8 sWINTER_TIMEDescription[] = _("Summons an bug-type terrain\nin the battlefield.");
-static const u8 sDEFLORESTATIONDescription[] = _("Summons an bug-type terrain\nin the battlefield.");
-static const u8 sSTONE_WALLDescription[] = _("Summons an bug-type terrain\nin the battlefield.");
+static const u8 sDISRUPTDescription[] = _("A 1st-turn, 1st-strike move\nthat causes flinching.");
+static const u8 sBRAINSTORMDescription[] = _("A rampage of 2 to 3 turns\nthat confuses the user.");
+static const u8 sSWARM_PUNCHDescription[] = _("Strikes the foe with its\nfist 2 to 5 times.");
+static const u8 sFRIED_EGGDescription[] = _("An egg is forcibly hurled at\nthe foe that may burn.");
+static const u8 sSPOILED_EGGDescription[] = _("An egg is forcibly hurled at\nthe foe that may poison.");
+static const u8 sEGG_DROPDescription[] = _("Double power if the user\nmoves before the target.");
+static const u8 sFOSSIL_EGGDescription[] = _("An egg is forcibly hurled at\nthe foe that hurt.");
+static const u8 sDRAGON_EGGDescription[] = _("An egg is forcibly hurled at\nthe foe that hurt.");
+static const u8 sFLYTRAP_BITEDescription[] = _("An attack that gains power\nif injured by the foe.");
+static const u8 sACIDIC_MAWDescription[] = _("Tears at the foe with sharp\nfangs. May lower Defense.");
+static const u8 sNECTAR_SIPHONDescription[] = _("An attack that drains half\nthe damage inflicted.");
+static const u8 sHEAT_ARMORDescription[] = _("Heat foe's item to attack.\nFails if foe has no item.");
+static const u8 sSIRENS_MELODYDescription[] = _("Hurts on foes, but\nrestores ally's HP.");
+static const u8 sCHRONO_CHORUSDescription[] = _("Very powerful, but lowers\nDefense, Sp. Def and Speed.");
+static const u8 sFAIRYTIME_ARIADescription[] = _("Singes a fairy song.\nMay raise Sp. Atk.");
+static const u8 sSUMMER_TIMEDescription[] = _("Summons harshy sunlight and\nGrassy Terrain.");
+static const u8 sWINTER_TIMEDescription[] = _("Summons hailstorm and\nFrozen Terrain.");
+static const u8 sDEFLORESTATIONDescription[] = _("Unleashes nature fully\nremoving the Grass type.");
+static const u8 sSTONE_WALLDescription[] = _("Weakens all attacks, but\nonly usable with sandstorm.");
 static const u8 sSCRAPYARD_TERRAINDescription[] = _("Summons a Steel terrain.\nHurts when switching in.");
-static const u8 sICY_KISSDescription[] = _("Summons an bug-type terrain\nin the battlefield.");
-static const u8 sHEATED_KISSDescription[] = _("Summons an bug-type terrain\nin the battlefield.");
-static const u8 sVENOMBANEDescription[] = _("Summons an bug-type terrain\nin the battlefield.");
+static const u8 sICY_KISSDescription[] = _("Frostbites opposite gender\nand doubles the damage.");
+static const u8 sHEATED_KISSDescription[] = _("Burns opposite gender\nand doubles the damage.");
+static const u8 sVENOMBANEDescription[] = _("Super effective on Poison-\ntypes. May cause poison.");
 static const u8 sFISH_HARPOONDescription[] = _("Super effective on Water-\ntypes. Ignores Defense.");
 //  **************************** 27 distance letters ****************************
 

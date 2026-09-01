@@ -1,5 +1,6 @@
 .set LOCALID_MOVE_RELEARNER, 1
 .set LOCALID_EGG_MOVE_TEACHER, 2
+.set LOCALID_ABILITY_TEACHER, 3
 
 FallarborTown_MoveRelearnersHouse_MapScripts::
 	.byte 0
@@ -37,7 +38,6 @@ FallarborTown_MoveRelearnersHouse_EventScript_HaveEnoughMushrooms::
 
 FallarborTown_MoveRelearnersHouse_EventScript_ChooseMonToTeachOldMove::
 	msgbox FallarborTown_MoveRelearnersHouse_Text_TutorWhichMon, MSGBOX_DEFAULT
-	@special ChooseMonForEggMoveTeacher
 	special ChooseMonForMoveRelearner
 	waitstate
 	compare VAR_0x8004, 255
@@ -52,7 +52,7 @@ FallarborTown_MoveRelearnersHouse_EventScript_ChooseMonToTeachOldMove::
 
 FallarborTown_MoveRelearnersHouse_EventScript_ChooseOldMove::
 	msgbox FallarborTown_MoveRelearnersHouse_Text_TeachWhichMove, MSGBOX_DEFAULT
-	@special TeachMoveEggMove
+	@special TeachMoveRelearnerEggMove
 	special TeachMoveRelearnerMove
 	waitstate
 	compare VAR_0x8004, 0
@@ -153,7 +153,7 @@ FallarborTown_MoveRelearnersHouse_EventScript_ChooseMonToTeachEggMove::
 
 FallarborTown_MoveRelearnersHouse_EventScript_ChooseEggMove::
 	msgbox FallarborTown_MoveRelearnersHouse_Text_TeachWhichMove, MSGBOX_DEFAULT
-	special TeachMoveEggMove
+	special TeachMoveRelearnerEggMove
 	waitstate
 	compare VAR_0x8004, 0
 	goto_if_eq FallarborTown_MoveRelearnersHouse_EventScript_ChooseMonToTeachEggMove	
@@ -197,6 +197,111 @@ FallarborTown_MoveRelearnersHouse_Text_ComeBackWithHeartScale:
 	.string "If your Pokémon need to learn a move,\n"
 	.string "come back with a Heart Scale.$"
 
+@@@@@@@@@@@ ABILITY TUTOR @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+FallarborTown_MoveRelearnersHouse_EventScript_AbilityTeacher::
+	lockall
+	applymovement LOCALID_ABILITY_TEACHER, Common_Movement_FacePlayer
+	waitmovement 0
+	goto_if_set FLAG_TEMP_1, FallarborTown_MoveRelearnersHouse_EventScript_AskTeachAbility
+	msgbox FallarborTown_MoveRelearnersHouse_Text_ImTheAbilityTutor, MSGBOX_DEFAULT
+	setflag FLAG_TEMP_1
+	goto FallarborTown_MoveRelearnersHouse_EventScript_AskTeachAbility
+	end
+
+FallarborTown_MoveRelearnersHouse_EventScript_AskTeachAbility::
+	checkitem ITEM_PEARL, 2
+	compare VAR_RESULT, TRUE
+	goto_if_eq FallarborTown_MoveRelearnersHouse_EventScript_HaveEnoughPearls
+	checkitem ITEM_BIG_PEARL, 1
+	compare VAR_RESULT, TRUE
+	goto_if_eq FallarborTown_MoveRelearnersHouse_EventScript_HaveEnoughPearls
+FallarborTown_MoveRelearnersHouse_EventScript_ComeBackWithPearls::
+	msgbox FallarborTown_MoveRelearnersHouse_Text_ComeBackWithPearl, MSGBOX_DEFAULT
+	releaseall
+	end
+
+FallarborTown_MoveRelearnersHouse_EventScript_HaveEnoughPearls::
+	msgbox FallarborTown_MoveRelearnersHouse_Text_ThatsAPearlWantMeToTeachMove, MSGBOX_YESNO
+	switch VAR_RESULT
+	case NO, FallarborTown_MoveRelearnersHouse_EventScript_ComeBackWithPearls
+	goto FallarborTown_MoveRelearnersHouse_EventScript_ChooseMonToTeachAbility
+	end
+
+FallarborTown_MoveRelearnersHouse_EventScript_ChooseMonToTeachAbility::
+	msgbox FallarborTown_MoveRelearnersHouse_Text_TutorWhichMon, MSGBOX_DEFAULT
+	special ChooseMonForAbilityRelearner
+	waitstate
+	compare VAR_0x8004, 255
+	goto_if_eq FallarborTown_MoveRelearnersHouse_EventScript_ComeBackWithPearls
+	special IsSelectedMonEgg
+	compare VAR_RESULT, TRUE
+	goto_if_eq FallarborTown_MoveRelearnersHouse_EventScript_CantTeachEggAAbility
+	compare VAR_0x8005, 0
+	goto_if_eq FallarborTown_MoveRelearnersHouse_EventScript_NoAbilityToTeachMon
+	goto FallarborTown_MoveRelearnersHouse_EventScript_ChooseAbility
+	end
+
+FallarborTown_MoveRelearnersHouse_EventScript_ChooseAbility::
+	msgbox FallarborTown_MoveRelearnersHouse_Text_TeachWhichAbility, MSGBOX_DEFAULT
+	@special TeachMoveRelearnerEggMove
+	@special TeachMoveRelearnerMove
+	special TeachAbilityRelearnerAbility
+	waitstate
+	compare VAR_0x8004, 0
+	goto_if_eq FallarborTown_MoveRelearnersHouse_EventScript_ChooseMonToTeachAbility	
+	checkitem ITEM_PEARL, 2
+	compare VAR_RESULT, TRUE
+	goto_if_eq FallarborTown_MoveRelearnersHouse_EventScript_TakeTwoTinyPearls
+	msgbox FallarborTown_MoveRelearnersHouse_Text_HandedOverOneBigPearl, MSGBOX_DEFAULT
+	removeitem ITEM_BIG_PEARL
+	goto FallarborTown_MoveRelearnersHouse_EventScript_ComeBackWithPearls
+	end
+
+FallarborTown_MoveRelearnersHouse_EventScript_TakeTwoTinyPearls::
+	msgbox FallarborTown_MoveRelearnersHouse_Text_HandedOverTwoTinyPearls, MSGBOX_DEFAULT
+	removeitem ITEM_PEARL, 2
+	goto FallarborTown_MoveRelearnersHouse_EventScript_ComeBackWithPearls
+	end
+
+FallarborTown_MoveRelearnersHouse_EventScript_NoAbilityToTeachMon::
+	msgbox FallarborTown_MoveRelearnersHouse_Text_DontHaveAbilityToTeachPokemon, MSGBOX_DEFAULT
+	goto FallarborTown_MoveRelearnersHouse_EventScript_ChooseMonToTeachAbility
+	end
+
+FallarborTown_MoveRelearnersHouse_EventScript_CantTeachEggAAbility::
+	msgbox FallarborTown_MoveRelearnersHouse_Text_CantTeachEggAbility, MSGBOX_DEFAULT
+	goto FallarborTown_MoveRelearnersHouse_EventScript_ChooseMonToTeachAbility
+	end
+
+FallarborTown_MoveRelearnersHouse_Text_ImTheAbilityTutor:
+	.string "I'm the Ability Reminder.\p"
+	.string "I know all the abilities that Pokémon\n"
+	.string "learn--every one of them--and I can\l"
+	.string "teach Pokémon those abilities.\p"
+	.string "I can teach an ability to a Pokémon\n"
+	.string "of yours if you'd like.\p"
+	.string "I'll do it for two Pearls\n"
+	.string "or one Big Pearl.\l"
+	.string "I'm collecting those now.$"
+
+FallarborTown_MoveRelearnersHouse_Text_ComeBackWithPearl:
+	.string "If your Pokémon need to learn an ability,\n"
+	.string "come back with pearls.$"
+
+FallarborTown_MoveRelearnersHouse_Text_ThatsAPearlWantMeToTeachMove:
+	.string "Oh my… what a dazzling sight!\n"
+	.string "That pearl of yours shines brilliantly!\l"
+	.string "Shall I teach an ability to a Pokémon?$"
+
+FallarborTown_MoveRelearnersHouse_Text_HandedOverOneBigPearl:
+	.string "{PLAYER} handed over a Big Pearl\n"
+	.string "in exchange.$"
+
+FallarborTown_MoveRelearnersHouse_Text_HandedOverTwoTinyPearls:
+	.string "{PLAYER} handed over two Pearls\n"
+	.string "in exchange.$"
+
 @@@@@@@@@@@ Common phrases @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 
 FallarborTown_MoveRelearnersHouse_Text_TutorWhichMon:
@@ -205,13 +310,25 @@ FallarborTown_MoveRelearnersHouse_Text_TutorWhichMon:
 FallarborTown_MoveRelearnersHouse_Text_TeachWhichMove:
 	.string "Which move should I teach?$"
 
+FallarborTown_MoveRelearnersHouse_Text_TeachWhichAbility:
+	.string "Which ability should I teach?$"
+
 FallarborTown_MoveRelearnersHouse_Text_CantTeachEgg:
 	.string "Hunh? There isn't a single move that\n"
+	.string "I can teach an Egg.$"
+
+FallarborTown_MoveRelearnersHouse_Text_CantTeachEggAbility:
+	.string "Hunh? There isn't a single ability that\n"
 	.string "I can teach an Egg.$"
 
 FallarborTown_MoveRelearnersHouse_Text_DontHaveMoveToTeachPokemon:
 	.string "Sorry…\p"
 	.string "It doesn't appear as if I have any move\n"
+	.string "I can teach that Pokémon.$"
+
+FallarborTown_MoveRelearnersHouse_Text_DontHaveAbilityToTeachPokemon:
+	.string "Sorry…\p"
+	.string "It doesn't appear as if I have any ability\n"
 	.string "I can teach that Pokémon.$"
 
 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

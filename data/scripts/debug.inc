@@ -129,8 +129,7 @@ Debug_Script_3::
 	end
 
 Debug_Script_4::
-	setwildbattle SPECIES_CASTFORM, 50, ITEM_NONE
-	dowildbattle
+	giveitem ITEM_BIG_PEARL, 100
 	end
 
 Debug_Script_5::
