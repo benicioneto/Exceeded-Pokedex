@@ -6992,18 +6992,6 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .split = SPLIT_PHYSICAL,
         .zMovePower = 200,
         .zMoveEffect = Z_EFFECT_NONE,
-        /* .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_HAS_SECONDARY_EFFECT | FLAG_DOUBLE_DAMAGE_ON_MINIMIZED_TARGET,
-        .effect = EFFECT_TARGET_FLINCH_ON_HIT,
-        .power = 100,
-        .type = TYPE_DRAGON,
-        .accuracy = 85,
-        .pp = 10,
-        .secondaryEffectChance = 20,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .split = SPLIT_PHYSICAL,
-        .zMovePower = 180,
-        .zMoveEffect = Z_EFFECT_NONE, */
     },
 
     [MOVE_POWER_GEM] =

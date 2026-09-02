@@ -2961,7 +2961,7 @@ static const u8 sPowerShiftDescription[] = _(
     "and defensive stats.");
 
 static const u8 sStoneAxeDescription[] = _(
-    "High critical hit ratio. Sets\n"
+    "Swings its stone axes. Sets\n"
     "Splinters that hurt the foe.");
 
 static const u8 sSpringtideStormDescription[] = _(
@@ -4024,7 +4024,7 @@ static const u8 sNECTAR_SIPHONDescription[] = _("An attack that drains half\nthe
 static const u8 sHEAT_ARMORDescription[] = _("Heat foe's item to attack.\nFails if foe has no item.");
 static const u8 sSIRENS_MELODYDescription[] = _("Hurts on foes, but\nrestores ally's HP.");
 static const u8 sCHRONO_CHORUSDescription[] = _("Very powerful, but lowers\nDefense, Sp. Def and Speed.");
-static const u8 sFAIRYTIME_ARIADescription[] = _("Singes a fairy song.\nMay raise Sp. Atk.");
+static const u8 sFAIRYTIME_ARIADescription[] = _("Sings a fairy song.\nMay raise Sp. Atk.");
 static const u8 sSUMMER_TIMEDescription[] = _("Summons harshy sunlight and\nGrassy Terrain.");
 static const u8 sWINTER_TIMEDescription[] = _("Summons hailstorm and\nFrozen Terrain.");
 static const u8 sDEFLORESTATIONDescription[] = _("Unleashes nature fully\nremoving the Grass type.");

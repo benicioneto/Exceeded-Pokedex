@@ -8440,7 +8440,7 @@ const u32 gMonShinyPalette_ThuFiZerGalarian[] = INCBIN_U32("graphics/pokemon/thu
     const u16 gMonPalette_StaraptorMega[] = INCBIN_U16("graphics/pokemon/staraptor/mega/normal.gbapal.lz");
     const u32 gMonBackPic_StaraptorMega[] = INCBIN_U32("graphics/pokemon/staraptor/mega/back.4bpp.lz");
     const u16 gMonShinyPalette_StaraptorMega[] = INCBIN_U16("graphics/pokemon/staraptor/mega/shiny.gbapal.lz");
-//    const u8 gMonIcon_StaraptorMega[] = INCBIN_U8("graphics/pokemon/staraptor/mega/icon.4bpp");
+    const u8 gMonIcon_StaraptorMega[] = INCBIN_U8("graphics/pokemon/staraptor/mega/icon.4bpp");
 
     const u32 gMonFrontPic_FroslassMega[] = INCBIN_U32("graphics/pokemon/froslass/mega/front.4bpp.lz");
     const u16 gMonPalette_FroslassMega[] = INCBIN_U16("graphics/pokemon/froslass/mega/normal.gbapal.lz");
@@ -8502,10 +8502,10 @@ const u32 gMonShinyPalette_ThuFiZerGalarian[] = INCBIN_U32("graphics/pokemon/thu
     const u16 gMonShinyPalette_AbsolMegaZ[] = INCBIN_U16("graphics/pokemon/absol/mega_z/shiny.gbapal.lz");
     const u8 gMonIcon_AbsolMegaZ[] = INCBIN_U8("graphics/pokemon/absol/mega_z/icon.4bpp");
     
-//    const u32 gMonFrontPic_GarchompMegaZ[] = INCBIN_U32("graphics/pokemon/garchomp/mega_z/front.4bpp.lz");
-//    const u16 gMonPalette_GarchompMegaZ[] = INCBIN_U16("graphics/pokemon/garchomp/mega_z/normal.gbapal.lz");
-//    const u32 gMonBackPic_GarchompMegaZ[] = INCBIN_U32("graphics/pokemon/garchomp/mega_z/back.4bpp.lz");
-//    const u16 gMonShinyPalette_GarchompMegaZ[] = INCBIN_U16("graphics/pokemon/garchomp/mega_z/shiny.gbapal.lz");
+    const u32 gMonFrontPic_GarchompMegaZ[] = INCBIN_U32("graphics/pokemon/garchomp/mega_z/front.4bpp.lz");
+    const u16 gMonPalette_GarchompMegaZ[] = INCBIN_U16("graphics/pokemon/garchomp/mega_z/normal.gbapal.lz");
+    const u32 gMonBackPic_GarchompMegaZ[] = INCBIN_U32("graphics/pokemon/garchomp/mega_z/back.4bpp.lz");
+    const u16 gMonShinyPalette_GarchompMegaZ[] = INCBIN_U16("graphics/pokemon/garchomp/mega_z/shiny.gbapal.lz");
     const u8 gMonIcon_GarchompMegaZ[] = INCBIN_U8("graphics/pokemon/garchomp/mega_z/icon.4bpp");
     
     const u32 gMonFrontPic_LucarioMegaZ[] = INCBIN_U32("graphics/pokemon/lucario/mega_z/front.4bpp.lz");

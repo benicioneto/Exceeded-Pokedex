@@ -2009,7 +2009,7 @@ bool8 HasSpeciesAbilityTypeChange(u16 species)
                         return TRUE;
                     break;
                 case TYPE_FIRE:
-                    if (monAbility == ABILITY_BONFIRE_BLOSSOM)
+                    if (monAbility == ABILITY_BONFIRE_BLOSSOM || monAbility == ABILITY_TURBOBLAZE)
                         return TRUE;
                     break;
                 case TYPE_POISON:
@@ -2026,7 +2026,7 @@ bool8 HasSpeciesAbilityTypeChange(u16 species)
                         return TRUE;
                     break;
                 case TYPE_ELECTRIC:
-                    if (monAbility == ABILITY_ELECTROCYTES)
+                    if (monAbility == ABILITY_ELECTROCYTES || monAbility == ABILITY_TERAVOLT)
                         return TRUE;
                     break;
                 case TYPE_WATER:
@@ -2038,7 +2038,7 @@ bool8 HasSpeciesAbilityTypeChange(u16 species)
                         return TRUE;
                     break;
                 case TYPE_ICE:
-                    if (monAbility == ABILITY_NORTH_WIND || monAbility == ABILITY_HALF_DINO || monAbility == ABILITY_FROSTBORN)
+                    if (monAbility == ABILITY_NORTH_WIND || monAbility == ABILITY_HALF_DINO || monAbility == ABILITY_FROSTBORN || monAbility == ABILITY_BIOFROST)
                         return TRUE;
                     break;
                 case TYPE_ROCK:
