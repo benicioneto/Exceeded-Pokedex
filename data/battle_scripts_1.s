@@ -440,7 +440,7 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectOrderUp                 @ EFFECT_ORDER_UP
 	.4byte BattleScript_EffectHit                     @ EFFECT_TERA_STARSTORM
 	.4byte BattleScript_EffectFickleBeam              @ EFFECT_FICKLE_BEAM
-	.4byte BattleScript_EffectFocusEnergy             @ EFFECT_DRAGON_CHEER
+	.4byte BattleScript_EffectDragonCheer             @ EFFECT_DRAGON_CHEER
 	.4byte BattleScript_EffectArgumentEffectHit       @ EFFECT_ALLURING_VOICE
 	.4byte BattleScript_EffectArgumentEffectHit       @ EFFECT_PSYCHIC_NOISE
 	.4byte BattleScript_EffectHit       			  @ EFFECT_NIHIL_LIGHT
@@ -1912,6 +1912,7 @@ BattleScript_ShedTailSwitchOut::
 	switchindataupdate BS_ATTACKER
 	hpthresholds BS_ATTACKER
 	trytoclearprimalweather
+	tryclearprimalterrain
 	printstring STRINGID_EMPTYSTRING3
 	waitmessage 1
 	printstring STRINGID_SWITCHINMON
@@ -2465,6 +2466,7 @@ BattleScript_EffectInkJetSwitch:
 	switchindataupdate BS_ATTACKER
 	hpthresholds BS_ATTACKER
 	trytoclearprimalweather
+	tryclearprimalterrain
 	printstring STRINGID_EMPTYSTRING3
 	waitmessage 1
 	printstring STRINGID_SWITCHINMON
@@ -3169,7 +3171,15 @@ BattleScript_TwoTurnsAttackDecideTurn:
 	jumpifmove MOVE_MIDNIGHT_BEAM, BattleScript_FirstTurnNightfallDaze
 	jumpifmove MOVE_ELECTRO_SHOT, BattleScript_FirstTurnElectroShot
 	jumpifmove MOVE_KISS_BLISS_KABOOM, BattleScript_FirstTurnKissBlissKaboom
+	jumpifmove MOVE_ICE_BURN, BattleScript_FirstTurnFreezeShock
+	jumpifmove MOVE_FREEZE_SHOCK, BattleScript_FirstTurnIceBurn
 	setbyte sTWOTURN_STRINGID, B_MSG_TURN1_DRACO_IMPACT
+	goto BattleScript_FirstTurnChargingEffect
+BattleScript_FirstTurnIceBurn:
+	setbyte sTWOTURN_STRINGID, B_MSG_TURN1_FREEZE_SHOCK
+	goto BattleScript_FirstTurnChargingEffect
+BattleScript_FirstTurnFreezeShock:
+	setbyte sTWOTURN_STRINGID, B_MSG_TURN1_FREEZE_SHOCK
 	goto BattleScript_FirstTurnChargingEffect
 BattleScript_FirstTurnKissBlissKaboom:
 	setbyte sTWOTURN_STRINGID, B_MSG_TURN1_KISS_BLISS_KABOOM
@@ -3594,12 +3604,18 @@ BattleScript_EffectRemoveTerrain:
 	ppreduce
 	call BattleScript_EffectDamage_Ret
 	removeterrain
-	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, 4, BattleScript_MoveEnd
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_DESTROY_TERRAIN, BattleScript_MoveEnd
 	printfromtable gTerrainEndingStringIds
 	waitmessage B_WAIT_TIME_LONG
 	playanimation BS_ATTACKER, B_ANIM_RESTORE_BG, NULL
 	tryfaintmon BS_TARGET, FALSE, NULL
 	goto BattleScript_MoveEnd
+
+BattleScript_PrimalTerrainEnded::
+	printfromtable gTerrainEndingStringIds
+	waitmessage B_WAIT_TIME_LONG
+	playanimation BS_ATTACKER, B_ANIM_RESTORE_BG, NULL
+	return
 
 BattleScript_EffectCoaching:
 	attackcanceler
@@ -3861,6 +3877,7 @@ BattleScript_MoveEffectCoreEnforcer::
 	printstring STRINGID_PKMNSABILITYSUPPRESSED
 	waitmessage B_WAIT_TIME_LONG
 	trytoclearprimalweather
+	tryclearprimalterrain
 	printstring STRINGID_EMPTYSTRING3
 	waitmessage 1
 BattleScript_CoreEnforcerRet:
@@ -3960,6 +3977,7 @@ BattleScript_EffectPartingShotSwitch:
 	switchindataupdate BS_ATTACKER
 	hpthresholds BS_ATTACKER
 	trytoclearprimalweather
+	tryclearprimalterrain
 	printstring STRINGID_EMPTYSTRING3
 	waitmessage 1
 	printstring STRINGID_SWITCHINMON
@@ -5108,6 +5126,7 @@ BattleScript_EffectSimpleBeam:
 	printstring STRINGID_PKMNACQUIREDSIMPLE
 	waitmessage B_WAIT_TIME_LONG
 	trytoclearprimalweather
+	tryclearprimalterrain
 	printstring STRINGID_EMPTYSTRING3
 	waitmessage 1
 	tryendneutralizinggas BS_TARGET
@@ -5168,6 +5187,7 @@ BattleScript_EffectHealingWish:
 	switchindataupdate BS_ATTACKER
 	hpthresholds BS_ATTACKER
 	trytoclearprimalweather
+	tryclearprimalterrain
 	printstring STRINGID_EMPTYSTRING3
 	waitmessage 1
 	printstring STRINGID_SWITCHINMON
@@ -5208,6 +5228,7 @@ BattleScript_EffectWorrySeed:
 	printstring STRINGID_PKMNACQUIREDABILITY
 	waitmessage B_WAIT_TIME_LONG
 	trytoclearprimalweather
+	tryclearprimalterrain
 	printstring STRINGID_EMPTYSTRING3
 	waitmessage 1
 	goto BattleScript_MoveEnd
@@ -5339,6 +5360,7 @@ BattleScript_EffectGastroAcid:
 	printstring STRINGID_PKMNSABILITYSUPPRESSED
 	waitmessage B_WAIT_TIME_LONG
 	trytoclearprimalweather
+	tryclearprimalterrain
 	printstring STRINGID_EMPTYSTRING3
 	waitmessage 1
 	tryendneutralizinggas BS_TARGET
@@ -5552,6 +5574,7 @@ BattleScript_TryToEscape:
 	switchindataupdate BS_ATTACKER
 	hpthresholds BS_ATTACKER
 	trytoclearprimalweather
+	tryclearprimalterrain
 	printstring STRINGID_EMPTYSTRING3
 	waitmessage 1
 	printstring STRINGID_SWITCHINMON
@@ -6830,17 +6853,64 @@ BattleScript_EffectMist::
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 
+BattleScript_EffectDragonCheer:
+	attackcanceler
+	attackstring
+	ppreduce
+	jumpifstatus2 BS_TARGET, STATUS2_FOCUS_ENERGY, BattleScript_ButItFailed
+	jumpifstatus4 BS_TARGET, STATUS4_DRAGON_CHEER, BattleScript_ButItFailed
+	jumpifstat BS_ATTACKER, CMP_LESS_THAN, STAT_ATK, MAX_STAT_STAGE, BattleScript_DragonCheerDoMoveAnim
+	jumpifstat BS_ATTACKER, CMP_EQUAL, STAT_SPATK, MAX_STAT_STAGE, BattleScript_CantRaiseMultipleStats
+BattleScript_DragonCheerDoMoveAnim::
+	attackanimation
+	waitanimation
+	setfocusenergy
+	printfromtable gFocusEnergyUsedStringIds
+	waitmessage B_WAIT_TIME_LONG
+	setbyte sSTAT_ANIM_PLAYED, FALSE
+	playstatchangeanimation BS_ATTACKER, BIT_ATK | BIT_SPATK, 0
+	setstatchanger STAT_ATK, 1, FALSE
+	statbuffchange MOVE_EFFECT_AFFECTS_ATTACKER | STAT_CHANGE_ALLOW_PTR, BattleScript_DragonCheerTrySpAtk
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_DragonCheerTrySpAtk
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_DragonCheerTrySpAtk::
+	setstatchanger STAT_SPATK, 1, FALSE
+	statbuffchange MOVE_EFFECT_AFFECTS_ATTACKER | STAT_CHANGE_ALLOW_PTR, BattleScript_DragonCheerEnd
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_DragonCheerEnd
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_DragonCheerEnd::
+	goto BattleScript_MoveEnd
+
 BattleScript_EffectFocusEnergy:
 	attackcanceler
 	attackstring
 	ppreduce
 	jumpifstatus2 BS_TARGET, STATUS2_FOCUS_ENERGY, BattleScript_ButItFailed
 	jumpifstatus4 BS_TARGET, STATUS4_DRAGON_CHEER, BattleScript_ButItFailed
-	setfocusenergy
+	jumpifstat BS_ATTACKER, CMP_LESS_THAN, STAT_DEF, MAX_STAT_STAGE, BattleScript_FocusEnergyDoMoveAnim
+	jumpifstat BS_ATTACKER, CMP_EQUAL, STAT_SPDEF, MAX_STAT_STAGE, BattleScript_CantRaiseMultipleStats
+BattleScript_FocusEnergyDoMoveAnim::
 	attackanimation
 	waitanimation
+	setfocusenergy
 	printfromtable gFocusEnergyUsedStringIds
 	waitmessage B_WAIT_TIME_LONG
+	setbyte sSTAT_ANIM_PLAYED, FALSE
+	playstatchangeanimation BS_ATTACKER, BIT_DEF | BIT_SPDEF, 0
+	setstatchanger STAT_DEF, 1, FALSE
+	statbuffchange MOVE_EFFECT_AFFECTS_ATTACKER | STAT_CHANGE_ALLOW_PTR, BattleScript_FocusEnergyTrySpDef
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_FocusEnergyTrySpDef
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_FocusEnergyTrySpDef::
+	setstatchanger STAT_SPDEF, 1, FALSE
+	statbuffchange MOVE_EFFECT_AFFECTS_ATTACKER | STAT_CHANGE_ALLOW_PTR, BattleScript_FocusEnergyEnd
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_INCREASE, BattleScript_FocusEnergyEnd
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_FocusEnergyEnd::
 	goto BattleScript_MoveEnd
 
 BattleScript_EffectConfuse:
@@ -6940,6 +7010,7 @@ BattleScript_EffectTransform::
 	attackstring
 	ppreduce
 	trytoclearprimalweather
+	tryclearprimalterrain
 	printstring STRINGID_EMPTYSTRING3
 	waitmessage 1
 	transformdataexecution
@@ -7209,6 +7280,11 @@ BattleScript_MoveUsedMustRecharge::
 
 BattleScript_MoveUsedTimeDistortion::
 	printstring STRINGID_DISTORTION_TIME
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MoveEnd
+
+BattleScript_MoveUsedSpatialWarped::
+	printstring STRINGID_ANOTHER_DIMENSION
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 
@@ -7916,6 +7992,7 @@ BattleScript_EffectBatonPass::
 	switchindataupdate BS_ATTACKER
 	hpthresholds BS_ATTACKER
 	trytoclearprimalweather
+	tryclearprimalterrain
 	printstring STRINGID_EMPTYSTRING3
 	waitmessage 1
 	printstring STRINGID_SWITCHINMON
@@ -9347,6 +9424,7 @@ BattleScript_FaintedMonTryChooseAnother:
 	switchindataupdate BS_ATTACKER
 	hpthresholds BS_ATTACKER
 	trytoclearprimalweather
+	tryclearprimalterrain
 	printstring STRINGID_EMPTYSTRING3
 	waitmessage 1
 	printstring STRINGID_SWITCHINMON
@@ -9360,6 +9438,7 @@ BattleScript_FaintedMonChooseAnother:
 	switchindataupdate BS_FAINTED
 	hpthresholds BS_FAINTED
 	trytoclearprimalweather
+	tryclearprimalterrain
 	printstring STRINGID_EMPTYSTRING3
 	waitmessage 1
 	printstring STRINGID_SWITCHINMON
@@ -9396,6 +9475,7 @@ BattleScript_HandleFaintedMonLoop::
 	switchindataupdate BS_FAINTED
 	hpthresholds BS_FAINTED
 	trytoclearprimalweather
+	tryclearprimalterrain
 	printstring STRINGID_EMPTYSTRING3
 	waitmessage 1
 	printstring STRINGID_SWITCHINMON
@@ -9618,6 +9698,7 @@ BattleScript_DoSwitchOut::
 	switchindataupdate BS_ATTACKER
 	hpthresholds BS_ATTACKER
 	trytoclearprimalweather
+	tryclearprimalterrain
 	printstring STRINGID_EMPTYSTRING3
 	waitmessage 1
 	printstring STRINGID_SWITCHINMON
@@ -10092,6 +10173,7 @@ BattleScript_RoarSuccessSwitch::
 	getswitchedmondata BS_TARGET
 	switchindataupdate BS_TARGET
 	trytoclearprimalweather
+	tryclearprimalterrain
 	printstring STRINGID_EMPTYSTRING3
 	waitmessage 1
 	switchinanim BS_TARGET, FALSE
@@ -10362,6 +10444,29 @@ BattleScript_Stealth_End3::
 	call BattleScript_Stealth_Ret
 	setsemiinvulnerablehelper BS_ATTACKER, 1
 	end3
+
+BattleScript_SpatialWarpTargetActivates::
+	call BattleScript_AbilityPopUp
+	playanimation BS_TARGET, B_ANIM_SPATIAL_WARP, NULL
+	waitanimation
+	printstring STRINGID_SPATIAL_WARPED
+	waitmessage B_WAIT_TIME_LONG
+	setbattlerstatus BS_TARGET, 3, STATUS3_SPATIAL_WARPED, BattleScript_Return
+	setsemiinvulnerablehelper BS_TARGET, 2
+	return
+
+BattleScript_SpatialWarpAttackerActivates::
+	call BattleScript_AbilityPopUp
+	swapattackerwithtarget
+	playanimation BS_TARGET, B_ANIM_SPATIAL_WARP, NULL
+	waitanimation
+	printstring STRINGID_SPATIAL_WARPED
+	waitmessage B_WAIT_TIME_LONG
+	setbattlerstatus BS_TARGET, 3, STATUS3_SPATIAL_WARPED, BattleScript_SpatialWarpReturn
+	setsemiinvulnerablehelper BS_TARGET, 2
+BattleScript_SpatialWarpReturn:
+	swapattackerwithtarget
+	return
 
 BattleScript_Grimtooth::
 	call BattleScript_AbilityPopUp
@@ -15907,6 +16012,7 @@ BattleScript_EjectButtonActivates::
 	switchindataupdate BS_SCRIPTING
 	hpthresholds BS_SCRIPTING
 	trytoclearprimalweather
+	tryclearprimalterrain
 	printstring STRINGID_EMPTYSTRING3
 	waitmessage 1
 	printstring 0x3

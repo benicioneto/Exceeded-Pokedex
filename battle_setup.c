@@ -2022,7 +2022,7 @@ bool8 HasSpeciesAbilityTypeChange(u16 species)
                         return TRUE;
                     break;
                 case TYPE_DARK:
-                    if (monAbility == ABILITY_DARK_SIDE || monAbility == ABILITY_NOCTURNAL || monAbility == ABILITY_ONI)
+                    if (monAbility == ABILITY_DARK_SIDE || monAbility == ABILITY_ONI)
                         return TRUE;
                     break;
                 case TYPE_ELECTRIC:

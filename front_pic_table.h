@@ -1612,6 +1612,7 @@ const struct CompressedSpriteSheet gMonFrontPicTable[] =
 
     // Custom Pokémon
     SPECIES_SPRITE(REMORAID_COMMENSAL, gMonFrontPic_Remoraid),
+    SPECIES_SPRITE(SKRELP_MUTUALISM, gMonFrontPic_Skrelp),
     SPECIES_SPRITE(SNORLAX_SNOW, gMonFrontPic_SnorlaxSnow),
     SPECIES_SPRITE(PIKACHU_FLYING, gMonFrontPic_PikachuFlying),
     SPECIES_SPRITE(PIKACHU_SURFING, gMonFrontPic_PikachuSurfing),

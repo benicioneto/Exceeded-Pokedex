@@ -1302,6 +1302,7 @@ gBattleAnims_General::
 	.4byte General_Swamp                    @ B_ANIM_SWAMP
 	.4byte General_Burn                     @ B_ANIM_BURNING_TERRAIN
 	.4byte General_Night                    @ B_ANIM_NIGHT_CONTINUES
+	.4byte General_SpatialWarp              @ B_ANIM_SPATIAL_WARP
 	
 	.align 2
 gBattleAnims_Special::
@@ -8506,7 +8507,6 @@ Move_FREEZE_SHOCK::
 	loadspritegfx ANIM_TAG_SPARK_2
 	loadspritegfx ANIM_TAG_ICE_CHUNK @Ice Ball
 	loadspritegfx ANIM_TAG_CIRCLE_OF_LIGHT @Electric Circle
-	goto FreezeShockAttack
 	choosetwoturnanim FreezeShockCharge FreezeShockAttack
 FreezeShockCharge:
 	launchtask AnimTask_HorizontalShake 0x5 0x3 0x0 0x2 0x10
@@ -8548,7 +8548,6 @@ Move_ICE_BURN::
 	loadspritegfx ANIM_TAG_ICE_CHUNK @white color
 	loadspritegfx ANIM_TAG_ICE_CRYSTALS @ice
 	loadspritegfx ANIM_TAG_SMALL_EMBER
-	goto IceBurnUnleash
 	choosetwoturnanim IceBurnCharge, IceBurnUnleash
 	waitforvisualfinish
 	end
@@ -31724,6 +31723,13 @@ FlyUnleash:
 	clearmonbg ANIM_DEF_PARTNER
 	blendoff
 	goto FlyEnd
+
+General_SpatialWarp:
+	loadspritegfx ANIM_TAG_ROUND_SHADOW
+	loadspritegfx ANIM_TAG_IMPACT
+	playsewithpan SE_M_TELEPORT, SOUND_PAN_ATTACKER
+	createsprite gBounceBallShrinkSpriteTemplate, ANIM_ATTACKER, 2, 0, 0
+	end
 
 Move_BOUNCE:
 	loadspritegfx ANIM_TAG_ROUND_SHADOW

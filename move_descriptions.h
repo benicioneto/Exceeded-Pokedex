@@ -462,7 +462,7 @@ static const u8 sReflectDescription[] = _(
     "weakens physical attacks.");
 
 static const u8 sFocusEnergyDescription[] = _(
-    "Enhance critical-hit ratio,\n"
+    "Ups defenses, crit ratio,\n"
     "Focus Blast and Focus Punch.");
 
 static const u8 sBideDescription[] = _(
@@ -1082,11 +1082,11 @@ static const u8 sHelpingHandDescription[] = _(
 
 static const u8 sTrickDescription[] = _(
     "Tricks the foe into trading\n"
-    "held items.");
+    "all held items.");
 
 static const u8 sRolePlayDescription[] = _(
     "Mimics the target and\n"
-    "copies its special ability.");
+    "copies all special ability.");
 
 static const u8 sWishDescription[] = _(
     "A wish that restores HP.\n"
@@ -1137,7 +1137,7 @@ static const u8 sEruptionDescription[] = _(
     "the more damage caused.");
 
 static const u8 sSkillSwapDescription[] = _(
-    "The user swaps special\n"
+    "The user swaps all\n"
     "abilities with the target.");
 
 static const u8 sImprisonDescription[] = _(
@@ -1942,7 +1942,7 @@ static const u8 sSIMPLE_BEAMDescription[] = _(
 
 static const u8 sENTRAINMENTDescription[] = _(
     "Makes the foe mimic the\n"
-    "user, gaining its ability.");
+    "user, copying all abilities.");
 
 static const u8 sAFTER_YOUDescription[] = _(
     "Helps out the foe, letting\n"
@@ -3276,8 +3276,8 @@ static const u8 sTachyonCutterDescription[] = _(
     "the target. Strikes twice.");
 
 static const u8 sDragonCheerDescription[] = _(
-    "Increases allies' critical hit\n"
-    "ration, especially if Dragons.");
+    "Increases ally's offensive and\n"
+    "crit, especially if Dragons.");
 
 static const u8 sAlluringVoiceDescription[] = _(
     "Confuses the target if their\n"
