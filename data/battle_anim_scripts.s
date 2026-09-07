@@ -1135,6 +1135,14 @@ gBattleAnims_Moves::
 	.4byte Move_HEATED_KISS
 	.4byte Move_VENOMBANE
 	.4byte Move_FISH_HARPOON
+	.4byte Move_BOLTING_SHOT
+	.4byte Move_ENGINE_ROAR
+	.4byte Move_REVERSAL_POWER
+	.4byte Move_SUPERSONIC_BREAK
+	.4byte Move_STELLAR_PUNCH
+	.4byte Move_ICE_CHAINS
+	.4byte Move_SEVERE_POISON
+	.4byte Move_ELECTRO_RAILGUN
 
 @@@@@@@@@@@@ Z MOVES @@@@@@@@@@@
 	.4byte Move_BREAKNECK_BLITZ
@@ -1336,6 +1344,8 @@ Move_STARLIGHT_RECITAL::
 Move_HEAT_ARMOR:
 Move_DEFLORESTATION:
 Move_VENOMBANE:
+Move_SUPERSONIC_BREAK:
+Move_ICE_CHAINS:
 	goto Move_TACKLE
 
 Move_ROOST:
@@ -6057,6 +6067,7 @@ ClearSmogCloud:
 	delay 7
 	return
 
+Move_REVERSAL_POWER:
 Move_STORED_POWER:
 	loadspritegfx ANIM_TAG_RED_ORB_2
 	loadspritegfx ANIM_TAG_IMPACT
@@ -8841,6 +8852,7 @@ FusionFlareBuff:
 	launchtemplate gEndureEnergySpriteTemplate 0x2 0x4 0x0 0xfff4 0x0 0x1
 	return
 
+Move_BOLTING_SHOT:
 Move_FUSION_BOLT::
 	loadspritegfx ANIM_TAG_SPARK
 	loadspritegfx ANIM_TAG_CIRCLE_OF_LIGHT
@@ -31163,6 +31175,7 @@ Move_SYNTHESIS:
 	waitforvisualfinish
 	end
 
+Move_SEVERE_POISON:
 Move_MARRIAGETOXIN:
 Move_TOXIC:
 	loadspritegfx ANIM_TAG_TOXIC_BUBBLE
@@ -32715,6 +32728,7 @@ PsywaveRings:
 	delay 4
 	return
 
+Move_ELECTRO_RAILGUN:
 Move_ZAP_CANNON:
 	loadspritegfx ANIM_TAG_BLACK_BALL_2
 	loadspritegfx ANIM_TAG_SPARK_2
@@ -33988,6 +34002,31 @@ Move_WISH:
 	waitforvisualfinish
 	end
 
+Move_STELLAR_PUNCH:
+	loadspritegfx ANIM_TAG_IMPACT
+	loadspritegfx ANIM_TAG_HANDS_AND_FEET
+	loadspritegfx ANIM_TAG_GOLD_STARS
+	loadspritegfx ANIM_TAG_SPARKLE_2
+	monbg ANIM_TARGET
+	delay 2
+	createsprite gSimplePaletteBlendSpriteTemplate, ANIM_ATTACKER, 2, 1, 3, 0, 10, RGB_BLACK
+	waitforvisualfinish
+	panse_27 SE_M_REFLECT, SOUND_PAN_TARGET, SOUND_PAN_ATTACKER, -3, 0
+	createsprite gWishStarSpriteTemplate, ANIM_ATTACKER, 40
+	playsewithpan SE_M_MEGA_KICK, SOUND_PAN_TARGET
+	createsprite gMegaPunchKickSpriteTemplate, ANIM_ATTACKER, 3, 0, 0, 0, 50
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, 4, 2, 0, 7, RGB_WHITE
+	delay 50
+	createsprite gBasicHitSplatSpriteTemplate, ANIM_ATTACKER, 2, 0, 0, ANIM_TARGET, 0
+	createvisualtask AnimTask_ShakeMon2, 2, ANIM_TARGET, 4, 0, 22, 1
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, 4, 2, 0, 0, RGB_WHITE
+	createsprite gComplexPaletteBlendSpriteTemplate, ANIM_ATTACKER, 2, 31, 3, 1, RGB_BLACK, 8, 0, 0
+	playsewithpan SE_M_VITAL_THROW2, SOUND_PAN_TARGET
+	waitforvisualfinish
+	clearmonbg ANIM_TARGET
+	blendoff
+	end
+
 Move_STOCKPILE:
 	loadspritegfx ANIM_TAG_GRAY_ORB
 	playsewithpan SE_M_MEGA_KICK, SOUND_PAN_ATTACKER
@@ -34326,6 +34365,7 @@ Move_BLAZE_KICK:
 	blendoff
 	end
 
+Move_ENGINE_ROAR:
 Move_BANSHEES_CRY:
 Move_HYPER_VOICE:
 	loadspritegfx ANIM_TAG_THIN_RING

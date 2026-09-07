@@ -15625,14 +15625,38 @@ static const u8 sIronLeavesTutorLearnset[] = {
 };
 
 static const u8 sDipplinTutorLearnset[] = {
+    TUTOR(BODY_SLAM),
+    TUTOR(ENDURE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
+    0xFF,
+};
+
+static const u8 sHydrappleTutorLearnset[] = {
+    TUTOR(BODY_SLAM),
+    TUTOR(ENDURE),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
     0xFF,
 };
 
 static const u8 sPoltchageistTutorLearnset[] = {
+    TUTOR(ENDURE),
+    TUTOR(METRONOME),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
     0xFF,
 };
 
 static const u8 sSinistchaTutorLearnset[] = {
+    TUTOR(ENDURE),
+    TUTOR(METRONOME),
+    TUTOR(SLEEP_TALK),
+    TUTOR(SNORE),
+    TUTOR(SUBSTITUTE),
     0xFF,
 };
 
@@ -16876,6 +16900,7 @@ const u8 *const gTutorLearnsets[NUM_SPECIES] =
     [SPECIES_WALKING_WAKE] = sWalkingWakeTutorLearnset,
     [SPECIES_IRON_LEAVES] = sIronLeavesTutorLearnset,
     [SPECIES_DIPPLIN] = sDipplinTutorLearnset,
+    [SPECIES_HYDRAPPLE] = sHydrappleTutorLearnset,
     [SPECIES_POLTCHAGEIST_COUNTERFEIT] = sPoltchageistTutorLearnset,
     [SPECIES_POLTCHAGEIST_ARTISAN] = sPoltchageistTutorLearnset,
     [SPECIES_SINISTCHA_UNREMARKABLE] = sSinistchaTutorLearnset,

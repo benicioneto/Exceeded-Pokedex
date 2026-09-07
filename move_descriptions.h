@@ -214,8 +214,8 @@ static const u8 sFlamethrowerDescription[] = _(
     "may inflict a burn.");
 
 static const u8 sMistDescription[] = _(
-    "Creates a mist that stops\n"
-    "reduction of abilities.");
+    "Stops reduction of stats.\n"
+    "Reduces foes accuracy.");
 
 static const u8 sWaterGunDescription[] = _(
     "Squirts water to attack\n"
@@ -675,7 +675,7 @@ static const u8 sThiefDescription[] = _(
 
 static const u8 sSpiderWebDescription[] = _(
     "Prevents fleeing or switching.\n"
-    "Applies Sticky Web.");
+    "Also, lowers Speed stat.");
 
 static const u8 sMindReaderDescription[] = _(
     "Ensure the next move's hit\n"
@@ -1913,8 +1913,8 @@ static const u8 sELECTRO_BALLDescription[] = _(
     "damage to slower foes.");
 
 static const u8 sSOAKDescription[] = _(
-    "Sprays water at the foe\n"
-    "making it Water-type.");
+    "Makes foe a Water-type.\n"
+    "Sharply lower Speed.");
 
 static const u8 sFLAME_CHARGEDescription[] = _(
     "Attacks in a cloak of\n"
@@ -2401,8 +2401,8 @@ static const u8 sORIGIN_PULSEDescription[] = _(
     "blast both foes.");
 
 static const u8 sPRECIPICE_BLADESDescription[] = _(
-    "Fearsome blades of stone\n"
-    "attack both foes.");
+    "Fearsome blades of stone.\n"
+    "Can hit Flying foes.");
 
 static const u8 sLAVA_PLUMEDescription[] = _(
     "Scarlet flames torch\n"
@@ -2714,8 +2714,8 @@ static const u8 sTAR_SHOTDescription[] = _(
     "and makes it weak to Fire.");
     
 static const u8 sMAGIC_POWDERDescription[] = _(
-    "Magic powder changes the\n"
-    "target into a Psychic-type.");
+    "Makes foe a Psychic-type.\n"
+    "Sharply lower Sp. Atk.");
     
 static const u8 sDRAGON_DARTSDescription[] = _(
     "The user attacks twice. Two\n"
@@ -3217,19 +3217,24 @@ static const u8 sAquaCutterDescription[] = _(
     "high critical-hit ratio.");
 
 static const u8 sBlazingTorqueDescription[] = _(
-    "---");
+    "Fiery torque attack that\n"
+    "may burn the foe.");
 
 static const u8 sWickedTorqueDescription[] = _(
-    "---");
+    "Wicked torque attack that\n"
+    "induce sleep.");
 
 static const u8 sNoxiousTorqueDescription[] = _(
-    "---");
+    "Toxic torque attack that\n"
+    "may poison the foe.");
 
 static const u8 sCombatTorqueDescription[] = _(
-    "---");
+    "Fighting torque attack that\n"
+    "may paralyze the foe.");
 
 static const u8 sMagicalTorqueDescription[] = _(
-    "---");
+    "Magical torque attack that\n"
+    "may confuse the foe.");
 
 static const u8 sPsybladeDescription[] = _(
     "This move's power increases\n"
@@ -3356,8 +3361,8 @@ static const u8 sFEATHER_SHOTDescription[] = _(
     "with fast & sharp feathers.");
 
 static const u8 sWITCHCRAFTDescription[] = _(
-    "Enchant a spell at the foe\n"
-    "making it Dragon-type.");
+    "Makes foe a Dragon-type.\n"
+    "Sharply lower Attack.");
 
 static const u8 sEXCALIBURDescription[] = _(
     "Super effective on Dragon-\n"
@@ -4034,6 +4039,14 @@ static const u8 sICY_KISSDescription[] = _("Frostbites opposite gender\nand doub
 static const u8 sHEATED_KISSDescription[] = _("Burns opposite gender\nand doubles the damage.");
 static const u8 sVENOMBANEDescription[] = _("Super effective on Poison-\ntypes. May cause poison.");
 static const u8 sFISH_HARPOONDescription[] = _("Super effective on Water-\ntypes. Ignores Defense.");
+static const u8 sBOLTING_SHOTDescription[] = _("Zaps the foes with electri-\ncity. May paralyze them.");
+static const u8 sENGINE_ROARDescription[] = _("Does more damage the\nhigher the user's Speed.");
+static const u8 sREVERSAL_POWERDescription[] = _("The lower the user's stats\nthe more damage caused.");
+static const u8 sSUPERSONIC_BREAKDescription[] = _("Does more damage the\nhigher the user's Speed.");
+static const u8 sSTELLAR_PUNCHDescription[] = _("Punches with starlight\nforce. May lower Attack.");
+static const u8 sICE_CHAINSDescription[] = _("Traps the foe with chains\nof ice for 2 to 5 turns.");
+static const u8 sSEVERE_POISONDescription[] = _("Badly poison that ignores\nabilities and hurts faster.");
+static const u8 sELECTRO_RAILGUNDescription[] = _("Powerful and sure to cause\nparalysis.");
 //  **************************** 27 distance letters ****************************
 
 // MOVE_NONE is ignored in this table. Make sure to always subtract 1 before getting the right pointer.
@@ -5146,4 +5159,12 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_HEATED_KISS - 1] = sHEATED_KISSDescription,
     [MOVE_VENOMBANE - 1] = sVENOMBANEDescription,
     [MOVE_FISH_HARPOON - 1] = sFISH_HARPOONDescription,
+    [MOVE_BOLTING_SHOT - 1] = sBOLTING_SHOTDescription,
+    [MOVE_ENGINE_ROAR - 1] = sENGINE_ROARDescription,
+    [MOVE_REVERSAL_POWER - 1] = sREVERSAL_POWERDescription,
+    [MOVE_SUPERSONIC_BREAK - 1] = sSUPERSONIC_BREAKDescription,
+    [MOVE_STELLAR_PUNCH - 1] = sSTELLAR_PUNCHDescription,
+    [MOVE_ICE_CHAINS - 1] = sICE_CHAINSDescription,
+    [MOVE_SEVERE_POISON - 1] = sSEVERE_POISONDescription,
+    [MOVE_ELECTRO_RAILGUN - 1] = sELECTRO_RAILGUNDescription,
 };

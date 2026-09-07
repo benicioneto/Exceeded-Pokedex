@@ -195,7 +195,7 @@ Route114_Text_AllMyMonDoesIsRoarTakeThis:
 
 Route114_Text_ExplainRoar:
 	.string "TM05 contains Roar.\n"
-	.string "A ROAR sends Pokémon scurrying.$"
+	.string "A Roar sends Pokémon scurrying.$"
 
 Route114_Text_Poochyena:
 	.string "Bow! Bowwow!$"

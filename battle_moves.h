@@ -1496,7 +1496,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     {
         .power = 110,
         .zMovePower = 185,
-        .effect = EFFECT_THUNDER,
+        .effect = EFFECT_BYPASS_ACCURACY_CHECK_IN_RAIN_PARALYZE_ON_HIT,
         .type = TYPE_ELECTRIC,
         .accuracy = 70,
         .pp = 10,
@@ -1544,7 +1544,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_FISSURE] =
     {
-        .effect = EFFECT_KNOCK_OFF,
+        .effect = EFFECT_USER_REMOVE_ALL_TARGET_ITEM_ON_HIT,
         .power = 120,
         .type = TYPE_GROUND,
         .accuracy = 70,
@@ -2863,12 +2863,8 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_SPIDER_WEB] =
     {
-        #if B_UPDATED_MOVE_DATA >= GEN_6
-            .flags = FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        #else
-            .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        #endif
-        .effect = EFFECT_TARGET_PREVENT_ESCAPE,
+        .flags = FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
+        .effect = EFFECT_SPIDER_WEB,
         .power = 0,
         .type = TYPE_BUG,
         .accuracy = 0,
@@ -2876,6 +2872,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .secondaryEffectChance = 0,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
+        .argument = 0,
         .split = SPLIT_STATUS,
         .zMovePower = 0,
         .zMoveEffect = Z_EFFECT_DEF_UP_1,
@@ -3254,13 +3251,8 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_ZAP_CANNON] =
     {
-        #if B_UPDATED_MOVE_DATA >= GEN_4
-            .power = 120,
-            .zMovePower = 190,
-        #else
-            .power = 100,
-            .zMovePower = 180,
-        #endif
+        .power = 120,
+        .zMovePower = 190,
         .effect = EFFECT_TARGET_PARALYZE_ON_HIT,
         .type = TYPE_ELECTRIC,
         .accuracy = 50,
@@ -4816,7 +4808,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     {
         .power = 65,
         .zMovePower = 120,
-        .effect = EFFECT_KNOCK_OFF,
+        .effect = EFFECT_USER_REMOVE_TARGET_ITEM_ON_HIT,
         .type = TYPE_DARK,
         .accuracy = 100,
         .pp = 20,
@@ -5147,7 +5139,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     [MOVE_NEEDLE_ARM] =
     {
         .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_HAS_SECONDARY_EFFECT,
-        .effect = EFFECT_CEASELESS_EDGE,
+        .effect = EFFECT_SET_SPIKES_ON_HIT,
         .power = 80,
         .type = TYPE_GRASS,
         .accuracy = 100,
@@ -8342,6 +8334,8 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
         .split = SPLIT_STATUS,
         .argument = TYPE_WATER,
+        .argument2 = MOVE_EFFECT_STAT_TWO_DOWN,
+        .argument3 = STAT_SPEED,
         .zMovePower = 0,
         .zMoveEffect = Z_EFFECT_SPATK_UP_1,
     },
@@ -9514,7 +9508,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_V_CREATE] =
     {
-        .effect = EFFECT_V_CREATE,
+        .effect = EFFECT_LOWER_USER_DEF_SPDEF_SPEED,
         .power = 180,
         .type = TYPE_FIRE,
         .accuracy = 95,
@@ -10548,7 +10542,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .secondaryEffectChance = 0,
         .target = MOVE_TARGET_BOTH,
         .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
+        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_DAMAGE_ON_UNGROUNDED_TARGET,
         .split = SPLIT_PHYSICAL,
         .zMovePower = 190,
         .zMoveEffect = Z_EFFECT_NONE,
@@ -10849,7 +10843,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_THROAT_CHOP] =
     {
-        .effect = EFFECT_THROAT_CHOP,
+        .effect = EFFECT_TARGET_CANNOT_USE_SOUND_MOVES,
         .power = 80,
         .type = TYPE_DARK,
         .accuracy = 100,
@@ -11458,7 +11452,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_PHOTON_GEYSER] =
     {
-        .effect = EFFECT_PHOTON_GEYSER,
+        .effect = EFFECT_HIT,
         .power = 100,
         .type = TYPE_PSYCHIC,
         .accuracy = 100,
@@ -11467,7 +11461,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_IGNORE_TARGET_ABILITIES,
-        .flags2 = FLAG_COSMIC_ENERGYZED_MOVE,
+        .flags2 = FLAG_COSMIC_ENERGYZED_MOVE | FLAG_CHANGE_CATEGORY_BASED_ON_USER_STATS,
         .split = SPLIT_SPECIAL,
         .zMovePower = 180,
         .zMoveEffect = Z_EFFECT_NONE,
@@ -11867,6 +11861,8 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_POWDER_AND_SPORE_MOVE,
         .split = SPLIT_STATUS,
         .argument = TYPE_PSYCHIC,
+        .argument2 = MOVE_EFFECT_STAT_TWO_DOWN,
+        .argument3 = STAT_SPATK,
         .zMovePower = 0,
         .zMoveEffect = Z_EFFECT_NONE,
     },
@@ -11987,7 +11983,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_BODY_PRESS] =
     {
-        .effect = EFFECT_BODY_PRESS,
+        .effect = EFFECT_DAMAGE_USING_SPECIFIC_STAT,
         .power = 80,
         .type = TYPE_FIGHTING,
         .accuracy = 100,
@@ -11997,6 +11993,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .priority = 0,
         .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
         .flags2 = FLAG_SCENT_MARK_AFFECTED,
+        .argument = STAT_DEF,
         .split = SPLIT_PHYSICAL,
         .zMovePower = 160,
         .zMoveEffect = Z_EFFECT_NONE,
@@ -12406,6 +12403,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_HAS_SECONDARY_EFFECT,
+        .flags2 = FLAG_CHANGE_CATEGORY_BASED_ON_USER_STATS,
         .split = SPLIT_SPECIAL,
         .zMovePower = 175,
         .zMoveEffect = Z_EFFECT_NONE,
@@ -13015,7 +13013,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_BARB_BARRAGE] =
     {
-        .effect = EFFECT_BARB_BARRAGE,
+        .effect = EFFECT_DOUBLE_DAMAGE_ON_POISON_STATUS_APPLY_POISON_ON_HIT,
         .power = 60,
         .type = TYPE_POISON,
         .accuracy = 100,
@@ -13096,7 +13094,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_INFERNAL_PARADE] =
     {
-        .effect = EFFECT_INFERNAL_PARADE,
+        .effect = EFFECT_DOUBLE_DAMAGE_ON_ANY_STATUS_APPLY_STATUS_ON_HIT,
         .power = 65,
         .type = TYPE_GHOST,
         .accuracy = 100,
@@ -13113,7 +13111,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_CEASELESS_EDGE] =
     {
-        .effect = EFFECT_CEASELESS_EDGE,
+        .effect = EFFECT_SET_SPIKES_ON_HIT,
         .power = 65,
         .type = TYPE_DARK,
         .accuracy = 90,
@@ -13222,6 +13220,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
+        .flags2 = FLAG_CHANGE_CATEGORY_BASED_ON_USER_STATS,
         .split = SPLIT_SPECIAL,
         .zMovePower = 160,
         .zMoveEffect = Z_EFFECT_NONE,
@@ -13931,7 +13930,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_BLAZING_TORQUE] =
     {
-        .effect = EFFECT_TARGET_BURN_ON_HIT,
+        .effect = EFFECT_USER_NEED_CERTAIN_ABILITY,
         .power = 80,
         .type = TYPE_FIRE,
         .accuracy = 100,
@@ -13941,13 +13940,15 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .priority = 0,
         .flags = FLAG_PROTECT_AFFECTED | FLAG_HAS_SECONDARY_EFFECT,
         .split = SPLIT_PHYSICAL,
+        .argument = MOVE_EFFECT_BURN,
+        .argument2 = ABILITY_SCHEDAR_STARMOBILE,
         .zMovePower = 160,
         .zMoveEffect = Z_EFFECT_NONE
     },
 
     [MOVE_WICKED_TORQUE] =
     {
-        .effect = EFFECT_TARGET_SLEEP_ON_HIT,
+        .effect = EFFECT_USER_NEED_CERTAIN_ABILITY,
         .power = 80,
         .type = TYPE_DARK,
         .accuracy = 100,
@@ -13957,13 +13958,15 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .priority = 0,
         .flags = FLAG_PROTECT_AFFECTED | FLAG_HAS_SECONDARY_EFFECT,
         .split = SPLIT_PHYSICAL,
+        .argument = MOVE_EFFECT_SLEEP,
+        .argument2 = ABILITY_SEGIN_STARMOBILE,
         .zMovePower = 160,
         .zMoveEffect = Z_EFFECT_NONE
     },
 
     [MOVE_NOXIOUS_TORQUE] =
     {
-        .effect = EFFECT_TARGET_POISON_ON_HIT,
+        .effect = EFFECT_USER_NEED_CERTAIN_ABILITY,
         .power = 100,
         .type = TYPE_POISON,
         .accuracy = 100,
@@ -13973,13 +13976,15 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .priority = 0,
         .flags = FLAG_PROTECT_AFFECTED | FLAG_HAS_SECONDARY_EFFECT,
         .split = SPLIT_PHYSICAL,
+        .argument = MOVE_EFFECT_POISON,
+        .argument2 = ABILITY_NAVI_STARMOBILE,
         .zMovePower = 160,
         .zMoveEffect = Z_EFFECT_NONE
     },
 
     [MOVE_COMBAT_TORQUE] =
     {
-        .effect = EFFECT_TARGET_PARALYZE_ON_HIT,
+        .effect = EFFECT_USER_NEED_CERTAIN_ABILITY,
         .power = 100,
         .type = TYPE_FIGHTING,
         .accuracy = 100,
@@ -13989,13 +13994,15 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .priority = 0,
         .flags = FLAG_PROTECT_AFFECTED | FLAG_HAS_SECONDARY_EFFECT,
         .split = SPLIT_PHYSICAL,
+        .argument = MOVE_EFFECT_PARALYSIS,
+        .argument2 = ABILITY_CAPH_STARMOBILE,
         .zMovePower = 160,
         .zMoveEffect = Z_EFFECT_NONE
     },
 
     [MOVE_MAGICAL_TORQUE] =
     {
-        .effect = EFFECT_TARGET_CONFUSE_ON_HIT,
+        .effect = EFFECT_USER_NEED_CERTAIN_ABILITY,
         .power = 100,
         .type = TYPE_FAIRY,
         .accuracy = 100,
@@ -14005,6 +14012,8 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .priority = 0,
         .flags = FLAG_PROTECT_AFFECTED | FLAG_HAS_SECONDARY_EFFECT,
         .split = SPLIT_PHYSICAL,
+        .argument = MOVE_EFFECT_CONFUSE,
+        .argument2 = ABILITY_RUCHBAH_STARMOBILE,
         .zMovePower = 160,
         .zMoveEffect = Z_EFFECT_NONE
     },
@@ -14132,6 +14141,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .priority = 0,
         .split = SPLIT_SPECIAL,
         .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
+        .flags2 = FLAG_CHANGE_CATEGORY_BASED_ON_USER_STATS,
     },
 
     [MOVE_FICKLE_BEAM] =
@@ -14847,6 +14857,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .flags = 0,
+        .flags2 = FLAG_CHANGE_CATEGORY_BASED_ON_USER_STATS,
         .zMovePower = 0,
         .split = SPLIT_SPECIAL,
         .zMoveEffect = 0
@@ -15790,6 +15801,8 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
         .split = SPLIT_STATUS,
         .argument = TYPE_DRAGON,
+        .argument2 = MOVE_EFFECT_STAT_TWO_DOWN,
+        .argument3 = STAT_ATK,
         .zMovePower = 0,
         .zMoveEffect = Z_EFFECT_SPATK_UP_1,
     },
@@ -15813,7 +15826,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_SHIELD_BASH] =
     {
-        .effect = EFFECT_BODY_PRESS,
+        .effect = EFFECT_DAMAGE_USING_SPECIFIC_STAT,
         .power = 80,
         .type = TYPE_STEEL,
         .accuracy = 100,
@@ -15823,6 +15836,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .priority = 0,
         .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
         .flags2 = FLAG_SCENT_MARK_AFFECTED,
+        .argument = STAT_DEF,
         .split = SPLIT_PHYSICAL,
         .zMovePower = 160,
         .zMoveEffect = Z_EFFECT_NONE,
@@ -16928,7 +16942,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_FORCE_CHOKE] =
     {
-        .effect = EFFECT_THROAT_CHOP,
+        .effect = EFFECT_TARGET_CANNOT_USE_SOUND_MOVES,
         .power = 80,
         .type = TYPE_PSYCHIC,
         .accuracy = 100,
@@ -17243,7 +17257,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_SHADOW_END] =
     {
-        .effect = EFFECT_PHOTON_GEYSER,
+        .effect = EFFECT_HIT,
         .power = 100,
         .type = TYPE_DARK,
         .accuracy = 100,
@@ -17252,7 +17266,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_IGNORE_TARGET_ABILITIES,
-        .flags2 = FLAG_SHADOW_MOVE,
+        .flags2 = FLAG_SHADOW_MOVE | FLAG_CHANGE_CATEGORY_BASED_ON_USER_STATS,
         .split = SPLIT_SPECIAL,
         .zMovePower = 180,
         .zMoveEffect = Z_EFFECT_NONE,
@@ -18218,7 +18232,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_GUARD_PRESS] =
     {
-        .effect = EFFECT_BODY_PRESS,
+        .effect = EFFECT_DAMAGE_USING_SPECIFIC_STAT,
         .power = 80,
         .type = TYPE_BUG,
         .accuracy = 100,
@@ -18228,6 +18242,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .priority = 0,
         .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
         .flags2 = FLAG_SCENT_MARK_AFFECTED,
+        .argument = STAT_DEF,
         .split = SPLIT_PHYSICAL,
         .zMovePower = 160,
         .zMoveEffect = Z_EFFECT_NONE,
@@ -18235,7 +18250,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_STEAM_CRUSH] =
     {
-        .effect = EFFECT_BODY_PRESS,
+        .effect = EFFECT_DAMAGE_USING_SPECIFIC_STAT,
         .power = 80,
         .type = TYPE_FIRE,
         .accuracy = 100,
@@ -18245,6 +18260,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .priority = 0,
         .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
         .flags2 = FLAG_SCENT_MARK_AFFECTED,
+        .argument = STAT_DEF,
         .split = SPLIT_PHYSICAL,
         .zMovePower = 160,
         .zMoveEffect = Z_EFFECT_NONE,
@@ -18468,7 +18484,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_WORST_NIGHTMARE] =
     {
-        .effect = EFFECT_INFERNAL_PARADE,
+        .effect = EFFECT_DOUBLE_DAMAGE_ON_ANY_STATUS_APPLY_STATUS_ON_HIT,
         .power = 65,
         .type = TYPE_DARK,
         .accuracy = 100,
@@ -19182,11 +19198,9 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
-        .flags2 = FLAG_SLICING_MOVE,
         .split = SPLIT_PHYSICAL,
         .zMovePower = 40,
         .zMoveEffect = Z_EFFECT_NONE,
-        //Supposedly uncallable by Metronome? (if so, needs implementation)
     },
 
     [MOVE_MEGA_LICK] =
@@ -19639,7 +19653,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_CHRONO_CHORUS] =
     {
-        .effect = EFFECT_V_CREATE,
+        .effect = EFFECT_LOWER_USER_DEF_SPDEF_SPEED,
         .power = 180,
         .type = TYPE_PSYCHIC,
         .accuracy = 95,
@@ -19814,6 +19828,140 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .flags2 = FLAG_IGNORE_TARGET_DEFENSE_STAGES | FLAG_SCENT_MARK_AFFECTED | FLAG_HORN_MOVE,
         .split = SPLIT_PHYSICAL,
         .zMovePower = 160,
+        .zMoveEffect = Z_EFFECT_NONE,
+    },
+
+    [MOVE_BOLTING_SHOT] =
+    {
+        .effect = EFFECT_TARGET_PARALYZE_ON_HIT,
+        .power = 100,
+        .type = TYPE_ELECTRIC,
+        .accuracy = 100,
+        .pp = 5,
+        .secondaryEffectChance = 30,
+        .target = MOVE_TARGET_FOES_AND_ALLY,
+        .priority = 0,
+        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_BALL_AND_BOMB_MOVE | FLAG_HAS_SECONDARY_EFFECT | FLAG_AURA_BEAM_CANNON_GUN_PULSE_PUMP_SHOT_AND_ZOOKA_MOVE,
+        .flags2 = FLAG_SLOTTED_SHELL_MOVE,
+        .split = SPLIT_PHYSICAL,
+        .zMovePower = 180,
+        .zMoveEffect = Z_EFFECT_NONE,
+    },
+
+    [MOVE_ENGINE_ROAR] =
+    {
+        .effect = EFFECT_DAMAGE_USING_SPECIFIC_STAT,
+        .power = 90,
+        .type = TYPE_NORMAL,
+        .accuracy = 100,
+        .pp = 10,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_BOTH,
+        .priority = 0,
+        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_SOUND_BASED_MOVE,
+        .argument = STAT_SPEED,
+        .split = SPLIT_SPECIAL,
+        .zMovePower = 175,
+        .zMoveEffect = Z_EFFECT_NONE,
+    },
+
+    [MOVE_REVERSAL_POWER] =
+    {
+        .effect = EFFECT_REVERSAL_POWER,
+        .power = 20,
+        .type = TYPE_PSYCHIC,
+        .accuracy = 100,
+        .pp = 10,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED,
+        .flags2 = FLAG_SCENT_MARK_AFFECTED | FLAG_CHANGE_CATEGORY_BASED_ON_USER_STATS,
+        .split = SPLIT_SPECIAL,
+        .zMovePower = 100,
+        .zMoveEffect = Z_EFFECT_NONE,
+    },
+
+    [MOVE_SUPERSONIC_BREAK] =
+    {
+        .effect = EFFECT_DAMAGE_USING_SPECIFIC_STAT,
+        .power = 80,
+        .type = TYPE_FLYING,
+        .accuracy = 100,
+        .pp = 10,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_SOUND_BASED_MOVE,
+        .flags2 = FLAG_SCENT_MARK_AFFECTED,
+        .argument = STAT_SPEED,
+        .split = SPLIT_SPECIAL,
+        .zMovePower = 160,
+        .zMoveEffect = Z_EFFECT_NONE,
+    },
+
+    [MOVE_STELLAR_PUNCH] =
+    {
+        .power = 75,
+        .zMovePower = 140,
+        .effect = EFFECT_TARGET_ATTACK_DOWN_1_ON_HIT,
+        .type = TYPE_FAIRY,
+        .accuracy = 100,
+        .pp = 10,
+        .secondaryEffectChance = 100,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_MAKES_CONTACT | FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_HAS_SECONDARY_EFFECT | FLAG_PUNCHING_MOVE,
+        .split = SPLIT_PHYSICAL,
+        .zMoveEffect = Z_EFFECT_NONE,
+    },
+
+    [MOVE_ICE_CHAINS] =
+    {
+        .effect = EFFECT_TARGET_PREVENT_ESCAPE_ON_HIT,
+        .power = 50,
+        .type = TYPE_ICE,
+        .accuracy = 100,
+        .pp = 10,
+        .secondaryEffectChance = 100,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_HAS_SECONDARY_EFFECT,
+        .split = SPLIT_SPECIAL,
+        .argument = MOVE_EFFECT_FROSTBITE,
+        .zMovePower = 160,
+        .zMoveEffect = Z_EFFECT_NONE,
+    },
+
+    [MOVE_SEVERE_POISON] =
+    {
+        .accuracy = 85,
+        .effect = EFFECT_TARGET_BADLY_POISON,
+        .power = 0,
+        .type = TYPE_POISON,
+        .pp = 10,
+        .secondaryEffectChance = 100,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_IGNORE_TARGET_ABILITIES,
+        .split = SPLIT_STATUS,
+        .zMovePower = 0,
+        .zMoveEffect = Z_EFFECT_DEF_UP_1,
+    },
+
+    [MOVE_ELECTRO_RAILGUN] =
+    {
+        .power = 130,
+        .zMovePower = 190,
+        .effect = EFFECT_TARGET_PARALYZE_ON_HIT,
+        .type = TYPE_ELECTRIC,
+        .accuracy = 90,
+        .pp = 5,
+        .secondaryEffectChance = 100,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_HAS_SECONDARY_EFFECT | FLAG_BALL_AND_BOMB_MOVE | FLAG_AURA_BEAM_CANNON_GUN_PULSE_PUMP_SHOT_AND_ZOOKA_MOVE,
+        .split = SPLIT_PHYSICAL,
         .zMoveEffect = Z_EFFECT_NONE,
     },
 };

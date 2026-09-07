@@ -3515,6 +3515,7 @@ static const u8 sCoalossalTutorAbility[] =
 };
 static const u8 sApplinTutorAbility[] =
 {
+    TUTOR2(DRAGON_HOARD),
     0xFF,
 };
 static const u8 sFlappleTutorAbility[] =
@@ -3524,6 +3525,7 @@ static const u8 sFlappleTutorAbility[] =
 };
 static const u8 sAppletunTutorAbility[] =
 {
+    TUTOR2(DRAGON_HOARD),
     0xFF,
 };
 static const u8 sSilicobraTutorAbility[] =
@@ -4490,6 +4492,11 @@ static const u8 sIronLeavesTutorAbility[] = {
 };
 
 static const u8 sDipplinTutorAbility[] = {
+    TUTOR2(DRAGON_HOARD),
+    0xFF,
+};
+
+static const u8 sHydrappleTutorAbility[] = {
     TUTOR2(DRAGON_HOARD),
     0xFF,
 };
@@ -5711,6 +5718,7 @@ const u8 *const gTutorAbilityLearnsets[NUM_SPECIES] =
     [SPECIES_WALKING_WAKE] = sWalkingWakeTutorAbility,
     [SPECIES_IRON_LEAVES] = sIronLeavesTutorAbility,
     [SPECIES_DIPPLIN] = sDipplinTutorAbility,
+    [SPECIES_HYDRAPPLE] = sHydrappleTutorAbility,
     [SPECIES_POLTCHAGEIST_COUNTERFEIT] = sPoltchageistTutorAbility,
     [SPECIES_POLTCHAGEIST_ARTISAN] = sPoltchageistTutorAbility,
     [SPECIES_SINISTCHA_UNREMARKABLE] = sSinistchaTutorAbility,

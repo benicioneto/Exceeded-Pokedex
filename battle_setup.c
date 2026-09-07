@@ -2005,11 +2005,11 @@ bool8 HasSpeciesAbilityTypeChange(u16 species)
                         return TRUE;
                     break;
                 case TYPE_FIGHTING:
-                    if (monAbility == ABILITY_KAMEN_RIDER || monAbility == ABILITY_WRESTLING_HEEL)
+                    if (monAbility == ABILITY_KAMEN_RIDER || monAbility == ABILITY_WRESTLING_HEEL || monAbility == ABILITY_CAPH_STARMOBILE)
                         return TRUE;
                     break;
                 case TYPE_FIRE:
-                    if (monAbility == ABILITY_BONFIRE_BLOSSOM || monAbility == ABILITY_TURBOBLAZE)
+                    if (monAbility == ABILITY_BONFIRE_BLOSSOM || monAbility == ABILITY_TURBOBLAZE || monAbility == ABILITY_SCHEDAR_STARMOBILE)
                         return TRUE;
                     break;
                 case TYPE_POISON:
@@ -2022,7 +2022,7 @@ bool8 HasSpeciesAbilityTypeChange(u16 species)
                         return TRUE;
                     break;
                 case TYPE_DARK:
-                    if (monAbility == ABILITY_DARK_SIDE || monAbility == ABILITY_ONI)
+                    if (monAbility == ABILITY_DARK_SIDE || monAbility == ABILITY_ONI || monAbility == ABILITY_SEGIN_STARMOBILE)
                         return TRUE;
                     break;
                 case TYPE_ELECTRIC:
@@ -2055,6 +2055,10 @@ bool8 HasSpeciesAbilityTypeChange(u16 species)
                     break;
                 case TYPE_GROUND:
                     if (monAbility == ABILITY_BEDOUIN || monAbility == ABILITY_EARTHWORM || monAbility == ABILITY_BENTHIC_ORGANISM)
+                        return TRUE;
+                    break;
+                case TYPE_FAIRY:
+                    if (monAbility == ABILITY_FAERIE_COMPANION || monAbility == ABILITY_RUCHBAH_STARMOBILE)
                         return TRUE;
                     break;
             }

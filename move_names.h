@@ -1162,6 +1162,14 @@ const u8 gMoveNames[MOVES_COUNT_DYNAMAX][MOVE_NAME_LENGTH + 1] =
     [MOVE_HEATED_KISS] = _("Heated Kiss"),
     [MOVE_VENOMBANE] = _("Venombane"),
     [MOVE_FISH_HARPOON] = _("Fish Harpoon"),
+    [MOVE_BOLTING_SHOT] = _("Bolting Shot"),
+    [MOVE_ENGINE_ROAR] = _("Engine Roar"),
+    [MOVE_REVERSAL_POWER] = _("Reversal Power"),
+    [MOVE_SUPERSONIC_BREAK] = _("Supersonic Break"),
+    [MOVE_STELLAR_PUNCH] = _("Stellar Punch"),
+    [MOVE_ICE_CHAINS] = _("Ice Chains"),
+    [MOVE_SEVERE_POISON] = _("Severe Poison"),
+    [MOVE_ELECTRO_RAILGUN] = _("Electro Railgun"),
 };
 
 static const u8 sText_Breakneck_Blitz[] = _("Breakneck Blitz");

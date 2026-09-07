@@ -95,7 +95,7 @@ MagmaCave_EventScript_Regidrago::
 	playmoncry SPECIES_REGIDRAGO, 2
 	delay 40
 	waitmoncry
-	setwildbattle SPECIES_REGIDRAGO, 40, ITEM_NONE
+	setwildbattle SPECIES_REGIDRAGO, 50, ITEM_NONE
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special StartRegiBattle
 	waitstate
