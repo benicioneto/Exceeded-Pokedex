@@ -588,6 +588,7 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectHit				       					@ EFFECT_REVERSAL_POWER
 	.4byte BattleScript_EffectSpiderWeb			       					@ EFFECT_SPIDER_WEB
 	.4byte BattleScript_EffectCorrosiveGasOnHit			       			@ EFFECT_CORROSIVE_GAS_ON_HIT
+	.4byte BattleScript_EffectConfuseHit				       			@ EFFECT_DOUBLE_DAMAGE_ON_CONFUSE_STATUS_APPLY_CONFUSE_ON_HIT
 
 BattleScript_EffectCorrosiveGasOnHit::
 	call BattleScript_EffectHit_Ret

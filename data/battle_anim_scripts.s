@@ -1156,7 +1156,7 @@ gBattleAnims_Moves::
 	.4byte Move_MAGICAL_BULLET
 	.4byte Move_STRANGE_POTION
 	.4byte Move_PSYTRICK
-
+	.4byte Move_DAZE_BARRAGE
 
 @@@@@@@@@@@@ Z MOVES @@@@@@@@@@@
 	.4byte Move_BREAKNECK_BLITZ
@@ -29827,6 +29827,7 @@ Move_REST:
 	waitforvisualfinish
 	end
 
+Move_DAZE_BARRAGE:
 Move_MIGRAINE:
 Move_CONFUSION:
 	monbg ANIM_DEF_PARTNER

@@ -2998,7 +2998,7 @@ static const u8 sHeadlongRushDescription[] = _(
 
 static const u8 sBarbBarrageDescription[] = _(
     "Can poison on impact. Powers\n"
-    "up if the foe has an ailment.");
+    "up if the foe is poisoned.");
 
 static const u8 sEsperWingDescription[] = _(
     "High critical hit ratio.\n"
@@ -4060,6 +4060,8 @@ static const u8 sBACKLASHDescription[] = _("Boosts power when burned,\nparalyzed
 static const u8 sMAGICAL_BULLETDescription[] = _("Uses sum of Atk & Sp. Atk.\nUses the higher stat stage.");
 static const u8 sSTRANGE_POTIONDescription[] = _("Poisons on foes, but\nrestores ally's HP.");
 static const u8 sPSYTRICKDescription[] = _("Psytrick that does more\ndamage to slower foes.");
+static const u8 sDAZE_BARRAGEDescription[] = _("Can confuse on hit. Powers\nup if the foe is confused.");
+
 
 //  **************************** 27 distance letters ****************************
 
@@ -5194,4 +5196,5 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_MAGICAL_BULLET - 1] = sMAGICAL_BULLETDescription,
     [MOVE_STRANGE_POTION - 1] = sSTRANGE_POTIONDescription,
     [MOVE_PSYTRICK - 1] = sPSYTRICKDescription,
+    [MOVE_DAZE_BARRAGE - 1] = sDAZE_BARRAGEDescription,
 };

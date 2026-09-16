@@ -1183,6 +1183,7 @@ const u8 gMoveNames[MOVES_COUNT_DYNAMAX][MOVE_NAME_LENGTH + 1] =
     [MOVE_MAGICAL_BULLET] = _("Magical Bullet"),
     [MOVE_STRANGE_POTION] = _("Strange Potion"),
     [MOVE_PSYTRICK] = _("Psytrick"),
+    [MOVE_DAZE_BARRAGE] = _("Daze Barrage"),
 };
 
 static const u8 sText_Breakneck_Blitz[] = _("Breakneck Blitz");

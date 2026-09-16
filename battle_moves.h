@@ -20184,5 +20184,21 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .zMovePower = 175,
         .zMoveEffect = Z_EFFECT_NONE,
     },
+
+    [MOVE_DAZE_BARRAGE] =
+    {
+        .effect = EFFECT_DOUBLE_DAMAGE_ON_CONFUSE_STATUS_APPLY_CONFUSE_ON_HIT,
+        .power = 60,
+        .type = TYPE_PSYCHIC,
+        .accuracy = 100,
+        .pp = 10,
+        .secondaryEffectChance = 50,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_HAS_SECONDARY_EFFECT,
+        .split = SPLIT_SPECIAL,
+        .zMovePower = 120,
+        .zMoveEffect = Z_EFFECT_NONE,
+    },
 };
 
