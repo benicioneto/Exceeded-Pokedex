@@ -184,7 +184,7 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectStockpile               @ EFFECT_STOCKPILE
 	.4byte BattleScript_EffectSpitUp                  @ EFFECT_SPIT_UP
 	.4byte BattleScript_EffectSwallow                 @ EFFECT_SWALLOW
-	.4byte BattleScript_EffectWorrySeed               @ EFFECT_WORRY_SEED
+	.4byte BattleScript_EffectWorrySeed               @ EFFECT_WORRY_SEED unused
 	.4byte BattleScript_EffectHail                    @ EFFECT_HAIL
 	.4byte BattleScript_EffectTorment                 @ EFFECT_TORMENT
 	.4byte BattleScript_EffectFlatter                 @ EFFECT_FLATTER
@@ -282,7 +282,7 @@ gBattleScriptsForMoveEffects::
 	.4byte BattleScript_EffectLuckyChant              @ EFFECT_LUCKY_CHANT
 	.4byte BattleScript_EffectSuckerPunch             @ EFFECT_SUCKER_PUNCH
 	.4byte BattleScript_EffectSpecialDefenseDownHit2  @ EFFECT_TARGET_SPECIAL_DEFENSE_DOWN_2_ON_HIT
-	.4byte BattleScript_EffectSimpleBeam              @ EFFECT_SIMPLE_BEAM
+	.4byte BattleScript_EffectAbilityChange           @ EFFECT_ABILITY_CHANGE
 	.4byte BattleScript_EffectEntrainment             @ EFFECT_ENTRAINMENT
 	.4byte BattleScript_EffectHealPulse               @ EFFECT_HEAL_PULSE
 	.4byte BattleScript_EffectQuash                   @ EFFECT_QUASH
@@ -5145,14 +5145,9 @@ BattleScript_EffectEntrainment:
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 
-BattleScript_EffectSimpleBeam:
-	attackcanceler
-	accuracycheck BattleScript_PrintMoveMissed, ACC_CURR_MOVE
-	attackstring
-	ppreduce
-	setabilitysimple BS_TARGET, BattleScript_ButItFailed
-	attackanimation
-	waitanimation
+BattleScript_EffectAbilityChange:
+	call BattleScript_EffectHit_Ret
+	setabilityargument BS_TARGET, BattleScript_MoveEnd
 	printstring STRINGID_PKMNACQUIREDSIMPLE
 	waitmessage B_WAIT_TIME_LONG
 	trytoclearprimalweather
@@ -5380,13 +5375,8 @@ BattleScript_EffectStickyWeb:
 	goto BattleScript_MoveEnd
 
 BattleScript_EffectGastroAcid:
-	attackcanceler
-	accuracycheck BattleScript_PrintMoveMissed, ACC_CURR_MOVE
-	attackstring
-	ppreduce
-	setgastroacid BattleScript_ButItFailed
-	attackanimation
-	waitanimation
+	call BattleScript_EffectHit_Ret
+	setgastroacid BattleScript_MoveEnd
 	printstring STRINGID_PKMNSABILITYSUPPRESSED
 	waitmessage B_WAIT_TIME_LONG
 	trytoclearprimalweather

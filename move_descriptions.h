@@ -1517,8 +1517,8 @@ static const u8 sPOWER_TRICKDescription[] = _(
     "and Defense stats.");
 
 static const u8 sGASTRO_ACIDDescription[] = _(
-    "Stomach acid suppresses\n"
-    "the foe's ability.");
+    "Super effective on Steel-\n"
+    "types. Suppresses ability.");
 
 static const u8 sLUCKY_CHANTDescription[] = _(
     "Prevents the foe from\n"
@@ -3836,8 +3836,8 @@ static const u8 sMYSTICAL_MIRAGEDescription[] = _(
     "vanish until next move.");
 
 static const u8 sSLOWBEAMDescription[] = _(
-    "Low frequency beam that\n"
-    "slows foe for 3 turns.");
+    "A beam that changes the\n"
+    "foe's ability to Stall.");
 
 static const u8 sNIGHTFALL_DAZEDescription[] = _(
     "Surround in darkness, then\n"

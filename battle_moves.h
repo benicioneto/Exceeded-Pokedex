@@ -6498,18 +6498,18 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     [MOVE_GASTRO_ACID] =
     {
         .effect = EFFECT_GASTRO_ACID,
-        .power = 0,
+        .power = 60,
         .type = TYPE_POISON,
         .accuracy = 100,
-        .pp = 10,
+        .pp = 5,
         .secondaryEffectChance = 0,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
+        .flags = FLAG_PROTECT_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
         .flags2 = FLAG_ACID_MOVE,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPD_UP_1,
+        .split = SPLIT_SPECIAL,
+        .zMovePower = 120,
+        .zMoveEffect = Z_EFFECT_NONE,
     },
 
     [MOVE_LUCKY_CHANT] =
@@ -6631,18 +6631,19 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_WORRY_SEED] =
     {
-        .effect = EFFECT_WORRY_SEED,
-        .power = 0,
+        .effect = EFFECT_ABILITY_CHANGE,
+        .power = 70,
         .type = TYPE_GRASS,
         .accuracy = 100,
         .pp = 10,
         .secondaryEffectChance = 0,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPD_UP_1,
+        .flags = FLAG_PROTECT_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED,
+        .split = SPLIT_SPECIAL,
+        .argument = ABILITY_INSOMNIA,
+        .zMovePower = 140,
+        .zMoveEffect = Z_EFFECT_NONE,
     },
 
     [MOVE_SUCKER_PUNCH] =
@@ -8418,18 +8419,19 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_SIMPLE_BEAM] =
     {
-        .effect = EFFECT_SIMPLE_BEAM,
-        .power = 0,
+        .effect = EFFECT_ABILITY_CHANGE,
+        .power = 70,
         .type = TYPE_NORMAL,
         .accuracy = 100,
-        .pp = 15,
+        .pp = 10,
         .secondaryEffectChance = 0,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
-        .flags = FLAG_PROTECT_AFFECTED | FLAG_MAGIC_COAT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_AURA_BEAM_CANNON_GUN_PULSE_PUMP_SHOT_AND_ZOOKA_MOVE,
-        .split = SPLIT_STATUS,
-        .zMovePower = 0,
-        .zMoveEffect = Z_EFFECT_SPATK_UP_1,
+        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_AURA_BEAM_CANNON_GUN_PULSE_PUMP_SHOT_AND_ZOOKA_MOVE,
+        .split = SPLIT_SPECIAL,
+        .argument = ABILITY_SIMPLE,
+        .zMovePower = 140,
+        .zMoveEffect = Z_EFFECT_NONE,
     },
 
     [MOVE_ENTRAINMENT] =
@@ -17750,16 +17752,17 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
 
     [MOVE_SLOWBEAM] =
     {
-        .effect = EFFECT_SLOWBEAM,
+        .effect = EFFECT_ABILITY_CHANGE,
         .power = 70,
         .type = TYPE_PSYCHIC,
         .accuracy = 100,
-        .pp = 15,
+        .pp = 10,
         .secondaryEffectChance = 0,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_AURA_BEAM_CANNON_GUN_PULSE_PUMP_SHOT_AND_ZOOKA_MOVE,
         .split = SPLIT_SPECIAL,
+        .argument = ABILITY_STALL,
         .zMovePower = 140,
         .zMoveEffect = Z_EFFECT_NONE,
     },
