@@ -1076,6 +1076,8 @@ static const u8 sPowerGateDescription[] = _("Ups moves while shielded.");
 static const u8 sMoveResetDescription[] = _("No charge or recharge.");
 static const u8 sVoiceOfForestDescription[] = _("Terrains ups best stat.");
 static const u8 sShellFortressDescription[] = _("No physical “supereffective”.");
+static const u8 sDyingStarDescription[] = _("Rebirths when KOed.");
+static const u8 sSpectralizeDescription[] = _("Normal moves become Ghost.");
 
 //  **************************** 27 distance letters ****************************
 
@@ -2095,6 +2097,8 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_MOVE_RESET] = _("Move Reset"),
     [ABILITY_VOICE_OF_FOREST] = _("Voice of Forest"),
     [ABILITY_SHELL_FORTRESS] = _("Shell Fortress"),
+    [ABILITY_DYING_STAR] = _("Dying Star"),
+    [ABILITY_SPECTRALIZE] = _("Spectralize"),
 };
 
 const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
@@ -3113,6 +3117,8 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_MOVE_RESET] = sMoveResetDescription,
     [ABILITY_VOICE_OF_FOREST] = sVoiceOfForestDescription,
     [ABILITY_SHELL_FORTRESS] = sShellFortressDescription,
+    [ABILITY_DYING_STAR] = sDyingStarDescription,
+    [ABILITY_SPECTRALIZE] = sSpectralizeDescription,
 };
 
 // ABILITY_TRUANT
@@ -4129,6 +4135,8 @@ static const u8 sPowerGateDescriptionExtended[] = _("While Psyshield is active o
 static const u8 sMoveResetDescriptionExtended[] = _("Moves used by the Pokémon don-\n't need to charge in the first\nturn or recharge after use.");
 static const u8 sVoiceOfForestDescriptionExtended[] = _("When the Pokémon enters the b-\nattlefield and the Pokémon has\na type corresponding to the a-\nctive terrain, its highest sta-\nt is increased by 30%, or 50% \nif Speed is the highest stat.");
 static const u8 sShellFortressDescriptionExtended[] = _("Physical moves that would be \n“supereffective” against the P-\nokémon will be only normally e-\nffective instead.");
+static const u8 sDyingStarDescriptionExtended[] = _("(not implemented) When the Po-\nkémon would faint, it turns in-\nto its previous form with 50% \nof its maximum HP instead. Als-\no, all other Pokémon on the fi-\neld takes damage equal to 1/4 \nof their maximum HP.");
+static const u8 sSpectralizeDescriptionExtended[] = _("All Normal-type moves used by\nthe Pokémon become Ghost-type\nand receive a 20% power boost\n.");
 
 const u8 *const gAbilityDescriptionExtendedPointers[ABILITIES_COUNT] =
 {
@@ -5146,4 +5154,6 @@ const u8 *const gAbilityDescriptionExtendedPointers[ABILITIES_COUNT] =
     [ABILITY_MOVE_RESET] = sMoveResetDescriptionExtended,
     [ABILITY_VOICE_OF_FOREST] = sVoiceOfForestDescriptionExtended,
     [ABILITY_SHELL_FORTRESS] = sShellFortressDescriptionExtended,
+    [ABILITY_DYING_STAR] = sDyingStarDescriptionExtended,
+    [ABILITY_SPECTRALIZE] = sSpectralizeDescriptionExtended,
 };
