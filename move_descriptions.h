@@ -4058,7 +4058,7 @@ static const u8 sDUBIOUS_POTIONDescription[] = _("May paralyze, poison, sleep.\n
 static const u8 sSLUG_SHOTDescription[] = _("Powerful, but leaves the\nuser immobile the next turn.");
 static const u8 sBACKLASHDescription[] = _("Boosts power when burned,\nparalyzed, or poisoned.");
 static const u8 sMAGICAL_BULLETDescription[] = _("Uses sum of Atk & Sp. Atk.\nUses the higher stat stage.");
-static const u8 sSTRANGE_POTIONDescription[] = _("Summons an bug-type terrain\nin the battlefield.");
+static const u8 sSTRANGE_POTIONDescription[] = _("Poisons on foes, but\nrestores ally's HP.");
 static const u8 sPSYTRICKDescription[] = _("Psytrick that does more\ndamage to slower foes.");
 
 //  **************************** 27 distance letters ****************************

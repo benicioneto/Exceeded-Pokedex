@@ -20113,7 +20113,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .secondaryEffectChance = 100,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
-        .split = SPLIT_PHYSICAL,
+        .split = SPLIT_SPECIAL,
         .zMovePower = 140,
         .zMoveEffect = Z_EFFECT_NONE,
         .argument = MOVE_EFFECT_SP_DEF_MINUS_1,
@@ -20139,16 +20139,16 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
     [MOVE_MAGICAL_BULLET] =
     {
         .effect = EFFECT_MAGICAL_BULLET,
-        .power = 50,
+        .power = 70,
         .type = TYPE_PSYCHIC,
         .accuracy = 100,
         .pp = 10,
-        .secondaryEffectChance = 10,
+        .secondaryEffectChance = 0,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_AURA_BEAM_CANNON_GUN_PULSE_PUMP_SHOT_AND_ZOOKA_MOVE,
         .split = SPLIT_SPECIAL,
-        .zMovePower = 100,
+        .zMovePower = 140,
         .zMoveEffect = Z_EFFECT_NONE,
     },
 
