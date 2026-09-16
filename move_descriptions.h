@@ -370,8 +370,8 @@ static const u8 sToxicDescription[] = _(
     "intensifying toxin.");
 
 static const u8 sConfusionDescription[] = _(
-    "Deals double damage if\n"
-    "confused. May confuse both.");
+    "A psychic attack that may\n"
+    "cause confusion.");
 
 static const u8 sPsychicDescription[] = _(
     "A powerful psychic attack\n"
@@ -2790,7 +2790,7 @@ static const u8 sOVERDRIVEDescription[] = _(
     
 static const u8 sAPPLE_ACIDDescription[] = _(
     "Super effective on Steel.\n"
-    "Lower the foe's Sp. Def.");
+    "Lowers the foe's Sp. Def.");
     
 static const u8 sGRAV_APPLEDescription[] = _(
     "Drops an apple from above.\n"
@@ -3354,7 +3354,7 @@ static const u8 sGEOGEYSERDescription[] = _(
 
 static const u8 sROSE_WHIPDescription[] = _(
     "May paralyze, poison, sleep.\n"
-    "Lower the foe's Defense.");
+    "Lowers the foe's Defense.");
 
 static const u8 sFEATHER_SHOTDescription[] = _(
     "Shoots at foe 2 to 5 times\n"
@@ -3928,7 +3928,7 @@ static const u8 sDRAGON_CURRENTDescription[] = _(
     "in vortex for 2 to 5 turns.");
 
 static const u8 sPSYSHIELDDescription[] = _(
-    "Creates a shield of 1/4\n"
+    "Creates a shield of 1/2\n"
     "of the user's maximum HP.");
 
 static const u8 sMIDNIGHT_BEAMDescription[] = _(
@@ -3963,7 +3963,7 @@ static const u8 sHIGH_VOLTAGE_SIEGEDescription[] = _("Creates a thunderstorm\nfo
 static const u8 sULTRA_SWOLE_SLAMDescription[] = _("Does double damage to foes\nwith half HP.");	
 static const u8 sEXPLOSIVE_HEAT_HAZEDescription[] = _("Eliminates all stat changes.\nBurns the target.");
 static const u8 sVERDANT_ANGERDescription[] = _("Generates a shock wave that\nsharply reduces Speed.");
-static const u8 sRENEVANT_RENDDescription[] = _("A fast swipes that stries\nfirst than foe.");	
+static const u8 sRENEVANT_RENDDescription[] = _("Three fast swipes that\nstrike before the foe.");	
 static const u8 sPSYKABOOMDescription[] = _("A powerful loyalty attack.\nThe user flinches if hit.");	
 static const u8 sICE_WING_WHITEOUTDescription[] = _("2 to 3 turns of rage.\nTakes less physical damage.");
 static const u8 sMIST_BLASTDescription[] = _("Summons a mind blast.\nWorks well with a eon blast.");
@@ -3995,8 +3995,8 @@ static const u8 sANCIENT_CHARGEDescription[] = _("Charges with ancient power\nth
 static const u8 sANCIENT_MAWDescription[] = _("Bites with an ancient maw\nthat may raise stats.");
 static const u8 sANCIENT_ICEDescription[] = _("Attacks with ancient ice\nthat may raise stats.");
 static const u8 sICE_LANCEDescription[] = _("Hurls a sharp lance of ice.\nIgnores Defense stages.");
-static const u8 sCOTTON_PUNCHDescription[] = _("Strikes with soft cotton\nthat lower Speed and seeds.");
-static const u8 sMANDRAGORA_HOWLDescription[] = _("A terrifying howl that may\nlower the foe's Sp. Atk.");
+static const u8 sCOTTON_PUNCHDescription[] = _("Strikes with soft cotton\nthat lowers Speed and seeds.");
+static const u8 sMANDRAGORA_HOWLDescription[] = _("A terrifying howl that may\nlowers the foe's Sp. Atk.");
 static const u8 sELEMENTAL_PUNCHDescription[] = _("Strikes with three elemental\npunches at the same time.");
 static const u8 sHONE_HORNSDescription[] = _("Sharpens its horns, raising\nAttack and critical hits.");
 static const u8 sLICK_WOUNDSDescription[] = _("Licks its wounds to restore\nsome of ally's HP.");
@@ -4047,6 +4047,20 @@ static const u8 sSTELLAR_PUNCHDescription[] = _("Punches with starlight\nforce. 
 static const u8 sICE_CHAINSDescription[] = _("Traps the foe with chains\nof ice for 2 to 5 turns.");
 static const u8 sSEVERE_POISONDescription[] = _("Badly poison that ignores\nabilities and hurts faster.");
 static const u8 sELECTRO_RAILGUNDescription[] = _("Powerful and sure to cause\nparalysis.");
+static const u8 sMOONY_PUNCHDescription[] = _("Punches with moonlight\nforce. May lower Sp. Atk.");
+static const u8 sECLIPSEDescription[] = _("A moonlight attack that may\nlower Special Attack.");
+static const u8 sLUNAR_FLAREDescription[] = _("A moonlight attack that may\nburn the foe.");
+static const u8 sMIGRAINEDescription[] = _("Deals double damage if\nconfused. May confuse both.");
+static const u8 sSEASONAL_HORNDescription[] = _("Tackle that breaks barriers.\nUser's form determines type.");
+static const u8 sMIASMA_BEAMDescription[] = _("A corrosive miasma attack\nthat may badly poison.");
+static const u8 sQUASAR_PULSEDescription[] = _("User's highest attack stat\ndetermines its category.");
+static const u8 sDUBIOUS_POTIONDescription[] = _("May paralyze, poison, sleep.\nLowers the foe's Sp. Def.");
+static const u8 sSLUG_SHOTDescription[] = _("Powerful, but leaves the\nuser immobile the next turn.");
+static const u8 sBACKLASHDescription[] = _("Boosts power when burned,\nparalyzed, or poisoned.");
+static const u8 sMAGICAL_BULLETDescription[] = _("Uses sum of Atk & Sp. Atk.\nUses the higher stat stage.");
+static const u8 sSTRANGE_POTIONDescription[] = _("Summons an bug-type terrain\nin the battlefield.");
+static const u8 sPSYTRICKDescription[] = _("Psytrick that does more\ndamage to slower foes.");
+
 //  **************************** 27 distance letters ****************************
 
 // MOVE_NONE is ignored in this table. Make sure to always subtract 1 before getting the right pointer.
@@ -5167,4 +5181,17 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_ICE_CHAINS - 1] = sICE_CHAINSDescription,
     [MOVE_SEVERE_POISON - 1] = sSEVERE_POISONDescription,
     [MOVE_ELECTRO_RAILGUN - 1] = sELECTRO_RAILGUNDescription,
+    [MOVE_MOONY_PUNCH - 1] = sMOONY_PUNCHDescription,
+    [MOVE_ECLIPSE - 1] = sECLIPSEDescription,
+    [MOVE_LUNAR_FLARE - 1] = sLUNAR_FLAREDescription,
+    [MOVE_MIGRAINE - 1] = sMIGRAINEDescription,
+    [MOVE_SEASONAL_HORN - 1] = sSEASONAL_HORNDescription,
+    [MOVE_MIASMA_BEAM - 1] = sMIASMA_BEAMDescription,
+    [MOVE_QUASAR_PULSE - 1] = sQUASAR_PULSEDescription,
+    [MOVE_DUBIOUS_POTION - 1] = sDUBIOUS_POTIONDescription,
+    [MOVE_SLUG_SHOT - 1] = sSLUG_SHOTDescription,
+    [MOVE_BACKLASH - 1] = sBACKLASHDescription,
+    [MOVE_MAGICAL_BULLET - 1] = sMAGICAL_BULLETDescription,
+    [MOVE_STRANGE_POTION - 1] = sSTRANGE_POTIONDescription,
+    [MOVE_PSYTRICK - 1] = sPSYTRICKDescription,
 };

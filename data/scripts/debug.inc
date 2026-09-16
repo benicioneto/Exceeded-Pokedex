@@ -112,7 +112,7 @@ Debug_FlagsNotSetBattleConfigMessage_Text:
 
 @ debug scripts test
 Debug_Script_1::
-	setwildbattle SPECIES_GREEDENT, 100, ITEM_LIECHI_BERRY
+	setwildbattle SPECIES_GREEDENT, 100, ITEM_LIECHI_BERRY, SPECIES_GYARADOS, 100, ITEM_LIECHI_BERRY
 	dowildbattle
 	@trainerbattle_single TRAINER_SHELLY_WEATHER_INSTITUTE, Route119_WeatherInstitute_2F_Text_ShellyIntro, Route119_WeatherInstitute_2F_Text_ShellyDefeat, Route119_WeatherInstitute_2F_EventScript_ShellyDefeated
 	@msgbox Route119_WeatherInstitute_2F_Text_ShellyPostBattle, MSGBOX_AUTOCLOSE

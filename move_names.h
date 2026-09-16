@@ -1170,6 +1170,19 @@ const u8 gMoveNames[MOVES_COUNT_DYNAMAX][MOVE_NAME_LENGTH + 1] =
     [MOVE_ICE_CHAINS] = _("Ice Chains"),
     [MOVE_SEVERE_POISON] = _("Severe Poison"),
     [MOVE_ELECTRO_RAILGUN] = _("Electro Railgun"),
+    [MOVE_MOONY_PUNCH] = _("Moony Punch"),
+    [MOVE_ECLIPSE] = _("Eclipse"),
+    [MOVE_LUNAR_FLARE] = _("Lunar Flare"),
+    [MOVE_MIGRAINE] = _("Migraine"),
+    [MOVE_SEASONAL_HORN] = _("Seasonal Horn"),
+    [MOVE_MIASMA_BEAM] = _("Miasma Beam"),
+    [MOVE_QUASAR_PULSE] = _("Quasar Pulse"),
+    [MOVE_DUBIOUS_POTION] = _("Dubious Potion"),
+    [MOVE_SLUG_SHOT] = _("Slug Shot"),
+    [MOVE_BACKLASH] = _("Backlash"),
+    [MOVE_MAGICAL_BULLET] = _("Magical Bullet"),
+    [MOVE_STRANGE_POTION] = _("Strange Potion"),
+    [MOVE_PSYTRICK] = _("Psytrick"),
 };
 
 static const u8 sText_Breakneck_Blitz[] = _("Breakneck Blitz");

@@ -60,7 +60,8 @@ PetalburgCity_PokemonSchool_EventScript_Blackboard::
 	case 5, PetalburgCity_PokemonSchool_EventScript_Hailstorm
 	case 6, PetalburgCity_PokemonSchool_EventScript_Fog
 	case 7, PetalburgCity_PokemonSchool_EventScript_Strong_Winds
-	case 8, PetalburgCity_PokemonSchool_EventScript_Cancel
+	case 8, PetalburgCity_PokemonSchool_EventScript_Night
+	case 9, PetalburgCity_PokemonSchool_EventScript_Cancel
 PetalburgCity_PokemonSchool_EventScript_Cancel:
     closemessage
     end
@@ -71,26 +72,39 @@ PetalburgCity_PokemonSchool_EventScript_Harsh_Sunlight:
 	goto PetalburgCity_PokemonSchool_EventScript_Blackboard
 
 PetalburgCity_PokemonSchool_Text_Harsh_Sunlight:
-	.string "Increases the Speed stat of Grass-type\n"
-	.string "Pokémon by 33%.\p"
-	.string "If the Pokémon has Chlorophyll ability,\n"
-	.string "increases that stat by 50% instead.\p"
+	.string "Increases the power of Fire-type moves\n"
+	.string "by 50%.\p"
+	.string "Decreases the power of Water-type moves\n"
+	.string "by 50%.\p"
 	.string "Allows Solar Beam and Solar Blade to be\n"
 	.string "used instantly.\p"
 	.string "Changes Weather Ball's type and doubles\n"
 	.string "its power.\p"
 	.string "Causes Growth to raise Attack and\n"
 	.string "Special Attack two stages each.\p"
-	.string "Moonlight, Synthesis and Morning Sun\n"
-	.string "restore more health.\p"
-	.string "Lowers accuracy of Thunder and\n"
-	.string "Hurricane by 50%.\p"
+	.string "Synthesis and Morning Sun restore\n"
+	.string "more health.\p"
+	.string "Moonlight restores less health.\p"
+	.string "Lowers accuracy of Thunder, Hurricane,\n"
+	.string "Lunar Flare, Crowstorm and Nightfall\l"
+	.string "Daze by 50%.\p"
+	.string "Halves the power of Midnight Beam.\p"
 	.string "Prevents Pokémon from becoming\n"
 	.string "Frozen.\p"
+	.string "Allows Fire Wall to be used.\p"
+	.string "Activated by certain abilities: Drought,\n"
+	.string "Desolate Land and Orichalcum Pulse.\p"
 	.string "Activates certain abilities: Chlorophyll,\n"
 	.string "Dry Skin, Flower Gift, Forecast, Leaf\l"
-	.string "Guard, Solar Power, Harvest and Laval\l"
-	.string "Body.\p"
+	.string "Guard, Solar Power, Harvest, Laval\l"
+	.string "Body, Cold Blooded, Future Gaze,\l"
+	.string "Photosynthesis, Protosynthesis,\l"
+	.string "Photovoltaic Frill, Cosmic Energy,\l"
+	.string "Misty Escape, Radiant Crystal,\l"
+	.string "Phototropism and Desert Flower.\p"
+	.string "Pokémon with Mega Sol ability behaves\n"
+	.string "as though the weather were harsh\l"
+	.string "sunlight, regardless of actual weather.\p"
 	.string "Pokémon with Big Leaves ability can\n"
 	.string "absorb poor sunlight even without\l"
 	.string "Harsh Sunlight, gaining these\l"
@@ -104,9 +118,10 @@ PetalburgCity_PokemonSchool_EventScript_Extremely_Harsh_Sunlight:
 
 PetalburgCity_PokemonSchool_Text_Extremely_Harsh_Sunlight:
 	.string "Same effects of Harsh Sunlight.\p"
-	.string "But it also increases the power of\n"
-	.string "Fire-type moves by 50% and causes\l"
-	.string "Water-type moves to fail if used.$"
+	.string "But it also causes Water-type moves\n"
+	.string "to fail if used.\p"
+	.string "Activates certain abilities: Desolate\n"
+	.string "Land.$"
 
 PetalburgCity_PokemonSchool_EventScript_Rain:
     msgbox PetalburgCity_PokemonSchool_Text_Rain MSGBOX_DEFAULT
@@ -114,16 +129,22 @@ PetalburgCity_PokemonSchool_EventScript_Rain:
 	goto PetalburgCity_PokemonSchool_EventScript_Blackboard
 
 PetalburgCity_PokemonSchool_Text_Rain:
-	.string "Decreases the power of Fire-type\n"
-	.string "moves by 25%.\p"
-	.string "Allows Thunder and Hurricane to\n"
-	.string "bypass the accuracy check.\p"
+	.string "Increases the power of Water-type moves\n"
+	.string "by 50%.\p"
+	.string "Decreases the power of Fire-type moves\n"
+	.string "by 50%.\p"
+	.string "Allows Electro Shot to be used\n"
+	.string "instantly.\p"
+	.string "Allows Thunder, Hurricane and Wildbolt\n"
+	.string "Storm to bypass the accuracy check.\p"
 	.string "Changes Weather Ball's type and doubles\n"
 	.string "its power.\p"
 	.string "Halves the power of Solar Beam and\n"
 	.string "Solar Blade.\p"
 	.string "Moonlight, Synthesis and Morning Sun\n"
 	.string "restore less health.\p"
+	.string "Activated by certain abilities: Drizzle,\n"
+	.string "Primordial Sea and Sea Guardian.\p"
 	.string "Activates certain abilities: Dry Skin,\n"
 	.string "Forecast, Hydration, Rain Dish and\l"
 	.string "Sea Guardian.$"
@@ -135,9 +156,10 @@ PetalburgCity_PokemonSchool_EventScript_Heavy_Rain:
 
 PetalburgCity_PokemonSchool_Text_Heavy_Rain:
 	.string "Same effects of Rain.\p"
-	.string "But it also increases the power of\n"
-	.string "Water-type moves by 50% and causes\l"
-	.string "Fire-type moves to fail if used.$"
+	.string "But it also causes Fire-type moves\n"
+	.string "to fail if used.\p"
+	.string "Activates certain abilities: Primordial\n"
+	.string "Sea.$"
 
 PetalburgCity_PokemonSchool_EventScript_Sandstorm:
     msgbox PetalburgCity_PokemonSchool_Text_Sandstorm MSGBOX_DEFAULT
@@ -150,23 +172,29 @@ PetalburgCity_PokemonSchool_Text_Sandstorm:
 	.string "maximum HP, unless it is Rock-,\l"
 	.string "Steel-, Ground-type or has one\l"
 	.string "of the abilities: Sand Force,\l"
-	.string "Sand Rush, Sand Veil, Magic Guard,\l"
-	.string "Impenetrable or Overcoat, or is\l"
+	.string "Sand Veil, Magic Guard, Impenetrable,\l"
+	.string "Overcoat or Soot Veil, or is\l"
 	.string "holding Safety Goggles.\p"
 	.string "The damage is doubled if there is\n"
 	.string "a Pokémon with Ranging Storm on\l"
 	.string "the battlefield.\p"
+	.string "Allows Sandsear Storm to bypass the\n"
+	.string "accuracy check.\p"
 	.string "Raises the Special Defense of Rock-\n"
 	.string "type Pokémon.\p"
 	.string "Changes Weather Ball's type and doubles\n"
 	.string "its power.\p"
-	.string "Halves the power of Solar Beam and\n"
-	.string "Solar Blade.\p"
+	.string "Halves the power of Solar Beam, Solar\n"
+	.string "Blade and Midnight Beam.\p"
 	.string "Moonlight, Synthesis and Morning Sun\n"
 	.string "restore less health.\p"
-	.string "Shore Up restore more health.\p"
+	.string "Shore Up restores more health.\p"
+	.string "Activated by certain abilities: Sand\n"
+	.string "Stream and Sand Spit.\p"
 	.string "Activates certain abilities: Sand\n"
-	.string "Force, Sand Rush and Sand Veil.$"
+	.string "Force, Sand Rush, Sand Veil, Wind\l"
+	.string "Power, Wind Rider, Clay Vessel and\l"
+	.string "Sand Glider.$"
 
 PetalburgCity_PokemonSchool_EventScript_Hailstorm:
     msgbox PetalburgCity_PokemonSchool_Text_Hailstorm MSGBOX_DEFAULT
@@ -185,20 +213,31 @@ PetalburgCity_PokemonSchool_Text_Hailstorm:
 	.string "The damage is doubled if there is\n"
 	.string "a Pokémon with Ranging Storm on\l"
 	.string "the battlefield.\p"
+	.string "If it would inflict Frostbite on\n"
+	.string "an already frosbited Pokémon, it will\l"
+	.string "become Frozen instead but with 1/10\l"
+	.string "of the chance.\p"
 	.string "Raises the Defense stat of Ice-type\n"
 	.string "Pokémon.\p"
+	.string "Allows Ice Burn and Freeze Shock to\n"
+	.string "be used instantly.\p"
 	.string "Changes Weather Ball's type and doubles\n"
 	.string "its power.\p"
 	.string "Allows Blizzard to bypass the\n"
 	.string "accuracy check.\p"
-	.string "Halves the power of Solar Beam and\n"
-	.string "Solar Blade.\p"
+	.string "Halves the power of Solar Beam, Solar\n"
+	.string "Blade and Midnight Beam.\p"
 	.string "Moonlight, Synthesis and Morning Sun\n"
 	.string "restore less health.\p"
 	.string "Allows Aurora Veil to be used.\p"
+	.string "Allows Aurora Dance to be used once.\p"
+	.string "Activates certain abilities: Snow\n"
+	.string "Warming and Polar Current.\p"
 	.string "Activates certain abilities: Ice\n"
-	.string "Body, Forecast, Snow Cloak and\l"
-	.string "Slush Rush.$"
+	.string "Body, Forecast, Snow Cloak, Slush\l"
+	.string "Rush, Aurora Guard, Christmas Spirit,\l"
+	.string "Hoarfrost Skin, Yuki Onna, Arctic Force,\l"
+	.string "Cold Blooded and Ice Face.$"
 
 PetalburgCity_PokemonSchool_EventScript_Fog:
     msgbox PetalburgCity_PokemonSchool_Text_Fog MSGBOX_DEFAULT
@@ -206,12 +245,16 @@ PetalburgCity_PokemonSchool_EventScript_Fog:
 	goto PetalburgCity_PokemonSchool_EventScript_Blackboard
 
 PetalburgCity_PokemonSchool_Text_Fog:
-	.string "The accuracy of all moves are lowered.\n"
+	.string "The accuracy of all moves are lowered\n"
 	.string "by 40%.\p"
-	.string "Pokémon that has Keen Eye, Compound Eyes\n"
-	.string "or Infiltrator are unaffected.\p"
-	.string "Halves the power of Solar Beam and\n"
-	.string "Solar Blade.\p"
+	.string "Pokémon that has Keen Eye, Compound\n"
+	.string "Eyes, Infiltrator, Mind's Eye,\l"
+	.string "Vulture Eye, Falcon Eye, Owl Eye,\l"
+	.string "Echolocation, Hawk Eye and Eagle Eye\l"
+	.string "are unaffected.\p"
+	.string "Roost restores more health.\p"
+	.string "Halves the power of Solar Beam, Solar\n"
+	.string "Blade and Midnight Beam.\p"
 	.string "Moonlight, Synthesis and Morning Sun\n"
 	.string "restore less health.$"
 
@@ -223,4 +266,38 @@ PetalburgCity_PokemonSchool_EventScript_Strong_Winds:
 PetalburgCity_PokemonSchool_Text_Strong_Winds:
 	.string "Cause moves that would be super\n"
 	.string "effective against pure Flying-type\l"
-	.string "Pokémon to only be normally effective.$"
+	.string "Pokémon to only be normally effective.\p"
+	.string "Activates certain abilities: Delta\n"
+	.string "Stream.$"
+
+PetalburgCity_PokemonSchool_EventScript_Night:
+    msgbox PetalburgCity_PokemonSchool_Text_Night MSGBOX_DEFAULT
+    closemessage
+	goto PetalburgCity_PokemonSchool_EventScript_Blackboard
+
+PetalburgCity_PokemonSchool_Text_Night:
+	.string "Increases the power of Dark-type moves\n"
+	.string "by 50%.\p"
+	@.string "Decreases the power of Fairy-type moves\n"
+	@.string "by 50%.\p"
+	.string "Allows Midnight Beam to be used\n"
+	.string "instantly.\p"
+	.string "Allows Nightfall Daze, Crowstorm and\n"
+	.string "Lunar Flare to bypass the accuracy\l"
+	.string "check.\p"
+	.string "Changes Weather Ball's type and doubles\n"
+	.string "its power.\p"
+	.string "Halves the power of Solar Beam and\n"
+	.string "Solar Blade.\p"
+	.string "Moonlight restores more health.\p"
+	.string "Synthesis and Morning Sun\n"
+	.string "restore less health.\p"
+	.string "Activated by certain abilities: Umbral\n"
+	.string "Dominion.\p"
+	.string "Activates certain abilities: Nocturnal,\n"
+	.string "Forecast, Dark Bribe, Maleficent, Moon\l"
+	.string "Guard and Night Synthesis.\p"
+	.string "Pokémon with Full Moon ability behaves\n"
+	.string "as though the weather were gloom\l"
+	.string "moonlight, regardless of actual weather.$"
+	

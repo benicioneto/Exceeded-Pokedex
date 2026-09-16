@@ -611,7 +611,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_INTIMIDATE, ABILITY_RATTLED, ABILITY_UNNERVE},
         .bodyColor = BODY_COLOR_PURPLE,
         .noFlip = FALSE,
-        .innates = {ABILITY_SOLENOGLYPHS, ABILITY_SHED_SKIN, ABILITY_COIL_UP},
+        .innates = {ABILITY_PLACEHOLDER_18, ABILITY_SHED_SKIN, ABILITY_COIL_UP},
     },
 
     [SPECIES_ARBOK] =
@@ -637,7 +637,7 @@ const struct BaseStats gBaseStats[] =
         .abilities = {ABILITY_INTIMIDATE, ABILITY_PETRIFYING_GAZE, ABILITY_UNNERVE},
         .bodyColor = BODY_COLOR_PURPLE,
         .noFlip = FALSE,
-        .innates = {ABILITY_SOLENOGLYPHS, ABILITY_SHED_SKIN, ABILITY_COIL_UP},
+        .innates = {ABILITY_PLACEHOLDER_18, ABILITY_SHED_SKIN, ABILITY_COIL_UP},
     },
 
     [SPECIES_PIKACHU] =

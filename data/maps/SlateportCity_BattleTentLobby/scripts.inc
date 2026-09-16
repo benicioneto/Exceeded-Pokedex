@@ -452,7 +452,7 @@ SlateportCity_BattleTentLobby_ExchangeServiceCorner_EventScript_DuskStone::
 	msgbox SlateportCity_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmDuskStone, MSGBOX_YESNO
 	compare VAR_RESULT, NO
 	goto_if_eq SlateportCity_BattleTentLobby_ExchangeServiceCorner_EventScript_ChooseHoldItem
-	setvar VAR_0x8008, 128
+	setvar VAR_0x8008, 99
 	setvar VAR_0x8009, ITEM_DUSK_STONE
 	goto SlateportCity_BattleTentLobby_ExchangeServiceCorner_EventScript_TryPurchasePrize
 	end
@@ -461,7 +461,7 @@ SlateportCity_BattleTentLobby_ExchangeServiceCorner_EventScript_DawnStone::
 	msgbox SlateportCity_BattleTentLobby_ExchangeServiceCorner_Text_ConfirmDawnStone, MSGBOX_YESNO
 	compare VAR_RESULT, NO
 	goto_if_eq SlateportCity_BattleTentLobby_ExchangeServiceCorner_EventScript_ChooseHoldItem
-	setvar VAR_0x8008, 128
+	setvar VAR_0x8008, 99
 	setvar VAR_0x8009, ITEM_DAWN_STONE
 	goto SlateportCity_BattleTentLobby_ExchangeServiceCorner_EventScript_TryPurchasePrize
 	end

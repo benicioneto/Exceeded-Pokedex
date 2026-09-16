@@ -1143,6 +1143,20 @@ gBattleAnims_Moves::
 	.4byte Move_ICE_CHAINS
 	.4byte Move_SEVERE_POISON
 	.4byte Move_ELECTRO_RAILGUN
+	.4byte Move_MOONY_PUNCH
+	.4byte Move_ECLIPSE
+	.4byte Move_LUNAR_FLARE
+	.4byte Move_MIGRAINE
+	.4byte Move_SEASONAL_HORN
+	.4byte Move_MIASMA_BEAM
+	.4byte Move_QUASAR_PULSE
+	.4byte Move_DUBIOUS_POTION
+	.4byte Move_SLUG_SHOT
+	.4byte Move_BACKLASH
+	.4byte Move_MAGICAL_BULLET
+	.4byte Move_STRANGE_POTION
+	.4byte Move_PSYTRICK
+
 
 @@@@@@@@@@@@ Z MOVES @@@@@@@@@@@
 	.4byte Move_BREAKNECK_BLITZ
@@ -1311,6 +1325,8 @@ gBattleAnims_General::
 	.4byte General_Burn                     @ B_ANIM_BURNING_TERRAIN
 	.4byte General_Night                    @ B_ANIM_NIGHT_CONTINUES
 	.4byte General_SpatialWarp              @ B_ANIM_SPATIAL_WARP
+	.4byte General_Blink		            @ B_ANIM_BLINK
+	.4byte General_Enraged		            @ B_ANIM_ENRAGED
 	
 	.align 2
 gBattleAnims_Special::
@@ -1346,6 +1362,14 @@ Move_DEFLORESTATION:
 Move_VENOMBANE:
 Move_SUPERSONIC_BREAK:
 Move_ICE_CHAINS:
+Move_MIASMA_BEAM:
+Move_QUASAR_PULSE:
+Move_DUBIOUS_POTION:
+Move_SLUG_SHOT:
+Move_BACKLASH:
+Move_MAGICAL_BULLET:
+Move_STRANGE_POTION:
+Move_PSYTRICK:
 	goto Move_TACKLE
 
 Move_ROOST:
@@ -22935,6 +22959,7 @@ Move_CORDYCEPS::
 	waitforvisualfinish
 	end
 
+Move_SEASONAL_HORN::
 Move_RAGING_BULL::
 	loadspritegfx ANIM_TAG_BLUE_LIGHT_WALL
 	loadspritegfx ANIM_TAG_IMPACT
@@ -27676,6 +27701,20 @@ Move_QUICK_ATTACK:
 	waitforvisualfinish
 	end
 
+General_Enraged::
+	loadspritegfx ANIM_TAG_ANGER
+	monbg ANIM_TARGET
+	setalpha 12, 8
+	createvisualtask AnimTask_BlendMonInAndOut, 3, ANIM_ATTACKER, RGB_RED, 10, 0, 2
+	createsprite gAngerMarkSpriteTemplate, ANIM_ATTACKER, 2, 0, -20, -28
+	playsewithpan SE_M_SWAGGER2, SOUND_PAN_ATTACKER
+	delay 20
+	createsprite gAngerMarkSpriteTemplate, ANIM_ATTACKER, 2, 0, 20, -28
+	playsewithpan SE_M_SWAGGER2, SOUND_PAN_ATTACKER
+	waitforvisualfinish
+	clearmonbg ANIM_TARGET
+	end
+
 Move_RAGE:
 	loadspritegfx ANIM_TAG_IMPACT
 	loadspritegfx ANIM_TAG_ANGER
@@ -28351,6 +28390,8 @@ Move_RAPID_SPIN:
 	clearmonbg ANIM_ATTACKER
 	end
 
+Move_LUNAR_FLARE:
+Move_ECLIPSE:
 Move_MOONLIGHT:
 	loadspritegfx ANIM_TAG_MOON
 	loadspritegfx ANIM_TAG_GREEN_SPARKLE
@@ -29786,6 +29827,7 @@ Move_REST:
 	waitforvisualfinish
 	end
 
+Move_MIGRAINE:
 Move_CONFUSION:
 	monbg ANIM_DEF_PARTNER
 	call SetPsychicBackground
@@ -31744,6 +31786,16 @@ General_SpatialWarp:
 	createsprite gBounceBallShrinkSpriteTemplate, ANIM_ATTACKER, 2, 0, 0
 	end
 
+General_Blink:
+	loadspritegfx ANIM_TAG_ROUND_SHADOW
+	loadspritegfx ANIM_TAG_IMPACT
+	call SetPsychicBackground
+	playsewithpan SE_M_TELEPORT, SOUND_PAN_ATTACKER
+	createsprite gBounceBallShrinkSpriteTemplate, ANIM_ATTACKER, 2, 0, 0
+	call UnsetPsychicBg
+	waitforvisualfinish
+	end
+	
 Move_BOUNCE:
 	loadspritegfx ANIM_TAG_ROUND_SHADOW
 	loadspritegfx ANIM_TAG_IMPACT
@@ -34000,6 +34052,34 @@ Move_WISH:
 	waitforvisualfinish
 	createsprite gSimplePaletteBlendSpriteTemplate, ANIM_ATTACKER, 2, 1, 3, 10, 0, RGB_BLACK
 	waitforvisualfinish
+	end
+
+Move_MOONY_PUNCH:
+	loadspritegfx ANIM_TAG_IMPACT
+	loadspritegfx ANIM_TAG_HANDS_AND_FEET
+	loadspritegfx ANIM_TAG_MOON
+	loadspritegfx ANIM_TAG_GREEN_SPARKLE
+	loadspritegfx ANIM_TAG_BLUE_STAR
+	setalpha 0, 16
+	createsprite gSimplePaletteBlendSpriteTemplate, ANIM_ATTACKER, 2, 1, 1, 0, 16, RGB_BLACK
+	waitforvisualfinish
+	createsprite gMoonSpriteTemplate, ANIM_ATTACKER, 2, 120, 56
+	createvisualtask AnimTask_AlphaFadeIn, 3, 0, 16, 16, 0, 1
+	playsewithpan SE_M_MOONLIGHT, 0
+	playsewithpan SE_M_MEGA_KICK, SOUND_PAN_TARGET
+	createsprite gMegaPunchKickSpriteTemplate, ANIM_ATTACKER, 3, 0, 0, 0, 50
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, 4, 2, 0, 7, RGB_WHITE
+	delay 50
+	createvisualtask AnimTask_MoonlightEndFade, 2
+	waitforvisualfinish
+	createsprite gBasicHitSplatSpriteTemplate, ANIM_ATTACKER, 2, 0, 0, ANIM_TARGET, 0
+	createvisualtask AnimTask_ShakeMon2, 2, ANIM_TARGET, 4, 0, 22, 1
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, 4, 2, 0, 0, RGB_WHITE
+	createsprite gComplexPaletteBlendSpriteTemplate, ANIM_ATTACKER, 2, 31, 3, 1, RGB_BLACK, 8, 0, 0
+	playsewithpan SE_M_VITAL_THROW2, SOUND_PAN_TARGET
+	waitforvisualfinish
+	clearmonbg ANIM_TARGET
+	blendoff
 	end
 
 Move_STELLAR_PUNCH:

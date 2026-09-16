@@ -2628,7 +2628,7 @@ void ShowScrollableMultichoice(void)
             break;
         case SCROLL_MULTI_PETALBURG_SCHOOL:
             task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
-            task->tNumItems = 9;
+            task->tNumItems = 10;
             task->tLeft = 14;
             task->tTop = 1;
             task->tWidth = 15;
@@ -2638,7 +2638,7 @@ void ShowScrollableMultichoice(void)
             break;
         case SCROLL_MULTI_MAUVILLE_SCHOOL:
             task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
-            task->tNumItems = 12;
+            task->tNumItems = 15;
             task->tLeft = 14;
             task->tTop = 1;
             task->tWidth = 15;
@@ -2648,7 +2648,7 @@ void ShowScrollableMultichoice(void)
             break;
         case SCROLL_MULTI_FORTREE_SCHOOL:
             task->tMaxItemsOnScreen = MAX_SCROLL_MULTI_ON_SCREEN;
-            task->tNumItems = 16;
+            task->tNumItems = 15;
             task->tLeft = 14;
             task->tTop = 1;
             task->tWidth = 15;
@@ -2952,6 +2952,7 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_WeatherHailstorm,
         gText_WeatherFog,
         gText_WeatherStrongWinds,
+        gText_WeatherNight,
         gText_Exit
     },
     [SCROLL_MULTI_MAUVILLE_SCHOOL] = 
@@ -2967,6 +2968,9 @@ static const u8 *const sScrollableMultichoiceOptions[][MAX_SCROLL_MULTI_LENGTH] 
         gText_TerrainSandyTerrain,
         gText_TerrainSwampTerrain,
         gText_TerrainVenomousTerrain,
+        gText_TerrainPollinationTerrain,
+        gText_TerrainColloseumTerrain,
+        gText_TerrainDraconicTerrain,
         gText_Exit
     },
     [SCROLL_MULTI_FORTREE_SCHOOL] = 

@@ -70,16 +70,16 @@ FortreeCity_PokemonSchool_EventScript_Blackboard::
 	case 3, FortreeCity_PokemonSchool_EventScript_Biting
 	case 4, FortreeCity_PokemonSchool_EventScript_Crash
 	case 5, FortreeCity_PokemonSchool_EventScript_Dance
-	case 6, FortreeCity_PokemonSchool_EventScript_Fang
-	case 7, FortreeCity_PokemonSchool_EventScript_Field
-	case 8, FortreeCity_PokemonSchool_EventScript_HitFlyingType
-	case 9, FortreeCity_PokemonSchool_EventScript_HitMinimize
-	case 10, FortreeCity_PokemonSchool_EventScript_HitSemiInvulnerable
-	case 11, FortreeCity_PokemonSchool_EventScript_IgnoreAbilities
-	case 12, FortreeCity_PokemonSchool_EventScript_IgnoreDefense
-	case 13, FortreeCity_PokemonSchool_EventScript_IgnoreEvasion
-	case 14, FortreeCity_PokemonSchool_EventScript_Launcher
-	case 15, FortreeCity_PokemonSchool_EventScript_Magnet
+	@case 6, FortreeCity_PokemonSchool_EventScript_Fang
+	case 6, FortreeCity_PokemonSchool_EventScript_Field
+	case 7, FortreeCity_PokemonSchool_EventScript_HitFlyingType
+	case 8, FortreeCity_PokemonSchool_EventScript_HitMinimize
+	case 9, FortreeCity_PokemonSchool_EventScript_HitSemiInvulnerable
+	case 10, FortreeCity_PokemonSchool_EventScript_IgnoreAbilities
+	case 11, FortreeCity_PokemonSchool_EventScript_IgnoreDefense
+	case 12, FortreeCity_PokemonSchool_EventScript_IgnoreEvasion
+	case 13, FortreeCity_PokemonSchool_EventScript_Launcher
+	case 14, FortreeCity_PokemonSchool_EventScript_Magnet
 FortreeCity_PokemonSchool_EventScript_Cancel:
     closemessage
     end
@@ -110,8 +110,8 @@ FortreeCity_PokemonSchool_EventScript_Acid:
 	goto FortreeCity_PokemonSchool_EventScript_Blackboard
 
 FortreeCity_PokemonSchool_Text_Acid:
-	.string "Acid, Acid Spray, Apple Acid\n"
-	.string "and Acid Downpour.\p"
+	.string "Acid, Acid Spray, Apple Acid,\n"
+	.string "Acid Downpour and Acidic Maw.\p"
 	.string "Special effect: deals super\n"
 	.string "effective on Steel-type.\p"
 	.string "Abilities that interacts with:\n"
@@ -124,8 +124,9 @@ FortreeCity_PokemonSchool_EventScript_AirbourneStyle:
 
 FortreeCity_PokemonSchool_Text_AirbourneStyle:
 	.string "Mega Kick, Rolling Kick, Low Kick,\n"
-	.string "Blaze Kick, Trop Kick and\l"
-	.string "Thunderous Kick.\p"
+	.string "Blaze Kick, Trop Kick, Thunderous\l"
+	.string "Kick, Spinning Flame Kick, Full\l"
+	.string "Moon Kick and New Moon Kick\p"
 	.string "Abilities that interacts with:\n"
 	.string "Airbourne Style.$"
 
@@ -142,8 +143,8 @@ FortreeCity_PokemonSchool_Text_Ballistic:
 	.string "Ball, Mud Bomb, Octazooka, Polen Puff,\l"
 	.string "Pyro Ball, Rock Blast, Rock Wrecker,\l"
 	.string "Searing Shot, Seed Bomb, Shadow Ball,\l"
-	.string "Sludge Bomb, Weather Ball, Zap Cannon\l"
-	.string "and Aura Cannon.\p"
+	.string "Sludge Bomb, Weather Ball, Zap Cannon,\l"
+	.string "Aura Cannon and Bolting Shot.\p"
 	.string "Abilities that interacts with:\n"
 	.string "Bulletproof.$"
 
@@ -157,10 +158,14 @@ FortreeCity_PokemonSchool_Text_Biting:
 	.string "Rend, Hyper Fang, Ice Fang, Jaw Lock,\l"
 	.string "Poison Fang, Psychic Fangs,\l"
 	.string "Thunder Fang, Bug Bite, Aqua Fang,\l"
-	.string "Deathroll and Undeground Bite.\p"
+	.string "Deathroll, Undeground Bite, Dragon\l"
+	.string "Fang, Twin Bite, Sweet Bite,\l"
+	.string "Ravenous Bite, Flytrap Bite and\l"
+	.string "Acidic Maw.\p"
 	.string "Abilities that interacts with:\n"
-	.string "Strong Jaw, Leech Fangs and\l"
-	.string "Solenoglyphs.$"
+	.string "Strong Jaw, Leech Fangs,\l"
+	.string "Solenoglyphs, Growing Tooth,\l"
+	.string "Thick Skin and Coil Up.$"
 
 FortreeCity_PokemonSchool_EventScript_Crash:
     msgbox FortreeCity_PokemonSchool_Text_Crash MSGBOX_DEFAULT
@@ -168,8 +173,9 @@ FortreeCity_PokemonSchool_EventScript_Crash:
 	goto FortreeCity_PokemonSchool_EventScript_Blackboard
 
 FortreeCity_PokemonSchool_Text_Crash:
-	.string "High Jump Kick, Jump Kick and\n"
-	.string "Axe Kick.\p"
+	.string "High Jump Kick, Jump Kick, Axe\n"
+	.string "Kick, Punishing Kick and\l"
+	.string "Flying Side Kick.\p"
 	.string "Special effect: If the move\n"
 	.string "misses, the user takes damage\l"
 	.string "equal to half of its maximum\l"
@@ -186,9 +192,11 @@ FortreeCity_PokemonSchool_Text_Dance:
 	.string "Feather Dance, Fiery Dance, Dragon\n"
 	.string "Dance, Lunar Dance, Petal Dance,\l"
 	.string "Revelation Dance, Quiver Dance,\l"
-	.string "Swords Dance and Teeter Dance.\p"
+	.string "Swords Dance, Teeter Dance, Victory\l"
+	.string "Dance, Aqua Step and Aurora\l"
+	.string "Dance.\p"
 	.string "Abilities that interacts with:\n"
-	.string "Dancer.$"
+	.string "Dancer and Tap Dancer.$"
 
 FortreeCity_PokemonSchool_EventScript_Fang:
     msgbox FortreeCity_PokemonSchool_Text_Fang MSGBOX_DEFAULT
@@ -213,7 +221,7 @@ FortreeCity_PokemonSchool_Text_Field:
 	.string "Headbutt, Dive, Secret Power,\l"
 	.string "Rock Climb and Chatter.\p"
 	.string "Abilities that interacts with:\n"
-	.string "Field Explorer.$"
+	.string "Field Explorer and Hyperactive.$"
 
 FortreeCity_PokemonSchool_EventScript_HitFlyingType:
     msgbox FortreeCity_PokemonSchool_Text_HitFlyingType MSGBOX_DEFAULT
@@ -223,11 +231,12 @@ FortreeCity_PokemonSchool_EventScript_HitFlyingType:
 FortreeCity_PokemonSchool_Text_HitFlyingType:
 	.string "Bone Club, Bonemerang, Bone Rush,\n"
 	.string "Barrage, Octazooka, Drill Run,\l"
-	.string "Thousand Arrows and High Horsepower.\p"
+	.string "Thousand Arrows, High Horsepower,\l"
+	.string "Precipice Blades and Bone Lunge.\p"
 	.string "Special effect: can hit Flying-type\n"
 	.string "Pokémon or Pokémon in air.\p"
 	.string "Abilities that interacts with:\n"
-	.string "Levitate.$"
+	.string "Levitate and Eelevate.$"
 
 FortreeCity_PokemonSchool_EventScript_HitMinimize:
     msgbox FortreeCity_PokemonSchool_Text_HitMinimize MSGBOX_DEFAULT
@@ -280,7 +289,9 @@ FortreeCity_PokemonSchool_EventScript_IgnoreAbilities:
 
 FortreeCity_PokemonSchool_Text_IgnoreAbilities:
 	.string "Horn Drill, Sunsteel Strike, \n"
-	.string "Moongeist Beam and Photon Geyser.\p"
+	.string "Moongeist Beam, Photon Geyser,\l"
+	.string "Shadow End, Destructive Drill and\l"
+	.string "Severe Poison\p"
 	.string "Abilities that interacts with:\n"
 	.string "None.$"
 
@@ -292,7 +303,9 @@ FortreeCity_PokemonSchool_EventScript_IgnoreDefense:
 FortreeCity_PokemonSchool_Text_IgnoreDefense:
 	.string "Horn Attack, Horn Drill, Megahorn,\n"
 	.string "Horn Leech, Chip Away, Sacred Sword,\l"
-	.string "Darkest Lariat and Deathroll.\p"
+	.string "Darkest Lariat , Deathroll,\l"
+	.string "Ice Lance, Destructive Drill and\l"
+	.string "Fish Harpoon.\p"
 	.string "Abilities that interacts with:\n"
 	.string "None.$"
 
@@ -339,7 +352,7 @@ FortreeCity_PokemonSchool_EventScript_Magnet:
 	goto FortreeCity_PokemonSchool_EventScript_Blackboard
 
 FortreeCity_PokemonSchool_Text_Magnet:
-	.string "Charge, Gear Up, Magnet Rise, Magnet\n"
+	.string "Gear Up, Magnet Rise, Magnet\n"
 	.string "Bomb, Magnet Flux and Shift Gear.\p"
 	.string "Abilities that interacts with:\n"
 	.string "Minus and Plus.$"
@@ -359,6 +372,8 @@ FortreeCity_PokemonSchool_Text_Mud:
 	.string "Special effect 2: Water-type\n"
 	.string "Pokémon gain same-type attack\l"
 	.string "bonus regardless.\p"
+	.string "Swamp and Venomous Terrains boost\n"
+	.string "their power by 30%.\p"
 	.string "Abilities that interacts with:\n"
 	.string "None.$"
 
@@ -370,9 +385,11 @@ FortreeCity_PokemonSchool_EventScript_Powder:
 FortreeCity_PokemonSchool_Text_Powder:
 	.string "Cotton Spore, Magic Powder, Poison\n"
 	.string "Powder, Powder, Rage Powder, Sleep\l"
-	.string "Powder, Spore, Stun Spore and Cordyceps.\p"
+	.string "Powder, Spore, Stun Spore,\l"
+	.string "Cordyceps and Allergic Explosion.\p"
 	.string "Special effect: Grass-type Pokémon\n"
 	.string "are unaffected.\p"
+	.string "Ravine Terrain prevents their use.\p"
 	.string "Items that interacts with:\n"
 	.string "Safety Goggles.\p"
 	.string "Abilities that interacts with:\n"
@@ -394,13 +411,24 @@ FortreeCity_PokemonSchool_Text_Punching:
 	.string "Thunder Punch, Meteor Mash,\l"
 	.string "Plasma Fists, Surging Strikes,\l"
 	.string "Sucker Punch, Wicked Blow,\l"
-	.string "Jet Punch, Dragon Combo and\l"
-	.string "Ki Explosion.\p"
+	.string "Jet Punch, Dragon Combo, Spinning\l"
+	.string "Flame Fist, Ebon Fist, Flowing\l"
+	.string "Fists, Sobering Punch, Cotton\l"
+	.string "Punch, Elemental Punch, Swarm\l"
+	.string "Punch, Stellar Punch and\l"
+	.string "Moony Punch.\p"
 	.string "Items that interacts with:\n"
 	.string "Punching Gloves.\p"
 	.string "Abilities that interacts with:\n"
 	.string "Nimble Fist, Iron Fist, Precise\l"
-	.string "Fist and Multi-Limbs.$"
+	.string "Fist, Multi-Limbs, Peek-O-Boo,\l"
+	.string "Aftershock, Spell Fist, Traumatic\l"
+	.string "Fist, Vibrating Lumbs, Phantom\l"
+	.string "Star Fist, Master Pugilist, Martial\l"
+	.string "Prodigy, Druken Fist, Little\l"
+	.string "Champion, Relentless Fist, Brawler\l"
+	.string "Fist, Gentle Fist, Cannon Mode and\l"
+	.string "Jet Mode.$"
 
 FortreeCity_PokemonSchool_EventScript_Recoil:
     msgbox FortreeCity_PokemonSchool_Text_Recoil MSGBOX_DEFAULT
@@ -412,13 +440,16 @@ FortreeCity_PokemonSchool_Text_Recoil:
 	.string "Smash, Submission, Take Down,\l"
 	.string "Wood Hammer, Brave Bird, Head\l"
 	.string "Charge, Light of Ruins, Volt\l"
-	.string "Tackle, Wave Crash, Wild Charge\l"
-	.string "and Flame Sweep.\p"
+	.string "Tackle, Wave Crash, Wild Charge,\l"
+	.string "Flame Sweep and Dragon Rush.\p"
 	.string "Special effect: cause the user\n"
 	.string "to take damage proportional to\l"
 	.string "the damage dealt.\p"
+	.string "Items that interacts with:\n"
+	.string "Golden Hammer.\p"
 	.string "Abilities that interacts with:\n"
-	.string "Rock Head, Reckless and Ice Face.$"
+	.string "Rock Head, Reckless, Ice Face\l"
+	.string "and Golden Armor.$"
 
 FortreeCity_PokemonSchool_EventScript_Slicing:
     msgbox FortreeCity_PokemonSchool_Text_Slicing MSGBOX_DEFAULT
@@ -433,14 +464,17 @@ FortreeCity_PokemonSchool_Text_Slicing:
 	.string "Razor Shell, Secret Sword, Solar Blade,\l"
 	.string "Behemoth Blade, Stone Axe, Ceaseless\l"
 	.string "Edge, Population Bomb, Kowtow Cleave,\l"
-	.string "Bitter Blade, Aqua Cutter, Excalibur\l"
-	.string "and Midnight Slash.\p"
+	.string "Bitter Blade, Aqua Cutter, Excalibur,\l"
+	.string "Midnight Slash, Metal Claw, Crush Claw,\l"
+	.string "Shadow Claw, Dire , Dragon Claw,\l"
+	.string "Soul Blades, Back Stab, Zantetsuken,\l"
+	.string "Renevant Rend.$"
 	.string "Items that interacts with:\n"
 	.string "Muramasa.\p"
 	.string "Abilities that interacts with:\n"
 	.string "Blademaster, Dual Wielding, Sharpness,\l"
-	.string "Sharp Blades, Hiten Mitsurugi and\l"
-	.string "Ryutsuisen.$"
+	.string "Sharp Blades, Hiten Mitsurugi,\l"
+	.string "Ryutsuisen, Silk Armor and Lightsaber.$"
 
 FortreeCity_PokemonSchool_EventScript_Sound:
     msgbox FortreeCity_PokemonSchool_Text_Sound MSGBOX_DEFAULT
@@ -456,8 +490,13 @@ FortreeCity_PokemonSchool_Text_Sound:
 	.string "Metal Sound, Noble Roar, Overdrive,\l"
 	.string "Parting Shot, Perish Song, Relic Song,\l"
 	.string "Roar, Round, Screech, Sing, Snarl,\l"
-	.string "Snore, Sparkling Aria, Supersonic\l"
-	.string "and Uproar.\p"
+	.string "Snore, Sparkling Aria, Supersonic,\l"
+	.string "Uproar, Psychic Noise, Mocking Shout,\l"
+	.string "Proton Scream, Eerie Tune, Starlight\l"
+	.string "Recital, Banshee's Cry, Mandragora\l"
+	.string "Howl, Pitch Noise, Siren's Melody,\l"
+	.string "Chrono Chorus, Fairytime Aria,\l"
+	.string "Engine Roar and Supersonic Break.\p"
 	.string "Special effect: can hit Pokémon\n"
 	.string "behind a Substitute.\p"
 	.string "Special effect 2: Pokémon affected\n"
@@ -466,7 +505,11 @@ FortreeCity_PokemonSchool_Text_Sound:
 	.string "Throat Spray.\p"
 	.string "Abilities that interacts with:\n"
 	.string "Soundproof, Liquid Voice, Amplifier,\l"
-	.string "Desert Spirit and Loud Bang.$"
+	.string "Desert Spirit, Loud Bang, Singer,\l"
+	.string "Forest Witch, Vibrating Lumbs,\l"
+	.string "Resonant Voice, Aero Voice,\l"
+	.string "Stradivarius, Killer Whale and\l"
+	.string "War Drums.$"
 
 FortreeCity_PokemonSchool_EventScript_Thaw:
     msgbox FortreeCity_PokemonSchool_Text_Thaw MSGBOX_DEFAULT
@@ -502,7 +545,11 @@ FortreeCity_PokemonSchool_Text_WeatherRelated:
 	.string "Blizzard, Solar Beam, Thunder,\n"
 	.string "Morning Sun, Synthesis, Moonlight,\l"
 	.string "Weather Ball, Hurricane, Solar Blade\l"
-	.string "and Aurora Veil.\p"
+	.string "Aurora Veil, Shore Up, Chilly Reception\l"
+	.string "Snowscape, Fog, Nightfall Daze,\l"
+	.string "Right as Rain, Moony Night,\l"
+	.string "Midnight Beam, Crowstorm and\l"
+	.string "Lunar Flare.\p"
 	.string "Items that interacts with:\n"
 	.string "Utility Umbrella.\p"
 	.string "Abilities that interacts with:\n"
@@ -519,14 +566,15 @@ FortreeCity_PokemonSchool_Text_Wind:
 	.string "Ominous Wind, Hurricane, Fairy Wind,\l"
 	.string "Bleakwind Storm, Petal Blizzard,\l"
 	.string "Sandsear Storm, Springtide Storm,\l"
-	.string "Tailwind, Whirlwind, Wildbolt Storm\l"
-	.string "and Aeroblast.\p"
+	.string "Tailwind, Whirlwind, Wildbolt Storm,\l"
+	.string "Aeroblast and Crowstorm.\p"
 	.string "Special effect: Gust, Twister,\n"
 	.string "Hurricane and Aeroblast will activate\l"
 	.string "entry hazards on the target, even if\l"
 	.string "it wouldn't be normally affected.\p"
 	.string "Abilities that interacts with:\n"
-	.string "Giant Wings, Wind Power and Wind Rider.$"
+	.string "Giant Wings, Wind Power, Wind Rider,\l"
+	.string "Turbulence and Mega Mane.$"
 
 FortreeCity_PokemonSchool_EventScript_Wing:
     msgbox FortreeCity_PokemonSchool_Text_Wing MSGBOX_DEFAULT
@@ -535,7 +583,8 @@ FortreeCity_PokemonSchool_EventScript_Wing:
 
 FortreeCity_PokemonSchool_Text_Wing:
 	.string "Wing Attack, Steel Wing, Oblivion Wing,\n"
-	.string "Dual Wingbeat and Esper Wing.\p"
+	.string "Dual Wingbeat, Esper Wing, Ancient\pl"
+	.string "Wings.\p"
 	.string "Abilities that interacts with:\n"
 	.string "Giant Wings.$"
 
