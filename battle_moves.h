@@ -20275,5 +20275,94 @@ const struct BattleMove gBattleMoves[MOVES_COUNT_DYNAMAX] =
         .zMovePower = 175,
         .zMoveEffect = Z_EFFECT_NONE,
     },
+
+    [MOVE_GATHER_LIGHT] =
+    {
+        .pp = 5,
+        .effect = EFFECT_USER_RESTORE_50_HP,
+        .power = 0,
+        .type = TYPE_PSYCHIC,
+        .accuracy = 0,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_USER,
+        .priority = 0,
+        .flags = FLAG_SNATCH_AFFECTED,
+        .split = SPLIT_STATUS,
+        .zMovePower = 0,
+        .zMoveEffect = Z_EFFECT_RESET_STATS,
+    },
+
+    [MOVE_PHOTON_CUT] =
+    {
+        .effect = EFFECT_HIT,
+        .power = 90,
+        .type = TYPE_PSYCHIC,
+        .accuracy = 100,
+        .pp = 15,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = FLAG_PROTECT_AFFECTED | FLAG_MIRROR_MOVE_AFFECTED | FLAG_KINGS_ROCK_AFFECTED | FLAG_HIGH_CRITICAL_HIT_RATIO,
+        .flags2 = FLAG_SLICING_MOVE | FLAG_SCENT_MARK_AFFECTED,
+        .split = SPLIT_PHYSICAL,
+        .zMovePower = 175,
+        .zMoveEffect = Z_EFFECT_NONE,
+    },
+
+    [MOVE_FULL_BLOOM_AROMA] =
+    {
+        .effect = EFFECT_HIT,
+        .power = 40,
+        .type = TYPE_NORMAL,
+        .accuracy = 0,
+        .pp = 0,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = 0,
+        .split = SPLIT_PHYSICAL,
+    },
+
+    [MOVE_ENDLESS_ICE_SPIKES] =
+    {
+        .effect = EFFECT_HIT,
+        .power = 40,
+        .type = TYPE_NORMAL,
+        .accuracy = 0,
+        .pp = 0,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = 0,
+        .split = SPLIT_PHYSICAL,
+    },
+
+    [MOVE_LUMIERE_OF_DEMISE] =
+    {
+        .effect = EFFECT_HIT,
+        .power = 40,
+        .type = TYPE_NORMAL,
+        .accuracy = 0,
+        .pp = 0,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = 0,
+        .split = SPLIT_PHYSICAL,
+    },
+
+    [MOVE_SHINING_METEOR_CRUSH] =
+    {
+        .effect = EFFECT_HIT,
+        .power = 40,
+        .type = TYPE_NORMAL,
+        .accuracy = 0,
+        .pp = 0,
+        .secondaryEffectChance = 0,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .flags = 0,
+        .split = SPLIT_PHYSICAL,
+    },
 };
 
