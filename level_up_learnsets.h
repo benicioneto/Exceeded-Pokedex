@@ -3680,6 +3680,7 @@ static const struct LevelUpMove sTaurosLevelUpLearnset[] = {
     LEVEL_UP_MOVE(50, MOVE_OUTRAGE),
     LEVEL_UP_MOVE(54, MOVE_DOUBLE_EDGE),
     LEVEL_UP_MOVE(61, MOVE_GIGA_IMPACT),
+    LEVEL_UP_MOVE(65, MOVE_BULL_RUSH),
     LEVEL_UP_END
 };
 
