@@ -1049,8 +1049,8 @@ static const u8 sMementoDescription[] = _(
     "the foe's abilities.");
 
 static const u8 sFacadeDescription[] = _(
-    "Boosts Attack when burned,\n"
-    "paralyzed, or poisoned.");
+    "Ups damage when it has\n"
+    "a status condition.");
 
 static const u8 sFocusPunchDescription[] = _(
     "A powerful loyalty attack.\n"
@@ -4056,7 +4056,7 @@ static const u8 sMIASMA_BEAMDescription[] = _("A corrosive miasma attack\nthat m
 static const u8 sQUASAR_PULSEDescription[] = _("User's highest attack stat\ndetermines its category.");
 static const u8 sDUBIOUS_POTIONDescription[] = _("May paralyze, poison, sleep.\nLowers the foe's Sp. Def.");
 static const u8 sSLUG_SHOTDescription[] = _("Powerful, but leaves the\nuser immobile the next turn.");
-static const u8 sBACKLASHDescription[] = _("Boosts power when burned,\nparalyzed, or poisoned.");
+static const u8 sBACKLASHDescription[] = _("Ups damage when it has\na status condition.");
 static const u8 sMAGICAL_BULLETDescription[] = _("Uses sum of Atk & Sp. Atk.\nUses the higher stat stage.");
 static const u8 sSPECIAL_PHARMACYDescription[] = _("Heal Poison-type {PKMN}.\nPoisons & confuses if not.");
 static const u8 sPSYTRICKDescription[] = _("Psytrick that does more\ndamage to slower foes.");
