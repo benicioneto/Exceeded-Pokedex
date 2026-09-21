@@ -747,7 +747,7 @@ gBattleAnims_Moves::
 	.4byte Move_OBSTRUCT
 	.4byte Move_FALSE_SURRENDER
 	.4byte Move_METEOR_ASSAULT
-	.4byte Move_ETERNA_BEAM
+	.4byte Move_ETERNABEAM
 	.4byte Move_STEEL_BEAM
 	.4byte Move_EXPANDING_FORCE
 	.4byte Move_STEEL_ROLLER
@@ -1089,7 +1089,7 @@ gBattleAnims_Moves::
 	.4byte Move_ANCIENT_CHARGE
 	.4byte Move_ANCIENT_MAW
 	.4byte Move_ANCIENT_ICE
-	.4byte Move_ICE_LANCE
+	.4byte Move_ICE_JAVELIN
 	.4byte Move_COTTON_PUNCH
 	.4byte Move_MANDRAGORA_HOWL
 	.4byte Move_ELEMENTAL_PUNCH
@@ -1157,6 +1157,17 @@ gBattleAnims_Moves::
 	.4byte Move_STRANGE_POTION
 	.4byte Move_PSYTRICK
 	.4byte Move_DAZE_BARRAGE
+	.4byte Move_BULL_RUSH
+	.4byte Move_GATHER_LIGHT
+	.4byte Move_PHOTON_CUT
+	.4byte Move_MATTER_RUPTURE
+	.4byte Move_DEEPSEA_RIFT
+	.4byte Move_CHRONO_GEAR
+	.4byte Move_FULL_BLOOM_AROMA
+	.4byte Move_ENDLESS_ICE_SPIKES
+	.4byte Move_LUMIERE_OF_DEMISE
+	.4byte Move_SHINING_METEOR_CRUSH
+
 
 @@@@@@@@@@@@ Z MOVES @@@@@@@@@@@
 	.4byte Move_BREAKNECK_BLITZ
@@ -1369,7 +1380,15 @@ Move_SLUG_SHOT:
 Move_BACKLASH:
 Move_MAGICAL_BULLET:
 Move_STRANGE_POTION:
-Move_PSYTRICK:
+Move_PSYTRICK:Move_GATHER_LIGHT:
+Move_PHOTON_CUT:
+Move_MATTER_RUPTURE:
+Move_DEEPSEA_RIFT:
+Move_CHRONO_GEAR:
+Move_FULL_BLOOM_AROMA:
+Move_ENDLESS_ICE_SPIKES:
+Move_LUMIERE_OF_DEMISE:
+Move_SHINING_METEOR_CRUSH:
 	goto Move_TACKLE
 
 Move_ROOST:
@@ -10826,46 +10845,6 @@ Move_POWER_UP_PUNCH:
 	blendoff
 	end
 
-Move_OBLIVION_WING::
-	loadspritegfx ANIM_TAG_HYDRO_PUMP
-	loadspritegfx ANIM_TAG_ROUND_SHADOW
-	loadspritegfx ANIM_TAG_BLUE_STAR
-	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_HYDRO_PUMP, 0x0, 0xC, 0xC, 0x289F    @Pinkish Red
-	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_ROUND_SHADOW, 0x0, 0xD, 0xD, 0x289F  @Pinkish Red
-	playsewithpan SE_M_FLY, SOUND_PAN_ATTACKER
-	launchtemplate gFlyBallUpSpriteTemplate 0x2 0x4 0x0 0x0 0xd 0x150
-	waitforvisualfinish
-	launchtask AnimTask_BlendBattleAnimPal 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xE 0x0   @Black
-	waitforvisualfinish
-	createsoundtask SoundTask_LoopSEAdjustPanning, 0x7, 0xf0, 0xffc0, SOUND_PAN_TARGET, 0x1, 0xf, 0x0, 0x5
-	call OblivionWingBeam
-	call OblivionWingBeam
-	launchtask AnimTask_ShakeMon 0x2 0x5 ANIM_TARGET 0x0 0x3 40 0x1
-	launchtask AnimTask_BlendColorCycle 0x2 0x6 ANIM_PAL_DEF 0x2 0x4 0x0 0xc 0x289F @Pinkish Red
-	call OblivionWingBeam
-	call OblivionWingBeam
-	call OblivionWingBeam
-	call OblivionWingBeam
-	call OblivionWingBeam
-	call OblivionWingBeam
-	call OblivionWingBeam
-	call OblivionWingBeam
-	call OblivionWingBeam
-	call OblivionWingBeam
-	delay 15
-	visible ANIM_ATTACKER
-	call HealingEffect
-	waitforvisualfinish
-	launchtask AnimTask_BlendBattleAnimPal 0xa 0x5 ANIM_PAL_BG 0x1 0xE 0x0 0x0   @From black
-	waitforvisualfinish
-	end
-OblivionWingBeam:
-	launchtemplate gOblivionWingBeamTemplate 0x82, 0x6, 0, -90, 0, 20, 0x15 0x0
-	delay 0x2
-	launchtemplate gOblivionWingBeamTemplate 0x82, 0x6, 0, -90, 0, 20, 0x15 0x0
-	delay 0x2
-	return
-
 Move_THOUSAND_ARROWS::
 	loadspritegfx ANIM_TAG_CIRCLE_OF_LIGHT @charge animation
 	loadspritegfx ANIM_TAG_ELECTRICITY @charge animation
@@ -14342,70 +14321,6 @@ Move_DOUBLE_IRON_BASH::
 	end
 
 @@@@@@@@@@@@@@@@@@@@@@@ GEN 8 @@@@@@@@@@@@@@@@@@@@@@@
-Move_DYNAMAX_CANNON::
-	loadspritegfx ANIM_TAG_ELECTRIC_ORBS
-	loadspritegfx ANIM_TAG_CIRCLE_OF_LIGHT
-	loadspritegfx ANIM_TAG_ORBS @hyper beam
-	loadspritegfx ANIM_TAG_WATER_GUN @water gun colour
-	loadspritegfx ANIM_TAG_ASSURANCE_HAND @purple colour
-	loadspritegfx ANIM_TAG_HYDRO_PUMP
-	loadspritegfx ANIM_TAG_SPARK_2 @spark
-	loadspritegfx ANIM_TAG_LEAF @green
-	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_ELECTRIC_ORBS, 0, 15, 15, RGB(30, 2, 11)
-	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_CIRCLE_OF_LIGHT, 0, 15, 15, RGB(30, 2, 11)
-	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_HYDRO_PUMP, 0, 12, 12, RGB(30, 2, 11)
-	setalpha 8, 8
-	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 2, 0, 15, 0
-	waitforvisualfinish
-	loopsewithpan SE_M_CHARGE, SOUND_PAN_ATTACKER, 14, 10
-	createsprite gGrowingChargeOrb3SpriteTemplate, ANIM_ATTACKER, 2, 0 @;Charge circle
-	call LightThatBurnsTheSkyGreenSparks
-	call LightThatBurnsTheSkyGreenSparks
-	call LightThatBurnsTheSkyGreenSparks
-	call LightThatBurnsTheSkyGreenSparks
-	call LightThatBurnsTheSkyGreenSparks
-	delay 20
-	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 2, 15, 0, 0
-	fadetobg BG_DYNAMAX_CANNON
-	waitbgfadein
-	blend_color_cycle selector=F_PAL_TARGET, delay=4, num_blends=4, initial_blend_y=0, target_blend_y=12, color=RGB(31, 4, 10)@Pinkish Red
-	panse SE_M_SOLAR_BEAM, SOUND_PAN_ATTACKER SOUND_PAN_TARGET 2 0
-	shake_mon_or_platform velocity=4, shake_timer=1, shake_duration=180, type=1
-	createvisualtask AnimTask_ShakeMon, 2, ANIM_ATTACKER, 0, 4, 87, 1
-	call DynamaxCannonLaunch
-	call DynamaxCannonLaunch
-	call DynamaxCannonLaunch
-	createvisualtask AnimTask_ShakeMon2, 2, ANIM_TARGET, 0, 4, 81, 1
-	call DynamaxCannonLaunch
-	call DynamaxCannonLaunch
-	call DynamaxCannonLaunch
-	call DynamaxCannonLaunch
-	call DynamaxCannonLaunch
-	call DynamaxCannonLaunch
-	call DynamaxCannonLaunch
-	call DynamaxCannonLaunch
-	call DynamaxCannonLaunch
-	call DynamaxCannonLaunch
-	call DynamaxCannonLaunch
-	call DynamaxCannonLaunch
-	call DynamaxCannonLaunch
-	call DynamaxCannonLaunch
-	call DynamaxCannonLaunch
-	call DynamaxCannonLaunch
-	call DynamaxCannonLaunch
-	call DynamaxCannonLaunch
-	waitforvisualfinish
-	restorebg
-	waitbgfadein
-	blendoff
-	end
-
-DynamaxCannonLaunch:
-	createsprite gSpriteTemplate_DynamaxCannonOrb, ANIM_TARGET, 2, 0, 0, 16
-	delay 2
-	createsprite gSpriteTemplate_DynamaxCannonOrb, ANIM_TARGET, 2, 0, 0, 16
-	delay 2
-	return
 
 Move_SNIPE_SHOT::
 	loadspritegfx ANIM_TAG_IMPACT_2
@@ -15452,8 +15367,114 @@ BasicExplosion:
 	launchtemplate gExplosionSpriteTemplate, 0x83, 0x4 0x10 0x10 0x1 0x1
 	return
 
+Move_OBLIVION_WING::
+	loadspritegfx ANIM_TAG_HYDRO_PUMP
+	loadspritegfx ANIM_TAG_ROUND_SHADOW
+	loadspritegfx ANIM_TAG_BLUE_STAR
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_HYDRO_PUMP, 0x0, 0xC, 0xC, 0x289F    @Pinkish Red
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_ROUND_SHADOW, 0x0, 0xD, 0xD, 0x289F  @Pinkish Red
+	playsewithpan SE_M_FLY, SOUND_PAN_ATTACKER
+	launchtemplate gFlyBallUpSpriteTemplate 0x2 0x4 0x0 0x0 0xd 0x150
+	waitforvisualfinish
+	launchtask AnimTask_BlendBattleAnimPal 0xa 0x5 ANIM_PAL_BG 0x1 0x0 0xE 0x0   @Black
+	waitforvisualfinish
+	createsoundtask SoundTask_LoopSEAdjustPanning, 0x7, 0xf0, 0xffc0, SOUND_PAN_TARGET, 0x1, 0xf, 0x0, 0x5
+	call OblivionWingBeam
+	call OblivionWingBeam
+	launchtask AnimTask_ShakeMon 0x2 0x5 ANIM_TARGET 0x0 0x3 40 0x1
+	launchtask AnimTask_BlendColorCycle 0x2 0x6 ANIM_PAL_DEF 0x2 0x4 0x0 0xc 0x289F @Pinkish Red
+	call OblivionWingBeam
+	call OblivionWingBeam
+	call OblivionWingBeam
+	call OblivionWingBeam
+	call OblivionWingBeam
+	call OblivionWingBeam
+	call OblivionWingBeam
+	call OblivionWingBeam
+	call OblivionWingBeam
+	call OblivionWingBeam
+	delay 15
+	visible ANIM_ATTACKER
+	call HealingEffect
+	waitforvisualfinish
+	launchtask AnimTask_BlendBattleAnimPal 0xa 0x5 ANIM_PAL_BG 0x1 0xE 0x0 0x0   @From black
+	waitforvisualfinish
+	end
+OblivionWingBeam:
+	launchtemplate gOblivionWingBeamTemplate 0x82, 0x6, 0, -90, 0, 20, 0x15 0x0
+	delay 0x2
+	launchtemplate gOblivionWingBeamTemplate 0x82, 0x6, 0, -90, 0, 20, 0x15 0x0
+	delay 0x2
+	return
+
+Move_DYNAMAX_CANNON::
+	loadspritegfx ANIM_TAG_ELECTRIC_ORBS
+	loadspritegfx ANIM_TAG_CIRCLE_OF_LIGHT
+	loadspritegfx ANIM_TAG_ORBS @hyper beam
+	loadspritegfx ANIM_TAG_WATER_GUN @water gun colour
+	loadspritegfx ANIM_TAG_ASSURANCE_HAND @purple colour
+	loadspritegfx ANIM_TAG_HYDRO_PUMP
+	loadspritegfx ANIM_TAG_SPARK_2 @spark
+	loadspritegfx ANIM_TAG_LEAF @green
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_ELECTRIC_ORBS, 0, 15, 15, RGB(30, 2, 11)
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_CIRCLE_OF_LIGHT, 0, 15, 15, RGB(30, 2, 11)
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_HYDRO_PUMP, 0, 12, 12, RGB(30, 2, 11)
+	setalpha 8, 8
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 2, 0, 15, 0
+	waitforvisualfinish
+	loopsewithpan SE_M_CHARGE, SOUND_PAN_ATTACKER, 14, 10
+	createsprite gGrowingChargeOrb3SpriteTemplate, ANIM_ATTACKER, 2, 0 @;Charge circle		@@@it crashes
+	call LightThatBurnsTheSkyGreenSparks
+	call LightThatBurnsTheSkyGreenSparks
+	call LightThatBurnsTheSkyGreenSparks
+	call LightThatBurnsTheSkyGreenSparks
+	call LightThatBurnsTheSkyGreenSparks
+	delay 20
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 2, 15, 0, 0
+	fadetobg BG_DYNAMAX_CANNON
+	waitbgfadein
+	blend_color_cycle selector=F_PAL_TARGET, delay=4, num_blends=4, initial_blend_y=0, target_blend_y=12, color=RGB(31, 4, 10)@Pinkish Red
+	panse SE_M_SOLAR_BEAM, SOUND_PAN_ATTACKER, SOUND_PAN_TARGET, 0x2, 0x0
+	@shake_mon_or_platform velocity=4, shake_timer=1, shake_duration=180, type=1
+	createvisualtask AnimTask_ShakeBattlePlatforms, 2, 2, 0, 180, 1
+	createvisualtask AnimTask_ShakeMon, 2, ANIM_ATTACKER, 0, 4, 87, 1
+	call DynamaxCannonLaunch
+	call DynamaxCannonLaunch
+	call DynamaxCannonLaunch
+	createvisualtask AnimTask_ShakeMon2, 2, ANIM_TARGET, 0, 4, 81, 1
+	call DynamaxCannonLaunch
+	call DynamaxCannonLaunch
+	call DynamaxCannonLaunch
+	call DynamaxCannonLaunch
+	call DynamaxCannonLaunch
+	call DynamaxCannonLaunch
+	call DynamaxCannonLaunch
+	call DynamaxCannonLaunch
+	call DynamaxCannonLaunch
+	call DynamaxCannonLaunch
+	call DynamaxCannonLaunch
+	call DynamaxCannonLaunch
+	call DynamaxCannonLaunch
+	call DynamaxCannonLaunch
+	call DynamaxCannonLaunch
+	call DynamaxCannonLaunch
+	call DynamaxCannonLaunch
+	call DynamaxCannonLaunch
+	waitforvisualfinish
+	restorebg
+	waitbgfadein
+	blendoff
+	end
+
+DynamaxCannonLaunch:
+	createsprite gSpriteTemplate_DynamaxCannonOrb, ANIM_TARGET, 2, 0, 0, 16
+	delay 2
+	createsprite gSpriteTemplate_DynamaxCannonOrb, ANIM_TARGET, 2, 0, 0, 16
+	delay 2
+	return
+
 Move_NIHIL_LIGHT:
-Move_ETERNA_BEAM::
+Move_ETERNABEAM::
 	loadspritegfx ANIM_TAG_HYDRO_PUMP
 	loadspritegfx ANIM_TAG_ROUND_SHADOW
 	loadspritegfx ANIM_TAG_BLUE_STAR
@@ -23804,7 +23825,8 @@ Move_MAKE_IT_RAIN::
 	jumprettrue MakingItRainOnPlayer
 MakingItRainContinue:
 	waitbgfadeout
-	shake_mon_or_platform velocity=7, shake_timer=1, shake_duration=11, type=1
+	@shake_mon_or_platform velocity=7, shake_timer=1, shake_duration=11, type=1
+	createvisualtask AnimTask_ShakeBattlePlatforms, 2, 2, 0, 11, 1
 	loopsewithpan SE_M_PAY_DAY, SOUND_PAN_TARGET, 8, 15
 	createsprite gMakingItRainTemplate, ANIM_TARGET, 2, -5, 0, -5, 1
 	delay 2
@@ -25566,6 +25588,7 @@ Move_ICICLE_SPEAR:
 	blendoff
 	end
 
+Move_BULL_RUSH:
 Move_TAKE_DOWN:
 	loadspritegfx ANIM_TAG_IMPACT
 	monbg ANIM_DEF_PARTNER
@@ -31452,7 +31475,7 @@ MegahornInContest:
 	createvisualtask AnimTask_StartSlidingBg, 5, 2304, 768, 0, -1
 	goto MegahornContinue
 
-Move_ICE_LANCE:
+Move_ICE_JAVELIN:
 	loadspritegfx ANIM_TAG_ICE_HORN
 	loadspritegfx ANIM_TAG_IMPACT
 	fadetobg BG_ICE

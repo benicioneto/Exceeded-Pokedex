@@ -863,7 +863,7 @@ const u16 gEggMoves[] = {
               MOVE_SIGNAL_BEAM),
 
     egg_moves(GOLDEEN,
-              MOVE_ICE_LANCE,
+              MOVE_ICE_JAVELIN,
               MOVE_ACUPRESSURE,
               MOVE_AQUA_TAIL,
               MOVE_HAZE,
@@ -3837,6 +3837,7 @@ const u16 gEggMoves[] = {
               MOVE_GRASS_WHISTLE,
               MOVE_HEADBUTT,
               MOVE_NATURAL_GIFT,
+              MOVE_HIGH_HORSEPOWER,
               MOVE_ODOR_SLEUTH,
               MOVE_SLEEP_TALK,
               MOVE_SYNTHESIS,
@@ -4049,6 +4050,7 @@ const u16 gEggMoves[] = {
               MOVE_AMNESIA,
               MOVE_IRON_HEAD,
               MOVE_MUD_SHOT,
+              MOVE_HIGH_HORSEPOWER,
               MOVE_ROCK_CLIMB),
 
     egg_moves(VULLABY,
@@ -5152,17 +5154,29 @@ const u16 gEggMoves[] = {
         MOVE_STOCKPILE,
         MOVE_SWALLOW),
 
+    egg_moves(TAUROS,
+        MOVE_CURSE,
+        MOVE_ENDEAVOR,
+        MOVE_MEGAHORN,
+        MOVE_HIGH_HORSEPOWER),
+
     egg_moves(TAUROS_PALDEAN_COMBAT_BREED,
         MOVE_CURSE,
-        MOVE_ENDEAVOR),
+        MOVE_ENDEAVOR,
+        MOVE_MEGAHORN,
+        MOVE_HIGH_HORSEPOWER),
 
     egg_moves(TAUROS_PALDEAN_BLAZE_BREED,
         MOVE_CURSE,
-        MOVE_ENDEAVOR),
+        MOVE_ENDEAVOR,
+        MOVE_MEGAHORN,
+        MOVE_HIGH_HORSEPOWER),
 
     egg_moves(TAUROS_PALDEAN_AQUA_BREED,
         MOVE_CURSE,
-        MOVE_ENDEAVOR),
+        MOVE_ENDEAVOR,
+        MOVE_MEGAHORN,
+        MOVE_HIGH_HORSEPOWER),
 
     egg_moves(INDEEDEE_FEMALE,
         MOVE_PSYCH_UP,

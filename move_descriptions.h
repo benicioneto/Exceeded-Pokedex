@@ -518,8 +518,8 @@ static const u8 sSwiftDescription[] = _(
     "that never miss.");
 
 static const u8 sSkullBashDescription[] = _(
-    "Tucks in the head, then\n"
-    "attacks on the next turn.");
+    "A 2-turn move that raises\n"
+    "Defense on the 1nd turn.");
 
 static const u8 sSpikeCannonDescription[] = _(
     "Launches sharp spikes that\n"
@@ -2145,12 +2145,12 @@ static const u8 sFIERY_DANCEDescription[] = _(
     "May raise Sp. Atk.");
 
 static const u8 sFREEZE_SHOCKDescription[] = _(
-    "A powerful 2-turn move that\n"
-    "may paralyze the foe.");
+    "2-turn out hail. Raises\n"
+    "Attack and may paralyze.");
 
 static const u8 sICE_BURNDescription[] = _(
-    "A powerful 2-turn move that\n"
-    "may inflict a burn.");
+    "2-turn out hail. Raises\n"
+    "Sp. Atk. and may burn.");
 
 static const u8 sSNARLDescription[] = _(
     "Yells and rants at the foe\n"
@@ -3954,7 +3954,7 @@ static const u8 sFIRE_WALLDescription[] = _("Weakens all attacks, but only\nusab
 static const u8 sSEAWEED_SNAREDescription[] = _("Strangles the foe with a\nweed. The foe can't flee.");
 static const u8 sSOVEREIGN_SLIDEDescription[] = _("Flinches foe on 1st-turn.\nAlways lowers Speed.");
 static const u8 sTRIAD_BLITZDescription[] = _("For 3 turns, traps both\nuser and foe.");
-static const u8 sKISS_BLISS_KABOOMDescription[] = _("A 2-turn move that raises\nAttack before attacking.");
+static const u8 sKISS_BLISS_KABOOMDescription[] = _("2-turn out misty. Raises\nAttack before attacking.");
 static const u8 sFULL_POWER_PSY_AY_AYDescription[] = _("Powerful, but leaves the\nuser immobile & confused.");
 static const u8 sCOLOSSEUM_TERRAINDescription[] = _("Summons a Fighting terrain.\nPrevents status moves.");
 static const u8 sDRACONIC_TERRAINDescription[] = _("Summons a Dragon terrain.\nWeakens Fairy moves.");
@@ -3994,7 +3994,7 @@ static const u8 sANCIENT_WEEDDescription[] = _("Strikes with ancient weeds\nthat
 static const u8 sANCIENT_CHARGEDescription[] = _("Charges with ancient power\nthat may raise stats.");
 static const u8 sANCIENT_MAWDescription[] = _("Bites with an ancient maw\nthat may raise stats.");
 static const u8 sANCIENT_ICEDescription[] = _("Attacks with ancient ice\nthat may raise stats.");
-static const u8 sICE_LANCEDescription[] = _("Hurls a sharp lance of ice.\nIgnores Defense stages.");
+static const u8 sICE_JAVELINDescription[] = _("Hurls a sharp lance of ice.\nIgnores Defense stages.");
 static const u8 sCOTTON_PUNCHDescription[] = _("Strikes with soft cotton\nthat lowers Speed and seeds.");
 static const u8 sMANDRAGORA_HOWLDescription[] = _("A terrifying howl that may\nlowers the foe's Sp. Atk.");
 static const u8 sELEMENTAL_PUNCHDescription[] = _("Strikes with three elemental\npunches at the same time.");
@@ -4058,9 +4058,19 @@ static const u8 sDUBIOUS_POTIONDescription[] = _("May paralyze, poison, sleep.\n
 static const u8 sSLUG_SHOTDescription[] = _("Powerful, but leaves the\nuser immobile the next turn.");
 static const u8 sBACKLASHDescription[] = _("Boosts power when burned,\nparalyzed, or poisoned.");
 static const u8 sMAGICAL_BULLETDescription[] = _("Uses sum of Atk & Sp. Atk.\nUses the higher stat stage.");
-static const u8 sSTRANGE_POTIONDescription[] = _("Poisons on foes, but\nrestores ally's HP.");
+static const u8 sSPECIAL_PHARMACYDescription[] = _("Heal Poison-type {PKMN}.\nPoisons & confuses if not.");
 static const u8 sPSYTRICKDescription[] = _("Psytrick that does more\ndamage to slower foes.");
 static const u8 sDAZE_BARRAGEDescription[] = _("Can confuse on hit. Powers\nup if the foe is confused.");
+static const u8 sBULL_RUSHDescription[] = _("A reckless charge attack\nthat also hurts the user.");
+static const u8 sGATHER_LIGHTDescription[] = _("Restores some HP and allow\nLight That Burns The Sky.");
+static const u8 sPHOTON_CUTDescription[] = _(".");
+static const u8 sMATTER_RUPTUREDescription[] = _("Uses higher of physical and\nspecial damage.");
+static const u8 sDEEPSEA_RIFTDescription[] = _("Creates rifts that unleash\nhigh-pressure jets.");
+static const u8 sCHRONO_GEARDescription[] = _("Time gear that does more\ndamage to slower foes.");
+static const u8 sFULL_BLOOM_AROMADescription[] = _(".");
+static const u8 sENDLESS_ICE_SPIKESDescription[] = _(".");
+static const u8 sLUMIERE_OF_DEMISEDescription[] = _(".");
+static const u8 sSHINING_METEOR_CRUSHDescription[] = _(".");
 
 
 //  **************************** 27 distance letters ****************************
@@ -5130,7 +5140,7 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_ANCIENT_CHARGE - 1] = sANCIENT_CHARGEDescription,
     [MOVE_ANCIENT_MAW - 1] = sANCIENT_MAWDescription,
     [MOVE_ANCIENT_ICE - 1] = sANCIENT_ICEDescription,
-    [MOVE_ICE_LANCE - 1] = sICE_LANCEDescription,
+    [MOVE_ICE_JAVELIN - 1] = sICE_JAVELINDescription,
     [MOVE_COTTON_PUNCH - 1] = sCOTTON_PUNCHDescription,
     [MOVE_MANDRAGORA_HOWL - 1] = sMANDRAGORA_HOWLDescription,
     [MOVE_ELEMENTAL_PUNCH - 1] = sELEMENTAL_PUNCHDescription,
@@ -5194,7 +5204,17 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
     [MOVE_SLUG_SHOT - 1] = sSLUG_SHOTDescription,
     [MOVE_BACKLASH - 1] = sBACKLASHDescription,
     [MOVE_MAGICAL_BULLET - 1] = sMAGICAL_BULLETDescription,
-    [MOVE_STRANGE_POTION - 1] = sSTRANGE_POTIONDescription,
+    [MOVE_SPECIAL_PHARMACY - 1] = sSPECIAL_PHARMACYDescription,
     [MOVE_PSYTRICK - 1] = sPSYTRICKDescription,
     [MOVE_DAZE_BARRAGE - 1] = sDAZE_BARRAGEDescription,
+    [MOVE_BULL_RUSH - 1] = sBULL_RUSHDescription,
+    [MOVE_GATHER_LIGHT - 1] = sGATHER_LIGHTDescription,
+    [MOVE_PHOTON_CUT - 1] = sPHOTON_CUTDescription,
+    [MOVE_MATTER_RUPTURE - 1] = sMATTER_RUPTUREDescription,
+    [MOVE_DEEPSEA_RIFT - 1] = sDEEPSEA_RIFTDescription,
+    [MOVE_CHRONO_GEAR - 1] = sCHRONO_GEARDescription,
+    [MOVE_FULL_BLOOM_AROMA - 1] = sFULL_BLOOM_AROMADescription,
+    [MOVE_ENDLESS_ICE_SPIKES - 1] = sENDLESS_ICE_SPIKESDescription,
+    [MOVE_LUMIERE_OF_DEMISE - 1] = sLUMIERE_OF_DEMISEDescription,
+    [MOVE_SHINING_METEOR_CRUSH - 1] = sSHINING_METEOR_CRUSHDescription,
 };
