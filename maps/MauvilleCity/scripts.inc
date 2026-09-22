@@ -105,6 +105,15 @@ MauvilleCity_EventScript_Wally::
 	waitmovement 0
 	applymovement LOCALID_WALLY, Common_Movement_Delay48
 	waitmovement 0
+	msgbox MauvilleCity_Text_WallyToBeFairGiveZRing, MSGBOX_DEFAULT
+	setflag FLAG_DECLINED_WALLY_BATTLE_MAUVILLE
+	giveitem ITEM_Z_RING
+	waitfanfare
+	msgbox MauvilleCity_Text_WallyNowIWillWaitForBattle, MSGBOX_DEFAULT
+	closemessage
+	release
+	end
+
 	msgbox MauvilleCity_Text_WallyWillYouBattleMe, MSGBOX_YESNO
 	goto MauvilleCity_EventScript_BattleWallyPrompt
 	end
@@ -674,6 +683,27 @@ MauvilleCity_Text_ExplainTV:
 	.string "I wish I would be on Tv sometime.\p"
 	.string "That's why I think you should check\n"
 	.string "out TVs whenever you can.$"
+	
+MauvilleCity_Text_WallyToBeFairGiveZRing:
+	.string "Wally: Oh! Hi, {PLAYER}!\p"
+	.string "I've gotten a lot stronger since\n"
+	.string "we last met.\p"
+	.string "{PLAYER}, I want you and my Uncle to\n"
+	.string "see how much I've improved.\p"
+	.string "{PLAYER}, please, will you have\n"
+	.string "a battle with me?\p"
+	.string "But to make it fair, I'll give you\n"
+	.string "a Z-Ring!$"
+
+MauvilleCity_Text_WallyNowIWillWaitForBattle:
+	.string "With the Z-Ring that I just\n"
+	.string "gave you and the Z-Crystal that a\l"
+	.string "Pokémon may hold, your Pokémon can\l"
+	.string "draw out the power that lies deep\l"
+	.string "within Pokémon…\p"
+	.string "It can bring forth their Z-Power!\p"
+	.string "Now I'll wait for you to\n"
+	.string "get ready for battle!$"
 
 MauvilleCity_Text_BeenCheckingOutTV:
 	.string "Hi, have you been checking out TVs?$"

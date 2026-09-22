@@ -9689,6 +9689,7 @@ static const struct TrainerParty sParty_WallyMauvilleHard[] = {
     .iv = 30,
     .lvl = 22,
     .species = SPECIES_KIRLIA,
+    .heldItem = {ITEM_PSYCHIUM_Z},
     .moves = {MOVE_PSYBEAM, MOVE_DRAINING_KISS, MOVE_HYPNOSIS, MOVE_CHARM}
     }
 };

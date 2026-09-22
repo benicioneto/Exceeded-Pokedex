@@ -135,7 +135,7 @@ Route115_EventScript_ItemPPUp::
 	end
 
 Route116_EventScript_ItemXSpecial::
-	finditem ITEM_X_SP_ATK
+	finditem ITEM_ROCKIUM_Z
 	end
 
 Route116_EventScript_ItemEther::
@@ -203,7 +203,7 @@ Route120_EventScript_ItemNugget::
 	end
 
 Route120_EventScript_ItemFullHeal::
-	finditem ITEM_FULL_HEAL
+	finditem ITEM_FLYINIUM_Z
 	end
 
 Route120_EventScript_ItemHyperPotion::
@@ -327,15 +327,23 @@ RustboroCity_EventScript_ItemXDefend::
 	end
 
 LilycoveCity_EventScript_ItemMaxRepel::
-	finditem ITEM_MAX_REPEL
+	finditem ITEM_STEELIUM_Z
 	end
 
 MossdeepCity_EventScript_ItemNetBall::
-	finditem ITEM_NET_BALL
+	finditem ITEM_PSYCHIUM_Z
+	end
+
+SootoopolisCity_EventScript_ItemWateriumZ::
+	finditem ITEM_WATERIUM_Z
 	end
 
 PetalburgWoods_EventScript_ItemXAttack::
 	finditem ITEM_X_ATTACK
+	end
+
+PetalburgCity_EventScript_ItemNormalZ::
+	finditem ITEM_NORMALIUM_Z
 	end
 
 PetalburgWoods_EventScript_ItemGreatBall::
@@ -367,7 +375,11 @@ GraniteCave_B1F_EventScript_ItemPokeBall::
 	end
 
 GraniteCave_B2F_EventScript_ItemRepel::
-	finditem ITEM_REPEL
+	finditem ITEM_FIGHTINIUM_Z
+	end
+
+RuinsOfAlph_InnerChamber_EventScript_ItemZmove::
+	finditem ITEM_ELECTRIUM_Z
 	end
 
 GraniteCave_B2F_EventScript_ItemRareCandy::
@@ -375,7 +387,7 @@ GraniteCave_B2F_EventScript_ItemRareCandy::
 	end
 
 JaggedPass_EventScript_ItemBurnHeal::
-	finditem ITEM_BURN_HEAL
+	finditem ITEM_FIRIUM_Z
 	end
 
 FieryPath_EventScript_ItemFireStone::

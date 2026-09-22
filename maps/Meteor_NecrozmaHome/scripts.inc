@@ -20,7 +20,7 @@ Meteor_NecrozmaHome_EventScript_Necrozma::
 	setvar VAR_LAST_TALKED, LOCALID_NECROZMA
 	setvar VAR_0x8004, SPECIES_NECROZMA
 	setvar VAR_0x8005, 70 @ level
-	setvar VAR_0x8006, ITEM_NONE
+	setvar VAR_0x8006, ITEM_ULTRANECROZIUM_Z
 	special CreateEventLegalEnemyMon
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle

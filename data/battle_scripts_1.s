@@ -11208,16 +11208,31 @@ BattleScript_MoveEffectClearSmog::
 	waitmessage B_WAIT_TIME_LONG
 	return
 
+BattleScript_UltraBurstActivate::
+	printstring STRINGID_ULTRABURSTREACTING
+	waitmessage B_WAIT_TIME_LONG
+	setbyte gIsCriticalHit, 0
+	handlegimmickformchange BS_ATTACKER, 0
+	handlegimmickformchange BS_ATTACKER, 1
+	playanimation BS_ATTACKER, B_ANIM_ULTRA_BURST, NULL
+	waitanimation
+	handlegimmickformchange BS_ATTACKER, 2
+	handlegimmickformchange BS_ATTACKER, 3
+	printstring STRINGID_ULTRABURSTCOMPLETED
+	waitmessage B_WAIT_TIME_LONG
+	switchinabilities BS_ATTACKER
+	end2
+
 BattleScript_MegaEvolution::
 	printstring STRINGID_MEGAEVOREACTING
 	waitmessage B_WAIT_TIME_LONG
 	setbyte gIsCriticalHit, 0
-	handlemegaevo BS_ATTACKER, 0
-	handlemegaevo BS_ATTACKER, 1
+	handlegimmickformchange BS_ATTACKER, 0
+	handlegimmickformchange BS_ATTACKER, 1
 	playanimation BS_ATTACKER, B_ANIM_MEGA_EVOLUTION, NULL
 	waitanimation
-	handlemegaevo BS_ATTACKER, 2
-	handlemegaevo BS_ATTACKER, 3
+	handlegimmickformchange BS_ATTACKER, 2
+	handlegimmickformchange BS_ATTACKER, 3
 	printstring STRINGID_MEGAEVOEVOLVED
 	waitmessage B_WAIT_TIME_LONG
 	switchinabilities BS_ATTACKER
@@ -11227,28 +11242,19 @@ BattleScript_WishMegaEvolution::
 	printstring STRINGID_FERVENTWISHREACHED
 	waitmessage B_WAIT_TIME_LONG
 	setbyte gIsCriticalHit, 0
-	handlemegaevo BS_ATTACKER, 0
-	handlemegaevo BS_ATTACKER, 1
+	handlegimmickformchange BS_ATTACKER, 0
+	handlegimmickformchange BS_ATTACKER, 1
 	playanimation BS_ATTACKER, B_ANIM_MEGA_EVOLUTION, NULL
 	waitanimation
-	handlemegaevo BS_ATTACKER, 2
-	handlemegaevo BS_ATTACKER, 3
+	handlegimmickformchange BS_ATTACKER, 2
+	handlegimmickformchange BS_ATTACKER, 3
 	printstring STRINGID_MEGAEVOEVOLVED
 	waitmessage B_WAIT_TIME_LONG
 	switchinabilities BS_ATTACKER
 	end2
 
 BattleScript_PrimalReversion::
-	printstring STRINGID_EMPTYSTRING3
-	waitmessage 1
-	setbyte gIsCriticalHit, 0
-	handleprimalreversion BS_ATTACKER, 0
-	handleprimalreversion BS_ATTACKER, 1
-	playanimation BS_ATTACKER, B_ANIM_PRIMAL_REVERSION, NULL
-	waitanimation
-	handleprimalreversion BS_ATTACKER, 2
-	printstring STRINGID_PKMNREVERTEDTOPRIMAL
-	waitmessage B_WAIT_TIME_LONG
+	call BattleScript_PrimalReversionRet
 	switchinabilities BS_ATTACKER
 	end2
 
@@ -11256,11 +11262,11 @@ BattleScript_PrimalReversionRet::
 	printstring STRINGID_EMPTYSTRING3
 	waitmessage 1
 	setbyte gIsCriticalHit, 0
-	handleprimalreversion BS_ATTACKER, 0
-	handleprimalreversion BS_ATTACKER, 1
+	handlegimmickformchange BS_ATTACKER, 0
+	handlegimmickformchange BS_ATTACKER, 1
 	playanimation BS_ATTACKER, B_ANIM_PRIMAL_REVERSION, NULL
 	waitanimation
-	handleprimalreversion BS_ATTACKER, 2
+	handlegimmickformchange BS_ATTACKER, 2
 	printstring STRINGID_PKMNREVERTEDTOPRIMAL
 	waitmessage B_WAIT_TIME_LONG
 	return
@@ -11340,7 +11346,6 @@ BattleScript_MorpekoEatBerrySeed::
 
 BattleScript_HoOhBurstOfFlames::
 	pause 5
-	copybyte gBattlerAbility, gBattlerAttacker
 	call BattleScript_AbilityPopUp
 	printstring STRINGID_EMPTYSTRING3
 	waitmessage 1
@@ -13944,20 +13949,16 @@ BattleScript_ScriptingAbilityStatRaise::
 	return
 
 BattleScript_ScriptingStatusCondition::
-	copybyte sSAVED_DMG, gBattlerAttacker
-	copybyte gBattlerAttacker, sBATTLER
 	setbyte cMULTISTRING_CHOOSER, 0
-	copybyte gEffectBattler, gBattlerAttacker
 	orword gHitMarker, HITMARKER_PASSIVE_DAMAGE
-	healthbarupdate BS_EFFECT_BATTLER
-	datahpupdate BS_EFFECT_BATTLER
-	tryfaintmon BS_EFFECT_BATTLER, FALSE, NULL
-	statusanimation BS_EFFECT_BATTLER
+	healthbarupdate BS_SCRIPTING
+	datahpupdate BS_SCRIPTING
+	tryfaintmon BS_SCRIPTING, FALSE, NULL
+	statusanimation BS_SCRIPTING
 	printfromtable gGotBurnedStringIds
 	waitmessage B_WAIT_TIME_LONG
-	updatestatusicon BS_EFFECT_BATTLER
+	updatestatusicon BS_SCRIPTING
 	waitstate
-	copybyte gBattlerAttacker, sSAVED_DMG
 	return
 
 BattleScript_ForestWitchActivates::
@@ -14707,6 +14708,13 @@ BattleScript_WaterloggingActivates::
 BattleScript_AbilityStatusEffectPopUpOnly::
 	waitstate
 	call BattleScript_AbilityPopUp
+	return
+
+BattleScript_PlagueSpreadingActivates::
+	waitstate
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_PLAGUE_SPREADING
+	waitmessage B_WAIT_TIME_LONG
 	return
 
 BattleScript_IncendiaryShellActivates::
