@@ -809,7 +809,7 @@ static const u8 sPoisonousNestDescription[] = _("Sticky Web & Toxic Spikes.");
 static const u8 sSpiderQueenDescription[] = _("Boosts all Bug-type moves.");
 static const u8 sInfusedCoreDescription[] = _("Ups move when hit.");
 static const u8 sTugestenAlloyDescription[] = _("Weakens “supereffective”.");
-static const u8 sWyrmHideDescription[] = _("Weakens “supereffective”.");
+static const u8 sWyvernHideDescription[] = _("Weakens “supereffective”.");
 static const u8 sStaticShellDescription[] = _("Weakens “supereffective”.");
 static const u8 sBedrockDescription[] = _("Boosts Rock-type moves.");
 static const u8 sWhiteoutDescription[] = _("Boosts Ice-type moves.");
@@ -1080,12 +1080,13 @@ static const u8 sDyingStarDescription[] = _("Rebirths when KOed.");
 static const u8 sSpectralizeDescription[] = _("Normal moves become Ghost.");
 static const u8 sBruteForceDescription[] = _("Boosts recoil moves.");
 static const u8 sPurifyingAirDescription[] = _("Draws in Poison moves.");
-static const u8 sWyrmheartDescription[] = _("Ups and resists dragon.");
+static const u8 sWyvernheartDescription[] = _("Ups and resists dragon.");
 static const u8 sDragonheartDescription[] = _("Doubles Special Defense.");
 static const u8 sAzurefireDescription[] = _("Fire-type moves hit Fire.");
 static const u8 sSpecializeDescription[] = _("Swaps Attack with Sp. Atk.");
 static const u8 sOxidizeDescription[] = _("Flying-type moves hit Steel.");
 static const u8 sSpacetimeAnchorDescription[] = _("Unaffected by time & space.");
+static const u8 sWyrmScaleDescription[] = _("Weakens “supereffective”.");
 
 //  **************************** 27 distance letters ****************************
 
@@ -1836,7 +1837,7 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_SPIDER_QUEEN] = _("Spider Queen"),
     [ABILITY_INFUSED_CORE] = _("Infused Core"),
     [ABILITY_TUGESTEN_ALLOY] = _("Tugesten Alloy"),
-    [ABILITY_WYRM_HIDE] = _("Wyrm Hide"),
+    [ABILITY_WYVERN_HIDE] = _("Wyvern Hide"),
     [ABILITY_STATIC_SHELL] = _("Static Shell"),
     [ABILITY_BEDROCK] = _("Bedrock"),
     [ABILITY_WHITEOUT] = _("Whiteout"),
@@ -2109,12 +2110,13 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_SPECTRALIZE] = _("Spectralize"),
     [ABILITY_BRUTE_FORCE] = _("Brute Force"),
     [ABILITY_PURIFYING_AIR] = _("Purifying Air"),
-    [ABILITY_WYRMHEART] = _("Wyrmheart"),
+    [ABILITY_WYVERNHEART] = _("Wyvernheart"),
     [ABILITY_DRAGONHEART] = _("Dragonheart"),
     [ABILITY_AZUREFIRE] = _("Azurefire"),
     [ABILITY_SPECIALIZE] = _("Specialize"),
     [ABILITY_OXIDIZE] = _("Oxidize"),
     [ABILITY_SPACETIME_ANCHOR] = _("Spacetime Anchor"),
+    [ABILITY_WYRM_SCALE] = _("Wyrm Scale"),
 };
 
 const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
@@ -2866,7 +2868,7 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_SPIDER_QUEEN] = sSpiderQueenDescription,
     [ABILITY_INFUSED_CORE] = sInfusedCoreDescription,
     [ABILITY_TUGESTEN_ALLOY] = sTugestenAlloyDescription,
-    [ABILITY_WYRM_HIDE] = sWyrmHideDescription,
+    [ABILITY_WYVERN_HIDE] = sWyvernHideDescription,
     [ABILITY_STATIC_SHELL] = sStaticShellDescription,
     [ABILITY_BEDROCK] = sBedrockDescription,
     [ABILITY_WHITEOUT] = sWhiteoutDescription,
@@ -3137,12 +3139,13 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_SPECTRALIZE] = sSpectralizeDescription,
     [ABILITY_BRUTE_FORCE] = sBruteForceDescription,
     [ABILITY_PURIFYING_AIR] = sPurifyingAirDescription,
-    [ABILITY_WYRMHEART] = sWyrmheartDescription,
+    [ABILITY_WYVERNHEART] = sWyvernheartDescription,
     [ABILITY_DRAGONHEART] = sDragonheartDescription,
     [ABILITY_AZUREFIRE] = sAzurefireDescription,
     [ABILITY_SPECIALIZE] = sSpecializeDescription,
     [ABILITY_OXIDIZE] = sOxidizeDescription,
     [ABILITY_SPACETIME_ANCHOR] = sSpacetimeAnchorDescription,
+    [ABILITY_WYRM_SCALE] = sWyrmScaleDescription,
 };
 
 // ABILITY_TRUANT
@@ -3892,7 +3895,7 @@ static const u8 sPoisonousNestDescriptionExtended[] = _("The first time that the
 static const u8 sSpiderQueenDescriptionExtended[] = _("While the Pokémon is in the f-\nield, it increases the damage \ndealt by Bug-type attacks by 3\n3% for all Pokémon. Also, Spid-\ner Web on the opposing side of\nfield reduces the Speed stat \nby two stages instead of one.");
 static const u8 sInfusedCoreDescriptionExtended[] = _("Each time the Pokémon is hit \nby a move, increases the power\nof that type of moves used by\nthe Pokémon for the rest of t-\nhe battle by 33%. 'Regi' Pokém-\non automatically infuses their\noriginal type.");
 static const u8 sTugestenAlloyDescriptionExtended[] = _("The Pokémon takes less 25% da-\nmage from “supereffective” mov-\nes.");
-static const u8 sWyrmHideDescriptionExtended[] = _("The Pokémon takes less 25% da-\nmage from “supereffective” mov-\nes.");
+static const u8 sWyvernHideDescriptionExtended[] = _("The Pokémon takes less 25% da-\nmage from “supereffective” mov-\nes.");
 static const u8 sStaticShellDescriptionExtended[] = _("The Pokémon takes less 25% da-\nmage from “supereffective” mov-\nes.");
 static const u8 sBedrockDescriptionExtended[] = _("Boosts the power of the Pokém-\non's Rock-type moves by 50%.");
 static const u8 sWhiteoutDescriptionExtended[] = _("Boosts the power of the Pokém-\non's Ice-type moves by 50%.");
@@ -4163,12 +4166,13 @@ static const u8 sDyingStarDescriptionExtended[] = _("(not implemented) When the 
 static const u8 sSpectralizeDescriptionExtended[] = _("All Normal-type moves used by\nthe Pokémon become Ghost-type\nand receive a 20% power boost\n.");
 static const u8 sBruteForceDescriptionExtended[] = _("The power of moves with recoi-\nl is increased by 50%, but the\nrecoil damage is calculated b-\nefore that boost. Struggle is \nunaffected.");
 static const u8 sPurifyingAirDescriptionExtended[] = _("The Pokémon is immune to Pois-\non-type moves, and increases t-\nhe highest offensive stat by o-\nne stage when attacked by one.\nAlso, forces all single-targe-\nt Poison-type moves to target \nthe Pokémon. If the Pokémon is\nin the first place in the par-\nty, there is a 50% chance the \ngame will force an encounter w-\nith a Poison-type Pokémon.");
-static const u8 sWyrmheartDescriptionExtended[] = _("Boosts the power of the Pokém-\non's Dragon-type moves by 30%.\nThe Pokémon takes half damage\nfrom damaging Dragon-type mov-\nes.");
+static const u8 sWyvernheartDescriptionExtended[] = _("Boosts the power of the Pokém-\non's Dragon-type moves by 30%.\nThe Pokémon takes half damage\nfrom damaging Dragon-type mov-\nes.");
 static const u8 sDragonheartDescriptionExtended[] = _("Prevents this Pokémon from be-\ning afflicted by status condit-\nions. Damage from Fairy-type m-\noves used against it is halved-\n. Rest fails if used by this P-\nokémon.");
 static const u8 sAzurefireDescriptionExtended[] = _("When the Pokémon attacks with\nFire-type move, the opposing \nPokémon takes damage equal to \n1/16 of its maximum HP and wil-\nl always deal “supereffective”\ndamage against Fire-type Poke-\nmon. The Pokémon can burn Fire\n-type Pokémon. ");
 static const u8 sSpecializeDescriptionExtended[] = _("Swaps the Pokémon's base Atta-\nck stat with its base Special \nAttack stat.");
 static const u8 sOxidizeDescriptionExtended[] = _("The Pokémon's Flying-type mov-\nes are “supereffective” agains-\nt Steel-type Pokémon.");
 static const u8 sSpacetimeAnchorDescriptionExtended[] = _("The Pokémon is unaffected by \nSpacetime Strain and Antimatte-\nr Veil.");
+static const u8 sWyrmScaleDescriptionExtended[] = _("The Pokémon takes less 25% da-\nmage from “supereffective” mov-\nes.");
 
 const u8 *const gAbilityDescriptionExtendedPointers[ABILITIES_COUNT] =
 {
@@ -4917,7 +4921,7 @@ const u8 *const gAbilityDescriptionExtendedPointers[ABILITIES_COUNT] =
     [ABILITY_SPIDER_QUEEN] = sSpiderQueenDescriptionExtended,
     [ABILITY_INFUSED_CORE] = sInfusedCoreDescriptionExtended,
     [ABILITY_TUGESTEN_ALLOY] = sTugestenAlloyDescriptionExtended,
-    [ABILITY_WYRM_HIDE] = sWyrmHideDescriptionExtended,
+    [ABILITY_WYVERN_HIDE] = sWyvernHideDescriptionExtended,
     [ABILITY_STATIC_SHELL] = sStaticShellDescriptionExtended,
     [ABILITY_BEDROCK] = sBedrockDescriptionExtended,
     [ABILITY_WHITEOUT] = sWhiteoutDescriptionExtended,
@@ -5190,10 +5194,11 @@ const u8 *const gAbilityDescriptionExtendedPointers[ABILITIES_COUNT] =
     [ABILITY_SPECTRALIZE] = sSpectralizeDescriptionExtended,
     [ABILITY_BRUTE_FORCE] = sBruteForceDescriptionExtended,
     [ABILITY_PURIFYING_AIR] = sPurifyingAirDescriptionExtended,
-    [ABILITY_WYRMHEART] = sWyrmheartDescriptionExtended,
+    [ABILITY_WYVERNHEART] = sWyvernheartDescriptionExtended,
     [ABILITY_DRAGONHEART] = sDragonheartDescriptionExtended,
     [ABILITY_AZUREFIRE] = sAzurefireDescriptionExtended,
     [ABILITY_SPECIALIZE] = sSpecializeDescriptionExtended,
     [ABILITY_OXIDIZE] = sOxidizeDescriptionExtended,
     [ABILITY_SPACETIME_ANCHOR] = sSpacetimeAnchorDescriptionExtended,
+    [ABILITY_WYRM_SCALE] = sWyrmScaleDescriptionExtended,
 };

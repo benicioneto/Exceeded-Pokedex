@@ -4058,19 +4058,19 @@ static const u8 sDUBIOUS_POTIONDescription[] = _("May paralyze, poison, sleep.\n
 static const u8 sSLUG_SHOTDescription[] = _("Powerful, but leaves the\nuser immobile the next turn.");
 static const u8 sBACKLASHDescription[] = _("Ups damage when it has\na status condition.");
 static const u8 sMAGICAL_BULLETDescription[] = _("Uses sum of Atk & Sp. Atk.\nUses the higher stat stage.");
-static const u8 sSPECIAL_PHARMACYDescription[] = _("Heal Poison-type {PKMN}.\nPoisons & confuses if not.");
-static const u8 sPSYTRICKDescription[] = _("Psytrick that does more\ndamage to slower foes.");
+static const u8 sSPECIAL_PHARMACYDescription[] = _("Heals Poison-type {PKMN}.\nPoisons & confuses if not.");
+static const u8 sPSYTRICKDescription[] = _("A psytrick that does more\ndamage to slower foes.");
 static const u8 sDAZE_BARRAGEDescription[] = _("Can confuse on hit. Powers\nup if the foe is confused.");
 static const u8 sBULL_RUSHDescription[] = _("A reckless charge attack\nthat also hurts the user.");
 static const u8 sGATHER_LIGHTDescription[] = _("Restores some HP and allow\nLight That Burns The Sky.");
-static const u8 sPHOTON_CUTDescription[] = _("Restores somdllow\nLight That Burns The Sky..");
+static const u8 sPHOTON_CUTDescription[] = _("XXX\nXXX.");
 static const u8 sMATTER_RUPTUREDescription[] = _("Uses higher of physical and\nspecial damage.");
 static const u8 sDEEPSEA_RIFTDescription[] = _("Creates rifts that unleash\nhigh-pressure jets.");
 static const u8 sCHRONO_GEARDescription[] = _("Time gear that does more\ndamage to slower foes.");
-static const u8 sFULL_BLOOM_AROMADescription[] = _("Restores somdHP and allow\nLight That Burns The Sky..");
-static const u8 sENDLESS_ICE_SPIKESDescription[] = _("Restores some Hd allow\nLight That Burns The Sky..");
-static const u8 sLUMIERE_OF_DEMISEDescription[] = _("Restores somedand allow\nLight That Burns The Sky..");
-static const u8 sSHINING_METEOR_CRUSHDescription[] = _("Restores some HPaand allow\nLight That Burns The Sky..");
+static const u8 sFULL_BLOOM_AROMADescription[] = _("XXX\nXXX.");
+static const u8 sENDLESS_ICE_SPIKESDescription[] = _("XXX\nXXX.");
+static const u8 sLUMIERE_OF_DEMISEDescription[] = _("XXX\nXXX.");
+static const u8 sSHINING_METEOR_CRUSHDescription[] = _("XXX\nXXX.");
 
 
 //  **************************** 27 distance letters ****************************
