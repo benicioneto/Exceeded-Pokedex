@@ -4076,7 +4076,7 @@ static const u8 sSHINING_METEOR_CRUSHDescription[] = _("XXX\nXXX.");
 //  **************************** 27 distance letters ****************************
 
 // MOVE_NONE is ignored in this table. Make sure to always subtract 1 before getting the right pointer.
-const u8 *const gMoveDescriptionPointers[MOVES_COUNT_NORMAL - 1] =
+const u8 *const gMoveDescriptionPointers[MOVES_COUNT - 1] =
 {
     [MOVE_POUND - 1] = sPoundDescription,
     [MOVE_KARATE_CHOP - 1] = sKarateChopDescription,
