@@ -653,6 +653,24 @@ DewfordTown_Dojo_EventScript_TypeNullTransferredToPC:
 	call Common_EventScript_TransferredToPC
 DewfordTown_Dojo_EventScript_TypeNullEnd:
 	clearflag FLAG_PROF_BIRCH_TYPE_NULL_RECEIVED
+	giveitem ITEM_BUG_MEMORY
+	giveitem ITEM_DARK_MEMORY
+	giveitem ITEM_DRAGON_MEMORY
+	giveitem ITEM_ELECTRIC_MEMORY
+	giveitem ITEM_FIRE_MEMORY
+	giveitem ITEM_WATER_MEMORY
+	giveitem ITEM_GROUND_MEMORY
+	giveitem ITEM_ROCK_MEMORY
+	giveitem ITEM_ICE_MEMORY
+	giveitem ITEM_FAIRY_MEMORY
+	giveitem ITEM_GHOST_MEMORY
+	giveitem ITEM_FIGHTING_MEMORY
+	giveitem ITEM_FLYING_MEMORY
+	giveitem ITEM_GRASS_MEMORY
+	giveitem ITEM_POISON_MEMORY
+	giveitem ITEM_PSYCHIC_MEMORY
+	giveitem ITEM_STEEL_MEMORY
+	closemessage
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_BeastBalls, MSGBOX_DEFAULT
 	giveitem ITEM_BEAST_BALL, 30
 	closemessage
