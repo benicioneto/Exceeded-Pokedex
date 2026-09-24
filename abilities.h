@@ -3647,7 +3647,7 @@ static const u8 sSingerDescriptionExtended[] = _("Whenever another Pokémon uses
 static const u8 sLifeForceStealerDescriptionExtended[] = _("Restores HP equal to 25% of t-\nhe damage dealt to the target.\nThis recovery is doubled if t-\nhe target is asleep. The amoun-\nt restored is affected by item-\ns such as Big Root.");
 static const u8 sStatsSnatcherDescriptionExtended[] = _("The Pokémon steals 10% of all\nstats of all opposing Pokémon\nwhile in the battlefield. Sta-\nt stage-modifiers, items and o-\nther abilities affects this pe-\nrcentage. This effect doesn't \nstack with other Pokémon with \nthis ability.");
 static const u8 sAntiUbDescriptionExtended[] = _("The Pokémon deals 25% more da-\nmage and takes 25% less damage\nfrom Ultra Beasts, also takes\ndeals 10% more damage and tak-\nes 10% less damage from Legend-\nary or Mythical Pokémon. Incre-\nases the odds of catching Ultr-\na Beast by 25%.");
-static const u8 sChimericDescriptionExtended[] = _("The Pokémon's Normal-, Flying\n-, Bug-, Water- and Dragon-typ-\ne moves gain same-type attack \nbonus regardless the Pokémon's\ntyping.");
+static const u8 sChimericDescriptionExtended[] = _("The Pokémon's Normal-, Flying\n-, Bug-, Water-, Steel- and Dr-\nagon-type moves gain same-type\nattack bonus regardless the P-\nokémon's typing.");
 static const u8 sHitenMitsurugiDescriptionExtended[] = _("The Pokémon's slicing moves g-\nain priority +1 on the first t-\nurn the Pokémon is out. Additi-\nonally, the Pokémon's slicing \nmoves always crits if the Poké-\nmon moves before the target, o-\nr if the target switches out.");
 static const u8 sRyutsuisenDescriptionExtended[] = _("Boosts the power of slicing m-\noves depending on the weight o-\nf both the user and the target-\n. The lighter the target is in\ncomparison to the Pokémon, th-\ne greater the power. It cannot\nincrease the power more than \n33%. It doesn't affect opposin-\ng Pokémon that is heavier than\nthe Pokémon.");
 static const u8 sMasterOfMimicsDescriptionExtended[] = _("Whenever the Pokémon uses a m-\nove, it creates a random prote-\nctive field for five turns (Re-\nflect, Light Screen, Safeguard\n, Mist or Lucky Chant).");
@@ -4173,6 +4173,7 @@ static const u8 sSpecializeDescriptionExtended[] = _("Swaps the Pokémon's base 
 static const u8 sOxidizeDescriptionExtended[] = _("The Pokémon's Flying-type mov-\nes are “supereffective” agains-\nt Steel-type Pokémon.");
 static const u8 sSpacetimeAnchorDescriptionExtended[] = _("The Pokémon is unaffected by \nSpacetime Strain and Antimatte-\nr Veil.");
 static const u8 sWyrmScaleDescriptionExtended[] = _("The Pokémon takes less 25% da-\nmage from “supereffective” mov-\nes.");
+static const u8 sStormcallDescriptionExtended[] = _("Summons a rain in battle for \nfive turns when the Pokémon is\nhit by a damaging move. Rain:\nBoosts Water-type moves by 50\n% and weakens the power of Fir-\ne-type moves by 50%, Thunder a-\nnd Hurricane ignore Accuracy a-\nnd Evasion checks.");
 
 const u8 *const gAbilityDescriptionExtendedPointers[ABILITIES_COUNT] =
 {

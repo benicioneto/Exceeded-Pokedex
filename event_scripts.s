@@ -1323,3 +1323,5 @@ gText_Collected:
 	.include "data/maps/DewfordTown_Dojo/scripts.inc"
 
 	.include "data/maps/DewfordTown_Dojo_Rooms/scripts.inc"
+
+	.include "data/maps/RustboroCity_Flat1_3F/scripts.inc"

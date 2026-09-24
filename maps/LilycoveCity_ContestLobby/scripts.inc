@@ -1229,7 +1229,9 @@ LilycoveCity_ContestLobby_EventScript_PikachuCosplayer2:
 	case 2, EventScript_PopStar
 	case 3, EventScript_Phd
 	case 4, EventScript_Libre
-	case 5, EventScript_RemoveCosplay
+	case 5, EventScript_Surf
+	case 6, EventScript_Float
+	case 7, EventScript_RemoveCosplay
 	closemessage
 	goto EventScript_DidntAccepted
 
@@ -1251,6 +1253,14 @@ EventScript_Phd:
 
 EventScript_Libre:
 	setvar VAR_0x8005, SPECIES_PIKACHU_LIBRE
+	goto EventScript_ChoosePikachuCosplay
+
+EventScript_Surf:
+	setvar VAR_0x8005, SPECIES_PIKACHU_SURFING
+	goto EventScript_ChoosePikachuCosplay
+
+EventScript_Float:
+	setvar VAR_0x8005, SPECIES_PIKACHU_FLYING
 	goto EventScript_ChoosePikachuCosplay
 
 EventScript_RemoveCosplay:

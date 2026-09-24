@@ -587,6 +587,8 @@ LittlerootTown_ProfessorBirchsLab_EventScript_Birch::
 	goto_if_unset FLAG_HAS_MATCH_CALL, LittlerootTown_ProfessorBirchsLab_EventScript_TryRatePokedexOrRegister
 	goto_if_unset FLAG_ENABLE_PROF_BIRCH_MATCH_CALL, EventScript_RegisterProfBirch
 	goto_if_unset FLAG_RECEIVED_ROTOM_CATALOG, EventScript_TryToGiveRotomCatalog
+LittlerootTown_ProfessorBirchsLab_EventScript_TryOtherEvents:
+	goto_if_set FLAG_PROF_BIRCH_TYPE_NULL_RECEIVED, EventScript_TryToGiveTypeNull
 	goto LittlerootTown_ProfessorBirchsLab_EventScript_TryRatePokedexOrRegister
 	end
 
@@ -603,7 +605,7 @@ LittlerootTown_ProfessorBirchsLab_EventScript_AllowNewStarter:
 
 EventScript_TryToGiveRotomCatalog::
 	goto_if_set FLAG_CAPTURED_ROTOM, EventScript_GiveRotomCatalog
-	goto LittlerootTown_ProfessorBirchsLab_EventScript_TryRatePokedexOrRegister
+	goto LittlerootTown_ProfessorBirchsLab_EventScript_TryOtherEvents
 	end
 
 EventScript_GiveRotomCatalog::
@@ -613,6 +615,61 @@ EventScript_GiveRotomCatalog::
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_RotomCatalogExplaination2, MSGBOX_DEFAULT
 	release
 	end
+
+EventScript_TryToGiveTypeNull::
+	msgbox sText_UltraWormholeExplanation, MSGBOX_DEFAULT
+	closemessage
+	givemon SPECIES_TYPE_NULL, 30
+	bufferspeciesname 0, SPECIES_TYPE_NULL
+	setvar VAR_TEMP_1, SPECIES_TYPE_NULL
+	goto DewfordTown_Dojo_EventScript_GiveMonTypeNull
+
+DewfordTown_Dojo_EventScript_GiveMonTypeNull:
+	compare VAR_RESULT, 0
+	goto_if_eq DewfordTown_Dojo_EventScript_SendTypeNullToParty
+	compare VAR_RESULT, 1
+	goto_if_eq DewfordTown_Dojo_EventScript_SendTypeNullToPC
+	goto Common_EventScript_NoMoreRoomForPokemon
+
+DewfordTown_Dojo_EventScript_SendTypeNullToParty:
+	call DewfordTown_Dojo_EventScript_ReceivedTypeNull
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_eq DewfordTown_Dojo_EventScript_TypeNullEnd
+	call Common_EventScript_GetGiftMonPartySlot
+	call Common_EventScript_NameReceivedPartyMon
+	goto DewfordTown_Dojo_EventScript_TypeNullEnd
+
+DewfordTown_Dojo_EventScript_SendTypeNullToPC:
+	call DewfordTown_Dojo_EventScript_ReceivedTypeNull
+	msgbox gText_NicknameThisPokemon, MSGBOX_YESNO
+	compare VAR_RESULT, 0
+	goto_if_eq DewfordTown_Dojo_EventScript_TypeNullTransferredToPC
+	call Common_EventScript_NameReceivedBoxMon
+	goto DewfordTown_Dojo_EventScript_TypeNullTransferredToPC
+	end
+
+DewfordTown_Dojo_EventScript_TypeNullTransferredToPC:
+	call Common_EventScript_TransferredToPC
+DewfordTown_Dojo_EventScript_TypeNullEnd:
+	clearflag FLAG_PROF_BIRCH_TYPE_NULL_RECEIVED
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_BeastBalls, MSGBOX_DEFAULT
+	giveitem ITEM_BEAST_BALL, 30
+	closemessage
+	msgbox LittlerootTown_ProfessorBirchsLab_Text_BeastBallsRest, MSGBOX_DEFAULT
+    release
+    end
+
+DewfordTown_Dojo_EventScript_ReceivedTypeNull:
+	playfanfare MUS_OBTAIN_ITEM
+	message DewfordTown_Dojo_Text_ReceivedTypeNull
+	waitmessage
+	waitfanfare
+	return
+
+DewfordTown_Dojo_Text_ReceivedTypeNull:
+	.string "{PLAYER} received the {STR_VAR_1}\n"
+	.string "from Prof. Birch!$"
 
 LittlerootTown_ProfessorBirchsLab_EventScript_CanHaveAnyOneOfRarePokemon::
 	msgbox LittlerootTown_ProfessorBirchsLab_Text_CanHaveAnyOneOfRarePokemon, MSGBOX_DEFAULT
@@ -1203,3 +1260,63 @@ LittlerootTown_ProfessorBirchsLab_Text_FromFuture:
 	.string "Falls…\p"
 	.string "You must find them, {PLAYER}.\n"
 	.string "You must go… Now!$"
+
+sText_TypeNulReward:
+	.string "This Pokémon is from another region!$"
+
+sText_UltraWormholeExplanation:
+	.string "Prof. Birch: We've learned that these\n"
+	.string "strange rifts are called Ultra\l"
+	.string "Wormholes.\p"
+	.string "They appear to connect our world to\n"
+	.string "places far beyond our own region.\p"
+	.string "And according to the research of\n"
+	.string "Professor Mohn in the Alola region,\l"
+	.string "some of the creatures that live beyond\l"
+	.string "them are called Ultra Beasts.\p"
+	.string "Ultra Beasts aren't like any Pokémon\n"
+	.string "we've encountered before.\p"
+	.string "They seem to originate from different\n"
+	.string "worlds within a place known as\l"
+	.string "Ultra Space.\p"
+	.string "We've had reports of several Ultra\n"
+	.string "Wormholes appearing throughout Hoenn.\p"
+	.string "If more Ultra Beasts are coming through,\n"
+	.string "we need to learn everything we can\l"
+	.string "about them.\p"
+	.string "That's where I need your help,\n"
+	.string "{PLAYER}{KUN}!\p"
+	.string "I'd like you to catch every Ultra Beast\n"
+	.string "you encounter and register them in\l"
+	.string "your Pokédex.\p"
+	.string "The more data we collect, the better\n"
+	.string "we'll understand these mysterious\l"
+	.string "visitors from Ultra Space.\p"
+	.string "So, I'd like you to take care of Type:\n"
+	.string "Null and have it accompany you.\p"
+	.string "Use its strength to help capture the\n"
+	.string "Ultra Beasts you encounter.\p"
+	.string "And, of course, take good care of it.\n"
+	.string "It's counting on you, {PLAYER}{KUN}!$"
+
+LittlerootTown_ProfessorBirchsLab_Text_BeastBalls:
+	.string "Prof. Birch: Oh, and before you go,\n"
+	.string "there's something else I should mention.\p"
+	.string "Professor Mohn sent us some special\n"
+	.string "Poké Balls from the Alola region.\p"
+	.string "They're called Beast Balls.\p"
+	.string "They're specially designed for catching\n"
+	.string "Ultra Beasts that emerge from\l"
+	.string "Ultra Wormholes.\p"
+	.string "Unfortunately, Professor Mohn could\n"
+	.string "only send us thirty of them.\p"
+	.string "That's all we've got for now, so use\n"
+	.string "them carefully!\p"
+	.string "I'll give all thirty to you.$"
+
+LittlerootTown_ProfessorBirchsLab_Text_BeastBallsRest:
+	.string "If we're going to learn more about\n"
+	.string "these mysterious Pokémon, we need\l"
+	.string "to make every one of them count.\p"
+	.string "Good luck, {PLAYER}{KUN}!\n"
+	.string "Bring those Ultra Beasts back safely!$"

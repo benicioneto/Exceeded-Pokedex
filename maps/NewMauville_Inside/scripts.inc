@@ -321,6 +321,36 @@ NewMauville_Inside_EventScript_DefeatedVoltorb3::
 	goto Common_EventScript_RemoveStaticPokemon
 	end
 
+.set LOCALID_ULTRA_WORMHOLE, 10
+EventScript_Xurkitreee::
+	lock
+	faceplayer
+	playbgm MUS_RG_ENCOUNTER_DEOXYS, FALSE
+	waitse
+	playmoncry SPECIES_XURKITREE, 2
+	delay 40
+	waitmoncry
+	setvar VAR_0x8004, SPECIES_XURKITREE
+	setvar VAR_0x8005, 60 @ level
+	setvar VAR_0x8006, ITEM_NONE
+	special CreateEventLegalEnemyMon
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	specialvar VAR_RESULT, GetBattleOutcome
+	compare VAR_RESULT, B_OUTCOME_WON
+	goto_if_eq EventScript_DefeatedUltraBeastXURKITREE
+	compare VAR_RESULT, B_OUTCOME_CAUGHT
+	goto_if_eq EventScript_DefeatedUltraBeastXURKITREE
+	release
+	end
+
+EventScript_DefeatedUltraBeastXURKITREE:
+	removeobject LOCALID_ULTRA_WORMHOLE
+	waitstate
+	end
+
 NewMauville_Inside_Text_GeneratorRadiatingHeat:
 	.string "The generator is radiating heat that\n"
 	.string "can be felt even at a distance.\p"

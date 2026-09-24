@@ -491,9 +491,36 @@ bool32 ShouldDoProfBirchRotomCatalogCall(void)
     return TRUE;
 }
 
+bool32 ShouldDoProfBirchTypeNullCall(void)
+{
+    if (FlagGet(FLAG_PROF_BIRCH_TYPE_NULL_CALL))
+    {
+        switch (gMapHeader.mapType)
+        {
+            case MAP_TYPE_TOWN:
+            case MAP_TYPE_CITY:
+            case MAP_TYPE_ROUTE:
+            case MAP_TYPE_OCEAN_ROUTE:
+                if (++(*GetVarPointer(VAR_PROF_BIRCH_CALL_STEP_COUNTER)) < 10)
+                {
+                    return FALSE;
+                }
+                break;
+            default:
+                return FALSE;
+        }
+    }
+    else
+    {
+        return FALSE;
+    }
+
+    return TRUE;
+}
+
 bool32 ShouldDoProfBirchNewStarterCall(void)
 {
-    if (FlagGet(FLAG_BIRCH_GIVE_NEW_STARTER_CALL) && !FlagGet(FLAG_PROF_BIRCH_ROTOM_CALL))
+    if (FlagGet(FLAG_BIRCH_GIVE_NEW_STARTER_CALL) && !FlagGet(FLAG_PROF_BIRCH_ROTOM_CALL) && !FlagGet(FLAG_PROF_BIRCH_TYPE_NULL_CALL))
     {
         switch (gMapHeader.mapType)
         {
@@ -5042,6 +5069,12 @@ void TryPutACosplayOnPikachu(void)
             break;
         case SPECIES_PIKACHU_LIBRE:
             gMoveToLearn = MOVE_FLYING_PRESS;
+            break;
+        case SPECIES_PIKACHU_SURFING:
+            gMoveToLearn = MOVE_SPLISHY_SPLASH;
+            break;
+        case SPECIES_PIKACHU_FLYING:
+            gMoveToLearn = MOVE_FLOATY_FALL;
             break;    
         default:
             break;
@@ -5057,7 +5090,9 @@ void TryPutACosplayOnPikachu(void)
      && baseSpecies != SPECIES_PIKACHU_POP_STAR
      && baseSpecies != SPECIES_PIKACHU_BELLE
      && baseSpecies != SPECIES_PIKACHU_PH_D
-     && baseSpecies != SPECIES_PIKACHU_LIBRE)
+     && baseSpecies != SPECIES_PIKACHU_LIBRE
+     && baseSpecies != SPECIES_PIKACHU_SURFING
+     && baseSpecies != SPECIES_PIKACHU_FLYING)
     {
         gSpecialVar_Result = 0;
         return;
@@ -5087,6 +5122,8 @@ void TryPutACosplayOnPikachu(void)
              || GetMonData(mon, MON_DATA_MOVE1 + i, NULL) == MOVE_ICICLE_CRASH
              || GetMonData(mon, MON_DATA_MOVE1 + i, NULL) == MOVE_PSYSHOCK
              || GetMonData(mon, MON_DATA_MOVE1 + i, NULL) == MOVE_FLYING_PRESS
+             || GetMonData(mon, MON_DATA_MOVE1 + i, NULL) == MOVE_SPLISHY_SPLASH
+             || GetMonData(mon, MON_DATA_MOVE1 + i, NULL) == MOVE_FLOATY_FALL
              || GetMonData(mon, MON_DATA_MOVE1 + i, NULL) == MOVE_NONE)
             {
                 SetMonMoveSlot(mon, gMoveToLearn, i);
@@ -5119,7 +5156,9 @@ void RemovePikachuCosplay(void)
      || baseSpecies == SPECIES_PIKACHU_POP_STAR
      || baseSpecies == SPECIES_PIKACHU_BELLE
      || baseSpecies == SPECIES_PIKACHU_PH_D
-     || baseSpecies == SPECIES_PIKACHU_LIBRE)
+     || baseSpecies == SPECIES_PIKACHU_LIBRE
+     || baseSpecies == SPECIES_PIKACHU_SURFING
+     || baseSpecies == SPECIES_PIKACHU_FLYING)
     {        
         SetMonData(mon, MON_DATA_SPECIES, &originalSpecies);
         CalculateMonStats(mon, TRUE);
@@ -5130,7 +5169,9 @@ void RemovePikachuCosplay(void)
              || GetMonData(mon, MON_DATA_MOVE1 + i, NULL) == MOVE_DRAINING_KISS
              || GetMonData(mon, MON_DATA_MOVE1 + i, NULL) == MOVE_ICICLE_CRASH
              || GetMonData(mon, MON_DATA_MOVE1 + i, NULL) == MOVE_PSYSHOCK
-             || GetMonData(mon, MON_DATA_MOVE1 + i, NULL) == MOVE_FLYING_PRESS)
+             || GetMonData(mon, MON_DATA_MOVE1 + i, NULL) == MOVE_FLYING_PRESS
+             || GetMonData(mon, MON_DATA_MOVE1 + i, NULL) == MOVE_SPLISHY_SPLASH
+             || GetMonData(mon, MON_DATA_MOVE1 + i, NULL) == MOVE_FLOATY_FALL)
             {
                 SetMonMoveSlot(mon, MOVE_NONE, i);
 				RemoveMonPPBonus(mon, i);

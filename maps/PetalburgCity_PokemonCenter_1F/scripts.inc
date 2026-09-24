@@ -12,6 +12,63 @@ PetalburgCity_PokemonCenter_1F_OnTransition:
 
 PetalburgCity_PokemonCenter_1F_EventScript_Nurse::
 	setvar VAR_0x800B, LOCALID_NURSE
+	goto_if_set FLAG_RECEIVED_PETALBURG_EGG, PetalburgCity_PokemonCenter_1F_EventScript_NurseAlreadyGiveEgg
+	lock
+	faceplayer
+	msgbox PetalburgCity_Text_HaveEggWillYouTakeIt, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq PetalburgCity_EventScript_DeclineEgg
+	getpartysize
+	compare VAR_RESULT, PARTY_SIZE
+	goto_if_eq LavaridgeTown_EventScript_NoRoomForEgg
+	msgbox LavaridgeTown_Text_HopeYoullWalkPlentyWithEgg, MSGBOX_DEFAULT
+	setflag FLAG_RECEIVED_PETALBURG_EGG
+	playfanfare MUS_OBTAIN_ITEM
+	message LavaridgeTown_Text_ReceivedTheEgg
+	waitfanfare
+	giveeggsimple SPECIES_TOGEPI, MOVE_DIZZY_PUNCH, MOVE_LUCKY_CHANT, MOVE_CHARM, MOVE_SAFEGUARD
+	release
+	end
+
+PetalburgCity_EventScript_DeclineEgg:
+    msgbox gText_WouldYouLikeToRestYourPkmn2, MSGBOX_YESNO
+    compare VAR_RESULT, YES
+	goto_if_eq PetalburgCity_EventScript_DeclineEggHeal
+    compare VAR_RESULT, NO
+    goto_if_eq EventScript_PkmnCenterNurse_Goodbye2
+	waitmessage
+	waitbuttonpress
+	release
+	end
+
+EventScript_PkmnCenterNurse_Goodbye2::
+    message gText_WeHopeToSeeYouAgain
+	waitmessage
+	waitbuttonpress
+	release
+	end
+
+PetalburgCity_EventScript_DeclineEggHeal:
+	setvar VAR_0x800B, LOCALID_NURSE
+	call Common_EventScript_PkmnCenterNursePetalbug
+	waitmessage
+	waitbuttonpress
+	release
+	end
+
+Common_EventScript_PkmnCenterNursePetalbug:
+	specialvar VAR_RESULT, IsPokecenterBlockedChallengeActivated
+	compare VAR_RESULT, TRUE
+    goto_if_eq EventScript_PkmnCenterNurse_PkmnCenterChallenge_NoVisits
+    setvar VAR_0x8004, 0
+    specialvar VAR_RESULT, CountPlayerTrainerStars
+    compare VAR_RESULT, 4
+    goto_if_eq EventScript_PkmnCenterNurse_GoldCard
+    goto EventScript_PkmnCenterNurse_HealPkmn
+    end
+
+PetalburgCity_PokemonCenter_1F_EventScript_NurseAlreadyGiveEgg:
+	setvar VAR_0x800B, LOCALID_NURSE
 	call Common_EventScript_PkmnCenterNurse
 	waitmessage
 	waitbuttonpress
@@ -98,3 +155,35 @@ PetalburgCity_PokemonCenter_1F_Text_MudkipIsWaterType:
 	.string "But, it's weak against Grass-type\n"
 	.string "and Electric-type Pokémon.$"
 
+PetalburgCity_Text_HaveEggWillYouTakeIt:
+    .string "Hello, and welcome to the\n"
+	.string "Pokémon Center.\p"
+	.string "We restore your tired Pokémon\n"
+	.string "to full health.\p"
+	.string "But today, I have something\n"
+	.string "a little different to ask of you.\p"
+	.string "You see, someone recently left\n"
+	.string "this Pokémon Egg in our care.\p"
+	.string "It hasn't hatched yet, but…\n"
+	.string "I can feel something special inside.\p"
+	.string "It seems that a Pokémon will hatch\n"
+	.string "from it when you keep it in your party\l"
+	.string "of Pokémon.\p"
+	.string "I'd love to care for it myself,\n"
+	.string "but I can't leave this Pokémon Center.\p"
+	.string "There are always Trainers and Pokémon\n"
+	.string "here who need my help.\p"
+	.string "Since you're already on a journey,\n"
+	.string "would you take the Egg with you?$"
+
+gText_WouldYouLikeToRestYourPkmn2::
+    .string "Then…\n"
+    .string "Would you like to rest your Pokémon?$"
+
+PetalburgCity_Text_HopeYoullWalkPlentyWithEgg:
+	.string "Thank you! Please take good care\n"
+	.string "of this little Egg.\p"
+	.string "Give it plenty of love, and walk\n"
+	.string "with it wherever your journey takes you.\p"
+	.string "Who knows? Before long, you may\n"
+	.string "be welcoming a new friend!$"

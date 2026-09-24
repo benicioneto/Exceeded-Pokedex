@@ -281,7 +281,7 @@ MoveTutor_EventScript_CanOnlyBeLearnedOnce::
 
 @@ new code
 
-RustoboroCity_House2_EventScript_AncientePowerTutor::
+RustboroCity_House2_EventScript_AncientePowerTutor::
 	lock
 	faceplayer
 	msgbox MoveTutor_Text_AncientePowerTeach, MSGBOX_YESNO

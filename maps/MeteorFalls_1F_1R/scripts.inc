@@ -265,6 +265,18 @@ MeteorFalls_1F_1R_EventScript_DeoxysBattle:
 	setvar VAR_0x8004, SPECIES_DEOXYS
 	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject LOCALID_DEOXYS
+	setflag FLAG_PROF_BIRCH_TYPE_NULL_CALL
+	setflag FLAG_PROF_BIRCH_TYPE_NULL_RECEIVED
+	clearflag FLAG_BLACEPHALON_PORTAL
+	clearflag FLAG_STAKATAKA_PORTAL
+	clearflag FLAG_POIPOLE_PORTAL
+	clearflag FLAG_GUZZLORD_PORTAL
+	clearflag FLAG_KARTANA_PORTAL
+	clearflag FLAG_CELESTEELA_PORTAL
+	clearflag FLAG_XURKITREE_PORTAL
+	clearflag FLAG_PHEROMOSA_PORTAL
+	clearflag FLAG_BUZZWOLE_PORTAL
+	clearflag FLAG_NIHILEGO_PORTAL
 	specialvar VAR_RESULT, GetBattleOutcome
 	compare VAR_RESULT, B_OUTCOME_CAUGHT
 	goto_if_eq MeteorFalls_1F_1R_EventScript_Captured
@@ -347,6 +359,7 @@ MeteorFalls_1F_1R_EventScript_SendCosmogToPC:
 	end
 
 MeteorFalls_1F_1R_EventScript_ReceivedCosmog:
+    removeobject LOCALID_ULTRA_WORMHOLE
 	release
 	end
 

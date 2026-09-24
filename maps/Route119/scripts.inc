@@ -517,6 +517,14 @@ MauvilleCity_EventScript_ProfBirchRotomCatalogCall::
 	releaseall
 	end
 
+MauvilleCity_EventScript_ProfBirchTypeNullCall::
+	lockall
+	pokenavcall MauvilleCity_Text_ProfBirchUltraWormHoles
+	waitmessage
+	clearflag FLAG_PROF_BIRCH_TYPE_NULL_CALL
+	releaseall
+	end
+
 LittlerootTown_EventScript_ProfBirchNewStarterCall::
 	lockall
 	pokenavcall LittlerootTown_Text_ProfBirchGiveNewStarter
@@ -524,6 +532,37 @@ LittlerootTown_EventScript_ProfBirchNewStarterCall::
 	clearflag FLAG_BIRCH_GIVE_NEW_STARTER_CALL
 	releaseall
 	end
+
+.set LOCALID_ULTRA_WORMHOLE, 49
+EventScript_KARTANA::
+	lock
+	faceplayer
+	playbgm MUS_RG_ENCOUNTER_DEOXYS, FALSE
+	waitse
+	playmoncry SPECIES_KARTANA, 2
+	delay 40
+	waitmoncry
+	setvar VAR_0x8004, SPECIES_KARTANA
+	setvar VAR_0x8005, 60 @ level
+	setvar VAR_0x8006, ITEM_NONE
+	special CreateEventLegalEnemyMon
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	specialvar VAR_RESULT, GetBattleOutcome
+	compare VAR_RESULT, B_OUTCOME_WON
+	goto_if_eq EventScript_DefeatedUltraBeastKARTANA
+	compare VAR_RESULT, B_OUTCOME_CAUGHT
+	goto_if_eq EventScript_DefeatedUltraBeastKARTANA
+	release
+	end
+
+EventScript_DefeatedUltraBeastKARTANA:
+	removeobject LOCALID_ULTRA_WORMHOLE
+	waitstate
+	end
+
 Route119_Text_MayIntro:
 	.string "{RIVAL}: {PLAYER}{KUN}!\n"
 	.string "Where were you? I was looking for you!\p"
@@ -631,6 +670,35 @@ MauvilleCity_Text_ProfBirchYouCapturedRotom:
 	.string "… … … … … …\n"
 	.string "… … … … … Click!$"
 
+MauvilleCity_Text_ProfBirchUltraWormHoles:
+	.string "… … … … … …\n"
+	.string "… … … … … Beep!\p"
+	.string "Prof. Birch: Hiya, {PLAYER}{KUN},\n"
+	.string "it's me!\p"
+	.string "I've got some strange news.\p"
+	.string "We've been receiving reports from\n"
+	.string "all over Hoenn about strange holes!\p"
+	.string "They're being described as swirling\n"
+	.string "rifts surrounded by strange light.\p"
+	.string "At first, I thought they might be some\n"
+	.string "kind of unusual weather phenomenon.\p"
+	.string "But after comparing the reports,\n"
+	.string "I'm starting to think we're dealing\l"
+	.string "with something much stranger.\p"
+	.string "After contacting Prof. Mohn from the\n"
+	.string "Alola region, I discovered that\l"
+	.string "we're dealing with a phenomena\n"
+	.string "called Ultra Wormholes.\p"
+	.string "I need to examine the phenomenon\n"
+	.string "before we can figure out what's\l"
+	.string "causing them to appear.\p"
+	.string "Could you come by my lab in Littleroot\n"
+	.string "Town when you get the chance?\p"
+	.string "I'd like your help investigating this.\p"
+	.string "Keep your eyes peeled on the way here!\n"
+	.string "Who knows what might come through...\p"
+	.string "… … … … … …\n"
+	.string "… … … … … Click!$"
 
 LittlerootTown_Text_ProfBirchGiveNewStarter:
 	.string "… … … … … …\n"

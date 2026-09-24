@@ -112,20 +112,27 @@ Debug_FlagsNotSetBattleConfigMessage_Text:
 
 @ debug scripts test
 Debug_Script_1::
-	setwildbattle SPECIES_GREEDENT, 100, ITEM_LIECHI_BERRY, ITEM_LIECHI_BERRY, ITEM_LIECHI_BERRY, SPECIES_GYARADOS, 100, ITEM_LIECHI_BERRY
+	setwildbattle SPECIES_GREEDENT, 100, ITEM_LIECHI_BERRY, ITEM_LIECHI_BERRY, ITEM_LIECHI_BERRY, MOVE_NONE, MOVE_NONE, MOVE_NONE, MOVE_NONE, SPECIES_GYARADOS, 100, ITEM_LIECHI_BERRY
 	dowildbattle
 	@trainerbattle_single TRAINER_SHELLY_WEATHER_INSTITUTE, Route119_WeatherInstitute_2F_Text_ShellyIntro, Route119_WeatherInstitute_2F_Text_ShellyDefeat, Route119_WeatherInstitute_2F_EventScript_ShellyDefeated
 	@msgbox Route119_WeatherInstitute_2F_Text_ShellyPostBattle, MSGBOX_AUTOCLOSE
 	end
 
 Debug_Script_2::
-	setwildbattle SPECIES_THIEVUL, 50, ITEM_LEFTOVERS
+	setwildbattle SPECIES_THIEVUL, 50, ITEM_LEFTOVERS, ITEM_LEFTOVERS, ITEM_LEFTOVERS, MOVE_WILL_O_WISP, MOVE_WILL_O_WISP, MOVE_WILL_O_WISP, MOVE_WILL_O_WISP
 	dowildbattle
 	end
 
 Debug_Script_3::
-	setwildbattle SPECIES_GIRATINA, 50, ITEM_LEFTOVERS
-	dowildbattle
+	@setwildbattle SPECIES_GIRATINA, 50, ITEM_LEFTOVERS
+	@dowildbattle
+
+	@setflag FLAG_ENTERED_CONTEST
+	@setflag FLAG_RECEIVED_PIKACHU_COSPLAY
+	@givemon SPECIES_PIKACHU_COSPLAY, 30
+
+	setflag FLAG_HAS_MATCH_CALL
+	setflag FLAG_PROF_BIRCH_TYPE_NULL_RECEIVED
 	end
 
 Debug_Script_4::

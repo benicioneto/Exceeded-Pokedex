@@ -153,6 +153,36 @@ MtChimney_EventScript_SetVisitedMtChimney::
 	setvar VAR_TEMP_1, 1
 	end
 
+.set LOCALID_ULTRA_WORMHOLE, 31
+EventScript_Celesteela::
+	lock
+	faceplayer
+	playbgm MUS_RG_ENCOUNTER_DEOXYS, FALSE
+	waitse
+	playmoncry SPECIES_CELESTEELA, 2
+	delay 40
+	waitmoncry
+	setvar VAR_0x8004, SPECIES_CELESTEELA
+	setvar VAR_0x8005, 60 @ level
+	setvar VAR_0x8006, ITEM_NONE
+	special CreateEventLegalEnemyMon
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	specialvar VAR_RESULT, GetBattleOutcome
+	compare VAR_RESULT, B_OUTCOME_WON
+	goto_if_eq EventScript_DefeatedUltraBeastCELESTEELA
+	compare VAR_RESULT, B_OUTCOME_CAUGHT
+	goto_if_eq EventScript_DefeatedUltraBeastCELESTEELA
+	release
+	end
+
+EventScript_DefeatedUltraBeastCELESTEELA:
+	removeobject LOCALID_ULTRA_WORMHOLE
+	waitstate
+	end
+
 MtChimney_Movement_ArchieApproachPlayerEast:
 	walk_up
 	walk_up

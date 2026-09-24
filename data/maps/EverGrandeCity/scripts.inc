@@ -81,6 +81,36 @@ EverGrandeCity_EventScript_CelebiWarpTime:
 	releaseall
 	end
 
+.set LOCALID_ULTRA_WORMHOLE, 4
+EventScript_GUZZLORD::
+	lock
+	faceplayer
+	playbgm MUS_RG_ENCOUNTER_DEOXYS, FALSE
+	waitse
+	playmoncry SPECIES_GUZZLORD, 2
+	delay 40
+	waitmoncry
+	setvar VAR_0x8004, SPECIES_GUZZLORD
+	setvar VAR_0x8005, 60 @ level
+	setvar VAR_0x8006, ITEM_NONE
+	special CreateEventLegalEnemyMon
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	specialvar VAR_RESULT, GetBattleOutcome
+	compare VAR_RESULT, B_OUTCOME_WON
+	goto_if_eq EventScript_DefeatedUltraBeastGUZZLORD
+	compare VAR_RESULT, B_OUTCOME_CAUGHT
+	goto_if_eq EventScript_DefeatedUltraBeastGUZZLORD
+	release
+	end
+
+EventScript_DefeatedUltraBeastGUZZLORD:
+	removeobject LOCALID_ULTRA_WORMHOLE
+	waitstate
+	end
+
 EverGrandeCity_Text_CelebiSpeech:
 	.string "Biii!$"
 

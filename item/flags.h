@@ -85,7 +85,7 @@
 #define FLAG_ITEM_ELECTRIUM_Z       0x49 // BENICIO Flag
 #define FLAG_ITEM_WATERIUM_Z        0x4A // benicio Flag
 #define FLAG_ITEM_NORMALIUM_Z       0x4B // benico Flag
-#define FLAG_UNUSED_0x04C    0x4C // Unused Flag
+#define FLAG_RECEIVED_PETALBURG_EGG 0x4C // benicio Flag
 #define FLAG_FORTREECITY_TRADE     0x4D // BENICIO Flag
 #define FLAG_MOSSDEEPCITY_TRADE    0x4E // BENICIO Flag
 #define FLAG_NO_WHITEOUT_BATTLE    0x4F // BENICIO Flag
@@ -1514,7 +1514,7 @@
 #define FLAG_SYS_RUNNING_SHOES                      (SYSTEM_FLAGS + 0x90) // BENICIO Flag
 #define FLAG_RECEIVED_FENNEKIN                      (SYSTEM_FLAGS + 0x91) // BENICIO Flag
 #define FLAG_RECEIVED_PIPLUP                        (SYSTEM_FLAGS + 0x92) // BENICIO Flag
-#define FLAG_RECEIVED_OSHAWOTT                      (SYSTEM_FLAGS + 0x93) // unused Flag
+#define FLAG_RECEIVED_EEVEE                         (SYSTEM_FLAGS + 0x93) // BENICIO Flag
 #define FLAG_RECEIVED_FROAKIE                       (SYSTEM_FLAGS + 0x94) // BENICIO Flag
 #define FLAG_BIRCH_ALLOW_TAKE_NEW_STARTER           (SYSTEM_FLAGS + 0x95) // BENICIO Flag
 #define FLAG_RECEIVED_CHARMANDER                    (SYSTEM_FLAGS + 0x96) // BENICIO Flag
@@ -1523,19 +1523,19 @@
 #define FLAG_RECEIVED_TM62                          (SYSTEM_FLAGS + 0x99) // BENICIO Flag
 #define FLAG_RECEIVED_TM63                          (SYSTEM_FLAGS + 0x9A) // BENICIO Flag
 #define FLAG_RECEIVED_TM64                          (SYSTEM_FLAGS + 0x9B) // BENICIO Flag
-#define FLAG_UNUSED_0x8FC                           (SYSTEM_FLAGS + 0x9C) // Unused Flag
-#define FLAG_UNUSED_0x8FD                           (SYSTEM_FLAGS + 0x9D) // Unused Flag
-#define FLAG_UNUSED_0x8FE                           (SYSTEM_FLAGS + 0x9E) // Unused Flag
-#define FLAG_UNUSED_0x8FF                           (SYSTEM_FLAGS + 0x9F) // Unused Flag
-#define FLAG_UNUSED_0x900                           (SYSTEM_FLAGS + 0xA0) // Unused Flag
-#define FLAG_UNUSED_0x901                           (SYSTEM_FLAGS + 0xA1) // Unused Flag
-#define FLAG_UNUSED_0x902                           (SYSTEM_FLAGS + 0xA2) // Unused Flag
-#define FLAG_UNUSED_0x903                           (SYSTEM_FLAGS + 0xA3) // Unused Flag
-#define FLAG_UNUSED_0x904                           (SYSTEM_FLAGS + 0xA4) // Unused Flag
-#define FLAG_UNUSED_0x905                           (SYSTEM_FLAGS + 0xA5) // Unused Flag
-#define FLAG_UNUSED_0x906                           (SYSTEM_FLAGS + 0xA6) // Unused Flag
-#define FLAG_UNUSED_0x907                           (SYSTEM_FLAGS + 0xA7) // Unused Flag
-#define FLAG_UNUSED_0x908                           (SYSTEM_FLAGS + 0xA8) // Unused Flag
+#define FLAG_RECEIVED_PORYGON                       (SYSTEM_FLAGS + 0x9C) // BENICIO Flag
+#define FLAG_PROF_BIRCH_TYPE_NULL_CALL              (SYSTEM_FLAGS + 0x9D) // BENICIO Flag
+#define FLAG_PROF_BIRCH_TYPE_NULL_RECEIVED          (SYSTEM_FLAGS + 0x9E) // BENICIO Flag
+#define FLAG_BLACEPHALON_PORTAL                     (SYSTEM_FLAGS + 0x9F) // BENICIO Flag
+#define FLAG_STAKATAKA_PORTAL                       (SYSTEM_FLAGS + 0xA0) // BENICIO Flag
+#define FLAG_POIPOLE_PORTAL                         (SYSTEM_FLAGS + 0xA1) // BENICIO Flag
+#define FLAG_GUZZLORD_PORTAL                        (SYSTEM_FLAGS + 0xA2) // BENICIO Flag
+#define FLAG_KARTANA_PORTAL                         (SYSTEM_FLAGS + 0xA3) // BENICIO Flag
+#define FLAG_CELESTEELA_PORTAL                      (SYSTEM_FLAGS + 0xA4) // BENICIO Flag
+#define FLAG_XURKITREE_PORTAL                       (SYSTEM_FLAGS + 0xA5) // BENICIO Flag
+#define FLAG_PHEROMOSA_PORTAL                       (SYSTEM_FLAGS + 0xA6) // BENICIO Flag
+#define FLAG_BUZZWOLE_PORTAL                        (SYSTEM_FLAGS + 0xA7) // BENICIO Flag
+#define FLAG_NIHILEGO_PORTAL                        (SYSTEM_FLAGS + 0xA8) // BENICIO Flag
 #define FLAG_UNUSED_0x909                           (SYSTEM_FLAGS + 0xA9) // Unused Flag
 #define FLAG_UNUSED_0x90A                           (SYSTEM_FLAGS + 0xAA) // Unused Flag
 #define FLAG_UNUSED_0x90B                           (SYSTEM_FLAGS + 0xAB) // Unused Flag

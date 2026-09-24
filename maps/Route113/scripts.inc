@@ -21,6 +21,36 @@ Route113_EventScript_CheckSetAshWeather::
 	setweather WEATHER_VOLCANIC_ASH
 	return
 
+.set LOCALID_ULTRA_WORMHOLE, 18
+EventScript_PHEROMOSA::
+	lock
+	faceplayer
+	playbgm MUS_RG_ENCOUNTER_DEOXYS, FALSE
+	waitse
+	playmoncry SPECIES_PHEROMOSA, 2
+	delay 40
+	waitmoncry
+	setvar VAR_0x8004, SPECIES_PHEROMOSA
+	setvar VAR_0x8005, 60 @ level
+	setvar VAR_0x8006, ITEM_NONE
+	special CreateEventLegalEnemyMon
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	specialvar VAR_RESULT, GetBattleOutcome
+	compare VAR_RESULT, B_OUTCOME_WON
+	goto_if_eq EventScript_DefeatedUltraBeastPHEROMOSA
+	compare VAR_RESULT, B_OUTCOME_CAUGHT
+	goto_if_eq EventScript_DefeatedUltraBeastPHEROMOSA
+	release
+	end
+
+EventScript_DefeatedUltraBeastPHEROMOSA:
+	removeobject LOCALID_ULTRA_WORMHOLE
+	waitstate
+	end
+
 Route113_EventScript_DontSetAshWeather::
 	return
 

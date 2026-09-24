@@ -10,7 +10,9 @@ MauvilleCity_PokemonSchool_EventScript_Lass::
 MauvilleCity_PokemonSchool_Text_ConfusedPokemonAttacksItself:
 	.string "If the Pokémon has the same type\n"
 	.string "of used move, its power is boosted\l"
-	.string "by 25%!\p" 
+	.string "by 50%!\p"
+	.string "But with PLA formulas enabled\n"
+	.string "the boost is 25%.\p"
 	.string "I wonder if the Pokémon\n"
 	.string "that has two types has advantage\l"
 	.string "over Pokémon that has only one type.$"

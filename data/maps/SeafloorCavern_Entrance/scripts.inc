@@ -36,6 +36,36 @@ SeafloorCavern_Entrance_EventScript_Grunt::
 	releaseall
 	end
 
+.set LOCALID_ULTRA_WORMHOLE, 2
+EventScript_NIHILEGO::
+	lock
+	faceplayer
+	playbgm MUS_RG_ENCOUNTER_DEOXYS, FALSE
+	waitse
+	playmoncry SPECIES_NIHILEGO, 2
+	delay 40
+	waitmoncry
+	setvar VAR_0x8004, SPECIES_NIHILEGO
+	setvar VAR_0x8005, 60 @ level
+	setvar VAR_0x8006, ITEM_NONE
+	special CreateEventLegalEnemyMon
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	specialvar VAR_RESULT, GetBattleOutcome
+	compare VAR_RESULT, B_OUTCOME_WON
+	goto_if_eq EventScript_DefeatedUltraBeastNIHILEGO
+	compare VAR_RESULT, B_OUTCOME_CAUGHT
+	goto_if_eq EventScript_DefeatedUltraBeastNIHILEGO
+	release
+	end
+
+EventScript_DefeatedUltraBeastNIHILEGO:
+	removeobject LOCALID_ULTRA_WORMHOLE
+	waitstate
+	end
+
 SeafloorCavern_Entrance_EventScript_GruntSpeechShort::
 	compare VAR_FACING, DIR_WEST
 	call_if_eq SeafloorCavern_Entrance_EventScript_GruntFacePlayerWest
