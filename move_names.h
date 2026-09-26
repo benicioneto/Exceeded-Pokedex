@@ -1150,7 +1150,7 @@ const u8 gMoveNames[MOVES_COUNT_DYNAMAX][MOVE_NAME_LENGTH + 1] =
     [MOVE_ACIDIC_MAW] = _("Acidic Maw"),
     [MOVE_NECTAR_SIPHON] = _("Nectar Siphon"),
     [MOVE_HEAT_ARMOR] = _("Heat Armor"),
-    [MOVE_SIRENS_MELODY] = _("Sirens Melody"),
+    [MOVE_SIRENS_MELODY] = _("Siren's Melody"),
     [MOVE_CHRONO_CHORUS] = _("Chrono Chorus"),
     [MOVE_FAIRYTIME_ARIA] = _("Fairytime Aria"),
     [MOVE_SUMMER_TIME] = _("Summer Time"),
@@ -1194,6 +1194,8 @@ const u8 gMoveNames[MOVES_COUNT_DYNAMAX][MOVE_NAME_LENGTH + 1] =
     [MOVE_ENDLESS_ICE_SPIKES] = _("EndlessIceSpikes"),
     [MOVE_LUMIERE_OF_DEMISE] = _("Lumiere OfDemise"),
     [MOVE_SHINING_METEOR_CRUSH] = _("ShineMeteorCrush"),
+    [MOVE_MIGHTY_CLAP] = _("Mighty Clap"),
+    [MOVE_TROPICAL_CYCLONE] = _("Tropical Cyclone"),
 };
 
 static const u8 sText_Breakneck_Blitz[] = _("Breakneck Blitz");

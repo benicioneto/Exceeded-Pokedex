@@ -29,5 +29,5 @@ EventScript_Buzzwole::
 
 EventScript_DefeatedUltraBeastBUZZWOLE:
 	removeobject LOCALID_ULTRA_WORMHOLE
-	waitstate
+	release
 	end

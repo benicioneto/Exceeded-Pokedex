@@ -348,7 +348,7 @@ EventScript_Xurkitreee::
 
 EventScript_DefeatedUltraBeastXURKITREE:
 	removeobject LOCALID_ULTRA_WORMHOLE
-	waitstate
+	release
 	end
 
 NewMauville_Inside_Text_GeneratorRadiatingHeat:

@@ -48,7 +48,7 @@ EventScript_PHEROMOSA::
 
 EventScript_DefeatedUltraBeastPHEROMOSA:
 	removeobject LOCALID_ULTRA_WORMHOLE
-	waitstate
+	release
 	end
 
 Route113_EventScript_DontSetAshWeather::

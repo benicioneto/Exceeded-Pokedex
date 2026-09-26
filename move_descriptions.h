@@ -3437,8 +3437,8 @@ static const u8 sRINGS_UNBOUNDDescription[] = _(
     "and increases stats.");
 
 static const u8 sNOCK_LOCKDescription[] = _(
-    "Hits 2-5 times. Does more\n"
-    "damage to foes low HP.");
+    "Hits 2-5 times. Does quick\n"
+    "shot of sharp arrows.");
 
 static const u8 sBLISS_ASSISTANCEDescription[] = _(
     "Draws attention and heals\n"
@@ -4071,6 +4071,8 @@ static const u8 sFULL_BLOOM_AROMADescription[] = _("XXX\nXXX.");
 static const u8 sENDLESS_ICE_SPIKESDescription[] = _("XXX\nXXX.");
 static const u8 sLUMIERE_OF_DEMISEDescription[] = _("XXX\nXXX.");
 static const u8 sSHINING_METEOR_CRUSHDescription[] = _("XXX\nXXX.");
+static const u8 sMIGHTY_CLAPDescription[] = _("A thunderclap that allow\nhit Ghost-type.");
+static const u8 sTROPICAL_CYCLONEDescription[] = _("Creates a cyclone on the\nfoe. May cause flinching.");
 
 
 //  **************************** 27 distance letters ****************************
@@ -5217,4 +5219,6 @@ const u8 *const gMoveDescriptionPointers[MOVES_COUNT_NORMAL - 1] =
     [MOVE_ENDLESS_ICE_SPIKES - 1] = sENDLESS_ICE_SPIKESDescription,
     [MOVE_LUMIERE_OF_DEMISE - 1] = sLUMIERE_OF_DEMISEDescription,
     [MOVE_SHINING_METEOR_CRUSH - 1] = sSHINING_METEOR_CRUSHDescription,
+    [MOVE_MIGHTY_CLAP - 1] = sMIGHTY_CLAPDescription,
+    [MOVE_TROPICAL_CYCLONE - 1] = sTROPICAL_CYCLONEDescription,
 };

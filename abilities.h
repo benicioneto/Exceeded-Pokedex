@@ -1087,6 +1087,9 @@ static const u8 sSpecializeDescription[] = _("Swaps Attack with Sp. Atk.");
 static const u8 sOxidizeDescription[] = _("Flying-type moves hit Steel.");
 static const u8 sSpacetimeAnchorDescription[] = _("Unaffected by time & space.");
 static const u8 sWyrmScaleDescription[] = _("Weakens “supereffective”.");
+static const u8 sStormcallDescription[] = _("Creates a rain if hit.");
+static const u8 sRangersCloakDescription[] = _("Halves damage at full HP.");
+static const u8 sVoltaicGrowthDescription[] = _("Electric moves up defenses.");
 
 //  **************************** 27 distance letters ****************************
 
@@ -2117,6 +2120,9 @@ const u8 gAbilityNames[ABILITIES_COUNT][ABILITY_NAME_LENGTH + 1] =
     [ABILITY_OXIDIZE] = _("Oxidize"),
     [ABILITY_SPACETIME_ANCHOR] = _("Spacetime Anchor"),
     [ABILITY_WYRM_SCALE] = _("Wyrm Scale"),
+    [ABILITY_STORMCALL] = _("Stormcall"),
+    [ABILITY_RANGERS_CLOAK] = _("Ranger's Cloak"),
+    [ABILITY_VOLTAIC_GROWTH] = _("Voltaic Growth"),
 };
 
 const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
@@ -3146,6 +3152,9 @@ const u8 *const gAbilityDescriptionPointers[ABILITIES_COUNT] =
     [ABILITY_OXIDIZE] = sOxidizeDescription,
     [ABILITY_SPACETIME_ANCHOR] = sSpacetimeAnchorDescription,
     [ABILITY_WYRM_SCALE] = sWyrmScaleDescription,
+    [ABILITY_STORMCALL] = sStormcallDescription,
+    [ABILITY_RANGERS_CLOAK] = sRangersCloakDescription,
+    [ABILITY_VOLTAIC_GROWTH] = sVoltaicGrowthDescription,
 };
 
 // ABILITY_TRUANT
@@ -3270,7 +3279,7 @@ static const u8 sSnowWarningDescriptionExtended[] = _("When the Pokémon enters 
 static const u8 sHoneyGatherDescriptionExtended[] = _("At the end of each turn, ther-\ne is a 30% to collect some Hon-\ney. After winning a battle, th-\nis Pokémon in the player's par-\nty while is not holding an ite-\nm has a 10% chance of creating\na Honey for itself. Honey: It\nis consumed in battle to rest-\nore HP by 1/8 of its maximum H-\nP. ");
 static const u8 sFriskDescriptionExtended[] = _("When the Pokémon enters the f-\nield, it reveals the opponent'-\ns Battle Item, Consumable and \nAccessory and render them unus-\nable for two turns upon enteri-\nng battle.");
 static const u8 sRecklessDescriptionExtended[] = _("Increases the power of moves \nthat have recharge, recoil or \ncrash damage by 20%. When the \nPokémon directly causes anothe-\nr Pokémon (including allies) t-\no faint by using a damaging mo-\nve, the Pokémon recharges imme-\ndiately and takes no recoil da-\nmage.");
-static const u8 sMultitypeDescriptionExtended[] = _("The Pokémon changes its form \nand type depending on the Plat-\ne attached.");
+static const u8 sMultitypeDescriptionExtended[] = _("The Pokémon changes its form \nand type depending on the Plat-\ne attached. Also, while the Po-\nkémon is holding a Plate, incr-\neases all stats by 10%.");
 static const u8 sFlowerGiftDescriptionExtended[] = _("During harsh sunlight, Cherri-\nm changes from Overcast form t-\no Sunshine form, increasing th-\ne all stats of the Pokémon by \n30% and its allies stats by 5%\n.");
 static const u8 sBadDreamsDescriptionExtended[] = _("At the end of each turn, each\nsleeping opposing Pokémon tak-\nes damage equal to 1/8 of its \nmaximum HP.");
 static const u8 sPickpocketDescriptionExtended[] = _("When the Pokémon is attacked \nby a move that makes contact, \nit will steal one of the held \nitem of the opposing Pokémon. \nIt will avoid items that canno-\nt be stolen, or empty item slo-\nts. If the Pokémon tries to st-\neal while holding an item on t-\nhe same slot, the stolen item \nmay be add to the bag instead,\nor be removed for the rest of\nthe battle.");
@@ -3374,7 +3383,7 @@ static const u8 sTanglingHairDescriptionExtended[] = _("When the Pokémon attack
 static const u8 sReceiverDescriptionExtended[] = _("When an ally faints in battle\n(regardless of cause), the Po-\nkémon will be replaced by the \nfainted Pokémon's Ability.");
 static const u8 sPowerOfAlchemyDescriptionExtended[] = _("When an ally faints in battle\n(regardless of cause), the Po-\nkémon will be replaced by the \nfainted Pokémon's Ability.");
 static const u8 sBeastBoostDescriptionExtended[] = _("When the Pokémon directly cau-\nses another Pokémon (including\nallies) to faint by using a d-\namaging move,  its highest sta-\nt (other than HP) is increased\nby one stage.");
-static const u8 sRKSSystemDescriptionExtended[] = _("Changes the type of the Pokém-\non depending on the memory att-\nached.");
+static const u8 sRKSSystemDescriptionExtended[] = _("Changes the type of the Pokém-\non depending on the memory att-\nached. Also, while the Pokémon\nis holding a Memory, increase-\ns all stats by 10%.");
 static const u8 sElectricSurgeDescriptionExtended[] = _("When the Pokémon enters the b-\nattle, it creates the effect o-\nf the move Electric Terrain on\nthe battlefield for five turn-\ns. Electric Terrain: Boosts th-\ne power of Electric-type moves\nfrom Pokémon that are on the \nground by 30% and protects the-\nm from being afflicted by slee-\np or Yawn.");
 static const u8 sPsychicSurgeDescriptionExtended[] = _("When the Pokémon enters the b-\nattle, it creates the effect o-\nf the move Psychic Terrain on \nthe battlefield for five turns-\n. Psychic Terrain: Boosts the \npower of Psychic-type moves fr-\nom Pokémon that are on the gro-\nund by 30% and they become imm-\nune to opponent's moves with i-\nncreased priority.");
 static const u8 sMistySurgeDescriptionExtended[] = _("When the Pokémon enters the b-\nattle, it creates the effect o-\nf the move Misty Terrain on th-\ne battlefield for five turns. \nMisty Terrain: Halves the powe-\nr of Dragon-type moves from Po-\nkémon that are on the ground a-\nnd protects them from being af-\nflicted by status conditions o-\nr becoming confused.");
@@ -3473,7 +3482,7 @@ static const u8 sBurnateDescriptionExtended[] = _("All Normal-type moves used by
 static const u8 sGroundateDescriptionExtended[] = _("All Normal-type moves used by\nthe Pokémon become Ground-typ-\ne and receive a 20% power boos-\nt.");
 static const u8 sAdaptationDescriptionExtended[] = _("If the Pokémon is hit by a mo-\nve with the same type of the l-\nast move taken, its damage is \nreduced by 50%.");
 static const u8 sAirbourneStyleDescriptionExtended[] = _("The Pokémon performs kicking \nmoves twice in air, dealing th-\ne same damage. If it miss, the\nPokémon takes damage equal to\nhalf of its maximum HP. It do-\nes not affect kicking moves th-\nat is already perfomed in the \nair or hit multiple times.");
-static const u8 sAerodynamicsDescriptionExtended[] = _("When the Pokémon attacks or i-\ns attacked by an Flying-type o-\nr Wind move, its Speed is incr-\neased by one stage. The move w-\nill have no effect on the Poké-\nmon.");
+static const u8 sAerodynamicsDescriptionExtended[] = _("When the Pokémon attacks or i-\ns attacked by an Flying-type o-\nr Wind move, its Speed is incr-\neased by one stage. When the P-\nokémon is attacked, those move\nwill have no effect.");
 static const u8 sArtilleryDescriptionExtended[] = _("Beam, pump, cannon, zooka, sh-\not, gun, aura and pulse moves \ncannot miss, can hit during se-\nmi-invulnerable turn and hit b-\noth foes.");
 static const u8 sAvengeDescriptionExtended[] = _("Boosts the power of the move \nby 30% if a Pokémon from the p-\narty has fainted in the previo-\nus turn.");
 static const u8 sBadLuckDescriptionExtended[] = _("Other Pokémon cannot land cri-\ntical hit, cannot apply their \nmove's secondary effects, and \nthe damage calculation RNG is \nalways the worse (85%). This P-\nokémon is unaffected by others\nBad Luck ability.");
@@ -3853,7 +3862,7 @@ static const u8 sPhantomStarFistDescriptionExtended[] = _("Punching moves used b
 static const u8 sSunforgedGoldDescriptionExtended[] = _("Fire-type moves that would be\n“supereffective” against pure\nSteel-type Pokémon will be “n-\not very effective” against the\nSteel-type of the Pokémon. Al-\nso, the Pokémon is unaffected \nby other Pokémon's status move-\ns.");
 static const u8 sSilverArmorDescriptionExtended[] = _("Ghost- and Dark-type moves th-\nat would be “normally effectiv-\ne” against pure Steel-type Pok-\némon will be “not very effecti-\nve” against the Steel-type of \nthe Pokémon. Also, prevents th-\ne Pokémon from being afflicted\nby status conditions.");
 static const u8 sPolarGuardDescriptionExtended[] = _("While on Electric Terrain: In-\ncreases the Defense stat by 50\n% if the Pokémon has Minus abi-\nlity; Increases the Special De-\nfense stat by 50% if the Pokém-\non has Plus ability.");
-static const u8 sTeslaCoilDescriptionExtended[] = _("When the Pokémon attacks or i-\ns attacked by an Electric-type\nmove, its Attack stat is incr-\neased by one stage. The move w-\nill have no effect on the Poké-\nmon. Also, the Pokémon cannot \nbe paralyzed.");
+static const u8 sTeslaCoilDescriptionExtended[] = _("When the Pokémon attacks or i-\ns attacked by an Electric-type\nmove, its Attack stat is incr-\neased by one stage. Also, the \nPokémon cannot be paralyzed.");
 static const u8 sFluxBreakDescriptionExtended[] = _("(Not Implemented)");
 static const u8 sColosseumSurgeDescriptionExtended[] = _("When the Pokémon enters the b-\nattle, it creates the effect o-\nf the move Colosseun Terrain o-\nn the battlefield for five tur-\nns. Colosseum Terrain: Boosts \nthe power of Fighting-type mov-\nes from Pokémon that are on th-\ne ground by 30% and prevents f-\nrom using non-damaging moves.");
 static const u8 sDraconicSurgeDescriptionExtended[] = _("When the Pokémon enters the b-\nattle, it creates the effect o-\nf the move Draconic Terrain on\nthe battlefield for five turn-\ns. Draconic Terrain: Halves th-\ne damage taken by Pokémon on t-\nhe ground from Fairy-type move-\ns and Dragon-type moves used b-\ny Pokémon on the ground can hi-\nt Fairy-type Pokémon.");
@@ -3897,7 +3906,7 @@ static const u8 sInfusedCoreDescriptionExtended[] = _("Each time the Pokémon is
 static const u8 sTugestenAlloyDescriptionExtended[] = _("The Pokémon takes less 25% da-\nmage from “supereffective” mov-\nes.");
 static const u8 sWyvernHideDescriptionExtended[] = _("The Pokémon takes less 25% da-\nmage from “supereffective” mov-\nes.");
 static const u8 sStaticShellDescriptionExtended[] = _("The Pokémon takes less 25% da-\nmage from “supereffective” mov-\nes.");
-static const u8 sBedrockDescriptionExtended[] = _("Boosts the power of the Pokém-\non's Rock-type moves by 50%.");
+static const u8 sBedrockDescriptionExtended[] = _("The Pokémon takes less 50% da-\nmage from “supereffective” mov-\nes.");
 static const u8 sWhiteoutDescriptionExtended[] = _("Boosts the power of the Pokém-\non's Ice-type moves by 50%.");
 static const u8 sBerserkFuryDescriptionExtended[] = _("Boosts the Pokémon's Attack b-\ny 50%, but the Pokémon uses th-\neir moves randomly.");
 static const u8 sIntoxicateDescriptionExtended[] = _("(Not Implemented)");
@@ -4174,6 +4183,8 @@ static const u8 sOxidizeDescriptionExtended[] = _("The Pokémon's Flying-type mo
 static const u8 sSpacetimeAnchorDescriptionExtended[] = _("The Pokémon is unaffected by \nSpacetime Strain and Antimatte-\nr Veil.");
 static const u8 sWyrmScaleDescriptionExtended[] = _("The Pokémon takes less 25% da-\nmage from “supereffective” mov-\nes.");
 static const u8 sStormcallDescriptionExtended[] = _("Summons a rain in battle for \nfive turns when the Pokémon is\nhit by a damaging move. Rain:\nBoosts Water-type moves by 50\n% and weakens the power of Fir-\ne-type moves by 50%, Thunder a-\nnd Hurricane ignore Accuracy a-\nnd Evasion checks.");
+static const u8 sRangersCloakDescriptionExtended[] = _("While Grassy Terrain is activ-\ne, the Pokémon takes less 50% \ndamage from “supereffective” m-\noves.");
+static const u8 sVoltaicGrowthDescriptionExtended[] = _("When the Pokémon attacks or i-\ns attacked by a Electric-type \nmove, its Defense and Special \nDefense stats are increased by\none stage.");
 
 const u8 *const gAbilityDescriptionExtendedPointers[ABILITIES_COUNT] =
 {
@@ -5202,4 +5213,7 @@ const u8 *const gAbilityDescriptionExtendedPointers[ABILITIES_COUNT] =
     [ABILITY_OXIDIZE] = sOxidizeDescriptionExtended,
     [ABILITY_SPACETIME_ANCHOR] = sSpacetimeAnchorDescriptionExtended,
     [ABILITY_WYRM_SCALE] = sWyrmScaleDescriptionExtended,
+    [ABILITY_STORMCALL] = sStormcallDescriptionExtended,
+    [ABILITY_RANGERS_CLOAK] = sRangersCloakDescriptionExtended,
+    [ABILITY_VOLTAIC_GROWTH] = sVoltaicGrowthDescriptionExtended,
 };

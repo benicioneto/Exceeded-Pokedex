@@ -63,7 +63,7 @@ EventScript_NIHILEGO::
 
 EventScript_DefeatedUltraBeastNIHILEGO:
 	removeobject LOCALID_ULTRA_WORMHOLE
-	waitstate
+	release
 	end
 
 SeafloorCavern_Entrance_EventScript_GruntSpeechShort::

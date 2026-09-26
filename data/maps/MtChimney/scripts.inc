@@ -180,7 +180,7 @@ EventScript_Celesteela::
 
 EventScript_DefeatedUltraBeastCELESTEELA:
 	removeobject LOCALID_ULTRA_WORMHOLE
-	waitstate
+	release
 	end
 
 MtChimney_Movement_ArchieApproachPlayerEast:

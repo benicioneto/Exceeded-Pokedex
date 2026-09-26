@@ -108,7 +108,7 @@ EventScript_GUZZLORD::
 
 EventScript_DefeatedUltraBeastGUZZLORD:
 	removeobject LOCALID_ULTRA_WORMHOLE
-	waitstate
+	release
 	end
 
 EverGrandeCity_Text_CelebiSpeech:

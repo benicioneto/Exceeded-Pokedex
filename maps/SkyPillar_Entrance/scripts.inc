@@ -33,6 +33,6 @@ EventScript_STAKATAKA::
 
 EventScript_DefeatedUltraBeastSTAKATAKA:
 	removeobject LOCALID_ULTRA_WORMHOLE
-	waitstate
+	release
 	end
 

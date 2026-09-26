@@ -39,6 +39,6 @@ EventScript_BLACEPHALON::
 
 EventScript_DefeatedUltraBeastBLACEPHALON:
 	removeobject LOCALID_ULTRA_WORMHOLE
-	waitstate
+	release
 	end
 

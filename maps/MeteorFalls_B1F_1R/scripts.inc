@@ -28,5 +28,5 @@ EventScript_POIPOLE::
 
 EventScript_DefeatedUltraBeastPOIPOLE:
 	removeobject LOCALID_ULTRA_WORMHOLE
-	waitstate
+	release
 	end

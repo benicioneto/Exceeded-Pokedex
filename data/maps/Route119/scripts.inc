@@ -560,7 +560,7 @@ EventScript_KARTANA::
 
 EventScript_DefeatedUltraBeastKARTANA:
 	removeobject LOCALID_ULTRA_WORMHOLE
-	waitstate
+	release
 	end
 
 Route119_Text_MayIntro:
